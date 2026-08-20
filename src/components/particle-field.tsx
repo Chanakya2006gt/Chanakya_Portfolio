@@ -8,6 +8,7 @@ interface Particle {
   opacity: number;
   duration: number;
   delay: number;
+  colorClass: string;
 }
 
 export function ParticleField() {
@@ -15,15 +16,19 @@ export function ParticleField() {
 
   // Generate random particles ONLY on client after hydration to avoid SSR hydration mismatch
   useEffect(() => {
-    const generated = Array.from({ length: 30 }).map((_, i) => ({
-      id: i,
-      x: Math.random() * 100,
-      y: Math.random() * 100,
-      size: Math.random() * 3 + 1,
-      opacity: Math.random() * 0.4 + 0.1,
-      duration: Math.random() * 10 + 10,
-      delay: Math.random() * 5,
-    }));
+    const generated = Array.from({ length: 34 }).map((_, i) => {
+      const isIndigo = i % 5 === 0;
+      return {
+        id: i,
+        x: Math.random() * 100,
+        y: Math.random() * 100,
+        size: Math.random() * 3 + 1,
+        opacity: isIndigo ? Math.random() * 0.25 + 0.08 : Math.random() * 0.4 + 0.1,
+        duration: Math.random() * 10 + 10,
+        delay: Math.random() * 5,
+        colorClass: isIndigo ? "bg-indigo" : "bg-sage",
+      };
+    });
     setParticles(generated);
   }, []);
 
@@ -34,7 +39,7 @@ export function ParticleField() {
       {particles.map((p) => (
         <div
           key={p.id}
-          className="absolute rounded-full bg-sage animate-particle-float"
+          className={`absolute rounded-full animate-particle-float ${p.colorClass}`}
           style={{
             left: `${p.x}%`,
             top: `${p.y}%`,

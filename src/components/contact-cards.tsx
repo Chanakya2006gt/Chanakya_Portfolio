@@ -8,28 +8,32 @@ export function ContactCards() {
       handle: "@Chanakya2006gt",
       icon: Github,
       href: "https://github.com/Chanakya2006gt",
-      color: "hover:border-sage/50 hover:shadow-[0_0_25px_rgba(143,168,150,0.15)]",
+      color: "hover:border-foreground/40 hover:shadow-[0_8px_30px_rgba(255,255,255,0.06)] hover:-translate-y-1",
+      iconColor: "text-foreground group-hover:text-foreground",
     },
     {
       title: "LinkedIn",
       handle: "Nagulagam Chanakya",
       icon: Linkedin,
       href: "https://www.linkedin.com/in/nagulagam-chanakya-b93514315",
-      color: "hover:border-sage/50 hover:shadow-[0_0_25px_rgba(143,168,150,0.15)]",
+      color: "hover:border-indigo/50 hover:shadow-[0_8px_30px_rgba(99,102,241,0.18)] hover:-translate-y-1",
+      iconColor: "text-indigo group-hover:text-indigo",
     },
     {
       title: "Email",
       handle: "nagulagamchanakya2211@...",
       icon: Mail,
       href: "mailto:nagulagamchanakya2211@gmail.com",
-      color: "hover:border-sage/50 hover:shadow-[0_0_25px_rgba(143,168,150,0.15)]",
+      color: "hover:border-sage/50 hover:shadow-[0_8px_30px_rgba(143,168,150,0.2)] hover:-translate-y-1",
+      iconColor: "text-sage group-hover:text-sage",
     },
     {
       title: "Trelio SaaS",
       handle: "trelio.in",
       icon: ExternalLink,
       href: "https://trelio.in",
-      color: "hover:border-sage/80 hover:shadow-[0_0_25px_rgba(143,168,150,0.25)]",
+      color: "hover:border-sage/80 hover:shadow-[0_8px_32px_rgba(143,168,150,0.25)] hover:-translate-y-1",
+      iconColor: "text-sage group-hover:text-sage",
       highlight: true,
     },
   ];
@@ -54,7 +58,7 @@ export function ContactCards() {
               }`}
             >
               <div className="flex items-center justify-between">
-                <div className="flex size-10 items-center justify-center rounded-xl bg-secondary text-sage group-hover:scale-110 transition-transform duration-200">
+                <div className={`flex size-10 items-center justify-center rounded-xl bg-secondary ${item.iconColor} group-hover:scale-110 transition-transform duration-200`}>
                   <Icon className="size-5" />
                 </div>
                 <ExternalLink className="size-4 text-muted-foreground opacity-0 transition-opacity group-hover:opacity-100" />

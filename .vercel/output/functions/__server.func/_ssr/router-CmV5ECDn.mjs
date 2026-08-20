@@ -21,7 +21,7 @@ import { t as Pool } from "../_libs/pg.mjs";
 import crypto$1, { randomBytes } from "node:crypto";
 import fs from "node:fs";
 import path from "node:path";
-//#region node_modules/.nitro/vite/services/ssr/assets/router-CTYmQ1XF.js
+//#region node_modules/.nitro/vite/services/ssr/assets/router-CmV5ECDn.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 function AppErrorComponent({ error }) {
@@ -301,8 +301,36 @@ var TooltipContent = import_react.forwardRef(({ className, sideOffset = 6, ...pr
 	...props
 }) }));
 TooltipContent.displayName = Content2.displayName;
-var styles_default = "/assets/styles-i4UT-uUA.css";
-var APP_NAME = "Nagulagam Chanakya — Full-Stack Builder & Founder";
+var styles_default = "/assets/styles-KETmb1iI.css";
+var APP_NAME = "Nagulagam Chanakya — Full-Stack Developer & SaaS Founder";
+var APP_DESC = "Official portfolio of Nagulagam Chanakya — Full-Stack Developer & Founder of Trelio. Specializing in React, Node.js, TypeScript, PostgreSQL, and applied software security.";
+var JSON_LD = {
+	"@context": "https://schema.org",
+	"@type": "Person",
+	"name": "Nagulagam Chanakya",
+	"url": "https://chanakya.dev",
+	"jobTitle": "Full-Stack Developer & Founder",
+	"worksFor": {
+		"@type": "Organization",
+		"name": "Trelio",
+		"url": "https://trelio.in"
+	},
+	"alumniOf": {
+		"@type": "CollegeOrUniversity",
+		"name": "SR University"
+	},
+	"sameAs": ["https://github.com/Chanakya2006gt", "https://www.linkedin.com/in/nagulagam-chanakya-b93514315"],
+	"knowsAbout": [
+		"React",
+		"Node.js",
+		"TypeScript",
+		"PostgreSQL",
+		"Tailwind CSS",
+		"Software Security",
+		"SaaS Architecture",
+		"Payment Systems"
+	]
+};
 var Route$9 = createRootRoute({
 	head: () => ({
 		meta: [
@@ -318,7 +346,19 @@ var Route$9 = createRootRoute({
 			},
 			{
 				name: "description",
-				content: "Personal portfolio of Nagulagam Chanakya — full-stack builder and founder of Trelio."
+				content: APP_DESC
+			},
+			{
+				name: "keywords",
+				content: "Nagulagam Chanakya, Chanakya, Full-Stack Developer, Trelio, React, Node.js, TypeScript, PostgreSQL, Portfolio, Software Engineer, Warangal, SR University"
+			},
+			{
+				name: "author",
+				content: "Nagulagam Chanakya"
+			},
+			{
+				name: "robots",
+				content: "index, follow"
 			},
 			{
 				property: "og:title",
@@ -326,7 +366,7 @@ var Route$9 = createRootRoute({
 			},
 			{
 				property: "og:description",
-				content: "I ship products under real constraints. Founder of Trelio — authorization-before-execution SaaS."
+				content: APP_DESC
 			},
 			{
 				property: "og:image",
@@ -335,6 +375,10 @@ var Route$9 = createRootRoute({
 			{
 				property: "og:type",
 				content: "website"
+			},
+			{
+				property: "og:site_name",
+				content: "Nagulagam Chanakya Portfolio"
 			},
 			{
 				name: "twitter:card",
@@ -346,13 +390,17 @@ var Route$9 = createRootRoute({
 			},
 			{
 				name: "twitter:description",
-				content: "I ship products under real constraints. Founder of Trelio — authorization-before-execution SaaS."
+				content: APP_DESC
 			},
 			{
 				name: "twitter:image",
 				content: "/og.jpg"
 			}
 		],
+		scripts: [{
+			type: "application/ld+json",
+			children: JSON.stringify(JSON_LD)
+		}],
 		links: [
 			{
 				rel: "icon",
@@ -402,11 +450,11 @@ var Route$9 = createRootRoute({
 		] })]
 	})
 });
-var $$splitComponentImporter$2 = () => import("./routes-Dmh0ClhT.mjs");
+var $$splitComponentImporter$2 = () => import("./routes-Ksh7wdxh.mjs");
 var Route$8 = createFileRoute("/")({ component: lazyRouteComponent($$splitComponentImporter$2, "component") });
-var $$splitComponentImporter$1 = () => import("./admin-BpbK-0da.mjs");
+var $$splitComponentImporter$1 = () => import("./admin-BT3Bibhp.mjs");
 var Route$7 = createFileRoute("/admin/")({ component: lazyRouteComponent($$splitComponentImporter$1, "component") });
-var $$splitComponentImporter = () => import("./login-CqN7ZVfL.mjs");
+var $$splitComponentImporter = () => import("./login-DFG14qp-.mjs");
 var Route$6 = createFileRoute("/admin/login")({ component: lazyRouteComponent($$splitComponentImporter, "component") });
 function loadEnvFile() {
 	const envPath = path.join(process.cwd(), ".env");

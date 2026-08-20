@@ -4,11 +4,11 @@ import { s as require_jsx_runtime } from "../_libs/@radix-ui/react-collection+[.
 import { A as ArrowRight, C as FileText, D as Bot, E as Building2, O as Award, S as Github, T as CodeXml, a as Sun, c as Send, d as Printer, g as Mail, h as MapPin, k as ArrowUp, m as Menu, n as User, p as Moon, s as ShieldCheck, t as X, u as RefreshCw, w as ExternalLink, x as GraduationCap, y as Linkedin } from "../_libs/lucide-react.mjs";
 import { a as DialogOverlay$1, c as DialogTrigger$1, i as DialogDescription$1, n as DialogClose, o as DialogPortal$1, r as DialogContent$1, s as DialogTitle$1, t as Dialog$1 } from "../_libs/@radix-ui/react-dialog+[...].mjs";
 import { n as toast } from "../_libs/sonner.mjs";
-import { a as skills, i as sideProjects, n as businesses, o as cn, r as navLinks } from "./router-CTYmQ1XF.mjs";
-import { a as CardFooter, c as Input, i as CardDescription, l as Label, n as Card, o as CardHeader, r as CardContent, s as CardTitle, t as Button } from "./card-BcPhx881.mjs";
-import { a as TabsTrigger, i as TabsList, n as Tabs, o as Textarea, r as TabsContent, t as Badge } from "./badge-IgOkUfrk.mjs";
+import { a as skills, i as sideProjects, n as businesses, o as cn, r as navLinks } from "./router-CmV5ECDn.mjs";
+import { a as CardFooter, c as Input, i as CardDescription, l as Label, n as Card, o as CardHeader, r as CardContent, s as CardTitle, t as Button } from "./card-D_TwbZd5.mjs";
+import { a as TabsTrigger, i as TabsList, n as Tabs, o as Textarea, r as TabsContent, t as Badge } from "./badge-Cv1Dey-x.mjs";
 import { t as Root } from "../_libs/radix-ui__react-separator.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/routes-Dmh0ClhT.js
+//#region node_modules/.nitro/vite/services/ssr/assets/routes-Ksh7wdxh.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 var Separator = import_react.forwardRef(({ className, orientation = "horizontal", decorative = true, ...props }, ref) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Root, {
@@ -634,22 +634,26 @@ function LeftRailNav() {
 function ParticleField() {
 	const [particles, setParticles] = (0, import_react.useState)([]);
 	(0, import_react.useEffect)(() => {
-		const generated = Array.from({ length: 30 }).map((_, i) => ({
-			id: i,
-			x: Math.random() * 100,
-			y: Math.random() * 100,
-			size: Math.random() * 3 + 1,
-			opacity: Math.random() * .4 + .1,
-			duration: Math.random() * 10 + 10,
-			delay: Math.random() * 5
-		}));
+		const generated = Array.from({ length: 34 }).map((_, i) => {
+			const isIndigo = i % 5 === 0;
+			return {
+				id: i,
+				x: Math.random() * 100,
+				y: Math.random() * 100,
+				size: Math.random() * 3 + 1,
+				opacity: isIndigo ? Math.random() * .25 + .08 : Math.random() * .4 + .1,
+				duration: Math.random() * 10 + 10,
+				delay: Math.random() * 5,
+				colorClass: isIndigo ? "bg-indigo" : "bg-sage"
+			};
+		});
 		setParticles(generated);
 	}, []);
 	if (particles.length === 0) return null;
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
 		className: "absolute inset-0 overflow-hidden pointer-events-none z-0",
 		children: particles.map((p) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-			className: "absolute rounded-full bg-sage animate-particle-float",
+			className: `absolute rounded-full animate-particle-float ${p.colorClass}`,
 			style: {
 				left: `${p.x}%`,
 				top: `${p.y}%`,
@@ -732,28 +736,32 @@ function ContactCards() {
 				handle: "@Chanakya2006gt",
 				icon: Github,
 				href: "https://github.com/Chanakya2006gt",
-				color: "hover:border-sage/50 hover:shadow-[0_0_25px_rgba(143,168,150,0.15)]"
+				color: "hover:border-foreground/40 hover:shadow-[0_8px_30px_rgba(255,255,255,0.06)] hover:-translate-y-1",
+				iconColor: "text-foreground group-hover:text-foreground"
 			},
 			{
 				title: "LinkedIn",
 				handle: "Nagulagam Chanakya",
 				icon: Linkedin,
 				href: "https://www.linkedin.com/in/nagulagam-chanakya-b93514315",
-				color: "hover:border-sage/50 hover:shadow-[0_0_25px_rgba(143,168,150,0.15)]"
+				color: "hover:border-indigo/50 hover:shadow-[0_8px_30px_rgba(99,102,241,0.18)] hover:-translate-y-1",
+				iconColor: "text-indigo group-hover:text-indigo"
 			},
 			{
 				title: "Email",
 				handle: "nagulagamchanakya2211@...",
 				icon: Mail,
 				href: "mailto:nagulagamchanakya2211@gmail.com",
-				color: "hover:border-sage/50 hover:shadow-[0_0_25px_rgba(143,168,150,0.15)]"
+				color: "hover:border-sage/50 hover:shadow-[0_8px_30px_rgba(143,168,150,0.2)] hover:-translate-y-1",
+				iconColor: "text-sage group-hover:text-sage"
 			},
 			{
 				title: "Trelio SaaS",
 				handle: "trelio.in",
 				icon: ExternalLink,
 				href: "https://trelio.in",
-				color: "hover:border-sage/80 hover:shadow-[0_0_25px_rgba(143,168,150,0.25)]",
+				color: "hover:border-sage/80 hover:shadow-[0_8px_32px_rgba(143,168,150,0.25)] hover:-translate-y-1",
+				iconColor: "text-sage group-hover:text-sage",
 				highlight: true
 			}
 		].map((item) => {
@@ -768,7 +776,7 @@ function ContactCards() {
 					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 						className: "flex items-center justify-between",
 						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-							className: "flex size-10 items-center justify-center rounded-xl bg-secondary text-sage group-hover:scale-110 transition-transform duration-200",
+							className: `flex size-10 items-center justify-center rounded-xl bg-secondary ${item.iconColor} group-hover:scale-110 transition-transform duration-200`,
 							children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Icon, { className: "size-5" })
 						}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(ExternalLink, { className: "size-4 text-muted-foreground opacity-0 transition-opacity group-hover:opacity-100" })]
 					}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
@@ -1512,155 +1520,212 @@ function useScrollAnimation(threshold = .1) {
 function Hero({ tagline, availabilityStatus, liveCount, email, pdfUrl, summary, education, skillsList }) {
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("section", {
 		className: "relative mx-auto flex min-h-[90vh] max-w-5xl flex-col justify-center px-5 py-20 overflow-hidden",
-		children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(ParticleField, {}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-			className: "relative z-10 grid gap-12 lg:grid-cols-[1.3fr_1fr] lg:items-center",
-			children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [
-				/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
-					className: "rise-in text-sm font-medium tracking-wide text-sage",
-					children: "Full-stack builder · Founder"
-				}),
-				/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h1", {
-					className: "rise-in rise-in-1 mt-4 font-serif text-5xl leading-[1.05] tracking-tight sm:text-6xl md:text-7xl",
-					children: "Nagulagam Chanakya"
-				}),
-				/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
-					className: "rise-in rise-in-2 mt-6 max-w-xl text-lg leading-relaxed text-muted-foreground",
-					children: tagline || "I ship products under real constraints — not demos. Trelio is the serious work. Everything else stays in experiments."
-				}),
-				/* @__PURE__ */ (0, import_jsx_runtime.jsx)(HeroStats, {
-					status: availabilityStatus,
-					liveCount
-				}),
-				/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-					className: "rise-in rise-in-3 mt-10 flex flex-wrap gap-3",
-					children: [
-						/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Button, {
-							asChild: true,
-							size: "lg",
-							children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("a", {
-								href: "#projects",
-								children: ["View projects", /* @__PURE__ */ (0, import_jsx_runtime.jsx)(ArrowRight, {})]
-							})
-						}),
-						/* @__PURE__ */ (0, import_jsx_runtime.jsx)(ResumeModal, {
-							email,
-							pdfUrl,
-							summary,
-							education,
-							skillsList,
-							trigger: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Button, {
-								size: "lg",
-								variant: "sage",
-								children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(FileText, { className: "mr-1.5 size-4" }), "View Resume"]
-							})
-						}),
-						/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Button, {
-							asChild: true,
-							size: "lg",
-							variant: "outline",
-							children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("a", {
-								href: "#contact",
-								children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Mail, {}), "Contact"]
-							})
-						})
-					]
-				})
-			] }), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-				className: "hidden lg:flex flex-col items-center justify-center relative",
-				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-					className: "relative flex size-64 items-center justify-center rounded-full border border-sage/30 bg-gradient-to-b from-sage/10 to-transparent p-6 shadow-[0_0_50px_rgba(143,168,150,0.15)]",
-					children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(CompanionSvg, {
-						state: "idle",
-						size: 160
-					})
-				}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
-					className: "mt-4 font-mono text-xs text-muted-foreground tracking-wider uppercase",
-					children: "< Full-Stack Developer />"
-				})]
-			})]
-		})]
-	});
-}
-function About({ email, pdfUrl, summary, education, skillsList }) {
-	const { ref, isVisible } = useScrollAnimation();
-	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("section", {
-		id: "about",
-		ref,
-		className: `mx-auto max-w-5xl px-5 py-24 transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`,
 		children: [
-			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
-				className: "text-sm font-medium tracking-wide text-sage",
-				children: "About"
-			}),
-			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h2", {
-				className: "mt-3 font-serif text-3xl tracking-tight sm:text-4xl",
-				children: "Builder first. Student second."
-			}),
+			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-gradient-to-tr from-sage/10 via-indigo/5 to-transparent blur-[100px] rounded-full pointer-events-none -z-10" }),
+			/* @__PURE__ */ (0, import_jsx_runtime.jsx)(ParticleField, {}),
 			/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-				className: "mt-8 grid gap-8 md:grid-cols-2",
-				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-					className: "space-y-5 text-muted-foreground leading-relaxed",
-					children: [
-						/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("p", { children: [
-							"Engineering student at ",
-							education || "SR University (B.Tech CIS, 2028)",
-							" focused on shipping real products. I care more about constraints — payments, approvals, multi-tenant systems — than collecting certificates."
-						] }),
-						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", { children: "Right now most of my time goes to Trelio: a SaaS that forces client approval before work is executed. The problem is simple. Freelancers and agencies should not work for free." }),
-						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-							className: "pt-2",
-							children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(ResumeModal, {
+				className: "relative z-10 grid gap-12 lg:grid-cols-[1.3fr_1fr] lg:items-center",
+				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [
+					/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+						className: "rise-in inline-flex items-center gap-2 rounded-full border border-sage/30 bg-sage/10 px-3.5 py-1 text-xs font-semibold tracking-wide text-sage",
+						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: "size-1.5 rounded-full bg-sage animate-pulse" }), "Full-Stack Builder · SaaS Founder"]
+					}),
+					/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h1", {
+						className: "rise-in rise-in-1 mt-5 font-serif text-5xl leading-[1.05] tracking-tight sm:text-6xl md:text-7xl bg-gradient-to-b from-foreground via-foreground to-foreground/80 bg-clip-text text-transparent",
+						children: "Nagulagam Chanakya"
+					}),
+					/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+						className: "rise-in rise-in-2 mt-6 max-w-xl text-lg sm:text-xl leading-relaxed text-muted-foreground",
+						children: tagline || "I ship products under real constraints — not demos. Trelio is the serious work. Everything else stays in experiments."
+					}),
+					/* @__PURE__ */ (0, import_jsx_runtime.jsx)(HeroStats, {
+						status: availabilityStatus,
+						liveCount
+					}),
+					/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+						className: "rise-in rise-in-3 mt-10 flex flex-wrap gap-3",
+						children: [
+							/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Button, {
+								asChild: true,
+								size: "lg",
+								className: "btn-sage-glow rounded-xl font-medium shadow-md",
+								children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("a", {
+									href: "#projects",
+									children: ["View projects", /* @__PURE__ */ (0, import_jsx_runtime.jsx)(ArrowRight, {})]
+								})
+							}),
+							/* @__PURE__ */ (0, import_jsx_runtime.jsx)(ResumeModal, {
 								email,
 								pdfUrl,
 								summary,
 								education,
 								skillsList,
 								trigger: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Button, {
-									variant: "outline",
-									className: "gap-2 border-sage/40 hover:border-sage text-sage hover:text-sage",
-									children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(FileText, { className: "size-4" }), "Read Full Resume & Credentials →"]
+									size: "lg",
+									variant: "sage",
+									className: "btn-sage-glow rounded-xl font-medium",
+									children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(FileText, { className: "mr-1.5 size-4" }), "View Resume"]
+								})
+							}),
+							/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Button, {
+								asChild: true,
+								size: "lg",
+								variant: "outline",
+								className: "rounded-xl border-border/80 hover:bg-secondary",
+								children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("a", {
+									href: "#contact",
+									children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Mail, {}), "Contact"]
 								})
 							})
-						})
-					]
-				}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-					className: "rounded-2xl border border-border bg-card p-6 shadow-[var(--shadow-border)] space-y-4",
+						]
+					})
+				] }), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+					className: "hidden lg:flex flex-col items-center justify-center relative",
 					children: [
-						/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h4", {
-							className: "text-sm font-semibold text-foreground",
-							children: "How I work"
-						}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
-							className: "mt-1 text-sm text-muted-foreground leading-relaxed",
-							children: "Direct, metrics-first, no fluff. Build, get a user in front of it, iterate. Side experiments stay labeled as experiments."
-						})] }),
-						/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Separator, {}),
-						/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h4", {
-							className: "text-sm font-semibold text-foreground",
-							children: "What I am doing now"
-						}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
-							className: "mt-1 text-sm text-muted-foreground leading-relaxed",
-							children: "Full-stack on Trelio, DSA practice, and keeping the product scoped. Career experiments stay secondary until the product has traction."
-						})] })
+						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "absolute inset-0 bg-gradient-to-tr from-sage/20 via-indigo/10 to-transparent blur-3xl rounded-full" }),
+						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+							className: "relative flex size-64 items-center justify-center rounded-full border border-sage/30 bg-gradient-to-b from-card/80 via-card/40 to-transparent p-6 shadow-[0_0_60px_rgba(143,168,150,0.18),0_0_100px_rgba(129,140,248,0.08)] backdrop-blur-sm",
+							children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(CompanionSvg, {
+								state: "idle",
+								size: 160
+							})
+						}),
+						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+							className: "mt-4 font-mono text-xs text-muted-foreground tracking-wider uppercase bg-secondary/60 border border-border/60 px-3 py-1 rounded-full",
+							children: "< Full-Stack Developer />"
+						})
 					]
 				})]
 			})
 		]
 	});
 }
+function About({ email, pdfUrl, summary, education, skillsList }) {
+	const { ref, isVisible } = useScrollAnimation();
+	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("section", {
+		id: "about",
+		ref,
+		className: `border-y border-border/50 bg-secondary/30 transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`,
+		children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+			className: "mx-auto max-w-5xl px-5 py-24",
+			children: [
+				/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+					className: "flex items-center gap-2",
+					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: "h-4 w-1 rounded-full bg-sage" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+						className: "text-xs font-semibold uppercase tracking-wider text-sage",
+						children: "About"
+					})]
+				}),
+				/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h2", {
+					className: "mt-3 font-serif text-3xl tracking-tight sm:text-4xl",
+					children: "Builder first. Student second."
+				}),
+				/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+					className: "mt-8 grid gap-8 md:grid-cols-2",
+					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+						className: "space-y-5 text-muted-foreground leading-relaxed",
+						children: [
+							/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("p", { children: [
+								"Engineering student at ",
+								/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+									className: "font-medium text-foreground",
+									children: education || "SR University (B.Tech in CSE, 2028)"
+								}),
+								" focused on shipping real products. I care more about constraints — ",
+								/* @__PURE__ */ (0, import_jsx_runtime.jsx)("code", {
+									className: "rounded bg-secondary px-1.5 py-0.5 text-xs text-sage font-mono",
+									children: "secure payments"
+								}),
+								", ",
+								/* @__PURE__ */ (0, import_jsx_runtime.jsx)("code", {
+									className: "rounded bg-secondary px-1.5 py-0.5 text-xs text-sage font-mono",
+									children: "approvals"
+								}),
+								", and ",
+								/* @__PURE__ */ (0, import_jsx_runtime.jsx)("code", {
+									className: "rounded bg-secondary px-1.5 py-0.5 text-xs text-sage font-mono",
+									children: "multi-tenant systems"
+								}),
+								" — than collecting certificates."
+							] }),
+							/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("p", { children: [
+								"Right now most of my time goes to ",
+								/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+									className: "font-medium text-foreground",
+									children: "Trelio"
+								}),
+								": a SaaS that forces client approval before work is executed using an ",
+								/* @__PURE__ */ (0, import_jsx_runtime.jsx)("code", {
+									className: "rounded bg-secondary px-1.5 py-0.5 text-xs text-indigo font-mono",
+									children: "Authorization-Before-Execution"
+								}),
+								" model. The problem is simple: freelancers and agencies should never work for free."
+							] }),
+							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+								className: "pt-2",
+								children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(ResumeModal, {
+									email,
+									pdfUrl,
+									summary,
+									education,
+									skillsList,
+									trigger: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Button, {
+										variant: "outline",
+										className: "gap-2 border-sage/40 hover:border-sage text-sage hover:text-sage rounded-xl",
+										children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(FileText, { className: "size-4" }), "Read Full Resume & Credentials →"]
+									})
+								})
+							})
+						]
+					}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+						className: "card-hover-elevate rounded-2xl border border-border bg-card p-6 shadow-sm space-y-4",
+						children: [
+							/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+								className: "flex items-center gap-2",
+								children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: "size-2 rounded-full bg-sage" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("h4", {
+									className: "text-sm font-semibold text-foreground",
+									children: "How I work"
+								})]
+							}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+								className: "mt-2 text-sm text-muted-foreground leading-relaxed",
+								children: "Direct, metrics-first, no fluff. Build, get a user in front of it, iterate. Side experiments stay labeled as experiments."
+							})] }),
+							/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Separator, { className: "bg-border/60" }),
+							/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+								className: "flex items-center gap-2",
+								children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: "size-2 rounded-full bg-indigo" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("h4", {
+									className: "text-sm font-semibold text-foreground",
+									children: "What I am doing now"
+								})]
+							}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+								className: "mt-2 text-sm text-muted-foreground leading-relaxed",
+								children: "Full-stack on Trelio, DSA practice, and keeping the product scoped. Career experiments stay secondary until the product has traction."
+							})] })
+						]
+					})]
+				})
+			]
+		})
+	});
+}
 function BusinessCard({ items }) {
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
 		className: "grid gap-6",
-		children: items.map((project) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Card, {
-			className: "p-2 hover:shadow-[var(--shadow-border-hover)] transition-all",
-			children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+		children: items.map((project) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Card, {
+			className: "relative overflow-hidden p-2 card-hover-elevate border-border/80 bg-gradient-to-br from-card via-card to-sage/5",
+			children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "absolute top-0 inset-x-0 h-0.5 bg-gradient-to-r from-transparent via-sage/60 to-transparent" }), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 				className: "p-4 sm:p-6",
 				children: [
 					project.liveUrl && /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("a", {
 						href: project.liveUrl,
 						target: "_blank",
 						rel: "noopener noreferrer",
-						className: "mb-4 inline-flex items-center gap-1.5 text-xs font-medium text-sage hover:text-sage/80",
-						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(ExternalLink, { className: "size-3" }), project.liveUrl.replace(/^https?:\/\//, "")]
+						className: "mb-4 inline-flex items-center gap-1.5 rounded-full border border-sage/30 bg-sage/10 px-3 py-1 text-xs font-semibold text-sage hover:bg-sage/20 transition-all",
+						children: [
+							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: "size-1.5 rounded-full bg-sage animate-ping" }),
+							/* @__PURE__ */ (0, import_jsx_runtime.jsx)(ExternalLink, { className: "size-3" }),
+							project.liveUrl.replace(/^https?:\/\//, "")
+						]
 					}),
 					/* @__PURE__ */ (0, import_jsx_runtime.jsx)(TrelioPreview, {}),
 					/* @__PURE__ */ (0, import_jsx_runtime.jsxs)(CardHeader, {
@@ -1668,26 +1733,41 @@ function BusinessCard({ items }) {
 						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 							className: "flex items-start justify-between gap-3",
 							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(CardTitle, {
-								className: "font-serif text-2xl",
+								className: "font-serif text-2xl sm:text-3xl",
 								children: project.title
 							}), project.badge && /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Badge, {
 								variant: "sage",
+								className: "shadow-sm",
 								children: project.badge
 							})]
 						}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(CardDescription, {
-							className: "mt-2 max-w-2xl text-base",
+							className: "mt-2 max-w-2xl text-base leading-relaxed",
 							children: project.description
 						})]
 					}),
 					/* @__PURE__ */ (0, import_jsx_runtime.jsx)(CardFooter, {
 						className: "mt-5 flex flex-wrap gap-2 px-0",
-						children: project.stack.map((tech) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Badge, {
-							variant: "outline",
-							children: tech
-						}, tech))
+						children: project.stack.map((tech) => {
+							const isCore = [
+								"React",
+								"TypeScript",
+								"Node.js",
+								"PostgreSQL"
+							].includes(tech);
+							const isSecurity = [
+								"AES-256-GCM",
+								"HMAC",
+								"Clerk"
+							].some((s) => tech.includes(s));
+							return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Badge, {
+								variant: isCore ? "sage" : isSecurity ? "secondary" : "outline",
+								className: isSecurity ? "border-indigo/30 bg-indigo/10 text-indigo" : "",
+								children: tech
+							}, tech);
+						})
 					})
 				]
-			})
+			})]
 		}, project.id))
 	});
 }
@@ -1698,67 +1778,75 @@ function Projects({ businessesList, sideProjectsList }) {
 		ref,
 		className: `mx-auto max-w-5xl px-5 py-24 transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`,
 		children: [
-			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
-				className: "text-sm font-medium tracking-wide text-sage",
-				children: "Work"
+			/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+				className: "flex items-center gap-2",
+				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: "h-4 w-1 rounded-full bg-sage" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+					className: "text-xs font-semibold uppercase tracking-wider text-sage",
+					children: "Work"
+				})]
 			}),
 			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h2", {
 				className: "mt-3 font-serif text-3xl tracking-tight sm:text-4xl",
-				children: "Projects"
+				children: "Featured Projects"
 			}),
 			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
 				className: "mt-3 max-w-xl text-muted-foreground",
-				children: "Serious products sit above experiments. Trelio is the live product."
+				children: "Serious SaaS products engineered under real constraints sit above experiments."
 			}),
 			/* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Tabs, {
 				defaultValue: "businesses",
 				className: "mt-10",
 				children: [
-					/* @__PURE__ */ (0, import_jsx_runtime.jsxs)(TabsList, { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(TabsTrigger, {
-						value: "businesses",
-						children: "Businesses"
-					}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(TabsTrigger, {
-						value: "side",
-						children: "Side projects"
-					})] }),
-					/* @__PURE__ */ (0, import_jsx_runtime.jsxs)(TabsContent, {
-						value: "businesses",
-						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h3", {
-							className: "mb-2 text-sm font-medium text-muted-foreground",
-							children: "Businesses & serious projects"
-						}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(BusinessCard, { items: businessesList })]
+					/* @__PURE__ */ (0, import_jsx_runtime.jsxs)(TabsList, {
+						className: "bg-secondary/80 p-1 border border-border/80",
+						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(TabsTrigger, {
+							value: "businesses",
+							className: "data-[state=active]:bg-card data-[state=active]:shadow-sm",
+							children: "Flagship Products"
+						}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(TabsTrigger, {
+							value: "side",
+							className: "data-[state=active]:bg-card data-[state=active]:shadow-sm",
+							children: "Side Experiments"
+						})]
 					}),
-					/* @__PURE__ */ (0, import_jsx_runtime.jsxs)(TabsContent, {
+					/* @__PURE__ */ (0, import_jsx_runtime.jsx)(TabsContent, {
+						value: "businesses",
+						className: "mt-6",
+						children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(BusinessCard, { items: businessesList })
+					}),
+					/* @__PURE__ */ (0, import_jsx_runtime.jsx)(TabsContent, {
 						value: "side",
-						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h3", {
-							className: "mb-4 text-sm font-medium text-muted-foreground",
-							children: "Experiments and learning work"
-						}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+						className: "mt-6",
+						children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
 							className: "grid gap-4 sm:grid-cols-2 lg:grid-cols-3",
-							children: sideProjectsList.map((project) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Card, {
-								className: "p-2 hover:-translate-y-1 transition-all duration-200 hover:shadow-[var(--shadow-border-hover)] hover:border-sage/30",
-								children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+							children: sideProjectsList.map((project) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Card, {
+								className: "relative overflow-hidden p-2 card-hover-elevate border-border/80 bg-card hover:border-sage/40",
+								children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "absolute top-0 inset-x-0 h-0.5 bg-gradient-to-r from-transparent via-border to-transparent" }), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 									className: "p-4",
 									children: [
 										/* @__PURE__ */ (0, import_jsx_runtime.jsx)(SidePreview, { title: project.title }),
 										/* @__PURE__ */ (0, import_jsx_runtime.jsxs)(CardHeader, {
 											className: "px-0 pb-2 pt-4",
 											children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(CardTitle, {
-												className: "text-lg",
+												className: "text-lg font-semibold",
 												children: project.title
-											}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(CardDescription, { children: project.description })]
+											}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(CardDescription, {
+												className: "text-xs line-clamp-2",
+												children: project.description
+											})]
 										}),
 										/* @__PURE__ */ (0, import_jsx_runtime.jsx)(CardContent, {
-											className: "flex flex-wrap gap-1.5 px-0",
+											className: "flex flex-wrap gap-1.5 px-0 pt-2",
 											children: project.stack.map((tech) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Badge, {
 												variant: "outline",
+												className: "text-[11px] font-normal",
 												children: tech
 											}, tech))
 										})
 									]
-								})
+								})]
 							}, project.id))
-						})]
+						})
 					})
 				]
 			})
@@ -1767,37 +1855,53 @@ function Projects({ businessesList, sideProjectsList }) {
 }
 function Skills({ skillsList }) {
 	const { ref, isVisible } = useScrollAnimation();
-	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("section", {
+	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("section", {
 		id: "skills",
 		ref,
-		className: `mx-auto max-w-5xl px-5 py-24 transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`,
-		children: [
-			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
-				className: "text-sm font-medium tracking-wide text-sage",
-				children: "Stack"
-			}),
-			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h2", {
-				className: "mt-3 font-serif text-3xl tracking-tight sm:text-4xl",
-				children: "Skills & Technologies"
-			}),
-			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-				className: "mt-10 grid gap-8 sm:grid-cols-2",
-				children: Object.entries(skillsList).map(([category, items]) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-					className: "rounded-2xl border border-border/80 bg-card/60 p-6 backdrop-blur-sm",
-					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h3", {
-						className: "mb-4 text-sm font-semibold tracking-wide text-sage uppercase",
-						children: category
-					}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-						className: "flex flex-wrap gap-2",
-						children: items.map((skill) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Badge, {
-							variant: "secondary",
-							className: "rounded-lg px-3 py-1.5 text-xs font-medium tracking-normal transition-all hover:bg-sage/20 hover:text-sage hover:scale-105",
-							children: skill
-						}, skill))
+		className: `border-y border-border/50 bg-secondary/30 transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`,
+		children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+			className: "mx-auto max-w-5xl px-5 py-24",
+			children: [
+				/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+					className: "flex items-center gap-2",
+					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: "h-4 w-1 rounded-full bg-sage" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+						className: "text-xs font-semibold uppercase tracking-wider text-sage",
+						children: "Stack"
 					})]
-				}, category))
-			})
-		]
+				}),
+				/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h2", {
+					className: "mt-3 font-serif text-3xl tracking-tight sm:text-4xl",
+					children: "Skills & Core Technologies"
+				}),
+				/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+					className: "mt-3 max-w-xl text-muted-foreground",
+					children: "Production-tested toolchain across full-stack architecture, systems security, and reliable databases."
+				}),
+				/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+					className: "mt-10 grid gap-6 sm:grid-cols-2",
+					children: Object.entries(skillsList).map(([category, items]) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+						className: "card-hover-elevate rounded-2xl border border-border/80 bg-card p-6 shadow-sm",
+						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+							className: "flex items-center justify-between mb-4",
+							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h3", {
+								className: "text-xs font-bold tracking-wider text-sage uppercase",
+								children: category
+							}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("span", {
+								className: "text-[11px] font-mono text-muted-foreground",
+								children: [items.length, " skills"]
+							})]
+						}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+							className: "flex flex-wrap gap-2",
+							children: items.map((skill) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Badge, {
+								variant: "secondary",
+								className: "rounded-lg px-3 py-1.5 text-xs font-medium tracking-normal transition-all hover:bg-sage/20 hover:text-sage hover:scale-105 cursor-default",
+								children: skill
+							}, skill))
+						})]
+					}, category))
+				})
+			]
+		})
 	});
 }
 function Contact() {
@@ -1821,26 +1925,30 @@ function Contact() {
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("section", {
 		id: "contact",
 		ref,
-		className: `mx-auto max-w-5xl px-5 py-24 transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`,
+		className: `relative mx-auto max-w-5xl px-5 py-24 transition-all duration-700 overflow-hidden ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`,
 		children: [
-			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
-				className: "text-sm font-medium tracking-wide text-sage",
-				children: "Contact"
+			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "absolute top-0 left-1/2 -translate-x-1/2 w-[500px] h-[250px] bg-gradient-to-b from-sage/10 via-indigo/5 to-transparent blur-[80px] rounded-full pointer-events-none -z-10" }),
+			/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+				className: "flex items-center gap-2",
+				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: "h-4 w-1 rounded-full bg-sage" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+					className: "text-xs font-semibold uppercase tracking-wider text-sage",
+					children: "Contact"
+				})]
 			}),
 			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h2", {
 				className: "mt-3 font-serif text-3xl tracking-tight sm:text-4xl",
-				children: "Open to real conversations"
+				children: "Open for contracts & conversations"
 			}),
 			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
-				className: "mt-4 max-w-md text-muted-foreground",
-				children: "Work, collaborations, or a direct note. No newsletter, no fluff."
+				className: "mt-4 max-w-lg text-lg text-foreground/90 font-serif italic",
+				children: "\"Let's build something. I am available for contract work, consulting, and select software engineering opportunities.\""
 			}),
 			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
 				className: "mt-10",
 				children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(ContactCards, {})
 			}),
 			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-				className: "mt-8 flex justify-center sm:justify-start",
+				className: "mt-10 flex justify-center sm:justify-start",
 				children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Dialog, {
 					open: dialogOpen,
 					onOpenChange: setDialogOpen,
@@ -1848,43 +1956,62 @@ function Contact() {
 						asChild: true,
 						children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Button, {
 							size: "lg",
-							className: "rounded-xl px-8",
+							className: "btn-sage-glow rounded-xl px-8 shadow-md",
 							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Mail, { className: "mr-2 size-4" }), "Send a direct note"]
 						})
-					}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(DialogContent, { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)(DialogHeader, { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(DialogTitle, { children: "Send a note" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(DialogDescription, { children: "Opens your mail app to nagulagamchanakya2211@gmail.com." })] }), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("form", {
-						className: "grid gap-4",
-						onSubmit: handleNoteSubmit,
-						children: [
-							/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-								className: "grid gap-2",
-								children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Label, {
-									htmlFor: "subject",
-									children: "Subject"
-								}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Input, {
-									id: "subject",
-									name: "subject",
-									placeholder: "Hello Chanakya...",
-									required: true
-								})]
+					}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(DialogContent, {
+						className: "rounded-2xl border-border bg-card",
+						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)(DialogHeader, { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(DialogTitle, {
+							className: "font-serif text-xl",
+							children: "Send a direct message"
+						}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(DialogDescription, { children: [
+							"Opens your mail client directly to ",
+							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("strong", {
+								className: "text-foreground",
+								children: "nagulagamchanakya2211@gmail.com"
 							}),
-							/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-								className: "grid gap-2",
-								children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Label, {
-									htmlFor: "body",
-									children: "Message"
-								}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Textarea, {
-									id: "body",
-									name: "body",
-									placeholder: "What is this about?",
-									required: true
-								})]
-							}),
-							/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Button, {
-								type: "submit",
-								children: "Open mail client"
-							})
-						]
-					})] })]
+							"."
+						] })] }), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("form", {
+							className: "grid gap-4 mt-2",
+							onSubmit: handleNoteSubmit,
+							children: [
+								/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+									className: "grid gap-2",
+									children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Label, {
+										htmlFor: "subject",
+										className: "text-xs",
+										children: "Subject"
+									}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Input, {
+										id: "subject",
+										name: "subject",
+										placeholder: "Project / Contract Inquiry...",
+										required: true,
+										className: "rounded-xl bg-secondary/50"
+									})]
+								}),
+								/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+									className: "grid gap-2",
+									children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Label, {
+										htmlFor: "body",
+										className: "text-xs",
+										children: "Message"
+									}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Textarea, {
+										id: "body",
+										name: "body",
+										placeholder: "What are the details of the project or opportunity?",
+										required: true,
+										rows: 4,
+										className: "rounded-xl bg-secondary/50"
+									})]
+								}),
+								/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Button, {
+									type: "submit",
+									className: "rounded-xl mt-2 btn-sage-glow",
+									children: "Open mail client"
+								})
+							]
+						})]
+					})]
 				})
 			})
 		]
