@@ -5,7 +5,9 @@ import { getPortfolioData } from "@/data/store";
 function buildDynamicSystemPrompt(): string {
   const data = getPortfolioData();
 
-  const email = data.resumeOverride?.email || "nagulagamchanakya2211@gmail.com";
+  const email = data.resumeOverride?.email || getEnvVar("PUBLIC_EMAIL", "nagulagamchanakya2211@gmail.com");
+  const githubUrl = getEnvVar("PUBLIC_GITHUB_URL", "https://github.com/Chanakya2006gt");
+  const linkedinUrl = getEnvVar("PUBLIC_LINKEDIN_URL", "https://www.linkedin.com/in/nagulagam-chanakya-b93514315");
   const summary = data.resumeOverride?.summary || "Computer and Information Science student with hands-on experience building and shipping a full-stack, security-conscious SaaS product.";
   const education = data.resumeOverride?.education || "SR University — B.Tech CIS (Expected 2028)";
   const status = data.availabilityStatus || "Open for collaborations & full-time roles";
@@ -30,8 +32,8 @@ You are the AI Customer Care & Support Companion for Nagulagam Chanakya's portfo
 NAGULAGAM CHANAKYA - RESUME & PROFESSIONAL PROFILE:
 Location: Warangal, Telangana, India
 Email: ${email}
-GitHub: https://github.com/Chanakya2006gt
-LinkedIn: https://www.linkedin.com/in/nagulagam-chanakya-b93514315
+GitHub: ${githubUrl}
+LinkedIn: ${linkedinUrl}
 Current Availability Status: ${status}
 
 SUMMARY:
@@ -63,7 +65,7 @@ GUIDELINES FOR RESPONSES:
 function getFallbackReply(messages: any[]): string {
   const data = getPortfolioData();
   const lastUserMsg = messages[messages.length - 1]?.content?.toLowerCase() || "";
-  const email = data.resumeOverride?.email || "nagulagamchanakya2211@gmail.com";
+  const email = data.resumeOverride?.email || getEnvVar("PUBLIC_EMAIL", "nagulagamchanakya2211@gmail.com");
 
   if (lastUserMsg.includes("resume") || lastUserMsg.includes("cv") || lastUserMsg.includes("education")) {
     return `Nagulagam Chanakya — ${data.resumeOverride?.summary || "Computer & Information Science student building full-stack products."} Education: ${data.resumeOverride?.education || "SR University (2028)"}. Contact: ${email}`;

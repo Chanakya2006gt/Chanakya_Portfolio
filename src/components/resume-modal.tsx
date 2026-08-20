@@ -14,12 +14,16 @@ interface ResumeModalProps {
   trigger?: React.ReactNode;
   open?: boolean;
   onOpenChange?: (open: boolean) => void;
+  email?: string;
+  pdfUrl?: string;
 }
 
-export function ResumeModal({ trigger, open, onOpenChange }: ResumeModalProps) {
+export function ResumeModal({ trigger, open, onOpenChange, email, pdfUrl = "/resume.pdf" }: ResumeModalProps) {
   const handlePrint = () => {
     window.print();
   };
+
+  const contactEmail = email || "nagulagamchanakya2211@gmail.com";
 
   const content = (
     <div className="max-h-[80vh] overflow-y-auto pr-2 space-y-6 text-foreground font-sans print:max-h-none print:overflow-visible">
@@ -36,16 +40,24 @@ export function ResumeModal({ trigger, open, onOpenChange }: ResumeModalProps) {
             <span className="flex items-center gap-1">
               <MapPin className="size-3.5 text-sage" /> Warangal, Telangana, India
             </span>
-            <a href="mailto:nagulagamchanakya2211@gmail.com" className="flex items-center gap-1 hover:text-sage transition-colors">
-              <Mail className="size-3.5 text-sage" /> nagulagamchanakya2211@gmail.com
+            <a href={`mailto:${contactEmail}`} className="flex items-center gap-1 hover:text-sage transition-colors">
+              <Mail className="size-3.5 text-sage" /> {contactEmail}
             </a>
           </div>
         </div>
 
-        <Button onClick={handlePrint} variant="outline" size="sm" className="self-start sm:self-auto gap-1.5 print:hidden">
-          <Printer className="size-4" />
-          Print / Save PDF
-        </Button>
+        <div className="flex flex-wrap items-center gap-2 self-start sm:self-auto print:hidden">
+          <a href={pdfUrl} target="_blank" rel="noopener noreferrer" download="Nagulagam_Chanakya_Resume.pdf">
+            <Button variant="sage" size="sm" className="gap-1.5">
+              <FileText className="size-4" />
+              Download PDF Resume
+            </Button>
+          </a>
+          <Button onClick={handlePrint} variant="outline" size="sm" className="gap-1.5">
+            <Printer className="size-4" />
+            Print / Save PDF
+          </Button>
+        </div>
       </div>
 
       {/* Summary */}
