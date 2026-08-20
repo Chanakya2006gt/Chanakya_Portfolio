@@ -93,7 +93,7 @@ export const Route = createFileRoute("/api/chat")({
           messages = body.messages || [];
 
           const apiKey = getEnvVar("OPENAI_API_KEY");
-          const model = getEnvVar("OPENAI_MODEL", "gpt-4o-mini");
+          const model = getEnvVar("OPENAI_MODEL", "gpt-5.6-terra");
           const systemPrompt = buildDynamicSystemPrompt();
 
           if (apiKey && apiKey !== "your_openai_api_key_here") {
