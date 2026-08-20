@@ -13,6 +13,7 @@ export interface DynamicData {
     phone?: string;
     email?: string;
     education?: string;
+    resumePdfUrl?: string;
     skills?: string[];
   };
 }

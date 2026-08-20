@@ -382,18 +382,34 @@ function AdminDashboardPage() {
             <Card className="p-5 border-border bg-card space-y-4">
               <h3 className="text-base font-semibold text-white">Resume Information Overrides</h3>
 
-              <div>
-                <Label className="text-xs">Primary Email</Label>
-                <Input
-                  value={data.resumeOverride?.email || "nagulagamchanakya2211@gmail.com"}
-                  onChange={(e) => {
-                    setData({
-                      ...data,
-                      resumeOverride: { ...data.resumeOverride, email: e.target.value },
-                    });
-                  }}
-                  className="mt-1 bg-secondary/50 text-xs"
-                />
+              <div className="grid gap-4 sm:grid-cols-2">
+                <div>
+                  <Label className="text-xs">Primary Email</Label>
+                  <Input
+                    value={data.resumeOverride?.email || "nagulagamchanakya2211@gmail.com"}
+                    onChange={(e) => {
+                      setData({
+                        ...data,
+                        resumeOverride: { ...data.resumeOverride, email: e.target.value },
+                      });
+                    }}
+                    className="mt-1 bg-secondary/50 text-xs"
+                  />
+                </div>
+                <div>
+                  <Label className="text-xs">Resume PDF URL / Path</Label>
+                  <Input
+                    value={data.resumeOverride?.resumePdfUrl || "/resume.pdf"}
+                    onChange={(e) => {
+                      setData({
+                        ...data,
+                        resumeOverride: { ...data.resumeOverride, resumePdfUrl: e.target.value },
+                      });
+                    }}
+                    placeholder="/resume.pdf or https://..."
+                    className="mt-1 bg-secondary/50 text-xs"
+                  />
+                </div>
               </div>
 
               <div>

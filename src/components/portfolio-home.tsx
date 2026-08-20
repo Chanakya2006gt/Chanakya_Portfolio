@@ -46,9 +46,11 @@ interface HeroProps {
   tagline?: string;
   availabilityStatus?: string;
   liveCount?: number;
+  email?: string;
+  pdfUrl?: string;
 }
 
-function Hero({ tagline, availabilityStatus, liveCount }: HeroProps) {
+function Hero({ tagline, availabilityStatus, liveCount, email, pdfUrl }: HeroProps) {
   return (
     <section className="relative mx-auto flex min-h-[90vh] max-w-5xl flex-col justify-center px-5 py-20 overflow-hidden">
       <ParticleField />
@@ -75,6 +77,8 @@ function Hero({ tagline, availabilityStatus, liveCount }: HeroProps) {
               </a>
             </Button>
             <ResumeModal
+              email={email}
+              pdfUrl={pdfUrl}
               trigger={
                 <Button size="lg" variant="sage">
                   <FileText className="mr-1.5 size-4" />
@@ -105,7 +109,12 @@ function Hero({ tagline, availabilityStatus, liveCount }: HeroProps) {
   );
 }
 
-function About() {
+interface AboutProps {
+  email?: string;
+  pdfUrl?: string;
+}
+
+function About({ email, pdfUrl }: AboutProps) {
   const { ref, isVisible } = useScrollAnimation();
 
   return (
@@ -135,6 +144,8 @@ function About() {
 
           <div className="pt-2">
             <ResumeModal
+              email={email}
+              pdfUrl={pdfUrl}
               trigger={
                 <Button variant="outline" className="gap-2 border-sage/40 hover:border-sage text-sage hover:text-sage">
                   <FileText className="size-4" />
@@ -431,9 +442,14 @@ export function PortfolioHome() {
           tagline={data?.heroTagline}
           availabilityStatus={data?.availabilityStatus}
           liveCount={businessesList.length}
+          email={data?.resumeOverride?.email}
+          pdfUrl={data?.resumeOverride?.resumePdfUrl}
         />
         <Separator />
-        <About />
+        <About
+          email={data?.resumeOverride?.email}
+          pdfUrl={data?.resumeOverride?.resumePdfUrl}
+        />
         <Separator />
         <Projects businessesList={businessesList} sideProjectsList={sideProjectsList} />
         <MarqueeTicker />
