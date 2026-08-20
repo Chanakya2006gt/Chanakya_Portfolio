@@ -459,12 +459,36 @@ function AdminDashboardPage() {
               </div>
 
               <div>
-                <Label className="text-xs">Blinking Availability Status Text</Label>
+                <Label className="text-xs">Blinking Availability Badge (Hero Section)</Label>
                 <Input
                   value={data.availabilityStatus}
                   onChange={(e) => setData({ ...data, availabilityStatus: e.target.value })}
+                  placeholder="e.g. Open for contracts & software engineering roles"
                   className="mt-1 bg-secondary/50 text-xs"
                 />
+              </div>
+
+              <div className="grid gap-4 sm:grid-cols-2 pt-2 border-t border-border/60">
+                <div>
+                  <Label className="text-xs font-semibold text-white">1. Work / Contract Availability (When someone wants to hire YOU)</Label>
+                  <p className="text-[11px] text-muted-foreground mb-1">What you tell clients/recruiters wanting to hire you.</p>
+                  <Input
+                    value={data.workAvailability || "Open for contract work, consulting & engineering roles"}
+                    onChange={(e) => setData({ ...data, workAvailability: e.target.value })}
+                    placeholder="e.g. Open for contract work & full-time roles"
+                    className="mt-1 bg-secondary/50 text-xs"
+                  />
+                </div>
+                <div>
+                  <Label className="text-xs font-semibold text-white">2. Team Hiring Status (Are YOU hiring anyone?)</Label>
+                  <p className="text-[11px] text-muted-foreground mb-1">What you tell candidates asking if you/Trelio are hiring.</p>
+                  <Input
+                    value={data.hiringStatus || "Not currently hiring team members"}
+                    onChange={(e) => setData({ ...data, hiringStatus: e.target.value })}
+                    placeholder="e.g. Not currently hiring team members"
+                    className="mt-1 bg-secondary/50 text-xs"
+                  />
+                </div>
               </div>
             </Card>
           </TabsContent>

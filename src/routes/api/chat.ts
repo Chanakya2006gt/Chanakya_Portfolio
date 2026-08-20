@@ -10,7 +10,8 @@ function buildDynamicSystemPrompt(): string {
   const linkedinUrl = getEnvVar("PUBLIC_LINKEDIN_URL", "https://www.linkedin.com/in/nagulagam-chanakya-b93514315");
   const summary = data.resumeOverride?.summary || "Hands-on experience building and shipping full-stack, security-conscious SaaS products with multi-tenant architecture and secure payment workflows.";
   const education = data.resumeOverride?.education || "SR University — B.Tech in CSE (Expected 2028)";
-  const status = data.availabilityStatus || "Open for collaborations & full-time roles";
+  const workAvailability = data.workAvailability || data.availabilityStatus || "Open for contract work, consulting & software engineering roles";
+  const hiringStatus = data.hiringStatus || "Not currently hiring team members (Chanakya is open to being hired for contracts/work)";
 
   const businessList = data.businesses
     .map(
@@ -35,7 +36,8 @@ Your job is to speak from a crisp, business-oriented perspective for recruiters,
 * **Name**: Nagulagam Chanakya
 * **Role**: Full-Stack Developer & SaaS Founder (Trelio)
 * **Education**: ${education}, Warangal, Telangana, India
-* **Current Status**: ${status}
+* **Work / Contract Availability (When someone wants to hire Chanakya)**: ${workAvailability}
+* **Team Hiring Status (Is Chanakya hiring anyone for his team?)**: ${hiringStatus}
 * **Email**: ${email}
 * **LinkedIn**: ${linkedinUrl}
 * **GitHub**: ${githubUrl}
@@ -59,17 +61,20 @@ ${sideProjectList}
 --------------------------------------------------------------------------------
 # CORE COMMUNICATION RULES (CRITICAL):
 
-1. **NO WALL-OF-TEXT DUMPS**:
+1. **DISTINGUISH CLEARLY BETWEEN TWO DIFFERENT HIRING CONCEPTS**:
+   * **If someone asks if they can hire Chanakya for work/contracts/roles**: Answer that Chanakya is **${workAvailability}** and provide contact links ([${email}](mailto:${email}) / [LinkedIn](${linkedinUrl})).
+   * **If someone asks if Chanakya or Trelio is hiring candidates/interns**: Answer that Chanakya is **${hiringStatus}**.
+
+2. **NO WALL-OF-TEXT DUMPS**:
    * Never dump all resume data at once.
    * Format answers using concise, bullet points (2 to 4 bullet points max) that directly address the specific question.
    * Write in clean, plain English that is easy for recruiters and hiring managers to scan in 5 seconds.
 
-2. **THINK FROM THE VISITOR'S PERSPECTIVE**:
+3. **THINK FROM THE VISITOR'S PERSPECTIVE**:
    * If asking about skills $\rightarrow$ Highlight only the relevant tech stack cleanly.
    * If asking about Trelio $\rightarrow$ Explain the core business problem (Authorization-Before-Execution: clients pay and approve stages before work proceeds) in 2 simple bullets.
-   * If asking about hiring or availability $\rightarrow$ Confirm his status (${status}) and give the contact links directly.
 
-3. **HANDLING OUT-OF-THE-BOX OR AMBIGUOUS QUESTIONS**:
+4. **HANDLING OUT-OF-THE-BOX OR AMBIGUOUS QUESTIONS**:
    * Derive insights from the available knowledge base whenever possible.
    * **If the question is unclear**: Give a brief, helpful answer based on what you understood, and politely ask for clarification.
    * **If the information is not in your knowledge base**: Be transparent. Say:
@@ -78,7 +83,7 @@ ${sideProjectList}
      * Email: [${email}](mailto:${email})
      * LinkedIn: [${linkedinUrl}](${linkedinUrl})
 
-4. **PRIVACY**:
+5. **PRIVACY**:
    * Never mention or guess phone numbers. Only share email (${email}), LinkedIn, and GitHub.
 `;
 }
@@ -88,7 +93,8 @@ function getFallbackReply(messages: any[]): string {
   const lastUserMsg = messages[messages.length - 1]?.content?.toLowerCase() || "";
   const email = data.resumeOverride?.email || getEnvVar("PUBLIC_EMAIL", "nagulagamchanakya2211@gmail.com");
   const linkedinUrl = getEnvVar("PUBLIC_LINKEDIN_URL", "https://www.linkedin.com/in/nagulagam-chanakya-b93514315");
-  const status = data.availabilityStatus || "Open for collaborations & full-time roles";
+  const workAvailability = data.workAvailability || data.availabilityStatus || "Open for contract work, consulting & software engineering roles";
+  const hiringStatus = data.hiringStatus || "Not currently hiring team members";
 
   if (lastUserMsg.includes("resume") || lastUserMsg.includes("cv") || lastUserMsg.includes("education") || lastUserMsg.includes("qualification")) {
     return `Here is a quick summary of Chanakya's background:
@@ -96,7 +102,7 @@ function getFallbackReply(messages: any[]): string {
 * **Education**: ${data.resumeOverride?.education || "SR University — B.Tech in CSE (Expected 2028)"}
 * **Specialization**: Full-Stack Development & Applied Software Security (React, Node.js, PostgreSQL)
 * **Flagship Work**: Founder & Lead of Trelio SaaS (Authorization-Before-Execution system)
-* **Status**: ${status}
+* **Availability**: ${workAvailability}
 
 For more details, check out the **Resume** button or contact him at [${email}](mailto:${email}) / [LinkedIn](${linkedinUrl}).`;
   }
@@ -118,19 +124,29 @@ For more details, check out the **Resume** button or contact him at [${email}](m
 * **Security & Infrastructure**: AES-256-GCM, HMAC webhooks, Clerk Auth, Razorpay`;
   }
 
-  if (lastUserMsg.includes("hire") || lastUserMsg.includes("job") || lastUserMsg.includes("role") || lastUserMsg.includes("work") || lastUserMsg.includes("contact") || lastUserMsg.includes("email")) {
-    return `Chanakya is currently **${status}**!
+  // Check if visitor is asking about hiring candidates vs hiring Chanakya
+  if (lastUserMsg.includes("are you hiring") || lastUserMsg.includes("is trelio hiring") || lastUserMsg.includes("open positions") || lastUserMsg.includes("job openings") || lastUserMsg.includes("internship")) {
+    return `Regarding team openings:
+
+* **Status**: ${hiringStatus}
+* **Note**: Chanakya is personally ${workAvailability}.
+
+If you want to reach out or discuss collaborations, contact him at [${email}](mailto:${email}) / [LinkedIn](${linkedinUrl}).`;
+  }
+
+  if (lastUserMsg.includes("hire") || lastUserMsg.includes("job") || lastUserMsg.includes("role") || lastUserMsg.includes("work") || lastUserMsg.includes("contract") || lastUserMsg.includes("contact") || lastUserMsg.includes("email")) {
+    return `Chanakya is currently **${workAvailability}**!
 
 * **Email**: [${email}](mailto:${email})
 * **LinkedIn**: [${linkedinUrl}](${linkedinUrl})
 * **GitHub**: [github.com/Chanakya2006gt](https://github.com/Chanakya2006gt)
 
-Feel free to reach out directly to discuss opportunities!`;
+Feel free to reach out directly to discuss contracts or opportunities!`;
   }
 
   return `Here is what I can share from Chanakya's profile:
 * **Background**: Full-Stack Builder & Founder of Trelio SaaS
-* **Status**: ${status}
+* **Availability**: ${workAvailability}
 
 If you are looking for specific details not covered here, feel free to connect with Chanakya directly:
 * **Email**: [${email}](mailto:${email})

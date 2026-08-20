@@ -7,6 +7,8 @@ export interface DynamicData {
   sideProjects: Project[];
   skills: Record<string, string[]>;
   availabilityStatus: string;
+  workAvailability?: string; // e.g. "Available for contract / freelance / full-time engineering work"
+  hiringStatus?: string;     // e.g. "Not hiring team members at this moment"
   heroTagline: string;
   resumeOverride?: {
     summary?: string;
@@ -35,7 +37,9 @@ export function getPortfolioData(): DynamicData {
     businesses: defaultBusinesses,
     sideProjects: defaultSideProjects,
     skills: defaultSkills,
-    availabilityStatus: "Open for collaborations & full-time roles",
+    availabilityStatus: "Open for contracts & software engineering roles",
+    workAvailability: "Open for contract work, consulting & engineering roles",
+    hiringStatus: "Not hiring for any roles at this time (Chanakya is open to being hired for contracts/work)",
     heroTagline: "I ship products under real constraints — not demos. Trelio is the serious work. Everything else stays in experiments.",
   };
 }
