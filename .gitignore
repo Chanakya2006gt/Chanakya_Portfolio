@@ -16,3 +16,4 @@ dist/
 # System and IDE
 .DS_Store
 *.log
+*.mp4
