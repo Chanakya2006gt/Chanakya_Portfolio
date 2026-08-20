@@ -16,14 +16,30 @@ interface ResumeModalProps {
   onOpenChange?: (open: boolean) => void;
   email?: string;
   pdfUrl?: string;
+  summary?: string;
+  education?: string;
+  skillsList?: Record<string, string[]>;
 }
 
-export function ResumeModal({ trigger, open, onOpenChange, email, pdfUrl = "/resume.pdf" }: ResumeModalProps) {
+export function ResumeModal({
+  trigger,
+  open,
+  onOpenChange,
+  email,
+  pdfUrl = "/resume.pdf",
+  summary,
+  education,
+  skillsList,
+}: ResumeModalProps) {
   const handlePrint = () => {
     window.print();
   };
 
   const contactEmail = email || "nagulagamchanakya2211@gmail.com";
+  const execSummary =
+    summary ||
+    "Computer and Information Science student with hands-on experience building and shipping a full-stack, security-conscious SaaS product. Comfortable owning architecture, security, and product decisions across the full development lifecycle.";
+  const eduText = education || "SR University — B.Tech CIS (Expected 2028)";
 
   const content = (
     <div className="max-h-[80vh] overflow-y-auto pr-2 space-y-6 text-foreground font-sans print:max-h-none print:overflow-visible">
@@ -66,7 +82,7 @@ export function ResumeModal({ trigger, open, onOpenChange, email, pdfUrl = "/res
           <FileText className="size-4" /> Executive Summary
         </h3>
         <p className="text-sm text-muted-foreground leading-relaxed">
-          Computer and Information Science student with hands-on experience building and shipping a full-stack, security-conscious SaaS product. Comfortable owning architecture, security, and product decisions across the full development lifecycle, including directing AI-assisted engineering workflows to move fast without cutting corners on correctness.
+          {execSummary}
         </p>
       </section>
 
@@ -83,10 +99,7 @@ export function ResumeModal({ trigger, open, onOpenChange, email, pdfUrl = "/res
             <span className="text-xs text-muted-foreground">Warangal, Telangana</span>
           </div>
           <p className="text-xs font-medium text-sage mt-0.5">
-            Bachelor of Technology (B.Tech), Computer and Information Science
-          </p>
-          <p className="text-xs text-muted-foreground mt-1">
-            Expected Graduation: <span className="font-semibold text-foreground">2028</span>
+            {eduText}
           </p>
           <div className="mt-3">
             <p className="text-[11px] font-semibold text-muted-foreground uppercase tracking-wider">Relevant Coursework:</p>
@@ -105,38 +118,53 @@ export function ResumeModal({ trigger, open, onOpenChange, email, pdfUrl = "/res
           <Code2 className="size-4" /> Technical Skills
         </h3>
         <div className="grid gap-3 sm:grid-cols-2">
-          <div className="rounded-lg border border-border/60 bg-secondary/20 p-3">
-            <span className="text-xs font-semibold text-foreground block mb-1">Languages & Core</span>
-            <div className="flex flex-wrap gap-1.5">
-              {["JavaScript", "Java", "SQL", "TypeScript"].map((s) => (
-                <Badge key={s} variant="outline" className="text-[11px]">{s}</Badge>
-              ))}
-            </div>
-          </div>
-          <div className="rounded-lg border border-border/60 bg-secondary/20 p-3">
-            <span className="text-xs font-semibold text-foreground block mb-1">Frontend Stack</span>
-            <div className="flex flex-wrap gap-1.5">
-              {["React", "Tailwind CSS", "React Query", "Vite", "shadcn/ui"].map((s) => (
-                <Badge key={s} variant="outline" className="text-[11px]">{s}</Badge>
-              ))}
-            </div>
-          </div>
-          <div className="rounded-lg border border-border/60 bg-secondary/20 p-3">
-            <span className="text-xs font-semibold text-foreground block mb-1">Backend & Databases</span>
-            <div className="flex flex-wrap gap-1.5">
-              {["Node.js", "Express", "PostgreSQL", "Drizzle ORM", "Redis"].map((s) => (
-                <Badge key={s} variant="outline" className="text-[11px]">{s}</Badge>
-              ))}
-            </div>
-          </div>
-          <div className="rounded-lg border border-border/60 bg-secondary/20 p-3">
-            <span className="text-xs font-semibold text-foreground block mb-1">Security & Infrastructure</span>
-            <div className="flex flex-wrap gap-1.5">
-              {["REST APIs", "Razorpay", "AES-256-GCM", "HMAC Webhooks", "Clerk Auth"].map((s) => (
-                <Badge key={s} variant="outline" className="text-[11px]">{s}</Badge>
-              ))}
-            </div>
-          </div>
+          {skillsList ? (
+            Object.entries(skillsList).map(([cat, items]) => (
+              <div key={cat} className="rounded-lg border border-border/60 bg-secondary/20 p-3">
+                <span className="text-xs font-semibold text-foreground block mb-1 uppercase tracking-wider text-[11px]">{cat}</span>
+                <div className="flex flex-wrap gap-1.5">
+                  {items.map((s) => (
+                    <Badge key={s} variant="outline" className="text-[11px]">{s}</Badge>
+                  ))}
+                </div>
+              </div>
+            ))
+          ) : (
+            <>
+              <div className="rounded-lg border border-border/60 bg-secondary/20 p-3">
+                <span className="text-xs font-semibold text-foreground block mb-1">Languages & Core</span>
+                <div className="flex flex-wrap gap-1.5">
+                  {["JavaScript", "Java", "SQL", "TypeScript"].map((s) => (
+                    <Badge key={s} variant="outline" className="text-[11px]">{s}</Badge>
+                  ))}
+                </div>
+              </div>
+              <div className="rounded-lg border border-border/60 bg-secondary/20 p-3">
+                <span className="text-xs font-semibold text-foreground block mb-1">Frontend Stack</span>
+                <div className="flex flex-wrap gap-1.5">
+                  {["React", "Tailwind CSS", "React Query", "Vite", "shadcn/ui"].map((s) => (
+                    <Badge key={s} variant="outline" className="text-[11px]">{s}</Badge>
+                  ))}
+                </div>
+              </div>
+              <div className="rounded-lg border border-border/60 bg-secondary/20 p-3">
+                <span className="text-xs font-semibold text-foreground block mb-1">Backend & Databases</span>
+                <div className="flex flex-wrap gap-1.5">
+                  {["Node.js", "Express", "PostgreSQL", "Drizzle ORM", "Redis"].map((s) => (
+                    <Badge key={s} variant="outline" className="text-[11px]">{s}</Badge>
+                  ))}
+                </div>
+              </div>
+              <div className="rounded-lg border border-border/60 bg-secondary/20 p-3">
+                <span className="text-xs font-semibold text-foreground block mb-1">Security & Infrastructure</span>
+                <div className="flex flex-wrap gap-1.5">
+                  {["REST APIs", "Razorpay", "AES-256-GCM", "HMAC Webhooks", "Clerk Auth"].map((s) => (
+                    <Badge key={s} variant="outline" className="text-[11px]">{s}</Badge>
+                  ))}
+                </div>
+              </div>
+            </>
+          )}
         </div>
       </section>
 

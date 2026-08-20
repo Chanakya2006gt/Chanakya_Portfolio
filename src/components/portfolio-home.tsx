@@ -48,9 +48,12 @@ interface HeroProps {
   liveCount?: number;
   email?: string;
   pdfUrl?: string;
+  summary?: string;
+  education?: string;
+  skillsList?: Record<string, string[]>;
 }
 
-function Hero({ tagline, availabilityStatus, liveCount, email, pdfUrl }: HeroProps) {
+function Hero({ tagline, availabilityStatus, liveCount, email, pdfUrl, summary, education, skillsList }: HeroProps) {
   return (
     <section className="relative mx-auto flex min-h-[90vh] max-w-5xl flex-col justify-center px-5 py-20 overflow-hidden">
       <ParticleField />
@@ -79,6 +82,9 @@ function Hero({ tagline, availabilityStatus, liveCount, email, pdfUrl }: HeroPro
             <ResumeModal
               email={email}
               pdfUrl={pdfUrl}
+              summary={summary}
+              education={education}
+              skillsList={skillsList}
               trigger={
                 <Button size="lg" variant="sage">
                   <FileText className="mr-1.5 size-4" />
@@ -112,9 +118,12 @@ function Hero({ tagline, availabilityStatus, liveCount, email, pdfUrl }: HeroPro
 interface AboutProps {
   email?: string;
   pdfUrl?: string;
+  summary?: string;
+  education?: string;
+  skillsList?: Record<string, string[]>;
 }
 
-function About({ email, pdfUrl }: AboutProps) {
+function About({ email, pdfUrl, summary, education, skillsList }: AboutProps) {
   const { ref, isVisible } = useScrollAnimation();
 
   return (
@@ -146,6 +155,9 @@ function About({ email, pdfUrl }: AboutProps) {
             <ResumeModal
               email={email}
               pdfUrl={pdfUrl}
+              summary={summary}
+              education={education}
+              skillsList={skillsList}
               trigger={
                 <Button variant="outline" className="gap-2 border-sage/40 hover:border-sage text-sage hover:text-sage">
                   <FileText className="size-4" />
@@ -444,11 +456,17 @@ export function PortfolioHome() {
           liveCount={businessesList.length}
           email={data?.resumeOverride?.email}
           pdfUrl={data?.resumeOverride?.resumePdfUrl}
+          summary={data?.resumeOverride?.summary}
+          education={data?.resumeOverride?.education}
+          skillsList={skillsList}
         />
         <Separator />
         <About
           email={data?.resumeOverride?.email}
           pdfUrl={data?.resumeOverride?.resumePdfUrl}
+          summary={data?.resumeOverride?.summary}
+          education={data?.resumeOverride?.education}
+          skillsList={skillsList}
         />
         <Separator />
         <Projects businessesList={businessesList} sideProjectsList={sideProjectsList} />
