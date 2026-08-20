@@ -22,6 +22,89 @@ interface CompanionChatProps {
   onClose: () => void;
 }
 
+function ChatFormattedText({ content }: { content: string }) {
+  // Split into lines to render clean paragraph blocks & bullet lists
+  const lines = content.split("\n");
+
+  return (
+    <div className="space-y-1.5">
+      {lines.map((line, idx) => {
+        const trimmed = line.trim();
+        if (!trimmed) {
+          return <div key={idx} className="h-1" />;
+        }
+
+        // Bullet point formatting (* or -)
+        if (trimmed.startsWith("* ") || trimmed.startsWith("- ")) {
+          const bulletText = trimmed.slice(2);
+          return (
+            <div key={idx} className="flex items-start gap-2 pl-1">
+              <span className="text-sage mt-0.5">•</span>
+              <span className="flex-1">{renderInlineMarkdown(bulletText)}</span>
+            </div>
+          );
+        }
+
+        return <p key={idx}>{renderInlineMarkdown(line)}</p>;
+      })}
+    </div>
+  );
+}
+
+function renderInlineMarkdown(text: string): React.ReactNode[] {
+  // Regex to parse **bold**, [link](url), and *italic*
+  const parts: React.ReactNode[] = [];
+  const regex = /(\*\*.*?\*\*|\[.*?\]\(.*?\)|\*.*?\*)/g;
+  let lastIndex = 0;
+  let match;
+
+  while ((match = regex.exec(text)) !== null) {
+    if (match.index > lastIndex) {
+      parts.push(text.substring(lastIndex, match.index));
+    }
+
+    const token = match[0];
+    if (token.startsWith("**") && token.endsWith("**")) {
+      parts.push(
+        <strong key={match.index} className="font-semibold text-foreground">
+          {token.slice(2, -2)}
+        </strong>
+      );
+    } else if (token.startsWith("[") && token.includes("](")) {
+      const linkMatch = token.match(/\[(.*?)\]\((.*?)\)/);
+      if (linkMatch) {
+        parts.push(
+          <a
+            key={match.index}
+            href={linkMatch[2]}
+            target={linkMatch[2].startsWith("http") ? "_blank" : undefined}
+            rel="noopener noreferrer"
+            className="text-sage font-medium underline underline-offset-2 hover:text-sage/80 transition-colors"
+          >
+            {linkMatch[1]}
+          </a>
+        );
+      } else {
+        parts.push(token);
+      }
+    } else if (token.startsWith("*") && token.endsWith("*")) {
+      parts.push(
+        <em key={match.index} className="italic text-muted-foreground">
+          {token.slice(1, -1)}
+        </em>
+      );
+    }
+
+    lastIndex = regex.lastIndex;
+  }
+
+  if (lastIndex < text.length) {
+    parts.push(text.substring(lastIndex));
+  }
+
+  return parts.length > 0 ? parts : [text];
+}
+
 export function CompanionChat({ isOpen, onClose }: CompanionChatProps) {
   const [messages, setMessages] = useState<Message[]>([
     {
@@ -159,13 +242,13 @@ export function CompanionChat({ isOpen, onClose }: CompanionChatProps) {
               </div>
             )}
             <div
-              className={`max-w-[80%] rounded-2xl px-3.5 py-2.5 text-xs leading-relaxed ${
+              className={`max-w-[85%] rounded-2xl px-3.5 py-2.5 text-xs leading-relaxed whitespace-pre-wrap ${
                 m.role === "user"
                   ? "bg-sage text-sage-foreground font-medium rounded-tr-none"
-                  : "bg-secondary/90 border border-border text-foreground rounded-tl-none"
+                  : "bg-secondary/90 border border-border text-foreground rounded-tl-none space-y-1.5"
               }`}
             >
-              {m.content}
+              <ChatFormattedText content={m.content} />
             </div>
           </div>
         ))}
