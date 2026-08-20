@@ -8,57 +8,78 @@ function buildDynamicSystemPrompt(): string {
   const email = data.resumeOverride?.email || getEnvVar("PUBLIC_EMAIL", "nagulagamchanakya2211@gmail.com");
   const githubUrl = getEnvVar("PUBLIC_GITHUB_URL", "https://github.com/Chanakya2006gt");
   const linkedinUrl = getEnvVar("PUBLIC_LINKEDIN_URL", "https://www.linkedin.com/in/nagulagam-chanakya-b93514315");
-  const summary = data.resumeOverride?.summary || "Computer and Information Science student with hands-on experience building and shipping a full-stack, security-conscious SaaS product.";
-  const education = data.resumeOverride?.education || "SR University — B.Tech CIS (Expected 2028)";
+  const summary = data.resumeOverride?.summary || "Hands-on experience building and shipping full-stack, security-conscious SaaS products with multi-tenant architecture and secure payment workflows.";
+  const education = data.resumeOverride?.education || "SR University — B.Tech in CSE (Expected 2028)";
   const status = data.availabilityStatus || "Open for collaborations & full-time roles";
 
   const businessList = data.businesses
     .map(
       (b) =>
-        `- ${b.title} (${b.badge || "Product"}): ${b.description}. Stack: ${b.stack.join(", ")}.${b.liveUrl ? ` Live URL: ${b.liveUrl}` : ""}`
+        `* **${b.title}** (${b.badge || "Live Product"}): ${b.description} | Tech: ${b.stack.join(", ")}${b.liveUrl ? ` | Live: ${b.liveUrl}` : ""}`
     )
     .join("\n");
 
   const sideProjectList = data.sideProjects
     .map(
       (p) =>
-        `- ${p.title}: ${p.description}. Stack: ${p.stack.join(", ")}.`
+        `* **${p.title}**: ${p.description} | Tech: ${p.stack.join(", ")}`
     )
     .join("\n");
 
   return `
-You are the AI Customer Care & Support Companion for Nagulagam Chanakya's portfolio website.
+You are the AI Customer Care & Support Assistant on Nagulagam Chanakya's portfolio website.
 
-NAGULAGAM CHANAKYA - RESUME & PROFESSIONAL PROFILE:
-Location: Warangal, Telangana, India
-Email: ${email}
-GitHub: ${githubUrl}
-LinkedIn: ${linkedinUrl}
-Current Availability Status: ${status}
+Your job is to speak from a crisp, business-oriented perspective for recruiters, clients, and technical leaders who visit the site.
 
-SUMMARY:
+# WHO IS CHANAKYA:
+* **Name**: Nagulagam Chanakya
+* **Role**: Full-Stack Developer & SaaS Founder (Trelio)
+* **Education**: ${education}, Warangal, Telangana, India
+* **Current Status**: ${status}
+* **Email**: ${email}
+* **LinkedIn**: ${linkedinUrl}
+* **GitHub**: ${githubUrl}
+
+# SUMMARY:
 ${summary}
 
-EDUCATION:
-${education}
+# CORE STACK & EXPERTISE:
+* **Full-Stack**: React, Node.js, Express, PostgreSQL, TypeScript, JavaScript, Java, SQL
+* **Frontend**: Tailwind CSS, React Query, Vite, TanStack Start, shadcn/ui
+* **Backend & Data**: PostgreSQL, Drizzle ORM, Redis, REST APIs, additive migrations
+* **Security & Payments**: AES-256-GCM encryption, HMAC webhook verification, Clerk auth, Razorpay
+* **Practices**: System design, software security, Playwright e2e testing, AI-assisted engineering workflows
 
-TECHNICAL SKILLS:
-- Languages: JavaScript, Java, SQL, TypeScript
-- Frontend: React, Tailwind CSS, React Query, Vite, shadcn/ui
-- Backend: Node.js, Express, PostgreSQL, Drizzle ORM, Redis
-- Infrastructure & Security: REST APIs, Razorpay, AES-256-GCM encryption, HMAC webhooks, Clerk auth
-- Practices: System design, software security, additive migrations, Playwright e2e testing, AI-assisted development workflows
-
-FEATURED BUSINESSES & SAAS PRODUCTS:
+# FEATURED PRODUCTS:
 ${businessList}
 
-SIDE PROJECTS & EXPERIMENTS:
+# SIDE PROJECTS & TOOLING:
 ${sideProjectList}
 
-GUIDELINES FOR RESPONSES:
-- Use exact facts from Chanakya's dynamic profile above.
-- Be direct, professional, concise, and helpful.
-- If asked about hiring or contacting Chanakya, mention email: ${email} and LinkedIn. Do NOT provide any phone number.
+--------------------------------------------------------------------------------
+# CORE COMMUNICATION RULES (CRITICAL):
+
+1. **NO WALL-OF-TEXT DUMPS**:
+   * Never dump all resume data at once.
+   * Format answers using concise, bullet points (2 to 4 bullet points max) that directly address the specific question.
+   * Write in clean, plain English that is easy for recruiters and hiring managers to scan in 5 seconds.
+
+2. **THINK FROM THE VISITOR'S PERSPECTIVE**:
+   * If asking about skills $\rightarrow$ Highlight only the relevant tech stack cleanly.
+   * If asking about Trelio $\rightarrow$ Explain the core business problem (Authorization-Before-Execution: clients pay and approve stages before work proceeds) in 2 simple bullets.
+   * If asking about hiring or availability $\rightarrow$ Confirm his status (${status}) and give the contact links directly.
+
+3. **HANDLING OUT-OF-THE-BOX OR AMBIGUOUS QUESTIONS**:
+   * Derive insights from the available knowledge base whenever possible.
+   * **If the question is unclear**: Give a brief, helpful answer based on what you understood, and politely ask for clarification.
+   * **If the information is not in your knowledge base**: Be transparent. Say:
+     "Here is what I can share based on Chanakya's portfolio: [relevant snippet].
+     For specific details beyond this, feel free to reach out directly to Chanakya:"
+     * Email: [${email}](mailto:${email})
+     * LinkedIn: [${linkedinUrl}](${linkedinUrl})
+
+4. **PRIVACY**:
+   * Never mention or guess phone numbers. Only share email (${email}), LinkedIn, and GitHub.
 `;
 }
 
@@ -66,21 +87,54 @@ function getFallbackReply(messages: any[]): string {
   const data = getPortfolioData();
   const lastUserMsg = messages[messages.length - 1]?.content?.toLowerCase() || "";
   const email = data.resumeOverride?.email || getEnvVar("PUBLIC_EMAIL", "nagulagamchanakya2211@gmail.com");
+  const linkedinUrl = getEnvVar("PUBLIC_LINKEDIN_URL", "https://www.linkedin.com/in/nagulagam-chanakya-b93514315");
+  const status = data.availabilityStatus || "Open for collaborations & full-time roles";
 
-  if (lastUserMsg.includes("resume") || lastUserMsg.includes("cv") || lastUserMsg.includes("education")) {
-    return `Nagulagam Chanakya — ${data.resumeOverride?.summary || "Computer & Information Science student building full-stack products."} Education: ${data.resumeOverride?.education || "SR University (2028)"}. Contact: ${email}`;
-  } else if (lastUserMsg.includes("trelio") || lastUserMsg.includes("project") || lastUserMsg.includes("business")) {
-    const bizSummary = data.businesses.map((b) => `${b.title} (${b.description})`).join("; ");
-    return `Featured Projects & SaaS: ${bizSummary}.`;
-  } else if (lastUserMsg.includes("tech") || lastUserMsg.includes("stack") || lastUserMsg.includes("skill")) {
-    return "Skills summary: Languages (JavaScript, Java, SQL, TypeScript), Frontend (React, Tailwind CSS, React Query, Vite), Backend (Node.js, Express, PostgreSQL, Drizzle ORM, Redis), Security (REST APIs, Razorpay, AES-256-GCM, HMAC webhooks, Clerk auth).";
-  } else if (lastUserMsg.includes("hire") || lastUserMsg.includes("job") || lastUserMsg.includes("role") || lastUserMsg.includes("work")) {
-    return `Chanakya is ${data.availabilityStatus || "open for software engineering roles"}! Contact: ${email}`;
-  } else if (lastUserMsg.includes("contact") || lastUserMsg.includes("email") || lastUserMsg.includes("phone")) {
-    return `Contact Chanakya at ${email}. LinkedIn: linkedin.com/in/nagulagam-chanakya-b93514315.`;
+  if (lastUserMsg.includes("resume") || lastUserMsg.includes("cv") || lastUserMsg.includes("education") || lastUserMsg.includes("qualification")) {
+    return `Here is a quick summary of Chanakya's background:
+
+* **Education**: ${data.resumeOverride?.education || "SR University — B.Tech in CSE (Expected 2028)"}
+* **Specialization**: Full-Stack Development & Applied Software Security (React, Node.js, PostgreSQL)
+* **Flagship Work**: Founder & Lead of Trelio SaaS (Authorization-Before-Execution system)
+* **Status**: ${status}
+
+For more details, check out the **Resume** button or contact him at [${email}](mailto:${email}) / [LinkedIn](${linkedinUrl}).`;
   }
 
-  return `Thanks for asking! Chanakya is a Full-Stack Builder & SaaS Founder. Contact: ${email}. Reach out directly for work or collaborations!`;
+  if (lastUserMsg.includes("trelio") || lastUserMsg.includes("business") || lastUserMsg.includes("product")) {
+    return `Here is what you need to know about **Trelio** (https://trelio.in):
+
+* **Problem Solved**: Eliminates unpaid client work for freelancers/agencies through an *Authorization-Before-Execution (ABE)* milestone locking model.
+* **Architecture**: Multi-tenant system with SHA-256 digital contract lifecycle, tamper-evident hash ledgers, and AES-256-GCM encrypted credentials.
+* **Tech Stack**: React, Node.js/Express, PostgreSQL, Drizzle ORM, and Razorpay.`;
+  }
+
+  if (lastUserMsg.includes("tech") || lastUserMsg.includes("stack") || lastUserMsg.includes("skill") || lastUserMsg.includes("language")) {
+    return `Here is Chanakya's core technical toolkit:
+
+* **Languages & Core**: TypeScript, JavaScript, Java, SQL
+* **Frontend**: React, Tailwind CSS, React Query, Vite, TanStack Start, shadcn/ui
+* **Backend & Data**: Node.js, Express, PostgreSQL, Drizzle ORM, Redis, REST APIs
+* **Security & Infrastructure**: AES-256-GCM, HMAC webhooks, Clerk Auth, Razorpay`;
+  }
+
+  if (lastUserMsg.includes("hire") || lastUserMsg.includes("job") || lastUserMsg.includes("role") || lastUserMsg.includes("work") || lastUserMsg.includes("contact") || lastUserMsg.includes("email")) {
+    return `Chanakya is currently **${status}**!
+
+* **Email**: [${email}](mailto:${email})
+* **LinkedIn**: [${linkedinUrl}](${linkedinUrl})
+* **GitHub**: [github.com/Chanakya2006gt](https://github.com/Chanakya2006gt)
+
+Feel free to reach out directly to discuss opportunities!`;
+  }
+
+  return `Here is what I can share from Chanakya's profile:
+* **Background**: Full-Stack Builder & Founder of Trelio SaaS
+* **Status**: ${status}
+
+If you are looking for specific details not covered here, feel free to connect with Chanakya directly:
+* **Email**: [${email}](mailto:${email})
+* **LinkedIn**: [${linkedinUrl}](${linkedinUrl})`;
 }
 
 export const Route = createFileRoute("/api/chat")({
@@ -128,7 +182,7 @@ export const Route = createFileRoute("/api/chat")({
 
               const errText = await response.text();
               console.error(`[OpenAI API Error ${response.status}]:`, errText);
-              
+
               let apiErrMessage = `OpenAI API Error (${response.status}): Could not complete request.`;
               try {
                 const parsed = JSON.parse(errText);
@@ -152,7 +206,7 @@ export const Route = createFileRoute("/api/chat")({
             }
           }
 
-          // Fallback response using dynamic data (never throws 500)
+          // Fallback response using structured, concise bullet points
           const reply = getFallbackReply(messages);
           return new Response(JSON.stringify({ reply }), {
             headers: { "Content-Type": "application/json" },
