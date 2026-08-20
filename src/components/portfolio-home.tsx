@@ -141,7 +141,7 @@ function About({ email, pdfUrl, summary, education, skillsList }: AboutProps) {
       <div className="mt-8 grid gap-8 md:grid-cols-2">
         <div className="space-y-5 text-muted-foreground leading-relaxed">
           <p>
-            Engineering student at SR University (B.Tech CIS, 2028) focused on shipping real products. I care more
+            Engineering student at {education || "SR University (B.Tech CIS, 2028)"} focused on shipping real products. I care more
             about constraints — payments, approvals, multi-tenant systems —
             than collecting certificates.
           </p>

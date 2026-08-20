@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { getEnvVar } from "@/lib/env";
+import { createSignedSessionToken, createSetCookieHeader } from "@/lib/auth-session";
 
 export const Route = createFileRoute("/api/admin/login")({
   server: {
@@ -10,25 +11,33 @@ export const Route = createFileRoute("/api/admin/login")({
           const username = String(body.username || "").trim();
           const password = String(body.password || "").trim();
 
-          const envUser = getEnvVar("ADMIN_USERNAME", "admin");
-          const envPass = getEnvVar("ADMIN_PASSWORD", "admin123");
+          const envUser = getEnvVar("ADMIN_USERNAME");
+          const envPass = getEnvVar("ADMIN_PASSWORD");
+
+          // Fail-closed: Both credentials must be explicitly configured in .env
+          if (!envUser || !envPass) {
+            console.error("[Admin Auth] ADMIN_USERNAME or ADMIN_PASSWORD is not configured in .env");
+            return new Response(
+              JSON.stringify({ error: "Server authentication not configured. Set ADMIN_USERNAME and ADMIN_PASSWORD in .env." }),
+              { status: 500, headers: { "Content-Type": "application/json" } }
+            );
+          }
 
           if (username === envUser && password === envPass) {
-            // Set session token in HTTP cookie
-            const token = Buffer.from(`${username}:${Date.now()}`).toString("base64");
+            // Generate cryptographically signed HMAC session token
+            const token = createSignedSessionToken(username);
+            const isProd = process.env.NODE_ENV === "production";
+            const setCookie = createSetCookieHeader(token, isProd);
 
             return new Response(JSON.stringify({ success: true }), {
               headers: {
                 "Content-Type": "application/json",
-                "Set-Cookie": `admin_session=${token}; Path=/; HttpOnly; SameSite=Lax; Max-Age=86400`,
+                "Set-Cookie": setCookie,
               },
             });
           }
 
-          console.warn(
-            `[Admin Auth Failed] Entered username: "${username}". Expected username from .env: "${envUser}". Check .env file values.`
-          );
-
+          // Do NOT log the expected username to prevent information disclosure
           return new Response(
             JSON.stringify({ error: "Invalid username or password" }),
             { status: 401, headers: { "Content-Type": "application/json" } }

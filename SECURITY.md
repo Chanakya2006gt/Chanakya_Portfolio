@@ -32,25 +32,26 @@ All sensitive credentials are defined in `.env` and excluded from source control
 ### Admin Portal Protection (`/admin` & `/admin/login`)
 
 1. **Authentication Endpoint (`POST /api/admin/login`)**:
-   - Compares incoming credentials against `process.env.ADMIN_USERNAME` and `process.env.ADMIN_PASSWORD`.
-   - On successful authentication, issues a secure cookie:
+   - Compares incoming credentials against server-side `ADMIN_USERNAME` and `ADMIN_PASSWORD` (fail-closed if not configured).
+   - On successful authentication, issues a cryptographically signed HMAC-SHA256 token using `ADMIN_SESSION_SECRET`:
      ```http
-     Set-Cookie: admin_session=<token>; Path=/; HttpOnly; SameSite=Lax; Max-Age=86400
+     Set-Cookie: admin_session=<base64Payload>.<hmacSignature>; Path=/; HttpOnly; SameSite=Lax; Max-Age=86400; Secure
      ```
 
 2. **HttpOnly Cookie Protection**:
    - `HttpOnly`: Prevents client-side JavaScript (`document.cookie`) from accessing the session token, neutralizing Cross-Site Scripting (XSS) session theft.
    - `SameSite=Lax`: Mitigates Cross-Site Request Forgery (CSRF) attacks.
+   - `HMAC Signature Verification`: Every protected request (`/api/admin/check`, `POST /api/admin/data`) verifies the cryptographic signature with constant-time equality checks and enforces a 24-hour expiration.
 
 3. **Protected Mutation API (`POST /api/admin/data`)**:
-   - Checks incoming requests for valid `admin_session` cookies. Unauthenticated requests receive HTTP 401 Unauthorized.
+   - Cryptographically verifies the `admin_session` cookie signature. Unauthenticated or forged requests receive HTTP 401 Unauthorized.
 
 ---
 
 ## 🤖 4. AI Chat API Security (`/api/chat`)
 
 - **Server-Side Proxy**: Chat queries are sent to `/api/chat` on the TanStack Start server. The server attaches the `OPENAI_API_KEY` and calls OpenAI's API securely.
-- **Token Capping**: Requests are capped at `max_tokens: 500` to prevent token exhaustion or denial-of-service billing spikes.
+- **Token Capping**: Requests are capped at `max_completion_tokens: 500` to prevent token exhaustion or denial-of-service billing spikes.
 - **System Prompt Guardrails**: System prompt enforces strict topic boundaries focused on Chanakya's professional background and SaaS work.
 
 ---
@@ -80,5 +81,5 @@ As showcased in Chanakya's technical work and resume, the following advanced sec
 ## 📬 6. Vulnerability Disclosure
 
 If you discover a potential security vulnerability, please report it directly to:
-- **Email**: `chanakya7674@gmail.com`
-- **Phone**: `+91 7674040571`
+- **Email**: `nagulagamchanakya2211@gmail.com`
+- **GitHub**: https://github.com/Chanakya2006gt

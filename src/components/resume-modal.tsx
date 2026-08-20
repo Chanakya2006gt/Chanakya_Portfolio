@@ -1,4 +1,4 @@
-import { FileText, Printer, ExternalLink, Mail, Phone, MapPin, Building2, GraduationCap, Code2, ShieldCheck, Award } from "lucide-react";
+import { FileText, Printer, ExternalLink, Mail, MapPin, Building2, GraduationCap, Code2, ShieldCheck, Award } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   Dialog,

@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { getPortfolioData, savePortfolioData } from "@/data/store";
+import { getAdminSessionCookie, verifySignedSessionToken } from "@/lib/auth-session";
 
 export const Route = createFileRoute("/api/admin/data")({
   server: {
@@ -11,12 +12,12 @@ export const Route = createFileRoute("/api/admin/data")({
         });
       },
       POST: async ({ request }) => {
-        // Verify admin session cookie
-        const cookieHeader = request.headers.get("cookie") || "";
-        const hasSession = cookieHeader.includes("admin_session=");
+        // Verify cryptographically signed admin session cookie
+        const sessionToken = getAdminSessionCookie(request);
+        const isAuthenticated = verifySignedSessionToken(sessionToken || undefined);
 
-        if (!hasSession) {
-          return new Response(JSON.stringify({ error: "Unauthorized" }), {
+        if (!isAuthenticated) {
+          return new Response(JSON.stringify({ error: "Unauthorized: Invalid or expired admin session" }), {
             status: 401,
             headers: { "Content-Type": "application/json" },
           });
