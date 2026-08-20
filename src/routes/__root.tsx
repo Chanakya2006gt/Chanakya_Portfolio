@@ -5,7 +5,39 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { Toaster } from "sonner";
 import appCss from "../styles.css?url";
 
-const APP_NAME = "Nagulagam Chanakya — Full-Stack Builder & Founder";
+const APP_NAME = "Nagulagam Chanakya — Full-Stack Developer & SaaS Founder";
+const APP_DESC = "Official portfolio of Nagulagam Chanakya — Full-Stack Developer & Founder of Trelio. Specializing in React, Node.js, TypeScript, PostgreSQL, and applied software security.";
+
+const JSON_LD = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Nagulagam Chanakya",
+  "url": "https://chanakya.dev",
+  "jobTitle": "Full-Stack Developer & Founder",
+  "worksFor": {
+    "@type": "Organization",
+    "name": "Trelio",
+    "url": "https://trelio.in"
+  },
+  "alumniOf": {
+    "@type": "CollegeOrUniversity",
+    "name": "SR University"
+  },
+  "sameAs": [
+    "https://github.com/Chanakya2006gt",
+    "https://www.linkedin.com/in/nagulagam-chanakya-b93514315"
+  ],
+  "knowsAbout": [
+    "React",
+    "Node.js",
+    "TypeScript",
+    "PostgreSQL",
+    "Tailwind CSS",
+    "Software Security",
+    "SaaS Architecture",
+    "Payment Systems"
+  ]
+};
 
 export const Route = createRootRoute({
   head: () => ({
@@ -14,27 +46,29 @@ export const Route = createRootRoute({
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: APP_NAME },
       { name: "theme-color", content: "#0a0a0b" },
-      {
-        name: "description",
-        content:
-          "Personal portfolio of Nagulagam Chanakya — full-stack builder and founder of Trelio.",
-      },
+      { name: "description", content: APP_DESC },
+      { name: "keywords", content: "Nagulagam Chanakya, Chanakya, Full-Stack Developer, Trelio, React, Node.js, TypeScript, PostgreSQL, Portfolio, Software Engineer, Warangal, SR University" },
+      { name: "author", content: "Nagulagam Chanakya" },
+      { name: "robots", content: "index, follow" },
+      
+      // Open Graph (LinkedIn, Discord, WhatsApp, Facebook)
       { property: "og:title", content: APP_NAME },
-      {
-        property: "og:description",
-        content:
-          "I ship products under real constraints. Founder of Trelio — authorization-before-execution SaaS.",
-      },
+      { property: "og:description", content: APP_DESC },
       { property: "og:image", content: "/og.jpg" },
       { property: "og:type", content: "website" },
+      { property: "og:site_name", content: "Nagulagam Chanakya Portfolio" },
+
+      // Twitter / X Cards
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: APP_NAME },
-      {
-        name: "twitter:description",
-        content:
-          "I ship products under real constraints. Founder of Trelio — authorization-before-execution SaaS.",
-      },
+      { name: "twitter:description", content: APP_DESC },
       { name: "twitter:image", content: "/og.jpg" },
+    ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify(JSON_LD),
+      },
     ],
     links: [
       { rel: "icon", type: "image/svg+xml", href: "/favicon.svg" },
