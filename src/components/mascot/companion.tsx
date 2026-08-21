@@ -31,10 +31,20 @@ export function Companion({ footerOnly = false }: CompanionProps) {
   useEffect(() => {
     let timer: NodeJS.Timeout;
     if (showBubble) {
-      timer = setTimeout(() => setShowBubble(false), 3000);
+      timer = setTimeout(() => setShowBubble(false), 4500);
     }
     return () => clearTimeout(timer);
   }, [showBubble]);
+
+  // Initial gentle hello on page mount so users discover the interactive AI
+  useEffect(() => {
+    const greetingTimer = setTimeout(() => {
+      setShowBubble(true);
+      triggerState("wave", 1200);
+    }, 3500);
+
+    return () => clearTimeout(greetingTimer);
+  }, []);
 
   if (footerOnly) {
     return (

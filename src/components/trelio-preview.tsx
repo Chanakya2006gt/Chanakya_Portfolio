@@ -1,6 +1,22 @@
 export function TrelioPreview() {
   return (
     <div className="relative overflow-hidden rounded-xl bg-secondary p-4 outline outline-1 -outline-offset-1 outline-white/10 hover:border-sage/30 transition-colors">
+      {/* Real Architecture / Constraints Proof Strip */}
+      <div className="mb-3 grid grid-cols-3 gap-2 border-b border-border/60 pb-3 text-center">
+        <div className="rounded-lg bg-card/60 px-2 py-1.5 border border-border/40">
+          <p className="text-[10px] font-mono text-muted-foreground uppercase">Schema</p>
+          <p className="text-xs font-semibold text-foreground">38 DB Tables</p>
+        </div>
+        <div className="rounded-lg bg-card/60 px-2 py-1.5 border border-border/40">
+          <p className="text-[10px] font-mono text-muted-foreground uppercase">Key Security</p>
+          <p className="text-xs font-semibold text-indigo">AES-256-GCM</p>
+        </div>
+        <div className="rounded-lg bg-card/60 px-2 py-1.5 border border-border/40">
+          <p className="text-[10px] font-mono text-muted-foreground uppercase">Settlement</p>
+          <p className="text-xs font-semibold text-sage">Direct UPI/Rzp</p>
+        </div>
+      </div>
+
       <div className="mb-3 flex items-center justify-between">
         <div className="flex items-center gap-2">
           <span className="relative flex size-2">
@@ -11,6 +27,7 @@ export function TrelioPreview() {
             Stage 02 · Design
           </span>
         </div>
+
         <span className="animate-pulse rounded-full bg-sage/15 px-2.5 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-sage border border-sage/30">
           Awaiting approval
         </span>

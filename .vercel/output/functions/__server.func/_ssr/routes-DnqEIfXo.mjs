@@ -4,11 +4,11 @@ import { s as require_jsx_runtime } from "../_libs/@radix-ui/react-collection+[.
 import { A as ArrowRight, C as FileText, D as Bot, E as Building2, O as Award, S as Github, T as CodeXml, a as Sun, c as Send, d as Printer, g as Mail, h as MapPin, k as ArrowUp, m as Menu, n as User, p as Moon, s as ShieldCheck, t as X, u as RefreshCw, w as ExternalLink, x as GraduationCap, y as Linkedin } from "../_libs/lucide-react.mjs";
 import { a as DialogOverlay$1, c as DialogTrigger$1, i as DialogDescription$1, n as DialogClose, o as DialogPortal$1, r as DialogContent$1, s as DialogTitle$1, t as Dialog$1 } from "../_libs/@radix-ui/react-dialog+[...].mjs";
 import { n as toast } from "../_libs/sonner.mjs";
-import { a as skills, i as sideProjects, n as businesses, o as cn, r as navLinks } from "./router-Be-K7tMr.mjs";
-import { a as CardFooter, c as Input, i as CardDescription, l as Label, n as Card, o as CardHeader, r as CardContent, s as CardTitle, t as Button } from "./card-DRpBWeY4.mjs";
-import { a as TabsTrigger, i as TabsList, n as Tabs, o as Textarea, r as TabsContent, t as Badge } from "./badge-Bv8BDCoJ.mjs";
+import { a as skills, i as sideProjects, n as businesses, o as cn, r as navLinks } from "./router-DpO96FB_.mjs";
+import { a as CardFooter, c as Input, i as CardDescription, l as Label, n as Card, o as CardHeader, r as CardContent, s as CardTitle, t as Button } from "./card-K_qeyR19.mjs";
+import { a as TabsTrigger, i as TabsList, n as Tabs, o as Textarea, r as TabsContent, t as Badge } from "./badge-Ci9LZP2a.mjs";
 import { t as Root } from "../_libs/radix-ui__react-separator.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/routes-BSbiXyyJ.js
+//#region node_modules/.nitro/vite/services/ssr/assets/routes-DnqEIfXo.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 var Separator = import_react.forwardRef(({ className, orientation = "horizontal", decorative = true, ...props }, ref) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Root, {
@@ -60,38 +60,76 @@ DialogDescription.displayName = DialogDescription$1.displayName;
 function TrelioPreview() {
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 		className: "relative overflow-hidden rounded-xl bg-secondary p-4 outline outline-1 -outline-offset-1 outline-white/10 hover:border-sage/30 transition-colors",
-		children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-			className: "mb-3 flex items-center justify-between",
-			children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-				className: "flex items-center gap-2",
-				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("span", {
-					className: "relative flex size-2",
-					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: "absolute inline-flex size-full animate-ping rounded-full bg-sage opacity-75" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: "relative inline-flex size-2 rounded-full bg-sage" })]
+		children: [
+			/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+				className: "mb-3 grid grid-cols-3 gap-2 border-b border-border/60 pb-3 text-center",
+				children: [
+					/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+						className: "rounded-lg bg-card/60 px-2 py-1.5 border border-border/40",
+						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+							className: "text-[10px] font-mono text-muted-foreground uppercase",
+							children: "Schema"
+						}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+							className: "text-xs font-semibold text-foreground",
+							children: "38 DB Tables"
+						})]
+					}),
+					/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+						className: "rounded-lg bg-card/60 px-2 py-1.5 border border-border/40",
+						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+							className: "text-[10px] font-mono text-muted-foreground uppercase",
+							children: "Key Security"
+						}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+							className: "text-xs font-semibold text-indigo",
+							children: "AES-256-GCM"
+						})]
+					}),
+					/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+						className: "rounded-lg bg-card/60 px-2 py-1.5 border border-border/40",
+						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+							className: "text-[10px] font-mono text-muted-foreground uppercase",
+							children: "Settlement"
+						}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+							className: "text-xs font-semibold text-sage",
+							children: "Direct UPI/Rzp"
+						})]
+					})
+				]
+			}),
+			/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+				className: "mb-3 flex items-center justify-between",
+				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+					className: "flex items-center gap-2",
+					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("span", {
+						className: "relative flex size-2",
+						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: "absolute inline-flex size-full animate-ping rounded-full bg-sage opacity-75" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: "relative inline-flex size-2 rounded-full bg-sage" })]
+					}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+						className: "text-xs font-medium tracking-wide text-muted-foreground",
+						children: "Stage 02 · Design"
+					})]
 				}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-					className: "text-xs font-medium tracking-wide text-muted-foreground",
-					children: "Stage 02 · Design"
+					className: "animate-pulse rounded-full bg-sage/15 px-2.5 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-sage border border-sage/30",
+					children: "Awaiting approval"
 				})]
-			}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-				className: "animate-pulse rounded-full bg-sage/15 px-2.5 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-sage border border-sage/30",
-				children: "Awaiting approval"
-			})]
-		}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-			className: "grid gap-2",
-			children: [
-				"Scope locked",
-				"Client sign-off",
-				"Payment before execution"
-			].map((row, i) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-				className: "flex items-center justify-between rounded-lg bg-card px-3.5 py-2.5 transition-all hover:translate-x-1 hover:border-sage/20 border border-transparent",
-				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-					className: "text-xs text-foreground/90",
-					children: row
-				}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-					className: i < 2 ? "text-[10px] font-medium uppercase tracking-wider text-sage" : "text-[10px] font-medium uppercase tracking-wider text-muted-foreground animate-pulse",
-					children: i < 2 ? "✓ Done" : "⏳ Hold"
-				})]
-			}, row))
-		})]
+			}),
+			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+				className: "grid gap-2",
+				children: [
+					"Scope locked",
+					"Client sign-off",
+					"Payment before execution"
+				].map((row, i) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+					className: "flex items-center justify-between rounded-lg bg-card px-3.5 py-2.5 transition-all hover:translate-x-1 hover:border-sage/20 border border-transparent",
+					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+						className: "text-xs text-foreground/90",
+						children: row
+					}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+						className: i < 2 ? "text-[10px] font-medium uppercase tracking-wider text-sage" : "text-[10px] font-medium uppercase tracking-wider text-muted-foreground animate-pulse",
+						children: i < 2 ? "✓ Done" : "⏳ Hold"
+					})]
+				}, row))
+			})
+		]
 	});
 }
 function SidePreview({ title }) {
@@ -158,12 +196,30 @@ function useActiveSection(sectionIds) {
 function ThemeToggle({ className = "", variant = "ghost", size = "icon" }) {
 	const [theme, setTheme] = (0, import_react.useState)("dark");
 	(0, import_react.useEffect)(() => {
-		const savedTheme = localStorage.getItem("theme");
-		if (savedTheme) {
-			setTheme(savedTheme);
-			if (savedTheme === "light") document.documentElement.classList.add("light");
-			else document.documentElement.classList.remove("light");
-		}
+		const isLight = document.documentElement.classList.contains("light");
+		const savedTheme = localStorage.getItem("theme") || (isLight ? "light" : "dark");
+		setTheme(savedTheme);
+		const handleThemeChange = (e) => {
+			const customEvent = e;
+			if (customEvent.detail) setTheme(customEvent.detail);
+			else {
+				const currentIsLight = document.documentElement.classList.contains("light");
+				setTheme(currentIsLight ? "light" : "dark");
+			}
+		};
+		const handleStorageChange = (e) => {
+			if (e.key === "theme" && (e.newValue === "dark" || e.newValue === "light")) {
+				setTheme(e.newValue);
+				if (e.newValue === "light") document.documentElement.classList.add("light");
+				else document.documentElement.classList.remove("light");
+			}
+		};
+		window.addEventListener("theme-change", handleThemeChange);
+		window.addEventListener("storage", handleStorageChange);
+		return () => {
+			window.removeEventListener("theme-change", handleThemeChange);
+			window.removeEventListener("storage", handleStorageChange);
+		};
 	}, []);
 	const toggleTheme = () => {
 		const nextTheme = theme === "dark" ? "light" : "dark";
@@ -171,6 +227,7 @@ function ThemeToggle({ className = "", variant = "ghost", size = "icon" }) {
 		localStorage.setItem("theme", nextTheme);
 		if (nextTheme === "light") document.documentElement.classList.add("light");
 		else document.documentElement.classList.remove("light");
+		window.dispatchEvent(new CustomEvent("theme-change", { detail: nextTheme }));
 	};
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Button, {
 		variant,
@@ -1290,9 +1347,16 @@ function Companion({ footerOnly = false }) {
 	};
 	(0, import_react.useEffect)(() => {
 		let timer;
-		if (showBubble) timer = setTimeout(() => setShowBubble(false), 3e3);
+		if (showBubble) timer = setTimeout(() => setShowBubble(false), 4500);
 		return () => clearTimeout(timer);
 	}, [showBubble]);
+	(0, import_react.useEffect)(() => {
+		const greetingTimer = setTimeout(() => {
+			setShowBubble(true);
+			triggerState("wave", 1200);
+		}, 3500);
+		return () => clearTimeout(greetingTimer);
+	}, []);
 	if (footerOnly) return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 		className: "flex flex-col items-center justify-center py-6",
 		children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
@@ -1661,6 +1725,41 @@ function About({ email, pdfUrl, summary, education, skillsList }) {
 								}),
 								" model. The problem is simple: freelancers and agencies should never work for free."
 							] }),
+							/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+								className: "grid grid-cols-2 gap-2 pt-2 sm:grid-cols-3",
+								children: [
+									/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+										className: "rounded-xl border border-border/80 bg-card/60 p-2.5",
+										children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+											className: "text-[11px] font-mono text-muted-foreground uppercase",
+											children: "Location"
+										}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+											className: "text-xs font-semibold text-foreground",
+											children: "Warangal, India"
+										})]
+									}),
+									/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+										className: "rounded-xl border border-border/80 bg-card/60 p-2.5",
+										children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+											className: "text-[11px] font-mono text-muted-foreground uppercase",
+											children: "Degree & Focus"
+										}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+											className: "text-xs font-semibold text-foreground",
+											children: "B.Tech CSE '28"
+										})]
+									}),
+									/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+										className: "col-span-2 rounded-xl border border-border/80 bg-card/60 p-2.5 sm:col-span-1",
+										children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+											className: "text-[11px] font-mono text-muted-foreground uppercase",
+											children: "Core Focus"
+										}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+											className: "text-xs font-semibold text-sage",
+											children: "SaaS & Security"
+										})]
+									})
+								]
+							}),
 							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
 								className: "pt-2",
 								children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(ResumeModal, {
@@ -1947,16 +2046,16 @@ function Contact() {
 				className: "mt-10",
 				children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(ContactCards, {})
 			}),
-			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-				className: "mt-10 flex justify-center sm:justify-start",
-				children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Dialog, {
+			/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+				className: "mt-10 flex flex-wrap items-center gap-3 justify-center sm:justify-start",
+				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Dialog, {
 					open: dialogOpen,
 					onOpenChange: setDialogOpen,
 					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(DialogTrigger, {
 						asChild: true,
 						children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Button, {
 							size: "lg",
-							className: "btn-sage-glow rounded-xl px-8 shadow-md",
+							className: "btn-sage-glow rounded-xl px-7 shadow-md",
 							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Mail, { className: "mr-2 size-4" }), "Send a direct note"]
 						})
 					}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(DialogContent, {
@@ -2004,15 +2103,36 @@ function Contact() {
 										className: "rounded-xl bg-secondary/50"
 									})]
 								}),
-								/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Button, {
-									type: "submit",
-									className: "rounded-xl mt-2 btn-sage-glow",
-									children: "Open mail client"
+								/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+									className: "flex gap-2",
+									children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Button, {
+										type: "submit",
+										className: "rounded-xl mt-2 flex-1 btn-sage-glow",
+										children: "Open mail client"
+									}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Button, {
+										type: "button",
+										variant: "outline",
+										className: "rounded-xl mt-2 border-border/80 hover:border-sage hover:text-sage",
+										onClick: () => {
+											navigator.clipboard.writeText("nagulagamchanakya2211@gmail.com");
+											toast.success("Email address copied to clipboard!");
+										},
+										children: "Copy Address"
+									})]
 								})
 							]
 						})]
 					})]
-				})
+				}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Button, {
+					size: "lg",
+					variant: "outline",
+					className: "rounded-xl border-border/80 hover:border-sage/50 hover:bg-secondary/60 transition-all",
+					onClick: () => {
+						navigator.clipboard.writeText("nagulagamchanakya2211@gmail.com");
+						toast.success("Copied nagulagamchanakya2211@gmail.com to clipboard!");
+					},
+					children: "Copy Email Address"
+				})]
 			})
 		]
 	});

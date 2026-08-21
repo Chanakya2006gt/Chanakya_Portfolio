@@ -158,6 +158,22 @@ function About({ email, pdfUrl, summary, education, skillsList }: AboutProps) {
               approval before work is executed using an <code className="rounded bg-secondary px-1.5 py-0.5 text-xs text-indigo font-mono">Authorization-Before-Execution</code> model. The problem is simple: freelancers and agencies should never work for free.
             </p>
 
+            {/* Quick-scan highlights pill strip for recruiters & visitors */}
+            <div className="grid grid-cols-2 gap-2 pt-2 sm:grid-cols-3">
+              <div className="rounded-xl border border-border/80 bg-card/60 p-2.5">
+                <p className="text-[11px] font-mono text-muted-foreground uppercase">Location</p>
+                <p className="text-xs font-semibold text-foreground">Warangal, India</p>
+              </div>
+              <div className="rounded-xl border border-border/80 bg-card/60 p-2.5">
+                <p className="text-[11px] font-mono text-muted-foreground uppercase">Degree & Focus</p>
+                <p className="text-xs font-semibold text-foreground">B.Tech CSE '28</p>
+              </div>
+              <div className="col-span-2 rounded-xl border border-border/80 bg-card/60 p-2.5 sm:col-span-1">
+                <p className="text-[11px] font-mono text-muted-foreground uppercase">Core Focus</p>
+                <p className="text-xs font-semibold text-sage">SaaS & Security</p>
+              </div>
+            </div>
+
             <div className="pt-2">
               <ResumeModal
                 email={email}
@@ -426,10 +442,10 @@ function Contact() {
         <ContactCards />
       </div>
 
-      <div className="mt-10 flex justify-center sm:justify-start">
+      <div className="mt-10 flex flex-wrap items-center gap-3 justify-center sm:justify-start">
         <Dialog open={dialogOpen} onOpenChange={setDialogOpen}>
           <DialogTrigger asChild>
-            <Button size="lg" className="btn-sage-glow rounded-xl px-8 shadow-md">
+            <Button size="lg" className="btn-sage-glow rounded-xl px-7 shadow-md">
               <Mail className="mr-2 size-4" />
               Send a direct note
             </Button>
@@ -450,10 +466,35 @@ function Contact() {
                 <Label htmlFor="body" className="text-xs">Message</Label>
                 <Textarea id="body" name="body" placeholder="What are the details of the project or opportunity?" required rows={4} className="rounded-xl bg-secondary/50" />
               </div>
-              <Button type="submit" className="rounded-xl mt-2 btn-sage-glow">Open mail client</Button>
+              <div className="flex gap-2">
+                <Button type="submit" className="rounded-xl mt-2 flex-1 btn-sage-glow">Open mail client</Button>
+                <Button
+                  type="button"
+                  variant="outline"
+                  className="rounded-xl mt-2 border-border/80 hover:border-sage hover:text-sage"
+                  onClick={() => {
+                    navigator.clipboard.writeText("nagulagamchanakya2211@gmail.com");
+                    toast.success("Email address copied to clipboard!");
+                  }}
+                >
+                  Copy Address
+                </Button>
+              </div>
             </form>
           </DialogContent>
         </Dialog>
+
+        <Button
+          size="lg"
+          variant="outline"
+          className="rounded-xl border-border/80 hover:border-sage/50 hover:bg-secondary/60 transition-all"
+          onClick={() => {
+            navigator.clipboard.writeText("nagulagamchanakya2211@gmail.com");
+            toast.success("Copied nagulagamchanakya2211@gmail.com to clipboard!");
+          }}
+        >
+          Copy Email Address
+        </Button>
       </div>
     </section>
   );
