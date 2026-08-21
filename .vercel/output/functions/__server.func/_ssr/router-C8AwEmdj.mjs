@@ -21,7 +21,7 @@ import { t as Pool } from "../_libs/pg.mjs";
 import crypto$1, { randomBytes } from "node:crypto";
 import fs from "node:fs";
 import path from "node:path";
-//#region node_modules/.nitro/vite/services/ssr/assets/router-CmV5ECDn.js
+//#region node_modules/.nitro/vite/services/ssr/assets/router-C8AwEmdj.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 function AppErrorComponent({ error }) {
@@ -301,7 +301,7 @@ var TooltipContent = import_react.forwardRef(({ className, sideOffset = 6, ...pr
 	...props
 }) }));
 TooltipContent.displayName = Content2.displayName;
-var styles_default = "/assets/styles-KETmb1iI.css";
+var styles_default = "/assets/styles-KWZzVlqG.css";
 var APP_NAME = "Nagulagam Chanakya — Full-Stack Developer & SaaS Founder";
 var APP_DESC = "Official portfolio of Nagulagam Chanakya — Full-Stack Developer & Founder of Trelio. Specializing in React, Node.js, TypeScript, PostgreSQL, and applied software security.";
 var JSON_LD = {
@@ -450,11 +450,11 @@ var Route$9 = createRootRoute({
 		] })]
 	})
 });
-var $$splitComponentImporter$2 = () => import("./routes-Ksh7wdxh.mjs");
+var $$splitComponentImporter$2 = () => import("./routes-DeoK6Y5P.mjs");
 var Route$8 = createFileRoute("/")({ component: lazyRouteComponent($$splitComponentImporter$2, "component") });
-var $$splitComponentImporter$1 = () => import("./admin-BT3Bibhp.mjs");
+var $$splitComponentImporter$1 = () => import("./admin-ChidBFQY.mjs");
 var Route$7 = createFileRoute("/admin/")({ component: lazyRouteComponent($$splitComponentImporter$1, "component") });
-var $$splitComponentImporter = () => import("./login-DFG14qp-.mjs");
+var $$splitComponentImporter = () => import("./login-9Apz45N5.mjs");
 var Route$6 = createFileRoute("/admin/login")({ component: lazyRouteComponent($$splitComponentImporter, "component") });
 function loadEnvFile() {
 	const envPath = path.join(process.cwd(), ".env");
