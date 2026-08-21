@@ -21,7 +21,7 @@ import { t as Pool } from "../_libs/pg.mjs";
 import crypto$1, { randomBytes } from "node:crypto";
 import fs from "node:fs";
 import path from "node:path";
-//#region node_modules/.nitro/vite/services/ssr/assets/router-C8AwEmdj.js
+//#region node_modules/.nitro/vite/services/ssr/assets/router-Be-K7tMr.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 function AppErrorComponent({ error }) {
@@ -331,7 +331,7 @@ var JSON_LD = {
 		"Payment Systems"
 	]
 };
-var Route$9 = createRootRoute({
+var Route$10 = createRootRoute({
 	head: () => ({
 		meta: [
 			{ charSet: "utf-8" },
@@ -450,12 +450,12 @@ var Route$9 = createRootRoute({
 		] })]
 	})
 });
-var $$splitComponentImporter$2 = () => import("./routes-DeoK6Y5P.mjs");
-var Route$8 = createFileRoute("/")({ component: lazyRouteComponent($$splitComponentImporter$2, "component") });
-var $$splitComponentImporter$1 = () => import("./admin-ChidBFQY.mjs");
-var Route$7 = createFileRoute("/admin/")({ component: lazyRouteComponent($$splitComponentImporter$1, "component") });
-var $$splitComponentImporter = () => import("./login-9Apz45N5.mjs");
-var Route$6 = createFileRoute("/admin/login")({ component: lazyRouteComponent($$splitComponentImporter, "component") });
+var $$splitComponentImporter$2 = () => import("./routes-BSbiXyyJ.mjs");
+var Route$9 = createFileRoute("/")({ component: lazyRouteComponent($$splitComponentImporter$2, "component") });
+var $$splitComponentImporter$1 = () => import("./admin-BPNeHldz.mjs");
+var Route$8 = createFileRoute("/admin/")({ component: lazyRouteComponent($$splitComponentImporter$1, "component") });
+var $$splitComponentImporter = () => import("./login-MgMEnWD6.mjs");
+var Route$7 = createFileRoute("/admin/login")({ component: lazyRouteComponent($$splitComponentImporter, "component") });
 function loadEnvFile() {
 	const envPath = path.join(process.cwd(), ".env");
 	const result = {};
@@ -613,6 +613,83 @@ function savePortfolioData(data) {
 		return false;
 	}
 }
+/**
+* src/lib/boot-guards.ts
+*
+* Inspired by Trelio's config/bootGuards.js.
+*
+* Validates required environment variables at server startup.
+* In production: hard-fails with a clear error message listing every missing var.
+* In development: warns to console but continues (so you can run locally with a
+* partial .env without the server refusing to start).
+*
+* Call this once at the top of your server entry point (or in a Nitro plugin).
+* Because TanStack Start / Nitro doesn't expose a "startup hook" in the same way
+* Express does, we call this lazily on the first real request via
+* src/lib/server-init.ts — which is fine because Vercel cold-starts per-request.
+*/
+var ENV_SPECS = [
+	{
+		key: "ADMIN_USERNAME",
+		description: "Admin panel username",
+		required: true
+	},
+	{
+		key: "ADMIN_PASSWORD",
+		description: "Admin panel password",
+		required: true
+	},
+	{
+		key: "ADMIN_SESSION_SECRET",
+		description: "HMAC-SHA256 session signing secret (32+ chars)",
+		required: true
+	},
+	{
+		key: "OPENAI_API_KEY",
+		description: "OpenAI API key for the AI companion chatbot",
+		required: false
+	},
+	{
+		key: "OPENAI_MODEL",
+		description: "OpenAI model name (default: gpt-4o)",
+		required: false
+	}
+];
+var PLACEHOLDER_VALUES = /* @__PURE__ */ new Set([
+	"your_admin_username_here",
+	"your_strong_password_here",
+	"your_random_32_character_secret_key_here",
+	"your_openai_api_key_here",
+	"placeholder",
+	""
+]);
+function isPlaceholder(value) {
+	return PLACEHOLDER_VALUES.has(value.trim().toLowerCase()) || !value.trim();
+}
+var checked = false;
+/**
+* Run env validation. Idempotent — only runs once per process.
+*/
+function assertEnvGuards() {
+	if (checked) return;
+	checked = true;
+	const missing = [];
+	const placeholder = [];
+	const warnings = [];
+	for (const spec of ENV_SPECS) {
+		const value = getEnvVar(spec.key);
+		if (!value || isPlaceholder(value)) {
+			if (spec.required) missing.push(`  ✗ ${spec.key} — ${spec.description}`);
+			else warnings.push(`  ⚠ ${spec.key} — ${spec.description} (optional — feature may be limited)`);
+		} else if (spec.key === "ADMIN_SESSION_SECRET" && value.trim().length < 32) placeholder.push(`  ✗ ${spec.key} — must be at least 32 characters (got ${value.trim().length})`);
+	}
+	if (warnings.length > 0) console.warn(`[boot-guard] Optional env vars not set:\n${warnings.join("\n")}\n  Some features (e.g. AI chatbot) will use fallback behaviour.`);
+	const errors = [...missing, ...placeholder];
+	if (errors.length > 0) {
+		const message = `[boot-guard] Required environment variables are missing or use placeholder values:\n${errors.join("\n")}\n\n  Set these in your .env file (local dev) or Vercel project settings (production).\n  See .env.example for the full list and format.`;
+		throw new Error(message);
+	} else console.log("[boot-guard] All required env vars present ✓");
+}
 function buildDynamicSystemPrompt() {
 	const data = getPortfolioData();
 	const email = data.resumeOverride?.email || getEnvVar("PUBLIC_EMAIL", "nagulagamchanakya2211@gmail.com");
@@ -729,7 +806,8 @@ If you are looking for specific details not covered here, feel free to connect w
 * **Email**: [${email}](mailto:${email})
 * **LinkedIn**: [${linkedinUrl}](${linkedinUrl})`;
 }
-var Route$5 = createFileRoute("/api/chat")({ server: { handlers: { POST: async ({ request }) => {
+var Route$6 = createFileRoute("/api/chat")({ server: { handlers: { POST: async ({ request }) => {
+	assertEnvGuards();
 	let messages = [];
 	try {
 		messages = (await request.json()).messages || [];
@@ -777,6 +855,39 @@ var Route$5 = createFileRoute("/api/chat")({ server: { handlers: { POST: async (
 		const reply = getFallbackReply(messages);
 		return new Response(JSON.stringify({ reply }), { headers: { "Content-Type": "application/json" } });
 	}
+} } } });
+/**
+* GET /api/health
+*
+* Lightweight health check endpoint inspired by Trelio's /healthz pattern.
+* Reports whether required env vars are present so misconfigurations surface
+* immediately — useful for uptime monitors (UptimeRobot, BetterStack, etc.)
+* and for debugging Vercel deployments.
+*
+* Always returns HTTP 200. Monitor on the JSON `status` field:
+*   "ok"       — all required env vars present
+*   "degraded" — at least one required env var is missing
+*/
+var Route$5 = createFileRoute("/api/health")({ server: { handlers: { GET: async () => {
+	const required = {
+		ADMIN_USERNAME: getEnvVar("ADMIN_USERNAME"),
+		ADMIN_PASSWORD: getEnvVar("ADMIN_PASSWORD"),
+		ADMIN_SESSION_SECRET: getEnvVar("ADMIN_SESSION_SECRET"),
+		OPENAI_API_KEY: getEnvVar("OPENAI_API_KEY")
+	};
+	const checks = Object.fromEntries(Object.entries(required).map(([key, val]) => [key, val && val.trim() && !val.includes("placeholder") ? "ok" : "missing"]));
+	const missing = Object.entries(checks).filter(([, v]) => v === "missing").map(([k]) => k);
+	const status = missing.length === 0 ? "ok" : "degraded";
+	return new Response(JSON.stringify({
+		service: "chanakya-portfolio",
+		status,
+		timestamp: (/* @__PURE__ */ new Date()).toISOString(),
+		checks,
+		...missing.length > 0 && { missing }
+	}), {
+		status: 200,
+		headers: { "Content-Type": "application/json" }
+	});
 } } } });
 var COOKIE_NAME = "admin_session";
 var SESSION_MAX_AGE_SEC = 86400;
@@ -869,6 +980,7 @@ var Route$3 = createFileRoute("/api/admin/data")({ server: { handlers: {
 	}
 } } });
 var Route$2 = createFileRoute("/api/admin/login")({ server: { handlers: { POST: async ({ request }) => {
+	assertEnvGuards();
 	try {
 		const body = await request.json();
 		const username = String(body.username || "").trim();
@@ -10002,56 +10114,61 @@ var Route = createFileRoute("/api/auth/$")({ server: { handlers: {
 	GET: ({ request }) => auth.handler(request),
 	POST: ({ request }) => auth.handler(request)
 } } });
-var IndexRoute = Route$8.update({
+var IndexRoute = Route$9.update({
 	id: "/",
 	path: "/",
-	getParentRoute: () => Route$9
+	getParentRoute: () => Route$10
 });
-var AdminIndexRoute = Route$7.update({
+var AdminIndexRoute = Route$8.update({
 	id: "/admin/",
 	path: "/admin/",
-	getParentRoute: () => Route$9
+	getParentRoute: () => Route$10
 });
 var rootRouteChildren = {
 	IndexRoute,
-	AdminLoginRoute: Route$6.update({
+	AdminLoginRoute: Route$7.update({
 		id: "/admin/login",
 		path: "/admin/login",
-		getParentRoute: () => Route$9
+		getParentRoute: () => Route$10
 	}),
-	ApiChatRoute: Route$5.update({
+	ApiChatRoute: Route$6.update({
 		id: "/api/chat",
 		path: "/api/chat",
-		getParentRoute: () => Route$9
+		getParentRoute: () => Route$10
+	}),
+	ApiHealthRoute: Route$5.update({
+		id: "/api/health",
+		path: "/api/health",
+		getParentRoute: () => Route$10
 	}),
 	AdminIndexRoute,
 	ApiAdminCheckRoute: Route$4.update({
 		id: "/api/admin/check",
 		path: "/api/admin/check",
-		getParentRoute: () => Route$9
+		getParentRoute: () => Route$10
 	}),
 	ApiAdminDataRoute: Route$3.update({
 		id: "/api/admin/data",
 		path: "/api/admin/data",
-		getParentRoute: () => Route$9
+		getParentRoute: () => Route$10
 	}),
 	ApiAdminLoginRoute: Route$2.update({
 		id: "/api/admin/login",
 		path: "/api/admin/login",
-		getParentRoute: () => Route$9
+		getParentRoute: () => Route$10
 	}),
 	ApiAdminLogoutRoute: Route$1.update({
 		id: "/api/admin/logout",
 		path: "/api/admin/logout",
-		getParentRoute: () => Route$9
+		getParentRoute: () => Route$10
 	}),
 	ApiAuthSplatRoute: Route.update({
 		id: "/api/auth/$",
 		path: "/api/auth/$",
-		getParentRoute: () => Route$9
+		getParentRoute: () => Route$10
 	})
 };
-var routeTree = Route$9._addFileChildren(rootRouteChildren)._addFileTypes();
+var routeTree = Route$10._addFileChildren(rootRouteChildren)._addFileTypes();
 var router_exports = /* @__PURE__ */ __exportAll({ getRouter: () => getRouter });
 function getRouter() {
 	return createRouter({

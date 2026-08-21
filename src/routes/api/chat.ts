@@ -1,6 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { getEnvVar } from "@/lib/env";
 import { getPortfolioData } from "@/data/store";
+import { assertEnvGuards } from "@/lib/boot-guards";
+
 
 function buildDynamicSystemPrompt(): string {
   const data = getPortfolioData();
@@ -157,6 +159,7 @@ export const Route = createFileRoute("/api/chat")({
   server: {
     handlers: {
       POST: async ({ request }) => {
+        assertEnvGuards();
         let messages: any[] = [];
         try {
           const body = await request.json();

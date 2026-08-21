@@ -1,11 +1,13 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { getEnvVar } from "@/lib/env";
 import { createSignedSessionToken, createSetCookieHeader } from "@/lib/auth-session";
+import { assertEnvGuards } from "@/lib/boot-guards";
 
 export const Route = createFileRoute("/api/admin/login")({
   server: {
     handlers: {
       POST: async ({ request }) => {
+        assertEnvGuards();
         try {
           const body = await request.json();
           const username = String(body.username || "").trim();

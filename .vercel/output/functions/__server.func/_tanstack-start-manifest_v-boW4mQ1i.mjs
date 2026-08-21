@@ -1,4 +1,4 @@
-//#region node_modules/.nitro/vite/services/ssr/assets/_tanstack-start-manifest_v-DOF8bucM.js
+//#region node_modules/.nitro/vite/services/ssr/assets/_tanstack-start-manifest_v-boW4mQ1i.js
 var tsrStartManifest = () => ({ routes: {
 	__root__: {
 		filePath: "/Users/shresta/Chanakya_Portfolio/src/routes/__root.tsx",
@@ -6,6 +6,7 @@ var tsrStartManifest = () => ({ routes: {
 			"/",
 			"/admin/login",
 			"/api/chat",
+			"/api/health",
 			"/admin/",
 			"/api/admin/check",
 			"/api/admin/data",
