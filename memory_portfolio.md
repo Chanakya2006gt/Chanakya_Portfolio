@@ -1,7 +1,7 @@
 # Portfolio Memory — Nagulagam Chanakya
 > **Purpose:** This file is the single source of truth for every decision made on this portfolio. Every code change, design choice, security implementation, and business rule lives here. Update this file immediately after any change in future sessions.
 >
-> **Last Updated:** 2026-08-20
+> **Last Updated:** 2026-08-21
 
 ---
 
@@ -164,6 +164,7 @@ Journalistic "pipe + LABEL" format — used by Linear, Stripe — looks intentio
 
 ### Cards
 - Trelio flagship: gradient top edge (`via-sage/60`) + `bg-gradient-to-br from-card to-sage/5`
+- Trelio proof strip: 3-column architecture metrics bar (`38 DB Tables`, `AES-256-GCM`, `Direct UPI/Rzp`) proving real-world engineering constraints
 - Live link: pulsing dot + rounded-full border pill
 - Badge tiers: sage=core stack | indigo=security tech | outline=other
 - Hover: `.card-hover-elevate` — `translateY(-3px)` + box-shadow at 220ms cubic-bezier
@@ -175,11 +176,18 @@ Journalistic "pipe + LABEL" format — used by Linear, Stripe — looks intentio
 
 ### About Section
 - Zone: `bg-secondary/30` + `border-y`
+- Quick-scan metadata strip: 3-pill grid (`Location: Warangal, India`, `Degree: B.Tech CSE '28`, `Core Focus: SaaS & Security`) for 5-second recruiter evaluation
 - Technical terms in `<code>` tags: sage for core tech, indigo for system-design concepts
+
+### Interactive Mascot Companion
+- Floating bottom-right companion widget with speech bubbles and jumping/waving animations
+- 3.5-second initial greeting wave and bubble on mount to aid visitor discovery
+- Integrated full-featured AI Chatbot (`/api/chat`) with markdown streaming responses
 
 ### Contact Section
 - Top ambient glow — signals landing zone / page end
 - CTA: "Open for contracts & conversations"
+- 1-Click Clipboard Copy: direct button on page and inside modal copying `nagulagamchanakya2211@gmail.com` with toast feedback (prevents dropoff when desktop client lacks default mail handler)
 - Italic serif quote closing statement
 - Per-card hover brand colors: GitHub=white, LinkedIn=indigo, Email=sage, Trelio=strong sage
 
@@ -257,18 +265,25 @@ interface DynamicData {
 |------|---------|
 | `src/styles.css` | CSS tokens, keyframes, utility classes |
 | `src/routes/__root.tsx` | Root HTML, SEO meta, JSON-LD |
+| `src/routes/api/health.ts` | `/api/health` monitoring & boot checks |
 | `src/components/portfolio-home.tsx` | All page sections |
+| `src/components/theme-toggle.tsx` | Synchronized light/dark toggle component |
+| `src/components/trelio-preview.tsx` | Trelio live state & architecture proof preview |
 | `src/components/particle-field.tsx` | Animated hero particles |
 | `src/components/contact-cards.tsx` | Contact link cards |
+| `src/components/mascot/companion.tsx` | Floating mascot & interactive greeting |
 | `src/components/mascot/companion-chat.tsx` | AI chatbot UI + markdown parser |
 | `src/routes/api/chat.ts` | OpenAI route, system prompt, fallback |
-| `src/routes/api/admin/login.ts` | Auth — fail-closed, HMAC token |
+| `src/routes/api/admin/login.ts` | Auth — fail-closed, HMAC token, boot guards |
 | `src/routes/api/admin/check.ts` | Session verification |
 | `src/routes/api/admin/data.ts` | Admin data GET/POST |
+| `src/lib/boot-guards.ts` | Server startup environment validation guards |
 | `src/lib/auth-session.ts` | HMAC-SHA256 session utilities |
+| `src/lib/env.ts` | `.env` parser & production fallback helper |
 | `src/data/store.ts` | Data read/write |
 | `src/data/portfolio-data.json` | Live-editable data (ephemeral on Vercel) |
 | `src/data/projects.ts` | Default static project/skills data |
+| `scripts/patch-bundle.mjs` | Postbuild script inlining bare `tslib` helpers |
 | `public/robots.txt` | Crawl rules |
 | `public/sitemap.xml` | Sitemap |
 | `SECURITY.md` | Vulnerability disclosure |
@@ -315,3 +330,7 @@ interface DynamicData {
 | Session 4 | Inlined `tslib` helpers in postbuild script | Fixed `ERR_MODULE_NOT_FOUND` on Vercel runtime caused by tslib ESM/CJS packaging mismatch |
 | Session 4 | Added `/api/health` endpoint & `boot-guards.ts` | Borrowed from Trelio architecture: uptime monitoring target + early env validation |
 | Session 4 | Synchronized ThemeToggle components via custom event | Clicking top bar or sidebar theme toggle now immediately synchronizes all button icons |
+| Session 5 | Added architecture proof strip to Trelio preview | Shows concrete engineering scope (38 DB Tables, AES-256-GCM, Direct UPI) to build immediate visitor trust |
+| Session 5 | Added 3-pill quick-scan recruiter highlights | Facilitates 5-second evaluation without reading text-heavy paragraphs |
+| Session 5 | Added 1-click clipboard copy for email | Solves silent dropoff for visitors without a configured native `mailto:` client |
+| Session 5 | Added auto-greeting discovery to Companion | Timed gentle wave after 3.5s alerts visitors to the interactive AI companion |
