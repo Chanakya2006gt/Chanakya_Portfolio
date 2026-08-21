@@ -16,15 +16,41 @@ export function ThemeToggle({
   const [theme, setTheme] = useState<"dark" | "light">("dark");
 
   useEffect(() => {
-    const savedTheme = localStorage.getItem("theme") as "dark" | "light" | null;
-    if (savedTheme) {
-      setTheme(savedTheme);
-      if (savedTheme === "light") {
-        document.documentElement.classList.add("light");
+    // 1. Initial check from DOM / localStorage
+    const isLight = document.documentElement.classList.contains("light");
+    const savedTheme = (localStorage.getItem("theme") as "dark" | "light" | null) || (isLight ? "light" : "dark");
+    setTheme(savedTheme);
+
+    // 2. Listen to custom theme-change events across instances on the same page
+    const handleThemeChange = (e: Event) => {
+      const customEvent = e as CustomEvent<"dark" | "light">;
+      if (customEvent.detail) {
+        setTheme(customEvent.detail);
       } else {
-        document.documentElement.classList.remove("light");
+        const currentIsLight = document.documentElement.classList.contains("light");
+        setTheme(currentIsLight ? "light" : "dark");
       }
-    }
+    };
+
+    // 3. Listen to storage changes from other tabs
+    const handleStorageChange = (e: StorageEvent) => {
+      if (e.key === "theme" && (e.newValue === "dark" || e.newValue === "light")) {
+        setTheme(e.newValue);
+        if (e.newValue === "light") {
+          document.documentElement.classList.add("light");
+        } else {
+          document.documentElement.classList.remove("light");
+        }
+      }
+    };
+
+    window.addEventListener("theme-change", handleThemeChange);
+    window.addEventListener("storage", handleStorageChange);
+
+    return () => {
+      window.removeEventListener("theme-change", handleThemeChange);
+      window.removeEventListener("storage", handleStorageChange);
+    };
   }, []);
 
   const toggleTheme = () => {
@@ -37,6 +63,9 @@ export function ThemeToggle({
     } else {
       document.documentElement.classList.remove("light");
     }
+
+    // Broadcast to all other ThemeToggle instances on the page
+    window.dispatchEvent(new CustomEvent("theme-change", { detail: nextTheme }));
   };
 
   return (
