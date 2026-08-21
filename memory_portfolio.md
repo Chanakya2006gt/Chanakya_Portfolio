@@ -312,3 +312,6 @@ interface DynamicData {
 | Session 3 | Card top gradient edge | Premium card personality — Vercel/Raycast technique |
 | Session 3 | Badge tiers (sage/indigo/outline) | Visual grammar for tech categories |
 | Session 3 | Contact section serif quote | Closes page with clear value proposition |
+| Session 4 | Inlined `tslib` helpers in postbuild script | Fixed `ERR_MODULE_NOT_FOUND` on Vercel runtime caused by tslib ESM/CJS packaging mismatch |
+| Session 4 | Added `/api/health` endpoint & `boot-guards.ts` | Borrowed from Trelio architecture: uptime monitoring target + early env validation |
+| Session 4 | Synchronized ThemeToggle components via custom event | Clicking top bar or sidebar theme toggle now immediately synchronizes all button icons |
