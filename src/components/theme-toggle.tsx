@@ -16,12 +16,31 @@ export function ThemeToggle({
   const [theme, setTheme] = useState<"dark" | "light">("dark");
 
   useEffect(() => {
-    // 1. Initial check from DOM / localStorage
+    // 1. Initial check from DOM / localStorage / system preference
     const isLight = document.documentElement.classList.contains("light");
-    const savedTheme = (localStorage.getItem("theme") as "dark" | "light" | null) || (isLight ? "light" : "dark");
-    setTheme(savedTheme);
+    const storedTheme = localStorage.getItem("theme") as "dark" | "light" | null;
+    const systemPrefersLight = window.matchMedia("(prefers-color-scheme: light)").matches;
+    
+    const initialTheme: "dark" | "light" = storedTheme || (isLight || systemPrefersLight ? "light" : "dark");
+    setTheme(initialTheme);
 
-    // 2. Listen to custom theme-change events across instances on the same page
+    // 2. Listen to system preference changes if user hasn't explicitly set a preference
+    const mediaQuery = window.matchMedia("(prefers-color-scheme: light)");
+    const handleSystemThemeChange = (e: MediaQueryListEvent) => {
+      if (!localStorage.getItem("theme")) {
+        const nextTheme = e.matches ? "light" : "dark";
+        setTheme(nextTheme);
+        if (nextTheme === "light") {
+          document.documentElement.classList.add("light");
+          document.documentElement.classList.remove("dark");
+        } else {
+          document.documentElement.classList.remove("light");
+          document.documentElement.classList.add("dark");
+        }
+      }
+    };
+
+    // 3. Listen to custom theme-change events across instances on the same page
     const handleThemeChange = (e: Event) => {
       const customEvent = e as CustomEvent<"dark" | "light">;
       if (customEvent.detail) {
@@ -32,22 +51,26 @@ export function ThemeToggle({
       }
     };
 
-    // 3. Listen to storage changes from other tabs
+    // 4. Listen to storage changes from other tabs
     const handleStorageChange = (e: StorageEvent) => {
       if (e.key === "theme" && (e.newValue === "dark" || e.newValue === "light")) {
         setTheme(e.newValue);
         if (e.newValue === "light") {
           document.documentElement.classList.add("light");
+          document.documentElement.classList.remove("dark");
         } else {
           document.documentElement.classList.remove("light");
+          document.documentElement.classList.add("dark");
         }
       }
     };
 
+    mediaQuery.addEventListener("change", handleSystemThemeChange);
     window.addEventListener("theme-change", handleThemeChange);
     window.addEventListener("storage", handleStorageChange);
 
     return () => {
+      mediaQuery.removeEventListener("change", handleSystemThemeChange);
       window.removeEventListener("theme-change", handleThemeChange);
       window.removeEventListener("storage", handleStorageChange);
     };
@@ -60,8 +83,10 @@ export function ThemeToggle({
 
     if (nextTheme === "light") {
       document.documentElement.classList.add("light");
+      document.documentElement.classList.remove("dark");
     } else {
       document.documentElement.classList.remove("light");
+      document.documentElement.classList.add("dark");
     }
 
     // Broadcast to all other ThemeToggle instances on the page

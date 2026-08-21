@@ -21,7 +21,7 @@ import { t as Pool } from "../_libs/pg.mjs";
 import crypto$1, { randomBytes } from "node:crypto";
 import fs from "node:fs";
 import path from "node:path";
-//#region node_modules/.nitro/vite/services/ssr/assets/router-CfSK3cgT.js
+//#region node_modules/.nitro/vite/services/ssr/assets/router-DM-DOzaP.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 function AppErrorComponent({ error }) {
@@ -400,7 +400,7 @@ var Route$10 = createRootRoute({
 		scripts: [{
 			type: "application/ld+json",
 			children: JSON.stringify(JSON_LD)
-		}],
+		}, { children: `(function(){try{var stored=localStorage.getItem("theme");if(stored==="light"||(!stored&&window.matchMedia("(prefers-color-scheme: light)").matches)){document.documentElement.classList.add("light");document.documentElement.classList.remove("dark");}else{document.documentElement.classList.add("dark");document.documentElement.classList.remove("light");}}catch(e){}})();` }],
 		links: [
 			{
 				rel: "icon",
@@ -450,11 +450,11 @@ var Route$10 = createRootRoute({
 		] })]
 	})
 });
-var $$splitComponentImporter$2 = () => import("./routes-Bxltvp_o.mjs");
+var $$splitComponentImporter$2 = () => import("./routes-Ya8uPt6J.mjs");
 var Route$9 = createFileRoute("/")({ component: lazyRouteComponent($$splitComponentImporter$2, "component") });
-var $$splitComponentImporter$1 = () => import("./admin-CRqC31Ie.mjs");
+var $$splitComponentImporter$1 = () => import("./admin-CMf-PXah.mjs");
 var Route$8 = createFileRoute("/admin/")({ component: lazyRouteComponent($$splitComponentImporter$1, "component") });
-var $$splitComponentImporter = () => import("./login-DdsQF-9r.mjs");
+var $$splitComponentImporter = () => import("./login-BBMBA7rj.mjs");
 var Route$7 = createFileRoute("/admin/login")({ component: lazyRouteComponent($$splitComponentImporter, "component") });
 function loadEnvFile() {
 	const envPath = path.join(process.cwd(), ".env");

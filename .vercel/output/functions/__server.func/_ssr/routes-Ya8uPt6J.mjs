@@ -4,11 +4,11 @@ import { s as require_jsx_runtime } from "../_libs/@radix-ui/react-collection+[.
 import { A as ArrowRight, C as FileText, D as Bot, E as Building2, O as Award, S as Github, T as CodeXml, a as Sun, c as Send, d as Printer, g as Mail, h as MapPin, k as ArrowUp, m as Menu, n as User, p as Moon, s as ShieldCheck, t as X, u as RefreshCw, w as ExternalLink, x as GraduationCap, y as Linkedin } from "../_libs/lucide-react.mjs";
 import { a as DialogOverlay$1, c as DialogTrigger$1, i as DialogDescription$1, n as DialogClose, o as DialogPortal$1, r as DialogContent$1, s as DialogTitle$1, t as Dialog$1 } from "../_libs/@radix-ui/react-dialog+[...].mjs";
 import { n as toast } from "../_libs/sonner.mjs";
-import { a as skills, i as sideProjects, n as businesses, o as cn, r as navLinks } from "./router-CfSK3cgT.mjs";
-import { a as CardFooter, c as Input, i as CardDescription, l as Label, n as Card, o as CardHeader, r as CardContent, s as CardTitle, t as Button } from "./card-BYYL60uO.mjs";
-import { a as TabsTrigger, i as TabsList, n as Tabs, o as Textarea, r as TabsContent, t as Badge } from "./badge-CWT9unwD.mjs";
+import { a as skills, i as sideProjects, n as businesses, o as cn, r as navLinks } from "./router-DM-DOzaP.mjs";
+import { a as CardFooter, c as Input, i as CardDescription, l as Label, n as Card, o as CardHeader, r as CardContent, s as CardTitle, t as Button } from "./card-m-jXNEti.mjs";
+import { a as TabsTrigger, i as TabsList, n as Tabs, o as Textarea, r as TabsContent, t as Badge } from "./badge-CHel3cmO.mjs";
 import { t as Root } from "../_libs/radix-ui__react-separator.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/routes-Bxltvp_o.js
+//#region node_modules/.nitro/vite/services/ssr/assets/routes-Ya8uPt6J.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 var Separator = import_react.forwardRef(({ className, orientation = "horizontal", decorative = true, ...props }, ref) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Root, {
@@ -197,8 +197,23 @@ function ThemeToggle({ className = "", variant = "ghost", size = "icon" }) {
 	const [theme, setTheme] = (0, import_react.useState)("dark");
 	(0, import_react.useEffect)(() => {
 		const isLight = document.documentElement.classList.contains("light");
-		const savedTheme = localStorage.getItem("theme") || (isLight ? "light" : "dark");
-		setTheme(savedTheme);
+		const storedTheme = localStorage.getItem("theme");
+		const systemPrefersLight = window.matchMedia("(prefers-color-scheme: light)").matches;
+		setTheme(storedTheme || (isLight || systemPrefersLight ? "light" : "dark"));
+		const mediaQuery = window.matchMedia("(prefers-color-scheme: light)");
+		const handleSystemThemeChange = (e) => {
+			if (!localStorage.getItem("theme")) {
+				const nextTheme = e.matches ? "light" : "dark";
+				setTheme(nextTheme);
+				if (nextTheme === "light") {
+					document.documentElement.classList.add("light");
+					document.documentElement.classList.remove("dark");
+				} else {
+					document.documentElement.classList.remove("light");
+					document.documentElement.classList.add("dark");
+				}
+			}
+		};
 		const handleThemeChange = (e) => {
 			const customEvent = e;
 			if (customEvent.detail) setTheme(customEvent.detail);
@@ -210,13 +225,20 @@ function ThemeToggle({ className = "", variant = "ghost", size = "icon" }) {
 		const handleStorageChange = (e) => {
 			if (e.key === "theme" && (e.newValue === "dark" || e.newValue === "light")) {
 				setTheme(e.newValue);
-				if (e.newValue === "light") document.documentElement.classList.add("light");
-				else document.documentElement.classList.remove("light");
+				if (e.newValue === "light") {
+					document.documentElement.classList.add("light");
+					document.documentElement.classList.remove("dark");
+				} else {
+					document.documentElement.classList.remove("light");
+					document.documentElement.classList.add("dark");
+				}
 			}
 		};
+		mediaQuery.addEventListener("change", handleSystemThemeChange);
 		window.addEventListener("theme-change", handleThemeChange);
 		window.addEventListener("storage", handleStorageChange);
 		return () => {
+			mediaQuery.removeEventListener("change", handleSystemThemeChange);
 			window.removeEventListener("theme-change", handleThemeChange);
 			window.removeEventListener("storage", handleStorageChange);
 		};
@@ -225,8 +247,13 @@ function ThemeToggle({ className = "", variant = "ghost", size = "icon" }) {
 		const nextTheme = theme === "dark" ? "light" : "dark";
 		setTheme(nextTheme);
 		localStorage.setItem("theme", nextTheme);
-		if (nextTheme === "light") document.documentElement.classList.add("light");
-		else document.documentElement.classList.remove("light");
+		if (nextTheme === "light") {
+			document.documentElement.classList.add("light");
+			document.documentElement.classList.remove("dark");
+		} else {
+			document.documentElement.classList.remove("light");
+			document.documentElement.classList.add("dark");
+		}
 		window.dispatchEvent(new CustomEvent("theme-change", { detail: nextTheme }));
 	};
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Button, {

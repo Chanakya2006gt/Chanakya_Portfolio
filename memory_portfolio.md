@@ -336,3 +336,4 @@ interface DynamicData {
 | Session 5 | Added auto-greeting discovery to Companion | Timed gentle wave after 3.5s alerts visitors to the interactive AI companion |
 | Session 6 | Added 3rd tab for 'Contract Work' in Featured Projects | Clear professional messaging indicating availability for client/contract work, ready for future case studies |
 | Session 6 | Trimmed side experiments to 'This site' + polite 'More in progress' placeholder | Honest framing rather than placeholder side projects |
+| Session 7 | Implemented OS/device system theme detection with zero-FOUC script | Automatically matches visitor's browser/OS dark/light preference on initial load while supporting manual toggle overrides & storage sync |
