@@ -4,11 +4,11 @@ import { s as require_jsx_runtime } from "../_libs/@radix-ui/react-collection+[.
 import { A as ArrowRight, C as FileText, D as Bot, E as Building2, O as Award, S as Github, T as CodeXml, a as Sun, c as Send, d as Printer, g as Mail, h as MapPin, k as ArrowUp, m as Menu, n as User, p as Moon, s as ShieldCheck, t as X, u as RefreshCw, w as ExternalLink, x as GraduationCap, y as Linkedin } from "../_libs/lucide-react.mjs";
 import { a as DialogOverlay$1, c as DialogTrigger$1, i as DialogDescription$1, n as DialogClose, o as DialogPortal$1, r as DialogContent$1, s as DialogTitle$1, t as Dialog$1 } from "../_libs/@radix-ui/react-dialog+[...].mjs";
 import { n as toast } from "../_libs/sonner.mjs";
-import { a as skills, i as sideProjects, n as businesses, o as cn, r as navLinks } from "./router-DpO96FB_.mjs";
-import { a as CardFooter, c as Input, i as CardDescription, l as Label, n as Card, o as CardHeader, r as CardContent, s as CardTitle, t as Button } from "./card-K_qeyR19.mjs";
-import { a as TabsTrigger, i as TabsList, n as Tabs, o as Textarea, r as TabsContent, t as Badge } from "./badge-Ci9LZP2a.mjs";
+import { a as skills, i as sideProjects, n as businesses, o as cn, r as navLinks } from "./router-CfSK3cgT.mjs";
+import { a as CardFooter, c as Input, i as CardDescription, l as Label, n as Card, o as CardHeader, r as CardContent, s as CardTitle, t as Button } from "./card-BYYL60uO.mjs";
+import { a as TabsTrigger, i as TabsList, n as Tabs, o as Textarea, r as TabsContent, t as Badge } from "./badge-CWT9unwD.mjs";
 import { t as Root } from "../_libs/radix-ui__react-separator.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/routes-DnqEIfXo.js
+//#region node_modules/.nitro/vite/services/ssr/assets/routes-Bxltvp_o.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 var Separator = import_react.forwardRef(({ className, orientation = "horizontal", decorative = true, ...props }, ref) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Root, {
@@ -1870,7 +1870,7 @@ function BusinessCard({ items }) {
 		}, project.id))
 	});
 }
-function Projects({ businessesList, sideProjectsList }) {
+function Projects({ businessesList, sideProjectsList, email, pdfUrl, summary, education, skillsList }) {
 	const { ref, isVisible } = useScrollAnimation();
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("section", {
 		id: "projects",
@@ -1897,16 +1897,24 @@ function Projects({ businessesList, sideProjectsList }) {
 				className: "mt-10",
 				children: [
 					/* @__PURE__ */ (0, import_jsx_runtime.jsxs)(TabsList, {
-						className: "bg-secondary/80 p-1 border border-border/80",
-						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(TabsTrigger, {
-							value: "businesses",
-							className: "data-[state=active]:bg-card data-[state=active]:shadow-sm",
-							children: "Flagship Products"
-						}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(TabsTrigger, {
-							value: "side",
-							className: "data-[state=active]:bg-card data-[state=active]:shadow-sm",
-							children: "Side Experiments"
-						})]
+						className: "bg-secondary/80 p-1 border border-border/80 flex-wrap h-auto",
+						children: [
+							/* @__PURE__ */ (0, import_jsx_runtime.jsx)(TabsTrigger, {
+								value: "businesses",
+								className: "data-[state=active]:bg-card data-[state=active]:shadow-sm text-xs sm:text-sm",
+								children: "Flagship Products"
+							}),
+							/* @__PURE__ */ (0, import_jsx_runtime.jsx)(TabsTrigger, {
+								value: "contracts",
+								className: "data-[state=active]:bg-card data-[state=active]:shadow-sm text-xs sm:text-sm",
+								children: "Contract Work"
+							}),
+							/* @__PURE__ */ (0, import_jsx_runtime.jsx)(TabsTrigger, {
+								value: "side",
+								className: "data-[state=active]:bg-card data-[state=active]:shadow-sm text-xs sm:text-sm",
+								children: "Side Experiments"
+							})
+						]
 					}),
 					/* @__PURE__ */ (0, import_jsx_runtime.jsx)(TabsContent, {
 						value: "businesses",
@@ -1914,23 +1922,82 @@ function Projects({ businessesList, sideProjectsList }) {
 						children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(BusinessCard, { items: businessesList })
 					}),
 					/* @__PURE__ */ (0, import_jsx_runtime.jsx)(TabsContent, {
+						value: "contracts",
+						className: "mt-6",
+						children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Card, {
+							className: "border-border/80 bg-gradient-to-br from-card via-card to-secondary/30 p-8 sm:p-12 text-center rounded-2xl relative overflow-hidden",
+							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "absolute top-0 inset-x-0 h-0.5 bg-gradient-to-r from-transparent via-sage/40 to-transparent" }), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+								className: "mx-auto max-w-md space-y-3",
+								children: [
+									/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+										className: "mx-auto flex size-12 items-center justify-center rounded-full bg-sage/10 text-sage border border-sage/20",
+										children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(FileText, { className: "size-5" })
+									}),
+									/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h3", {
+										className: "font-serif text-2xl text-foreground",
+										children: "Available for Client & Contract Engagements"
+									}),
+									/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+										className: "text-sm text-muted-foreground leading-relaxed",
+										children: "I am currently open for client work, full-stack consulting, and selective engineering contracts. As new engagements are delivered and cleared for public showcase, case studies and deliverables will be documented here."
+									}),
+									/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+										className: "pt-3 flex flex-wrap items-center justify-center gap-3",
+										children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Button, {
+											asChild: true,
+											size: "sm",
+											variant: "sage",
+											className: "btn-sage-glow rounded-xl",
+											children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("a", {
+												href: "#contact",
+												children: "Discuss a Project →"
+											})
+										}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(ResumeModal, {
+											email,
+											pdfUrl,
+											summary,
+											education,
+											skillsList,
+											trigger: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Button, {
+												size: "sm",
+												variant: "outline",
+												className: "rounded-xl border-border/80 hover:text-sage",
+												children: "View Credentials"
+											})
+										})]
+									})
+								]
+							})]
+						})
+					}),
+					/* @__PURE__ */ (0, import_jsx_runtime.jsx)(TabsContent, {
 						value: "side",
 						className: "mt-6",
-						children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+						children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 							className: "grid gap-4 sm:grid-cols-2 lg:grid-cols-3",
-							children: sideProjectsList.map((project) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Card, {
-								className: "relative overflow-hidden p-2 card-hover-elevate border-border/80 bg-card hover:border-sage/40",
+							children: [sideProjectsList.map((project) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Card, {
+								className: "relative overflow-hidden p-2 card-hover-elevate border-border/80 bg-card hover:border-sage/40 flex flex-col justify-between",
 								children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "absolute top-0 inset-x-0 h-0.5 bg-gradient-to-r from-transparent via-border to-transparent" }), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 									className: "p-4",
 									children: [
 										/* @__PURE__ */ (0, import_jsx_runtime.jsx)(SidePreview, { title: project.title }),
 										/* @__PURE__ */ (0, import_jsx_runtime.jsxs)(CardHeader, {
 											className: "px-0 pb-2 pt-4",
-											children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(CardTitle, {
-												className: "text-lg font-semibold",
-												children: project.title
+											children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+												className: "flex items-center justify-between gap-2",
+												children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(CardTitle, {
+													className: "text-lg font-semibold",
+													children: project.title
+												}), project.liveUrl && /* @__PURE__ */ (0, import_jsx_runtime.jsx)("a", {
+													href: project.liveUrl,
+													target: "_blank",
+													rel: "noopener noreferrer",
+													className: "text-muted-foreground hover:text-sage transition-colors p-1",
+													title: "View Repository",
+													children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(ExternalLink, { className: "size-3.5" })
+												})]
 											}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(CardDescription, {
-												className: "text-xs line-clamp-2",
+												className: "text-xs line-clamp-2 mt-1",
 												children: project.description
 											})]
 										}),
@@ -1944,7 +2011,20 @@ function Projects({ businessesList, sideProjectsList }) {
 										})
 									]
 								})]
-							}, project.id))
+							}, project.id)), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Card, {
+								className: "relative overflow-hidden p-6 border-dashed border-border/80 bg-secondary/20 flex flex-col items-center justify-center text-center min-h-[220px] rounded-2xl",
+								children: [
+									/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: "size-2 rounded-full bg-sage/60 animate-pulse mb-3" }),
+									/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+										className: "font-serif text-lg text-foreground/90",
+										children: "More Experiments in Progress"
+									}),
+									/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+										className: "text-xs text-muted-foreground mt-2 max-w-xs leading-relaxed",
+										children: "Active labs in security primitives, database tooling, and open-source packages will be posted here as they are published."
+									})
+								]
+							})]
 						})
 					})
 				]
@@ -2186,7 +2266,12 @@ function PortfolioHome() {
 				/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Separator, {}),
 				/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Projects, {
 					businessesList,
-					sideProjectsList
+					sideProjectsList,
+					email: data?.resumeOverride?.email,
+					pdfUrl: data?.resumeOverride?.resumePdfUrl,
+					summary: data?.resumeOverride?.summary,
+					education: data?.resumeOverride?.education,
+					skillsList
 				}),
 				/* @__PURE__ */ (0, import_jsx_runtime.jsx)(MarqueeTicker, {}),
 				/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Skills, { skillsList }),

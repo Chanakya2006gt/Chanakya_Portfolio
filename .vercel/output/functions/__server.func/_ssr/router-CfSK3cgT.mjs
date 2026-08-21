@@ -21,7 +21,7 @@ import { t as Pool } from "../_libs/pg.mjs";
 import crypto$1, { randomBytes } from "node:crypto";
 import fs from "node:fs";
 import path from "node:path";
-//#region node_modules/.nitro/vite/services/ssr/assets/router-DpO96FB_.js
+//#region node_modules/.nitro/vite/services/ssr/assets/router-CfSK3cgT.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 function AppErrorComponent({ error }) {
@@ -301,7 +301,7 @@ var TooltipContent = import_react.forwardRef(({ className, sideOffset = 6, ...pr
 	...props
 }) }));
 TooltipContent.displayName = Content2.displayName;
-var styles_default = "/assets/styles-Uw_spUXq.css";
+var styles_default = "/assets/styles-B9f8wby3.css";
 var APP_NAME = "Nagulagam Chanakya — Full-Stack Developer & SaaS Founder";
 var APP_DESC = "Official portfolio of Nagulagam Chanakya — Full-Stack Developer & Founder of Trelio. Specializing in React, Node.js, TypeScript, PostgreSQL, and applied software security.";
 var JSON_LD = {
@@ -450,11 +450,11 @@ var Route$10 = createRootRoute({
 		] })]
 	})
 });
-var $$splitComponentImporter$2 = () => import("./routes-DnqEIfXo.mjs");
+var $$splitComponentImporter$2 = () => import("./routes-Bxltvp_o.mjs");
 var Route$9 = createFileRoute("/")({ component: lazyRouteComponent($$splitComponentImporter$2, "component") });
-var $$splitComponentImporter$1 = () => import("./admin-Dy4j0-kY.mjs");
+var $$splitComponentImporter$1 = () => import("./admin-CRqC31Ie.mjs");
 var Route$8 = createFileRoute("/admin/")({ component: lazyRouteComponent($$splitComponentImporter$1, "component") });
-var $$splitComponentImporter = () => import("./login-Cu_kkTZn.mjs");
+var $$splitComponentImporter = () => import("./login-DdsQF-9r.mjs");
 var Route$7 = createFileRoute("/admin/login")({ component: lazyRouteComponent($$splitComponentImporter, "component") });
 function loadEnvFile() {
 	const envPath = path.join(process.cwd(), ".env");
@@ -502,41 +502,19 @@ var businesses = [{
 	badge: "Live product",
 	kind: "business"
 }];
-var sideProjects = [
-	{
-		id: "portfolio",
-		title: "This site",
-		description: "Personal portfolio built to separate real products from experiments. Dark, readable, and easy to extend with new cards.",
-		stack: [
-			"TanStack Start",
-			"shadcn/ui",
-			"Tailwind"
-		],
-		kind: "side"
-	},
-	{
-		id: "systems",
-		title: "Systems notes",
-		description: "Small experiments in auth, payments, and multi-tenant flows. Learning by shipping, not by collecting tutorials.",
-		stack: [
-			"TypeScript",
-			"Postgres",
-			"Auth"
-		],
-		kind: "side"
-	},
-	{
-		id: "tooling",
-		title: "Dev Infra & Tooling",
-		description: "Custom Vite & PWA plugins, database migration scripts, and live preview bridges for rapid iteration.",
-		stack: [
-			"Vite",
-			"PWA",
-			"Node.js"
-		],
-		kind: "side"
-	}
-];
+var sideProjects = [{
+	id: "portfolio",
+	title: "This site",
+	description: "Personal developer portfolio built with TanStack Start, React 19 SSR, and Tailwind CSS v4 with full theme synchronization and Nitro serverless deployment.",
+	stack: [
+		"TanStack Start",
+		"React 19",
+		"Tailwind v4",
+		"shadcn/ui"
+	],
+	liveUrl: "https://github.com/Chanakya2006gt/Chanakya_Portfolio",
+	kind: "side"
+}];
 var skills = {
 	Frontend: [
 		"React",

@@ -334,3 +334,5 @@ interface DynamicData {
 | Session 5 | Added 3-pill quick-scan recruiter highlights | Facilitates 5-second evaluation without reading text-heavy paragraphs |
 | Session 5 | Added 1-click clipboard copy for email | Solves silent dropoff for visitors without a configured native `mailto:` client |
 | Session 5 | Added auto-greeting discovery to Companion | Timed gentle wave after 3.5s alerts visitors to the interactive AI companion |
+| Session 6 | Added 3rd tab for 'Contract Work' in Featured Projects | Clear professional messaging indicating availability for client/contract work, ready for future case studies |
+| Session 6 | Trimmed side experiments to 'This site' + polite 'More in progress' placeholder | Honest framing rather than placeholder side projects |

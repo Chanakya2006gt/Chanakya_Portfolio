@@ -29,24 +29,9 @@ export const sideProjects: Project[] = [
     id: "portfolio",
     title: "This site",
     description:
-      "Personal portfolio built to separate real products from experiments. Dark, readable, and easy to extend with new cards.",
-    stack: ["TanStack Start", "shadcn/ui", "Tailwind"],
-    kind: "side",
-  },
-  {
-    id: "systems",
-    title: "Systems notes",
-    description:
-      "Small experiments in auth, payments, and multi-tenant flows. Learning by shipping, not by collecting tutorials.",
-    stack: ["TypeScript", "Postgres", "Auth"],
-    kind: "side",
-  },
-  {
-    id: "tooling",
-    title: "Dev Infra & Tooling",
-    description:
-      "Custom Vite & PWA plugins, database migration scripts, and live preview bridges for rapid iteration.",
-    stack: ["Vite", "PWA", "Node.js"],
+      "Personal developer portfolio built with TanStack Start, React 19 SSR, and Tailwind CSS v4 with full theme synchronization and Nitro serverless deployment.",
+    stack: ["TanStack Start", "React 19", "Tailwind v4", "shadcn/ui"],
+    liveUrl: "https://github.com/Chanakya2006gt/Chanakya_Portfolio",
     kind: "side",
   },
 ];

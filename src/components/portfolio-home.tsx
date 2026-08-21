@@ -278,9 +278,14 @@ function BusinessCard({ items }: BusinessCardProps) {
 interface ProjectsProps {
   businessesList: Project[];
   sideProjectsList: Project[];
+  email?: string;
+  pdfUrl?: string;
+  summary?: string;
+  education?: string;
+  skillsList?: Record<string, string[]>;
 }
 
-function Projects({ businessesList, sideProjectsList }: ProjectsProps) {
+function Projects({ businessesList, sideProjectsList, email, pdfUrl, summary, education, skillsList }: ProjectsProps) {
   const { ref, isVisible } = useScrollAnimation();
 
   return (
@@ -303,26 +308,83 @@ function Projects({ businessesList, sideProjectsList }: ProjectsProps) {
       </p>
 
       <Tabs defaultValue="businesses" className="mt-10">
-        <TabsList className="bg-secondary/80 p-1 border border-border/80">
-          <TabsTrigger value="businesses" className="data-[state=active]:bg-card data-[state=active]:shadow-sm">Flagship Products</TabsTrigger>
-          <TabsTrigger value="side" className="data-[state=active]:bg-card data-[state=active]:shadow-sm">Side Experiments</TabsTrigger>
+        <TabsList className="bg-secondary/80 p-1 border border-border/80 flex-wrap h-auto">
+          <TabsTrigger value="businesses" className="data-[state=active]:bg-card data-[state=active]:shadow-sm text-xs sm:text-sm">
+            Flagship Products
+          </TabsTrigger>
+          <TabsTrigger value="contracts" className="data-[state=active]:bg-card data-[state=active]:shadow-sm text-xs sm:text-sm">
+            Contract Work
+          </TabsTrigger>
+          <TabsTrigger value="side" className="data-[state=active]:bg-card data-[state=active]:shadow-sm text-xs sm:text-sm">
+            Side Experiments
+          </TabsTrigger>
         </TabsList>
+
+        {/* Tab 1: Flagship Products */}
         <TabsContent value="businesses" className="mt-6">
           <BusinessCard items={businessesList} />
         </TabsContent>
+
+        {/* Tab 2: Contract Work */}
+        <TabsContent value="contracts" className="mt-6">
+          <Card className="border-border/80 bg-gradient-to-br from-card via-card to-secondary/30 p-8 sm:p-12 text-center rounded-2xl relative overflow-hidden">
+            <div className="absolute top-0 inset-x-0 h-0.5 bg-gradient-to-r from-transparent via-sage/40 to-transparent" />
+            <div className="mx-auto max-w-md space-y-3">
+              <div className="mx-auto flex size-12 items-center justify-center rounded-full bg-sage/10 text-sage border border-sage/20">
+                <FileText className="size-5" />
+              </div>
+              <h3 className="font-serif text-2xl text-foreground">Available for Client & Contract Engagements</h3>
+              <p className="text-sm text-muted-foreground leading-relaxed">
+                I am currently open for client work, full-stack consulting, and selective engineering contracts. As new engagements are delivered and cleared for public showcase, case studies and deliverables will be documented here.
+              </p>
+              <div className="pt-3 flex flex-wrap items-center justify-center gap-3">
+                <Button asChild size="sm" variant="sage" className="btn-sage-glow rounded-xl">
+                  <a href="#contact">Discuss a Project →</a>
+                </Button>
+                <ResumeModal
+                  email={email}
+                  pdfUrl={pdfUrl}
+                  summary={summary}
+                  education={education}
+                  skillsList={skillsList}
+                  trigger={
+                    <Button size="sm" variant="outline" className="rounded-xl border-border/80 hover:text-sage">
+                      View Credentials
+                    </Button>
+                  }
+                />
+              </div>
+            </div>
+          </Card>
+        </TabsContent>
+
+        {/* Tab 3: Side Experiments */}
         <TabsContent value="side" className="mt-6">
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {sideProjectsList.map((project) => (
               <Card
                 key={project.id}
-                className="relative overflow-hidden p-2 card-hover-elevate border-border/80 bg-card hover:border-sage/40"
+                className="relative overflow-hidden p-2 card-hover-elevate border-border/80 bg-card hover:border-sage/40 flex flex-col justify-between"
               >
                 <div className="absolute top-0 inset-x-0 h-0.5 bg-gradient-to-r from-transparent via-border to-transparent" />
                 <div className="p-4">
                   <SidePreview title={project.title} />
                   <CardHeader className="px-0 pb-2 pt-4">
-                    <CardTitle className="text-lg font-semibold">{project.title}</CardTitle>
-                    <CardDescription className="text-xs line-clamp-2">{project.description}</CardDescription>
+                    <div className="flex items-center justify-between gap-2">
+                      <CardTitle className="text-lg font-semibold">{project.title}</CardTitle>
+                      {project.liveUrl && (
+                        <a
+                          href={project.liveUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-muted-foreground hover:text-sage transition-colors p-1"
+                          title="View Repository"
+                        >
+                          <ExternalLink className="size-3.5" />
+                        </a>
+                      )}
+                    </div>
+                    <CardDescription className="text-xs line-clamp-2 mt-1">{project.description}</CardDescription>
                   </CardHeader>
                   <CardContent className="flex flex-wrap gap-1.5 px-0 pt-2">
                     {project.stack.map((tech) => (
@@ -334,6 +396,15 @@ function Projects({ businessesList, sideProjectsList }: ProjectsProps) {
                 </div>
               </Card>
             ))}
+
+            {/* Polite 'More to come' card */}
+            <Card className="relative overflow-hidden p-6 border-dashed border-border/80 bg-secondary/20 flex flex-col items-center justify-center text-center min-h-[220px] rounded-2xl">
+              <span className="size-2 rounded-full bg-sage/60 animate-pulse mb-3" />
+              <p className="font-serif text-lg text-foreground/90">More Experiments in Progress</p>
+              <p className="text-xs text-muted-foreground mt-2 max-w-xs leading-relaxed">
+                Active labs in security primitives, database tooling, and open-source packages will be posted here as they are published.
+              </p>
+            </Card>
           </div>
         </TabsContent>
       </Tabs>
@@ -550,7 +621,15 @@ export function PortfolioHome() {
           skillsList={skillsList}
         />
         <Separator />
-        <Projects businessesList={businessesList} sideProjectsList={sideProjectsList} />
+        <Projects
+          businessesList={businessesList}
+          sideProjectsList={sideProjectsList}
+          email={data?.resumeOverride?.email}
+          pdfUrl={data?.resumeOverride?.resumePdfUrl}
+          summary={data?.resumeOverride?.summary}
+          education={data?.resumeOverride?.education}
+          skillsList={skillsList}
+        />
         <MarqueeTicker />
         <Skills skillsList={skillsList} />
         <Separator />
