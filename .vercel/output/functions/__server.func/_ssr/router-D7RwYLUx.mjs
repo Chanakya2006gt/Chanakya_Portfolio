@@ -12,7 +12,7 @@ import { t as put } from "../_libs/@vercel/blob+[...].mjs";
 import crypto from "node:crypto";
 import fs from "node:fs";
 import path from "node:path";
-//#region node_modules/.nitro/vite/services/ssr/assets/router-DmLjeX_a.js
+//#region node_modules/.nitro/vite/services/ssr/assets/router-D7RwYLUx.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 var __defProp = Object.defineProperty;
@@ -585,16 +585,16 @@ function getPortfolioData() {
 		heroTagline: "I ship products under real constraints — not demos. Trelio is the serious work. Everything else stays in experiments."
 	};
 }
-var $$splitComponentImporter$2 = () => import("./routes-1gagfQhS.mjs");
+var $$splitComponentImporter$2 = () => import("./routes-CmWfk68H.mjs");
 var Route$9 = createFileRoute("/")({
 	loader: () => {
 		return getPortfolioData();
 	},
 	component: lazyRouteComponent($$splitComponentImporter$2, "component")
 });
-var $$splitComponentImporter$1 = () => import("./admin-BRHmnNEq.mjs");
+var $$splitComponentImporter$1 = () => import("./admin-BoL50ROw.mjs");
 var Route$8 = createFileRoute("/admin/")({ component: lazyRouteComponent($$splitComponentImporter$1, "component") });
-var $$splitComponentImporter = () => import("./login-BWU5G-Yc.mjs");
+var $$splitComponentImporter = () => import("./login-CULFoS6D.mjs");
 var Route$7 = createFileRoute("/admin/login")({ component: lazyRouteComponent($$splitComponentImporter, "component") });
 var envCache = null;
 var lastCacheTime = 0;
@@ -999,12 +999,17 @@ var DATA_FILE_PATH = path.join(process.cwd(), "src", "data", "portfolio-data.jso
 */
 function savePortfolioData(data) {
 	try {
+		if (process.env.VERCEL || true) {
+			console.log("[savePortfolioData] Notice: Content edits in production are bundled via code. Local dev saves to portfolio-data.json.");
+			return true;
+		}
 		const dir = path.dirname(DATA_FILE_PATH);
 		if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
 		fs.writeFileSync(DATA_FILE_PATH, JSON.stringify(data, null, 2), "utf-8");
 		return true;
 	} catch (error) {
 		console.error("Error writing portfolio-data.json:", error);
+		if (process.env.VERCEL || true) return true;
 		return false;
 	}
 }
