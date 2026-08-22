@@ -344,3 +344,4 @@ interface DynamicData {
 | Session 9 | Security hardening & audit fixes | Made session secret fail-closed in prod, added timing-safe compare + rate limiting to login, hardened /api/chat with 25-msg history & rate limiting, fixed env cache, removed Grok/BetterAuth leftovers |
 | Session 10 | Master Plan Execution (Phases 1, 4, 5) | Server-rendered portfolio data via Route loader (no client fetch in useEffect), bundled JSON data import, sanitized /api/health output, theme-aware scrollbar tokens |
 | Session 11 | Isolated server persistence to `store.server.ts` | Kept Node.js `fs`/`path` out of the client/SSR bundle so `store.ts` remains pure and browser-safe |
+| Session 12 | Gemini Plan Execution | Added `tsc --noEmit` build guard in `package.json`, replaced 404ing Grok manifest with self-branded `site.webmanifest`, implemented warm/tinted dark mode tokens with ambient radial glow, added auth guard to `GET /api/admin/data`, removed dead `useEffect` import |
