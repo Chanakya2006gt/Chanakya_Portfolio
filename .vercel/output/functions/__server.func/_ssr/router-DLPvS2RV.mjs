@@ -11,7 +11,7 @@ import { t as Toaster } from "../_libs/sonner.mjs";
 import crypto from "node:crypto";
 import fs from "node:fs";
 import path from "node:path";
-//#region node_modules/.nitro/vite/services/ssr/assets/router-DZ8-l_We.js
+//#region node_modules/.nitro/vite/services/ssr/assets/router-DLPvS2RV.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 var __defProp = Object.defineProperty;
@@ -288,7 +288,7 @@ var TooltipContent = import_react.forwardRef(({ className, sideOffset = 6, ...pr
 	...props
 }) }));
 TooltipContent.displayName = Content2.displayName;
-var styles_default = "/assets/styles-Bg-j-DqB.css";
+var styles_default = "/assets/styles-Cemy89u1.css";
 var APP_NAME = "Nagulagam Chanakya — Full-Stack Developer & SaaS Founder";
 var APP_DESC = "Official portfolio of Nagulagam Chanakya — Full-Stack Developer & Founder of Trelio. Specializing in React, Node.js, TypeScript, PostgreSQL, and applied software security.";
 var JSON_LD = {
@@ -400,7 +400,7 @@ var Route$9 = createRootRoute({
 			},
 			{
 				rel: "manifest",
-				href: "/__grok/manifest.webmanifest"
+				href: "/site.webmanifest"
 			},
 			{
 				rel: "apple-touch-icon",
@@ -584,16 +584,16 @@ function getPortfolioData() {
 		heroTagline: "I ship products under real constraints — not demos. Trelio is the serious work. Everything else stays in experiments."
 	};
 }
-var $$splitComponentImporter$2 = () => import("./routes-CDfN2UYN.mjs");
+var $$splitComponentImporter$2 = () => import("./routes-mR3APHr_.mjs");
 var Route$8 = createFileRoute("/")({
 	loader: () => {
 		return getPortfolioData();
 	},
 	component: lazyRouteComponent($$splitComponentImporter$2, "component")
 });
-var $$splitComponentImporter$1 = () => import("./admin-Dsol_6wA.mjs");
+var $$splitComponentImporter$1 = () => import("./admin-DArwwXgS.mjs");
 var Route$7 = createFileRoute("/admin/")({ component: lazyRouteComponent($$splitComponentImporter$1, "component") });
-var $$splitComponentImporter = () => import("./login-BtFDDfR-.mjs");
+var $$splitComponentImporter = () => import("./login-OVUj0CmA.mjs");
 var Route$6 = createFileRoute("/admin/login")({ component: lazyRouteComponent($$splitComponentImporter, "component") });
 var envCache = null;
 var lastCacheTime = 0;
@@ -1008,7 +1008,11 @@ function savePortfolioData(data) {
 	}
 }
 var Route$2 = createFileRoute("/api/admin/data")({ server: { handlers: {
-	GET: async () => {
+	GET: async ({ request }) => {
+		if (!verifySignedSessionToken(getAdminSessionCookie(request) || void 0)) return new Response(JSON.stringify({ error: "Unauthorized" }), {
+			status: 401,
+			headers: { "Content-Type": "application/json" }
+		});
 		const data = getPortfolioData();
 		return new Response(JSON.stringify(data), { headers: { "Content-Type": "application/json" } });
 	},
