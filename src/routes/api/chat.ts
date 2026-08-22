@@ -209,7 +209,7 @@ export const Route = createFileRoute("/api/chat")({
             .filter((m: any) => m.content.length > 0);
 
           const apiKey = getEnvVar("OPENAI_API_KEY");
-          const model = getEnvVar("OPENAI_MODEL", "gpt-4o-mini");
+          const model = getEnvVar("OPENAI_MODEL", "gpt-4o-mini-2024-07-18");
           const systemPrompt = buildDynamicSystemPrompt();
 
           if (apiKey && apiKey !== "your_openai_api_key_here" && !apiKey.includes("placeholder")) {

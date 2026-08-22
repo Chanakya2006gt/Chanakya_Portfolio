@@ -46,7 +46,7 @@ const ENV_SPECS: EnvSpec[] = [
   },
   {
     key: "OPENAI_MODEL",
-    description: "OpenAI model name (default: gpt-4o)",
+    description: "OpenAI model name (default: gpt-4o-mini-2024-07-18)",
     required: false,
   },
 ];

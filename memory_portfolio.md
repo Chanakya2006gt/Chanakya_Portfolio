@@ -62,10 +62,10 @@ A **public developer portfolio** that:
 **Why it is this way:** Admin panel writes to `src/data/portfolio-data.json` via `fs.readFileSync`/`fs.writeFileSync`. Works in local dev. On Vercel, filesystem is read-only after deploy — writes are ephemeral. **Deferred.** Future plan: replace with Postgres (Neon/Vercel Postgres).
 
 ### AI Chatbot: OpenAI API
-**Model:** `gpt-5.6-terra`
-- Does NOT support `max_tokens` — must use `max_completion_tokens: 500`
-- Does NOT support temperature other than `1` — must set `temperature: 1`
-- User explicitly chose this model. These constraints are critical — wrong params will cause API errors.
+**Model:** `gpt-4o-mini-2024-07-18` (default fallback; overridable via `OPENAI_MODEL` in `.env`)
+- Supports `temperature: 1`, `max_completion_tokens: 500`
+- Capped at 25 conversation history turns + 1000 chars per message
+- In-memory rate limiting: 20 reqs/min per IP
 
 The chatbot runs via POST to `/api/chat`. Fallback engine handles keyword-based responses when API is unavailable.
 
@@ -81,13 +81,16 @@ The chatbot runs via POST to `/api/chat`. Fallback engine handles keyword-based 
 - Verification uses `crypto.timingSafeEqual()` — prevents timing attacks
 - Session expires in **24 hours** (`SESSION_MAX_AGE_SEC = 86400`)
 - Cookie flags: `HttpOnly; SameSite=Lax` always; `Secure` only in production
+- Fail-closed in production if `ADMIN_SESSION_SECRET` is unset
 
 **Fail-closed login (`src/routes/api/admin/login.ts`):**
 - Missing `ADMIN_USERNAME` or `ADMIN_PASSWORD` env vars → login rejects immediately — no default fallback
 - Username **never logged** on auth failure — prevents credential leaking to server logs
+- Timing-safe credential comparison via `crypto.timingSafeEqual()`
+- In-memory rate limiter: 5 attempts per 5 minutes per IP
 
 **Protected routes:**
-- `check.ts` and `data.ts` both use `verifySignedSessionToken`, not naive string checks
+- `check.ts` and `data.ts` both use `verifySignedSessionToken` and run `assertEnvGuards()`
 
 **Required env vars for production:**
 ```
@@ -95,7 +98,7 @@ ADMIN_USERNAME=
 ADMIN_PASSWORD=
 ADMIN_SESSION_SECRET=
 OPENAI_API_KEY=
-OPENAI_MODEL=gpt-5.6-terra
+OPENAI_MODEL=gpt-4o-mini-2024-07-18
 ```
 
 ---

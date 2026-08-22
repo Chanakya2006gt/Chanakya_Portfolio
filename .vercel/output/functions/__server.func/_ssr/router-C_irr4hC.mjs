@@ -11,7 +11,7 @@ import { t as Toaster } from "../_libs/sonner.mjs";
 import crypto from "node:crypto";
 import fs from "node:fs";
 import path from "node:path";
-//#region node_modules/.nitro/vite/services/ssr/assets/router-DwUm-KBW.js
+//#region node_modules/.nitro/vite/services/ssr/assets/router-C_irr4hC.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 var __defProp = Object.defineProperty;
@@ -437,11 +437,11 @@ var Route$9 = createRootRoute({
 		] })]
 	})
 });
-var $$splitComponentImporter$2 = () => import("./routes-B9WWaMlM.mjs");
+var $$splitComponentImporter$2 = () => import("./routes-BOxW0v0T.mjs");
 var Route$8 = createFileRoute("/")({ component: lazyRouteComponent($$splitComponentImporter$2, "component") });
-var $$splitComponentImporter$1 = () => import("./admin-lbdJTgVR.mjs");
+var $$splitComponentImporter$1 = () => import("./admin-BkAuSV4h.mjs");
 var Route$7 = createFileRoute("/admin/")({ component: lazyRouteComponent($$splitComponentImporter$1, "component") });
-var $$splitComponentImporter = () => import("./login-Dizw-bJ8.mjs");
+var $$splitComponentImporter = () => import("./login-COLyazKw.mjs");
 var Route$6 = createFileRoute("/admin/login")({ component: lazyRouteComponent($$splitComponentImporter, "component") });
 var envCache = null;
 var lastCacheTime = 0;
@@ -623,7 +623,7 @@ var ENV_SPECS = [
 	},
 	{
 		key: "OPENAI_MODEL",
-		description: "OpenAI model name (default: gpt-4o)",
+		description: "OpenAI model name (default: gpt-4o-mini-2024-07-18)",
 		required: false
 	}
 ];
@@ -807,7 +807,7 @@ var Route$5 = createFileRoute("/api/chat")({ server: { handlers: { POST: async (
 			content: String(m.content || "").slice(0, 1e3).trim()
 		})).filter((m) => m.content.length > 0);
 		const apiKey = getEnvVar("OPENAI_API_KEY");
-		const model = getEnvVar("OPENAI_MODEL", "gpt-4o-mini");
+		const model = getEnvVar("OPENAI_MODEL", "gpt-4o-mini-2024-07-18");
 		const systemPrompt = buildDynamicSystemPrompt();
 		if (apiKey && apiKey !== "your_openai_api_key_here" && !apiKey.includes("placeholder")) try {
 			const response = await fetch("https://api.openai.com/v1/chat/completions", {
