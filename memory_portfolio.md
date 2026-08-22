@@ -282,8 +282,8 @@ interface DynamicData {
 | `src/routes/api/admin/data.ts` | Admin data GET/POST |
 | `src/lib/boot-guards.ts` | Server startup environment validation guards |
 | `src/lib/auth-session.ts` | HMAC-SHA256 session utilities |
-| `src/lib/env.ts` | `.env` parser & production fallback helper |
-| `src/data/store.ts` | Data read/write |
+| `src/data/store.ts` | Data interface & client/SSR bundled JSON loader |
+| `src/data/store.server.ts` | Server-only JSON write persistence (isolated from client bundle) |
 | `src/data/portfolio-data.json` | Live-editable data (ephemeral on Vercel) |
 | `src/data/projects.ts` | Default static project/skills data |
 | `scripts/patch-bundle.mjs` | Postbuild script inlining bare `tslib` helpers |
@@ -343,3 +343,4 @@ interface DynamicData {
 | Session 8 | Dead code cleanup | Removed unused multiplayer boilerplate, orphaned use-intro-animation hook, and 4 unused shadcn UI components |
 | Session 9 | Security hardening & audit fixes | Made session secret fail-closed in prod, added timing-safe compare + rate limiting to login, hardened /api/chat with 25-msg history & rate limiting, fixed env cache, removed Grok/BetterAuth leftovers |
 | Session 10 | Master Plan Execution (Phases 1, 4, 5) | Server-rendered portfolio data via Route loader (no client fetch in useEffect), bundled JSON data import, sanitized /api/health output, theme-aware scrollbar tokens |
+| Session 11 | Isolated server persistence to `store.server.ts` | Kept Node.js `fs`/`path` out of the client/SSR bundle so `store.ts` remains pure and browser-safe |

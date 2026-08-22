@@ -11,7 +11,7 @@ import { t as Toaster } from "../_libs/sonner.mjs";
 import crypto from "node:crypto";
 import fs from "node:fs";
 import path from "node:path";
-//#region node_modules/.nitro/vite/services/ssr/assets/router-BK1c6puV.js
+//#region node_modules/.nitro/vite/services/ssr/assets/router-DZ8-l_We.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 var __defProp = Object.defineProperty;
@@ -584,28 +584,16 @@ function getPortfolioData() {
 		heroTagline: "I ship products under real constraints — not demos. Trelio is the serious work. Everything else stays in experiments."
 	};
 }
-var DATA_FILE_PATH = path.join(process.cwd(), "src", "data", "portfolio-data.json");
-function savePortfolioData(data) {
-	try {
-		const dir = path.dirname(DATA_FILE_PATH);
-		if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
-		fs.writeFileSync(DATA_FILE_PATH, JSON.stringify(data, null, 2), "utf-8");
-		return true;
-	} catch (error) {
-		console.error("Error writing portfolio-data.json:", error);
-		return false;
-	}
-}
-var $$splitComponentImporter$2 = () => import("./routes-DiY5SUU6.mjs");
+var $$splitComponentImporter$2 = () => import("./routes-CDfN2UYN.mjs");
 var Route$8 = createFileRoute("/")({
 	loader: () => {
 		return getPortfolioData();
 	},
 	component: lazyRouteComponent($$splitComponentImporter$2, "component")
 });
-var $$splitComponentImporter$1 = () => import("./admin-CFgYh0kW.mjs");
+var $$splitComponentImporter$1 = () => import("./admin-Dsol_6wA.mjs");
 var Route$7 = createFileRoute("/admin/")({ component: lazyRouteComponent($$splitComponentImporter$1, "component") });
-var $$splitComponentImporter = () => import("./login-CB5GVfa8.mjs");
+var $$splitComponentImporter = () => import("./login-BtFDDfR-.mjs");
 var Route$6 = createFileRoute("/admin/login")({ component: lazyRouteComponent($$splitComponentImporter, "component") });
 var envCache = null;
 var lastCacheTime = 0;
@@ -1001,6 +989,24 @@ var Route$3 = createFileRoute("/api/admin/check")({ server: { handlers: { GET: a
 	const authenticated = verifySignedSessionToken(getAdminSessionCookie(request) || void 0);
 	return new Response(JSON.stringify({ authenticated }), { headers: { "Content-Type": "application/json" } });
 } } } });
+var DATA_FILE_PATH = path.join(process.cwd(), "src", "data", "portfolio-data.json");
+/**
+* Server-only. Persists edited portfolio data to the JSON file (local dev).
+* Kept out of `store.ts` because that module is imported by the client route
+* loader — `fs`/`path`/`process` must never reach the browser bundle.
+* No-ops harmlessly on Vercel's read-only filesystem (returns false).
+*/
+function savePortfolioData(data) {
+	try {
+		const dir = path.dirname(DATA_FILE_PATH);
+		if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
+		fs.writeFileSync(DATA_FILE_PATH, JSON.stringify(data, null, 2), "utf-8");
+		return true;
+	} catch (error) {
+		console.error("Error writing portfolio-data.json:", error);
+		return false;
+	}
+}
 var Route$2 = createFileRoute("/api/admin/data")({ server: { handlers: {
 	GET: async () => {
 		const data = getPortfolioData();

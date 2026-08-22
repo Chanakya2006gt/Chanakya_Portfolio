@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { getPortfolioData, savePortfolioData } from "@/data/store";
+import { getPortfolioData } from "@/data/store";
+import { savePortfolioData } from "@/data/store.server";
 import { getAdminSessionCookie, verifySignedSessionToken } from "@/lib/auth-session";
 import { assertEnvGuards } from "@/lib/boot-guards";
 

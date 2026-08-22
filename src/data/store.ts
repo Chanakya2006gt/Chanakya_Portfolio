@@ -1,7 +1,5 @@
 import { businesses as defaultBusinesses, sideProjects as defaultSideProjects, skills as defaultSkills, Project } from "./projects";
 import portfolioDataJson from "./portfolio-data.json";
-import fs from "node:fs";
-import path from "node:path";
 
 export interface DynamicData {
   businesses: Project[];
@@ -36,20 +34,4 @@ export function getPortfolioData(): DynamicData {
     hiringStatus: "Not hiring for any roles at this time (Chanakya is open to being hired for contracts/work)",
     heroTagline: "I ship products under real constraints — not demos. Trelio is the serious work. Everything else stays in experiments.",
   };
-}
-
-const DATA_FILE_PATH = path.join(process.cwd(), "src", "data", "portfolio-data.json");
-
-export function savePortfolioData(data: DynamicData): boolean {
-  try {
-    const dir = path.dirname(DATA_FILE_PATH);
-    if (!fs.existsSync(dir)) {
-      fs.mkdirSync(dir, { recursive: true });
-    }
-    fs.writeFileSync(DATA_FILE_PATH, JSON.stringify(data, null, 2), "utf-8");
-    return true;
-  } catch (error) {
-    console.error("Error writing portfolio-data.json:", error);
-    return false;
-  }
 }
