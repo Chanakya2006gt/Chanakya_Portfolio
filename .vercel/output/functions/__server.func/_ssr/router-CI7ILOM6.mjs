@@ -12,7 +12,7 @@ import { n as put, t as head } from "../_libs/@vercel/blob+[...].mjs";
 import crypto from "node:crypto";
 import fs from "node:fs";
 import path from "node:path";
-//#region node_modules/.nitro/vite/services/ssr/assets/router-D8ljk-hX.js
+//#region node_modules/.nitro/vite/services/ssr/assets/router-CI7ILOM6.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 var __defProp = Object.defineProperty;
@@ -585,16 +585,16 @@ function getPortfolioData() {
 		heroTagline: "I ship products under real constraints — not demos. Trelio is the serious work. Everything else stays in experiments."
 	};
 }
-var $$splitComponentImporter$2 = () => import("./routes-DGq0rBiR.mjs");
+var $$splitComponentImporter$2 = () => import("./routes-D-s5op16.mjs");
 var Route$10 = createFileRoute("/")({
 	loader: () => {
 		return getPortfolioData();
 	},
 	component: lazyRouteComponent($$splitComponentImporter$2, "component")
 });
-var $$splitComponentImporter$1 = () => import("./admin-BM1CIDrm.mjs");
+var $$splitComponentImporter$1 = () => import("./admin-CsfRMoZy.mjs");
 var Route$9 = createFileRoute("/admin/")({ component: lazyRouteComponent($$splitComponentImporter$1, "component") });
-var $$splitComponentImporter = () => import("./login-5-D1Chx3.mjs");
+var $$splitComponentImporter = () => import("./login-Cx2X0-mc.mjs");
 var Route$8 = createFileRoute("/admin/login")({ component: lazyRouteComponent($$splitComponentImporter, "component") });
 var envCache = null;
 var lastCacheTime = 0;
@@ -924,12 +924,12 @@ var Route$6 = createFileRoute("/api/health")({ server: { handlers: { GET: async 
 		headers: { "Content-Type": "application/json" }
 	});
 } } } });
-var Route$5 = createFileRoute("/resume/pdf")({ server: { handlers: { GET: async () => {
+var Route$5 = createFileRoute("/api/resume")({ server: { handlers: { GET: async () => {
 	try {
 		const blobDetails = await head("resume.pdf");
 		if (blobDetails && blobDetails.url) return Response.redirect(blobDetails.url, 307);
 	} catch (err) {
-		console.error("[resume.pdf route] Blob head lookup failed:", err);
+		console.error("[api/resume] Blob head failed:", err);
 	}
 	return new Response("Résumé PDF not found. Please upload via the admin panel.", {
 		status: 404,
@@ -1207,9 +1207,9 @@ var rootRouteChildren = {
 		path: "/api/health",
 		getParentRoute: () => Route$11
 	}),
-	ResumePdfRoute: Route$5.update({
-		id: "/resume/pdf",
-		path: "/resume/pdf",
+	ApiResumeRoute: Route$5.update({
+		id: "/api/resume",
+		path: "/api/resume",
 		getParentRoute: () => Route$11
 	}),
 	AdminIndexRoute,

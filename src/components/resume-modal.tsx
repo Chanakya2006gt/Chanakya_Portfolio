@@ -26,7 +26,7 @@ export function ResumeModal({
   open,
   onOpenChange,
   email,
-  pdfUrl = import.meta.env.VITE_RESUME_PDF_URL || "/resume.pdf",
+  pdfUrl = import.meta.env.VITE_RESUME_PDF_URL || "/api/resume",
   summary,
   education,
   skillsList,

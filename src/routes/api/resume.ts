@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { head } from "@vercel/blob";
 
-export const Route = createFileRoute("/resume/pdf")({
+export const Route = createFileRoute("/api/resume")({
   server: {
     handlers: {
       GET: async () => {
@@ -11,7 +11,7 @@ export const Route = createFileRoute("/resume/pdf")({
             return Response.redirect(blobDetails.url, 307);
           }
         } catch (err) {
-          console.error("[resume.pdf route] Blob head lookup failed:", err);
+          console.error("[api/resume] Blob head failed:", err);
         }
 
         return new Response("Résumé PDF not found. Please upload via the admin panel.", {
