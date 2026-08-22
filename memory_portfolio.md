@@ -281,6 +281,7 @@ interface DynamicData {
 | `src/routes/api/admin/check.ts` | Session verification |
 | `src/routes/api/admin/data.ts` | Admin data GET/POST |
 | `src/routes/api/admin/resume.ts` | Gated Vercel Blob PDF upload endpoint (`resume.pdf` overwrite) |
+| `src/routes/api/resume.ts` | Public endpoint querying Vercel Blob and redirecting (307) to live résumé PDF |
 | `src/lib/boot-guards.ts` | Server startup environment validation guards |
 | `src/lib/auth-session.ts` | HMAC-SHA256 session utilities |
 | `src/data/store.ts` | Data interface & client/SSR bundled JSON loader |
@@ -347,3 +348,4 @@ interface DynamicData {
 | Session 11 | Isolated server persistence to `store.server.ts` | Kept Node.js `fs`/`path` out of the client/SSR bundle so `store.ts` remains pure and browser-safe |
 | Session 12 | Gemini Plan Execution | Added `tsc --noEmit` build guard in `package.json`, replaced 404ing Grok manifest with self-branded `site.webmanifest`, implemented warm/tinted dark mode tokens with ambient radial glow, added auth guard to `GET /api/admin/data`, removed dead `useEffect` import |
 | Session 13 | Vercel Blob Résumé Upload (Task 3) | Implemented `POST /api/admin/resume` with `@vercel/blob` for fixed-path overwrite (`resume.pdf`, 1-min cache TTL), added admin file upload picker UI, updated `resume-modal.tsx` to resolve `VITE_RESUME_PDF_URL` |
+| Session 14 | Failure Analysis & Serverless Resilience | 1) Fixed Vercel 500 error in `store.server.ts`: handled read-only `/var/task` serverless filesystem gracefully without throwing `ENOENT` on admin "Save All". 2) Fixed 404 on résumé download: TanStack Start file-based routing converts `.pdf` filenames to subdirectories (`/resume/pdf`), so implemented `GET /api/resume` endpoint querying Blob via `head('resume.pdf')` and 307 redirecting to Blob URL, updating modal fallback |
