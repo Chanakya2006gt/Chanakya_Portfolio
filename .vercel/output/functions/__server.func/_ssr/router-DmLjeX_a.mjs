@@ -8,10 +8,11 @@ import { n as Portal, r as Provider, t as Content2 } from "../_libs/@radix-ui/re
 import { n as clsx } from "../_libs/class-variance-authority+clsx.mjs";
 import { t as twMerge } from "../_libs/tailwind-merge.mjs";
 import { t as Toaster } from "../_libs/sonner.mjs";
+import { t as put } from "../_libs/@vercel/blob+[...].mjs";
 import crypto from "node:crypto";
 import fs from "node:fs";
 import path from "node:path";
-//#region node_modules/.nitro/vite/services/ssr/assets/router-DLPvS2RV.js
+//#region node_modules/.nitro/vite/services/ssr/assets/router-DmLjeX_a.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 var __defProp = Object.defineProperty;
@@ -318,7 +319,7 @@ var JSON_LD = {
 		"Payment Systems"
 	]
 };
-var Route$9 = createRootRoute({
+var Route$10 = createRootRoute({
 	head: () => ({
 		meta: [
 			{ charSet: "utf-8" },
@@ -584,17 +585,17 @@ function getPortfolioData() {
 		heroTagline: "I ship products under real constraints — not demos. Trelio is the serious work. Everything else stays in experiments."
 	};
 }
-var $$splitComponentImporter$2 = () => import("./routes-mR3APHr_.mjs");
-var Route$8 = createFileRoute("/")({
+var $$splitComponentImporter$2 = () => import("./routes-1gagfQhS.mjs");
+var Route$9 = createFileRoute("/")({
 	loader: () => {
 		return getPortfolioData();
 	},
 	component: lazyRouteComponent($$splitComponentImporter$2, "component")
 });
-var $$splitComponentImporter$1 = () => import("./admin-DArwwXgS.mjs");
-var Route$7 = createFileRoute("/admin/")({ component: lazyRouteComponent($$splitComponentImporter$1, "component") });
-var $$splitComponentImporter = () => import("./login-OVUj0CmA.mjs");
-var Route$6 = createFileRoute("/admin/login")({ component: lazyRouteComponent($$splitComponentImporter, "component") });
+var $$splitComponentImporter$1 = () => import("./admin-BRHmnNEq.mjs");
+var Route$8 = createFileRoute("/admin/")({ component: lazyRouteComponent($$splitComponentImporter$1, "component") });
+var $$splitComponentImporter = () => import("./login-BWU5G-Yc.mjs");
+var Route$7 = createFileRoute("/admin/login")({ component: lazyRouteComponent($$splitComponentImporter, "component") });
 var envCache = null;
 var lastCacheTime = 0;
 var CACHE_TTL_MS = 5e3;
@@ -840,7 +841,7 @@ function isChatRateLimited(ip) {
 	record.count += 1;
 	return false;
 }
-var Route$5 = createFileRoute("/api/chat")({ server: { handlers: { POST: async ({ request }) => {
+var Route$6 = createFileRoute("/api/chat")({ server: { handlers: { POST: async ({ request }) => {
 	assertEnvGuards();
 	if (isChatRateLimited(request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() || "127.0.0.1")) return new Response(JSON.stringify({ reply: "You're sending messages a bit too fast. Please wait a moment before trying again." }), {
 		status: 429,
@@ -906,7 +907,7 @@ var Route$5 = createFileRoute("/api/chat")({ server: { handlers: { POST: async (
 *   "ok"       — all required env vars present
 *   "degraded" — at least one required env var is missing
 */
-var Route$4 = createFileRoute("/api/health")({ server: { handlers: { GET: async () => {
+var Route$5 = createFileRoute("/api/health")({ server: { handlers: { GET: async () => {
 	const required = {
 		ADMIN_USERNAME: getEnvVar("ADMIN_USERNAME"),
 		ADMIN_PASSWORD: getEnvVar("ADMIN_PASSWORD"),
@@ -984,7 +985,7 @@ function createSetCookieHeader(token, isProduction = false) {
 function createClearCookieHeader() {
 	return `${COOKIE_NAME}=; Path=/; HttpOnly; SameSite=Lax; Max-Age=0`;
 }
-var Route$3 = createFileRoute("/api/admin/check")({ server: { handlers: { GET: async ({ request }) => {
+var Route$4 = createFileRoute("/api/admin/check")({ server: { handlers: { GET: async ({ request }) => {
 	assertEnvGuards();
 	const authenticated = verifySignedSessionToken(getAdminSessionCookie(request) || void 0);
 	return new Response(JSON.stringify({ authenticated }), { headers: { "Content-Type": "application/json" } });
@@ -1007,7 +1008,7 @@ function savePortfolioData(data) {
 		return false;
 	}
 }
-var Route$2 = createFileRoute("/api/admin/data")({ server: { handlers: {
+var Route$3 = createFileRoute("/api/admin/data")({ server: { handlers: {
 	GET: async ({ request }) => {
 		if (!verifySignedSessionToken(getAdminSessionCookie(request) || void 0)) return new Response(JSON.stringify({ error: "Unauthorized" }), {
 			status: 401,
@@ -1076,7 +1077,7 @@ function safeCompare(a, b) {
 	}
 	return crypto.timingSafeEqual(bufA, bufB);
 }
-var Route$1 = createFileRoute("/api/admin/login")({ server: { handlers: { POST: async ({ request }) => {
+var Route$2 = createFileRoute("/api/admin/login")({ server: { handlers: { POST: async ({ request }) => {
 	assertEnvGuards();
 	const ip = request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() || "127.0.0.1";
 	if (isRateLimited(ip)) return new Response(JSON.stringify({ error: "Too many failed attempts. Please wait 5 minutes." }), {
@@ -1118,62 +1119,105 @@ var Route$1 = createFileRoute("/api/admin/login")({ server: { handlers: { POST: 
 		});
 	}
 } } } });
-var Route = createFileRoute("/api/admin/logout")({ server: { handlers: { POST: async () => {
+var Route$1 = createFileRoute("/api/admin/logout")({ server: { handlers: { POST: async () => {
 	return new Response(JSON.stringify({ success: true }), { headers: {
 		"Content-Type": "application/json",
 		"Set-Cookie": createClearCookieHeader()
 	} });
 } } } });
-var IndexRoute = Route$8.update({
+var Route = createFileRoute("/api/admin/resume")({ server: { handlers: { POST: async ({ request }) => {
+	if (!verifySignedSessionToken(getAdminSessionCookie(request) || void 0)) return new Response(JSON.stringify({ error: "Unauthorized" }), {
+		status: 401,
+		headers: { "Content-Type": "application/json" }
+	});
+	if (!(request.headers.get("content-type") || "").includes("application/pdf")) return new Response(JSON.stringify({ error: "Only application/pdf is accepted." }), {
+		status: 415,
+		headers: { "Content-Type": "application/json" }
+	});
+	const bytes = await request.arrayBuffer();
+	if (bytes.byteLength === 0) return new Response(JSON.stringify({ error: "Empty file." }), {
+		status: 400,
+		headers: { "Content-Type": "application/json" }
+	});
+	if (bytes.byteLength > 4e6) return new Response(JSON.stringify({ error: "File too large (max 4 MB)." }), {
+		status: 413,
+		headers: { "Content-Type": "application/json" }
+	});
+	try {
+		const blob = await put("resume.pdf", bytes, {
+			access: "public",
+			addRandomSuffix: false,
+			allowOverwrite: true,
+			contentType: "application/pdf",
+			cacheControlMaxAge: 60
+		});
+		return new Response(JSON.stringify({
+			success: true,
+			url: blob.url
+		}), { headers: { "Content-Type": "application/json" } });
+	} catch (err) {
+		console.error("[resume upload] Blob put failed:", err);
+		return new Response(JSON.stringify({ error: "Upload failed. Is BLOB_READ_WRITE_TOKEN configured?" }), {
+			status: 500,
+			headers: { "Content-Type": "application/json" }
+		});
+	}
+} } } });
+var IndexRoute = Route$9.update({
 	id: "/",
 	path: "/",
-	getParentRoute: () => Route$9
+	getParentRoute: () => Route$10
 });
-var AdminIndexRoute = Route$7.update({
+var AdminIndexRoute = Route$8.update({
 	id: "/admin/",
 	path: "/admin/",
-	getParentRoute: () => Route$9
+	getParentRoute: () => Route$10
 });
 var rootRouteChildren = {
 	IndexRoute,
-	AdminLoginRoute: Route$6.update({
+	AdminLoginRoute: Route$7.update({
 		id: "/admin/login",
 		path: "/admin/login",
-		getParentRoute: () => Route$9
+		getParentRoute: () => Route$10
 	}),
-	ApiChatRoute: Route$5.update({
+	ApiChatRoute: Route$6.update({
 		id: "/api/chat",
 		path: "/api/chat",
-		getParentRoute: () => Route$9
+		getParentRoute: () => Route$10
 	}),
-	ApiHealthRoute: Route$4.update({
+	ApiHealthRoute: Route$5.update({
 		id: "/api/health",
 		path: "/api/health",
-		getParentRoute: () => Route$9
+		getParentRoute: () => Route$10
 	}),
 	AdminIndexRoute,
-	ApiAdminCheckRoute: Route$3.update({
+	ApiAdminCheckRoute: Route$4.update({
 		id: "/api/admin/check",
 		path: "/api/admin/check",
-		getParentRoute: () => Route$9
+		getParentRoute: () => Route$10
 	}),
-	ApiAdminDataRoute: Route$2.update({
+	ApiAdminDataRoute: Route$3.update({
 		id: "/api/admin/data",
 		path: "/api/admin/data",
-		getParentRoute: () => Route$9
+		getParentRoute: () => Route$10
 	}),
-	ApiAdminLoginRoute: Route$1.update({
+	ApiAdminLoginRoute: Route$2.update({
 		id: "/api/admin/login",
 		path: "/api/admin/login",
-		getParentRoute: () => Route$9
+		getParentRoute: () => Route$10
 	}),
-	ApiAdminLogoutRoute: Route.update({
+	ApiAdminLogoutRoute: Route$1.update({
 		id: "/api/admin/logout",
 		path: "/api/admin/logout",
-		getParentRoute: () => Route$9
+		getParentRoute: () => Route$10
+	}),
+	ApiAdminResumeRoute: Route.update({
+		id: "/api/admin/resume",
+		path: "/api/admin/resume",
+		getParentRoute: () => Route$10
 	})
 };
-var routeTree = Route$9._addFileChildren(rootRouteChildren)._addFileTypes();
+var routeTree = Route$10._addFileChildren(rootRouteChildren)._addFileTypes();
 var router_exports = /* @__PURE__ */ __exportAll({ getRouter: () => getRouter });
 function getRouter() {
 	return createRouter({
@@ -1182,4 +1226,4 @@ function getRouter() {
 	});
 }
 //#endregion
-export { sideProjects$1 as a, navLinks as i, Route$8 as n, skills$1 as o, businesses$1 as r, cn as s, router_exports as t };
+export { sideProjects$1 as a, navLinks as i, Route$9 as n, skills$1 as o, businesses$1 as r, cn as s, router_exports as t };

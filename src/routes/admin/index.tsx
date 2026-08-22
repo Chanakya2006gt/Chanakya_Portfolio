@@ -86,6 +86,32 @@ function AdminDashboardPage() {
     }
   };
 
+  const handleResumeUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+    if (file.type !== "application/pdf") {
+      toast.error("Please choose a PDF file.");
+      return;
+    }
+    try {
+      const res = await fetch("/api/admin/resume", {
+        method: "POST",
+        headers: { "Content-Type": "application/pdf" },
+        body: file,
+      });
+      const json = await res.json();
+      if (res.ok && json.success) {
+        toast.success("Résumé uploaded. It is live within ~1 minute.");
+      } else {
+        toast.error(json.error || "Upload failed.");
+      }
+    } catch {
+      toast.error("Upload failed.");
+    } finally {
+      e.target.value = "";
+    }
+  };
+
   // Add new business project helper
   const handleAddBusiness = () => {
     if (!data) return;
@@ -397,18 +423,16 @@ function AdminDashboardPage() {
                   />
                 </div>
                 <div>
-                  <Label className="text-xs">Resume PDF URL / Path</Label>
-                  <Input
-                    value={data.resumeOverride?.resumePdfUrl || "/resume.pdf"}
-                    onChange={(e) => {
-                      setData({
-                        ...data,
-                        resumeOverride: { ...data.resumeOverride, resumePdfUrl: e.target.value },
-                      });
-                    }}
-                    placeholder="/resume.pdf or https://..."
-                    className="mt-1 bg-secondary/50 text-xs"
+                  <Label className="text-xs">Résumé PDF (upload replaces the live file)</Label>
+                  <input
+                    type="file"
+                    accept="application/pdf"
+                    onChange={handleResumeUpload}
+                    className="mt-1 block w-full text-xs text-muted-foreground file:mr-3 file:rounded-md file:border-0 file:bg-sage/20 file:px-3 file:py-1.5 file:text-sage file:text-xs file:font-medium hover:file:bg-sage/30 cursor-pointer"
                   />
+                  <p className="mt-1 text-[11px] text-muted-foreground">
+                    PDF only, max 4&nbsp;MB. Uploads immediately; no “Save” needed.
+                  </p>
                 </div>
               </div>
 

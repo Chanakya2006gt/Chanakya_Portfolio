@@ -280,6 +280,7 @@ interface DynamicData {
 | `src/routes/api/admin/login.ts` | Auth — fail-closed, HMAC token, boot guards |
 | `src/routes/api/admin/check.ts` | Session verification |
 | `src/routes/api/admin/data.ts` | Admin data GET/POST |
+| `src/routes/api/admin/resume.ts` | Gated Vercel Blob PDF upload endpoint (`resume.pdf` overwrite) |
 | `src/lib/boot-guards.ts` | Server startup environment validation guards |
 | `src/lib/auth-session.ts` | HMAC-SHA256 session utilities |
 | `src/data/store.ts` | Data interface & client/SSR bundled JSON loader |
@@ -345,3 +346,4 @@ interface DynamicData {
 | Session 10 | Master Plan Execution (Phases 1, 4, 5) | Server-rendered portfolio data via Route loader (no client fetch in useEffect), bundled JSON data import, sanitized /api/health output, theme-aware scrollbar tokens |
 | Session 11 | Isolated server persistence to `store.server.ts` | Kept Node.js `fs`/`path` out of the client/SSR bundle so `store.ts` remains pure and browser-safe |
 | Session 12 | Gemini Plan Execution | Added `tsc --noEmit` build guard in `package.json`, replaced 404ing Grok manifest with self-branded `site.webmanifest`, implemented warm/tinted dark mode tokens with ambient radial glow, added auth guard to `GET /api/admin/data`, removed dead `useEffect` import |
+| Session 13 | Vercel Blob Résumé Upload (Task 3) | Implemented `POST /api/admin/resume` with `@vercel/blob` for fixed-path overwrite (`resume.pdf`, 1-min cache TTL), added admin file upload picker UI, updated `resume-modal.tsx` to resolve `VITE_RESUME_PDF_URL` |

@@ -4,9 +4,9 @@ import { _ as useNavigate } from "../_libs/@tanstack/react-router+[...].mjs";
 import { s as require_jsx_runtime } from "../_libs/@radix-ui/react-collection+[...].mjs";
 import { C as FileText, _ as LogOut, b as LayoutGrid, f as Plus, i as Trash2, l as Save, o as Sparkles, w as ExternalLink } from "../_libs/lucide-react.mjs";
 import { n as toast } from "../_libs/sonner.mjs";
-import { c as Input, l as Label, n as Card, t as Button } from "./card-DpKbH96D.mjs";
-import { a as TabsTrigger, i as TabsList, n as Tabs, o as Textarea, r as TabsContent, t as Badge } from "./badge-zOXmU3Wn.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/admin-DArwwXgS.js
+import { c as Input, l as Label, n as Card, t as Button } from "./card-ComfP8Sb.mjs";
+import { a as TabsTrigger, i as TabsList, n as Tabs, o as Textarea, r as TabsContent, t as Badge } from "./badge-SEzUDlFU.mjs";
+//#region node_modules/.nitro/vite/services/ssr/assets/admin-BRHmnNEq.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 function AdminDashboardPage() {
@@ -59,6 +59,28 @@ function AdminDashboardPage() {
 			toast.error("An error occurred while saving");
 		} finally {
 			setIsSaving(false);
+		}
+	};
+	const handleResumeUpload = async (e) => {
+		const file = e.target.files?.[0];
+		if (!file) return;
+		if (file.type !== "application/pdf") {
+			toast.error("Please choose a PDF file.");
+			return;
+		}
+		try {
+			const res = await fetch("/api/admin/resume", {
+				method: "POST",
+				headers: { "Content-Type": "application/pdf" },
+				body: file
+			});
+			const json = await res.json();
+			if (res.ok && json.success) toast.success("Résumé uploaded. It is live within ~1 minute.");
+			else toast.error(json.error || "Upload failed.");
+		} catch {
+			toast.error("Upload failed.");
+		} finally {
+			e.target.value = "";
 		}
 	};
 	const handleAddBusiness = () => {
@@ -419,23 +441,22 @@ function AdminDashboardPage() {
 											});
 										},
 										className: "mt-1 bg-secondary/50 text-xs"
-									})] }), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Label, {
-										className: "text-xs",
-										children: "Resume PDF URL / Path"
-									}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Input, {
-										value: data.resumeOverride?.resumePdfUrl || "/resume.pdf",
-										onChange: (e) => {
-											setData({
-												...data,
-												resumeOverride: {
-													...data.resumeOverride,
-													resumePdfUrl: e.target.value
-												}
-											});
-										},
-										placeholder: "/resume.pdf or https://...",
-										className: "mt-1 bg-secondary/50 text-xs"
-									})] })]
+									})] }), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [
+										/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Label, {
+											className: "text-xs",
+											children: "Résumé PDF (upload replaces the live file)"
+										}),
+										/* @__PURE__ */ (0, import_jsx_runtime.jsx)("input", {
+											type: "file",
+											accept: "application/pdf",
+											onChange: handleResumeUpload,
+											className: "mt-1 block w-full text-xs text-muted-foreground file:mr-3 file:rounded-md file:border-0 file:bg-sage/20 file:px-3 file:py-1.5 file:text-sage file:text-xs file:font-medium hover:file:bg-sage/30 cursor-pointer"
+										}),
+										/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+											className: "mt-1 text-[11px] text-muted-foreground",
+											children: "PDF only, max 4\xA0MB. Uploads immediately; no “Save” needed."
+										})
+									] })]
 								}),
 								/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Label, {
 									className: "text-xs",
