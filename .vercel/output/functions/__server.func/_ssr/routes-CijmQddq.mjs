@@ -4,11 +4,11 @@ import { s as require_jsx_runtime } from "../_libs/@radix-ui/react-collection+[.
 import { A as ArrowRight, C as FileText, D as Bot, E as Building2, O as Award, S as Github, T as CodeXml, a as Sun, c as Send, d as Printer, g as Mail, h as MapPin, k as ArrowUp, m as Menu, n as User, p as Moon, s as ShieldCheck, t as X, u as RefreshCw, w as ExternalLink, x as GraduationCap, y as Linkedin } from "../_libs/lucide-react.mjs";
 import { a as DialogOverlay$1, c as DialogTrigger$1, i as DialogDescription$1, n as DialogClose, o as DialogPortal$1, r as DialogContent$1, s as DialogTitle$1, t as Dialog$1 } from "../_libs/@radix-ui/react-dialog+[...].mjs";
 import { n as toast } from "../_libs/sonner.mjs";
-import { a as skills, i as sideProjects, n as businesses, o as cn, r as navLinks } from "./router-C_irr4hC.mjs";
-import { a as CardFooter, c as Input, i as CardDescription, l as Label, n as Card, o as CardHeader, r as CardContent, s as CardTitle, t as Button } from "./card-CUp8oGDK.mjs";
-import { a as TabsTrigger, i as TabsList, n as Tabs, o as Textarea, r as TabsContent, t as Badge } from "./badge-COjosqZV.mjs";
+import { a as sideProjects$1, i as navLinks, n as Route$8, o as skills$1, r as businesses$1, s as cn } from "./router-DUtM5R-6.mjs";
+import { a as CardFooter, c as Input, i as CardDescription, l as Label, n as Card, o as CardHeader, r as CardContent, s as CardTitle, t as Button } from "./card-Dg6tj8FW.mjs";
+import { a as TabsTrigger, i as TabsList, n as Tabs, o as Textarea, r as TabsContent, t as Badge } from "./badge-BpqTwOME.mjs";
 import { t as Root } from "../_libs/radix-ui__react-separator.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/routes-BOxW0v0T.js
+//#region node_modules/.nitro/vite/services/ssr/assets/routes-CijmQddq.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 var Separator = import_react.forwardRef(({ className, orientation = "horizontal", decorative = true, ...props }, ref) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Root, {
@@ -2244,25 +2244,11 @@ function Contact() {
 		]
 	});
 }
-function PortfolioHome() {
-	const [data, setData] = (0, import_react.useState)(null);
-	(0, import_react.useEffect)(() => {
-		async function fetchDynamicData() {
-			try {
-				const res = await fetch("/api/admin/data");
-				if (res.ok) {
-					const json = await res.json();
-					setData(json);
-				}
-			} catch (err) {
-				console.error("Failed to load dynamic portfolio data:", err);
-			}
-		}
-		fetchDynamicData();
-	}, []);
-	const businessesList = data?.businesses || businesses;
-	const sideProjectsList = data?.sideProjects || sideProjects;
-	const skillsList = data?.skills || skills;
+function PortfolioHome({ initialData }) {
+	const [data] = (0, import_react.useState)(initialData || null);
+	const businessesList = data?.businesses || businesses$1;
+	const sideProjectsList = data?.sideProjects || sideProjects$1;
+	const skillsList = data?.skills || skills$1;
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 		id: "top",
 		className: "min-h-screen bg-background text-foreground relative",
@@ -2351,7 +2337,8 @@ function PortfolioHome() {
 	});
 }
 function Home() {
-	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(PortfolioHome, {});
+	const data = Route$8.useLoaderData();
+	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(PortfolioHome, { initialData: data });
 }
 //#endregion
 export { Home as component };

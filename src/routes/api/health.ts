@@ -24,30 +24,19 @@ export const Route = createFileRoute("/api/health")({
           OPENAI_API_KEY: getEnvVar("OPENAI_API_KEY"),
         };
 
-        const checks: Record<string, "ok" | "missing"> = Object.fromEntries(
-          Object.entries(required).map(([key, val]) => [
-            key,
-            val && val.trim() && !val.includes("placeholder") ? "ok" : "missing",
-          ])
-        ) as Record<string, "ok" | "missing">;
+        const hasAllRequired = Object.values(required).every(
+          (val) => val && val.trim() && !val.includes("placeholder")
+        );
 
-        const missing = Object.entries(checks)
-          .filter(([, v]) => v === "missing")
-          .map(([k]) => k);
-
-        const status: "ok" | "degraded" = missing.length === 0 ? "ok" : "degraded";
+        const status: "ok" | "degraded" = hasAllRequired ? "ok" : "degraded";
 
         return new Response(
           JSON.stringify({
             service: "chanakya-portfolio",
             status,
             timestamp: new Date().toISOString(),
-            checks,
-            ...(missing.length > 0 && { missing }),
           }),
           {
-            // Always 200 — a non-200 would be a server crash, not a config issue.
-            // Monitors should alert on `status !== "ok"`, not on HTTP status.
             status: 200,
             headers: { "Content-Type": "application/json" },
           }

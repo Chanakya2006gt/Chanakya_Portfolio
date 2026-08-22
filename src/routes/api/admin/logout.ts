@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { createClearCookieHeader } from "@/lib/auth-session";
 
 export const Route = createFileRoute("/api/admin/logout")({
   server: {
@@ -7,7 +8,7 @@ export const Route = createFileRoute("/api/admin/logout")({
         return new Response(JSON.stringify({ success: true }), {
           headers: {
             "Content-Type": "application/json",
-            "Set-Cookie": "admin_session=; Path=/; HttpOnly; Max-Age=0",
+            "Set-Cookie": createClearCookieHeader(),
           },
         });
       },

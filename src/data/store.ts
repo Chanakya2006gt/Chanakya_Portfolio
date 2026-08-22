@@ -1,6 +1,5 @@
-import fs from "node:fs";
-import path from "node:path";
 import { businesses as defaultBusinesses, sideProjects as defaultSideProjects, skills as defaultSkills, Project } from "./projects";
+import portfolioDataJson from "./portfolio-data.json";
 
 export interface DynamicData {
   businesses: Project[];
@@ -20,16 +19,9 @@ export interface DynamicData {
   };
 }
 
-const DATA_FILE_PATH = path.join(process.cwd(), "src", "data", "portfolio-data.json");
-
 export function getPortfolioData(): DynamicData {
-  try {
-    if (fs.existsSync(DATA_FILE_PATH)) {
-      const fileContent = fs.readFileSync(DATA_FILE_PATH, "utf-8");
-      return JSON.parse(fileContent);
-    }
-  } catch (error) {
-    console.error("Error reading portfolio-data.json:", error);
+  if (portfolioDataJson) {
+    return portfolioDataJson as unknown as DynamicData;
   }
 
   // Fallback defaults

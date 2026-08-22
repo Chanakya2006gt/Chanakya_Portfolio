@@ -145,7 +145,7 @@
     width: 6px;
   }
   ::-webkit-scrollbar-track {
-    background: #0a0a0b;
+    background: var(--background);
   }
   ::-webkit-scrollbar-thumb {
     background: rgba(143, 168, 150, 0.3);

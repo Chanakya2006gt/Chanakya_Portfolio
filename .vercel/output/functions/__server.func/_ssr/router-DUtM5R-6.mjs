@@ -9,9 +9,9 @@ import { n as clsx } from "../_libs/class-variance-authority+clsx.mjs";
 import { t as twMerge } from "../_libs/tailwind-merge.mjs";
 import { t as Toaster } from "../_libs/sonner.mjs";
 import crypto from "node:crypto";
-import fs from "node:fs";
-import path from "node:path";
-//#region node_modules/.nitro/vite/services/ssr/assets/router-C_irr4hC.js
+import fs$1 from "node:fs";
+import path$1 from "node:path";
+//#region node_modules/.nitro/vite/services/ssr/assets/router-DUtM5R-6.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 var __defProp = Object.defineProperty;
@@ -288,7 +288,7 @@ var TooltipContent = import_react.forwardRef(({ className, sideOffset = 6, ...pr
 	...props
 }) }));
 TooltipContent.displayName = Content2.displayName;
-var styles_default = "/assets/styles-COY7FlSe.css";
+var styles_default = "/assets/styles-Bg-j-DqB.css";
 var APP_NAME = "Nagulagam Chanakya — Full-Stack Developer & SaaS Founder";
 var APP_DESC = "Official portfolio of Nagulagam Chanakya — Full-Stack Developer & Founder of Trelio. Specializing in React, Node.js, TypeScript, PostgreSQL, and applied software security.";
 var JSON_LD = {
@@ -437,50 +437,7 @@ var Route$9 = createRootRoute({
 		] })]
 	})
 });
-var $$splitComponentImporter$2 = () => import("./routes-BOxW0v0T.mjs");
-var Route$8 = createFileRoute("/")({ component: lazyRouteComponent($$splitComponentImporter$2, "component") });
-var $$splitComponentImporter$1 = () => import("./admin-BkAuSV4h.mjs");
-var Route$7 = createFileRoute("/admin/")({ component: lazyRouteComponent($$splitComponentImporter$1, "component") });
-var $$splitComponentImporter = () => import("./login-COLyazKw.mjs");
-var Route$6 = createFileRoute("/admin/login")({ component: lazyRouteComponent($$splitComponentImporter, "component") });
-var envCache = null;
-var lastCacheTime = 0;
-var CACHE_TTL_MS = 5e3;
-function loadEnvFile() {
-	const now = Date.now();
-	if (envCache && now - lastCacheTime < CACHE_TTL_MS) return envCache;
-	const envPath = path.join(process.cwd(), ".env");
-	const result = {};
-	try {
-		if (fs.existsSync(envPath)) {
-			const lines = fs.readFileSync(envPath, "utf-8").replace(/\r\n/g, "\n").split("\n");
-			for (const line of lines) {
-				const trimmed = line.trim();
-				if (!trimmed || trimmed.startsWith("#")) continue;
-				const equalsIndex = trimmed.indexOf("=");
-				if (equalsIndex > 0) {
-					const key = trimmed.slice(0, equalsIndex).trim();
-					let value = trimmed.slice(equalsIndex + 1).trim();
-					if (!value.startsWith("\"") && !value.startsWith("'") && value.includes("#")) value = value.split("#")[0].trim();
-					if (value.startsWith("\"") && value.endsWith("\"") || value.startsWith("'") && value.endsWith("'")) value = value.slice(1, -1).trim();
-					result[key] = value;
-				}
-			}
-		}
-	} catch (error) {
-		console.error("Error parsing .env file:", error);
-	}
-	envCache = result;
-	lastCacheTime = now;
-	return result;
-}
-function getEnvVar(key, defaultValue = "") {
-	const fileVars = loadEnvFile();
-	if (fileVars[key] && fileVars[key].trim()) return fileVars[key].trim();
-	if (process.env[key] && process.env[key]?.trim()) return process.env[key].trim();
-	return defaultValue;
-}
-var businesses = [{
+var businesses$1 = [{
 	id: "trelio",
 	title: "Trelio",
 	description: "Authorization-before-execution SaaS for freelancers and agencies. Work is broken into stages that clients approve and pay one at a time, so execution never runs ahead of payment.",
@@ -496,7 +453,7 @@ var businesses = [{
 	badge: "Live product",
 	kind: "business"
 }];
-var sideProjects = [{
+var sideProjects$1 = [{
 	id: "portfolio",
 	title: "This site",
 	description: "Personal developer portfolio built with TanStack Start, React 19 SSR, and Tailwind CSS v4 with full theme synchronization and Nitro serverless deployment.",
@@ -509,7 +466,7 @@ var sideProjects = [{
 	liveUrl: "https://github.com/Chanakya2006gt/Chanakya_Portfolio",
 	kind: "side"
 }];
-var skills = {
+var skills$1 = {
 	Frontend: [
 		"React",
 		"TypeScript",
@@ -554,20 +511,73 @@ var navLinks = [
 		label: "Contact"
 	}
 ];
-var DATA_FILE_PATH = path.join(process.cwd(), "src", "data", "portfolio-data.json");
+var portfolio_data_default = {
+	businesses: [{
+		"id": "trelio",
+		"title": "Trelio",
+		"description": "Authorization-before-execution SaaS for freelancers and agencies. Work is broken into stages that clients approve and pay one at a time, so execution never runs ahead of payment.",
+		"liveUrl": "https://trelio.in",
+		"stack": [
+			"React",
+			"Node.js",
+			"Multi-tenant",
+			"Payments",
+			"Audit logs"
+		],
+		"featured": true,
+		"badge": "Live product",
+		"kind": "business"
+	}],
+	sideProjects: [{
+		"id": "portfolio",
+		"title": "This site",
+		"description": "Personal developer portfolio built with TanStack Start, React 19 SSR, and Tailwind CSS v4 with full theme synchronization and Nitro serverless deployment.",
+		"stack": [
+			"TanStack Start",
+			"React 19",
+			"Tailwind v4",
+			"shadcn/ui"
+		],
+		"liveUrl": "https://github.com/Chanakya2006gt/Chanakya_Portfolio",
+		"kind": "side"
+	}],
+	skills: {
+		"Frontend": [
+			"React",
+			"TypeScript",
+			"Tailwind",
+			"shadcn/ui",
+			"Vite"
+		],
+		"Backend": [
+			"Node.js",
+			"Express",
+			"PostgreSQL",
+			"REST APIs"
+		],
+		"Product": [
+			"Multi-tenant",
+			"Payments",
+			"Audit logs",
+			"Auth flows"
+		],
+		"Tools": [
+			"Git",
+			"Playwright",
+			"Vercel",
+			"Razorpay"
+		]
+	},
+	availabilityStatus: "Open for collaborations & full-time roles",
+	heroTagline: "I ship products under real constraints — not demos. Trelio is the serious work. Everything else stays in experiments.",
+	resumeOverride: { "education": "SR University — B.Tech CSE (2028)" }
+};
 function getPortfolioData() {
-	try {
-		if (fs.existsSync(DATA_FILE_PATH)) {
-			const fileContent = fs.readFileSync(DATA_FILE_PATH, "utf-8");
-			return JSON.parse(fileContent);
-		}
-	} catch (error) {
-		console.error("Error reading portfolio-data.json:", error);
-	}
+	if (portfolio_data_default) return portfolio_data_default;
 	return {
-		businesses,
-		sideProjects,
-		skills,
+		businesses: businesses$1,
+		sideProjects: sideProjects$1,
+		skills: skills$1,
 		availabilityStatus: "Open for contracts & software engineering roles",
 		workAvailability: "Open for contract work, consulting & engineering roles",
 		hiringStatus: "Not hiring for any roles at this time (Chanakya is open to being hired for contracts/work)",
@@ -584,6 +594,54 @@ function savePortfolioData(data) {
 		console.error("Error writing portfolio-data.json:", error);
 		return false;
 	}
+}
+var $$splitComponentImporter$2 = () => import("./routes-CijmQddq.mjs");
+var Route$8 = createFileRoute("/")({
+	loader: () => {
+		return getPortfolioData();
+	},
+	component: lazyRouteComponent($$splitComponentImporter$2, "component")
+});
+var $$splitComponentImporter$1 = () => import("./admin-DSJ1dJlV.mjs");
+var Route$7 = createFileRoute("/admin/")({ component: lazyRouteComponent($$splitComponentImporter$1, "component") });
+var $$splitComponentImporter = () => import("./login-CfX0RKsE.mjs");
+var Route$6 = createFileRoute("/admin/login")({ component: lazyRouteComponent($$splitComponentImporter, "component") });
+var envCache = null;
+var lastCacheTime = 0;
+var CACHE_TTL_MS = 5e3;
+function loadEnvFile() {
+	const now = Date.now();
+	if (envCache && now - lastCacheTime < CACHE_TTL_MS) return envCache;
+	const envPath = path$1.join(process.cwd(), ".env");
+	const result = {};
+	try {
+		if (fs$1.existsSync(envPath)) {
+			const lines = fs$1.readFileSync(envPath, "utf-8").replace(/\r\n/g, "\n").split("\n");
+			for (const line of lines) {
+				const trimmed = line.trim();
+				if (!trimmed || trimmed.startsWith("#")) continue;
+				const equalsIndex = trimmed.indexOf("=");
+				if (equalsIndex > 0) {
+					const key = trimmed.slice(0, equalsIndex).trim();
+					let value = trimmed.slice(equalsIndex + 1).trim();
+					if (!value.startsWith("\"") && !value.startsWith("'") && value.includes("#")) value = value.split("#")[0].trim();
+					if (value.startsWith("\"") && value.endsWith("\"") || value.startsWith("'") && value.endsWith("'")) value = value.slice(1, -1).trim();
+					result[key] = value;
+				}
+			}
+		}
+	} catch (error) {
+		console.error("Error parsing .env file:", error);
+	}
+	envCache = result;
+	lastCacheTime = now;
+	return result;
+}
+function getEnvVar(key, defaultValue = "") {
+	const fileVars = loadEnvFile();
+	if (fileVars[key] && fileVars[key].trim()) return fileVars[key].trim();
+	if (process.env[key] && process.env[key]?.trim()) return process.env[key].trim();
+	return defaultValue;
 }
 /**
 * src/lib/boot-guards.ts
@@ -866,15 +924,11 @@ var Route$4 = createFileRoute("/api/health")({ server: { handlers: { GET: async 
 		ADMIN_SESSION_SECRET: getEnvVar("ADMIN_SESSION_SECRET"),
 		OPENAI_API_KEY: getEnvVar("OPENAI_API_KEY")
 	};
-	const checks = Object.fromEntries(Object.entries(required).map(([key, val]) => [key, val && val.trim() && !val.includes("placeholder") ? "ok" : "missing"]));
-	const missing = Object.entries(checks).filter(([, v]) => v === "missing").map(([k]) => k);
-	const status = missing.length === 0 ? "ok" : "degraded";
+	const status = Object.values(required).every((val) => val && val.trim() && !val.includes("placeholder")) ? "ok" : "degraded";
 	return new Response(JSON.stringify({
 		service: "chanakya-portfolio",
 		status,
-		timestamp: (/* @__PURE__ */ new Date()).toISOString(),
-		checks,
-		...missing.length > 0 && { missing }
+		timestamp: (/* @__PURE__ */ new Date()).toISOString()
 	}), {
 		status: 200,
 		headers: { "Content-Type": "application/json" }
@@ -937,6 +991,9 @@ function getAdminSessionCookie(request) {
 }
 function createSetCookieHeader(token, isProduction = false) {
 	return `${COOKIE_NAME}=${token}; Path=/; HttpOnly; SameSite=Lax; Max-Age=${SESSION_MAX_AGE_SEC}${isProduction ? "; Secure" : ""}`;
+}
+function createClearCookieHeader() {
+	return `${COOKIE_NAME}=; Path=/; HttpOnly; SameSite=Lax; Max-Age=0`;
 }
 var Route$3 = createFileRoute("/api/admin/check")({ server: { handlers: { GET: async ({ request }) => {
 	assertEnvGuards();
@@ -1053,7 +1110,7 @@ var Route$1 = createFileRoute("/api/admin/login")({ server: { handlers: { POST: 
 var Route = createFileRoute("/api/admin/logout")({ server: { handlers: { POST: async () => {
 	return new Response(JSON.stringify({ success: true }), { headers: {
 		"Content-Type": "application/json",
-		"Set-Cookie": "admin_session=; Path=/; HttpOnly; Max-Age=0"
+		"Set-Cookie": createClearCookieHeader()
 	} });
 } } } });
 var IndexRoute = Route$8.update({
@@ -1114,4 +1171,4 @@ function getRouter() {
 	});
 }
 //#endregion
-export { skills as a, sideProjects as i, businesses as n, cn as o, navLinks as r, router_exports as t };
+export { sideProjects$1 as a, navLinks as i, Route$8 as n, skills$1 as o, businesses$1 as r, cn as s, router_exports as t };

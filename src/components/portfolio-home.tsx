@@ -571,23 +571,8 @@ function Contact() {
   );
 }
 
-export function PortfolioHome() {
-  const [data, setData] = useState<DynamicData | null>(null);
-
-  useEffect(() => {
-    async function fetchDynamicData() {
-      try {
-        const res = await fetch("/api/admin/data");
-        if (res.ok) {
-          const json = await res.json();
-          setData(json);
-        }
-      } catch (err) {
-        console.error("Failed to load dynamic portfolio data:", err);
-      }
-    }
-    fetchDynamicData();
-  }, []);
+export function PortfolioHome({ initialData }: { initialData?: DynamicData | null }) {
+  const [data] = useState<DynamicData | null>(initialData || null);
 
   const businessesList = data?.businesses || defaultBusinesses;
   const sideProjectsList = data?.sideProjects || defaultSideProjects;
