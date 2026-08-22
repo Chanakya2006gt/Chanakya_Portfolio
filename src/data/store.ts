@@ -1,5 +1,7 @@
 import { businesses as defaultBusinesses, sideProjects as defaultSideProjects, skills as defaultSkills, Project } from "./projects";
 import portfolioDataJson from "./portfolio-data.json";
+import fs from "node:fs";
+import path from "node:path";
 
 export interface DynamicData {
   businesses: Project[];
@@ -35,6 +37,8 @@ export function getPortfolioData(): DynamicData {
     heroTagline: "I ship products under real constraints — not demos. Trelio is the serious work. Everything else stays in experiments.",
   };
 }
+
+const DATA_FILE_PATH = path.join(process.cwd(), "src", "data", "portfolio-data.json");
 
 export function savePortfolioData(data: DynamicData): boolean {
   try {

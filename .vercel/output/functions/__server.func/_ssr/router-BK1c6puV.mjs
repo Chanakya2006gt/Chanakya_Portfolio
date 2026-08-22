@@ -9,9 +9,9 @@ import { n as clsx } from "../_libs/class-variance-authority+clsx.mjs";
 import { t as twMerge } from "../_libs/tailwind-merge.mjs";
 import { t as Toaster } from "../_libs/sonner.mjs";
 import crypto from "node:crypto";
-import fs$1 from "node:fs";
-import path$1 from "node:path";
-//#region node_modules/.nitro/vite/services/ssr/assets/router-DUtM5R-6.js
+import fs from "node:fs";
+import path from "node:path";
+//#region node_modules/.nitro/vite/services/ssr/assets/router-BK1c6puV.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 var __defProp = Object.defineProperty;
@@ -584,6 +584,7 @@ function getPortfolioData() {
 		heroTagline: "I ship products under real constraints — not demos. Trelio is the serious work. Everything else stays in experiments."
 	};
 }
+var DATA_FILE_PATH = path.join(process.cwd(), "src", "data", "portfolio-data.json");
 function savePortfolioData(data) {
 	try {
 		const dir = path.dirname(DATA_FILE_PATH);
@@ -595,16 +596,16 @@ function savePortfolioData(data) {
 		return false;
 	}
 }
-var $$splitComponentImporter$2 = () => import("./routes-CijmQddq.mjs");
+var $$splitComponentImporter$2 = () => import("./routes-DiY5SUU6.mjs");
 var Route$8 = createFileRoute("/")({
 	loader: () => {
 		return getPortfolioData();
 	},
 	component: lazyRouteComponent($$splitComponentImporter$2, "component")
 });
-var $$splitComponentImporter$1 = () => import("./admin-DSJ1dJlV.mjs");
+var $$splitComponentImporter$1 = () => import("./admin-CFgYh0kW.mjs");
 var Route$7 = createFileRoute("/admin/")({ component: lazyRouteComponent($$splitComponentImporter$1, "component") });
-var $$splitComponentImporter = () => import("./login-CfX0RKsE.mjs");
+var $$splitComponentImporter = () => import("./login-CB5GVfa8.mjs");
 var Route$6 = createFileRoute("/admin/login")({ component: lazyRouteComponent($$splitComponentImporter, "component") });
 var envCache = null;
 var lastCacheTime = 0;
@@ -612,11 +613,11 @@ var CACHE_TTL_MS = 5e3;
 function loadEnvFile() {
 	const now = Date.now();
 	if (envCache && now - lastCacheTime < CACHE_TTL_MS) return envCache;
-	const envPath = path$1.join(process.cwd(), ".env");
+	const envPath = path.join(process.cwd(), ".env");
 	const result = {};
 	try {
-		if (fs$1.existsSync(envPath)) {
-			const lines = fs$1.readFileSync(envPath, "utf-8").replace(/\r\n/g, "\n").split("\n");
+		if (fs.existsSync(envPath)) {
+			const lines = fs.readFileSync(envPath, "utf-8").replace(/\r\n/g, "\n").split("\n");
 			for (const line of lines) {
 				const trimmed = line.trim();
 				if (!trimmed || trimmed.startsWith("#")) continue;
