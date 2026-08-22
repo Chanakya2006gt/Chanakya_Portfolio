@@ -1,11 +1,11 @@
-import { o as __toESM } from "../_runtime.mjs";
+import { i as __toESM } from "../_runtime.mjs";
 import { u as require_react } from "../_libs/@floating-ui/react-dom+[...].mjs";
 import { _ as useNavigate } from "../_libs/@tanstack/react-router+[...].mjs";
 import { s as require_jsx_runtime } from "../_libs/@radix-ui/react-collection+[...].mjs";
 import { A as ArrowRight, n as User, s as ShieldCheck, v as Lock } from "../_libs/lucide-react.mjs";
 import { n as toast } from "../_libs/sonner.mjs";
-import { c as Input, i as CardDescription, l as Label, n as Card, o as CardHeader, r as CardContent, s as CardTitle, t as Button } from "./card-BAZKJ_0k.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/login-Mym5LRD4.js
+import { c as Input, i as CardDescription, l as Label, n as Card, o as CardHeader, r as CardContent, s as CardTitle, t as Button } from "./card-D3QxTenq.mjs";
+//#region node_modules/.nitro/vite/services/ssr/assets/login-Dizw-bJ8.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 function AdminLoginPage() {
@@ -96,7 +96,8 @@ function AdminLoginPage() {
 						/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 							className: "space-y-2",
 							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Label, {
-								htmlFor: "password text-xs font-medium text-foreground",
+								htmlFor: "password",
+								className: "text-xs font-medium text-foreground",
 								children: "Password"
 							}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 								className: "relative",

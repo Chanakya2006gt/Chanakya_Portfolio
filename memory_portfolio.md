@@ -338,3 +338,4 @@ interface DynamicData {
 | Session 6 | Trimmed side experiments to 'This site' + polite 'More in progress' placeholder | Honest framing rather than placeholder side projects |
 | Session 7 | Implemented OS/device system theme detection with zero-FOUC script | Automatically matches visitor's browser/OS dark/light preference on initial load while supporting manual toggle overrides & storage sync |
 | Session 8 | Dead code cleanup | Removed unused multiplayer boilerplate, orphaned use-intro-animation hook, and 4 unused shadcn UI components |
+| Session 9 | Security hardening & audit fixes | Made session secret fail-closed in prod, added timing-safe compare + rate limiting to login, hardened /api/chat with 25-msg history & rate limiting, fixed env cache, removed Grok/BetterAuth leftovers |

@@ -155,21 +155,64 @@ If you are looking for specific details not covered here, feel free to connect w
 * **LinkedIn**: [${linkedinUrl}](${linkedinUrl})`;
 }
 
+// Simple in-memory rate limiter: max 20 requests per minute per IP
+const chatRateLimits = new Map<string, { count: number; windowStart: number }>();
+
+function isChatRateLimited(ip: string): boolean {
+  const now = Date.now();
+  const record = chatRateLimits.get(ip);
+  if (!record || now - record.windowStart > 60000) {
+    chatRateLimits.set(ip, { count: 1, windowStart: now });
+    return false;
+  }
+
+  if (record.count >= 20) {
+    return true;
+  }
+
+  record.count += 1;
+  return false;
+}
+
 export const Route = createFileRoute("/api/chat")({
   server: {
     handlers: {
       POST: async ({ request }) => {
         assertEnvGuards();
+
+        const ip = request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() || "127.0.0.1";
+        if (isChatRateLimited(ip)) {
+          return new Response(
+            JSON.stringify({
+              reply: "You're sending messages a bit too fast. Please wait a moment before trying again.",
+            }),
+            { status: 429, headers: { "Content-Type": "application/json" } }
+          );
+        }
+
         let messages: any[] = [];
         try {
           const body = await request.json();
-          messages = body.messages || [];
+          const rawMessages = Array.isArray(body.messages) ? body.messages : [];
+
+          // Payload Validation:
+          // 1. Cap message history to maximum 25 items
+          // 2. Validate role is 'user' or 'assistant'
+          // 3. Cap each message content to 1000 characters
+          messages = rawMessages
+            .slice(-25)
+            .filter((m: any) => m && (m.role === "user" || m.role === "assistant"))
+            .map((m: any) => ({
+              role: m.role,
+              content: String(m.content || "").slice(0, 1000).trim(),
+            }))
+            .filter((m: any) => m.content.length > 0);
 
           const apiKey = getEnvVar("OPENAI_API_KEY");
-          const model = getEnvVar("OPENAI_MODEL", "gpt-5.6-terra");
+          const model = getEnvVar("OPENAI_MODEL", "gpt-4o-mini");
           const systemPrompt = buildDynamicSystemPrompt();
 
-          if (apiKey && apiKey !== "your_openai_api_key_here") {
+          if (apiKey && apiKey !== "your_openai_api_key_here" && !apiKey.includes("placeholder")) {
             try {
               // Call OpenAI Chat Completions API
               const response = await fetch("https://api.openai.com/v1/chat/completions", {
@@ -202,24 +245,16 @@ export const Route = createFileRoute("/api/chat")({
               const errText = await response.text();
               console.error(`[OpenAI API Error ${response.status}]:`, errText);
 
-              let apiErrMessage = `OpenAI API Error (${response.status}): Could not complete request.`;
-              try {
-                const parsed = JSON.parse(errText);
-                if (parsed.error?.message) {
-                  apiErrMessage = `OpenAI API (${parsed.error.type || response.status}): ${parsed.error.message}`;
-                }
-              } catch (_) {}
-
-              return new Response(JSON.stringify({ reply: apiErrMessage }), {
+              // Return clean, user-facing fallback without leaking internal API response details
+              const fallbackAnswer = getFallbackReply(messages);
+              return new Response(JSON.stringify({ reply: fallbackAnswer }), {
                 headers: { "Content-Type": "application/json" },
               });
             } catch (openAiErr: any) {
               console.error("[OpenAI Network Error]:", openAiErr);
               const fallbackAnswer = getFallbackReply(messages);
               return new Response(
-                JSON.stringify({
-                  reply: `${fallbackAnswer}\n\n*(Note: Live OpenAI API connection unavailable — getaddrinfo ENOTFOUND api.openai.com)*`,
-                }),
+                JSON.stringify({ reply: fallbackAnswer }),
                 { headers: { "Content-Type": "application/json" } }
               );
             }

@@ -1,9 +1,16 @@
 import fs from "node:fs";
 import path from "node:path";
 
-const envCache: Record<string, string> = {};
+let envCache: Record<string, string> | null = null;
+let lastCacheTime = 0;
+const CACHE_TTL_MS = 5000; // In dev, check file at most every 5 seconds
 
 function loadEnvFile(): Record<string, string> {
+  const now = Date.now();
+  if (envCache && now - lastCacheTime < CACHE_TTL_MS) {
+    return envCache;
+  }
+
   const envPath = path.join(process.cwd(), ".env");
   const result: Record<string, string> = {};
 
@@ -44,6 +51,8 @@ function loadEnvFile(): Record<string, string> {
     console.error("Error parsing .env file:", error);
   }
 
+  envCache = result;
+  lastCacheTime = now;
   return result;
 }
 

@@ -11,9 +11,15 @@ interface SessionPayload {
 
 function getSessionSecret(): string {
   const secret = getEnvVar("ADMIN_SESSION_SECRET");
-  if (!secret || secret === "your_random_32_character_secret_key_here") {
-    // Return a stable fallback only if not configured, but warn in production
-    return "dev-local-session-secret-fallback-chanakya-2026";
+  if (!secret || secret === "your_random_32_character_secret_key_here" || secret === "placeholder") {
+    const isProd = process.env.NODE_ENV === "production" || !!process.env.VERCEL;
+    if (isProd) {
+      throw new Error(
+        "[auth-session] ADMIN_SESSION_SECRET is not configured in production. Cannot sign or verify sessions."
+      );
+    }
+    // Only in local development fallback
+    return "dev-local-only-session-secret-chanakya-2026";
   }
   return secret;
 }

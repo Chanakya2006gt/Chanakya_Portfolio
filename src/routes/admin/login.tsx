@@ -88,7 +88,7 @@ function AdminLoginPage() {
             </div>
 
             <div className="space-y-2">
-              <Label htmlFor="password text-xs font-medium text-foreground">
+              <Label htmlFor="password" className="text-xs font-medium text-foreground">
                 Password
               </Label>
               <div className="relative">

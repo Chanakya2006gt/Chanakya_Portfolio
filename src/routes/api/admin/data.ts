@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { getPortfolioData, savePortfolioData } from "@/data/store";
 import { getAdminSessionCookie, verifySignedSessionToken } from "@/lib/auth-session";
+import { assertEnvGuards } from "@/lib/boot-guards";
 
 export const Route = createFileRoute("/api/admin/data")({
   server: {
@@ -12,6 +13,7 @@ export const Route = createFileRoute("/api/admin/data")({
         });
       },
       POST: async ({ request }) => {
+        assertEnvGuards();
         // Verify cryptographically signed admin session cookie
         const sessionToken = getAdminSessionCookie(request);
         const isAuthenticated = verifySignedSessionToken(sessionToken || undefined);
