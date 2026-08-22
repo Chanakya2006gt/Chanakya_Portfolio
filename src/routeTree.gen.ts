@@ -14,6 +14,7 @@ import { Route as AdminIndexRouteImport } from './routes/admin/index'
 import { Route as AdminLoginRouteImport } from './routes/admin/login'
 import { Route as ApiChatRouteImport } from './routes/api/chat'
 import { Route as ApiHealthRouteImport } from './routes/api/health'
+import { Route as ResumePdfRouteImport } from './routes/resume.pdf'
 import { Route as ApiAdminCheckRouteImport } from './routes/api/admin/check'
 import { Route as ApiAdminDataRouteImport } from './routes/api/admin/data'
 import { Route as ApiAdminLoginRouteImport } from './routes/api/admin/login'
@@ -43,6 +44,11 @@ const ApiChatRoute = ApiChatRouteImport.update({
 const ApiHealthRoute = ApiHealthRouteImport.update({
   id: '/api/health',
   path: '/api/health',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ResumePdfRoute = ResumePdfRouteImport.update({
+  id: '/resume/pdf',
+  path: '/resume/pdf',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ApiAdminCheckRoute = ApiAdminCheckRouteImport.update({
@@ -76,6 +82,7 @@ export interface FileRoutesByFullPath {
   '/admin/login': typeof AdminLoginRoute
   '/api/chat': typeof ApiChatRoute
   '/api/health': typeof ApiHealthRoute
+  '/resume/pdf': typeof ResumePdfRoute
   '/admin/': typeof AdminIndexRoute
   '/api/admin/check': typeof ApiAdminCheckRoute
   '/api/admin/data': typeof ApiAdminDataRoute
@@ -88,6 +95,7 @@ export interface FileRoutesByTo {
   '/admin/login': typeof AdminLoginRoute
   '/api/chat': typeof ApiChatRoute
   '/api/health': typeof ApiHealthRoute
+  '/resume/pdf': typeof ResumePdfRoute
   '/admin': typeof AdminIndexRoute
   '/api/admin/check': typeof ApiAdminCheckRoute
   '/api/admin/data': typeof ApiAdminDataRoute
@@ -101,6 +109,7 @@ export interface FileRoutesById {
   '/admin/login': typeof AdminLoginRoute
   '/api/chat': typeof ApiChatRoute
   '/api/health': typeof ApiHealthRoute
+  '/resume/pdf': typeof ResumePdfRoute
   '/admin/': typeof AdminIndexRoute
   '/api/admin/check': typeof ApiAdminCheckRoute
   '/api/admin/data': typeof ApiAdminDataRoute
@@ -115,6 +124,7 @@ export interface FileRouteTypes {
     | '/admin/login'
     | '/api/chat'
     | '/api/health'
+    | '/resume/pdf'
     | '/admin/'
     | '/api/admin/check'
     | '/api/admin/data'
@@ -127,6 +137,7 @@ export interface FileRouteTypes {
     | '/admin/login'
     | '/api/chat'
     | '/api/health'
+    | '/resume/pdf'
     | '/admin'
     | '/api/admin/check'
     | '/api/admin/data'
@@ -139,6 +150,7 @@ export interface FileRouteTypes {
     | '/admin/login'
     | '/api/chat'
     | '/api/health'
+    | '/resume/pdf'
     | '/admin/'
     | '/api/admin/check'
     | '/api/admin/data'
@@ -152,6 +164,7 @@ export interface RootRouteChildren {
   AdminLoginRoute: typeof AdminLoginRoute
   ApiChatRoute: typeof ApiChatRoute
   ApiHealthRoute: typeof ApiHealthRoute
+  ResumePdfRoute: typeof ResumePdfRoute
   AdminIndexRoute: typeof AdminIndexRoute
   ApiAdminCheckRoute: typeof ApiAdminCheckRoute
   ApiAdminDataRoute: typeof ApiAdminDataRoute
@@ -197,6 +210,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ApiHealthRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/resume/pdf': {
+      id: '/resume/pdf'
+      path: '/resume/pdf'
+      fullPath: '/resume/pdf'
+      preLoaderRoute: typeof ResumePdfRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/api/admin/check': {
       id: '/api/admin/check'
       path: '/api/admin/check'
@@ -240,6 +260,7 @@ const rootRouteChildren: RootRouteChildren = {
   AdminLoginRoute: AdminLoginRoute,
   ApiChatRoute: ApiChatRoute,
   ApiHealthRoute: ApiHealthRoute,
+  ResumePdfRoute: ResumePdfRoute,
   AdminIndexRoute: AdminIndexRoute,
   ApiAdminCheckRoute: ApiAdminCheckRoute,
   ApiAdminDataRoute: ApiAdminDataRoute,

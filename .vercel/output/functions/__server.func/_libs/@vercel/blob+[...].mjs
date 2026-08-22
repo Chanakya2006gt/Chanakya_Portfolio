@@ -38248,6 +38248,23 @@ new TextEncoder();
 */
 //#endregion
 //#region node_modules/@vercel/blob/dist/index.js
+async function head(urlOrPathname, options) {
+	const response = await requestApi(`?${new URLSearchParams({ url: urlOrPathname }).toString()}`, {
+		method: "GET",
+		signal: options == null ? void 0 : options.abortSignal
+	}, options);
+	return {
+		url: response.url,
+		downloadUrl: response.downloadUrl,
+		pathname: response.pathname,
+		size: response.size,
+		contentType: response.contentType,
+		contentDisposition: response.contentDisposition,
+		cacheControl: response.cacheControl,
+		uploadedAt: new Date(response.uploadedAt),
+		etag: response.etag
+	};
+}
 var put = createPutMethod({ allowedOptions: [
 	"cacheControlMaxAge",
 	"addRandomSuffix",
@@ -38282,4 +38299,4 @@ createCompleteMultipartUploadMethod({ allowedOptions: [
 	"contentType"
 ] });
 //#endregion
-export { require_token_error as i, require_token_util as n, require_dist$1 as r, put as t };
+export { require_token_error as a, require_dist$1 as i, put as n, require_token_util as r, head as t };
