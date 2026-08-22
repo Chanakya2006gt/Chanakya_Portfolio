@@ -14,7 +14,7 @@ import { t as Toaster } from "../_libs/sonner.mjs";
 import crypto from "node:crypto";
 import path from "node:path";
 import fs from "node:fs";
-//#region node_modules/.nitro/vite/services/ssr/assets/router-BwDuBrjj.js
+//#region node_modules/.nitro/vite/services/ssr/assets/router-CnqhwvfO.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 function AppErrorComponent({ error }) {
@@ -337,11 +337,12 @@ TooltipContent.displayName = Content2.displayName;
 var styles_default = "/assets/styles-CsQzGi2L.css";
 var APP_NAME = "Nagulagam Chanakya — Full-Stack Developer & SaaS Founder";
 var APP_DESC = "Official portfolio of Nagulagam Chanakya — Full-Stack Developer & Founder of Trelio. Specializing in React, Node.js, TypeScript, PostgreSQL, and applied software security.";
+var SITE_URL = "https://chanakya-portfolio-orcin.vercel.app";
 var JSON_LD = {
 	"@context": "https://schema.org",
 	"@type": "Person",
 	"name": "Nagulagam Chanakya",
-	"url": "https://chanakya.dev",
+	"url": SITE_URL,
 	"jobTitle": "Full-Stack Developer & Founder",
 	"worksFor": {
 		"@type": "Organization",
@@ -403,7 +404,11 @@ var Route$12 = createRootRoute({
 			},
 			{
 				property: "og:image",
-				content: "/og.jpg"
+				content: `${SITE_URL}/og.jpg`
+			},
+			{
+				property: "og:url",
+				content: SITE_URL
 			},
 			{
 				property: "og:type",
@@ -427,7 +432,7 @@ var Route$12 = createRootRoute({
 			},
 			{
 				name: "twitter:image",
-				content: "/og.jpg"
+				content: `${SITE_URL}/og.jpg`
 			}
 		],
 		scripts: [{
@@ -435,6 +440,10 @@ var Route$12 = createRootRoute({
 			children: JSON.stringify(JSON_LD)
 		}, { children: `(function(){try{var stored=localStorage.getItem("theme");if(stored==="light"||(!stored&&window.matchMedia("(prefers-color-scheme: light)").matches)){document.documentElement.classList.add("light");document.documentElement.classList.remove("dark");}else{document.documentElement.classList.add("dark");document.documentElement.classList.remove("light");}}catch(e){}})();` }],
 		links: [
+			{
+				rel: "canonical",
+				href: SITE_URL
+			},
 			{
 				rel: "icon",
 				type: "image/svg+xml",
@@ -496,14 +505,14 @@ var createSsrRpc = (functionId) => {
 	});
 };
 var fetchContent = createServerFn({ method: "GET" }).handler(createSsrRpc("2b99909e19342163fb9618a3b1f343b57fe68205625d940d83a174e978667293"));
-var $$splitComponentImporter$2 = () => import("./routes-DhYswGAS.mjs");
+var $$splitComponentImporter$2 = () => import("./routes-C0CC0JKI.mjs");
 var Route$11 = createFileRoute("/")({
 	loader: () => fetchContent(),
 	component: lazyRouteComponent($$splitComponentImporter$2, "component")
 });
-var $$splitComponentImporter$1 = () => import("./admin-BRXGj_Fd.mjs");
+var $$splitComponentImporter$1 = () => import("./admin-CLM48bCx.mjs");
 var Route$10 = createFileRoute("/admin/")({ component: lazyRouteComponent($$splitComponentImporter$1, "component") });
-var $$splitComponentImporter = () => import("./login-B6Y266Wv.mjs");
+var $$splitComponentImporter = () => import("./login-cHVhNItp.mjs");
 var Route$9 = createFileRoute("/admin/login")({ component: lazyRouteComponent($$splitComponentImporter, "component") });
 var envCache = null;
 var lastCacheTime = 0;
@@ -580,7 +589,7 @@ var ENV_SPECS = [
 	},
 	{
 		key: "OPENAI_MODEL",
-		description: "OpenAI model name (default: gpt-4o-mini-2024-07-18)",
+		description: "OpenAI model name (default: gpt-5.6-terra)",
 		required: false
 	}
 ];
@@ -764,7 +773,7 @@ var Route$8 = createFileRoute("/api/chat")({ server: { handlers: { POST: async (
 			content: String(m.content || "").slice(0, 1e3).trim()
 		})).filter((m) => m.content.length > 0);
 		const apiKey = getEnvVar("OPENAI_API_KEY");
-		const model = getEnvVar("OPENAI_MODEL", "gpt-4o-mini-2024-07-18");
+		const model = getEnvVar("OPENAI_MODEL", "gpt-5.6-terra");
 		const systemPrompt = buildDynamicSystemPrompt();
 		if (apiKey && apiKey !== "your_openai_api_key_here" && !apiKey.includes("placeholder")) try {
 			const response = await fetch("https://api.openai.com/v1/chat/completions", {
@@ -1163,7 +1172,7 @@ var Route = createFileRoute("/api/admin/resume")({ server: { handlers: { POST: a
 			url: blobUrl,
 			parsed: false
 		}), { headers: { "Content-Type": "application/json" } });
-		const model = getEnvVar("OPENAI_RESUME_MODEL", getEnvVar("OPENAI_MODEL", "gpt-4o-mini-2024-07-18"));
+		const model = getEnvVar("OPENAI_RESUME_MODEL", getEnvVar("OPENAI_MODEL", "gpt-5.6-terra"));
 		const base64 = Buffer.from(bytes).toString("base64");
 		const response = await fetch("https://api.openai.com/v1/chat/completions", {
 			method: "POST",

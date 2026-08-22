@@ -6,12 +6,13 @@ import appCss from "../styles.css?url";
 
 const APP_NAME = "Nagulagam Chanakya — Full-Stack Developer & SaaS Founder";
 const APP_DESC = "Official portfolio of Nagulagam Chanakya — Full-Stack Developer & Founder of Trelio. Specializing in React, Node.js, TypeScript, PostgreSQL, and applied software security.";
+const SITE_URL = "https://chanakya-portfolio-orcin.vercel.app";
 
 const JSON_LD = {
   "@context": "https://schema.org",
   "@type": "Person",
   "name": "Nagulagam Chanakya",
-  "url": "https://chanakya.dev",
+  "url": SITE_URL,
   "jobTitle": "Full-Stack Developer & Founder",
   "worksFor": {
     "@type": "Organization",
@@ -53,7 +54,8 @@ export const Route = createRootRoute({
       // Open Graph (LinkedIn, Discord, WhatsApp, Facebook)
       { property: "og:title", content: APP_NAME },
       { property: "og:description", content: APP_DESC },
-      { property: "og:image", content: "/og.jpg" },
+      { property: "og:image", content: `${SITE_URL}/og.jpg` },
+      { property: "og:url", content: SITE_URL },
       { property: "og:type", content: "website" },
       { property: "og:site_name", content: "Nagulagam Chanakya Portfolio" },
 
@@ -61,7 +63,7 @@ export const Route = createRootRoute({
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: APP_NAME },
       { name: "twitter:description", content: APP_DESC },
-      { name: "twitter:image", content: "/og.jpg" },
+      { name: "twitter:image", content: `${SITE_URL}/og.jpg` },
     ],
     scripts: [
       {
@@ -73,6 +75,7 @@ export const Route = createRootRoute({
       },
     ],
     links: [
+      { rel: "canonical", href: SITE_URL },
       { rel: "icon", type: "image/svg+xml", href: "/favicon.svg" },
       { rel: "stylesheet", href: appCss },
       { rel: "manifest", href: "/site.webmanifest" },

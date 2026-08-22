@@ -110,7 +110,7 @@ export const Route = createFileRoute("/api/admin/resume")({
             });
           }
 
-          const model = getEnvVar("OPENAI_RESUME_MODEL", getEnvVar("OPENAI_MODEL", "gpt-4o-mini-2024-07-18"));
+          const model = getEnvVar("OPENAI_RESUME_MODEL", getEnvVar("OPENAI_MODEL", "gpt-5.6-terra"));
           const base64 = Buffer.from(bytes).toString("base64");
 
           const response = await fetch("https://api.openai.com/v1/chat/completions", {
