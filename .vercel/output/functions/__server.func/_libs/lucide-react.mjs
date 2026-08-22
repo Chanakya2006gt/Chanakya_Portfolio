@@ -82,6 +82,19 @@ var createLucideIcon = (iconName, iconNode) => {
 * This source code is licensed under the ISC license.
 * See the LICENSE file in the root directory of this source tree.
 */
+var ArrowLeft = createLucideIcon("arrow-left", [["path", {
+	d: "m12 19-7-7 7-7",
+	key: "1l729n"
+}], ["path", {
+	d: "M19 12H5",
+	key: "x3x0zl"
+}]]);
+/**
+* @license lucide-react v0.510.0 - ISC
+*
+* This source code is licensed under the ISC license.
+* See the LICENSE file in the root directory of this source tree.
+*/
 var ArrowRight = createLucideIcon("arrow-right", [["path", {
 	d: "M5 12h14",
 	key: "1ays0h"
@@ -209,6 +222,21 @@ var CodeXml = createLucideIcon("code-xml", [
 		key: "e7oirm"
 	}]
 ]);
+/**
+* @license lucide-react v0.510.0 - ISC
+*
+* This source code is licensed under the ISC license.
+* See the LICENSE file in the root directory of this source tree.
+*/
+var Compass = createLucideIcon("compass", [["path", {
+	d: "m16.24 7.76-1.804 5.411a2 2 0 0 1-1.265 1.265L7.76 16.24l1.804-5.411a2 2 0 0 1 1.265-1.265z",
+	key: "9ktpf1"
+}], ["circle", {
+	cx: "12",
+	cy: "12",
+	r: "10",
+	key: "1mglay"
+}]]);
 /**
 * @license lucide-react v0.510.0 - ISC
 *
@@ -525,6 +553,19 @@ var RefreshCw = createLucideIcon("refresh-cw", [
 * This source code is licensed under the ISC license.
 * See the LICENSE file in the root directory of this source tree.
 */
+var RotateCw = createLucideIcon("rotate-cw", [["path", {
+	d: "M21 12a9 9 0 1 1-9-9c2.52 0 4.93 1 6.74 2.74L21 8",
+	key: "1p45f6"
+}], ["path", {
+	d: "M21 3v5h-5",
+	key: "1q7to0"
+}]]);
+/**
+* @license lucide-react v0.510.0 - ISC
+*
+* This source code is licensed under the ISC license.
+* See the LICENSE file in the root directory of this source tree.
+*/
 var Save = createLucideIcon("save", [
 	["path", {
 		d: "M15.2 3a2 2 0 0 1 1.4.6l3.8 3.8a2 2 0 0 1 .6 1.4V19a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2z",
@@ -722,4 +763,4 @@ var X = createLucideIcon("x", [["path", {
 	key: "d8bk6v"
 }]]);
 //#endregion
-export { ArrowRight as A, FileText as C, Bot as D, Building2 as E, Award as O, Github as S, CodeXml as T, LogOut as _, Sun as a, LayoutGrid as b, Send as c, Printer as d, Plus as f, Mail as g, MapPin as h, Trash2 as i, ArrowUp as k, Save as l, Menu as m, User as n, Sparkles as o, Moon as p, TriangleAlert as r, ShieldCheck as s, X as t, RefreshCw as u, Lock as v, ExternalLink as w, GraduationCap as x, Linkedin as y };
+export { Award as A, Github as C, CodeXml as D, Compass as E, ArrowRight as M, ArrowLeft as N, Building2 as O, GraduationCap as S, ExternalLink as T, Mail as _, Sun as a, Linkedin as b, Send as c, RefreshCw as d, Printer as f, MapPin as g, Menu as h, Trash2 as i, ArrowUp as j, Bot as k, Save as l, Moon as m, User as n, Sparkles as o, Plus as p, TriangleAlert as r, ShieldCheck as s, X as t, RotateCw as u, LogOut as v, FileText as w, LayoutGrid as x, Lock as y };

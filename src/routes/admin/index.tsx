@@ -38,7 +38,16 @@ function AdminDashboardPage() {
         setIsAuthenticated(true);
 
         const dataRes = await fetch("/api/admin/data");
+        if (!dataRes.ok) {
+          setIsAuthenticated(false);
+          navigate({ to: "/admin/login" });
+          return;
+        }
         const dataJson = await dataRes.json();
+        if (!dataJson || !Array.isArray(dataJson.businesses)) {
+          toast.error("We couldn't load your portfolio content. Please refresh the page.");
+          return;
+        }
         setData(dataJson);
       } catch (error) {
         console.error("Failed to load admin data:", error);

@@ -18,7 +18,7 @@ export const Route = createFileRoute("/api/admin/resume")({
         // Only accept PDFs
         const contentType = request.headers.get("content-type") || "";
         if (!contentType.includes("application/pdf")) {
-          return new Response(JSON.stringify({ error: "Only application/pdf is accepted." }), {
+          return new Response(JSON.stringify({ error: "Please choose a PDF file." }), {
             status: 415,
             headers: { "Content-Type": "application/json" },
           });
@@ -33,7 +33,7 @@ export const Route = createFileRoute("/api/admin/resume")({
           });
         }
         if (bytes.byteLength > 4_000_000) {
-          return new Response(JSON.stringify({ error: "File too large (max 4 MB)." }), {
+          return new Response(JSON.stringify({ error: "That PDF is over 4 MB. Please upload a smaller file." }), {
             status: 413,
             headers: { "Content-Type": "application/json" },
           });
@@ -56,7 +56,9 @@ export const Route = createFileRoute("/api/admin/resume")({
         } catch (err) {
           console.error("[resume upload] Blob put failed:", err);
           return new Response(
-            JSON.stringify({ error: "Upload failed. Is BLOB_READ_WRITE_TOKEN configured?" }),
+            JSON.stringify({
+              error: "We couldn't save the résumé just now. Please try again in a moment.",
+            }),
             { status: 500, headers: { "Content-Type": "application/json" } }
           );
         }

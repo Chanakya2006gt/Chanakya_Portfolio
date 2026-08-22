@@ -2,11 +2,11 @@ import { i as __toESM } from "../_runtime.mjs";
 import { u as require_react } from "../_libs/@floating-ui/react-dom+[...].mjs";
 import { _ as useNavigate } from "../_libs/@tanstack/react-router+[...].mjs";
 import { s as require_jsx_runtime } from "../_libs/@radix-ui/react-collection+[...].mjs";
-import { C as FileText, _ as LogOut, b as LayoutGrid, f as Plus, i as Trash2, l as Save, o as Sparkles, w as ExternalLink } from "../_libs/lucide-react.mjs";
+import { T as ExternalLink, i as Trash2, l as Save, o as Sparkles, p as Plus, v as LogOut, w as FileText, x as LayoutGrid } from "../_libs/lucide-react.mjs";
 import { n as toast } from "../_libs/sonner.mjs";
-import { c as Input, l as Label, n as Card, t as Button } from "./card-Der6nTRq.mjs";
-import { a as TabsTrigger, i as TabsList, n as Tabs, o as Textarea, r as TabsContent, t as Badge } from "./badge-Dx1rzX6r.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/admin-CsfRMoZy.js
+import { c as Input, l as Label, n as Card, t as Button } from "./card-BENFIQ8z.mjs";
+import { a as TabsTrigger, i as TabsList, n as Tabs, o as Textarea, r as TabsContent, t as Badge } from "./badge-BwjwoewQ.mjs";
+//#region node_modules/.nitro/vite/services/ssr/assets/admin-D6KDCjTj.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 function AdminDashboardPage() {
@@ -23,7 +23,17 @@ function AdminDashboardPage() {
 					return;
 				}
 				setIsAuthenticated(true);
-				const dataJson = await (await fetch("/api/admin/data")).json();
+				const dataRes = await fetch("/api/admin/data");
+				if (!dataRes.ok) {
+					setIsAuthenticated(false);
+					navigate({ to: "/admin/login" });
+					return;
+				}
+				const dataJson = await dataRes.json();
+				if (!dataJson || !Array.isArray(dataJson.businesses)) {
+					toast.error("We couldn't load your portfolio content. Please refresh the page.");
+					return;
+				}
 				setData(dataJson);
 			} catch (error) {
 				console.error("Failed to load admin data:", error);

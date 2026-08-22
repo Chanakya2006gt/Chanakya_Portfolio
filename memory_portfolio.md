@@ -268,6 +268,8 @@ interface DynamicData {
 |------|---------|
 | `src/styles.css` | CSS tokens, keyframes, utility classes |
 | `src/routes/__root.tsx` | Root HTML, SEO meta, JSON-LD |
+| `src/lib/error-component.tsx` | On-brand global error boundary page (polite, non-technical) |
+| `src/lib/not-found-component.tsx` | On-brand global 404 page (compass icon, sage theme tokens) |
 | `src/routes/api/health.ts` | `/api/health` monitoring & boot checks |
 | `src/components/portfolio-home.tsx` | All page sections |
 | `src/components/theme-toggle.tsx` | Synchronized light/dark toggle component |
@@ -349,3 +351,4 @@ interface DynamicData {
 | Session 12 | Gemini Plan Execution | Added `tsc --noEmit` build guard in `package.json`, replaced 404ing Grok manifest with self-branded `site.webmanifest`, implemented warm/tinted dark mode tokens with ambient radial glow, added auth guard to `GET /api/admin/data`, removed dead `useEffect` import |
 | Session 13 | Vercel Blob Résumé Upload (Task 3) | Implemented `POST /api/admin/resume` with `@vercel/blob` for fixed-path overwrite (`resume.pdf`, 1-min cache TTL), added admin file upload picker UI, updated `resume-modal.tsx` to resolve `VITE_RESUME_PDF_URL` |
 | Session 14 | Failure Analysis & Serverless Resilience | 1) Fixed Vercel 500 error in `store.server.ts`: handled read-only `/var/task` serverless filesystem gracefully without throwing `ENOENT` on admin "Save All". 2) Fixed 404 on résumé download: TanStack Start file-based routing converts `.pdf` filenames to subdirectories (`/resume/pdf`), so implemented `GET /api/resume` endpoint querying Blob via `head('resume.pdf')` and 307 redirecting to Blob URL, updating modal fallback |
+| Session 15 | Exception Handling & Friendly Error Pages (Task 7) | 1) Fixed admin crash chain: guarded `checkAuthAndFetchData` with `dataRes.ok` and `Array.isArray` check. 2) Replaced `AppErrorComponent` with polite on-brand theme-token error page. 3) Created `AppNotFoundComponent` and wired `defaultNotFoundComponent` in `router.tsx`. 4) Made `/api/resume` 404 return styled HTML rather than internal text. 5) Sanitized upload error strings in `/api/admin/resume`. |

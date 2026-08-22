@@ -2,7 +2,7 @@ import { i as __toESM } from "../_runtime.mjs";
 import { u as require_react } from "../_libs/@floating-ui/react-dom+[...].mjs";
 import { f as createRouter, g as createRootRoute, h as createFileRoute, l as Scripts, m as lazyRouteComponent, p as Outlet, u as HeadContent, v as useRouter } from "../_libs/@tanstack/react-router+[...].mjs";
 import { s as require_jsx_runtime } from "../_libs/@radix-ui/react-collection+[...].mjs";
-import { r as TriangleAlert } from "../_libs/lucide-react.mjs";
+import { E as Compass, N as ArrowLeft, r as TriangleAlert, u as RotateCw } from "../_libs/lucide-react.mjs";
 import { a as union, i as string, n as number, r as object, t as literal } from "../_libs/zod.mjs";
 import { n as Portal, r as Provider, t as Content2 } from "../_libs/@radix-ui/react-tooltip+[...].mjs";
 import { n as clsx } from "../_libs/class-variance-authority+clsx.mjs";
@@ -12,7 +12,7 @@ import { n as put, t as head } from "../_libs/@vercel/blob+[...].mjs";
 import crypto from "node:crypto";
 import fs from "node:fs";
 import path from "node:path";
-//#region node_modules/.nitro/vite/services/ssr/assets/router-CI7ILOM6.js
+//#region node_modules/.nitro/vite/services/ssr/assets/router-CX3DTPbg.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 var __defProp = Object.defineProperty;
@@ -26,24 +26,77 @@ var __exportAll = (all, no_symbols) => {
 	return target;
 };
 function AppErrorComponent({ error }) {
+	(0, import_react.useEffect)(() => {
+		console.error("[app error]", error);
+	}, [error]);
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("main", {
-		className: "flex min-h-screen flex-col items-center justify-center gap-3 px-6 text-center bg-zinc-50 text-zinc-900 dark:bg-zinc-950 dark:text-zinc-50",
+		className: "flex min-h-screen flex-col items-center justify-center gap-4 bg-background px-6 text-center text-foreground",
 		children: [
 			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-				className: "text-red-500",
+				className: "flex size-12 items-center justify-center rounded-2xl border border-sage/40 bg-sage/10 text-sage",
 				"aria-hidden": "true",
 				children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(TriangleAlert, {
-					className: "size-10",
+					className: "size-6",
 					strokeWidth: 2
 				})
 			}),
 			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h1", {
-				className: "text-lg font-semibold",
-				children: "Something went wrong"
+				className: "font-serif text-2xl font-bold tracking-tight",
+				children: "Something went wrong on our side"
 			}),
 			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
-				className: "max-w-md text-sm break-words text-zinc-500 dark:text-zinc-400",
-				children: error.message || "An unexpected error occurred. Try reloading the page."
+				className: "max-w-md text-sm leading-relaxed text-muted-foreground",
+				children: "Sorry about that — this one is on us, not you. Refreshing usually sorts it out. If it keeps happening, I'd genuinely like to know."
+			}),
+			/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+				className: "mt-2 flex flex-wrap items-center justify-center gap-3",
+				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("button", {
+					type: "button",
+					onClick: () => window.location.reload(),
+					className: "inline-flex items-center gap-2 rounded-lg bg-sage px-4 py-2 text-sm font-medium text-sage-foreground transition-opacity hover:opacity-90",
+					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(RotateCw, { className: "size-4" }), " Try again"]
+				}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("a", {
+					href: "/",
+					className: "inline-flex items-center gap-2 rounded-lg border border-border px-4 py-2 text-sm font-medium text-foreground transition-colors hover:bg-secondary",
+					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(ArrowLeft, { className: "size-4" }), " Back to the portfolio"]
+				})]
+			}),
+			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("a", {
+				href: "mailto:nagulagamchanakya2211@gmail.com?subject=Something%20broke%20on%20your%20portfolio",
+				className: "mt-2 text-xs text-muted-foreground underline underline-offset-4 transition-colors hover:text-sage",
+				children: "Tell me what happened"
+			})
+		]
+	});
+}
+function AppNotFoundComponent() {
+	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("main", {
+		className: "flex min-h-screen flex-col items-center justify-center gap-4 bg-background px-6 text-center text-foreground",
+		children: [
+			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+				className: "flex size-12 items-center justify-center rounded-2xl border border-sage/40 bg-sage/10 text-sage",
+				"aria-hidden": "true",
+				children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Compass, {
+					className: "size-6",
+					strokeWidth: 2
+				})
+			}),
+			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+				className: "font-mono text-xs uppercase tracking-widest text-sage",
+				children: "404"
+			}),
+			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h1", {
+				className: "font-serif text-2xl font-bold tracking-tight",
+				children: "This page doesn't exist"
+			}),
+			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+				className: "max-w-md text-sm leading-relaxed text-muted-foreground",
+				children: "The link may be out of date, or the page may have moved. Everything worth seeing is back on the main page."
+			}),
+			/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("a", {
+				href: "/",
+				className: "mt-2 inline-flex items-center gap-2 rounded-lg bg-sage px-4 py-2 text-sm font-medium text-sage-foreground transition-opacity hover:opacity-90",
+				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(ArrowLeft, { className: "size-4" }), " Back to the portfolio"]
 			})
 		]
 	});
@@ -289,7 +342,7 @@ var TooltipContent = import_react.forwardRef(({ className, sideOffset = 6, ...pr
 	...props
 }) }));
 TooltipContent.displayName = Content2.displayName;
-var styles_default = "/assets/styles-Cemy89u1.css";
+var styles_default = "/assets/styles-D9GoPhjj.css";
 var APP_NAME = "Nagulagam Chanakya — Full-Stack Developer & SaaS Founder";
 var APP_DESC = "Official portfolio of Nagulagam Chanakya — Full-Stack Developer & Founder of Trelio. Specializing in React, Node.js, TypeScript, PostgreSQL, and applied software security.";
 var JSON_LD = {
@@ -585,16 +638,16 @@ function getPortfolioData() {
 		heroTagline: "I ship products under real constraints — not demos. Trelio is the serious work. Everything else stays in experiments."
 	};
 }
-var $$splitComponentImporter$2 = () => import("./routes-D-s5op16.mjs");
+var $$splitComponentImporter$2 = () => import("./routes-CZKUmTiY.mjs");
 var Route$10 = createFileRoute("/")({
 	loader: () => {
 		return getPortfolioData();
 	},
 	component: lazyRouteComponent($$splitComponentImporter$2, "component")
 });
-var $$splitComponentImporter$1 = () => import("./admin-CsfRMoZy.mjs");
+var $$splitComponentImporter$1 = () => import("./admin-D6KDCjTj.mjs");
 var Route$9 = createFileRoute("/admin/")({ component: lazyRouteComponent($$splitComponentImporter$1, "component") });
-var $$splitComponentImporter = () => import("./login-Cx2X0-mc.mjs");
+var $$splitComponentImporter = () => import("./login-Ct50KJ5Y.mjs");
 var Route$8 = createFileRoute("/admin/login")({ component: lazyRouteComponent($$splitComponentImporter, "component") });
 var envCache = null;
 var lastCacheTime = 0;
@@ -931,9 +984,26 @@ var Route$5 = createFileRoute("/api/resume")({ server: { handlers: { GET: async 
 	} catch (err) {
 		console.error("[api/resume] Blob head failed:", err);
 	}
-	return new Response("Résumé PDF not found. Please upload via the admin panel.", {
+	return new Response(`<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Résumé unavailable</title>
+<style>
+  body{margin:0;min-height:100vh;display:flex;flex-direction:column;align-items:center;
+    justify-content:center;gap:14px;background:#0c0e0d;color:#f2f4f1;text-align:center;padding:24px;
+    font-family:Figtree,"Segoe UI",system-ui,sans-serif}
+  h1{font-size:20px;margin:0;font-weight:700}
+  p{margin:0;max-width:26rem;font-size:14px;line-height:1.6;color:#9aa39c}
+  a{color:#a3c2ab;font-size:14px;text-decoration:underline;text-underline-offset:4px}
+</style></head><body>
+  <h1>The résumé isn&rsquo;t available right now</h1>
+  <p>Sorry about that &mdash; it looks like the file is being updated. Please check
+     back in a moment, or email me and I&rsquo;ll send it over straight away.</p>
+  <a href="mailto:nagulagamchanakya2211@gmail.com?subject=Résumé%20request">Email me for a copy</a>
+  <a href="/">Back to the portfolio</a>
+</body></html>`, {
 		status: 404,
-		headers: { "Content-Type": "text/plain" }
+		headers: { "Content-Type": "text/html; charset=utf-8" }
 	});
 } } } });
 var COOKIE_NAME = "admin_session";
@@ -1147,7 +1217,7 @@ var Route = createFileRoute("/api/admin/resume")({ server: { handlers: { POST: a
 		status: 401,
 		headers: { "Content-Type": "application/json" }
 	});
-	if (!(request.headers.get("content-type") || "").includes("application/pdf")) return new Response(JSON.stringify({ error: "Only application/pdf is accepted." }), {
+	if (!(request.headers.get("content-type") || "").includes("application/pdf")) return new Response(JSON.stringify({ error: "Please choose a PDF file." }), {
 		status: 415,
 		headers: { "Content-Type": "application/json" }
 	});
@@ -1156,7 +1226,7 @@ var Route = createFileRoute("/api/admin/resume")({ server: { handlers: { POST: a
 		status: 400,
 		headers: { "Content-Type": "application/json" }
 	});
-	if (bytes.byteLength > 4e6) return new Response(JSON.stringify({ error: "File too large (max 4 MB)." }), {
+	if (bytes.byteLength > 4e6) return new Response(JSON.stringify({ error: "That PDF is over 4 MB. Please upload a smaller file." }), {
 		status: 413,
 		headers: { "Content-Type": "application/json" }
 	});
@@ -1174,7 +1244,7 @@ var Route = createFileRoute("/api/admin/resume")({ server: { handlers: { POST: a
 		}), { headers: { "Content-Type": "application/json" } });
 	} catch (err) {
 		console.error("[resume upload] Blob put failed:", err);
-		return new Response(JSON.stringify({ error: "Upload failed. Is BLOB_READ_WRITE_TOKEN configured?" }), {
+		return new Response(JSON.stringify({ error: "We couldn't save the résumé just now. Please try again in a moment." }), {
 			status: 500,
 			headers: { "Content-Type": "application/json" }
 		});
@@ -1244,7 +1314,8 @@ var router_exports = /* @__PURE__ */ __exportAll({ getRouter: () => getRouter })
 function getRouter() {
 	return createRouter({
 		routeTree,
-		defaultErrorComponent: AppErrorComponent
+		defaultErrorComponent: AppErrorComponent,
+		defaultNotFoundComponent: AppNotFoundComponent
 	});
 }
 //#endregion
