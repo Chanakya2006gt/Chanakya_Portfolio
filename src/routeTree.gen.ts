@@ -19,6 +19,7 @@ import { Route as ApiAdminCheckRouteImport } from './routes/api/admin/check'
 import { Route as ApiAdminDataRouteImport } from './routes/api/admin/data'
 import { Route as ApiAdminLoginRouteImport } from './routes/api/admin/login'
 import { Route as ApiAdminLogoutRouteImport } from './routes/api/admin/logout'
+import { Route as ApiAdminRestoreRouteImport } from './routes/api/admin/restore'
 import { Route as ApiAdminResumeRouteImport } from './routes/api/admin/resume'
 
 const IndexRoute = IndexRouteImport.update({
@@ -71,6 +72,11 @@ const ApiAdminLogoutRoute = ApiAdminLogoutRouteImport.update({
   path: '/api/admin/logout',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ApiAdminRestoreRoute = ApiAdminRestoreRouteImport.update({
+  id: '/api/admin/restore',
+  path: '/api/admin/restore',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ApiAdminResumeRoute = ApiAdminResumeRouteImport.update({
   id: '/api/admin/resume',
   path: '/api/admin/resume',
@@ -88,6 +94,7 @@ export interface FileRoutesByFullPath {
   '/api/admin/data': typeof ApiAdminDataRoute
   '/api/admin/login': typeof ApiAdminLoginRoute
   '/api/admin/logout': typeof ApiAdminLogoutRoute
+  '/api/admin/restore': typeof ApiAdminRestoreRoute
   '/api/admin/resume': typeof ApiAdminResumeRoute
 }
 export interface FileRoutesByTo {
@@ -101,6 +108,7 @@ export interface FileRoutesByTo {
   '/api/admin/data': typeof ApiAdminDataRoute
   '/api/admin/login': typeof ApiAdminLoginRoute
   '/api/admin/logout': typeof ApiAdminLogoutRoute
+  '/api/admin/restore': typeof ApiAdminRestoreRoute
   '/api/admin/resume': typeof ApiAdminResumeRoute
 }
 export interface FileRoutesById {
@@ -115,6 +123,7 @@ export interface FileRoutesById {
   '/api/admin/data': typeof ApiAdminDataRoute
   '/api/admin/login': typeof ApiAdminLoginRoute
   '/api/admin/logout': typeof ApiAdminLogoutRoute
+  '/api/admin/restore': typeof ApiAdminRestoreRoute
   '/api/admin/resume': typeof ApiAdminResumeRoute
 }
 export interface FileRouteTypes {
@@ -130,6 +139,7 @@ export interface FileRouteTypes {
     | '/api/admin/data'
     | '/api/admin/login'
     | '/api/admin/logout'
+    | '/api/admin/restore'
     | '/api/admin/resume'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -143,6 +153,7 @@ export interface FileRouteTypes {
     | '/api/admin/data'
     | '/api/admin/login'
     | '/api/admin/logout'
+    | '/api/admin/restore'
     | '/api/admin/resume'
   id:
     | '__root__'
@@ -156,6 +167,7 @@ export interface FileRouteTypes {
     | '/api/admin/data'
     | '/api/admin/login'
     | '/api/admin/logout'
+    | '/api/admin/restore'
     | '/api/admin/resume'
   fileRoutesById: FileRoutesById
 }
@@ -170,6 +182,7 @@ export interface RootRouteChildren {
   ApiAdminDataRoute: typeof ApiAdminDataRoute
   ApiAdminLoginRoute: typeof ApiAdminLoginRoute
   ApiAdminLogoutRoute: typeof ApiAdminLogoutRoute
+  ApiAdminRestoreRoute: typeof ApiAdminRestoreRoute
   ApiAdminResumeRoute: typeof ApiAdminResumeRoute
 }
 
@@ -245,6 +258,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ApiAdminLogoutRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/api/admin/restore': {
+      id: '/api/admin/restore'
+      path: '/api/admin/restore'
+      fullPath: '/api/admin/restore'
+      preLoaderRoute: typeof ApiAdminRestoreRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/api/admin/resume': {
       id: '/api/admin/resume'
       path: '/api/admin/resume'
@@ -266,6 +286,7 @@ const rootRouteChildren: RootRouteChildren = {
   ApiAdminDataRoute: ApiAdminDataRoute,
   ApiAdminLoginRoute: ApiAdminLoginRoute,
   ApiAdminLogoutRoute: ApiAdminLogoutRoute,
+  ApiAdminRestoreRoute: ApiAdminRestoreRoute,
   ApiAdminResumeRoute: ApiAdminResumeRoute,
 }
 export const routeTree = rootRouteImport

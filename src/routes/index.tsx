@@ -1,11 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PortfolioHome } from "@/components/portfolio-home";
-import { getPortfolioData } from "@/data/store";
+import { fetchContent } from "@/data/content-fn";
 
 export const Route = createFileRoute("/")({
-  loader: () => {
-    return getPortfolioData();
-  },
+  loader: () => fetchContent(),
   component: Home,
 });
 

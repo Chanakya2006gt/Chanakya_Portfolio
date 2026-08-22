@@ -4,9 +4,9 @@ import { _ as useNavigate } from "../_libs/@tanstack/react-router+[...].mjs";
 import { s as require_jsx_runtime } from "../_libs/@radix-ui/react-collection+[...].mjs";
 import { T as ExternalLink, i as Trash2, l as Save, o as Sparkles, p as Plus, v as LogOut, w as FileText, x as LayoutGrid } from "../_libs/lucide-react.mjs";
 import { n as toast } from "../_libs/sonner.mjs";
-import { c as Input, l as Label, n as Card, t as Button } from "./card-BENFIQ8z.mjs";
-import { a as TabsTrigger, i as TabsList, n as Tabs, o as Textarea, r as TabsContent, t as Badge } from "./badge-BwjwoewQ.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/admin-D6KDCjTj.js
+import { c as Input, l as Label, n as Card, t as Button } from "./card-DF9RjUcT.mjs";
+import { a as TabsTrigger, i as TabsList, n as Tabs, o as Textarea, r as TabsContent, t as Badge } from "./badge-C4SoViGI.mjs";
+//#region node_modules/.nitro/vite/services/ssr/assets/admin-BRXGj_Fd.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 function AdminDashboardPage() {
@@ -85,12 +85,31 @@ function AdminDashboardPage() {
 				body: file
 			});
 			const json = await res.json();
-			if (res.ok && json.success) toast.success("Résumé uploaded. It is live within ~1 minute.");
-			else toast.error(json.error || "Upload failed.");
+			if (res.ok && json.success) {
+				if (json.parsed === true) toast.success("Résumé uploaded and details updated from the PDF. Refresh the site to see the changes.");
+				else if (json.parsed === false) toast.warning(json.parseError || "Résumé uploaded. The details couldn't be read automatically — you can edit them manually.");
+				else toast.success("Résumé uploaded. It is live within ~1 minute.");
+			} else toast.error(json.error || "Upload failed.");
 		} catch {
 			toast.error("Upload failed.");
 		} finally {
 			e.target.value = "";
+		}
+	};
+	const handleRestoreBackup = async () => {
+		try {
+			const res = await fetch("/api/admin/restore", { method: "POST" });
+			const json = await res.json();
+			if (res.ok && json.success) {
+				toast.success("Previous portfolio version restored successfully! Refreshing data...");
+				const dataRes = await fetch("/api/admin/data");
+				if (dataRes.ok) {
+					const updated = await dataRes.json();
+					setData(updated);
+				}
+			} else toast.error(json.error || "Failed to restore previous version.");
+		} catch {
+			toast.error("Failed to restore previous version.");
 		}
 	};
 	const handleAddBusiness = () => {
@@ -500,7 +519,24 @@ function AdminDashboardPage() {
 										});
 									},
 									className: "mt-1 bg-secondary/50 text-xs"
-								})] })
+								})] }),
+								/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+									className: "pt-2 border-t border-border flex items-center justify-between",
+									children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+										className: "text-xs font-medium text-foreground",
+										children: "Accidental AI update or bad overwrite?"
+									}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+										className: "text-[11px] text-muted-foreground",
+										children: "Restore the previous version of your portfolio content saved before the last change."
+									})] }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Button, {
+										type: "button",
+										onClick: handleRestoreBackup,
+										variant: "outline",
+										size: "sm",
+										className: "text-xs border-sage/40 text-sage hover:bg-sage/10",
+										children: "Undo last update"
+									})]
+								})
 							]
 						})
 					}),

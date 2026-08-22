@@ -1,14 +1,15 @@
 import { i as __toESM } from "../_runtime.mjs";
+import { c as sideProjects$1, l as skills$1, o as businesses$1, s as navLinks } from "./content.server-bgipnv65.mjs";
 import { u as require_react } from "../_libs/@floating-ui/react-dom+[...].mjs";
 import { s as require_jsx_runtime } from "../_libs/@radix-ui/react-collection+[...].mjs";
 import { A as Award, C as Github, D as CodeXml, M as ArrowRight, O as Building2, S as GraduationCap, T as ExternalLink, _ as Mail, a as Sun, b as Linkedin, c as Send, d as RefreshCw, f as Printer, g as MapPin, h as Menu, j as ArrowUp, k as Bot, m as Moon, n as User, s as ShieldCheck, t as X, w as FileText } from "../_libs/lucide-react.mjs";
 import { a as DialogOverlay$1, c as DialogTrigger$1, i as DialogDescription$1, n as DialogClose, o as DialogPortal$1, r as DialogContent$1, s as DialogTitle$1, t as Dialog$1 } from "../_libs/@radix-ui/react-dialog+[...].mjs";
 import { n as toast } from "../_libs/sonner.mjs";
-import { a as sideProjects$1, i as navLinks, n as Route$10, o as skills$1, r as businesses$1, s as cn } from "./router-CX3DTPbg.mjs";
-import { a as CardFooter, c as Input, i as CardDescription, l as Label, n as Card, o as CardHeader, r as CardContent, s as CardTitle, t as Button } from "./card-BENFIQ8z.mjs";
-import { a as TabsTrigger, i as TabsList, n as Tabs, o as Textarea, r as TabsContent, t as Badge } from "./badge-BwjwoewQ.mjs";
+import { n as Route$11, r as cn } from "./router-BwDuBrjj.mjs";
+import { a as CardFooter, c as Input, i as CardDescription, l as Label, n as Card, o as CardHeader, r as CardContent, s as CardTitle, t as Button } from "./card-DF9RjUcT.mjs";
+import { a as TabsTrigger, i as TabsList, n as Tabs, o as Textarea, r as TabsContent, t as Badge } from "./badge-C4SoViGI.mjs";
 import { t as Root } from "../_libs/radix-ui__react-separator.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/routes-CZKUmTiY.js
+//#region node_modules/.nitro/vite/services/ssr/assets/routes-DhYswGAS.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 var Separator = import_react.forwardRef(({ className, orientation = "horizontal", decorative = true, ...props }, ref) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Root, {
@@ -329,13 +330,54 @@ function SiteNav() {
 		})
 	});
 }
-function ResumeModal({ trigger, open, onOpenChange, email, pdfUrl = "/api/resume", summary, education, skillsList }) {
+function ResumeModal({ trigger, open, onOpenChange, email, pdfUrl = "/api/resume", summary, education, skillsList, resume }) {
 	const handlePrint = () => {
 		window.print();
 	};
-	const contactEmail = email || "nagulagamchanakya2211@gmail.com";
-	const execSummary = summary || "Computer and Information Science student with hands-on experience building and shipping a full-stack, security-conscious SaaS product. Comfortable owning architecture, security, and product decisions across the full development lifecycle.";
-	const eduText = education || "SR University — B.Tech CIS (Expected 2028)";
+	const fullName = resume?.fullName || "NAGULAGAM CHANAKYA";
+	const jobTitle = resume?.title || "Full-Stack & Security-Conscious Software Engineer";
+	const loc = resume?.location || "Warangal, Telangana, India";
+	const contactEmail = resume?.email || email || "nagulagamchanakya2211@gmail.com";
+	const execSummary = resume?.summary || summary || "Computer and Information Science student with hands-on experience building and shipping a full-stack, security-conscious SaaS product. Comfortable owning architecture, security, and product decisions across the full development lifecycle.";
+	const eduInstitution = resume?.education?.institution || "SR University";
+	const eduLocation = resume?.education?.location || "Warangal, Telangana";
+	const eduDegree = resume?.education?.degree || education || "SR University — B.Tech CIS (Expected 2028)";
+	const eduCoursework = resume?.education?.coursework || "Data Structures & Algorithms, Object-Oriented Programming, Database Management Systems, Operating Systems, Computer Networks, Software Engineering";
+	const effectiveSkills = resume?.skills || skillsList;
+	const sectionsToRender = resume?.sections && resume.sections.length > 0 ? resume.sections : [{
+		title: "Trelio",
+		badge: "Live Product · 3-member team",
+		subtitle: "Multi-Tenant SaaS for Freelancers & Agencies",
+		url: "https://trelio.in",
+		bullets: [
+			"Authorization-Before-Execution (ABE): Built & shipped milestone locking system requiring client approval + payment before work executes, eliminating unpaid scope.",
+			"Multi-Tenant Architecture: Designed full data model (users → teams → clients → projects → milestones) owning architecture & security across the stack.",
+			"Contract Lifecycle & SHA-256: Milestone agreements generated, SHA-256 hashed, and bound to client e-signatures with automatic re-consent triggers on scope edits.",
+			"Tamper-Evident Event Ledger: Built per-workspace hash chains for critical actions (signing, payments, scope changes) continuously verified by background workers.",
+			"Encrypted Billing & Razorpay: Integrated Razorpay with per-team AES-256-GCM encrypted credentials, idempotent webhooks, and multi-tier billing engine.",
+			"Security Audits & IDOR Fixes: Led security reviews identifying and fixing IDOR and payment-recording vulnerabilities before production."
+		]
+	}];
+	const leadershipToRender = resume?.leadership && resume.leadership.length > 0 ? resume.leadership : [
+		"Lead 3-member engineering team building Trelio.",
+		"Own technical direction, architecture, and code/security reviews.",
+		"Define scope and enforce correctness standards before merge."
+	];
+	const practicesToRender = resume?.practices && resume.practices.length > 0 ? resume.practices : [
+		"Ongoing practice in Data Structures & Algorithms & Java (LeetCode).",
+		"Directing AI-assisted development workflows for rapid production iteration.",
+		"Focus: Fintech, distributed backend systems, & applied software security."
+	];
+	const renderBullet = (b) => {
+		const colonIdx = b.indexOf(":");
+		if (colonIdx === -1) return b;
+		const prefix = b.slice(0, colonIdx);
+		const rest = b.slice(colonIdx + 1);
+		return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(import_jsx_runtime.Fragment, { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("strong", {
+			className: "text-foreground",
+			children: [prefix, ":"]
+		}), rest] });
+	};
 	const content = /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 		className: "max-h-[80vh] overflow-y-auto pr-2 space-y-6 text-foreground font-sans print:max-h-none print:overflow-visible",
 		children: [
@@ -344,17 +386,21 @@ function ResumeModal({ trigger, open, onOpenChange, email, pdfUrl = "/api/resume
 				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [
 					/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h2", {
 						className: "text-2xl font-bold font-serif tracking-tight text-white sm:text-3xl",
-						children: "NAGULAGAM CHANAKYA"
+						children: fullName
 					}),
 					/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
 						className: "text-sm font-medium text-sage mt-1",
-						children: "Full-Stack & Security-Conscious Software Engineer"
+						children: jobTitle
 					}),
 					/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 						className: "mt-3 flex flex-wrap items-center gap-y-1 gap-x-4 text-xs text-muted-foreground",
 						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("span", {
 							className: "flex items-center gap-1",
-							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(MapPin, { className: "size-3.5 text-sage" }), " Warangal, Telangana, India"]
+							children: [
+								/* @__PURE__ */ (0, import_jsx_runtime.jsx)(MapPin, { className: "size-3.5 text-sage" }),
+								" ",
+								loc
+							]
 						}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("a", {
 							href: `mailto:${contactEmail}`,
 							className: "flex items-center gap-1 hover:text-sage transition-colors",
@@ -405,15 +451,15 @@ function ResumeModal({ trigger, open, onOpenChange, email, pdfUrl = "/api/resume
 						className: "flex flex-col sm:flex-row sm:items-center sm:justify-between",
 						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h4", {
 							className: "font-semibold text-sm text-foreground",
-							children: "SR University"
+							children: eduInstitution
 						}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
 							className: "text-xs text-muted-foreground",
-							children: "Warangal, Telangana"
+							children: eduLocation
 						})]
 					}),
 					/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
 						className: "text-xs font-medium text-sage mt-0.5",
-						children: eduText
+						children: eduDegree
 					}),
 					/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 						className: "mt-3",
@@ -422,7 +468,7 @@ function ResumeModal({ trigger, open, onOpenChange, email, pdfUrl = "/api/resume
 							children: "Relevant Coursework:"
 						}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
 							className: "text-xs text-muted-foreground mt-1",
-							children: "Data Structures & Algorithms, Object-Oriented Programming, Database Management Systems, Operating Systems, Computer Networks, Software Engineering"
+							children: eduCoursework
 						})]
 					})
 				]
@@ -433,7 +479,7 @@ function ResumeModal({ trigger, open, onOpenChange, email, pdfUrl = "/api/resume
 				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(CodeXml, { className: "size-4" }), " Technical Skills"]
 			}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
 				className: "grid gap-3 sm:grid-cols-2",
-				children: skillsList ? Object.entries(skillsList).map(([cat, items]) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+				children: effectiveSkills ? Object.entries(effectiveSkills).map(([cat, items]) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 					className: "rounded-lg border border-border/60 bg-secondary/20 p-3",
 					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
 						className: "text-xs font-semibold text-foreground block mb-1 uppercase tracking-wider text-[11px]",
@@ -532,67 +578,38 @@ function ResumeModal({ trigger, open, onOpenChange, email, pdfUrl = "/api/resume
 			/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("section", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("h3", {
 				className: "text-xs font-semibold uppercase tracking-wider text-sage mb-3 flex items-center gap-1.5",
 				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Building2, { className: "size-4" }), " Featured Product & Projects"]
-			}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-				className: "rounded-xl border border-border/80 bg-card p-5 space-y-3",
+			}), sectionsToRender.map((sec, idx) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+				className: "rounded-xl border border-border/80 bg-card p-5 space-y-3 mb-4 last:mb-0",
 				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 					className: "flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2",
 					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 						className: "flex items-center gap-2",
 						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h4", {
 							className: "font-serif text-xl font-bold text-white",
-							children: "Trelio"
-						}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Badge, {
+							children: sec.title
+						}), sec.badge && /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Badge, {
 							variant: "sage",
-							children: "Live Product · 3-member team"
+							children: sec.badge
 						})]
-					}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+					}), sec.subtitle && /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
 						className: "text-xs text-sage font-medium mt-0.5",
-						children: "Multi-Tenant SaaS for Freelancers & Agencies"
-					})] }), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("a", {
-						href: "https://trelio.in",
+						children: sec.subtitle
+					})] }), sec.url && /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("a", {
+						href: sec.url,
 						target: "_blank",
 						rel: "noopener noreferrer",
 						className: "inline-flex items-center gap-1 text-xs text-sage hover:underline",
-						children: ["trelio.in ", /* @__PURE__ */ (0, import_jsx_runtime.jsx)(ExternalLink, { className: "size-3" })]
+						children: [
+							sec.url.replace(/^https?:\/\//, ""),
+							" ",
+							/* @__PURE__ */ (0, import_jsx_runtime.jsx)(ExternalLink, { className: "size-3" })
+						]
 					})]
-				}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("ul", {
+				}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("ul", {
 					className: "space-y-2 text-xs text-muted-foreground leading-relaxed list-disc list-inside",
-					children: [
-						/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("li", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("strong", {
-							className: "text-foreground",
-							children: "Authorization-Before-Execution (ABE):"
-						}), " Built & shipped milestone locking system requiring client approval + payment before work executes, eliminating unpaid scope."] }),
-						/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("li", { children: [
-							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("strong", {
-								className: "text-foreground",
-								children: "Multi-Tenant Architecture:"
-							}),
-							" Designed full data model (",
-							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("code", {
-								className: "text-sage",
-								children: "users → teams → clients → projects → milestones"
-							}),
-							") owning architecture & security across the stack."
-						] }),
-						/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("li", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("strong", {
-							className: "text-foreground",
-							children: "Contract Lifecycle & SHA-256:"
-						}), " Milestone agreements generated, SHA-256 hashed, and bound to client e-signatures with automatic re-consent triggers on scope edits."] }),
-						/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("li", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("strong", {
-							className: "text-foreground",
-							children: "Tamper-Evident Event Ledger:"
-						}), " Built per-workspace hash chains for critical actions (signing, payments, scope changes) continuously verified by background workers."] }),
-						/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("li", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("strong", {
-							className: "text-foreground",
-							children: "Encrypted Billing & Razorpay:"
-						}), " Integrated Razorpay with per-team AES-256-GCM encrypted credentials, idempotent webhooks, and multi-tier billing engine."] }),
-						/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("li", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("strong", {
-							className: "text-foreground",
-							children: "Security Audits & IDOR Fixes:"
-						}), " Led security reviews identifying and fixing IDOR and payment-recording vulnerabilities before production."] })
-					]
+					children: sec.bullets.map((b, bIdx) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)("li", { children: renderBullet(b) }, bIdx))
 				})]
-			})] }),
+			}, sec.title || idx))] }),
 			/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Separator, {}),
 			/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("section", {
 				className: "grid gap-4 sm:grid-cols-2",
@@ -601,26 +618,18 @@ function ResumeModal({ trigger, open, onOpenChange, email, pdfUrl = "/api/resume
 					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("h3", {
 						className: "text-xs font-semibold uppercase tracking-wider text-sage mb-2 flex items-center gap-1.5",
 						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(ShieldCheck, { className: "size-4" }), " Leadership"]
-					}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("ul", {
+					}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("ul", {
 						className: "space-y-1.5 text-xs text-muted-foreground leading-relaxed list-disc list-inside",
-						children: [
-							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("li", { children: "Lead 3-member engineering team building Trelio." }),
-							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("li", { children: "Own technical direction, architecture, and code/security reviews." }),
-							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("li", { children: "Define scope and enforce correctness standards before merge." })
-						]
+						children: leadershipToRender.map((item, idx) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)("li", { children: item }, idx))
 					})]
 				}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 					className: "rounded-xl border border-border/80 bg-secondary/30 p-4",
 					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("h3", {
 						className: "text-xs font-semibold uppercase tracking-wider text-sage mb-2 flex items-center gap-1.5",
 						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Award, { className: "size-4" }), " Practices & Interests"]
-					}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("ul", {
+					}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("ul", {
 						className: "space-y-1.5 text-xs text-muted-foreground leading-relaxed list-disc list-inside",
-						children: [
-							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("li", { children: "Ongoing practice in Data Structures & Algorithms & Java (LeetCode)." }),
-							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("li", { children: "Directing AI-assisted development workflows for rapid production iteration." }),
-							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("li", { children: "Focus: Fintech, distributed backend systems, & applied software security." })
-						]
+						children: practicesToRender.map((item, idx) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)("li", { children: item }, idx))
 					})]
 				})]
 			})
@@ -658,7 +667,7 @@ var sections = [
 	"skills",
 	"contact"
 ];
-function LeftRailNav() {
+function LeftRailNav({ resume }) {
 	const activeSection = useActiveSection(sections);
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("aside", {
 		className: "fixed left-6 top-1/2 -translate-y-1/2 z-40 hidden xl:flex flex-col items-center gap-4 rounded-full border border-border/80 bg-card/60 p-3 backdrop-blur-md shadow-[0_0_20px_rgba(0,0,0,0.5)]",
@@ -687,9 +696,9 @@ function LeftRailNav() {
 				title: "Email",
 				children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Mail, { className: "size-4" })
 			}),
-			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "my-1 h-8 w-px bg-border/60" }),
+			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "my-1 h-6 w-px bg-border/60" }),
 			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-				className: "flex flex-col gap-2 py-1",
+				className: "flex flex-col items-center gap-3",
 				children: sections.map((id) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)("a", {
 					href: `#${id}`,
 					className: "group relative flex items-center justify-center",
@@ -698,14 +707,17 @@ function LeftRailNav() {
 				}, id))
 			}),
 			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "my-1 h-8 w-px bg-border/60" }),
-			/* @__PURE__ */ (0, import_jsx_runtime.jsx)(ResumeModal, { trigger: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("button", {
-				className: "group relative text-muted-foreground transition-colors hover:text-sage p-1.5",
-				title: "View Resume",
-				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(FileText, { className: "size-4" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-					className: "absolute left-full ml-3 hidden rounded-md bg-card border border-border px-2 py-1 text-[11px] font-medium text-sage shadow-md group-hover:block whitespace-nowrap",
-					children: "View Resume"
-				})]
-			}) }),
+			/* @__PURE__ */ (0, import_jsx_runtime.jsx)(ResumeModal, {
+				resume,
+				trigger: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("button", {
+					className: "group relative text-muted-foreground transition-colors hover:text-sage p-1.5",
+					title: "View Resume",
+					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(FileText, { className: "size-4" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+						className: "absolute left-full ml-3 hidden rounded-md bg-card border border-border px-2 py-1 text-[11px] font-medium text-sage shadow-md group-hover:block whitespace-nowrap",
+						children: "View Resume"
+					})]
+				})
+			}),
 			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("a", {
 				href: "#top",
 				className: "text-muted-foreground transition-colors hover:text-foreground p-1.5",
@@ -1608,7 +1620,7 @@ function useScrollAnimation(threshold = .1) {
 		isVisible
 	};
 }
-function Hero({ tagline, availabilityStatus, liveCount, email, pdfUrl, summary, education, skillsList }) {
+function Hero({ tagline, availabilityStatus, liveCount, email, pdfUrl, summary, education, skillsList, resume }) {
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("section", {
 		className: "relative mx-auto flex min-h-[90vh] max-w-5xl flex-col justify-center px-5 py-20 overflow-hidden",
 		children: [
@@ -1646,6 +1658,7 @@ function Hero({ tagline, availabilityStatus, liveCount, email, pdfUrl, summary, 
 								})
 							}),
 							/* @__PURE__ */ (0, import_jsx_runtime.jsx)(ResumeModal, {
+								resume,
 								email,
 								pdfUrl,
 								summary,
@@ -1691,7 +1704,7 @@ function Hero({ tagline, availabilityStatus, liveCount, email, pdfUrl, summary, 
 		]
 	});
 }
-function About({ email, pdfUrl, summary, education, skillsList }) {
+function About({ email, pdfUrl, summary, education, skillsList, resume }) {
 	const { ref, isVisible } = useScrollAnimation();
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("section", {
 		id: "about",
@@ -1790,6 +1803,7 @@ function About({ email, pdfUrl, summary, education, skillsList }) {
 							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
 								className: "pt-2",
 								children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(ResumeModal, {
+									resume,
 									email,
 									pdfUrl,
 									summary,
@@ -1897,7 +1911,7 @@ function BusinessCard({ items }) {
 		}, project.id))
 	});
 }
-function Projects({ businessesList, sideProjectsList, email, pdfUrl, summary, education, skillsList }) {
+function Projects({ businessesList, sideProjectsList, email, pdfUrl, summary, education, skillsList, resume }) {
 	const { ref, isVisible } = useScrollAnimation();
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("section", {
 		id: "projects",
@@ -1980,6 +1994,7 @@ function Projects({ businessesList, sideProjectsList, email, pdfUrl, summary, ed
 												children: "Discuss a Project →"
 											})
 										}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(ResumeModal, {
+											resume,
 											email,
 											pdfUrl,
 											summary,
@@ -2254,7 +2269,7 @@ function PortfolioHome({ initialData }) {
 		className: "min-h-screen bg-background text-foreground relative",
 		children: [
 			/* @__PURE__ */ (0, import_jsx_runtime.jsx)(IntroOverlay, {}),
-			/* @__PURE__ */ (0, import_jsx_runtime.jsx)(LeftRailNav, {}),
+			/* @__PURE__ */ (0, import_jsx_runtime.jsx)(LeftRailNav, { resume: data?.resume }),
 			/* @__PURE__ */ (0, import_jsx_runtime.jsx)(SiteNav, {}),
 			/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Companion, {}),
 			/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("main", { children: [
@@ -2266,7 +2281,8 @@ function PortfolioHome({ initialData }) {
 					pdfUrl: data?.resumeOverride?.resumePdfUrl,
 					summary: data?.resumeOverride?.summary,
 					education: data?.resumeOverride?.education,
-					skillsList
+					skillsList,
+					resume: data?.resume
 				}),
 				/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Separator, {}),
 				/* @__PURE__ */ (0, import_jsx_runtime.jsx)(About, {
@@ -2274,7 +2290,8 @@ function PortfolioHome({ initialData }) {
 					pdfUrl: data?.resumeOverride?.resumePdfUrl,
 					summary: data?.resumeOverride?.summary,
 					education: data?.resumeOverride?.education,
-					skillsList
+					skillsList,
+					resume: data?.resume
 				}),
 				/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Separator, {}),
 				/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Projects, {
@@ -2284,7 +2301,8 @@ function PortfolioHome({ initialData }) {
 					pdfUrl: data?.resumeOverride?.resumePdfUrl,
 					summary: data?.resumeOverride?.summary,
 					education: data?.resumeOverride?.education,
-					skillsList
+					skillsList,
+					resume: data?.resume
 				}),
 				/* @__PURE__ */ (0, import_jsx_runtime.jsx)(MarqueeTicker, {}),
 				/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Skills, { skillsList }),
@@ -2337,7 +2355,7 @@ function PortfolioHome({ initialData }) {
 	});
 }
 function Home() {
-	const data = Route$10.useLoaderData();
+	const data = Route$11.useLoaderData();
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(PortfolioHome, { initialData: data });
 }
 //#endregion

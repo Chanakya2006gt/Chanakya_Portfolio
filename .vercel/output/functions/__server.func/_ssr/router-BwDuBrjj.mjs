@@ -1,30 +1,22 @@
 import { i as __toESM } from "../_runtime.mjs";
+import { n as put, t as head } from "../_libs/@vercel/blob+[...].mjs";
+import { a as getPortfolioData, i as writeContent, n as readContent, r as restoreBackup, u as __exportAll } from "./content.server-bgipnv65.mjs";
 import { u as require_react } from "../_libs/@floating-ui/react-dom+[...].mjs";
 import { f as createRouter, g as createRootRoute, h as createFileRoute, l as Scripts, m as lazyRouteComponent, p as Outlet, u as HeadContent, v as useRouter } from "../_libs/@tanstack/react-router+[...].mjs";
 import { s as require_jsx_runtime } from "../_libs/@radix-ui/react-collection+[...].mjs";
+import { n as TSS_SERVER_FUNCTION, r as getServerFnById, t as createServerFn } from "./ssr.mjs";
 import { E as Compass, N as ArrowLeft, r as TriangleAlert, u as RotateCw } from "../_libs/lucide-react.mjs";
-import { a as union, i as string, n as number, r as object, t as literal } from "../_libs/zod.mjs";
+import { a as record, i as object, n as literal, o as string, r as number, s as union, t as array } from "../_libs/zod.mjs";
 import { n as Portal, r as Provider, t as Content2 } from "../_libs/@radix-ui/react-tooltip+[...].mjs";
 import { n as clsx } from "../_libs/class-variance-authority+clsx.mjs";
 import { t as twMerge } from "../_libs/tailwind-merge.mjs";
 import { t as Toaster } from "../_libs/sonner.mjs";
-import { n as put, t as head } from "../_libs/@vercel/blob+[...].mjs";
 import crypto from "node:crypto";
-import fs from "node:fs";
 import path from "node:path";
-//#region node_modules/.nitro/vite/services/ssr/assets/router-CX3DTPbg.js
+import fs from "node:fs";
+//#region node_modules/.nitro/vite/services/ssr/assets/router-BwDuBrjj.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
-var __defProp = Object.defineProperty;
-var __exportAll = (all, no_symbols) => {
-	let target = {};
-	for (var name in all) __defProp(target, name, {
-		get: all[name],
-		enumerable: true
-	});
-	if (!no_symbols) __defProp(target, Symbol.toStringTag, { value: "Module" });
-	return target;
-};
 function AppErrorComponent({ error }) {
 	(0, import_react.useEffect)(() => {
 		console.error("[app error]", error);
@@ -342,7 +334,7 @@ var TooltipContent = import_react.forwardRef(({ className, sideOffset = 6, ...pr
 	...props
 }) }));
 TooltipContent.displayName = Content2.displayName;
-var styles_default = "/assets/styles-D9GoPhjj.css";
+var styles_default = "/assets/styles-CsQzGi2L.css";
 var APP_NAME = "Nagulagam Chanakya — Full-Stack Developer & SaaS Founder";
 var APP_DESC = "Official portfolio of Nagulagam Chanakya — Full-Stack Developer & Founder of Trelio. Specializing in React, Node.js, TypeScript, PostgreSQL, and applied software security.";
 var JSON_LD = {
@@ -372,7 +364,7 @@ var JSON_LD = {
 		"Payment Systems"
 	]
 };
-var Route$11 = createRootRoute({
+var Route$12 = createRootRoute({
 	head: () => ({
 		meta: [
 			{ charSet: "utf-8" },
@@ -491,164 +483,28 @@ var Route$11 = createRootRoute({
 		] })]
 	})
 });
-var businesses$1 = [{
-	id: "trelio",
-	title: "Trelio",
-	description: "Authorization-before-execution SaaS for freelancers and agencies. Work is broken into stages that clients approve and pay one at a time, so execution never runs ahead of payment.",
-	liveUrl: "https://trelio.in",
-	stack: [
-		"React",
-		"Node.js",
-		"Multi-tenant",
-		"Payments",
-		"Audit logs"
-	],
-	featured: true,
-	badge: "Live product",
-	kind: "business"
-}];
-var sideProjects$1 = [{
-	id: "portfolio",
-	title: "This site",
-	description: "Personal developer portfolio built with TanStack Start, React 19 SSR, and Tailwind CSS v4 with full theme synchronization and Nitro serverless deployment.",
-	stack: [
-		"TanStack Start",
-		"React 19",
-		"Tailwind v4",
-		"shadcn/ui"
-	],
-	liveUrl: "https://github.com/Chanakya2006gt/Chanakya_Portfolio",
-	kind: "side"
-}];
-var skills$1 = {
-	Frontend: [
-		"React",
-		"TypeScript",
-		"Tailwind",
-		"shadcn/ui",
-		"Vite"
-	],
-	Backend: [
-		"Node.js",
-		"Express",
-		"PostgreSQL",
-		"REST APIs"
-	],
-	Product: [
-		"Multi-tenant",
-		"Payments",
-		"Audit logs",
-		"Auth flows"
-	],
-	Tools: [
-		"Git",
-		"Playwright",
-		"Vercel",
-		"Razorpay"
-	]
-};
-var navLinks = [
-	{
-		href: "#about",
-		label: "About"
-	},
-	{
-		href: "#projects",
-		label: "Projects"
-	},
-	{
-		href: "#skills",
-		label: "Skills"
-	},
-	{
-		href: "#contact",
-		label: "Contact"
-	}
-];
-var portfolio_data_default = {
-	businesses: [{
-		"id": "trelio",
-		"title": "Trelio",
-		"description": "Authorization-before-execution SaaS for freelancers and agencies. Work is broken into stages that clients approve and pay one at a time, so execution never runs ahead of payment.",
-		"liveUrl": "https://trelio.in",
-		"stack": [
-			"React",
-			"Node.js",
-			"Multi-tenant",
-			"Payments",
-			"Audit logs"
-		],
-		"featured": true,
-		"badge": "Live product",
-		"kind": "business"
-	}],
-	sideProjects: [{
-		"id": "portfolio",
-		"title": "This site",
-		"description": "Personal developer portfolio built with TanStack Start, React 19 SSR, and Tailwind CSS v4 with full theme synchronization and Nitro serverless deployment.",
-		"stack": [
-			"TanStack Start",
-			"React 19",
-			"Tailwind v4",
-			"shadcn/ui"
-		],
-		"liveUrl": "https://github.com/Chanakya2006gt/Chanakya_Portfolio",
-		"kind": "side"
-	}],
-	skills: {
-		"Frontend": [
-			"React",
-			"TypeScript",
-			"Tailwind",
-			"shadcn/ui",
-			"Vite"
-		],
-		"Backend": [
-			"Node.js",
-			"Express",
-			"PostgreSQL",
-			"REST APIs"
-		],
-		"Product": [
-			"Multi-tenant",
-			"Payments",
-			"Audit logs",
-			"Auth flows"
-		],
-		"Tools": [
-			"Git",
-			"Playwright",
-			"Vercel",
-			"Razorpay"
-		]
-	},
-	availabilityStatus: "Open for collaborations & full-time roles",
-	heroTagline: "I ship products under real constraints — not demos. Trelio is the serious work. Everything else stays in experiments.",
-	resumeOverride: { "education": "SR University — B.Tech CSE (2028)" }
-};
-function getPortfolioData() {
-	if (portfolio_data_default) return portfolio_data_default;
-	return {
-		businesses: businesses$1,
-		sideProjects: sideProjects$1,
-		skills: skills$1,
-		availabilityStatus: "Open for contracts & software engineering roles",
-		workAvailability: "Open for contract work, consulting & engineering roles",
-		hiringStatus: "Not hiring for any roles at this time (Chanakya is open to being hired for contracts/work)",
-		heroTagline: "I ship products under real constraints — not demos. Trelio is the serious work. Everything else stays in experiments."
+var createSsrRpc = (functionId) => {
+	const url = "/_serverFn/" + functionId;
+	const serverFnMeta = { id: functionId };
+	const fn = async (...args) => {
+		return (await getServerFnById(functionId, { origin: "server" }))(...args);
 	};
-}
-var $$splitComponentImporter$2 = () => import("./routes-CZKUmTiY.mjs");
-var Route$10 = createFileRoute("/")({
-	loader: () => {
-		return getPortfolioData();
-	},
+	return Object.assign(fn, {
+		url,
+		serverFnMeta,
+		[TSS_SERVER_FUNCTION]: true
+	});
+};
+var fetchContent = createServerFn({ method: "GET" }).handler(createSsrRpc("2b99909e19342163fb9618a3b1f343b57fe68205625d940d83a174e978667293"));
+var $$splitComponentImporter$2 = () => import("./routes-DhYswGAS.mjs");
+var Route$11 = createFileRoute("/")({
+	loader: () => fetchContent(),
 	component: lazyRouteComponent($$splitComponentImporter$2, "component")
 });
-var $$splitComponentImporter$1 = () => import("./admin-D6KDCjTj.mjs");
-var Route$9 = createFileRoute("/admin/")({ component: lazyRouteComponent($$splitComponentImporter$1, "component") });
-var $$splitComponentImporter = () => import("./login-Ct50KJ5Y.mjs");
-var Route$8 = createFileRoute("/admin/login")({ component: lazyRouteComponent($$splitComponentImporter, "component") });
+var $$splitComponentImporter$1 = () => import("./admin-BRXGj_Fd.mjs");
+var Route$10 = createFileRoute("/admin/")({ component: lazyRouteComponent($$splitComponentImporter$1, "component") });
+var $$splitComponentImporter = () => import("./login-B6Y266Wv.mjs");
+var Route$9 = createFileRoute("/admin/login")({ component: lazyRouteComponent($$splitComponentImporter, "component") });
 var envCache = null;
 var lastCacheTime = 0;
 var CACHE_TTL_MS = 5e3;
@@ -894,7 +750,7 @@ function isChatRateLimited(ip) {
 	record.count += 1;
 	return false;
 }
-var Route$7 = createFileRoute("/api/chat")({ server: { handlers: { POST: async ({ request }) => {
+var Route$8 = createFileRoute("/api/chat")({ server: { handlers: { POST: async ({ request }) => {
 	assertEnvGuards();
 	if (isChatRateLimited(request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() || "127.0.0.1")) return new Response(JSON.stringify({ reply: "You're sending messages a bit too fast. Please wait a moment before trying again." }), {
 		status: 429,
@@ -960,7 +816,7 @@ var Route$7 = createFileRoute("/api/chat")({ server: { handlers: { POST: async (
 *   "ok"       — all required env vars present
 *   "degraded" — at least one required env var is missing
 */
-var Route$6 = createFileRoute("/api/health")({ server: { handlers: { GET: async () => {
+var Route$7 = createFileRoute("/api/health")({ server: { handlers: { GET: async () => {
 	const required = {
 		ADMIN_USERNAME: getEnvVar("ADMIN_USERNAME"),
 		ADMIN_PASSWORD: getEnvVar("ADMIN_PASSWORD"),
@@ -977,7 +833,7 @@ var Route$6 = createFileRoute("/api/health")({ server: { handlers: { GET: async 
 		headers: { "Content-Type": "application/json" }
 	});
 } } } });
-var Route$5 = createFileRoute("/api/resume")({ server: { handlers: { GET: async () => {
+var Route$6 = createFileRoute("/api/resume")({ server: { handlers: { GET: async () => {
 	try {
 		const blobDetails = await head("resume.pdf");
 		if (blobDetails && blobDetails.url) return Response.redirect(blobDetails.url, 307);
@@ -1067,41 +923,18 @@ function createSetCookieHeader(token, isProduction = false) {
 function createClearCookieHeader() {
 	return `${COOKIE_NAME}=; Path=/; HttpOnly; SameSite=Lax; Max-Age=0`;
 }
-var Route$4 = createFileRoute("/api/admin/check")({ server: { handlers: { GET: async ({ request }) => {
+var Route$5 = createFileRoute("/api/admin/check")({ server: { handlers: { GET: async ({ request }) => {
 	assertEnvGuards();
 	const authenticated = verifySignedSessionToken(getAdminSessionCookie(request) || void 0);
 	return new Response(JSON.stringify({ authenticated }), { headers: { "Content-Type": "application/json" } });
 } } } });
-var DATA_FILE_PATH = path.join(process.cwd(), "src", "data", "portfolio-data.json");
-/**
-* Server-only. Persists edited portfolio data to the JSON file (local dev).
-* Kept out of `store.ts` because that module is imported by the client route
-* loader — `fs`/`path`/`process` must never reach the browser bundle.
-* No-ops harmlessly on Vercel's read-only filesystem (returns false).
-*/
-function savePortfolioData(data) {
-	try {
-		if (process.env.VERCEL || true) {
-			console.log("[savePortfolioData] Notice: Content edits in production are bundled via code. Local dev saves to portfolio-data.json.");
-			return true;
-		}
-		const dir = path.dirname(DATA_FILE_PATH);
-		if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
-		fs.writeFileSync(DATA_FILE_PATH, JSON.stringify(data, null, 2), "utf-8");
-		return true;
-	} catch (error) {
-		console.error("Error writing portfolio-data.json:", error);
-		if (process.env.VERCEL || true) return true;
-		return false;
-	}
-}
-var Route$3 = createFileRoute("/api/admin/data")({ server: { handlers: {
+var Route$4 = createFileRoute("/api/admin/data")({ server: { handlers: {
 	GET: async ({ request }) => {
 		if (!verifySignedSessionToken(getAdminSessionCookie(request) || void 0)) return new Response(JSON.stringify({ error: "Unauthorized" }), {
 			status: 401,
 			headers: { "Content-Type": "application/json" }
 		});
-		const data = getPortfolioData();
+		const data = await readContent();
 		return new Response(JSON.stringify(data), { headers: { "Content-Type": "application/json" } });
 	},
 	POST: async ({ request }) => {
@@ -1112,7 +945,7 @@ var Route$3 = createFileRoute("/api/admin/data")({ server: { handlers: {
 		});
 		try {
 			const newData = await request.json();
-			if (savePortfolioData(newData)) return new Response(JSON.stringify({
+			if (await writeContent(newData)) return new Response(JSON.stringify({
 				success: true,
 				data: newData
 			}), { headers: { "Content-Type": "application/json" } });
@@ -1164,7 +997,7 @@ function safeCompare(a, b) {
 	}
 	return crypto.timingSafeEqual(bufA, bufB);
 }
-var Route$2 = createFileRoute("/api/admin/login")({ server: { handlers: { POST: async ({ request }) => {
+var Route$3 = createFileRoute("/api/admin/login")({ server: { handlers: { POST: async ({ request }) => {
 	assertEnvGuards();
 	const ip = request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() || "127.0.0.1";
 	if (isRateLimited(ip)) return new Response(JSON.stringify({ error: "Too many failed attempts. Please wait 5 minutes." }), {
@@ -1206,12 +1039,89 @@ var Route$2 = createFileRoute("/api/admin/login")({ server: { handlers: { POST: 
 		});
 	}
 } } } });
-var Route$1 = createFileRoute("/api/admin/logout")({ server: { handlers: { POST: async () => {
+var Route$2 = createFileRoute("/api/admin/logout")({ server: { handlers: { POST: async () => {
 	return new Response(JSON.stringify({ success: true }), { headers: {
 		"Content-Type": "application/json",
 		"Set-Cookie": createClearCookieHeader()
 	} });
 } } } });
+var Route$1 = createFileRoute("/api/admin/restore")({ server: { handlers: { POST: async ({ request }) => {
+	if (!verifySignedSessionToken(getAdminSessionCookie(request) || void 0)) return new Response(JSON.stringify({ error: "Unauthorized" }), {
+		status: 401,
+		headers: { "Content-Type": "application/json" }
+	});
+	try {
+		if (await restoreBackup()) return new Response(JSON.stringify({ success: true }), { headers: { "Content-Type": "application/json" } });
+		return new Response(JSON.stringify({ error: "We couldn't restore the previous version." }), {
+			status: 500,
+			headers: { "Content-Type": "application/json" }
+		});
+	} catch (err) {
+		console.error("[restore] Failed:", err);
+		return new Response(JSON.stringify({ error: "We couldn't restore the previous version." }), {
+			status: 500,
+			headers: { "Content-Type": "application/json" }
+		});
+	}
+} } } });
+var resumeSectionSchema = object({
+	title: string(),
+	badge: string().optional(),
+	subtitle: string().optional(),
+	url: string().optional(),
+	bullets: array(string())
+});
+var resumeContentSchema = object({
+	fullName: string().optional(),
+	title: string().optional(),
+	location: string().optional(),
+	email: string().optional(),
+	summary: string().optional(),
+	education: object({
+		institution: string().optional(),
+		location: string().optional(),
+		degree: string().optional(),
+		coursework: string().optional()
+	}).optional(),
+	sections: array(resumeSectionSchema).optional(),
+	leadership: array(string()).optional(),
+	practices: array(string()).optional(),
+	skills: record(string(), array(string())).optional()
+});
+/** Pull a JSON object out of a model reply that may be fenced or padded with prose. */
+function extractJsonObject(raw) {
+	const cleaned = raw.trim().replace(/^```(?:json)?/i, "").replace(/```$/, "").trim();
+	const start = cleaned.indexOf("{");
+	const end = cleaned.lastIndexOf("}");
+	if (start === -1 || end === -1 || end <= start) return null;
+	try {
+		return JSON.parse(cleaned.slice(start, end + 1));
+	} catch {
+		return null;
+	}
+}
+var RESUME_INSTRUCTION = `You are extracting structured data from a résumé PDF.
+
+Return ONLY a raw JSON object. No markdown, no code fences, no commentary.
+
+Use exactly this shape (omit any key you cannot find in the document — do NOT guess):
+{
+  "fullName": string,
+  "title": string,
+  "location": string,
+  "email": string,
+  "summary": string,
+  "education": { "institution": string, "location": string, "degree": string, "coursework": string },
+  "sections": [ { "title": string, "badge": string, "subtitle": string, "url": string, "bullets": [string] } ],
+  "leadership": [string],
+  "practices": [string],
+  "skills": { "<Category>": [string] }
+}
+
+Rules:
+- Copy wording from the document. Do not invent, embellish, or add achievements that are not written there.
+- "sections" is for jobs/projects. Each bullet should start with a short bold-able label followed by a colon, e.g. "Multi-Tenant Architecture: Designed ...". Preserve the document's own phrasing.
+- If the document is unreadable or is not a résumé, return {}.`;
 var Route = createFileRoute("/api/admin/resume")({ server: { handlers: { POST: async ({ request }) => {
 	if (!verifySignedSessionToken(getAdminSessionCookie(request) || void 0)) return new Response(JSON.stringify({ error: "Unauthorized" }), {
 		status: 401,
@@ -1219,7 +1129,7 @@ var Route = createFileRoute("/api/admin/resume")({ server: { handlers: { POST: a
 	});
 	if (!(request.headers.get("content-type") || "").includes("application/pdf")) return new Response(JSON.stringify({ error: "Please choose a PDF file." }), {
 		status: 415,
-		headers: { "Content-Type": "application/json" }
+		headers: { "Content-Type": "application/pdf" }
 	});
 	const bytes = await request.arrayBuffer();
 	if (bytes.byteLength === 0) return new Response(JSON.stringify({ error: "Empty file." }), {
@@ -1230,18 +1140,15 @@ var Route = createFileRoute("/api/admin/resume")({ server: { handlers: { POST: a
 		status: 413,
 		headers: { "Content-Type": "application/json" }
 	});
+	let blobUrl = "";
 	try {
-		const blob = await put("resume.pdf", bytes, {
+		blobUrl = (await put("resume.pdf", bytes, {
 			access: "public",
 			addRandomSuffix: false,
 			allowOverwrite: true,
 			contentType: "application/pdf",
 			cacheControlMaxAge: 60
-		});
-		return new Response(JSON.stringify({
-			success: true,
-			url: blob.url
-		}), { headers: { "Content-Type": "application/json" } });
+		})).url;
 	} catch (err) {
 		console.error("[resume upload] Blob put failed:", err);
 		return new Response(JSON.stringify({ error: "We couldn't save the résumé just now. Please try again in a moment." }), {
@@ -1249,67 +1156,170 @@ var Route = createFileRoute("/api/admin/resume")({ server: { handlers: { POST: a
 			headers: { "Content-Type": "application/json" }
 		});
 	}
+	try {
+		const apiKey = getEnvVar("OPENAI_API_KEY");
+		if (!apiKey || apiKey === "your_openai_api_key_here" || apiKey.includes("placeholder")) return new Response(JSON.stringify({
+			success: true,
+			url: blobUrl,
+			parsed: false
+		}), { headers: { "Content-Type": "application/json" } });
+		const model = getEnvVar("OPENAI_RESUME_MODEL", getEnvVar("OPENAI_MODEL", "gpt-4o-mini-2024-07-18"));
+		const base64 = Buffer.from(bytes).toString("base64");
+		const response = await fetch("https://api.openai.com/v1/chat/completions", {
+			method: "POST",
+			headers: {
+				"Content-Type": "application/json",
+				Authorization: `Bearer ${apiKey}`
+			},
+			body: JSON.stringify({
+				model,
+				messages: [{
+					role: "user",
+					content: [{
+						type: "file",
+						file: {
+							filename: "resume.pdf",
+							file_data: `data:application/pdf;base64,${base64}`
+						}
+					}, {
+						type: "text",
+						text: RESUME_INSTRUCTION
+					}]
+				}],
+				max_completion_tokens: 4e3
+			})
+		});
+		if (!response.ok) {
+			const errText = await response.text();
+			console.error("[resume extraction] OpenAI API error:", response.status, errText);
+			return new Response(JSON.stringify({
+				success: true,
+				url: blobUrl,
+				parsed: false,
+				parseError: "The résumé was uploaded, but we couldn't read it automatically. You can edit the details manually."
+			}), { headers: { "Content-Type": "application/json" } });
+		}
+		const rawContent = (await response.json()).choices?.[0]?.message?.content || "";
+		const extractedJson = extractJsonObject(rawContent);
+		if (!extractedJson) {
+			console.error("[resume extraction] Failed to extract JSON from AI response:", rawContent);
+			return new Response(JSON.stringify({
+				success: true,
+				url: blobUrl,
+				parsed: false,
+				parseError: "The résumé was uploaded, but we couldn't read it automatically. You can edit the details manually."
+			}), { headers: { "Content-Type": "application/json" } });
+		}
+		const result = resumeContentSchema.safeParse(extractedJson);
+		if (!result.success) {
+			console.error("[resume extraction] Schema validation failed:", result.error);
+			return new Response(JSON.stringify({
+				success: true,
+				url: blobUrl,
+				parsed: false,
+				parseError: "The résumé was uploaded, but we couldn't read it automatically. You can edit the details manually."
+			}), { headers: { "Content-Type": "application/json" } });
+		}
+		const current = await readContent();
+		const ai = result.data;
+		const mergedResume = {
+			...current.resume ?? {},
+			...Object.fromEntries(Object.entries(ai).filter(([key, value]) => key !== "skills" && value !== void 0 && value !== null && !(typeof value === "string" && value.trim() === "") && !(Array.isArray(value) && value.length === 0)))
+		};
+		const next = {
+			...current,
+			resume: mergedResume,
+			...ai.skills && Object.keys(ai.skills).length > 0 ? { skills: ai.skills } : {},
+			resumeOverride: {
+				...current.resumeOverride ?? {},
+				...ai.summary ? { summary: ai.summary } : {},
+				...ai.email ? { email: ai.email } : {},
+				...ai.education?.degree ? { education: ai.education.degree } : {}
+			}
+		};
+		await writeContent(next);
+		const fields = Object.keys(ai).filter((k) => ai[k] !== void 0);
+		return new Response(JSON.stringify({
+			success: true,
+			url: blobUrl,
+			parsed: true,
+			fields
+		}), { headers: { "Content-Type": "application/json" } });
+	} catch (aiErr) {
+		console.error("[resume extraction] AI parsing threw error:", aiErr);
+		return new Response(JSON.stringify({
+			success: true,
+			url: blobUrl,
+			parsed: false,
+			parseError: "The résumé was uploaded, but we couldn't read it automatically. You can edit the details manually."
+		}), { headers: { "Content-Type": "application/json" } });
+	}
 } } } });
-var IndexRoute = Route$10.update({
+var IndexRoute = Route$11.update({
 	id: "/",
 	path: "/",
-	getParentRoute: () => Route$11
+	getParentRoute: () => Route$12
 });
-var AdminIndexRoute = Route$9.update({
+var AdminIndexRoute = Route$10.update({
 	id: "/admin/",
 	path: "/admin/",
-	getParentRoute: () => Route$11
+	getParentRoute: () => Route$12
 });
 var rootRouteChildren = {
 	IndexRoute,
-	AdminLoginRoute: Route$8.update({
+	AdminLoginRoute: Route$9.update({
 		id: "/admin/login",
 		path: "/admin/login",
-		getParentRoute: () => Route$11
+		getParentRoute: () => Route$12
 	}),
-	ApiChatRoute: Route$7.update({
+	ApiChatRoute: Route$8.update({
 		id: "/api/chat",
 		path: "/api/chat",
-		getParentRoute: () => Route$11
+		getParentRoute: () => Route$12
 	}),
-	ApiHealthRoute: Route$6.update({
+	ApiHealthRoute: Route$7.update({
 		id: "/api/health",
 		path: "/api/health",
-		getParentRoute: () => Route$11
+		getParentRoute: () => Route$12
 	}),
-	ApiResumeRoute: Route$5.update({
+	ApiResumeRoute: Route$6.update({
 		id: "/api/resume",
 		path: "/api/resume",
-		getParentRoute: () => Route$11
+		getParentRoute: () => Route$12
 	}),
 	AdminIndexRoute,
-	ApiAdminCheckRoute: Route$4.update({
+	ApiAdminCheckRoute: Route$5.update({
 		id: "/api/admin/check",
 		path: "/api/admin/check",
-		getParentRoute: () => Route$11
+		getParentRoute: () => Route$12
 	}),
-	ApiAdminDataRoute: Route$3.update({
+	ApiAdminDataRoute: Route$4.update({
 		id: "/api/admin/data",
 		path: "/api/admin/data",
-		getParentRoute: () => Route$11
+		getParentRoute: () => Route$12
 	}),
-	ApiAdminLoginRoute: Route$2.update({
+	ApiAdminLoginRoute: Route$3.update({
 		id: "/api/admin/login",
 		path: "/api/admin/login",
-		getParentRoute: () => Route$11
+		getParentRoute: () => Route$12
 	}),
-	ApiAdminLogoutRoute: Route$1.update({
+	ApiAdminLogoutRoute: Route$2.update({
 		id: "/api/admin/logout",
 		path: "/api/admin/logout",
-		getParentRoute: () => Route$11
+		getParentRoute: () => Route$12
+	}),
+	ApiAdminRestoreRoute: Route$1.update({
+		id: "/api/admin/restore",
+		path: "/api/admin/restore",
+		getParentRoute: () => Route$12
 	}),
 	ApiAdminResumeRoute: Route.update({
 		id: "/api/admin/resume",
 		path: "/api/admin/resume",
-		getParentRoute: () => Route$11
+		getParentRoute: () => Route$12
 	})
 };
-var routeTree = Route$11._addFileChildren(rootRouteChildren)._addFileTypes();
+var routeTree = Route$12._addFileChildren(rootRouteChildren)._addFileTypes();
 var router_exports = /* @__PURE__ */ __exportAll({ getRouter: () => getRouter });
 function getRouter() {
 	return createRouter({
@@ -1319,4 +1329,4 @@ function getRouter() {
 	});
 }
 //#endregion
-export { sideProjects$1 as a, navLinks as i, Route$10 as n, skills$1 as o, businesses$1 as r, cn as s, router_exports as t };
+export { Route$11 as n, cn as r, router_exports as t };

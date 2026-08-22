@@ -1,5 +1,6 @@
 import { businesses as defaultBusinesses, sideProjects as defaultSideProjects, skills as defaultSkills, Project } from "./projects";
 import portfolioDataJson from "./portfolio-data.json";
+import type { ResumeContent } from "./resume-schema";
 
 export interface DynamicData {
   businesses: Project[];
@@ -9,6 +10,7 @@ export interface DynamicData {
   workAvailability?: string; // e.g. "Available for contract / freelance / full-time engineering work"
   hiringStatus?: string;     // e.g. "Not hiring team members at this moment"
   heroTagline: string;
+  resume?: ResumeContent;
   resumeOverride?: {
     summary?: string;
     phone?: string;

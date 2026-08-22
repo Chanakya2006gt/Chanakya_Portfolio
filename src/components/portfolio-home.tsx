@@ -51,9 +51,10 @@ interface HeroProps {
   summary?: string;
   education?: string;
   skillsList?: Record<string, string[]>;
+  resume?: DynamicData["resume"];
 }
 
-function Hero({ tagline, availabilityStatus, liveCount, email, pdfUrl, summary, education, skillsList }: HeroProps) {
+function Hero({ tagline, availabilityStatus, liveCount, email, pdfUrl, summary, education, skillsList, resume }: HeroProps) {
   return (
     <section className="relative mx-auto flex min-h-[90vh] max-w-5xl flex-col justify-center px-5 py-20 overflow-hidden">
       {/* Background ambient dual-accent glow */}
@@ -83,6 +84,7 @@ function Hero({ tagline, availabilityStatus, liveCount, email, pdfUrl, summary, 
               </a>
             </Button>
             <ResumeModal
+              resume={resume}
               email={email}
               pdfUrl={pdfUrl}
               summary={summary}
@@ -125,9 +127,10 @@ interface AboutProps {
   summary?: string;
   education?: string;
   skillsList?: Record<string, string[]>;
+  resume?: DynamicData["resume"];
 }
 
-function About({ email, pdfUrl, summary, education, skillsList }: AboutProps) {
+function About({ email, pdfUrl, summary, education, skillsList, resume }: AboutProps) {
   const { ref, isVisible } = useScrollAnimation();
 
   return (
@@ -176,6 +179,7 @@ function About({ email, pdfUrl, summary, education, skillsList }: AboutProps) {
 
             <div className="pt-2">
               <ResumeModal
+                resume={resume}
                 email={email}
                 pdfUrl={pdfUrl}
                 summary={summary}
@@ -283,9 +287,10 @@ interface ProjectsProps {
   summary?: string;
   education?: string;
   skillsList?: Record<string, string[]>;
+  resume?: DynamicData["resume"];
 }
 
-function Projects({ businessesList, sideProjectsList, email, pdfUrl, summary, education, skillsList }: ProjectsProps) {
+function Projects({ businessesList, sideProjectsList, email, pdfUrl, summary, education, skillsList, resume }: ProjectsProps) {
   const { ref, isVisible } = useScrollAnimation();
 
   return (
@@ -342,6 +347,7 @@ function Projects({ businessesList, sideProjectsList, email, pdfUrl, summary, ed
                   <a href="#contact">Discuss a Project →</a>
                 </Button>
                 <ResumeModal
+                  resume={resume}
                   email={email}
                   pdfUrl={pdfUrl}
                   summary={summary}
@@ -582,7 +588,7 @@ export function PortfolioHome({ initialData }: { initialData?: DynamicData | nul
     <div id="top" className="min-h-screen bg-background text-foreground relative">
       <IntroOverlay />
 
-      <LeftRailNav />
+      <LeftRailNav resume={data?.resume} />
       <SiteNav />
       <Companion />
 
@@ -596,6 +602,7 @@ export function PortfolioHome({ initialData }: { initialData?: DynamicData | nul
           summary={data?.resumeOverride?.summary}
           education={data?.resumeOverride?.education}
           skillsList={skillsList}
+          resume={data?.resume}
         />
         <Separator />
         <About
@@ -604,6 +611,7 @@ export function PortfolioHome({ initialData }: { initialData?: DynamicData | nul
           summary={data?.resumeOverride?.summary}
           education={data?.resumeOverride?.education}
           skillsList={skillsList}
+          resume={data?.resume}
         />
         <Separator />
         <Projects
@@ -614,6 +622,7 @@ export function PortfolioHome({ initialData }: { initialData?: DynamicData | nul
           summary={data?.resumeOverride?.summary}
           education={data?.resumeOverride?.education}
           skillsList={skillsList}
+          resume={data?.resume}
         />
         <MarqueeTicker />
         <Skills skillsList={skillsList} />

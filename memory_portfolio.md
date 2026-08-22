@@ -281,14 +281,17 @@ interface DynamicData {
 | `src/routes/api/chat.ts` | OpenAI route, system prompt, fallback |
 | `src/routes/api/admin/login.ts` | Auth — fail-closed, HMAC token, boot guards |
 | `src/routes/api/admin/check.ts` | Session verification |
-| `src/routes/api/admin/data.ts` | Admin data GET/POST |
-| `src/routes/api/admin/resume.ts` | Gated Vercel Blob PDF upload endpoint (`resume.pdf` overwrite) |
+| `src/routes/api/admin/data.ts` | Admin data GET/POST (reads/writes live Blob content) |
+| `src/routes/api/admin/resume.ts` | Gated Blob PDF upload + AI extraction & merge |
+| `src/routes/api/admin/restore.ts` | Gated restore endpoint overwriting live content with backup |
 | `src/routes/api/resume.ts` | Public endpoint querying Vercel Blob and redirecting (307) to live résumé PDF |
 | `src/lib/boot-guards.ts` | Server startup environment validation guards |
 | `src/lib/auth-session.ts` | HMAC-SHA256 session utilities |
 | `src/data/store.ts` | Data interface & client/SSR bundled JSON loader |
-| `src/data/store.server.ts` | Server-only JSON write persistence (isolated from client bundle) |
-| `src/data/portfolio-data.json` | Live-editable data (ephemeral on Vercel) |
+| `src/data/content.server.ts` | Server-only Blob read/write/backup/restore persistence |
+| `src/data/content-fn.ts` | Server function invoking readContent() dynamically |
+| `src/data/resume-schema.ts` | Zod schema & TypeScript type for structured résumé content |
+| `src/data/portfolio-data.json` | Bundled seed/fallback data |
 | `src/data/projects.ts` | Default static project/skills data |
 | `scripts/patch-bundle.mjs` | Postbuild script inlining bare `tslib` helpers |
 | `public/robots.txt` | Crawl rules |
@@ -352,3 +355,4 @@ interface DynamicData {
 | Session 13 | Vercel Blob Résumé Upload (Task 3) | Implemented `POST /api/admin/resume` with `@vercel/blob` for fixed-path overwrite (`resume.pdf`, 1-min cache TTL), added admin file upload picker UI, updated `resume-modal.tsx` to resolve `VITE_RESUME_PDF_URL` |
 | Session 14 | Failure Analysis & Serverless Resilience | 1) Fixed Vercel 500 error in `store.server.ts`: handled read-only `/var/task` serverless filesystem gracefully without throwing `ENOENT` on admin "Save All". 2) Fixed 404 on résumé download: TanStack Start file-based routing converts `.pdf` filenames to subdirectories (`/resume/pdf`), so implemented `GET /api/resume` endpoint querying Blob via `head('resume.pdf')` and 307 redirecting to Blob URL, updating modal fallback |
 | Session 15 | Exception Handling & Friendly Error Pages (Task 7) | 1) Fixed admin crash chain: guarded `checkAuthAndFetchData` with `dataRes.ok` and `Array.isArray` check. 2) Replaced `AppErrorComponent` with polite on-brand theme-token error page. 3) Created `AppNotFoundComponent` and wired `defaultNotFoundComponent` in `router.tsx`. 4) Made `/api/resume` 404 return styled HTML rather than internal text. 5) Sanitized upload error strings in `/api/admin/resume`. |
+| Session 16 | AI Résumé PDF Reading & Automatic Update (Task 8) | 1) Vercel Blob content persistence via `content.server.ts` (`content.json` + `content-backup.json` + `restoreBackup`). 2) Dynamic `fetchContent` server function. 3) Zod schema `resumeContentSchema` & dynamic rendering of `ResumeModal` from data with fallback. 4) Vision/file payload AI extraction in `POST /api/admin/resume` with non-destructive merge (protecting curated fields). 5) Added `POST /api/admin/restore` and admin "Undo last update" UI button. |

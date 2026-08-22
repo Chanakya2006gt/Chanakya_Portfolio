@@ -2,10 +2,11 @@ import { Github, Linkedin, Mail, ArrowUp, FileText } from "lucide-react";
 import { useActiveSection } from "@/hooks/use-active-section";
 import { ResumeModal } from "@/components/resume-modal";
 import { ThemeToggle } from "@/components/theme-toggle";
+import type { ResumeContent } from "@/data/resume-schema";
 
 const sections = ["about", "projects", "skills", "contact"];
 
-export function LeftRailNav() {
+export function LeftRailNav({ resume }: { resume?: ResumeContent }) {
   const activeSection = useActiveSection(sections);
 
   return (
@@ -39,10 +40,9 @@ export function LeftRailNav() {
         <Mail className="size-4" />
       </a>
 
-      <div className="my-1 h-8 w-px bg-border/60" />
-
-      {/* Active section dot indicator */}
-      <div className="flex flex-col gap-2 py-1">
+      {/* Section dots navigation */}
+      <div className="my-1 h-6 w-px bg-border/60" />
+      <div className="flex flex-col items-center gap-3">
         {sections.map((id) => (
           <a
             key={id}
@@ -65,6 +65,7 @@ export function LeftRailNav() {
       <div className="my-1 h-8 w-px bg-border/60" />
 
       <ResumeModal
+        resume={resume}
         trigger={
           <button
             className="group relative text-muted-foreground transition-colors hover:text-sage p-1.5"

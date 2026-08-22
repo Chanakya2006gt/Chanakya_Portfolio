@@ -1,6 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { getPortfolioData } from "@/data/store";
-import { savePortfolioData } from "@/data/store.server";
+import { readContent, writeContent } from "@/data/content.server";
 import { getAdminSessionCookie, verifySignedSessionToken } from "@/lib/auth-session";
 import { assertEnvGuards } from "@/lib/boot-guards";
 
@@ -15,7 +14,7 @@ export const Route = createFileRoute("/api/admin/data")({
             headers: { "Content-Type": "application/json" },
           });
         }
-        const data = getPortfolioData();
+        const data = await readContent();
         return new Response(JSON.stringify(data), {
           headers: { "Content-Type": "application/json" },
         });
@@ -35,7 +34,7 @@ export const Route = createFileRoute("/api/admin/data")({
 
         try {
           const newData = await request.json();
-          const saved = savePortfolioData(newData);
+          const saved = await writeContent(newData);
 
           if (saved) {
             return new Response(JSON.stringify({ success: true, data: newData }), {

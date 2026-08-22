@@ -110,7 +110,13 @@ function AdminDashboardPage() {
       });
       const json = await res.json();
       if (res.ok && json.success) {
-        toast.success("Résumé uploaded. It is live within ~1 minute.");
+        if (json.parsed === true) {
+          toast.success("Résumé uploaded and details updated from the PDF. Refresh the site to see the changes.");
+        } else if (json.parsed === false) {
+          toast.warning(json.parseError || "Résumé uploaded. The details couldn't be read automatically — you can edit them manually.");
+        } else {
+          toast.success("Résumé uploaded. It is live within ~1 minute.");
+        }
       } else {
         toast.error(json.error || "Upload failed.");
       }
@@ -118,6 +124,25 @@ function AdminDashboardPage() {
       toast.error("Upload failed.");
     } finally {
       e.target.value = "";
+    }
+  };
+
+  const handleRestoreBackup = async () => {
+    try {
+      const res = await fetch("/api/admin/restore", { method: "POST" });
+      const json = await res.json();
+      if (res.ok && json.success) {
+        toast.success("Previous portfolio version restored successfully! Refreshing data...");
+        const dataRes = await fetch("/api/admin/data");
+        if (dataRes.ok) {
+          const updated = await dataRes.json();
+          setData(updated);
+        }
+      } else {
+        toast.error(json.error || "Failed to restore previous version.");
+      }
+    } catch {
+      toast.error("Failed to restore previous version.");
     }
   };
 
@@ -472,6 +497,22 @@ function AdminDashboardPage() {
                   }}
                   className="mt-1 bg-secondary/50 text-xs"
                 />
+              </div>
+
+              <div className="pt-2 border-t border-border flex items-center justify-between">
+                <div>
+                  <p className="text-xs font-medium text-foreground">Accidental AI update or bad overwrite?</p>
+                  <p className="text-[11px] text-muted-foreground">Restore the previous version of your portfolio content saved before the last change.</p>
+                </div>
+                <Button
+                  type="button"
+                  onClick={handleRestoreBackup}
+                  variant="outline"
+                  size="sm"
+                  className="text-xs border-sage/40 text-sage hover:bg-sage/10"
+                >
+                  Undo last update
+                </Button>
               </div>
             </Card>
           </TabsContent>

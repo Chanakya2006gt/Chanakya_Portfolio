@@ -1,4 +1,4 @@
-//#region node_modules/.nitro/vite/services/ssr/assets/_tanstack-start-manifest_v-B7j97Ton.js
+//#region node_modules/.nitro/vite/services/ssr/assets/_tanstack-start-manifest_v-NTczIvca.js
 var tsrStartManifest = () => ({ routes: {
 	__root__: {
 		filePath: "/Users/shresta/Chanakya_Portfolio/src/routes/__root.tsx",
@@ -13,26 +13,27 @@ var tsrStartManifest = () => ({ routes: {
 			"/api/admin/data",
 			"/api/admin/login",
 			"/api/admin/logout",
+			"/api/admin/restore",
 			"/api/admin/resume"
 		],
 		preloads: [
-			"/assets/index-C6eawme6.js",
+			"/assets/index-t_0ZpAck.js",
 			"/assets/rolldown-runtime-CbXtAM7H.js",
 			"/assets/dist-BgyKNZi8.js"
 		],
 		scripts: [{ attrs: {
 			type: "module",
 			async: !0,
-			src: "/assets/index-C6eawme6.js"
+			src: "/assets/index-t_0ZpAck.js"
 		} }]
 	},
 	"/": {
 		filePath: "/Users/shresta/Chanakya_Portfolio/src/routes/index.tsx",
 		children: void 0,
 		preloads: [
-			"/assets/routes-BjvdwC5_.js",
+			"/assets/routes-FxPHJnBQ.js",
 			"/assets/user-a4Ndzk-o.js",
-			"/assets/badge-BBzro4d6.js",
+			"/assets/badge-DyFt9OG3.js",
 			"/assets/card-DFS3vp7c.js"
 		]
 	},
@@ -49,8 +50,8 @@ var tsrStartManifest = () => ({ routes: {
 		filePath: "/Users/shresta/Chanakya_Portfolio/src/routes/admin/index.tsx",
 		children: void 0,
 		preloads: [
-			"/assets/admin-DTjf7TY8.js",
-			"/assets/badge-BBzro4d6.js",
+			"/assets/admin-CxAlVahj.js",
+			"/assets/badge-DyFt9OG3.js",
 			"/assets/card-DFS3vp7c.js"
 		]
 	}

@@ -63,5 +63,44 @@
   "heroTagline": "I ship products under real constraints — not demos. Trelio is the serious work. Everything else stays in experiments.",
   "resumeOverride": {
     "education": "SR University — B.Tech CSE (2028)"
+  },
+  "resume": {
+    "fullName": "NAGULAGAM CHANAKYA",
+    "title": "Full-Stack & Security-Conscious Software Engineer",
+    "location": "Warangal, Telangana, India",
+    "email": "nagulagamchanakya2211@gmail.com",
+    "summary": "Computer and Information Science student with hands-on experience building and shipping a full-stack, security-conscious SaaS product. Comfortable owning architecture, security, and product decisions across the full development lifecycle.",
+    "education": {
+      "institution": "SR University",
+      "location": "Warangal, Telangana",
+      "degree": "SR University — B.Tech CIS (Expected 2028)",
+      "coursework": "Data Structures & Algorithms, Object-Oriented Programming, Database Management Systems, Operating Systems, Computer Networks, Software Engineering"
+    },
+    "sections": [
+      {
+        "title": "Trelio",
+        "badge": "Live Product · 3-member team",
+        "subtitle": "Multi-Tenant SaaS for Freelancers & Agencies",
+        "url": "https://trelio.in",
+        "bullets": [
+          "Authorization-Before-Execution (ABE): Built & shipped milestone locking system requiring client approval + payment before work executes, eliminating unpaid scope.",
+          "Multi-Tenant Architecture: Designed full data model (users → teams → clients → projects → milestones) owning architecture & security across the stack.",
+          "Contract Lifecycle & SHA-256: Milestone agreements generated, SHA-256 hashed, and bound to client e-signatures with automatic re-consent triggers on scope edits.",
+          "Tamper-Evident Event Ledger: Built per-workspace hash chains for critical actions (signing, payments, scope changes) continuously verified by background workers.",
+          "Encrypted Billing & Razorpay: Integrated Razorpay with per-team AES-256-GCM encrypted credentials, idempotent webhooks, and multi-tier billing engine.",
+          "Security Audits & IDOR Fixes: Led security reviews identifying and fixing IDOR and payment-recording vulnerabilities before production."
+        ]
+      }
+    ],
+    "leadership": [
+      "Lead 3-member engineering team building Trelio.",
+      "Own technical direction, architecture, and code/security reviews.",
+      "Define scope and enforce correctness standards before merge."
+    ],
+    "practices": [
+      "Ongoing practice in Data Structures & Algorithms & Java (LeetCode).",
+      "Directing AI-assisted development workflows for rapid production iteration.",
+      "Focus: Fintech, distributed backend systems, & applied software security."
+    ]
   }
 }
