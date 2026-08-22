@@ -7,7 +7,14 @@ import { assertEnvGuards } from "@/lib/boot-guards";
 export const Route = createFileRoute("/api/admin/data")({
   server: {
     handlers: {
-      GET: async () => {
+      GET: async ({ request }) => {
+        const sessionToken = getAdminSessionCookie(request);
+        if (!verifySignedSessionToken(sessionToken || undefined)) {
+          return new Response(JSON.stringify({ error: "Unauthorized" }), {
+            status: 401,
+            headers: { "Content-Type": "application/json" },
+          });
+        }
         const data = getPortfolioData();
         return new Response(JSON.stringify(data), {
           headers: { "Content-Type": "application/json" },
