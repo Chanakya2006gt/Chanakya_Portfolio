@@ -208,6 +208,16 @@ var Building2 = createLucideIcon("building-2", [
 * This source code is licensed under the ISC license.
 * See the LICENSE file in the root directory of this source tree.
 */
+var Check = createLucideIcon("check", [["path", {
+	d: "M20 6 9 17l-5-5",
+	key: "1gmf2c"
+}]]);
+/**
+* @license lucide-react v0.510.0 - ISC
+*
+* This source code is licensed under the ISC license.
+* See the LICENSE file in the root directory of this source tree.
+*/
 var CircleCheck = createLucideIcon("circle-check", [["circle", {
 	cx: "12",
 	cy: "12",
@@ -266,6 +276,24 @@ var Compass = createLucideIcon("compass", [["path", {
 	cy: "12",
 	r: "10",
 	key: "1mglay"
+}]]);
+/**
+* @license lucide-react v0.510.0 - ISC
+*
+* This source code is licensed under the ISC license.
+* See the LICENSE file in the root directory of this source tree.
+*/
+var Copy = createLucideIcon("copy", [["rect", {
+	width: "14",
+	height: "14",
+	x: "8",
+	y: "8",
+	rx: "2",
+	ry: "2",
+	key: "17jyea"
+}], ["path", {
+	d: "M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2",
+	key: "zix9uf"
 }]]);
 /**
 * @license lucide-react v0.510.0 - ISC
@@ -826,4 +854,4 @@ var Zap = createLucideIcon("zap", [["path", {
 	key: "1xq2db"
 }]]);
 //#endregion
-export { Clock as A, GraduationCap as C, Database as D, ExternalLink as E, ArrowUp as F, ArrowRight as I, ArrowLeft as L, Building2 as M, Bot as N, Compass as O, Award as P, LayoutGrid as S, FileText as T, MapPin as _, Trash2 as a, Lock as b, ShieldCheck as c, RotateCw as d, RefreshCw as f, Menu as g, Moon as h, TriangleAlert as i, CircleCheck as j, CodeXml as k, Send as l, Plus as m, X as n, Sun as o, Printer as p, User as r, Sparkles as s, Zap as t, Save as u, Mail as v, Github as w, Linkedin as x, LogOut as y };
+export { CodeXml as A, GraduationCap as C, Database as D, ExternalLink as E, Bot as F, Award as I, ArrowUp as L, CircleCheck as M, Check as N, Copy as O, Building2 as P, ArrowRight as R, LayoutGrid as S, FileText as T, MapPin as _, Trash2 as a, Lock as b, ShieldCheck as c, RotateCw as d, RefreshCw as f, Menu as g, Moon as h, TriangleAlert as i, Clock as j, Compass as k, Send as l, Plus as m, X as n, Sun as o, Printer as p, User as r, Sparkles as s, Zap as t, Save as u, Mail as v, Github as w, Linkedin as x, LogOut as y, ArrowLeft as z };
