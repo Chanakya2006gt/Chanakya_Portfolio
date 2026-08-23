@@ -1,7 +1,7 @@
 # Portfolio Memory — Nagulagam Chanakya
 > **Purpose:** This file is the single source of truth for every decision made on this portfolio. Every code change, design choice, security implementation, and business rule lives here. Update this file immediately after any change in future sessions.
 >
-> **Last Updated:** 2026-08-22
+> **Last Updated:** 2026-08-24
 
 ---
 
@@ -117,82 +117,61 @@ The AI companion:
 
 ## 6. UI/UX Design Decisions
 
-### Theme System
-- Default: **Dark mode** (`#0a0a0b` base — true black)
-- Optional: **Light mode** (`#f5f3ef` base — warm cream, premium feel)
-- Toggle lives in left rail nav and top site nav
+### Theme System & 4-Tier Luminance Ladder
+- Default: **Dark mode** (`#08090b` deep obsidian base)
+- Optional: **Light mode** (`#f8f7f4` warm alabaster linen base — editorial, high-contrast)
+- Synchronized toggle lives in left rail nav and top site nav
 - `<html>` starts with `class="dark antialiased"` — toggle adds/removes `.light`
 
-### Color Identity (as of 2026-08-20)
+**Dark Mode Elevation Ladder:**
+- Level 0 (Canvas Base): `#08090b` (Deep Obsidian)
+- Level 1 (Resting Cards): `#11141a` (Elevated Titanium + Top Specular Rim)
+- Level 2 (Secondary/Tabs): `#151921` (Interactive surfaces)
+- Level 3 (Floating/Modal): `#1a1f2c` (Elevated dialogs & popovers)
 
-**Primary Accent — Sage Green (brand identity):**
-- Dark: `#8fa896` | Light: `#4a7c5f`
-- Used for: hero labels, availability badge, section labels, marquee ticker, nav active state, primary CTA buttons
+**Light Mode Elevation Ladder:**
+- Level 0 (Canvas Base): `#f8f7f4` (Warm Alabaster Linen — eliminates digital glare)
+- Level 1 (Resting Cards): `#ffffff` (Pure White Floating Slabs)
+- Level 2 (Secondary/Tabs): `#f0ede6` (Warm Stone Secondary Panels)
+- Level 3 (Floating/Modal): `#ffffff` (Elevated with crisp shadow + stone stroke)
 
-**Secondary Accent — Electric Indigo (interactive signal):**
-- Dark: `#818cf8` | Light: `#6366f1`
-- Used for: hover states on external links, focus rings, security tech badges, ambient glow variations, LinkedIn card hover
+### Directional Specular Lighting (`.card-specular`)
+- Linear/Apple-inspired overhead directional lighting physics:
+  - Dark mode: `inset 0 1px 0 0 rgba(255, 255, 255, 0.10)` top rim highlight + `0 8px 28px -6px rgba(0, 0, 0, 0.50)` atmospheric shadow.
+  - Light mode: `border: 1px solid rgba(20, 23, 21, 0.10)` + `inset 0 1px 0 0 #ffffff` + `0 6px 20px -4px rgba(0, 0, 0, 0.07)` soft ambient lift.
+  - Hover state: Spring-eased `-3px` elevation with phosphor border reflection (`rgba(52, 211, 153, 0.35)` dark / `rgba(31, 101, 59, 0.4)` light).
 
-**Grammar rule:** Sage = brand identity. Indigo = interactive signal. This prevents either from being overused.
+### Multi-Chromatic Architectural Domain Badges
+Instead of monochromatic grey tags, tech stacks are color-coded by engineering domain with calibrated dual-theme tokens:
+- **Frontend / Full-Stack** (React, TypeScript, Tailwind, Next.js): **Electric Cyan** (`bg-cyan-50 text-cyan-800 border-cyan-300` light / `bg-cyan-500/10 text-cyan-300 border-cyan-500/25` dark).
+- **Backend & APIs** (Node.js, PostgreSQL, Express, REST): **Emerald Green** (`bg-emerald-50 text-emerald-800 border-emerald-300` light / `bg-emerald-500/10 text-emerald-300 border-emerald-500/25` dark).
+- **Product & Architecture** (Multi-tenant, Audit logs, Auth): **Royal Purple** (`bg-purple-50 text-purple-800 border-purple-300` light / `bg-purple-500/10 text-purple-300 border-purple-500/25` dark).
+- **Tools, Security & Payments** (AES-256-GCM, Razorpay, UPI): **Warm Amber** (`bg-amber-50 text-amber-800 border-amber-300` light / `bg-amber-500/10 text-amber-300 border-amber-500/25` dark).
 
-**Why two accents:** With only sage, design became monotonous. Indigo adds variety specifically for interactive and security-themed moments.
+### Hero Section: Live macOS Developer Terminal
+- Left: Dual-tone typography `<h1 font-serif>` with "Nagulagam" (Crisp Titanium) + "Chanakya" (Emerald-to-Cyan Sheen).
+- Right: **Live macOS IDE Terminal (`HeroTerminal`)**:
+  - macOS window buttons (🔴 `#ff5f56`, 🟡 `#ffbd2e`, 🟢 `#27c93f`) + `chanakya.config.ts` tab header.
+  - Multi-colored TypeScript syntax highlighting (Purple keywords, Cyan objects, Emerald strings, Amber security badges).
+  - 1-click interactive CLI runner (`npx chanakya@latest`) with clipboard copy feedback and sonner toast.
 
-### Dark Mode Depth System (Zone-based)
-Problem: Every surface was within 2–5% brightness of each other — no visual depth.
-- `--card`: `#16181c` (was `#121214`) — visibly pops off `#0a0a0b` background
-- `--secondary`: `#1e2126` | `--accent`: `#232830`
-- About + Skills sections: `bg-secondary/30` with `border-y border-border/50` — alternating "chapter" zones
+### Architectural Canvas Texture
+- `.bg-grid-pattern`: Technical blueprint dot-matrix with radial falloff mask.
+- `.bg-noise`: 2.5% SVG noise overlay that eliminates color banding on OLED screens and adds tactile materiality.
 
-### Light Mode (rebuilt 2026-08-20)
-Problem: `#f8faf8` bg + white cards = near-zero contrast. Cold, flat, broken.
-- `--background`: `#f5f3ef` (warm cream)
-- `--card`: `#ffffff` (real contrast against cream)
-- `--secondary`: `#ede9e3` (warm beige chips)
-- `--muted-foreground`: `#6b7280` (was `#526357`, too dark forest green)
-- Cards get box-shadow elevation (no more floating invisible cards)
-
-### Hero Section
-- Background: dual-accent radial glow (`from-sage/10 via-indigo/5`) — "stage lighting" feel
-- Heading: gradient from `foreground` to `foreground/80` — premium, subtle
-- Label pill: rounded-full border with pulsing dot — signals activity
-- Mascot frame: dual-accent multi-layered shadow (sage outer, indigo inner)
-- Developer code tag below mascot: styled as `rounded-full bg-secondary/60 border`
-
-### Section Labels (all sections)
-```jsx
-<span className="h-4 w-1 rounded-full bg-sage" />
-<p className="text-xs font-semibold uppercase tracking-wider text-sage">About</p>
-```
-Journalistic "pipe + LABEL" format — used by Linear, Stripe — looks intentional.
-
-### Cards
-- Trelio flagship: gradient top edge (`via-sage/60`) + `bg-gradient-to-br from-card to-sage/5`
-- Trelio proof strip: 3-column architecture metrics bar (`38 DB Tables`, `AES-256-GCM`, `Direct UPI/Rzp`) proving real-world engineering constraints
-- Live link: pulsing dot + rounded-full border pill
-- Badge tiers: sage=core stack | indigo=security tech | outline=other
-- Hover: `.card-hover-elevate` — `translateY(-3px)` + box-shadow at 220ms cubic-bezier
-- Side projects: gradient top edge uses `via-border` (neutral) — signals "less primary"
-
-### Particle Field
-- 34 particles; every 5th = `--indigo` at lower opacity; rest = `--sage`
-- Creates 3D depth perception without actual 3D code
-
-### About Section
-- Zone: `bg-secondary/30` + `border-y`
-- Quick-scan metadata strip: 3-pill grid (`Location: Warangal, India`, `Degree: B.Tech CSE '28`, `Core Focus: SaaS & Security`) for 5-second recruiter evaluation
-- Technical terms in `<code>` tags: sage for core tech, indigo for system-design concepts
+### Bento Workstream Cards
+- **Trelio Flagship Card**: Emerald-to-Cyan cybersecurity ambient glow + multi-stop top accent line (`from-emerald-400 via-teal-400 to-cyan-500`) + 3-stage interactive lifecycle state machine (`TrelioPreview`).
+- **Freelance Engagement Card**: Amber-to-Gold client engagement glow + golden icon badge and button (`from-amber-400 via-yellow-400 to-amber-500`).
+- **Side Experiments**: Violet-to-Indigo lab glow (`from-purple-400 via-indigo-400 to-cyan-500`).
 
 ### Interactive Mascot Companion
-- Floating bottom-right companion widget with speech bubbles and jumping/waving animations
-- 3.5-second initial greeting wave and bubble on mount to aid visitor discovery
-- Integrated full-featured AI Chatbot (`/api/chat`) with markdown streaming responses
+- Floating bottom-right companion widget with speech bubbles and jumping/waving animations.
+- 3.5-second initial greeting wave and bubble on mount to aid visitor discovery.
+- Integrated full-featured AI Chatbot (`/api/chat`) with markdown streaming responses.
 
-### Contact Section
-- Top ambient glow — signals landing zone / page end
-- CTA: "Open for contracts & conversations"
-- 1-Click Clipboard Copy: direct button on page and inside modal copying `nagulagamchanakya2211@gmail.com` with toast feedback (prevents dropoff when desktop client lacks default mail handler)
-- Italic serif quote closing statement
-- Per-card hover brand colors: GitHub=white, LinkedIn=indigo, Email=sage, Trelio=strong sage
+### Contact Section & Brand Cards
+- 1-Click Clipboard Copy: direct button copying `nagulagamchanakya2211@gmail.com` with toast feedback.
+- Brand-specific hover glows and icon containers: GitHub (slate), LinkedIn (electric blue), Email (emerald), and Trelio (cyan).
 
 ---
 
