@@ -10,7 +10,7 @@ export function LeftRailNav({ resume }: { resume?: ResumeContent }) {
   const activeSection = useActiveSection(sections);
 
   return (
-    <aside className="fixed left-6 top-1/2 -translate-y-1/2 z-40 hidden xl:flex flex-col items-center gap-4 rounded-full border border-border/80 bg-card/60 p-3 backdrop-blur-md shadow-[0_0_20px_rgba(0,0,0,0.5)]">
+    <aside className="fixed left-6 top-1/2 -translate-y-1/2 z-40 hidden xl:flex flex-col items-center gap-4 rounded-full border border-border/70 bg-card/70 p-3 backdrop-blur-md shadow-[0_0_20px_rgba(0,0,0,0.5)]">
       <ThemeToggle />
       <div className="my-0.5 h-6 w-px bg-border/60" />
 
@@ -53,7 +53,7 @@ export function LeftRailNav({ resume }: { resume?: ResumeContent }) {
             <span
               className={`block rounded-full transition-all duration-300 ${
                 activeSection === id
-                  ? "size-2.5 bg-sage shadow-[0_0_8px_#8fa896]"
+                  ? "size-2.5 bg-sage shadow-[0_0_8px_#a3c2ab]"
                   : "size-1.5 bg-muted-foreground/40 hover:bg-muted-foreground"
               }`}
             />
@@ -72,7 +72,7 @@ export function LeftRailNav({ resume }: { resume?: ResumeContent }) {
             title="View Resume"
           >
             <FileText className="size-4" />
-            <span className="absolute left-full ml-3 hidden rounded-md bg-card border border-border px-2 py-1 text-[11px] font-medium text-sage shadow-md group-hover:block whitespace-nowrap">
+            <span className="absolute left-full ml-3 hidden rounded-md bg-card border border-border/70 px-2 py-1 text-[11px] font-medium text-sage shadow-md group-hover:block whitespace-nowrap">
               View Resume
             </span>
           </button>

@@ -5,11 +5,11 @@ import { s as require_jsx_runtime } from "../_libs/@radix-ui/react-collection+[.
 import { A as Award, C as Github, D as CodeXml, M as ArrowRight, O as Building2, S as GraduationCap, T as ExternalLink, _ as Mail, a as Sun, b as Linkedin, c as Send, d as RefreshCw, f as Printer, g as MapPin, h as Menu, j as ArrowUp, k as Bot, m as Moon, n as User, s as ShieldCheck, t as X, w as FileText } from "../_libs/lucide-react.mjs";
 import { a as DialogOverlay$1, c as DialogTrigger$1, i as DialogDescription$1, n as DialogClose, o as DialogPortal$1, r as DialogContent$1, s as DialogTitle$1, t as Dialog$1 } from "../_libs/@radix-ui/react-dialog+[...].mjs";
 import { n as toast } from "../_libs/sonner.mjs";
-import { n as Route$11, r as cn } from "./router-_TOCNty_.mjs";
-import { a as CardFooter, c as Input, i as CardDescription, l as Label, n as Card, o as CardHeader, r as CardContent, s as CardTitle, t as Button } from "./card-C0Me2UHH.mjs";
-import { a as TabsTrigger, i as TabsList, n as Tabs, o as Textarea, r as TabsContent, t as Badge } from "./badge-BQ7xvde_.mjs";
+import { n as Route$11, r as cn } from "./router-BKKZzfKp.mjs";
+import { a as CardFooter, c as Input, i as CardDescription, l as Label, n as Card, o as CardHeader, r as CardContent, s as CardTitle, t as Button } from "./card-BA43pQ7C.mjs";
+import { a as TabsTrigger, i as TabsList, n as Tabs, o as Textarea, r as TabsContent, t as Badge } from "./badge-BYl3ihb3.mjs";
 import { t as Root } from "../_libs/radix-ui__react-separator.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/routes-DDpXcO2n.js
+//#region node_modules/.nitro/vite/services/ssr/assets/routes-C1s3e5H-.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 var Separator = import_react.forwardRef(({ className, orientation = "horizontal", decorative = true, ...props }, ref) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Root, {
@@ -670,7 +670,7 @@ var sections = [
 function LeftRailNav({ resume }) {
 	const activeSection = useActiveSection(sections);
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("aside", {
-		className: "fixed left-6 top-1/2 -translate-y-1/2 z-40 hidden xl:flex flex-col items-center gap-4 rounded-full border border-border/80 bg-card/60 p-3 backdrop-blur-md shadow-[0_0_20px_rgba(0,0,0,0.5)]",
+		className: "fixed left-6 top-1/2 -translate-y-1/2 z-40 hidden xl:flex flex-col items-center gap-4 rounded-full border border-border/70 bg-card/70 p-3 backdrop-blur-md shadow-[0_0_20px_rgba(0,0,0,0.5)]",
 		children: [
 			/* @__PURE__ */ (0, import_jsx_runtime.jsx)(ThemeToggle, {}),
 			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "my-0.5 h-6 w-px bg-border/60" }),
@@ -703,7 +703,7 @@ function LeftRailNav({ resume }) {
 					href: `#${id}`,
 					className: "group relative flex items-center justify-center",
 					title: id.charAt(0).toUpperCase() + id.slice(1),
-					children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: `block rounded-full transition-all duration-300 ${activeSection === id ? "size-2.5 bg-sage shadow-[0_0_8px_#8fa896]" : "size-1.5 bg-muted-foreground/40 hover:bg-muted-foreground"}` })
+					children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: `block rounded-full transition-all duration-300 ${activeSection === id ? "size-2.5 bg-sage shadow-[0_0_8px_#a3c2ab]" : "size-1.5 bg-muted-foreground/40 hover:bg-muted-foreground"}` })
 				}, id))
 			}),
 			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "my-1 h-8 w-px bg-border/60" }),
@@ -713,7 +713,7 @@ function LeftRailNav({ resume }) {
 					className: "group relative text-muted-foreground transition-colors hover:text-sage p-1.5",
 					title: "View Resume",
 					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(FileText, { className: "size-4" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-						className: "absolute left-full ml-3 hidden rounded-md bg-card border border-border px-2 py-1 text-[11px] font-medium text-sage shadow-md group-hover:block whitespace-nowrap",
+						className: "absolute left-full ml-3 hidden rounded-md bg-card border border-border/70 px-2 py-1 text-[11px] font-medium text-sage shadow-md group-hover:block whitespace-nowrap",
 						children: "View Resume"
 					})]
 				})
@@ -1622,7 +1622,7 @@ function useScrollAnimation(threshold = .1) {
 }
 function Hero({ tagline, availabilityStatus, liveCount, email, pdfUrl, summary, education, skillsList, resume }) {
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("section", {
-		className: "relative mx-auto flex min-h-[90vh] max-w-5xl flex-col justify-center px-5 py-20 overflow-hidden",
+		className: "relative mx-auto flex min-h-[90vh] max-w-5xl flex-col justify-center px-5 py-24 overflow-hidden",
 		children: [
 			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-gradient-to-tr from-sage/10 via-indigo/5 to-transparent blur-[100px] rounded-full pointer-events-none -z-10" }),
 			/* @__PURE__ */ (0, import_jsx_runtime.jsx)(ParticleField, {}),
@@ -1666,8 +1666,8 @@ function Hero({ tagline, availabilityStatus, liveCount, email, pdfUrl, summary, 
 								skillsList,
 								trigger: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Button, {
 									size: "lg",
-									variant: "sage",
-									className: "btn-sage-glow rounded-xl font-medium",
+									variant: "outline",
+									className: "rounded-xl border-border/80 hover:border-sage hover:text-sage font-medium",
 									children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(FileText, { className: "mr-1.5 size-4" }), "View Resume"]
 								})
 							}),
@@ -1709,14 +1709,14 @@ function About({ email, pdfUrl, summary, education, skillsList, resume }) {
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("section", {
 		id: "about",
 		ref,
-		className: `border-y border-border/50 bg-secondary/30 transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`,
+		className: `border-y border-border/60 bg-secondary/30 transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`,
 		children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 			className: "mx-auto max-w-5xl px-5 py-24",
 			children: [
 				/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 					className: "flex items-center gap-2",
 					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: "h-4 w-1 rounded-full bg-sage" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
-						className: "text-xs font-semibold uppercase tracking-wider text-sage",
+						className: "text-xs font-semibold uppercase tracking-wider text-muted-foreground",
 						children: "About"
 					})]
 				}),
@@ -1766,10 +1766,10 @@ function About({ email, pdfUrl, summary, education, skillsList, resume }) {
 								" model. The problem is simple: freelancers and agencies should never work for free."
 							] }),
 							/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-								className: "grid grid-cols-2 gap-2 pt-2 sm:grid-cols-3",
+								className: "grid grid-cols-2 gap-3 pt-2 sm:grid-cols-3",
 								children: [
 									/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-										className: "rounded-xl border border-border/80 bg-card/60 p-2.5",
+										className: "rounded-xl border border-border/70 bg-card/60 p-3",
 										children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
 											className: "text-[11px] font-mono text-muted-foreground uppercase",
 											children: "Location"
@@ -1779,7 +1779,7 @@ function About({ email, pdfUrl, summary, education, skillsList, resume }) {
 										})]
 									}),
 									/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-										className: "rounded-xl border border-border/80 bg-card/60 p-2.5",
+										className: "rounded-xl border border-border/70 bg-card/60 p-3",
 										children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
 											className: "text-[11px] font-mono text-muted-foreground uppercase",
 											children: "Degree & Focus"
@@ -1789,7 +1789,7 @@ function About({ email, pdfUrl, summary, education, skillsList, resume }) {
 										})]
 									}),
 									/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-										className: "col-span-2 rounded-xl border border-border/80 bg-card/60 p-2.5 sm:col-span-1",
+										className: "col-span-2 rounded-xl border border-border/70 bg-card/60 p-3 sm:col-span-1",
 										children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
 											className: "text-[11px] font-mono text-muted-foreground uppercase",
 											children: "Core Focus"
@@ -1811,14 +1811,14 @@ function About({ email, pdfUrl, summary, education, skillsList, resume }) {
 									skillsList,
 									trigger: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Button, {
 										variant: "outline",
-										className: "gap-2 border-sage/40 hover:border-sage text-sage hover:text-sage rounded-xl",
+										className: "gap-2 border-border/80 hover:border-sage hover:text-sage text-foreground rounded-xl",
 										children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(FileText, { className: "size-4" }), "Read Full Resume & Credentials →"]
 									})
 								})
 							})
 						]
 					}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-						className: "card-hover-elevate rounded-2xl border border-border bg-card p-6 shadow-sm space-y-4",
+						className: "card-hover-elevate rounded-2xl border border-border/70 bg-card p-6 shadow-sm space-y-4",
 						children: [
 							/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 								className: "flex items-center gap-2",
@@ -1852,7 +1852,7 @@ function BusinessCard({ items }) {
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
 		className: "grid gap-6",
 		children: items.map((project) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Card, {
-			className: "relative overflow-hidden p-2 card-hover-elevate border-border/80 bg-gradient-to-br from-card via-card to-sage/5",
+			className: "relative overflow-hidden p-2 card-hover-elevate border-border/70 bg-gradient-to-br from-card via-card to-sage/5 rounded-2xl",
 			children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "absolute top-0 inset-x-0 h-0.5 bg-gradient-to-r from-transparent via-sage/60 to-transparent" }), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 				className: "p-4 sm:p-6",
 				children: [
@@ -1921,7 +1921,7 @@ function Projects({ businessesList, sideProjectsList, email, pdfUrl, summary, ed
 			/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 				className: "flex items-center gap-2",
 				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: "h-4 w-1 rounded-full bg-sage" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
-					className: "text-xs font-semibold uppercase tracking-wider text-sage",
+					className: "text-xs font-semibold uppercase tracking-wider text-muted-foreground",
 					children: "Work"
 				})]
 			}),
@@ -1938,21 +1938,21 @@ function Projects({ businessesList, sideProjectsList, email, pdfUrl, summary, ed
 				className: "mt-10",
 				children: [
 					/* @__PURE__ */ (0, import_jsx_runtime.jsxs)(TabsList, {
-						className: "bg-secondary/80 p-1 border border-border/80 flex-wrap h-auto",
+						className: "bg-secondary/80 p-1 border border-border/70 flex-wrap h-auto rounded-xl",
 						children: [
 							/* @__PURE__ */ (0, import_jsx_runtime.jsx)(TabsTrigger, {
 								value: "businesses",
-								className: "data-[state=active]:bg-card data-[state=active]:shadow-sm text-xs sm:text-sm",
+								className: "data-[state=active]:bg-card data-[state=active]:shadow-sm text-xs sm:text-sm rounded-lg",
 								children: "Flagship Products"
 							}),
 							/* @__PURE__ */ (0, import_jsx_runtime.jsx)(TabsTrigger, {
 								value: "contracts",
-								className: "data-[state=active]:bg-card data-[state=active]:shadow-sm text-xs sm:text-sm",
+								className: "data-[state=active]:bg-card data-[state=active]:shadow-sm text-xs sm:text-sm rounded-lg",
 								children: "Freelance Work"
 							}),
 							/* @__PURE__ */ (0, import_jsx_runtime.jsx)(TabsTrigger, {
 								value: "side",
-								className: "data-[state=active]:bg-card data-[state=active]:shadow-sm text-xs sm:text-sm",
+								className: "data-[state=active]:bg-card data-[state=active]:shadow-sm text-xs sm:text-sm rounded-lg",
 								children: "Side Experiments"
 							})
 						]
@@ -1966,7 +1966,7 @@ function Projects({ businessesList, sideProjectsList, email, pdfUrl, summary, ed
 						value: "contracts",
 						className: "mt-6",
 						children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Card, {
-							className: "border-border/80 bg-gradient-to-br from-card via-card to-secondary/30 p-8 sm:p-12 text-center rounded-2xl relative overflow-hidden",
+							className: "border-border/70 bg-gradient-to-br from-card via-card to-secondary/30 p-8 sm:p-12 text-center rounded-2xl relative overflow-hidden",
 							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "absolute top-0 inset-x-0 h-0.5 bg-gradient-to-r from-transparent via-sage/40 to-transparent" }), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 								className: "mx-auto max-w-md space-y-3",
 								children: [
@@ -2018,7 +2018,7 @@ function Projects({ businessesList, sideProjectsList, email, pdfUrl, summary, ed
 						children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 							className: "grid gap-4 sm:grid-cols-2 lg:grid-cols-3",
 							children: [sideProjectsList.map((project) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Card, {
-								className: "relative overflow-hidden p-2 card-hover-elevate border-border/80 bg-card hover:border-sage/40 flex flex-col justify-between",
+								className: "relative overflow-hidden p-2 card-hover-elevate border-border/70 bg-card hover:border-sage/40 flex flex-col justify-between rounded-2xl",
 								children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "absolute top-0 inset-x-0 h-0.5 bg-gradient-to-r from-transparent via-border to-transparent" }), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 									className: "p-4",
 									children: [
@@ -2054,7 +2054,7 @@ function Projects({ businessesList, sideProjectsList, email, pdfUrl, summary, ed
 									]
 								})]
 							}, project.id)), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Card, {
-								className: "relative overflow-hidden p-6 border-dashed border-border/80 bg-secondary/20 flex flex-col items-center justify-center text-center min-h-[220px] rounded-2xl",
+								className: "relative overflow-hidden p-6 border-dashed border-border/70 bg-secondary/20 flex flex-col items-center justify-center text-center min-h-[220px] rounded-2xl",
 								children: [
 									/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: "size-2 rounded-full bg-sage/60 animate-pulse mb-3" }),
 									/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
@@ -2079,14 +2079,14 @@ function Skills({ skillsList }) {
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("section", {
 		id: "skills",
 		ref,
-		className: `border-y border-border/50 bg-secondary/30 transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`,
+		className: `border-y border-border/60 bg-secondary/30 transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`,
 		children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 			className: "mx-auto max-w-5xl px-5 py-24",
 			children: [
 				/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 					className: "flex items-center gap-2",
 					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: "h-4 w-1 rounded-full bg-sage" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
-						className: "text-xs font-semibold uppercase tracking-wider text-sage",
+						className: "text-xs font-semibold uppercase tracking-wider text-muted-foreground",
 						children: "Stack"
 					})]
 				}),
@@ -2101,11 +2101,11 @@ function Skills({ skillsList }) {
 				/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
 					className: "mt-10 grid gap-6 sm:grid-cols-2",
 					children: Object.entries(skillsList).map(([category, items]) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-						className: "card-hover-elevate rounded-2xl border border-border/80 bg-card p-6 shadow-sm",
+						className: "card-hover-elevate rounded-2xl border border-border/70 bg-card p-6 shadow-sm",
 						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 							className: "flex items-center justify-between mb-4",
 							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h3", {
-								className: "text-xs font-bold tracking-wider text-sage uppercase",
+								className: "text-xs font-bold tracking-wider text-foreground/90 uppercase",
 								children: category
 							}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("span", {
 								className: "text-[11px] font-mono text-muted-foreground",
@@ -2152,7 +2152,7 @@ function Contact() {
 			/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 				className: "flex items-center gap-2",
 				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: "h-4 w-1 rounded-full bg-sage" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
-					className: "text-xs font-semibold uppercase tracking-wider text-sage",
+					className: "text-xs font-semibold uppercase tracking-wider text-muted-foreground",
 					children: "Contact"
 				})]
 			}),
@@ -2181,7 +2181,7 @@ function Contact() {
 							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Mail, { className: "mr-2 size-4" }), "Send a direct note"]
 						})
 					}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(DialogContent, {
-						className: "rounded-2xl border-border bg-card",
+						className: "rounded-2xl border-border/70 bg-card",
 						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)(DialogHeader, { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(DialogTitle, {
 							className: "font-serif text-xl",
 							children: "Send a direct message"

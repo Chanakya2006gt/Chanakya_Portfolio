@@ -54,8 +54,8 @@
   --accent: #262c28;
   --accent-foreground: #f2f4f1;
   --destructive: #ef4444;
-  --border: rgba(230, 240, 233, 0.14);
-  --input: rgba(230, 240, 233, 0.17);
+  --border: rgba(230, 240, 233, 0.12);
+  --input: rgba(230, 240, 233, 0.15);
   --ring: #a3c2ab;
   --sage: #a3c2ab;
   --sage-foreground: #0c0e0d;
@@ -82,10 +82,10 @@
   --accent: #e5dfd7;
   --accent-foreground: #141715;
   --destructive: #ef4444;
-  --border: rgba(20, 23, 21, 0.14);
-  --input: rgba(20, 23, 21, 0.16);
-  --ring: #4a7c5f;
-  --sage: #4a7c5f;
+  --border: rgba(20, 23, 21, 0.12);
+  --input: rgba(20, 23, 21, 0.15);
+  --ring: #447758;
+  --sage: #447758;
   --sage-foreground: #ffffff;
   --indigo: #6366f1;
   --indigo-muted: rgba(99, 102, 241, 0.12);

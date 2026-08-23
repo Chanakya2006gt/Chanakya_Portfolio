@@ -56,7 +56,7 @@ interface HeroProps {
 
 function Hero({ tagline, availabilityStatus, liveCount, email, pdfUrl, summary, education, skillsList, resume }: HeroProps) {
   return (
-    <section className="relative mx-auto flex min-h-[90vh] max-w-5xl flex-col justify-center px-5 py-20 overflow-hidden">
+    <section className="relative mx-auto flex min-h-[90vh] max-w-5xl flex-col justify-center px-5 py-24 overflow-hidden">
       {/* Background ambient dual-accent glow */}
       <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-gradient-to-tr from-sage/10 via-indigo/5 to-transparent blur-[100px] rounded-full pointer-events-none -z-10" />
       <ParticleField />
@@ -91,7 +91,7 @@ function Hero({ tagline, availabilityStatus, liveCount, email, pdfUrl, summary, 
               education={education}
               skillsList={skillsList}
               trigger={
-                <Button size="lg" variant="sage" className="btn-sage-glow rounded-xl font-medium">
+                <Button size="lg" variant="outline" className="rounded-xl border-border/80 hover:border-sage hover:text-sage font-medium">
                   <FileText className="mr-1.5 size-4" />
                   View Resume
                 </Button>
@@ -137,14 +137,14 @@ function About({ email, pdfUrl, summary, education, skillsList, resume }: AboutP
     <section
       id="about"
       ref={ref}
-      className={`border-y border-border/50 bg-secondary/30 transition-all duration-700 ${
+      className={`border-y border-border/60 bg-secondary/30 transition-all duration-700 ${
         isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
       }`}
     >
       <div className="mx-auto max-w-5xl px-5 py-24">
         <div className="flex items-center gap-2">
           <span className="h-4 w-1 rounded-full bg-sage" />
-          <p className="text-xs font-semibold uppercase tracking-wider text-sage">About</p>
+          <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">About</p>
         </div>
         <h2 className="mt-3 font-serif text-3xl tracking-tight sm:text-4xl">
           Builder first. Student second.
@@ -162,16 +162,16 @@ function About({ email, pdfUrl, summary, education, skillsList, resume }: AboutP
             </p>
 
             {/* Quick-scan highlights pill strip for recruiters & visitors */}
-            <div className="grid grid-cols-2 gap-2 pt-2 sm:grid-cols-3">
-              <div className="rounded-xl border border-border/80 bg-card/60 p-2.5">
+            <div className="grid grid-cols-2 gap-3 pt-2 sm:grid-cols-3">
+              <div className="rounded-xl border border-border/70 bg-card/60 p-3">
                 <p className="text-[11px] font-mono text-muted-foreground uppercase">Location</p>
                 <p className="text-xs font-semibold text-foreground">Warangal, India</p>
               </div>
-              <div className="rounded-xl border border-border/80 bg-card/60 p-2.5">
+              <div className="rounded-xl border border-border/70 bg-card/60 p-3">
                 <p className="text-[11px] font-mono text-muted-foreground uppercase">Degree & Focus</p>
                 <p className="text-xs font-semibold text-foreground">B.Tech CSE '28</p>
               </div>
-              <div className="col-span-2 rounded-xl border border-border/80 bg-card/60 p-2.5 sm:col-span-1">
+              <div className="col-span-2 rounded-xl border border-border/70 bg-card/60 p-3 sm:col-span-1">
                 <p className="text-[11px] font-mono text-muted-foreground uppercase">Core Focus</p>
                 <p className="text-xs font-semibold text-sage">SaaS & Security</p>
               </div>
@@ -186,7 +186,7 @@ function About({ email, pdfUrl, summary, education, skillsList, resume }: AboutP
                 education={education}
                 skillsList={skillsList}
                 trigger={
-                  <Button variant="outline" className="gap-2 border-sage/40 hover:border-sage text-sage hover:text-sage rounded-xl">
+                  <Button variant="outline" className="gap-2 border-border/80 hover:border-sage hover:text-sage text-foreground rounded-xl">
                     <FileText className="size-4" />
                     Read Full Resume & Credentials →
                   </Button>
@@ -194,7 +194,7 @@ function About({ email, pdfUrl, summary, education, skillsList, resume }: AboutP
               />
             </div>
           </div>
-          <div className="card-hover-elevate rounded-2xl border border-border bg-card p-6 shadow-sm space-y-4">
+          <div className="card-hover-elevate rounded-2xl border border-border/70 bg-card p-6 shadow-sm space-y-4">
             <div>
               <div className="flex items-center gap-2">
                 <span className="size-2 rounded-full bg-sage" />
@@ -231,7 +231,7 @@ function BusinessCard({ items }: BusinessCardProps) {
   return (
     <div className="grid gap-6">
       {items.map((project) => (
-        <Card key={project.id} className="relative overflow-hidden p-2 card-hover-elevate border-border/80 bg-gradient-to-br from-card via-card to-sage/5">
+        <Card key={project.id} className="relative overflow-hidden p-2 card-hover-elevate border-border/70 bg-gradient-to-br from-card via-card to-sage/5 rounded-2xl">
           {/* Top subtle gradient accent line */}
           <div className="absolute top-0 inset-x-0 h-0.5 bg-gradient-to-r from-transparent via-sage/60 to-transparent" />
           <div className="p-4 sm:p-6">
@@ -303,7 +303,7 @@ function Projects({ businessesList, sideProjectsList, email, pdfUrl, summary, ed
     >
       <div className="flex items-center gap-2">
         <span className="h-4 w-1 rounded-full bg-sage" />
-        <p className="text-xs font-semibold uppercase tracking-wider text-sage">Work</p>
+        <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">Work</p>
       </div>
       <h2 className="mt-3 font-serif text-3xl tracking-tight sm:text-4xl">
         Featured Projects
@@ -313,14 +313,14 @@ function Projects({ businessesList, sideProjectsList, email, pdfUrl, summary, ed
       </p>
 
       <Tabs defaultValue="businesses" className="mt-10">
-        <TabsList className="bg-secondary/80 p-1 border border-border/80 flex-wrap h-auto">
-          <TabsTrigger value="businesses" className="data-[state=active]:bg-card data-[state=active]:shadow-sm text-xs sm:text-sm">
+        <TabsList className="bg-secondary/80 p-1 border border-border/70 flex-wrap h-auto rounded-xl">
+          <TabsTrigger value="businesses" className="data-[state=active]:bg-card data-[state=active]:shadow-sm text-xs sm:text-sm rounded-lg">
             Flagship Products
           </TabsTrigger>
-          <TabsTrigger value="contracts" className="data-[state=active]:bg-card data-[state=active]:shadow-sm text-xs sm:text-sm">
+          <TabsTrigger value="contracts" className="data-[state=active]:bg-card data-[state=active]:shadow-sm text-xs sm:text-sm rounded-lg">
             Freelance Work
           </TabsTrigger>
-          <TabsTrigger value="side" className="data-[state=active]:bg-card data-[state=active]:shadow-sm text-xs sm:text-sm">
+          <TabsTrigger value="side" className="data-[state=active]:bg-card data-[state=active]:shadow-sm text-xs sm:text-sm rounded-lg">
             Side Experiments
           </TabsTrigger>
         </TabsList>
@@ -332,7 +332,7 @@ function Projects({ businessesList, sideProjectsList, email, pdfUrl, summary, ed
 
         {/* Tab 2: Freelance Work */}
         <TabsContent value="contracts" className="mt-6">
-          <Card className="border-border/80 bg-gradient-to-br from-card via-card to-secondary/30 p-8 sm:p-12 text-center rounded-2xl relative overflow-hidden">
+          <Card className="border-border/70 bg-gradient-to-br from-card via-card to-secondary/30 p-8 sm:p-12 text-center rounded-2xl relative overflow-hidden">
             <div className="absolute top-0 inset-x-0 h-0.5 bg-gradient-to-r from-transparent via-sage/40 to-transparent" />
             <div className="mx-auto max-w-md space-y-3">
               <div className="mx-auto flex size-12 items-center justify-center rounded-full bg-sage/10 text-sage border border-sage/20">
@@ -370,7 +370,7 @@ function Projects({ businessesList, sideProjectsList, email, pdfUrl, summary, ed
             {sideProjectsList.map((project) => (
               <Card
                 key={project.id}
-                className="relative overflow-hidden p-2 card-hover-elevate border-border/80 bg-card hover:border-sage/40 flex flex-col justify-between"
+                className="relative overflow-hidden p-2 card-hover-elevate border-border/70 bg-card hover:border-sage/40 flex flex-col justify-between rounded-2xl"
               >
                 <div className="absolute top-0 inset-x-0 h-0.5 bg-gradient-to-r from-transparent via-border to-transparent" />
                 <div className="p-4">
@@ -404,7 +404,7 @@ function Projects({ businessesList, sideProjectsList, email, pdfUrl, summary, ed
             ))}
 
             {/* Polite 'More to come' card */}
-            <Card className="relative overflow-hidden p-6 border-dashed border-border/80 bg-secondary/20 flex flex-col items-center justify-center text-center min-h-[220px] rounded-2xl">
+            <Card className="relative overflow-hidden p-6 border-dashed border-border/70 bg-secondary/20 flex flex-col items-center justify-center text-center min-h-[220px] rounded-2xl">
               <span className="size-2 rounded-full bg-sage/60 animate-pulse mb-3" />
               <p className="font-serif text-lg text-foreground/90">More Experiments in Progress</p>
               <p className="text-xs text-muted-foreground mt-2 max-w-xs leading-relaxed">
@@ -429,14 +429,14 @@ function Skills({ skillsList }: SkillsProps) {
     <section
       id="skills"
       ref={ref}
-      className={`border-y border-border/50 bg-secondary/30 transition-all duration-700 ${
+      className={`border-y border-border/60 bg-secondary/30 transition-all duration-700 ${
         isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
       }`}
     >
       <div className="mx-auto max-w-5xl px-5 py-24">
         <div className="flex items-center gap-2">
           <span className="h-4 w-1 rounded-full bg-sage" />
-          <p className="text-xs font-semibold uppercase tracking-wider text-sage">Stack</p>
+          <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">Stack</p>
         </div>
         <h2 className="mt-3 font-serif text-3xl tracking-tight sm:text-4xl">
           Skills & Core Technologies
@@ -446,9 +446,9 @@ function Skills({ skillsList }: SkillsProps) {
         </p>
         <div className="mt-10 grid gap-6 sm:grid-cols-2">
           {Object.entries(skillsList).map(([category, items]) => (
-            <div key={category} className="card-hover-elevate rounded-2xl border border-border/80 bg-card p-6 shadow-sm">
+            <div key={category} className="card-hover-elevate rounded-2xl border border-border/70 bg-card p-6 shadow-sm">
               <div className="flex items-center justify-between mb-4">
-                <h3 className="text-xs font-bold tracking-wider text-sage uppercase">{category}</h3>
+                <h3 className="text-xs font-bold tracking-wider text-foreground/90 uppercase">{category}</h3>
                 <span className="text-[11px] font-mono text-muted-foreground">{items.length} skills</span>
               </div>
               <div className="flex flex-wrap gap-2">
@@ -506,7 +506,7 @@ function Contact() {
 
       <div className="flex items-center gap-2">
         <span className="h-4 w-1 rounded-full bg-sage" />
-        <p className="text-xs font-semibold uppercase tracking-wider text-sage">Contact</p>
+        <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">Contact</p>
       </div>
       <h2 className="mt-3 font-serif text-3xl tracking-tight sm:text-4xl">
         Open for freelance work & conversations
@@ -527,7 +527,7 @@ function Contact() {
               Send a direct note
             </Button>
           </DialogTrigger>
-          <DialogContent className="rounded-2xl border-border bg-card">
+          <DialogContent className="rounded-2xl border-border/70 bg-card">
             <DialogHeader>
               <DialogTitle className="font-serif text-xl">Send a direct message</DialogTitle>
               <DialogDescription>
