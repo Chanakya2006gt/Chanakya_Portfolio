@@ -318,7 +318,7 @@ function Projects({ businessesList, sideProjectsList, email, pdfUrl, summary, ed
             Flagship Products
           </TabsTrigger>
           <TabsTrigger value="contracts" className="data-[state=active]:bg-card data-[state=active]:shadow-sm text-xs sm:text-sm">
-            Contract Work
+            Freelance Work
           </TabsTrigger>
           <TabsTrigger value="side" className="data-[state=active]:bg-card data-[state=active]:shadow-sm text-xs sm:text-sm">
             Side Experiments
@@ -330,7 +330,7 @@ function Projects({ businessesList, sideProjectsList, email, pdfUrl, summary, ed
           <BusinessCard items={businessesList} />
         </TabsContent>
 
-        {/* Tab 2: Contract Work */}
+        {/* Tab 2: Freelance Work */}
         <TabsContent value="contracts" className="mt-6">
           <Card className="border-border/80 bg-gradient-to-br from-card via-card to-secondary/30 p-8 sm:p-12 text-center rounded-2xl relative overflow-hidden">
             <div className="absolute top-0 inset-x-0 h-0.5 bg-gradient-to-r from-transparent via-sage/40 to-transparent" />
@@ -338,9 +338,9 @@ function Projects({ businessesList, sideProjectsList, email, pdfUrl, summary, ed
               <div className="mx-auto flex size-12 items-center justify-center rounded-full bg-sage/10 text-sage border border-sage/20">
                 <FileText className="size-5" />
               </div>
-              <h3 className="font-serif text-2xl text-foreground">Available for Client & Contract Engagements</h3>
+              <h3 className="font-serif text-2xl text-foreground">Available for Client & Freelance Engagements</h3>
               <p className="text-sm text-muted-foreground leading-relaxed">
-                I am currently open for client work, full-stack consulting, and selective engineering contracts. As new engagements are delivered and cleared for public showcase, case studies and deliverables will be documented here.
+                I am currently open for freelance projects, full-stack consulting, and selective client work. As new engagements are delivered and cleared for public showcase, case studies and deliverables will be documented here.
               </p>
               <div className="pt-3 flex flex-wrap items-center justify-center gap-3">
                 <Button asChild size="sm" variant="sage" className="btn-sage-glow rounded-xl">
@@ -509,10 +509,10 @@ function Contact() {
         <p className="text-xs font-semibold uppercase tracking-wider text-sage">Contact</p>
       </div>
       <h2 className="mt-3 font-serif text-3xl tracking-tight sm:text-4xl">
-        Open for contracts & conversations
+        Open for freelance work & conversations
       </h2>
       <p className="mt-4 max-w-lg text-lg text-foreground/90 font-serif italic">
-        "Let's build something. I am available for contract work, consulting, and select software engineering opportunities."
+        "Let's build something. I am available for freelance work, consulting, and select software engineering opportunities."
       </p>
 
       <div className="mt-10">
@@ -537,7 +537,7 @@ function Contact() {
             <form className="grid gap-4 mt-2" onSubmit={handleNoteSubmit}>
               <div className="grid gap-2">
                 <Label htmlFor="subject" className="text-xs">Subject</Label>
-                <Input id="subject" name="subject" placeholder="Project / Contract Inquiry..." required className="rounded-xl bg-secondary/50" />
+                <Input id="subject" name="subject" placeholder="Project / Freelance Inquiry..." required className="rounded-xl bg-secondary/50" />
               </div>
               <div className="grid gap-2">
                 <Label htmlFor="body" className="text-xs">Message</Label>

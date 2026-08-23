@@ -5,11 +5,11 @@ import { s as require_jsx_runtime } from "../_libs/@radix-ui/react-collection+[.
 import { A as Award, C as Github, D as CodeXml, M as ArrowRight, O as Building2, S as GraduationCap, T as ExternalLink, _ as Mail, a as Sun, b as Linkedin, c as Send, d as RefreshCw, f as Printer, g as MapPin, h as Menu, j as ArrowUp, k as Bot, m as Moon, n as User, s as ShieldCheck, t as X, w as FileText } from "../_libs/lucide-react.mjs";
 import { a as DialogOverlay$1, c as DialogTrigger$1, i as DialogDescription$1, n as DialogClose, o as DialogPortal$1, r as DialogContent$1, s as DialogTitle$1, t as Dialog$1 } from "../_libs/@radix-ui/react-dialog+[...].mjs";
 import { n as toast } from "../_libs/sonner.mjs";
-import { n as Route$11, r as cn } from "./router-7IV1TkUl.mjs";
-import { a as CardFooter, c as Input, i as CardDescription, l as Label, n as Card, o as CardHeader, r as CardContent, s as CardTitle, t as Button } from "./card-6zzbYbCh.mjs";
-import { a as TabsTrigger, i as TabsList, n as Tabs, o as Textarea, r as TabsContent, t as Badge } from "./badge-BARKPKut.mjs";
+import { n as Route$11, r as cn } from "./router-_TOCNty_.mjs";
+import { a as CardFooter, c as Input, i as CardDescription, l as Label, n as Card, o as CardHeader, r as CardContent, s as CardTitle, t as Button } from "./card-C0Me2UHH.mjs";
+import { a as TabsTrigger, i as TabsList, n as Tabs, o as Textarea, r as TabsContent, t as Badge } from "./badge-BQ7xvde_.mjs";
 import { t as Root } from "../_libs/radix-ui__react-separator.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/routes-DZdGRoJp.js
+//#region node_modules/.nitro/vite/services/ssr/assets/routes-DDpXcO2n.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 var Separator = import_react.forwardRef(({ className, orientation = "horizontal", decorative = true, ...props }, ref) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Root, {
@@ -1948,7 +1948,7 @@ function Projects({ businessesList, sideProjectsList, email, pdfUrl, summary, ed
 							/* @__PURE__ */ (0, import_jsx_runtime.jsx)(TabsTrigger, {
 								value: "contracts",
 								className: "data-[state=active]:bg-card data-[state=active]:shadow-sm text-xs sm:text-sm",
-								children: "Contract Work"
+								children: "Freelance Work"
 							}),
 							/* @__PURE__ */ (0, import_jsx_runtime.jsx)(TabsTrigger, {
 								value: "side",
@@ -1976,11 +1976,11 @@ function Projects({ businessesList, sideProjectsList, email, pdfUrl, summary, ed
 									}),
 									/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h3", {
 										className: "font-serif text-2xl text-foreground",
-										children: "Available for Client & Contract Engagements"
+										children: "Available for Client & Freelance Engagements"
 									}),
 									/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
 										className: "text-sm text-muted-foreground leading-relaxed",
-										children: "I am currently open for client work, full-stack consulting, and selective engineering contracts. As new engagements are delivered and cleared for public showcase, case studies and deliverables will be documented here."
+										children: "I am currently open for freelance projects, full-stack consulting, and selective client work. As new engagements are delivered and cleared for public showcase, case studies and deliverables will be documented here."
 									}),
 									/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 										className: "pt-3 flex flex-wrap items-center justify-center gap-3",
@@ -2158,11 +2158,11 @@ function Contact() {
 			}),
 			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h2", {
 				className: "mt-3 font-serif text-3xl tracking-tight sm:text-4xl",
-				children: "Open for contracts & conversations"
+				children: "Open for freelance work & conversations"
 			}),
 			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
 				className: "mt-4 max-w-lg text-lg text-foreground/90 font-serif italic",
-				children: "\"Let's build something. I am available for contract work, consulting, and select software engineering opportunities.\""
+				children: "\"Let's build something. I am available for freelance work, consulting, and select software engineering opportunities.\""
 			}),
 			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
 				className: "mt-10",
@@ -2205,7 +2205,7 @@ function Contact() {
 									}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Input, {
 										id: "subject",
 										name: "subject",
-										placeholder: "Project / Contract Inquiry...",
+										placeholder: "Project / Freelance Inquiry...",
 										required: true,
 										className: "rounded-xl bg-secondary/50"
 									})]
