@@ -5,11 +5,11 @@ import { s as require_jsx_runtime } from "../_libs/@radix-ui/react-collection+[.
 import { A as CodeXml, C as GraduationCap, D as Database, E as ExternalLink, F as Bot, I as Award, L as ArrowUp, M as CircleCheck, N as Check, O as Copy, P as Building2, R as ArrowRight, T as FileText, _ as MapPin, b as Lock, c as ShieldCheck, f as RefreshCw, g as Menu, h as Moon, j as Clock, l as Send, n as X, o as Sun, p as Printer, r as User, t as Zap, v as Mail, w as Github, x as Linkedin } from "../_libs/lucide-react.mjs";
 import { a as DialogOverlay$1, c as DialogTrigger$1, i as DialogDescription$1, n as DialogClose, o as DialogPortal$1, r as DialogContent$1, s as DialogTitle$1, t as Dialog$1 } from "../_libs/@radix-ui/react-dialog+[...].mjs";
 import { n as toast } from "../_libs/sonner.mjs";
-import { n as Route$11, r as cn } from "./router-DRbSF3_J.mjs";
-import { a as CardFooter, c as Input, i as CardDescription, l as Label, n as Card, o as CardHeader, r as CardContent, s as CardTitle, t as Button } from "./card-DxImhyUn.mjs";
-import { a as TabsTrigger, i as TabsList, n as Tabs, o as Textarea, r as TabsContent, t as Badge } from "./badge-DrxO7Jql.mjs";
+import { n as Route$11, r as cn } from "./router-ByO0pnMp.mjs";
+import { a as CardFooter, c as Input, i as CardDescription, l as Label, n as Card, o as CardHeader, r as CardContent, s as CardTitle, t as Button } from "./card-B7bYoQiV.mjs";
+import { a as TabsTrigger, i as TabsList, n as Tabs, o as Textarea, r as TabsContent, t as Badge } from "./badge-fmPUUR1r.mjs";
 import { t as Root } from "../_libs/radix-ui__react-separator.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/routes-CvBMu4K8.js
+//#region node_modules/.nitro/vite/services/ssr/assets/routes-BVYgsNSl.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 var Separator = import_react.forwardRef(({ className, orientation = "horizontal", decorative = true, ...props }, ref) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Root, {
@@ -157,7 +157,7 @@ function TrelioPreview() {
 								className: `text-xs font-medium ${isSelected ? "text-foreground font-semibold" : "text-foreground/80"}`,
 								children: stage.title
 							}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("span", {
-								className: `inline-flex items-center gap-1 text-[10px] font-mono uppercase tracking-wider px-2 py-0.5 rounded-md ${stage.done ? "text-sage bg-sage/10 border border-sage/20" : isSelected ? "text-amber-400 bg-amber-400/10 border border-amber-400/20 animate-pulse" : "text-muted-foreground bg-secondary"}`,
+								className: `inline-flex items-center gap-1 text-[10px] font-mono uppercase tracking-wider px-2 py-0.5 rounded-md border ${stage.done ? "text-emerald-800 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-500/10 border-emerald-300 dark:border-emerald-500/20" : isSelected ? "text-amber-800 dark:text-amber-400 bg-amber-100 dark:bg-amber-400/10 border-amber-300 dark:border-amber-400/20 animate-pulse" : "text-muted-foreground bg-secondary border-border/40"}`,
 								children: [stage.done ? /* @__PURE__ */ (0, import_jsx_runtime.jsx)(CircleCheck, { className: "size-3" }) : /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Clock, { className: "size-3" }), stage.status]
 							})]
 						}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
@@ -870,8 +870,8 @@ function ContactCards() {
 				icon: Github,
 				href: "https://github.com/Chanakya2006gt",
 				color: "hover:border-slate-400/60 hover:shadow-[0_8px_30px_rgba(148,163,184,0.18)] hover:-translate-y-1",
-				iconBg: "bg-slate-500/15 border-slate-500/30 text-slate-300 dark:text-slate-200",
-				accentText: "group-hover:text-slate-300"
+				iconBg: "bg-slate-100 dark:bg-slate-500/15 border-slate-300 dark:border-slate-500/30 text-slate-800 dark:text-slate-200",
+				accentText: "group-hover:text-slate-800 dark:group-hover:text-slate-300"
 			},
 			{
 				title: "LinkedIn",
@@ -879,8 +879,8 @@ function ContactCards() {
 				icon: Linkedin,
 				href: "https://www.linkedin.com/in/nagulagam-chanakya-b93514315",
 				color: "hover:border-blue-500/60 hover:shadow-[0_8px_30px_rgba(59,130,246,0.22)] hover:-translate-y-1",
-				iconBg: "bg-blue-500/15 border-blue-500/30 text-blue-400",
-				accentText: "group-hover:text-blue-400"
+				iconBg: "bg-blue-50 dark:bg-blue-500/15 border-blue-200 dark:border-blue-500/30 text-blue-700 dark:text-blue-400",
+				accentText: "group-hover:text-blue-700 dark:group-hover:text-blue-400"
 			},
 			{
 				title: "Email",
@@ -888,8 +888,8 @@ function ContactCards() {
 				icon: Mail,
 				href: "mailto:nagulagamchanakya2211@gmail.com",
 				color: "hover:border-emerald-500/60 hover:shadow-[0_8px_30px_rgba(16,185,129,0.22)] hover:-translate-y-1",
-				iconBg: "bg-emerald-500/15 border-emerald-500/30 text-emerald-400",
-				accentText: "group-hover:text-emerald-400"
+				iconBg: "bg-emerald-50 dark:bg-emerald-500/15 border-emerald-200 dark:border-emerald-500/30 text-emerald-700 dark:text-emerald-400",
+				accentText: "group-hover:text-emerald-700 dark:group-hover:text-emerald-400"
 			},
 			{
 				title: "Trelio SaaS",
@@ -897,8 +897,8 @@ function ContactCards() {
 				icon: ExternalLink,
 				href: "https://trelio.in",
 				color: "hover:border-cyan-500/70 hover:shadow-[0_8px_32px_rgba(6,182,212,0.25)] hover:-translate-y-1",
-				iconBg: "bg-cyan-500/15 border-cyan-500/30 text-cyan-400",
-				accentText: "group-hover:text-cyan-400",
+				iconBg: "bg-cyan-50 dark:bg-cyan-500/15 border-cyan-200 dark:border-cyan-500/30 text-cyan-700 dark:text-cyan-400",
+				accentText: "group-hover:text-cyan-700 dark:group-hover:text-cyan-400",
 				highlight: true
 			}
 		].map((item) => {
@@ -1670,7 +1670,7 @@ function HeroTerminal() {
 		setTimeout(() => setCopied(false), 2e3);
 	};
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-		className: "card-specular relative overflow-hidden rounded-2xl border border-border/80 bg-card/95 backdrop-blur-xl shadow-[0_20px_50px_rgba(0,0,0,0.35)] w-full max-w-md mx-auto",
+		className: "card-specular relative overflow-hidden rounded-2xl border border-border/80 bg-card backdrop-blur-xl shadow-[0_20px_50px_rgba(0,0,0,0.15)] dark:shadow-[0_20px_50px_rgba(0,0,0,0.45)] w-full max-w-md mx-auto",
 		children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 			className: "flex items-center justify-between border-b border-border/70 bg-secondary/80 px-4 py-3",
 			children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
@@ -1680,17 +1680,17 @@ function HeroTerminal() {
 					/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: "size-3 rounded-full bg-[#ffbd2e] inline-block shadow-sm" }),
 					/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: "size-3 rounded-full bg-[#27c93f] inline-block shadow-sm" }),
 					/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-						className: "ml-2 font-mono text-[11px] text-muted-foreground font-medium",
+						className: "ml-2 font-mono text-[11px] text-foreground/70 dark:text-muted-foreground font-semibold",
 						children: "chanakya.config.ts"
 					})
 				]
 			}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-				className: "flex items-center gap-1.5 rounded-full bg-card/80 px-2.5 py-0.5 border border-border/60 shadow-xs",
+				className: "flex items-center gap-1.5 rounded-full bg-card px-2.5 py-0.5 border border-border/60 shadow-xs",
 				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(CompanionSvg, {
 					state: "idle",
 					size: 14
 				}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-					className: "font-mono text-[10px] text-emerald-400 font-bold uppercase tracking-wider",
+					className: "font-mono text-[10px] text-emerald-700 dark:text-emerald-400 font-bold uppercase tracking-wider",
 					children: "v2.4"
 				})]
 			})]
@@ -1699,12 +1699,12 @@ function HeroTerminal() {
 			children: [
 				/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [
 					/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-						className: "text-purple-400 dark:text-purple-400 font-semibold",
+						className: "text-purple-700 dark:text-purple-400 font-bold",
 						children: "const"
 					}),
 					" ",
 					/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-						className: "text-cyan-300 font-bold",
+						className: "text-cyan-800 dark:text-cyan-300 font-bold",
 						children: "engineer"
 					}),
 					" = {"
@@ -1713,12 +1713,12 @@ function HeroTerminal() {
 					className: "pl-4",
 					children: [
 						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-							className: "text-muted-foreground",
+							className: "text-foreground/70 dark:text-muted-foreground",
 							children: "name:"
 						}),
 						" ",
 						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-							className: "text-emerald-400 dark:text-emerald-400",
+							className: "text-emerald-800 dark:text-emerald-400 font-medium",
 							children: "\"Nagulagam Chanakya\""
 						}),
 						","
@@ -1728,12 +1728,12 @@ function HeroTerminal() {
 					className: "pl-4",
 					children: [
 						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-							className: "text-muted-foreground",
+							className: "text-foreground/70 dark:text-muted-foreground",
 							children: "role:"
 						}),
 						" ",
 						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-							className: "text-emerald-400 dark:text-emerald-400",
+							className: "text-emerald-800 dark:text-emerald-400 font-medium",
 							children: "\"Full-Stack Builder & Founder\""
 						}),
 						","
@@ -1743,12 +1743,12 @@ function HeroTerminal() {
 					className: "pl-4",
 					children: [
 						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-							className: "text-muted-foreground",
+							className: "text-foreground/70 dark:text-muted-foreground",
 							children: "flagship:"
 						}),
 						" ",
 						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-							className: "text-purple-300 dark:text-purple-300",
+							className: "text-purple-800 dark:text-purple-300 font-medium",
 							children: "\"Trelio.in (Auth-Before-Execution)\""
 						}),
 						","
@@ -1758,24 +1758,24 @@ function HeroTerminal() {
 					className: "pl-4",
 					children: [
 						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-							className: "text-muted-foreground",
+							className: "text-foreground/70 dark:text-muted-foreground",
 							children: "stack:"
 						}),
 						" [",
 						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-							className: "text-cyan-300",
+							className: "text-cyan-800 dark:text-cyan-300 font-medium",
 							children: "\"React\""
 						}),
 						",",
 						" ",
 						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-							className: "text-cyan-300",
+							className: "text-cyan-800 dark:text-cyan-300 font-medium",
 							children: "\"TypeScript\""
 						}),
 						",",
 						" ",
 						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-							className: "text-emerald-300",
+							className: "text-emerald-800 dark:text-emerald-300 font-medium",
 							children: "\"PostgreSQL\""
 						}),
 						"],"
@@ -1785,18 +1785,18 @@ function HeroTerminal() {
 					className: "pl-4",
 					children: [
 						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-							className: "text-muted-foreground",
+							className: "text-foreground/70 dark:text-muted-foreground",
 							children: "security:"
 						}),
 						" [",
 						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-							className: "text-amber-300",
+							className: "text-amber-800 dark:text-amber-300 font-medium",
 							children: "\"AES-256-GCM\""
 						}),
 						",",
 						" ",
 						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-							className: "text-amber-300",
+							className: "text-amber-800 dark:text-amber-300 font-medium",
 							children: "\"HMAC-SHA256\""
 						}),
 						"],"
@@ -1806,34 +1806,34 @@ function HeroTerminal() {
 					className: "pl-4",
 					children: [
 						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-							className: "text-muted-foreground",
+							className: "text-foreground/70 dark:text-muted-foreground",
 							children: "status:"
 						}),
 						" ",
 						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-							className: "text-emerald-400 font-semibold",
-							children: "\"Available for Client Engagements\""
+							className: "text-emerald-800 dark:text-emerald-400 font-bold",
+							children: "\"Available for Client Work\""
 						})
 					]
 				}),
 				/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { children: "};" }),
 				/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-					className: "mt-3 pt-3 border-t border-border/60 flex items-center justify-between gap-2 bg-secondary/40 -mx-4 -mb-4 sm:-mx-5 sm:-mb-5 p-3 rounded-b-2xl",
+					className: "mt-3 pt-3 border-t border-border/60 flex items-center justify-between gap-2 bg-secondary/50 -mx-4 -mb-4 sm:-mx-5 sm:-mb-5 p-3 rounded-b-2xl",
 					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-						className: "flex items-center gap-2 text-[11px] text-foreground/90 truncate font-mono",
+						className: "flex items-center gap-2 text-[11px] text-foreground truncate font-mono",
 						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-							className: "text-emerald-400 font-bold",
+							className: "text-emerald-700 dark:text-emerald-400 font-bold",
 							children: "$"
 						}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("code", {
-							className: "text-muted-foreground truncate",
+							className: "text-foreground/80 dark:text-muted-foreground truncate font-semibold",
 							children: "npx chanakya@latest"
 						})]
 					}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
 						type: "button",
 						onClick: handleCopy,
-						className: "inline-flex items-center gap-1.5 text-[10px] font-semibold uppercase tracking-wider px-2.5 py-1 rounded-lg bg-card border border-border/80 text-foreground hover:text-emerald-400 hover:border-emerald-500/40 transition-all shadow-sm shrink-0",
-						children: copied ? /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(import_jsx_runtime.Fragment, { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Check, { className: "size-3 text-emerald-400" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-							className: "text-emerald-400",
+						className: "inline-flex items-center gap-1.5 text-[10px] font-semibold uppercase tracking-wider px-2.5 py-1 rounded-lg bg-card border border-border/80 text-foreground hover:text-emerald-700 dark:hover:text-emerald-400 hover:border-emerald-500/40 transition-all shadow-sm shrink-0",
+						children: copied ? /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(import_jsx_runtime.Fragment, { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Check, { className: "size-3 text-emerald-700 dark:text-emerald-400" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+							className: "text-emerald-700 dark:text-emerald-400",
 							children: "Copied"
 						})] }) : /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(import_jsx_runtime.Fragment, { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Copy, { className: "size-3 text-muted-foreground" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { children: "Copy" })] })
 					})]
@@ -1846,23 +1846,23 @@ function Hero({ tagline, availabilityStatus, liveCount, email, pdfUrl, summary, 
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("section", {
 		className: "relative mx-auto flex min-h-[92vh] max-w-5xl flex-col justify-center px-5 py-20 lg:py-28 overflow-hidden",
 		children: [
-			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "absolute inset-0 bg-grid-pattern pointer-events-none -z-10 opacity-70" }),
+			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "absolute inset-0 bg-grid-pattern pointer-events-none -z-10 opacity-60 dark:opacity-70" }),
 			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[500px] bg-gradient-to-tr from-emerald-500/15 via-indigo-500/10 to-cyan-500/10 blur-[130px] rounded-full pointer-events-none -z-10" }),
 			/* @__PURE__ */ (0, import_jsx_runtime.jsx)(ParticleField, {}),
 			/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 				className: "relative z-10 grid gap-12 lg:grid-cols-[1.2fr_1.1fr] lg:items-center",
 				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [
 					/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-						className: "rise-in inline-flex items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-3.5 py-1 text-xs font-semibold tracking-wide text-emerald-400 shadow-[0_0_15px_rgba(52,211,153,0.18)] backdrop-blur-sm",
-						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: "size-2 rounded-full bg-emerald-400 shadow-[0_0_8px_#34d399] animate-pulse" }), "Full-Stack Builder · SaaS Founder"]
+						className: "rise-in inline-flex items-center gap-2 rounded-full border border-emerald-600/30 dark:border-emerald-500/30 bg-emerald-50 dark:bg-emerald-500/10 px-3.5 py-1 text-xs font-semibold tracking-wide text-emerald-800 dark:text-emerald-400 shadow-sm backdrop-blur-sm",
+						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: "size-2 rounded-full bg-emerald-600 dark:bg-emerald-400 shadow-[0_0_8px_#10b981] animate-pulse" }), "Full-Stack Builder · SaaS Founder"]
 					}),
 					/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("h1", {
 						className: "rise-in rise-in-1 mt-5 font-serif text-5xl leading-[1.08] tracking-[-0.035em] sm:text-6xl md:text-7xl",
 						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-							className: "text-foreground",
+							className: "text-foreground font-bold",
 							children: "Nagulagam "
 						}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-							className: "bg-gradient-to-r from-emerald-400 via-teal-300 to-cyan-400 dark:from-emerald-400 dark:via-teal-300 dark:to-cyan-400 bg-clip-text text-transparent",
+							className: "bg-gradient-to-r from-emerald-800 via-teal-800 to-cyan-900 dark:from-emerald-400 dark:via-teal-300 dark:to-cyan-400 bg-clip-text text-transparent font-bold",
 							children: "Chanakya"
 						})]
 					}),
@@ -1896,7 +1896,7 @@ function Hero({ tagline, availabilityStatus, liveCount, email, pdfUrl, summary, 
 								trigger: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Button, {
 									size: "lg",
 									variant: "outline",
-									className: "rounded-xl border-border/80 hover:border-emerald-400 hover:text-emerald-400 font-medium shadow-sm",
+									className: "rounded-xl border-border/80 hover:border-emerald-600 dark:hover:border-emerald-400 hover:text-emerald-700 dark:hover:text-emerald-400 font-medium shadow-sm",
 									children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(FileText, { className: "mr-1.5 size-4" }), "View Resume"]
 								})
 							}),
@@ -2129,10 +2129,10 @@ function BusinessCard({ items }) {
 								"UPI"
 							].some((s) => tech.includes(s));
 							let badgeStyle = "bg-secondary text-foreground border-border";
-							if (isFrontend) badgeStyle = "border-cyan-500/30 bg-cyan-500/10 text-cyan-400 dark:text-cyan-300";
-							else if (isBackend) badgeStyle = "border-emerald-500/30 bg-emerald-500/10 text-emerald-400 dark:text-emerald-300";
-							else if (isSecurity) badgeStyle = "border-purple-500/30 bg-purple-500/10 text-purple-400 dark:text-purple-300";
-							else if (isPayments) badgeStyle = "border-amber-500/30 bg-amber-500/10 text-amber-400 dark:text-amber-300";
+							if (isFrontend) badgeStyle = "border-cyan-300 dark:border-cyan-500/30 bg-cyan-50 dark:bg-cyan-500/10 text-cyan-800 dark:text-cyan-300";
+							else if (isBackend) badgeStyle = "border-emerald-300 dark:border-emerald-500/30 bg-emerald-50 dark:bg-emerald-500/10 text-emerald-800 dark:text-emerald-300";
+							else if (isSecurity) badgeStyle = "border-purple-300 dark:border-purple-500/30 bg-purple-50 dark:bg-purple-500/10 text-purple-800 dark:text-purple-300";
+							else if (isPayments) badgeStyle = "border-amber-300 dark:border-amber-500/30 bg-amber-50 dark:bg-amber-500/10 text-amber-800 dark:text-amber-300";
 							return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
 								className: `inline-flex items-center rounded-lg px-2.5 py-1 text-xs font-medium border shadow-xs ${badgeStyle}`,
 								children: tech
@@ -2153,7 +2153,7 @@ function Projects({ businessesList, sideProjectsList, email, pdfUrl, summary, ed
 		children: [
 			/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 				className: "flex items-center gap-2",
-				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: "h-4 w-1 rounded-full bg-emerald-400 shadow-[0_0_8px_#34d399]" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: "h-4 w-1 rounded-full bg-emerald-600 dark:bg-emerald-400 shadow-[0_0_8px_#10b981]" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
 					className: "text-xs font-semibold uppercase tracking-wider text-muted-foreground",
 					children: "Work"
 				})]
@@ -2204,7 +2204,7 @@ function Projects({ businessesList, sideProjectsList, email, pdfUrl, summary, ed
 								className: "mx-auto max-w-md space-y-3",
 								children: [
 									/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-										className: "mx-auto flex size-12 items-center justify-center rounded-full bg-amber-500/15 text-amber-400 border border-amber-500/30 shadow-[0_0_15px_rgba(245,158,11,0.2)]",
+										className: "mx-auto flex size-12 items-center justify-center rounded-full bg-amber-100 dark:bg-amber-500/15 text-amber-800 dark:text-amber-400 border border-amber-300 dark:border-amber-500/30 shadow-sm dark:shadow-[0_0_15px_rgba(245,158,11,0.2)]",
 										children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(FileText, { className: "size-5" })
 									}),
 									/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h3", {
@@ -2235,7 +2235,7 @@ function Projects({ businessesList, sideProjectsList, email, pdfUrl, summary, ed
 											trigger: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Button, {
 												size: "sm",
 												variant: "outline",
-												className: "rounded-xl border-border/80 hover:text-amber-400 shadow-sm",
+												className: "rounded-xl border-border/80 hover:text-amber-800 dark:hover:text-amber-400 shadow-sm",
 												children: "View Credentials"
 											})
 										})]
@@ -2266,7 +2266,7 @@ function Projects({ businessesList, sideProjectsList, email, pdfUrl, summary, ed
 													href: project.liveUrl,
 													target: "_blank",
 													rel: "noopener noreferrer",
-													className: "text-muted-foreground hover:text-purple-400 transition-colors p-1",
+													className: "text-muted-foreground hover:text-purple-700 dark:hover:text-purple-400 transition-colors p-1",
 													title: "View Repository",
 													children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(ExternalLink, { className: "size-3.5" })
 												})]
@@ -2278,7 +2278,7 @@ function Projects({ businessesList, sideProjectsList, email, pdfUrl, summary, ed
 										/* @__PURE__ */ (0, import_jsx_runtime.jsx)(CardContent, {
 											className: "flex flex-wrap gap-1.5 px-0 pt-2",
 											children: project.stack.map((tech) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-												className: "inline-flex items-center rounded-lg px-2 py-0.5 text-[11px] font-medium border border-purple-500/25 bg-purple-500/10 text-purple-300 shadow-2xs",
+												className: "inline-flex items-center rounded-lg px-2 py-0.5 text-[11px] font-medium border border-purple-300 dark:border-purple-500/25 bg-purple-50 dark:bg-purple-500/10 text-purple-800 dark:text-purple-300 shadow-2xs",
 												children: tech
 											}, tech))
 										})
@@ -2287,7 +2287,7 @@ function Projects({ businessesList, sideProjectsList, email, pdfUrl, summary, ed
 							}, project.id)), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Card, {
 								className: "relative overflow-hidden p-6 border-dashed border-border/80 bg-secondary/30 flex flex-col items-center justify-center text-center min-h-[220px] rounded-2xl shadow-[inset_0_1px_0_0_rgba(255,255,255,0.04)]",
 								children: [
-									/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: "size-2 rounded-full bg-cyan-400 shadow-[0_0_8px_#38bdf8] animate-pulse mb-3" }),
+									/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: "size-2 rounded-full bg-cyan-600 dark:bg-cyan-400 shadow-[0_0_8px_#38bdf8] animate-pulse mb-3" }),
 									/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
 										className: "font-serif text-lg text-foreground/90",
 										children: "More Experiments in Progress"
@@ -2310,23 +2310,23 @@ function Skills({ skillsList }) {
 	const getDomainConfig = (category) => {
 		const cat = category.toLowerCase();
 		if (cat.includes("frontend")) return {
-			dotClass: "bg-cyan-400 shadow-[0_0_8px_#38bdf8]",
-			badgeClass: "bg-cyan-500/10 text-cyan-400 border-cyan-500/25 hover:bg-cyan-500/20 dark:text-cyan-300 light:bg-cyan-50 light:text-cyan-800 light:border-cyan-200",
+			dotClass: "bg-cyan-600 dark:bg-cyan-400 shadow-[0_0_8px_#38bdf8]",
+			badgeClass: "bg-cyan-50 text-cyan-800 border-cyan-300 hover:bg-cyan-100 dark:bg-cyan-500/10 dark:text-cyan-300 dark:border-cyan-500/25 dark:hover:bg-cyan-500/20",
 			borderGlow: "from-cyan-400 via-blue-400 to-indigo-500"
 		};
 		if (cat.includes("backend")) return {
-			dotClass: "bg-emerald-400 shadow-[0_0_8px_#34d399]",
-			badgeClass: "bg-emerald-500/10 text-emerald-400 border-emerald-500/25 hover:bg-emerald-500/20 dark:text-emerald-300 light:bg-emerald-50 light:text-emerald-800 light:border-emerald-200",
+			dotClass: "bg-emerald-600 dark:bg-emerald-400 shadow-[0_0_8px_#34d399]",
+			badgeClass: "bg-emerald-50 text-emerald-800 border-emerald-300 hover:bg-emerald-100 dark:bg-emerald-500/10 dark:text-emerald-300 dark:border-emerald-500/25 dark:hover:bg-emerald-500/20",
 			borderGlow: "from-emerald-400 via-teal-400 to-emerald-500"
 		};
 		if (cat.includes("product") || cat.includes("database")) return {
-			dotClass: "bg-purple-400 shadow-[0_0_8px_#c084fc]",
-			badgeClass: "bg-purple-500/10 text-purple-400 border-purple-500/25 hover:bg-purple-500/20 dark:text-purple-300 light:bg-purple-50 light:text-purple-800 light:border-purple-200",
+			dotClass: "bg-purple-600 dark:bg-purple-400 shadow-[0_0_8px_#c084fc]",
+			badgeClass: "bg-purple-50 text-purple-800 border-purple-300 hover:bg-purple-100 dark:bg-purple-500/10 dark:text-purple-300 dark:border-purple-500/25 dark:hover:bg-purple-500/20",
 			borderGlow: "from-purple-400 via-indigo-400 to-purple-500"
 		};
 		return {
-			dotClass: "bg-amber-400 shadow-[0_0_8px_#fbbf24]",
-			badgeClass: "bg-amber-500/10 text-amber-400 border-amber-500/25 hover:bg-amber-500/20 dark:text-amber-300 light:bg-amber-50 light:text-amber-800 light:border-amber-200",
+			dotClass: "bg-amber-600 dark:bg-amber-400 shadow-[0_0_8px_#fbbf24]",
+			badgeClass: "bg-amber-50 text-amber-800 border-amber-300 hover:bg-amber-100 dark:bg-amber-500/10 dark:text-amber-300 dark:border-amber-500/25 dark:hover:bg-amber-500/20",
 			borderGlow: "from-amber-400 via-yellow-400 to-amber-500"
 		};
 	};

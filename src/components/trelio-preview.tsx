@@ -89,12 +89,12 @@ export function TrelioPreview() {
                   {stage.title}
                 </span>
                 <span
-                  className={`inline-flex items-center gap-1 text-[10px] font-mono uppercase tracking-wider px-2 py-0.5 rounded-md ${
+                  className={`inline-flex items-center gap-1 text-[10px] font-mono uppercase tracking-wider px-2 py-0.5 rounded-md border ${
                     stage.done
-                      ? "text-sage bg-sage/10 border border-sage/20"
+                      ? "text-emerald-800 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-500/10 border-emerald-300 dark:border-emerald-500/20"
                       : isSelected
-                      ? "text-amber-400 bg-amber-400/10 border border-amber-400/20 animate-pulse"
-                      : "text-muted-foreground bg-secondary"
+                      ? "text-amber-800 dark:text-amber-400 bg-amber-100 dark:bg-amber-400/10 border-amber-300 dark:border-amber-400/20 animate-pulse"
+                      : "text-muted-foreground bg-secondary border-border/40"
                   }`}
                 >
                   {stage.done ? <CheckCircle2 className="size-3" /> : <Clock className="size-3" />}

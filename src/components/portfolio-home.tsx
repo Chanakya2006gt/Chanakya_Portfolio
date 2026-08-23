@@ -52,73 +52,73 @@ function HeroTerminal() {
   };
 
   return (
-    <div className="card-specular relative overflow-hidden rounded-2xl border border-border/80 bg-card/95 backdrop-blur-xl shadow-[0_20px_50px_rgba(0,0,0,0.35)] w-full max-w-md mx-auto">
+    <div className="card-specular relative overflow-hidden rounded-2xl border border-border/80 bg-card backdrop-blur-xl shadow-[0_20px_50px_rgba(0,0,0,0.15)] dark:shadow-[0_20px_50px_rgba(0,0,0,0.45)] w-full max-w-md mx-auto">
       {/* Terminal Titlebar with macOS Controls */}
       <div className="flex items-center justify-between border-b border-border/70 bg-secondary/80 px-4 py-3">
         <div className="flex items-center gap-2">
           <span className="size-3 rounded-full bg-[#ff5f56] inline-block shadow-sm" />
           <span className="size-3 rounded-full bg-[#ffbd2e] inline-block shadow-sm" />
           <span className="size-3 rounded-full bg-[#27c93f] inline-block shadow-sm" />
-          <span className="ml-2 font-mono text-[11px] text-muted-foreground font-medium">chanakya.config.ts</span>
+          <span className="ml-2 font-mono text-[11px] text-foreground/70 dark:text-muted-foreground font-semibold">chanakya.config.ts</span>
         </div>
-        <div className="flex items-center gap-1.5 rounded-full bg-card/80 px-2.5 py-0.5 border border-border/60 shadow-xs">
+        <div className="flex items-center gap-1.5 rounded-full bg-card px-2.5 py-0.5 border border-border/60 shadow-xs">
           <CompanionSvg state="idle" size={14} />
-          <span className="font-mono text-[10px] text-emerald-400 font-bold uppercase tracking-wider">v2.4</span>
+          <span className="font-mono text-[10px] text-emerald-700 dark:text-emerald-400 font-bold uppercase tracking-wider">v2.4</span>
         </div>
       </div>
 
-      {/* Code Body with High-Contrast Syntax Highlighting */}
+      {/* Code Body with High-Contrast Dark & Light Syntax Highlighting */}
       <div className="p-4 sm:p-5 font-mono text-xs leading-relaxed space-y-1.5 select-text text-left">
         <div>
-          <span className="text-purple-400 dark:text-purple-400 font-semibold">const</span>{" "}
-          <span className="text-cyan-300 font-bold">engineer</span> = &#123;
+          <span className="text-purple-700 dark:text-purple-400 font-bold">const</span>{" "}
+          <span className="text-cyan-800 dark:text-cyan-300 font-bold">engineer</span> = &#123;
         </div>
         <div className="pl-4">
-          <span className="text-muted-foreground">name:</span>{" "}
-          <span className="text-emerald-400 dark:text-emerald-400">"Nagulagam Chanakya"</span>,
+          <span className="text-foreground/70 dark:text-muted-foreground">name:</span>{" "}
+          <span className="text-emerald-800 dark:text-emerald-400 font-medium">"Nagulagam Chanakya"</span>,
         </div>
         <div className="pl-4">
-          <span className="text-muted-foreground">role:</span>{" "}
-          <span className="text-emerald-400 dark:text-emerald-400">"Full-Stack Builder & Founder"</span>,
+          <span className="text-foreground/70 dark:text-muted-foreground">role:</span>{" "}
+          <span className="text-emerald-800 dark:text-emerald-400 font-medium">"Full-Stack Builder & Founder"</span>,
         </div>
         <div className="pl-4">
-          <span className="text-muted-foreground">flagship:</span>{" "}
-          <span className="text-purple-300 dark:text-purple-300">"Trelio.in (Auth-Before-Execution)"</span>,
+          <span className="text-foreground/70 dark:text-muted-foreground">flagship:</span>{" "}
+          <span className="text-purple-800 dark:text-purple-300 font-medium">"Trelio.in (Auth-Before-Execution)"</span>,
         </div>
         <div className="pl-4">
-          <span className="text-muted-foreground">stack:</span> [
-          <span className="text-cyan-300">"React"</span>,{" "}
-          <span className="text-cyan-300">"TypeScript"</span>,{" "}
-          <span className="text-emerald-300">"PostgreSQL"</span>
+          <span className="text-foreground/70 dark:text-muted-foreground">stack:</span> [
+          <span className="text-cyan-800 dark:text-cyan-300 font-medium">"React"</span>,{" "}
+          <span className="text-cyan-800 dark:text-cyan-300 font-medium">"TypeScript"</span>,{" "}
+          <span className="text-emerald-800 dark:text-emerald-300 font-medium">"PostgreSQL"</span>
           ],
         </div>
         <div className="pl-4">
-          <span className="text-muted-foreground">security:</span> [
-          <span className="text-amber-300">"AES-256-GCM"</span>,{" "}
-          <span className="text-amber-300">"HMAC-SHA256"</span>
+          <span className="text-foreground/70 dark:text-muted-foreground">security:</span> [
+          <span className="text-amber-800 dark:text-amber-300 font-medium">"AES-256-GCM"</span>,{" "}
+          <span className="text-amber-800 dark:text-amber-300 font-medium">"HMAC-SHA256"</span>
           ],
         </div>
         <div className="pl-4">
-          <span className="text-muted-foreground">status:</span>{" "}
-          <span className="text-emerald-400 font-semibold">"Available for Client Engagements"</span>
+          <span className="text-foreground/70 dark:text-muted-foreground">status:</span>{" "}
+          <span className="text-emerald-800 dark:text-emerald-400 font-bold">"Available for Client Work"</span>
         </div>
         <div>&#125;;</div>
 
         {/* Interactive CLI Runner Footer */}
-        <div className="mt-3 pt-3 border-t border-border/60 flex items-center justify-between gap-2 bg-secondary/40 -mx-4 -mb-4 sm:-mx-5 sm:-mb-5 p-3 rounded-b-2xl">
-          <div className="flex items-center gap-2 text-[11px] text-foreground/90 truncate font-mono">
-            <span className="text-emerald-400 font-bold">$</span>
-            <code className="text-muted-foreground truncate">npx chanakya@latest</code>
+        <div className="mt-3 pt-3 border-t border-border/60 flex items-center justify-between gap-2 bg-secondary/50 -mx-4 -mb-4 sm:-mx-5 sm:-mb-5 p-3 rounded-b-2xl">
+          <div className="flex items-center gap-2 text-[11px] text-foreground truncate font-mono">
+            <span className="text-emerald-700 dark:text-emerald-400 font-bold">$</span>
+            <code className="text-foreground/80 dark:text-muted-foreground truncate font-semibold">npx chanakya@latest</code>
           </div>
           <button
             type="button"
             onClick={handleCopy}
-            className="inline-flex items-center gap-1.5 text-[10px] font-semibold uppercase tracking-wider px-2.5 py-1 rounded-lg bg-card border border-border/80 text-foreground hover:text-emerald-400 hover:border-emerald-500/40 transition-all shadow-sm shrink-0"
+            className="inline-flex items-center gap-1.5 text-[10px] font-semibold uppercase tracking-wider px-2.5 py-1 rounded-lg bg-card border border-border/80 text-foreground hover:text-emerald-700 dark:hover:text-emerald-400 hover:border-emerald-500/40 transition-all shadow-sm shrink-0"
           >
             {copied ? (
               <>
-                <Check className="size-3 text-emerald-400" />
-                <span className="text-emerald-400">Copied</span>
+                <Check className="size-3 text-emerald-700 dark:text-emerald-400" />
+                <span className="text-emerald-700 dark:text-emerald-400">Copied</span>
               </>
             ) : (
               <>
@@ -149,20 +149,20 @@ function Hero({ tagline, availabilityStatus, liveCount, email, pdfUrl, summary, 
   return (
     <section className="relative mx-auto flex min-h-[92vh] max-w-5xl flex-col justify-center px-5 py-20 lg:py-28 overflow-hidden">
       {/* Architectural Dot-Matrix Background Grid */}
-      <div className="absolute inset-0 bg-grid-pattern pointer-events-none -z-10 opacity-70" />
+      <div className="absolute inset-0 bg-grid-pattern pointer-events-none -z-10 opacity-60 dark:opacity-70" />
       {/* Background ambient multi-color glow mesh */}
       <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[500px] bg-gradient-to-tr from-emerald-500/15 via-indigo-500/10 to-cyan-500/10 blur-[130px] rounded-full pointer-events-none -z-10" />
       <ParticleField />
       
       <div className="relative z-10 grid gap-12 lg:grid-cols-[1.2fr_1.1fr] lg:items-center">
         <div>
-          <div className="rise-in inline-flex items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-3.5 py-1 text-xs font-semibold tracking-wide text-emerald-400 shadow-[0_0_15px_rgba(52,211,153,0.18)] backdrop-blur-sm">
-            <span className="size-2 rounded-full bg-emerald-400 shadow-[0_0_8px_#34d399] animate-pulse" />
+          <div className="rise-in inline-flex items-center gap-2 rounded-full border border-emerald-600/30 dark:border-emerald-500/30 bg-emerald-50 dark:bg-emerald-500/10 px-3.5 py-1 text-xs font-semibold tracking-wide text-emerald-800 dark:text-emerald-400 shadow-sm backdrop-blur-sm">
+            <span className="size-2 rounded-full bg-emerald-600 dark:bg-emerald-400 shadow-[0_0_8px_#10b981] animate-pulse" />
             Full-Stack Builder · SaaS Founder
           </div>
           <h1 className="rise-in rise-in-1 mt-5 font-serif text-5xl leading-[1.08] tracking-[-0.035em] sm:text-6xl md:text-7xl">
-            <span className="text-foreground">Nagulagam </span>
-            <span className="bg-gradient-to-r from-emerald-400 via-teal-300 to-cyan-400 dark:from-emerald-400 dark:via-teal-300 dark:to-cyan-400 bg-clip-text text-transparent">
+            <span className="text-foreground font-bold">Nagulagam </span>
+            <span className="bg-gradient-to-r from-emerald-800 via-teal-800 to-cyan-900 dark:from-emerald-400 dark:via-teal-300 dark:to-cyan-400 bg-clip-text text-transparent font-bold">
               Chanakya
             </span>
           </h1>
@@ -187,7 +187,7 @@ function Hero({ tagline, availabilityStatus, liveCount, email, pdfUrl, summary, 
               education={education}
               skillsList={skillsList}
               trigger={
-                <Button size="lg" variant="outline" className="rounded-xl border-border/80 hover:border-emerald-400 hover:text-emerald-400 font-medium shadow-sm">
+                <Button size="lg" variant="outline" className="rounded-xl border-border/80 hover:border-emerald-600 dark:hover:border-emerald-400 hover:text-emerald-700 dark:hover:text-emerald-400 font-medium shadow-sm">
                   <FileText className="mr-1.5 size-4" />
                   View Resume
                 </Button>
@@ -355,10 +355,10 @@ function BusinessCard({ items }: BusinessCardProps) {
                 const isPayments = ["Payments", "Multi-tenant", "Razorpay", "UPI"].some((s) => tech.includes(s));
 
                 let badgeStyle = "bg-secondary text-foreground border-border";
-                if (isFrontend) badgeStyle = "border-cyan-500/30 bg-cyan-500/10 text-cyan-400 dark:text-cyan-300";
-                else if (isBackend) badgeStyle = "border-emerald-500/30 bg-emerald-500/10 text-emerald-400 dark:text-emerald-300";
-                else if (isSecurity) badgeStyle = "border-purple-500/30 bg-purple-500/10 text-purple-400 dark:text-purple-300";
-                else if (isPayments) badgeStyle = "border-amber-500/30 bg-amber-500/10 text-amber-400 dark:text-amber-300";
+                if (isFrontend) badgeStyle = "border-cyan-300 dark:border-cyan-500/30 bg-cyan-50 dark:bg-cyan-500/10 text-cyan-800 dark:text-cyan-300";
+                else if (isBackend) badgeStyle = "border-emerald-300 dark:border-emerald-500/30 bg-emerald-50 dark:bg-emerald-500/10 text-emerald-800 dark:text-emerald-300";
+                else if (isSecurity) badgeStyle = "border-purple-300 dark:border-purple-500/30 bg-purple-50 dark:bg-purple-500/10 text-purple-800 dark:text-purple-300";
+                else if (isPayments) badgeStyle = "border-amber-300 dark:border-amber-500/30 bg-amber-50 dark:bg-amber-500/10 text-amber-800 dark:text-amber-300";
 
                 return (
                   <span
@@ -400,7 +400,7 @@ function Projects({ businessesList, sideProjectsList, email, pdfUrl, summary, ed
       }`}
     >
       <div className="flex items-center gap-2">
-        <span className="h-4 w-1 rounded-full bg-emerald-400 shadow-[0_0_8px_#34d399]" />
+        <span className="h-4 w-1 rounded-full bg-emerald-600 dark:bg-emerald-400 shadow-[0_0_8px_#10b981]" />
         <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">Work</p>
       </div>
       <h2 className="mt-3 font-serif text-3xl tracking-tight sm:text-4xl">
@@ -433,7 +433,7 @@ function Projects({ businessesList, sideProjectsList, email, pdfUrl, summary, ed
           <Card className="card-specular p-8 sm:p-12 text-center rounded-2xl relative overflow-hidden bg-gradient-to-br from-card via-card to-amber-500/10 dark:to-amber-500/10">
             <div className="absolute top-0 inset-x-0 h-0.5 bg-gradient-to-r from-amber-400 via-yellow-400 to-amber-500" />
             <div className="mx-auto max-w-md space-y-3">
-              <div className="mx-auto flex size-12 items-center justify-center rounded-full bg-amber-500/15 text-amber-400 border border-amber-500/30 shadow-[0_0_15px_rgba(245,158,11,0.2)]">
+              <div className="mx-auto flex size-12 items-center justify-center rounded-full bg-amber-100 dark:bg-amber-500/15 text-amber-800 dark:text-amber-400 border border-amber-300 dark:border-amber-500/30 shadow-sm dark:shadow-[0_0_15px_rgba(245,158,11,0.2)]">
                 <FileText className="size-5" />
               </div>
               <h3 className="font-serif text-2xl text-foreground">Available for Client & Freelance Engagements</h3>
@@ -452,7 +452,7 @@ function Projects({ businessesList, sideProjectsList, email, pdfUrl, summary, ed
                   education={education}
                   skillsList={skillsList}
                   trigger={
-                    <Button size="sm" variant="outline" className="rounded-xl border-border/80 hover:text-amber-400 shadow-sm">
+                    <Button size="sm" variant="outline" className="rounded-xl border-border/80 hover:text-amber-800 dark:hover:text-amber-400 shadow-sm">
                       View Credentials
                     </Button>
                   }
@@ -481,7 +481,7 @@ function Projects({ businessesList, sideProjectsList, email, pdfUrl, summary, ed
                           href={project.liveUrl}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="text-muted-foreground hover:text-purple-400 transition-colors p-1"
+                          className="text-muted-foreground hover:text-purple-700 dark:hover:text-purple-400 transition-colors p-1"
                           title="View Repository"
                         >
                           <ExternalLink className="size-3.5" />
@@ -494,7 +494,7 @@ function Projects({ businessesList, sideProjectsList, email, pdfUrl, summary, ed
                     {project.stack.map((tech) => (
                       <span
                         key={tech}
-                        className="inline-flex items-center rounded-lg px-2 py-0.5 text-[11px] font-medium border border-purple-500/25 bg-purple-500/10 text-purple-300 shadow-2xs"
+                        className="inline-flex items-center rounded-lg px-2 py-0.5 text-[11px] font-medium border border-purple-300 dark:border-purple-500/25 bg-purple-50 dark:bg-purple-500/10 text-purple-800 dark:text-purple-300 shadow-2xs"
                       >
                         {tech}
                       </span>
@@ -506,7 +506,7 @@ function Projects({ businessesList, sideProjectsList, email, pdfUrl, summary, ed
 
             {/* Polite 'More to come' card */}
             <Card className="relative overflow-hidden p-6 border-dashed border-border/80 bg-secondary/30 flex flex-col items-center justify-center text-center min-h-[220px] rounded-2xl shadow-[inset_0_1px_0_0_rgba(255,255,255,0.04)]">
-              <span className="size-2 rounded-full bg-cyan-400 shadow-[0_0_8px_#38bdf8] animate-pulse mb-3" />
+              <span className="size-2 rounded-full bg-cyan-600 dark:bg-cyan-400 shadow-[0_0_8px_#38bdf8] animate-pulse mb-3" />
               <p className="font-serif text-lg text-foreground/90">More Experiments in Progress</p>
               <p className="text-xs text-muted-foreground mt-2 max-w-xs leading-relaxed">
                 Active labs in security primitives, database tooling, and open-source packages will be posted here as they are published.
@@ -530,28 +530,28 @@ function Skills({ skillsList }: SkillsProps) {
     const cat = category.toLowerCase();
     if (cat.includes("frontend")) {
       return {
-        dotClass: "bg-cyan-400 shadow-[0_0_8px_#38bdf8]",
-        badgeClass: "bg-cyan-500/10 text-cyan-400 border-cyan-500/25 hover:bg-cyan-500/20 dark:text-cyan-300 light:bg-cyan-50 light:text-cyan-800 light:border-cyan-200",
+        dotClass: "bg-cyan-600 dark:bg-cyan-400 shadow-[0_0_8px_#38bdf8]",
+        badgeClass: "bg-cyan-50 text-cyan-800 border-cyan-300 hover:bg-cyan-100 dark:bg-cyan-500/10 dark:text-cyan-300 dark:border-cyan-500/25 dark:hover:bg-cyan-500/20",
         borderGlow: "from-cyan-400 via-blue-400 to-indigo-500",
       };
     }
     if (cat.includes("backend")) {
       return {
-        dotClass: "bg-emerald-400 shadow-[0_0_8px_#34d399]",
-        badgeClass: "bg-emerald-500/10 text-emerald-400 border-emerald-500/25 hover:bg-emerald-500/20 dark:text-emerald-300 light:bg-emerald-50 light:text-emerald-800 light:border-emerald-200",
+        dotClass: "bg-emerald-600 dark:bg-emerald-400 shadow-[0_0_8px_#34d399]",
+        badgeClass: "bg-emerald-50 text-emerald-800 border-emerald-300 hover:bg-emerald-100 dark:bg-emerald-500/10 dark:text-emerald-300 dark:border-emerald-500/25 dark:hover:bg-emerald-500/20",
         borderGlow: "from-emerald-400 via-teal-400 to-emerald-500",
       };
     }
     if (cat.includes("product") || cat.includes("database")) {
       return {
-        dotClass: "bg-purple-400 shadow-[0_0_8px_#c084fc]",
-        badgeClass: "bg-purple-500/10 text-purple-400 border-purple-500/25 hover:bg-purple-500/20 dark:text-purple-300 light:bg-purple-50 light:text-purple-800 light:border-purple-200",
+        dotClass: "bg-purple-600 dark:bg-purple-400 shadow-[0_0_8px_#c084fc]",
+        badgeClass: "bg-purple-50 text-purple-800 border-purple-300 hover:bg-purple-100 dark:bg-purple-500/10 dark:text-purple-300 dark:border-purple-500/25 dark:hover:bg-purple-500/20",
         borderGlow: "from-purple-400 via-indigo-400 to-purple-500",
       };
     }
     return {
-      dotClass: "bg-amber-400 shadow-[0_0_8px_#fbbf24]",
-      badgeClass: "bg-amber-500/10 text-amber-400 border-amber-500/25 hover:bg-amber-500/20 dark:text-amber-300 light:bg-amber-50 light:text-amber-800 light:border-amber-200",
+      dotClass: "bg-amber-600 dark:bg-amber-400 shadow-[0_0_8px_#fbbf24]",
+      badgeClass: "bg-amber-50 text-amber-800 border-amber-300 hover:bg-amber-100 dark:bg-amber-500/10 dark:text-amber-300 dark:border-amber-500/25 dark:hover:bg-amber-500/20",
       borderGlow: "from-amber-400 via-yellow-400 to-amber-500",
     };
   };
