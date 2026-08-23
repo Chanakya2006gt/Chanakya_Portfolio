@@ -51,14 +51,14 @@ export function ContactCards() {
             className="group block"
           >
             <Card
-              className={`p-5 transition-all duration-300 ${item.color} ${
+              className={`card-specular p-5 transition-all duration-300 ${item.color} ${
                 item.highlight
-                  ? "border-sage/30 bg-gradient-to-b from-card to-sage/5"
+                  ? "border-sage/40 bg-gradient-to-b from-card via-card to-sage/5 shadow-[inset_0_1px_0_0_rgba(163,194,171,0.25)]"
                   : ""
               }`}
             >
               <div className="flex items-center justify-between">
-                <div className={`flex size-10 items-center justify-center rounded-xl bg-secondary ${item.iconColor} group-hover:scale-110 transition-transform duration-200`}>
+                <div className={`flex size-10 items-center justify-center rounded-xl bg-secondary/80 border border-border/50 ${item.iconColor} group-hover:scale-110 transition-transform duration-200 shadow-sm`}>
                   <Icon className="size-5" />
                 </div>
                 <ExternalLink className="size-4 text-muted-foreground opacity-0 transition-opacity group-hover:opacity-100" />
@@ -67,7 +67,7 @@ export function ContactCards() {
                 <h4 className="font-medium text-foreground group-hover:text-sage transition-colors">
                   {item.title}
                 </h4>
-                <p className="mt-1 truncate text-xs text-muted-foreground">
+                <p className="mt-1 truncate text-xs text-muted-foreground font-mono">
                   {item.handle}
                 </p>
               </div>

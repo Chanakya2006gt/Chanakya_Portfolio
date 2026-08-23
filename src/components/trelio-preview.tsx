@@ -1,57 +1,112 @@
+import { useState } from "react";
+import { CheckCircle2, Clock, Lock, ShieldCheck, Database, Zap } from "lucide-react";
+
 export function TrelioPreview() {
+  const [activeStage, setActiveStage] = useState(1);
+
+  const stages = [
+    {
+      id: 0,
+      title: "Stage 01 · Scope Lock",
+      desc: "Client requirements & milestone deliverables cryptographically locked.",
+      status: "Verified",
+      done: true,
+    },
+    {
+      id: 1,
+      title: "Stage 02 · Authorization & Escrow",
+      desc: "Payment authorized into escrow before contractor writes a single line of code.",
+      status: "Awaiting Client Auth",
+      done: false,
+      active: true,
+    },
+    {
+      id: 2,
+      title: "Stage 03 · Execution & Settlement",
+      desc: "Milestone proof verified; funds automatically settle to freelancer UPI.",
+      status: "Standby",
+      done: false,
+    },
+  ];
+
   return (
-    <div className="relative overflow-hidden rounded-xl bg-secondary p-4 outline outline-1 -outline-offset-1 outline-white/10 hover:border-sage/30 transition-colors">
+    <div className="relative overflow-hidden rounded-2xl bg-secondary/70 p-4 sm:p-5 border border-border/80 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.08)]">
       {/* Real Architecture / Constraints Proof Strip */}
-      <div className="mb-3 grid grid-cols-3 gap-2 border-b border-border/60 pb-3 text-center">
-        <div className="rounded-lg bg-card/60 px-2 py-1.5 border border-border/40">
-          <p className="text-[10px] font-mono text-muted-foreground uppercase">Schema</p>
+      <div className="mb-4 grid grid-cols-3 gap-2.5 border-b border-border/60 pb-3.5 text-center">
+        <div className="rounded-xl bg-card/80 px-2.5 py-2 border border-border/50 shadow-sm">
+          <div className="flex items-center justify-center gap-1 text-muted-foreground mb-0.5">
+            <Database className="size-3" />
+            <p className="text-[10px] font-mono uppercase tracking-wider">Schema</p>
+          </div>
           <p className="text-xs font-semibold text-foreground">38 DB Tables</p>
         </div>
-        <div className="rounded-lg bg-card/60 px-2 py-1.5 border border-border/40">
-          <p className="text-[10px] font-mono text-muted-foreground uppercase">Key Security</p>
+        <div className="rounded-xl bg-card/80 px-2.5 py-2 border border-border/50 shadow-sm">
+          <div className="flex items-center justify-center gap-1 text-indigo mb-0.5">
+            <Lock className="size-3" />
+            <p className="text-[10px] font-mono uppercase tracking-wider">Key Security</p>
+          </div>
           <p className="text-xs font-semibold text-indigo">AES-256-GCM</p>
         </div>
-        <div className="rounded-lg bg-card/60 px-2 py-1.5 border border-border/40">
-          <p className="text-[10px] font-mono text-muted-foreground uppercase">Settlement</p>
+        <div className="rounded-xl bg-card/80 px-2.5 py-2 border border-border/50 shadow-sm">
+          <div className="flex items-center justify-center gap-1 text-sage mb-0.5">
+            <Zap className="size-3" />
+            <p className="text-[10px] font-mono uppercase tracking-wider">Settlement</p>
+          </div>
           <p className="text-xs font-semibold text-sage">Direct UPI/Rzp</p>
         </div>
       </div>
 
+      {/* Interactive Authorization-Before-Execution Lifecycle Visualizer */}
       <div className="mb-3 flex items-center justify-between">
         <div className="flex items-center gap-2">
-          <span className="relative flex size-2">
-            <span className="absolute inline-flex size-full animate-ping rounded-full bg-sage opacity-75" />
-            <span className="relative inline-flex size-2 rounded-full bg-sage" />
-          </span>
-          <span className="text-xs font-medium tracking-wide text-muted-foreground">
-            Stage 02 · Design
+          <ShieldCheck className="size-4 text-sage" />
+          <span className="text-xs font-semibold tracking-wide text-foreground">
+            Authorization-Before-Execution Protocol
           </span>
         </div>
-
-        <span className="animate-pulse rounded-full bg-sage/15 px-2.5 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-sage border border-sage/30">
-          Awaiting approval
+        <span className="inline-flex items-center gap-1 rounded-full bg-sage/10 px-2.5 py-0.5 text-[10px] font-mono font-semibold uppercase tracking-wider text-sage border border-sage/30">
+          <span className="size-1.5 rounded-full bg-sage animate-pulse" />
+          Interactive Demo
         </span>
       </div>
+
       <div className="grid gap-2">
-        {["Scope locked", "Client sign-off", "Payment before execution"].map(
-          (row, i) => (
-            <div
-              key={row}
-              className="flex items-center justify-between rounded-lg bg-card px-3.5 py-2.5 transition-all hover:translate-x-1 hover:border-sage/20 border border-transparent"
+        {stages.map((stage, i) => {
+          const isSelected = activeStage === i;
+          return (
+            <button
+              key={stage.title}
+              type="button"
+              onClick={() => setActiveStage(i)}
+              className={`w-full text-left rounded-xl p-3 transition-all duration-200 border ${
+                isSelected
+                  ? "bg-card border-sage/40 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.12),0_4px_16px_rgba(0,0,0,0.3)]"
+                  : "bg-card/40 border-border/40 hover:bg-card/70 hover:border-border/70"
+              }`}
             >
-              <span className="text-xs text-foreground/90">{row}</span>
-              <span
-                className={
-                  i < 2
-                    ? "text-[10px] font-medium uppercase tracking-wider text-sage"
-                    : "text-[10px] font-medium uppercase tracking-wider text-muted-foreground animate-pulse"
-                }
-              >
-                {i < 2 ? "✓ Done" : "⏳ Hold"}
-              </span>
-            </div>
-          ),
-        )}
+              <div className="flex items-center justify-between gap-2">
+                <span className={`text-xs font-medium ${isSelected ? "text-foreground font-semibold" : "text-foreground/80"}`}>
+                  {stage.title}
+                </span>
+                <span
+                  className={`inline-flex items-center gap-1 text-[10px] font-mono uppercase tracking-wider px-2 py-0.5 rounded-md ${
+                    stage.done
+                      ? "text-sage bg-sage/10 border border-sage/20"
+                      : isSelected
+                      ? "text-amber-400 bg-amber-400/10 border border-amber-400/20 animate-pulse"
+                      : "text-muted-foreground bg-secondary"
+                  }`}
+                >
+                  {stage.done ? <CheckCircle2 className="size-3" /> : <Clock className="size-3" />}
+                  {stage.status}
+                </span>
+              </div>
+              <p className="mt-1 text-[11px] text-muted-foreground leading-relaxed">
+                {stage.desc}
+              </p>
+            </button>
+          );
+        })}
       </div>
     </div>
   );
@@ -59,9 +114,9 @@ export function TrelioPreview() {
 
 export function SidePreview({ title }: { title: string }) {
   return (
-    <div className="relative flex h-28 items-end overflow-hidden rounded-xl bg-secondary p-4 outline outline-1 -outline-offset-1 outline-white/10">
-      <div className="absolute inset-0 bg-[linear-gradient(160deg,transparent,rgba(255,255,255,0.03))]" />
-      <p className="relative font-serif text-xl text-foreground/80">{title}</p>
+    <div className="relative flex h-28 items-end overflow-hidden rounded-xl bg-secondary/80 p-4 border border-border/60 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.06)]">
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(163,194,171,0.08),transparent_70%)]" />
+      <p className="relative font-serif text-xl text-foreground/90">{title}</p>
     </div>
   );
 }

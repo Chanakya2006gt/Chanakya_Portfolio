@@ -208,6 +208,36 @@ var Building2 = createLucideIcon("building-2", [
 * This source code is licensed under the ISC license.
 * See the LICENSE file in the root directory of this source tree.
 */
+var CircleCheck = createLucideIcon("circle-check", [["circle", {
+	cx: "12",
+	cy: "12",
+	r: "10",
+	key: "1mglay"
+}], ["path", {
+	d: "m9 12 2 2 4-4",
+	key: "dzmm74"
+}]]);
+/**
+* @license lucide-react v0.510.0 - ISC
+*
+* This source code is licensed under the ISC license.
+* See the LICENSE file in the root directory of this source tree.
+*/
+var Clock = createLucideIcon("clock", [["circle", {
+	cx: "12",
+	cy: "12",
+	r: "10",
+	key: "1mglay"
+}], ["polyline", {
+	points: "12 6 12 12 16 14",
+	key: "68esgv"
+}]]);
+/**
+* @license lucide-react v0.510.0 - ISC
+*
+* This source code is licensed under the ISC license.
+* See the LICENSE file in the root directory of this source tree.
+*/
 var CodeXml = createLucideIcon("code-xml", [
 	["path", {
 		d: "m18 16 4-4-4-4",
@@ -237,6 +267,29 @@ var Compass = createLucideIcon("compass", [["path", {
 	r: "10",
 	key: "1mglay"
 }]]);
+/**
+* @license lucide-react v0.510.0 - ISC
+*
+* This source code is licensed under the ISC license.
+* See the LICENSE file in the root directory of this source tree.
+*/
+var Database = createLucideIcon("database", [
+	["ellipse", {
+		cx: "12",
+		cy: "5",
+		rx: "9",
+		ry: "3",
+		key: "msslwz"
+	}],
+	["path", {
+		d: "M3 5V19A9 3 0 0 0 21 19V5",
+		key: "1wlel7"
+	}],
+	["path", {
+		d: "M3 12A9 3 0 0 0 21 12",
+		key: "mv7ke4"
+	}]
+]);
 /**
 * @license lucide-react v0.510.0 - ISC
 *
@@ -762,5 +815,15 @@ var X = createLucideIcon("x", [["path", {
 	d: "m6 6 12 12",
 	key: "d8bk6v"
 }]]);
+/**
+* @license lucide-react v0.510.0 - ISC
+*
+* This source code is licensed under the ISC license.
+* See the LICENSE file in the root directory of this source tree.
+*/
+var Zap = createLucideIcon("zap", [["path", {
+	d: "M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z",
+	key: "1xq2db"
+}]]);
 //#endregion
-export { Award as A, Github as C, CodeXml as D, Compass as E, ArrowRight as M, ArrowLeft as N, Building2 as O, GraduationCap as S, ExternalLink as T, Mail as _, Sun as a, Linkedin as b, Send as c, RefreshCw as d, Printer as f, MapPin as g, Menu as h, Trash2 as i, ArrowUp as j, Bot as k, Save as l, Moon as m, User as n, Sparkles as o, Plus as p, TriangleAlert as r, ShieldCheck as s, X as t, RotateCw as u, LogOut as v, FileText as w, LayoutGrid as x, Lock as y };
+export { Clock as A, GraduationCap as C, Database as D, ExternalLink as E, ArrowUp as F, ArrowRight as I, ArrowLeft as L, Building2 as M, Bot as N, Compass as O, Award as P, LayoutGrid as S, FileText as T, MapPin as _, Trash2 as a, Lock as b, ShieldCheck as c, RotateCw as d, RefreshCw as f, Menu as g, Moon as h, TriangleAlert as i, CircleCheck as j, CodeXml as k, Send as l, Plus as m, X as n, Sun as o, Printer as p, User as r, Sparkles as s, Zap as t, Save as u, Mail as v, Github as w, Linkedin as x, LogOut as y };

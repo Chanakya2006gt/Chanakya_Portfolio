@@ -5,7 +5,7 @@ import { u as require_react } from "../_libs/@floating-ui/react-dom+[...].mjs";
 import { f as createRouter, g as createRootRoute, h as createFileRoute, l as Scripts, m as lazyRouteComponent, p as Outlet, u as HeadContent, v as useRouter } from "../_libs/@tanstack/react-router+[...].mjs";
 import { s as require_jsx_runtime } from "../_libs/@radix-ui/react-collection+[...].mjs";
 import { n as TSS_SERVER_FUNCTION, r as getServerFnById, t as createServerFn } from "./ssr.mjs";
-import { E as Compass, N as ArrowLeft, r as TriangleAlert, u as RotateCw } from "../_libs/lucide-react.mjs";
+import { L as ArrowLeft, O as Compass, d as RotateCw, i as TriangleAlert } from "../_libs/lucide-react.mjs";
 import { a as record, i as object, n as literal, o as string, r as number, s as union, t as array } from "../_libs/zod.mjs";
 import { n as Portal, r as Provider, t as Content2 } from "../_libs/@radix-ui/react-tooltip+[...].mjs";
 import { n as clsx } from "../_libs/class-variance-authority+clsx.mjs";
@@ -14,7 +14,7 @@ import { t as Toaster } from "../_libs/sonner.mjs";
 import crypto from "node:crypto";
 import path from "node:path";
 import fs from "node:fs";
-//#region node_modules/.nitro/vite/services/ssr/assets/router-BKKZzfKp.js
+//#region node_modules/.nitro/vite/services/ssr/assets/router-Bd-CIfh1.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 function AppErrorComponent({ error }) {
@@ -334,7 +334,7 @@ var TooltipContent = import_react.forwardRef(({ className, sideOffset = 6, ...pr
 	...props
 }) }));
 TooltipContent.displayName = Content2.displayName;
-var styles_default = "/assets/styles-COVJU4yQ.css";
+var styles_default = "/assets/styles-CCPA2LtA.css";
 var APP_NAME = "Nagulagam Chanakya — Full-Stack Developer & SaaS Founder";
 var APP_DESC = "Official portfolio of Nagulagam Chanakya — Full-Stack Developer & Founder of Trelio. Specializing in React, Node.js, TypeScript, PostgreSQL, and applied software security.";
 var SITE_URL = "https://chanakya-portfolio-orcin.vercel.app";
@@ -479,17 +479,20 @@ var Route$12 = createRootRoute({
 	component: () => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("html", {
 		lang: "en",
 		className: "dark antialiased",
-		children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("head", { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(HeadContent, {}) }), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("body", { children: [
-			/* @__PURE__ */ (0, import_jsx_runtime.jsx)(PreviewHostBridge, {}),
-			/* @__PURE__ */ (0, import_jsx_runtime.jsxs)(TooltipProvider, {
-				delayDuration: 200,
-				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Outlet, {}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Toaster, {
-					position: "bottom-right",
-					theme: "dark"
-				})]
-			}),
-			/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Scripts, {})
-		] })]
+		children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("head", { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(HeadContent, {}) }), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("body", {
+			className: "bg-noise min-h-screen",
+			children: [
+				/* @__PURE__ */ (0, import_jsx_runtime.jsx)(PreviewHostBridge, {}),
+				/* @__PURE__ */ (0, import_jsx_runtime.jsxs)(TooltipProvider, {
+					delayDuration: 200,
+					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Outlet, {}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Toaster, {
+						position: "bottom-right",
+						theme: "dark"
+					})]
+				}),
+				/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Scripts, {})
+			]
+		})]
 	})
 });
 var createSsrRpc = (functionId) => {
@@ -505,14 +508,14 @@ var createSsrRpc = (functionId) => {
 	});
 };
 var fetchContent = createServerFn({ method: "GET" }).handler(createSsrRpc("2b99909e19342163fb9618a3b1f343b57fe68205625d940d83a174e978667293"));
-var $$splitComponentImporter$2 = () => import("./routes-C1s3e5H-.mjs");
+var $$splitComponentImporter$2 = () => import("./routes-CCbamERg.mjs");
 var Route$11 = createFileRoute("/")({
 	loader: () => fetchContent(),
 	component: lazyRouteComponent($$splitComponentImporter$2, "component")
 });
-var $$splitComponentImporter$1 = () => import("./admin-NPERbr1f.mjs");
+var $$splitComponentImporter$1 = () => import("./admin-Cdru_K4k.mjs");
 var Route$10 = createFileRoute("/admin/")({ component: lazyRouteComponent($$splitComponentImporter$1, "component") });
-var $$splitComponentImporter = () => import("./login-CqXY8bFx.mjs");
+var $$splitComponentImporter = () => import("./login-BKq2--bD.mjs");
 var Route$9 = createFileRoute("/admin/login")({ component: lazyRouteComponent($$splitComponentImporter, "component") });
 var envCache = null;
 var lastCacheTime = 0;

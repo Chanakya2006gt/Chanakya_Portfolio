@@ -2,14 +2,14 @@ import { i as __toESM } from "../_runtime.mjs";
 import { c as sideProjects$1, l as skills$1, o as businesses$1, s as navLinks } from "./content.server-bgipnv65.mjs";
 import { u as require_react } from "../_libs/@floating-ui/react-dom+[...].mjs";
 import { s as require_jsx_runtime } from "../_libs/@radix-ui/react-collection+[...].mjs";
-import { A as Award, C as Github, D as CodeXml, M as ArrowRight, O as Building2, S as GraduationCap, T as ExternalLink, _ as Mail, a as Sun, b as Linkedin, c as Send, d as RefreshCw, f as Printer, g as MapPin, h as Menu, j as ArrowUp, k as Bot, m as Moon, n as User, s as ShieldCheck, t as X, w as FileText } from "../_libs/lucide-react.mjs";
+import { A as Clock, C as GraduationCap, D as Database, E as ExternalLink, F as ArrowUp, I as ArrowRight, M as Building2, N as Bot, P as Award, T as FileText, _ as MapPin, b as Lock, c as ShieldCheck, f as RefreshCw, g as Menu, h as Moon, j as CircleCheck, k as CodeXml, l as Send, n as X, o as Sun, p as Printer, r as User, t as Zap, v as Mail, w as Github, x as Linkedin } from "../_libs/lucide-react.mjs";
 import { a as DialogOverlay$1, c as DialogTrigger$1, i as DialogDescription$1, n as DialogClose, o as DialogPortal$1, r as DialogContent$1, s as DialogTitle$1, t as Dialog$1 } from "../_libs/@radix-ui/react-dialog+[...].mjs";
 import { n as toast } from "../_libs/sonner.mjs";
-import { n as Route$11, r as cn } from "./router-BKKZzfKp.mjs";
-import { a as CardFooter, c as Input, i as CardDescription, l as Label, n as Card, o as CardHeader, r as CardContent, s as CardTitle, t as Button } from "./card-BA43pQ7C.mjs";
-import { a as TabsTrigger, i as TabsList, n as Tabs, o as Textarea, r as TabsContent, t as Badge } from "./badge-BYl3ihb3.mjs";
+import { n as Route$11, r as cn } from "./router-Bd-CIfh1.mjs";
+import { a as CardFooter, c as Input, i as CardDescription, l as Label, n as Card, o as CardHeader, r as CardContent, s as CardTitle, t as Button } from "./card-Dqn-P-14.mjs";
+import { a as TabsTrigger, i as TabsList, n as Tabs, o as Textarea, r as TabsContent, t as Badge } from "./badge-BSyuRHcH.mjs";
 import { t as Root } from "../_libs/radix-ui__react-separator.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/routes-C1s3e5H-.js
+//#region node_modules/.nitro/vite/services/ssr/assets/routes-CCbamERg.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 var Separator = import_react.forwardRef(({ className, orientation = "horizontal", decorative = true, ...props }, ref) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Root, {
@@ -59,37 +59,47 @@ var DialogDescription = import_react.forwardRef(({ className, ...props }, ref) =
 }));
 DialogDescription.displayName = DialogDescription$1.displayName;
 function TrelioPreview() {
+	const [activeStage, setActiveStage] = (0, import_react.useState)(1);
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-		className: "relative overflow-hidden rounded-xl bg-secondary p-4 outline outline-1 -outline-offset-1 outline-white/10 hover:border-sage/30 transition-colors",
+		className: "relative overflow-hidden rounded-2xl bg-secondary/70 p-4 sm:p-5 border border-border/80 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.08)]",
 		children: [
 			/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-				className: "mb-3 grid grid-cols-3 gap-2 border-b border-border/60 pb-3 text-center",
+				className: "mb-4 grid grid-cols-3 gap-2.5 border-b border-border/60 pb-3.5 text-center",
 				children: [
 					/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-						className: "rounded-lg bg-card/60 px-2 py-1.5 border border-border/40",
-						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
-							className: "text-[10px] font-mono text-muted-foreground uppercase",
-							children: "Schema"
+						className: "rounded-xl bg-card/80 px-2.5 py-2 border border-border/50 shadow-sm",
+						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+							className: "flex items-center justify-center gap-1 text-muted-foreground mb-0.5",
+							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Database, { className: "size-3" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+								className: "text-[10px] font-mono uppercase tracking-wider",
+								children: "Schema"
+							})]
 						}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
 							className: "text-xs font-semibold text-foreground",
 							children: "38 DB Tables"
 						})]
 					}),
 					/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-						className: "rounded-lg bg-card/60 px-2 py-1.5 border border-border/40",
-						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
-							className: "text-[10px] font-mono text-muted-foreground uppercase",
-							children: "Key Security"
+						className: "rounded-xl bg-card/80 px-2.5 py-2 border border-border/50 shadow-sm",
+						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+							className: "flex items-center justify-center gap-1 text-indigo mb-0.5",
+							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Lock, { className: "size-3" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+								className: "text-[10px] font-mono uppercase tracking-wider",
+								children: "Key Security"
+							})]
 						}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
 							className: "text-xs font-semibold text-indigo",
 							children: "AES-256-GCM"
 						})]
 					}),
 					/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-						className: "rounded-lg bg-card/60 px-2 py-1.5 border border-border/40",
-						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
-							className: "text-[10px] font-mono text-muted-foreground uppercase",
-							children: "Settlement"
+						className: "rounded-xl bg-card/80 px-2.5 py-2 border border-border/50 shadow-sm",
+						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+							className: "flex items-center justify-center gap-1 text-sage mb-0.5",
+							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Zap, { className: "size-3" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+								className: "text-[10px] font-mono uppercase tracking-wider",
+								children: "Settlement"
+							})]
 						}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
 							className: "text-xs font-semibold text-sage",
 							children: "Direct UPI/Rzp"
@@ -101,43 +111,70 @@ function TrelioPreview() {
 				className: "mb-3 flex items-center justify-between",
 				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 					className: "flex items-center gap-2",
-					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("span", {
-						className: "relative flex size-2",
-						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: "absolute inline-flex size-full animate-ping rounded-full bg-sage opacity-75" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: "relative inline-flex size-2 rounded-full bg-sage" })]
-					}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-						className: "text-xs font-medium tracking-wide text-muted-foreground",
-						children: "Stage 02 · Design"
+					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(ShieldCheck, { className: "size-4 text-sage" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+						className: "text-xs font-semibold tracking-wide text-foreground",
+						children: "Authorization-Before-Execution Protocol"
 					})]
-				}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-					className: "animate-pulse rounded-full bg-sage/15 px-2.5 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-sage border border-sage/30",
-					children: "Awaiting approval"
+				}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("span", {
+					className: "inline-flex items-center gap-1 rounded-full bg-sage/10 px-2.5 py-0.5 text-[10px] font-mono font-semibold uppercase tracking-wider text-sage border border-sage/30",
+					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: "size-1.5 rounded-full bg-sage animate-pulse" }), "Interactive Demo"]
 				})]
 			}),
 			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
 				className: "grid gap-2",
 				children: [
-					"Scope locked",
-					"Client sign-off",
-					"Payment before execution"
-				].map((row, i) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-					className: "flex items-center justify-between rounded-lg bg-card px-3.5 py-2.5 transition-all hover:translate-x-1 hover:border-sage/20 border border-transparent",
-					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-						className: "text-xs text-foreground/90",
-						children: row
-					}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-						className: i < 2 ? "text-[10px] font-medium uppercase tracking-wider text-sage" : "text-[10px] font-medium uppercase tracking-wider text-muted-foreground animate-pulse",
-						children: i < 2 ? "✓ Done" : "⏳ Hold"
-					})]
-				}, row))
+					{
+						id: 0,
+						title: "Stage 01 · Scope Lock",
+						desc: "Client requirements & milestone deliverables cryptographically locked.",
+						status: "Verified",
+						done: true
+					},
+					{
+						id: 1,
+						title: "Stage 02 · Authorization & Escrow",
+						desc: "Payment authorized into escrow before contractor writes a single line of code.",
+						status: "Awaiting Client Auth",
+						done: false,
+						active: true
+					},
+					{
+						id: 2,
+						title: "Stage 03 · Execution & Settlement",
+						desc: "Milestone proof verified; funds automatically settle to freelancer UPI.",
+						status: "Standby",
+						done: false
+					}
+				].map((stage, i) => {
+					const isSelected = activeStage === i;
+					return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("button", {
+						type: "button",
+						onClick: () => setActiveStage(i),
+						className: `w-full text-left rounded-xl p-3 transition-all duration-200 border ${isSelected ? "bg-card border-sage/40 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.12),0_4px_16px_rgba(0,0,0,0.3)]" : "bg-card/40 border-border/40 hover:bg-card/70 hover:border-border/70"}`,
+						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+							className: "flex items-center justify-between gap-2",
+							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+								className: `text-xs font-medium ${isSelected ? "text-foreground font-semibold" : "text-foreground/80"}`,
+								children: stage.title
+							}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("span", {
+								className: `inline-flex items-center gap-1 text-[10px] font-mono uppercase tracking-wider px-2 py-0.5 rounded-md ${stage.done ? "text-sage bg-sage/10 border border-sage/20" : isSelected ? "text-amber-400 bg-amber-400/10 border border-amber-400/20 animate-pulse" : "text-muted-foreground bg-secondary"}`,
+								children: [stage.done ? /* @__PURE__ */ (0, import_jsx_runtime.jsx)(CircleCheck, { className: "size-3" }) : /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Clock, { className: "size-3" }), stage.status]
+							})]
+						}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+							className: "mt-1 text-[11px] text-muted-foreground leading-relaxed",
+							children: stage.desc
+						})]
+					}, stage.title);
+				})
 			})
 		]
 	});
 }
 function SidePreview({ title }) {
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-		className: "relative flex h-28 items-end overflow-hidden rounded-xl bg-secondary p-4 outline outline-1 -outline-offset-1 outline-white/10",
-		children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "absolute inset-0 bg-[linear-gradient(160deg,transparent,rgba(255,255,255,0.03))]" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
-			className: "relative font-serif text-xl text-foreground/80",
+		className: "relative flex h-28 items-end overflow-hidden rounded-xl bg-secondary/80 p-4 border border-border/60 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.06)]",
+		children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(163,194,171,0.08),transparent_70%)]" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+			className: "relative font-serif text-xl text-foreground/90",
 			children: title
 		})]
 	});
@@ -670,7 +707,7 @@ var sections = [
 function LeftRailNav({ resume }) {
 	const activeSection = useActiveSection(sections);
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("aside", {
-		className: "fixed left-6 top-1/2 -translate-y-1/2 z-40 hidden xl:flex flex-col items-center gap-4 rounded-full border border-border/70 bg-card/70 p-3 backdrop-blur-md shadow-[0_0_20px_rgba(0,0,0,0.5)]",
+		className: "fixed left-6 top-1/2 -translate-y-1/2 z-40 hidden xl:flex flex-col items-center gap-4 rounded-full border border-white/10 bg-card/80 p-3 backdrop-blur-xl shadow-[inset_0_1px_0_0_rgba(255,255,255,0.15),0_12px_40px_rgba(0,0,0,0.6)]",
 		children: [
 			/* @__PURE__ */ (0, import_jsx_runtime.jsx)(ThemeToggle, {}),
 			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "my-0.5 h-6 w-px bg-border/60" }),
@@ -703,7 +740,7 @@ function LeftRailNav({ resume }) {
 					href: `#${id}`,
 					className: "group relative flex items-center justify-center",
 					title: id.charAt(0).toUpperCase() + id.slice(1),
-					children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: `block rounded-full transition-all duration-300 ${activeSection === id ? "size-2.5 bg-sage shadow-[0_0_8px_#a3c2ab]" : "size-1.5 bg-muted-foreground/40 hover:bg-muted-foreground"}` })
+					children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: `block rounded-full transition-all duration-300 ${activeSection === id ? "size-2.5 bg-emerald-400 shadow-[0_0_10px_#34d399]" : "size-1.5 bg-muted-foreground/40 hover:bg-muted-foreground"}` })
 				}, id))
 			}),
 			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "my-1 h-8 w-px bg-border/60" }),
@@ -868,11 +905,11 @@ function ContactCards() {
 				rel: item.href.startsWith("http") ? "noopener noreferrer" : void 0,
 				className: "group block",
 				children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Card, {
-					className: `p-5 transition-all duration-300 ${item.color} ${item.highlight ? "border-sage/30 bg-gradient-to-b from-card to-sage/5" : ""}`,
+					className: `card-specular p-5 transition-all duration-300 ${item.color} ${item.highlight ? "border-sage/40 bg-gradient-to-b from-card via-card to-sage/5 shadow-[inset_0_1px_0_0_rgba(163,194,171,0.25)]" : ""}`,
 					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 						className: "flex items-center justify-between",
 						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-							className: `flex size-10 items-center justify-center rounded-xl bg-secondary ${item.iconColor} group-hover:scale-110 transition-transform duration-200`,
+							className: `flex size-10 items-center justify-center rounded-xl bg-secondary/80 border border-border/50 ${item.iconColor} group-hover:scale-110 transition-transform duration-200 shadow-sm`,
 							children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Icon, { className: "size-5" })
 						}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(ExternalLink, { className: "size-4 text-muted-foreground opacity-0 transition-opacity group-hover:opacity-100" })]
 					}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
@@ -881,7 +918,7 @@ function ContactCards() {
 							className: "font-medium text-foreground group-hover:text-sage transition-colors",
 							children: item.title
 						}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
-							className: "mt-1 truncate text-xs text-muted-foreground",
+							className: "mt-1 truncate text-xs text-muted-foreground font-mono",
 							children: item.handle
 						})]
 					})]
@@ -1624,17 +1661,17 @@ function Hero({ tagline, availabilityStatus, liveCount, email, pdfUrl, summary, 
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("section", {
 		className: "relative mx-auto flex min-h-[90vh] max-w-5xl flex-col justify-center px-5 py-24 overflow-hidden",
 		children: [
-			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-gradient-to-tr from-sage/10 via-indigo/5 to-transparent blur-[100px] rounded-full pointer-events-none -z-10" }),
+			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[650px] h-[450px] bg-gradient-to-tr from-sage/12 via-indigo/6 to-transparent blur-[120px] rounded-full pointer-events-none -z-10" }),
 			/* @__PURE__ */ (0, import_jsx_runtime.jsx)(ParticleField, {}),
 			/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 				className: "relative z-10 grid gap-12 lg:grid-cols-[1.3fr_1fr] lg:items-center",
 				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [
 					/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-						className: "rise-in inline-flex items-center gap-2 rounded-full border border-sage/30 bg-sage/10 px-3.5 py-1 text-xs font-semibold tracking-wide text-sage",
-						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: "size-1.5 rounded-full bg-sage animate-pulse" }), "Full-Stack Builder · SaaS Founder"]
+						className: "rise-in inline-flex items-center gap-2 rounded-full border border-sage/30 bg-sage/10 px-3.5 py-1 text-xs font-semibold tracking-wide text-sage shadow-[0_0_15px_rgba(163,194,171,0.18)] backdrop-blur-sm",
+						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: "size-2 rounded-full bg-emerald-400 shadow-[0_0_8px_#34d399] animate-pulse" }), "Full-Stack Builder · SaaS Founder"]
 					}),
 					/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h1", {
-						className: "rise-in rise-in-1 mt-5 font-serif text-5xl leading-[1.05] tracking-tight sm:text-6xl md:text-7xl bg-gradient-to-b from-foreground via-foreground to-foreground/80 bg-clip-text text-transparent",
+						className: "rise-in rise-in-1 mt-5 font-serif text-5xl leading-[1.05] tracking-[-0.03em] sm:text-6xl md:text-7xl bg-gradient-to-b from-foreground via-foreground to-foreground/75 bg-clip-text text-transparent",
 						children: "Nagulagam Chanakya"
 					}),
 					/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
@@ -1667,7 +1704,7 @@ function Hero({ tagline, availabilityStatus, liveCount, email, pdfUrl, summary, 
 								trigger: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Button, {
 									size: "lg",
 									variant: "outline",
-									className: "rounded-xl border-border/80 hover:border-sage hover:text-sage font-medium",
+									className: "rounded-xl border-border/80 hover:border-sage hover:text-sage font-medium shadow-sm",
 									children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(FileText, { className: "mr-1.5 size-4" }), "View Resume"]
 								})
 							}),
@@ -1675,7 +1712,7 @@ function Hero({ tagline, availabilityStatus, liveCount, email, pdfUrl, summary, 
 								asChild: true,
 								size: "lg",
 								variant: "outline",
-								className: "rounded-xl border-border/80 hover:bg-secondary",
+								className: "rounded-xl border-border/80 hover:bg-secondary shadow-sm",
 								children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("a", {
 									href: "#contact",
 									children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Mail, {}), "Contact"]
@@ -1688,14 +1725,14 @@ function Hero({ tagline, availabilityStatus, liveCount, email, pdfUrl, summary, 
 					children: [
 						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "absolute inset-0 bg-gradient-to-tr from-sage/20 via-indigo/10 to-transparent blur-3xl rounded-full" }),
 						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-							className: "relative flex size-64 items-center justify-center rounded-full border border-sage/30 bg-gradient-to-b from-card/80 via-card/40 to-transparent p-6 shadow-[0_0_60px_rgba(143,168,150,0.18),0_0_100px_rgba(129,140,248,0.08)] backdrop-blur-sm",
+							className: "relative flex size-64 items-center justify-center rounded-full border border-white/10 bg-gradient-to-b from-card/90 via-card/50 to-transparent p-6 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.15),0_0_60px_rgba(143,168,150,0.2),0_0_100px_rgba(129,140,248,0.1)] backdrop-blur-md",
 							children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(CompanionSvg, {
 								state: "idle",
 								size: 160
 							})
 						}),
 						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
-							className: "mt-4 font-mono text-xs text-muted-foreground tracking-wider uppercase bg-secondary/60 border border-border/60 px-3 py-1 rounded-full",
+							className: "mt-4 font-mono text-xs text-muted-foreground tracking-wider uppercase bg-secondary/80 border border-border/70 px-3.5 py-1 rounded-full shadow-sm backdrop-blur-sm",
 							children: "< Full-Stack Developer />"
 						})
 					]
@@ -1769,9 +1806,9 @@ function About({ email, pdfUrl, summary, education, skillsList, resume }) {
 								className: "grid grid-cols-2 gap-3 pt-2 sm:grid-cols-3",
 								children: [
 									/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-										className: "rounded-xl border border-border/70 bg-card/60 p-3",
+										className: "rounded-xl border border-border/70 bg-card/80 p-3 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.08)]",
 										children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
-											className: "text-[11px] font-mono text-muted-foreground uppercase",
+											className: "text-[11px] font-mono text-muted-foreground uppercase tracking-wider",
 											children: "Location"
 										}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
 											className: "text-xs font-semibold text-foreground",
@@ -1779,9 +1816,9 @@ function About({ email, pdfUrl, summary, education, skillsList, resume }) {
 										})]
 									}),
 									/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-										className: "rounded-xl border border-border/70 bg-card/60 p-3",
+										className: "rounded-xl border border-border/70 bg-card/80 p-3 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.08)]",
 										children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
-											className: "text-[11px] font-mono text-muted-foreground uppercase",
+											className: "text-[11px] font-mono text-muted-foreground uppercase tracking-wider",
 											children: "Degree & Focus"
 										}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
 											className: "text-xs font-semibold text-foreground",
@@ -1789,9 +1826,9 @@ function About({ email, pdfUrl, summary, education, skillsList, resume }) {
 										})]
 									}),
 									/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-										className: "col-span-2 rounded-xl border border-border/70 bg-card/60 p-3 sm:col-span-1",
+										className: "col-span-2 rounded-xl border border-border/70 bg-card/80 p-3 sm:col-span-1 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.08)]",
 										children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
-											className: "text-[11px] font-mono text-muted-foreground uppercase",
+											className: "text-[11px] font-mono text-muted-foreground uppercase tracking-wider",
 											children: "Core Focus"
 										}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
 											className: "text-xs font-semibold text-sage",
@@ -1811,18 +1848,18 @@ function About({ email, pdfUrl, summary, education, skillsList, resume }) {
 									skillsList,
 									trigger: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Button, {
 										variant: "outline",
-										className: "gap-2 border-border/80 hover:border-sage hover:text-sage text-foreground rounded-xl",
+										className: "gap-2 border-border/80 hover:border-sage hover:text-sage text-foreground rounded-xl shadow-sm",
 										children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(FileText, { className: "size-4" }), "Read Full Resume & Credentials →"]
 									})
 								})
 							})
 						]
 					}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-						className: "card-hover-elevate rounded-2xl border border-border/70 bg-card p-6 shadow-sm space-y-4",
+						className: "card-specular rounded-2xl p-6 space-y-4",
 						children: [
 							/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 								className: "flex items-center gap-2",
-								children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: "size-2 rounded-full bg-sage" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("h4", {
+								children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: "size-2 rounded-full bg-emerald-400 shadow-[0_0_8px_#34d399]" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("h4", {
 									className: "text-sm font-semibold text-foreground",
 									children: "How I work"
 								})]
@@ -1833,7 +1870,7 @@ function About({ email, pdfUrl, summary, education, skillsList, resume }) {
 							/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Separator, { className: "bg-border/60" }),
 							/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 								className: "flex items-center gap-2",
-								children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: "size-2 rounded-full bg-indigo" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("h4", {
+								children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: "size-2 rounded-full bg-indigo shadow-[0_0_8px_#818cf8]" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("h4", {
 									className: "text-sm font-semibold text-foreground",
 									children: "What I am doing now"
 								})]
@@ -1852,7 +1889,7 @@ function BusinessCard({ items }) {
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
 		className: "grid gap-6",
 		children: items.map((project) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Card, {
-			className: "relative overflow-hidden p-2 card-hover-elevate border-border/70 bg-gradient-to-br from-card via-card to-sage/5 rounded-2xl",
+			className: "card-specular relative overflow-hidden p-2 rounded-2xl",
 			children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "absolute top-0 inset-x-0 h-0.5 bg-gradient-to-r from-transparent via-sage/60 to-transparent" }), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 				className: "p-4 sm:p-6",
 				children: [
@@ -1860,7 +1897,7 @@ function BusinessCard({ items }) {
 						href: project.liveUrl,
 						target: "_blank",
 						rel: "noopener noreferrer",
-						className: "mb-4 inline-flex items-center gap-1.5 rounded-full border border-sage/30 bg-sage/10 px-3 py-1 text-xs font-semibold text-sage hover:bg-sage/20 transition-all",
+						className: "mb-4 inline-flex items-center gap-1.5 rounded-full border border-sage/30 bg-sage/10 px-3.5 py-1 text-xs font-semibold text-sage hover:bg-sage/20 transition-all shadow-[0_0_12px_rgba(163,194,171,0.15)]",
 						children: [
 							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: "size-1.5 rounded-full bg-sage animate-ping" }),
 							/* @__PURE__ */ (0, import_jsx_runtime.jsx)(ExternalLink, { className: "size-3" }),
@@ -1938,7 +1975,7 @@ function Projects({ businessesList, sideProjectsList, email, pdfUrl, summary, ed
 				className: "mt-10",
 				children: [
 					/* @__PURE__ */ (0, import_jsx_runtime.jsxs)(TabsList, {
-						className: "bg-secondary/80 p-1 border border-border/70 flex-wrap h-auto rounded-xl",
+						className: "bg-secondary/80 p-1 border border-border/70 flex-wrap h-auto rounded-xl shadow-inner",
 						children: [
 							/* @__PURE__ */ (0, import_jsx_runtime.jsx)(TabsTrigger, {
 								value: "businesses",
@@ -1966,12 +2003,12 @@ function Projects({ businessesList, sideProjectsList, email, pdfUrl, summary, ed
 						value: "contracts",
 						className: "mt-6",
 						children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Card, {
-							className: "border-border/70 bg-gradient-to-br from-card via-card to-secondary/30 p-8 sm:p-12 text-center rounded-2xl relative overflow-hidden",
+							className: "card-specular p-8 sm:p-12 text-center rounded-2xl relative overflow-hidden",
 							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "absolute top-0 inset-x-0 h-0.5 bg-gradient-to-r from-transparent via-sage/40 to-transparent" }), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 								className: "mx-auto max-w-md space-y-3",
 								children: [
 									/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-										className: "mx-auto flex size-12 items-center justify-center rounded-full bg-sage/10 text-sage border border-sage/20",
+										className: "mx-auto flex size-12 items-center justify-center rounded-full bg-sage/10 text-sage border border-sage/20 shadow-[0_0_12px_rgba(163,194,171,0.2)]",
 										children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(FileText, { className: "size-5" })
 									}),
 									/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h3", {
@@ -2003,7 +2040,7 @@ function Projects({ businessesList, sideProjectsList, email, pdfUrl, summary, ed
 											trigger: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Button, {
 												size: "sm",
 												variant: "outline",
-												className: "rounded-xl border-border/80 hover:text-sage",
+												className: "rounded-xl border-border/80 hover:text-sage shadow-sm",
 												children: "View Credentials"
 											})
 										})]
@@ -2018,7 +2055,7 @@ function Projects({ businessesList, sideProjectsList, email, pdfUrl, summary, ed
 						children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 							className: "grid gap-4 sm:grid-cols-2 lg:grid-cols-3",
 							children: [sideProjectsList.map((project) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Card, {
-								className: "relative overflow-hidden p-2 card-hover-elevate border-border/70 bg-card hover:border-sage/40 flex flex-col justify-between rounded-2xl",
+								className: "card-specular relative overflow-hidden p-2 flex flex-col justify-between rounded-2xl",
 								children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "absolute top-0 inset-x-0 h-0.5 bg-gradient-to-r from-transparent via-border to-transparent" }), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 									className: "p-4",
 									children: [
@@ -2054,9 +2091,9 @@ function Projects({ businessesList, sideProjectsList, email, pdfUrl, summary, ed
 									]
 								})]
 							}, project.id)), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Card, {
-								className: "relative overflow-hidden p-6 border-dashed border-border/70 bg-secondary/20 flex flex-col items-center justify-center text-center min-h-[220px] rounded-2xl",
+								className: "relative overflow-hidden p-6 border-dashed border-border/80 bg-secondary/30 flex flex-col items-center justify-center text-center min-h-[220px] rounded-2xl shadow-[inset_0_1px_0_0_rgba(255,255,255,0.04)]",
 								children: [
-									/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: "size-2 rounded-full bg-sage/60 animate-pulse mb-3" }),
+									/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: "size-2 rounded-full bg-emerald-400 shadow-[0_0_8px_#34d399] animate-pulse mb-3" }),
 									/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
 										className: "font-serif text-lg text-foreground/90",
 										children: "More Experiments in Progress"
@@ -2101,7 +2138,7 @@ function Skills({ skillsList }) {
 				/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
 					className: "mt-10 grid gap-6 sm:grid-cols-2",
 					children: Object.entries(skillsList).map(([category, items]) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-						className: "card-hover-elevate rounded-2xl border border-border/70 bg-card p-6 shadow-sm",
+						className: "card-specular rounded-2xl p-6",
 						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 							className: "flex items-center justify-between mb-4",
 							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h3", {
@@ -2115,7 +2152,7 @@ function Skills({ skillsList }) {
 							className: "flex flex-wrap gap-2",
 							children: items.map((skill) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Badge, {
 								variant: "secondary",
-								className: "rounded-lg px-3 py-1.5 text-xs font-medium tracking-normal transition-all hover:bg-sage/20 hover:text-sage hover:scale-105 cursor-default",
+								className: "rounded-lg px-3 py-1.5 text-xs font-medium tracking-normal transition-all hover:bg-sage/20 hover:text-sage hover:scale-105 cursor-default border border-border/40",
 								children: skill
 							}, skill))
 						})]

@@ -39,35 +39,35 @@
 
 :root {
   --radius: 0.75rem;
-  --background: #0c0e0d;
+  --background: #08090b;
   --foreground: #f2f4f1;
-  --card: #151917;
+  --card: #11141a;
   --card-foreground: #f2f4f1;
-  --popover: #181d1a;
+  --popover: #151921;
   --popover-foreground: #f2f4f1;
-  --primary: #ececec;
-  --primary-foreground: #0c0e0d;
-  --secondary: #1c211e;
+  --primary: #f2f4f1;
+  --primary-foreground: #08090b;
+  --secondary: #151921;
   --secondary-foreground: #e4e7e3;
-  --muted: #1c211e;
-  --muted-foreground: #9aa39c;
-  --accent: #262c28;
+  --muted: #151921;
+  --muted-foreground: #9ca69e;
+  --accent: #1c222c;
   --accent-foreground: #f2f4f1;
   --destructive: #ef4444;
-  --border: rgba(230, 240, 233, 0.12);
-  --input: rgba(230, 240, 233, 0.15);
+  --border: rgba(255, 255, 255, 0.08);
+  --input: rgba(255, 255, 255, 0.12);
   --ring: #a3c2ab;
   --sage: #a3c2ab;
-  --sage-foreground: #0c0e0d;
+  --sage-foreground: #08090b;
   --indigo: #818cf8;
   --indigo-muted: rgba(129, 140, 248, 0.14);
   --indigo-foreground: #ffffff;
-  --shadow-border: 0 0 0 1px rgba(255, 255, 255, 0.06), inset 0 1px 0 rgba(255, 255, 255, 0.05);
-  --shadow-border-hover: 0 0 0 1px rgba(163, 194, 171, 0.25), 0 12px 40px rgba(0, 0, 0, 0.5);
+  --shadow-border: 0 0 0 1px rgba(255, 255, 255, 0.07), inset 0 1px 0 rgba(255, 255, 255, 0.10);
+  --shadow-border-hover: 0 0 0 1px rgba(163, 194, 171, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.18), 0 16px 48px rgba(0, 0, 0, 0.6);
 }
 
 .light {
-  --background: #f5f3ef;
+  --background: #f7f6f2;
   --foreground: #141715;
   --card: #ffffff;
   --card-foreground: #141715;
@@ -75,23 +75,23 @@
   --popover-foreground: #141715;
   --primary: #121814;
   --primary-foreground: #ffffff;
-  --secondary: #ede9e3;
+  --secondary: #ece8e1;
   --secondary-foreground: #1c2620;
-  --muted: #ede9e3;
-  --muted-foreground: #6b7280;
-  --accent: #e5dfd7;
+  --muted: #ece8e1;
+  --muted-foreground: #636b65;
+  --accent: #e2ddd5;
   --accent-foreground: #141715;
   --destructive: #ef4444;
-  --border: rgba(20, 23, 21, 0.12);
-  --input: rgba(20, 23, 21, 0.15);
-  --ring: #447758;
-  --sage: #447758;
+  --border: rgba(20, 23, 21, 0.10);
+  --input: rgba(20, 23, 21, 0.14);
+  --ring: #356a49;
+  --sage: #356a49;
   --sage-foreground: #ffffff;
-  --indigo: #6366f1;
-  --indigo-muted: rgba(99, 102, 241, 0.12);
+  --indigo: #4f46e5;
+  --indigo-muted: rgba(79, 70, 229, 0.10);
   --indigo-foreground: #ffffff;
-  --shadow-border: 0 1px 3px rgba(0, 0, 0, 0.06), 0 0 0 1px rgba(20, 23, 21, 0.08);
-  --shadow-border-hover: 0 8px 24px rgba(0, 0, 0, 0.10), 0 0 0 1px rgba(20, 23, 21, 0.16);
+  --shadow-border: 0 1px 3px rgba(0, 0, 0, 0.05), 0 0 0 1px rgba(20, 23, 21, 0.08);
+  --shadow-border-hover: 0 10px 30px rgba(0, 0, 0, 0.08), 0 0 0 1px rgba(53, 106, 73, 0.3);
 }
 
 @layer base {
@@ -110,7 +110,9 @@
   }
 
   html.dark body {
-    background-image: radial-gradient(70% 45% at 50% -8%, rgba(163, 194, 171, 0.10), transparent 60%);
+    background-image: 
+      radial-gradient(85% 55% at 50% -12%, rgba(163, 194, 171, 0.14), transparent 70%),
+      radial-gradient(60% 40% at 85% 45%, rgba(129, 140, 248, 0.05), transparent 60%);
     background-repeat: no-repeat;
     background-attachment: fixed;
   }
@@ -277,5 +279,38 @@
 
 .nav-dot-active {
   box-shadow: 0 0 10px rgba(143, 168, 150, 0.7);
+}
+
+/* Linear / Apple style Directional Specular Card */
+.card-specular {
+  background-color: var(--card);
+  border: 1px solid var(--border);
+  box-shadow: 
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.10),
+    0 1px 2px 0 rgba(0, 0, 0, 0.4),
+    0 8px 28px -6px rgba(0, 0, 0, 0.5);
+  transition: transform 220ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 220ms cubic-bezier(0.16, 1, 0.3, 1), border-color 220ms ease;
+}
+
+.card-specular:hover {
+  transform: translateY(-3px);
+  border-color: rgba(163, 194, 171, 0.35);
+  box-shadow: 
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.18),
+    0 0 20px -4px rgba(163, 194, 171, 0.15),
+    0 16px 48px -8px rgba(0, 0, 0, 0.7);
+}
+
+.light .card-specular {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05), 0 0 0 1px rgba(20, 23, 21, 0.08);
+}
+
+.light .card-specular:hover {
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08), 0 0 0 1px rgba(53, 106, 73, 0.3);
+}
+
+/* Subtle cinematic noise overlay */
+.bg-noise {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.025'/%3E%3C/svg%3E");
 }
 

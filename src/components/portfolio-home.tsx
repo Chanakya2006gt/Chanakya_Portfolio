@@ -58,16 +58,16 @@ function Hero({ tagline, availabilityStatus, liveCount, email, pdfUrl, summary, 
   return (
     <section className="relative mx-auto flex min-h-[90vh] max-w-5xl flex-col justify-center px-5 py-24 overflow-hidden">
       {/* Background ambient dual-accent glow */}
-      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-gradient-to-tr from-sage/10 via-indigo/5 to-transparent blur-[100px] rounded-full pointer-events-none -z-10" />
+      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[650px] h-[450px] bg-gradient-to-tr from-sage/12 via-indigo/6 to-transparent blur-[120px] rounded-full pointer-events-none -z-10" />
       <ParticleField />
       
       <div className="relative z-10 grid gap-12 lg:grid-cols-[1.3fr_1fr] lg:items-center">
         <div>
-          <div className="rise-in inline-flex items-center gap-2 rounded-full border border-sage/30 bg-sage/10 px-3.5 py-1 text-xs font-semibold tracking-wide text-sage">
-            <span className="size-1.5 rounded-full bg-sage animate-pulse" />
+          <div className="rise-in inline-flex items-center gap-2 rounded-full border border-sage/30 bg-sage/10 px-3.5 py-1 text-xs font-semibold tracking-wide text-sage shadow-[0_0_15px_rgba(163,194,171,0.18)] backdrop-blur-sm">
+            <span className="size-2 rounded-full bg-emerald-400 shadow-[0_0_8px_#34d399] animate-pulse" />
             Full-Stack Builder · SaaS Founder
           </div>
-          <h1 className="rise-in rise-in-1 mt-5 font-serif text-5xl leading-[1.05] tracking-tight sm:text-6xl md:text-7xl bg-gradient-to-b from-foreground via-foreground to-foreground/80 bg-clip-text text-transparent">
+          <h1 className="rise-in rise-in-1 mt-5 font-serif text-5xl leading-[1.05] tracking-[-0.03em] sm:text-6xl md:text-7xl bg-gradient-to-b from-foreground via-foreground to-foreground/75 bg-clip-text text-transparent">
             Nagulagam Chanakya
           </h1>
           <p className="rise-in rise-in-2 mt-6 max-w-xl text-lg sm:text-xl leading-relaxed text-muted-foreground">
@@ -91,13 +91,13 @@ function Hero({ tagline, availabilityStatus, liveCount, email, pdfUrl, summary, 
               education={education}
               skillsList={skillsList}
               trigger={
-                <Button size="lg" variant="outline" className="rounded-xl border-border/80 hover:border-sage hover:text-sage font-medium">
+                <Button size="lg" variant="outline" className="rounded-xl border-border/80 hover:border-sage hover:text-sage font-medium shadow-sm">
                   <FileText className="mr-1.5 size-4" />
                   View Resume
                 </Button>
               }
             />
-            <Button asChild size="lg" variant="outline" className="rounded-xl border-border/80 hover:bg-secondary">
+            <Button asChild size="lg" variant="outline" className="rounded-xl border-border/80 hover:bg-secondary shadow-sm">
               <a href="#contact">
                 <Mail />
                 Contact
@@ -106,13 +106,13 @@ function Hero({ tagline, availabilityStatus, liveCount, email, pdfUrl, summary, 
           </div>
         </div>
 
-        {/* Hero right visual hero mascot frame with multi-layered glow */}
+        {/* Hero right visual hero mascot frame with multi-layered specular glow */}
         <div className="hidden lg:flex flex-col items-center justify-center relative">
           <div className="absolute inset-0 bg-gradient-to-tr from-sage/20 via-indigo/10 to-transparent blur-3xl rounded-full" />
-          <div className="relative flex size-64 items-center justify-center rounded-full border border-sage/30 bg-gradient-to-b from-card/80 via-card/40 to-transparent p-6 shadow-[0_0_60px_rgba(143,168,150,0.18),0_0_100px_rgba(129,140,248,0.08)] backdrop-blur-sm">
+          <div className="relative flex size-64 items-center justify-center rounded-full border border-white/10 bg-gradient-to-b from-card/90 via-card/50 to-transparent p-6 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.15),0_0_60px_rgba(143,168,150,0.2),0_0_100px_rgba(129,140,248,0.1)] backdrop-blur-md">
             <CompanionSvg state="idle" size={160} />
           </div>
-          <p className="mt-4 font-mono text-xs text-muted-foreground tracking-wider uppercase bg-secondary/60 border border-border/60 px-3 py-1 rounded-full">
+          <p className="mt-4 font-mono text-xs text-muted-foreground tracking-wider uppercase bg-secondary/80 border border-border/70 px-3.5 py-1 rounded-full shadow-sm backdrop-blur-sm">
             &lt; Full-Stack Developer /&gt;
           </p>
         </div>
@@ -163,16 +163,16 @@ function About({ email, pdfUrl, summary, education, skillsList, resume }: AboutP
 
             {/* Quick-scan highlights pill strip for recruiters & visitors */}
             <div className="grid grid-cols-2 gap-3 pt-2 sm:grid-cols-3">
-              <div className="rounded-xl border border-border/70 bg-card/60 p-3">
-                <p className="text-[11px] font-mono text-muted-foreground uppercase">Location</p>
+              <div className="rounded-xl border border-border/70 bg-card/80 p-3 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.08)]">
+                <p className="text-[11px] font-mono text-muted-foreground uppercase tracking-wider">Location</p>
                 <p className="text-xs font-semibold text-foreground">Warangal, India</p>
               </div>
-              <div className="rounded-xl border border-border/70 bg-card/60 p-3">
-                <p className="text-[11px] font-mono text-muted-foreground uppercase">Degree & Focus</p>
+              <div className="rounded-xl border border-border/70 bg-card/80 p-3 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.08)]">
+                <p className="text-[11px] font-mono text-muted-foreground uppercase tracking-wider">Degree & Focus</p>
                 <p className="text-xs font-semibold text-foreground">B.Tech CSE '28</p>
               </div>
-              <div className="col-span-2 rounded-xl border border-border/70 bg-card/60 p-3 sm:col-span-1">
-                <p className="text-[11px] font-mono text-muted-foreground uppercase">Core Focus</p>
+              <div className="col-span-2 rounded-xl border border-border/70 bg-card/80 p-3 sm:col-span-1 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.08)]">
+                <p className="text-[11px] font-mono text-muted-foreground uppercase tracking-wider">Core Focus</p>
                 <p className="text-xs font-semibold text-sage">SaaS & Security</p>
               </div>
             </div>
@@ -186,7 +186,7 @@ function About({ email, pdfUrl, summary, education, skillsList, resume }: AboutP
                 education={education}
                 skillsList={skillsList}
                 trigger={
-                  <Button variant="outline" className="gap-2 border-border/80 hover:border-sage hover:text-sage text-foreground rounded-xl">
+                  <Button variant="outline" className="gap-2 border-border/80 hover:border-sage hover:text-sage text-foreground rounded-xl shadow-sm">
                     <FileText className="size-4" />
                     Read Full Resume & Credentials →
                   </Button>
@@ -194,10 +194,10 @@ function About({ email, pdfUrl, summary, education, skillsList, resume }: AboutP
               />
             </div>
           </div>
-          <div className="card-hover-elevate rounded-2xl border border-border/70 bg-card p-6 shadow-sm space-y-4">
+          <div className="card-specular rounded-2xl p-6 space-y-4">
             <div>
               <div className="flex items-center gap-2">
-                <span className="size-2 rounded-full bg-sage" />
+                <span className="size-2 rounded-full bg-emerald-400 shadow-[0_0_8px_#34d399]" />
                 <h4 className="text-sm font-semibold text-foreground">How I work</h4>
               </div>
               <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
@@ -208,7 +208,7 @@ function About({ email, pdfUrl, summary, education, skillsList, resume }: AboutP
             <Separator className="bg-border/60" />
             <div>
               <div className="flex items-center gap-2">
-                <span className="size-2 rounded-full bg-indigo" />
+                <span className="size-2 rounded-full bg-indigo shadow-[0_0_8px_#818cf8]" />
                 <h4 className="text-sm font-semibold text-foreground">What I am doing now</h4>
               </div>
               <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
@@ -231,7 +231,7 @@ function BusinessCard({ items }: BusinessCardProps) {
   return (
     <div className="grid gap-6">
       {items.map((project) => (
-        <Card key={project.id} className="relative overflow-hidden p-2 card-hover-elevate border-border/70 bg-gradient-to-br from-card via-card to-sage/5 rounded-2xl">
+        <Card key={project.id} className="card-specular relative overflow-hidden p-2 rounded-2xl">
           {/* Top subtle gradient accent line */}
           <div className="absolute top-0 inset-x-0 h-0.5 bg-gradient-to-r from-transparent via-sage/60 to-transparent" />
           <div className="p-4 sm:p-6">
@@ -240,7 +240,7 @@ function BusinessCard({ items }: BusinessCardProps) {
                 href={project.liveUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mb-4 inline-flex items-center gap-1.5 rounded-full border border-sage/30 bg-sage/10 px-3 py-1 text-xs font-semibold text-sage hover:bg-sage/20 transition-all"
+                className="mb-4 inline-flex items-center gap-1.5 rounded-full border border-sage/30 bg-sage/10 px-3.5 py-1 text-xs font-semibold text-sage hover:bg-sage/20 transition-all shadow-[0_0_12px_rgba(163,194,171,0.15)]"
               >
                 <span className="size-1.5 rounded-full bg-sage animate-ping" />
                 <ExternalLink className="size-3" />
@@ -313,7 +313,7 @@ function Projects({ businessesList, sideProjectsList, email, pdfUrl, summary, ed
       </p>
 
       <Tabs defaultValue="businesses" className="mt-10">
-        <TabsList className="bg-secondary/80 p-1 border border-border/70 flex-wrap h-auto rounded-xl">
+        <TabsList className="bg-secondary/80 p-1 border border-border/70 flex-wrap h-auto rounded-xl shadow-inner">
           <TabsTrigger value="businesses" className="data-[state=active]:bg-card data-[state=active]:shadow-sm text-xs sm:text-sm rounded-lg">
             Flagship Products
           </TabsTrigger>
@@ -332,10 +332,10 @@ function Projects({ businessesList, sideProjectsList, email, pdfUrl, summary, ed
 
         {/* Tab 2: Freelance Work */}
         <TabsContent value="contracts" className="mt-6">
-          <Card className="border-border/70 bg-gradient-to-br from-card via-card to-secondary/30 p-8 sm:p-12 text-center rounded-2xl relative overflow-hidden">
+          <Card className="card-specular p-8 sm:p-12 text-center rounded-2xl relative overflow-hidden">
             <div className="absolute top-0 inset-x-0 h-0.5 bg-gradient-to-r from-transparent via-sage/40 to-transparent" />
             <div className="mx-auto max-w-md space-y-3">
-              <div className="mx-auto flex size-12 items-center justify-center rounded-full bg-sage/10 text-sage border border-sage/20">
+              <div className="mx-auto flex size-12 items-center justify-center rounded-full bg-sage/10 text-sage border border-sage/20 shadow-[0_0_12px_rgba(163,194,171,0.2)]">
                 <FileText className="size-5" />
               </div>
               <h3 className="font-serif text-2xl text-foreground">Available for Client & Freelance Engagements</h3>
@@ -354,7 +354,7 @@ function Projects({ businessesList, sideProjectsList, email, pdfUrl, summary, ed
                   education={education}
                   skillsList={skillsList}
                   trigger={
-                    <Button size="sm" variant="outline" className="rounded-xl border-border/80 hover:text-sage">
+                    <Button size="sm" variant="outline" className="rounded-xl border-border/80 hover:text-sage shadow-sm">
                       View Credentials
                     </Button>
                   }
@@ -370,7 +370,7 @@ function Projects({ businessesList, sideProjectsList, email, pdfUrl, summary, ed
             {sideProjectsList.map((project) => (
               <Card
                 key={project.id}
-                className="relative overflow-hidden p-2 card-hover-elevate border-border/70 bg-card hover:border-sage/40 flex flex-col justify-between rounded-2xl"
+                className="card-specular relative overflow-hidden p-2 flex flex-col justify-between rounded-2xl"
               >
                 <div className="absolute top-0 inset-x-0 h-0.5 bg-gradient-to-r from-transparent via-border to-transparent" />
                 <div className="p-4">
@@ -404,8 +404,8 @@ function Projects({ businessesList, sideProjectsList, email, pdfUrl, summary, ed
             ))}
 
             {/* Polite 'More to come' card */}
-            <Card className="relative overflow-hidden p-6 border-dashed border-border/70 bg-secondary/20 flex flex-col items-center justify-center text-center min-h-[220px] rounded-2xl">
-              <span className="size-2 rounded-full bg-sage/60 animate-pulse mb-3" />
+            <Card className="relative overflow-hidden p-6 border-dashed border-border/80 bg-secondary/30 flex flex-col items-center justify-center text-center min-h-[220px] rounded-2xl shadow-[inset_0_1px_0_0_rgba(255,255,255,0.04)]">
+              <span className="size-2 rounded-full bg-emerald-400 shadow-[0_0_8px_#34d399] animate-pulse mb-3" />
               <p className="font-serif text-lg text-foreground/90">More Experiments in Progress</p>
               <p className="text-xs text-muted-foreground mt-2 max-w-xs leading-relaxed">
                 Active labs in security primitives, database tooling, and open-source packages will be posted here as they are published.
@@ -446,7 +446,7 @@ function Skills({ skillsList }: SkillsProps) {
         </p>
         <div className="mt-10 grid gap-6 sm:grid-cols-2">
           {Object.entries(skillsList).map(([category, items]) => (
-            <div key={category} className="card-hover-elevate rounded-2xl border border-border/70 bg-card p-6 shadow-sm">
+            <div key={category} className="card-specular rounded-2xl p-6">
               <div className="flex items-center justify-between mb-4">
                 <h3 className="text-xs font-bold tracking-wider text-foreground/90 uppercase">{category}</h3>
                 <span className="text-[11px] font-mono text-muted-foreground">{items.length} skills</span>
@@ -456,7 +456,7 @@ function Skills({ skillsList }: SkillsProps) {
                   <Badge
                     key={skill}
                     variant="secondary"
-                    className="rounded-lg px-3 py-1.5 text-xs font-medium tracking-normal transition-all hover:bg-sage/20 hover:text-sage hover:scale-105 cursor-default"
+                    className="rounded-lg px-3 py-1.5 text-xs font-medium tracking-normal transition-all hover:bg-sage/20 hover:text-sage hover:scale-105 cursor-default border border-border/40"
                   >
                     {skill}
                   </Badge>

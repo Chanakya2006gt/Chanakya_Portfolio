@@ -97,7 +97,7 @@ export const Route = createRootRoute({
       <head>
         <HeadContent />
       </head>
-      <body>
+      <body className="bg-noise min-h-screen">
         <PreviewHostBridge />
         <TooltipProvider delayDuration={200}>
           <Outlet />
