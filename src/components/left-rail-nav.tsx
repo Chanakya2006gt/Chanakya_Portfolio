@@ -10,7 +10,7 @@ export function LeftRailNav({ resume }: { resume?: ResumeContent }) {
   const activeSection = useActiveSection(sections);
 
   return (
-    <aside className="fixed left-6 top-1/2 -translate-y-1/2 z-40 hidden xl:flex flex-col items-center gap-4 rounded-full border border-white/10 bg-card/80 p-3 backdrop-blur-xl shadow-[inset_0_1px_0_0_rgba(255,255,255,0.15),0_12px_40px_rgba(0,0,0,0.6)]">
+    <aside className="fixed left-6 top-1/2 -translate-y-1/2 z-40 hidden xl:flex flex-col items-center gap-4 rounded-full border border-border/80 bg-card/80 p-3 backdrop-blur-xl shadow-[inset_0_1px_0_0_rgba(255,255,255,0.15),0_12px_40px_rgba(0,0,0,0.2)]">
       <ThemeToggle />
       <div className="my-0.5 h-6 w-px bg-border/60" />
 
@@ -53,7 +53,7 @@ export function LeftRailNav({ resume }: { resume?: ResumeContent }) {
             <span
               className={`block rounded-full transition-all duration-300 ${
                 activeSection === id
-                  ? "size-2.5 bg-emerald-400 shadow-[0_0_10px_#34d399]"
+                  ? "size-2.5 nav-dot-active bg-sage"
                   : "size-1.5 bg-muted-foreground/40 hover:bg-muted-foreground"
               }`}
             />

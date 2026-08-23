@@ -109,7 +109,7 @@ function Hero({ tagline, availabilityStatus, liveCount, email, pdfUrl, summary, 
         {/* Hero right visual hero mascot frame with multi-layered specular glow */}
         <div className="hidden lg:flex flex-col items-center justify-center relative">
           <div className="absolute inset-0 bg-gradient-to-tr from-sage/20 via-indigo/10 to-transparent blur-3xl rounded-full" />
-          <div className="relative flex size-64 items-center justify-center rounded-full border border-white/10 bg-gradient-to-b from-card/90 via-card/50 to-transparent p-6 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.15),0_0_60px_rgba(143,168,150,0.2),0_0_100px_rgba(129,140,248,0.1)] backdrop-blur-md">
+          <div className="relative flex size-64 items-center justify-center rounded-full border border-border/80 bg-gradient-to-b from-card/90 via-card/50 to-transparent p-6 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.15),0_0_60px_rgba(143,168,150,0.2),0_0_100px_rgba(129,140,248,0.1)] backdrop-blur-md">
             <CompanionSvg state="idle" size={160} />
           </div>
           <p className="mt-4 font-mono text-xs text-muted-foreground tracking-wider uppercase bg-secondary/80 border border-border/70 px-3.5 py-1 rounded-full shadow-sm backdrop-blur-sm">

@@ -14,7 +14,7 @@ import { t as Toaster } from "../_libs/sonner.mjs";
 import crypto from "node:crypto";
 import path from "node:path";
 import fs from "node:fs";
-//#region node_modules/.nitro/vite/services/ssr/assets/router-Bd-CIfh1.js
+//#region node_modules/.nitro/vite/services/ssr/assets/router-CNLLxjXy.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 function AppErrorComponent({ error }) {
@@ -334,7 +334,7 @@ var TooltipContent = import_react.forwardRef(({ className, sideOffset = 6, ...pr
 	...props
 }) }));
 TooltipContent.displayName = Content2.displayName;
-var styles_default = "/assets/styles-CCPA2LtA.css";
+var styles_default = "/assets/styles-DrhrOOQs.css";
 var APP_NAME = "Nagulagam Chanakya — Full-Stack Developer & SaaS Founder";
 var APP_DESC = "Official portfolio of Nagulagam Chanakya — Full-Stack Developer & Founder of Trelio. Specializing in React, Node.js, TypeScript, PostgreSQL, and applied software security.";
 var SITE_URL = "https://chanakya-portfolio-orcin.vercel.app";
@@ -508,14 +508,14 @@ var createSsrRpc = (functionId) => {
 	});
 };
 var fetchContent = createServerFn({ method: "GET" }).handler(createSsrRpc("2b99909e19342163fb9618a3b1f343b57fe68205625d940d83a174e978667293"));
-var $$splitComponentImporter$2 = () => import("./routes-CCbamERg.mjs");
+var $$splitComponentImporter$2 = () => import("./routes-DKiwHAPE.mjs");
 var Route$11 = createFileRoute("/")({
 	loader: () => fetchContent(),
 	component: lazyRouteComponent($$splitComponentImporter$2, "component")
 });
-var $$splitComponentImporter$1 = () => import("./admin-Cdru_K4k.mjs");
+var $$splitComponentImporter$1 = () => import("./admin-Dv_gz3cJ.mjs");
 var Route$10 = createFileRoute("/admin/")({ component: lazyRouteComponent($$splitComponentImporter$1, "component") });
-var $$splitComponentImporter = () => import("./login-BKq2--bD.mjs");
+var $$splitComponentImporter = () => import("./login-VC934ilC.mjs");
 var Route$9 = createFileRoute("/admin/login")({ component: lazyRouteComponent($$splitComponentImporter, "component") });
 var envCache = null;
 var lastCacheTime = 0;

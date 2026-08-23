@@ -5,11 +5,11 @@ import { s as require_jsx_runtime } from "../_libs/@radix-ui/react-collection+[.
 import { A as Clock, C as GraduationCap, D as Database, E as ExternalLink, F as ArrowUp, I as ArrowRight, M as Building2, N as Bot, P as Award, T as FileText, _ as MapPin, b as Lock, c as ShieldCheck, f as RefreshCw, g as Menu, h as Moon, j as CircleCheck, k as CodeXml, l as Send, n as X, o as Sun, p as Printer, r as User, t as Zap, v as Mail, w as Github, x as Linkedin } from "../_libs/lucide-react.mjs";
 import { a as DialogOverlay$1, c as DialogTrigger$1, i as DialogDescription$1, n as DialogClose, o as DialogPortal$1, r as DialogContent$1, s as DialogTitle$1, t as Dialog$1 } from "../_libs/@radix-ui/react-dialog+[...].mjs";
 import { n as toast } from "../_libs/sonner.mjs";
-import { n as Route$11, r as cn } from "./router-Bd-CIfh1.mjs";
-import { a as CardFooter, c as Input, i as CardDescription, l as Label, n as Card, o as CardHeader, r as CardContent, s as CardTitle, t as Button } from "./card-Dqn-P-14.mjs";
-import { a as TabsTrigger, i as TabsList, n as Tabs, o as Textarea, r as TabsContent, t as Badge } from "./badge-BSyuRHcH.mjs";
+import { n as Route$11, r as cn } from "./router-CNLLxjXy.mjs";
+import { a as CardFooter, c as Input, i as CardDescription, l as Label, n as Card, o as CardHeader, r as CardContent, s as CardTitle, t as Button } from "./card-M2TlVOf2.mjs";
+import { a as TabsTrigger, i as TabsList, n as Tabs, o as Textarea, r as TabsContent, t as Badge } from "./badge-CGwGFXMj.mjs";
 import { t as Root } from "../_libs/radix-ui__react-separator.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/routes-CCbamERg.js
+//#region node_modules/.nitro/vite/services/ssr/assets/routes-DKiwHAPE.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 var Separator = import_react.forwardRef(({ className, orientation = "horizontal", decorative = true, ...props }, ref) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Root, {
@@ -707,7 +707,7 @@ var sections = [
 function LeftRailNav({ resume }) {
 	const activeSection = useActiveSection(sections);
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("aside", {
-		className: "fixed left-6 top-1/2 -translate-y-1/2 z-40 hidden xl:flex flex-col items-center gap-4 rounded-full border border-white/10 bg-card/80 p-3 backdrop-blur-xl shadow-[inset_0_1px_0_0_rgba(255,255,255,0.15),0_12px_40px_rgba(0,0,0,0.6)]",
+		className: "fixed left-6 top-1/2 -translate-y-1/2 z-40 hidden xl:flex flex-col items-center gap-4 rounded-full border border-border/80 bg-card/80 p-3 backdrop-blur-xl shadow-[inset_0_1px_0_0_rgba(255,255,255,0.15),0_12px_40px_rgba(0,0,0,0.2)]",
 		children: [
 			/* @__PURE__ */ (0, import_jsx_runtime.jsx)(ThemeToggle, {}),
 			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "my-0.5 h-6 w-px bg-border/60" }),
@@ -740,7 +740,7 @@ function LeftRailNav({ resume }) {
 					href: `#${id}`,
 					className: "group relative flex items-center justify-center",
 					title: id.charAt(0).toUpperCase() + id.slice(1),
-					children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: `block rounded-full transition-all duration-300 ${activeSection === id ? "size-2.5 bg-emerald-400 shadow-[0_0_10px_#34d399]" : "size-1.5 bg-muted-foreground/40 hover:bg-muted-foreground"}` })
+					children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: `block rounded-full transition-all duration-300 ${activeSection === id ? "size-2.5 nav-dot-active bg-sage" : "size-1.5 bg-muted-foreground/40 hover:bg-muted-foreground"}` })
 				}, id))
 			}),
 			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "my-1 h-8 w-px bg-border/60" }),
@@ -1725,7 +1725,7 @@ function Hero({ tagline, availabilityStatus, liveCount, email, pdfUrl, summary, 
 					children: [
 						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "absolute inset-0 bg-gradient-to-tr from-sage/20 via-indigo/10 to-transparent blur-3xl rounded-full" }),
 						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-							className: "relative flex size-64 items-center justify-center rounded-full border border-white/10 bg-gradient-to-b from-card/90 via-card/50 to-transparent p-6 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.15),0_0_60px_rgba(143,168,150,0.2),0_0_100px_rgba(129,140,248,0.1)] backdrop-blur-md",
+							className: "relative flex size-64 items-center justify-center rounded-full border border-border/80 bg-gradient-to-b from-card/90 via-card/50 to-transparent p-6 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.15),0_0_60px_rgba(143,168,150,0.2),0_0_100px_rgba(129,140,248,0.1)] backdrop-blur-md",
 							children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(CompanionSvg, {
 								state: "idle",
 								size: 160
