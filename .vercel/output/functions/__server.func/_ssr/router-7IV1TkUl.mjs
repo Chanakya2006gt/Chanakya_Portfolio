@@ -14,7 +14,7 @@ import { t as Toaster } from "../_libs/sonner.mjs";
 import crypto from "node:crypto";
 import path from "node:path";
 import fs from "node:fs";
-//#region node_modules/.nitro/vite/services/ssr/assets/router-CnqhwvfO.js
+//#region node_modules/.nitro/vite/services/ssr/assets/router-7IV1TkUl.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 function AppErrorComponent({ error }) {
@@ -505,14 +505,14 @@ var createSsrRpc = (functionId) => {
 	});
 };
 var fetchContent = createServerFn({ method: "GET" }).handler(createSsrRpc("2b99909e19342163fb9618a3b1f343b57fe68205625d940d83a174e978667293"));
-var $$splitComponentImporter$2 = () => import("./routes-C0CC0JKI.mjs");
+var $$splitComponentImporter$2 = () => import("./routes-DZdGRoJp.mjs");
 var Route$11 = createFileRoute("/")({
 	loader: () => fetchContent(),
 	component: lazyRouteComponent($$splitComponentImporter$2, "component")
 });
-var $$splitComponentImporter$1 = () => import("./admin-CLM48bCx.mjs");
+var $$splitComponentImporter$1 = () => import("./admin-opzbMMNs.mjs");
 var Route$10 = createFileRoute("/admin/")({ component: lazyRouteComponent($$splitComponentImporter$1, "component") });
-var $$splitComponentImporter = () => import("./login-cHVhNItp.mjs");
+var $$splitComponentImporter = () => import("./login-CcvpxBzX.mjs");
 var Route$9 = createFileRoute("/admin/login")({ component: lazyRouteComponent($$splitComponentImporter, "component") });
 var envCache = null;
 var lastCacheTime = 0;
@@ -1109,6 +1109,38 @@ function extractJsonObject(raw) {
 		return null;
 	}
 }
+/**
+* Redact details that must never reach the public site, even if the model
+* returns them despite the prompt. Applied to every extracted string.
+* Order matters: score/contact patterns first, separator cleanup last.
+*/
+var SENSITIVE_PATTERNS = [
+	/\s*[|·,;—–-]?\s*\b(?:C?GPA|SGPA)\b\s*[:=-]?\s*\d+(?:\.\d+)?\s*(?:\/\s*\d+(?:\.\d+)?)?/gi,
+	/\s*[|·,;—–-]?\s*\b(?:percentage|marks|aggregate)\b\s*[:=-]?\s*\d+(?:\.\d+)?\s*%?/gi,
+	/\s*[|·,;—–-]\s*\d{1,3}(?:\.\d+)?\s*%/g,
+	/\s*[|·,;—–-]?\s*(?:\+\d{1,3}[\s-]?)?(?:\(\d{2,5}\)[\s-]?)?\d{3,5}[\s-]?\d{3,5}(?:[\s-]?\d{2,5})?(?=\s|$|[|·,;])/g,
+	/\s*[|·,;—–-]?\s*\b(?:D\.?O\.?B\.?|date of birth|age)\b\s*[:=-]?\s*[^|·,;\n]{0,24}/gi
+];
+function redactSensitive(value) {
+	let out = value;
+	for (const pattern of SENSITIVE_PATTERNS) out = out.replace(pattern, "");
+	return out.replace(/\s{2,}/g, " ").replace(/\s*([|·])\s*([|·])\s*/g, " $1 ").replace(/^[\s|·,;—–-]+/, "").replace(/[\s|·,;—–-]+$/, "").trim();
+}
+/** Deep-clean every string in the extracted object, preserving its shape. */
+function scrubDeep(input) {
+	if (typeof input === "string") return redactSensitive(input);
+	if (Array.isArray(input)) return input.map((item) => scrubDeep(item)).filter((item) => !(typeof item === "string" && item.trim() === ""));
+	if (input && typeof input === "object") {
+		const out = {};
+		for (const [key, val] of Object.entries(input)) {
+			const cleaned = scrubDeep(val);
+			if (typeof cleaned === "string" && cleaned.trim() === "") continue;
+			out[key] = cleaned;
+		}
+		return out;
+	}
+	return input;
+}
 var RESUME_INSTRUCTION = `You are extracting structured data from a résumé PDF.
 
 Return ONLY a raw JSON object. No markdown, no code fences, no commentary.
@@ -1130,7 +1162,20 @@ Use exactly this shape (omit any key you cannot find in the document — do NOT 
 Rules:
 - Copy wording from the document. Do not invent, embellish, or add achievements that are not written there.
 - "sections" is for jobs/projects. Each bullet should start with a short bold-able label followed by a colon, e.g. "Multi-Tenant Architecture: Designed ...". Preserve the document's own phrasing.
-- If the document is unreadable or is not a résumé, return {}.`;
+- If the document is unreadable or is not a résumé, return {}.
+
+NEVER include the following, even if they appear in the document. This content is
+published on a public website, so omit them entirely rather than paraphrasing:
+- Academic scores of any kind: CGPA, SGPA, GPA, percentage, marks, grades, class rank.
+- Phone numbers, WhatsApp numbers, or any other contact number.
+- Postal/street address, house number, or PIN/ZIP code. A city and state are fine.
+- Date of birth, age, gender, nationality, marital status, or father's/mother's name.
+- Government or institutional ID numbers (Aadhaar, PAN, passport, roll number, registration number).
+- Salary, CTC, or compensation figures.
+- Any third party's personal contact details (e.g. a referee's phone or email).
+
+If a line contains both allowed and disallowed content, return only the allowed part.
+For example "B.Tech CSE, 2028 | CGPA: 8.1/10" must be returned as "B.Tech CSE, 2028".`;
 var Route = createFileRoute("/api/admin/resume")({ server: { handlers: { POST: async ({ request }) => {
 	if (!verifySignedSessionToken(getAdminSessionCookie(request) || void 0)) return new Response(JSON.stringify({ error: "Unauthorized" }), {
 		status: 401,
@@ -1138,7 +1183,7 @@ var Route = createFileRoute("/api/admin/resume")({ server: { handlers: { POST: a
 	});
 	if (!(request.headers.get("content-type") || "").includes("application/pdf")) return new Response(JSON.stringify({ error: "Please choose a PDF file." }), {
 		status: 415,
-		headers: { "Content-Type": "application/pdf" }
+		headers: { "Content-Type": "application/json" }
 	});
 	const bytes = await request.arrayBuffer();
 	if (bytes.byteLength === 0) return new Response(JSON.stringify({ error: "Empty file." }), {
@@ -1230,7 +1275,7 @@ var Route = createFileRoute("/api/admin/resume")({ server: { handlers: { POST: a
 			}), { headers: { "Content-Type": "application/json" } });
 		}
 		const current = await readContent();
-		const ai = result.data;
+		const ai = scrubDeep(result.data);
 		const mergedResume = {
 			...current.resume ?? {},
 			...Object.fromEntries(Object.entries(ai).filter(([key, value]) => key !== "skills" && value !== void 0 && value !== null && !(typeof value === "string" && value.trim() === "") && !(Array.isArray(value) && value.length === 0)))

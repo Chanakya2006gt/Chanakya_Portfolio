@@ -18,6 +18,56 @@ function extractJsonObject(raw: string): unknown {
   }
 }
 
+/**
+ * Redact details that must never reach the public site, even if the model
+ * returns them despite the prompt. Applied to every extracted string.
+ * Order matters: score/contact patterns first, separator cleanup last.
+ */
+const SENSITIVE_PATTERNS: RegExp[] = [
+  // CGPA / SGPA / GPA with an optional "/10" or "/4" denominator
+  /\s*[|·,;—–-]?\s*\b(?:C?GPA|SGPA)\b\s*[:=-]?\s*\d+(?:\.\d+)?\s*(?:\/\s*\d+(?:\.\d+)?)?/gi,
+  // "Percentage: 85.5%" or "Marks: 85%"
+  /\s*[|·,;—–-]?\s*\b(?:percentage|marks|aggregate)\b\s*[:=-]?\s*\d+(?:\.\d+)?\s*%?/gi,
+  // A bare percentage directly after a comma/pipe (e.g. "B.Tech CSE, 88%")
+  /\s*[|·,;—–-]\s*\d{1,3}(?:\.\d+)?\s*%/g,
+  // Phone numbers: +91 98765 43210, (040) 1234-5678, 9876543210
+  /\s*[|·,;—–-]?\s*(?:\+\d{1,3}[\s-]?)?(?:\(\d{2,5}\)[\s-]?)?\d{3,5}[\s-]?\d{3,5}(?:[\s-]?\d{2,5})?(?=\s|$|[|·,;])/g,
+  // Date of birth / age
+  /\s*[|·,;—–-]?\s*\b(?:D\.?O\.?B\.?|date of birth|age)\b\s*[:=-]?\s*[^|·,;\n]{0,24}/gi,
+];
+
+function redactSensitive(value: string): string {
+  let out = value;
+  for (const pattern of SENSITIVE_PATTERNS) out = out.replace(pattern, "");
+  // Tidy separators/whitespace left behind by a removal.
+  return out
+    .replace(/\s{2,}/g, " ")
+    .replace(/\s*([|·])\s*([|·])\s*/g, " $1 ")
+    .replace(/^[\s|·,;—–-]+/, "")
+    .replace(/[\s|·,;—–-]+$/, "")
+    .trim();
+}
+
+/** Deep-clean every string in the extracted object, preserving its shape. */
+function scrubDeep<T>(input: T): T {
+  if (typeof input === "string") return redactSensitive(input) as unknown as T;
+  if (Array.isArray(input)) {
+    return input
+      .map((item) => scrubDeep(item))
+      .filter((item) => !(typeof item === "string" && item.trim() === "")) as unknown as T;
+  }
+  if (input && typeof input === "object") {
+    const out: Record<string, unknown> = {};
+    for (const [key, val] of Object.entries(input as Record<string, unknown>)) {
+      const cleaned = scrubDeep(val);
+      if (typeof cleaned === "string" && cleaned.trim() === "") continue; // drop emptied fields
+      out[key] = cleaned;
+    }
+    return out as unknown as T;
+  }
+  return input;
+}
+
 const RESUME_INSTRUCTION = `You are extracting structured data from a résumé PDF.
 
 Return ONLY a raw JSON object. No markdown, no code fences, no commentary.
@@ -39,7 +89,20 @@ Use exactly this shape (omit any key you cannot find in the document — do NOT 
 Rules:
 - Copy wording from the document. Do not invent, embellish, or add achievements that are not written there.
 - "sections" is for jobs/projects. Each bullet should start with a short bold-able label followed by a colon, e.g. "Multi-Tenant Architecture: Designed ...". Preserve the document's own phrasing.
-- If the document is unreadable or is not a résumé, return {}.`;
+- If the document is unreadable or is not a résumé, return {}.
+
+NEVER include the following, even if they appear in the document. This content is
+published on a public website, so omit them entirely rather than paraphrasing:
+- Academic scores of any kind: CGPA, SGPA, GPA, percentage, marks, grades, class rank.
+- Phone numbers, WhatsApp numbers, or any other contact number.
+- Postal/street address, house number, or PIN/ZIP code. A city and state are fine.
+- Date of birth, age, gender, nationality, marital status, or father's/mother's name.
+- Government or institutional ID numbers (Aadhaar, PAN, passport, roll number, registration number).
+- Salary, CTC, or compensation figures.
+- Any third party's personal contact details (e.g. a referee's phone or email).
+
+If a line contains both allowed and disallowed content, return only the allowed part.
+For example "B.Tech CSE, 2028 | CGPA: 8.1/10" must be returned as "B.Tech CSE, 2028".`;
 
 export const Route = createFileRoute("/api/admin/resume")({
   server: {
@@ -59,7 +122,7 @@ export const Route = createFileRoute("/api/admin/resume")({
         if (!contentType.includes("application/pdf")) {
           return new Response(JSON.stringify({ error: "Please choose a PDF file." }), {
             status: 415,
-            headers: { "Content-Type": "application/pdf" },
+            headers: { "Content-Type": "application/json" },
           });
         }
 
@@ -192,7 +255,8 @@ export const Route = createFileRoute("/api/admin/resume")({
           }
 
           const current = await readContent();
-          const ai = result.data; // validated ResumeContent
+          // Redact anything private BEFORE it is merged or persisted.
+          const ai = scrubDeep(result.data); // validated + sanitised ResumeContent
 
           const mergedResume = {
             ...(current.resume ?? {}),
