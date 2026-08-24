@@ -3,9 +3,9 @@
   "short_name": "Chanakya",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#0c0e0d",
-  "theme_color": "#0c0e0d",
+  "background_color": "#08090b",
+  "theme_color": "#08090b",
   "icons": [
-    { "src": "/__grok/icon-180.png", "sizes": "180x180", "type": "image/png" }
+    { "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml" }
   ]
 }

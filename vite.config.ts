@@ -1,34 +1,8 @@
-import type { Plugin } from "vite";
 import { defineConfig } from "vite";
 import { tanstackStart } from "@tanstack/react-start/plugin/vite";
 import viteReact from "@vitejs/plugin-react";
 import tailwindcss from "@tailwindcss/vite";
 import { nitro } from "nitro/vite";
-
-/**
- * Finish PGLite bootstrap during dev-server setup (before traffic). Vite awaits
- * async `configureServer` hooks. Production: `src/lib/db` kicks `ensureDbReady`
- * on import.
- */
-function pgliteBootstrapPlugin(): Plugin {
-  return {
-    name: "app-builder:pglite-bootstrap",
-    apply: "serve",
-    async configureServer(server) {
-      try {
-        const mod = (await server.ssrLoadModule("/src/lib/db.ts")) as {
-          ensureDbReady?: () => Promise<void>;
-        };
-        if (typeof mod.ensureDbReady === "function") {
-          await mod.ensureDbReady();
-        }
-      } catch (err) {
-        console.error("[app-builder] DB bootstrap failed:", err);
-        throw err;
-      }
-    },
-  };
-}
 
 // `0.0.0.0:8080` is the dev server contract — don't change host/port.
 export default defineConfig(({ command, isPreview }) => ({
@@ -44,14 +18,12 @@ export default defineConfig(({ command, isPreview }) => ({
   },
   resolve: { tsconfigPaths: true },
   plugins: [
-    pgliteBootstrapPlugin(),
     tailwindcss(),
     tanstackStart(),
     ...(command === "build" || isPreview
       ? [
           nitro({
             preset: "vercel",
-            serverDir: "./server",
           }),
         ]
       : []),
