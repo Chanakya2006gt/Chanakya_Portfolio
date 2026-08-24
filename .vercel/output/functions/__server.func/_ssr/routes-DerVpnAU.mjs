@@ -5,11 +5,11 @@ import { s as require_jsx_runtime } from "../_libs/@radix-ui/react-collection+[.
 import { A as CodeXml, C as GraduationCap, D as Database, E as ExternalLink, F as Bot, I as Award, L as ArrowUp, M as CircleCheck, N as Check, O as Copy, P as Building2, R as ArrowRight, T as FileText, _ as MapPin, b as Lock, c as ShieldCheck, f as RefreshCw, g as Menu, h as Moon, j as Clock, l as Send, n as X, o as Sun, p as Printer, r as User, t as Zap, v as Mail, w as Github, x as Linkedin } from "../_libs/lucide-react.mjs";
 import { a as DialogOverlay$1, c as DialogTrigger$1, i as DialogDescription$1, n as DialogClose, o as DialogPortal$1, r as DialogContent$1, s as DialogTitle$1, t as Dialog$1 } from "../_libs/@radix-ui/react-dialog+[...].mjs";
 import { n as toast } from "../_libs/sonner.mjs";
-import { n as Route$11, r as cn } from "./router-D2X_hFBg.mjs";
-import { a as CardFooter, c as Input, i as CardDescription, l as Label, n as Card, o as CardHeader, r as CardContent, s as CardTitle, t as Button } from "./card-C2Ln_BZY.mjs";
-import { a as TabsTrigger, i as TabsList, n as Tabs, o as Textarea, r as TabsContent, t as Badge } from "./badge-Cp44DMuL.mjs";
+import { n as Route$11, r as cn } from "./router-DzUgbXd9.mjs";
+import { a as CardFooter, c as Input, i as CardDescription, l as Label, n as Card, o as CardHeader, r as CardContent, s as CardTitle, t as Button } from "./card-ZiwVjP9O.mjs";
+import { a as TabsTrigger, i as TabsList, n as Tabs, o as Textarea, r as TabsContent, t as Badge } from "./badge-Cl2iKosd.mjs";
 import { t as Root } from "../_libs/radix-ui__react-separator.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/routes-BwDiI1U5.js
+//#region node_modules/.nitro/vite/services/ssr/assets/routes-DerVpnAU.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 var Separator = import_react.forwardRef(({ className, orientation = "horizontal", decorative = true, ...props }, ref) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Root, {
@@ -1875,15 +1875,18 @@ function Hero({ tagline, availabilityStatus, liveCount, email, pdfUrl, summary, 
 						liveCount
 					}),
 					/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-						className: "rise-in rise-in-3 mt-10 flex flex-wrap gap-3",
+						className: "rise-in rise-in-3 mt-10 flex flex-wrap items-center gap-3",
 						children: [
 							/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Button, {
 								asChild: true,
 								size: "lg",
-								className: "btn-sage-glow rounded-xl font-medium shadow-md",
+								className: "group btn-sage-glow rounded-xl font-medium shadow-md active:scale-[0.98] transition-all pl-5 pr-2.5 py-2 inline-flex items-center gap-2.5",
 								children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("a", {
 									href: "#projects",
-									children: ["View projects", /* @__PURE__ */ (0, import_jsx_runtime.jsx)(ArrowRight, {})]
+									children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { children: "View projects" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+										className: "flex size-6 items-center justify-center rounded-lg bg-black/10 dark:bg-white/15 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5",
+										children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(ArrowRight, { className: "size-3.5" })
+									})]
 								})
 							}),
 							/* @__PURE__ */ (0, import_jsx_runtime.jsx)(ResumeModal, {
@@ -1896,7 +1899,7 @@ function Hero({ tagline, availabilityStatus, liveCount, email, pdfUrl, summary, 
 								trigger: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Button, {
 									size: "lg",
 									variant: "outline",
-									className: "rounded-xl border-border/80 hover:border-emerald-600 dark:hover:border-emerald-400 hover:text-emerald-700 dark:hover:text-emerald-400 font-medium shadow-sm",
+									className: "rounded-xl border-border/80 hover:border-emerald-600 dark:hover:border-emerald-400 hover:text-emerald-700 dark:hover:text-emerald-400 font-medium shadow-sm active:scale-[0.98] transition-all",
 									children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(FileText, { className: "mr-1.5 size-4" }), "View Resume"]
 								})
 							}),
@@ -1904,10 +1907,10 @@ function Hero({ tagline, availabilityStatus, liveCount, email, pdfUrl, summary, 
 								asChild: true,
 								size: "lg",
 								variant: "outline",
-								className: "rounded-xl border-border/80 hover:bg-secondary shadow-sm",
+								className: "rounded-xl border-border/80 hover:bg-secondary shadow-sm active:scale-[0.98] transition-all",
 								children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("a", {
 									href: "#contact",
-									children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Mail, {}), "Contact"]
+									children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Mail, { className: "size-4" }), "Contact"]
 								})
 							})
 						]
@@ -2220,10 +2223,13 @@ function Projects({ businessesList, sideProjectsList, email, pdfUrl, summary, ed
 										children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Button, {
 											asChild: true,
 											size: "sm",
-											className: "rounded-xl bg-amber-500 hover:bg-amber-600 text-black font-semibold shadow-md",
-											children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("a", {
+											className: "group rounded-xl bg-amber-500 hover:bg-amber-600 text-black font-semibold shadow-md active:scale-[0.98] transition-all pl-4 pr-2 py-1.5 inline-flex items-center gap-2",
+											children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("a", {
 												href: "#contact",
-												children: "Discuss a Project →"
+												children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { children: "Discuss a Project" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+													className: "flex size-5 items-center justify-center rounded-md bg-black/15 transition-transform duration-200 group-hover:translate-x-0.5",
+													children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(ArrowRight, { className: "size-3 text-black" })
+												})]
 											})
 										}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(ResumeModal, {
 											resume,
@@ -2235,7 +2241,7 @@ function Projects({ businessesList, sideProjectsList, email, pdfUrl, summary, ed
 											trigger: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Button, {
 												size: "sm",
 												variant: "outline",
-												className: "rounded-xl border-border/80 hover:text-amber-800 dark:hover:text-amber-400 shadow-sm",
+												className: "rounded-xl border-border/80 hover:text-amber-800 dark:hover:text-amber-400 shadow-sm active:scale-[0.98] transition-all",
 												children: "View Credentials"
 											})
 										})]

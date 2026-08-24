@@ -172,11 +172,13 @@ function Hero({ tagline, availabilityStatus, liveCount, email, pdfUrl, summary, 
 
           <HeroStats status={availabilityStatus} liveCount={liveCount} />
 
-          <div className="rise-in rise-in-3 mt-10 flex flex-wrap gap-3">
-            <Button asChild size="lg" className="btn-sage-glow rounded-xl font-medium shadow-md">
+          <div className="rise-in rise-in-3 mt-10 flex flex-wrap items-center gap-3">
+            <Button asChild size="lg" className="group btn-sage-glow rounded-xl font-medium shadow-md active:scale-[0.98] transition-all pl-5 pr-2.5 py-2 inline-flex items-center gap-2.5">
               <a href="#projects">
-                View projects
-                <ArrowRight />
+                <span>View projects</span>
+                <span className="flex size-6 items-center justify-center rounded-lg bg-black/10 dark:bg-white/15 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
+                  <ArrowRight className="size-3.5" />
+                </span>
               </a>
             </Button>
             <ResumeModal
@@ -187,15 +189,15 @@ function Hero({ tagline, availabilityStatus, liveCount, email, pdfUrl, summary, 
               education={education}
               skillsList={skillsList}
               trigger={
-                <Button size="lg" variant="outline" className="rounded-xl border-border/80 hover:border-emerald-600 dark:hover:border-emerald-400 hover:text-emerald-700 dark:hover:text-emerald-400 font-medium shadow-sm">
+                <Button size="lg" variant="outline" className="rounded-xl border-border/80 hover:border-emerald-600 dark:hover:border-emerald-400 hover:text-emerald-700 dark:hover:text-emerald-400 font-medium shadow-sm active:scale-[0.98] transition-all">
                   <FileText className="mr-1.5 size-4" />
                   View Resume
                 </Button>
               }
             />
-            <Button asChild size="lg" variant="outline" className="rounded-xl border-border/80 hover:bg-secondary shadow-sm">
+            <Button asChild size="lg" variant="outline" className="rounded-xl border-border/80 hover:bg-secondary shadow-sm active:scale-[0.98] transition-all">
               <a href="#contact">
-                <Mail />
+                <Mail className="size-4" />
                 Contact
               </a>
             </Button>
@@ -441,8 +443,13 @@ function Projects({ businessesList, sideProjectsList, email, pdfUrl, summary, ed
                 I am currently open for freelance projects, full-stack consulting, and selective client work. As new engagements are delivered and cleared for public showcase, case studies and deliverables will be documented here.
               </p>
               <div className="pt-3 flex flex-wrap items-center justify-center gap-3">
-                <Button asChild size="sm" className="rounded-xl bg-amber-500 hover:bg-amber-600 text-black font-semibold shadow-md">
-                  <a href="#contact">Discuss a Project →</a>
+                <Button asChild size="sm" className="group rounded-xl bg-amber-500 hover:bg-amber-600 text-black font-semibold shadow-md active:scale-[0.98] transition-all pl-4 pr-2 py-1.5 inline-flex items-center gap-2">
+                  <a href="#contact">
+                    <span>Discuss a Project</span>
+                    <span className="flex size-5 items-center justify-center rounded-md bg-black/15 transition-transform duration-200 group-hover:translate-x-0.5">
+                      <ArrowRight className="size-3 text-black" />
+                    </span>
+                  </a>
                 </Button>
                 <ResumeModal
                   resume={resume}
@@ -452,7 +459,7 @@ function Projects({ businessesList, sideProjectsList, email, pdfUrl, summary, ed
                   education={education}
                   skillsList={skillsList}
                   trigger={
-                    <Button size="sm" variant="outline" className="rounded-xl border-border/80 hover:text-amber-800 dark:hover:text-amber-400 shadow-sm">
+                    <Button size="sm" variant="outline" className="rounded-xl border-border/80 hover:text-amber-800 dark:hover:text-amber-400 shadow-sm active:scale-[0.98] transition-all">
                       View Credentials
                     </Button>
                   }
