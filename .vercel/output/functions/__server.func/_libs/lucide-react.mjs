@@ -208,6 +208,64 @@ var Building2 = createLucideIcon("building-2", [
 * This source code is licensed under the ISC license.
 * See the LICENSE file in the root directory of this source tree.
 */
+var Calculator = createLucideIcon("calculator", [
+	["rect", {
+		width: "16",
+		height: "20",
+		x: "4",
+		y: "2",
+		rx: "2",
+		key: "1nb95v"
+	}],
+	["line", {
+		x1: "8",
+		x2: "16",
+		y1: "6",
+		y2: "6",
+		key: "x4nwl0"
+	}],
+	["line", {
+		x1: "16",
+		x2: "16",
+		y1: "14",
+		y2: "18",
+		key: "wjye3r"
+	}],
+	["path", {
+		d: "M16 10h.01",
+		key: "1m94wz"
+	}],
+	["path", {
+		d: "M12 10h.01",
+		key: "1nrarc"
+	}],
+	["path", {
+		d: "M8 10h.01",
+		key: "19clt8"
+	}],
+	["path", {
+		d: "M12 14h.01",
+		key: "1etili"
+	}],
+	["path", {
+		d: "M8 14h.01",
+		key: "6423bh"
+	}],
+	["path", {
+		d: "M12 18h.01",
+		key: "mhygvu"
+	}],
+	["path", {
+		d: "M8 18h.01",
+		key: "lrp35t"
+	}]
+]);
+/**
+* @license lucide-react v0.510.0 - ISC
+*
+* This source code is licensed under the ISC license.
+* See the LICENSE file in the root directory of this source tree.
+*/
 var Check = createLucideIcon("check", [["path", {
 	d: "M20 6 9 17l-5-5",
 	key: "1gmf2c"
@@ -324,6 +382,23 @@ var Database = createLucideIcon("database", [
 * This source code is licensed under the ISC license.
 * See the LICENSE file in the root directory of this source tree.
 */
+var Disc = createLucideIcon("disc", [["circle", {
+	cx: "12",
+	cy: "12",
+	r: "10",
+	key: "1mglay"
+}], ["circle", {
+	cx: "12",
+	cy: "12",
+	r: "2",
+	key: "1c9p78"
+}]]);
+/**
+* @license lucide-react v0.510.0 - ISC
+*
+* This source code is licensed under the ISC license.
+* See the LICENSE file in the root directory of this source tree.
+*/
 var ExternalLink = createLucideIcon("external-link", [
 	["path", {
 		d: "M15 3h6v6",
@@ -397,6 +472,26 @@ var GraduationCap = createLucideIcon("graduation-cap", [
 	["path", {
 		d: "M6 12.5V16a6 3 0 0 0 12 0v-3.5",
 		key: "1r8lef"
+	}]
+]);
+/**
+* @license lucide-react v0.510.0 - ISC
+*
+* This source code is licensed under the ISC license.
+* See the LICENSE file in the root directory of this source tree.
+*/
+var Layers = createLucideIcon("layers", [
+	["path", {
+		d: "M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83z",
+		key: "zw3jo"
+	}],
+	["path", {
+		d: "M2 12a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 12",
+		key: "1wduqc"
+	}],
+	["path", {
+		d: "M2 17a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 17",
+		key: "kqbvx6"
 	}]
 ]);
 /**
@@ -854,4 +949,4 @@ var Zap = createLucideIcon("zap", [["path", {
 	key: "1xq2db"
 }]]);
 //#endregion
-export { CodeXml as A, GraduationCap as C, Database as D, ExternalLink as E, Bot as F, Award as I, ArrowUp as L, CircleCheck as M, Check as N, Copy as O, Building2 as P, ArrowRight as R, LayoutGrid as S, FileText as T, MapPin as _, Trash2 as a, Lock as b, ShieldCheck as c, RotateCw as d, RefreshCw as f, Menu as g, Moon as h, TriangleAlert as i, Clock as j, Compass as k, Send as l, Plus as m, X as n, Sun as o, Printer as p, User as r, Sparkles as s, Zap as t, Save as u, Mail as v, Github as w, Linkedin as x, LogOut as y, ArrowLeft as z };
+export { Copy as A, ArrowUp as B, Layers as C, ExternalLink as D, FileText as E, Check as F, ArrowLeft as H, Calculator as I, Building2 as L, CodeXml as M, Clock as N, Disc as O, CircleCheck as P, Bot as R, LayoutGrid as S, Github as T, ArrowRight as V, MapPin as _, Trash2 as a, Lock as b, ShieldCheck as c, RotateCw as d, RefreshCw as f, Menu as g, Moon as h, TriangleAlert as i, Compass as j, Database as k, Send as l, Plus as m, X as n, Sun as o, Printer as p, User as r, Sparkles as s, Zap as t, Save as u, Mail as v, GraduationCap as w, Linkedin as x, LogOut as y, Award as z };

@@ -1,5 +1,5 @@
 import { n as TSS_SERVER_FUNCTION, t as createServerFn } from "./ssr.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/content-fn-NJQt5t2o.js
+//#region node_modules/.nitro/vite/services/ssr/assets/content-fn-DRG9txnP.js
 var createServerRpc = (serverFnMeta, splitImportFn) => {
 	const url = "/_serverFn/" + serverFnMeta.id;
 	return Object.assign(splitImportFn, {
@@ -14,7 +14,7 @@ var fetchContent_createServerFn_handler = createServerRpc({
 	filename: "src/data/content-fn.ts"
 }, (opts) => fetchContent.__executeServer(opts));
 var fetchContent = createServerFn({ method: "GET" }).handler(fetchContent_createServerFn_handler, async () => {
-	const { readContent } = await import("./content.server-CpZv_ci3.mjs").then((n) => n.t);
+	const { readContent } = await import("./content.server-Caa_9xpY.mjs").then((n) => n.t);
 	return readContent();
 });
 //#endregion

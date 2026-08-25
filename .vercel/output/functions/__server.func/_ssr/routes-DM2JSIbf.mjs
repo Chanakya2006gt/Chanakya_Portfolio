@@ -1,15 +1,15 @@
 import { i as __toESM } from "../_runtime.mjs";
-import { c as sideProjects$1, l as skills$1, o as businesses$1, s as navLinks } from "./content.server-CpZv_ci3.mjs";
+import { c as sideProjects$1, l as skills$1, o as businesses$1, s as navLinks } from "./content.server-Caa_9xpY.mjs";
 import { u as require_react } from "../_libs/@floating-ui/react-dom+[...].mjs";
 import { s as require_jsx_runtime } from "../_libs/@radix-ui/react-collection+[...].mjs";
-import { A as CodeXml, C as GraduationCap, D as Database, E as ExternalLink, F as Bot, I as Award, L as ArrowUp, M as CircleCheck, N as Check, O as Copy, P as Building2, R as ArrowRight, T as FileText, _ as MapPin, b as Lock, c as ShieldCheck, f as RefreshCw, g as Menu, h as Moon, j as Clock, l as Send, n as X, o as Sun, p as Printer, r as User, t as Zap, v as Mail, w as Github, x as Linkedin } from "../_libs/lucide-react.mjs";
+import { A as Copy, B as ArrowUp, C as Layers, D as ExternalLink, E as FileText, F as Check, I as Calculator, L as Building2, M as CodeXml, N as Clock, O as Disc, P as CircleCheck, R as Bot, T as Github, V as ArrowRight, _ as MapPin, b as Lock, c as ShieldCheck, f as RefreshCw, g as Menu, h as Moon, k as Database, l as Send, n as X, o as Sun, p as Printer, r as User, t as Zap, v as Mail, w as GraduationCap, x as Linkedin, z as Award } from "../_libs/lucide-react.mjs";
 import { a as DialogOverlay$1, c as DialogTrigger$1, i as DialogDescription$1, n as DialogClose, o as DialogPortal$1, r as DialogContent$1, s as DialogTitle$1, t as Dialog$1 } from "../_libs/@radix-ui/react-dialog+[...].mjs";
 import { n as toast } from "../_libs/sonner.mjs";
-import { n as Route$11, r as cn } from "./router-HhiZOV9y.mjs";
-import { a as CardFooter, c as Input, i as CardDescription, l as Label, n as Card, o as CardHeader, r as CardContent, s as CardTitle, t as Button } from "./card-DL8rH-eH.mjs";
-import { a as TabsTrigger, i as TabsList, n as Tabs, o as Textarea, r as TabsContent, t as Badge } from "./badge-BWIvpAyE.mjs";
+import { n as Route$11, r as cn } from "./router-1CNGQstZ.mjs";
+import { a as CardFooter, c as Input, i as CardDescription, l as Label, n as Card, o as CardHeader, r as CardContent, s as CardTitle, t as Button } from "./card-B73obx4b.mjs";
+import { a as TabsTrigger, i as TabsList, n as Tabs, o as Textarea, r as TabsContent, t as Badge } from "./badge-DDeW1FWY.mjs";
 import { t as Root } from "../_libs/radix-ui__react-separator.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/routes-IGV4TbJ2.js
+//#region node_modules/.nitro/vite/services/ssr/assets/routes-DM2JSIbf.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 var Separator = import_react.forwardRef(({ className, orientation = "horizontal", decorative = true, ...props }, ref) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Root, {
@@ -177,6 +177,319 @@ function SidePreview({ title }) {
 			className: "relative font-serif text-xl text-foreground/90",
 			children: title
 		})]
+	});
+}
+function ApexPreview() {
+	const [activeMode, setActiveMode] = (0, import_react.useState)(0);
+	const [finatDir, setFinatDir] = (0, import_react.useState)(1);
+	const finatOptions = [
+		{
+			dir: 1,
+			name: "FINAT 1",
+			type: "Wound Out",
+			edge: "Top Off First",
+			rot: 0
+		},
+		{
+			dir: 2,
+			name: "FINAT 2",
+			type: "Wound Out",
+			edge: "Bottom Off First",
+			rot: 180
+		},
+		{
+			dir: 3,
+			name: "FINAT 3",
+			type: "Wound Out",
+			edge: "Right Off First",
+			rot: 90
+		},
+		{
+			dir: 4,
+			name: "FINAT 4",
+			type: "Wound Out",
+			edge: "Left Off First",
+			rot: 270
+		},
+		{
+			dir: 5,
+			name: "FINAT 5",
+			type: "Wound In",
+			edge: "Top Off First",
+			rot: 0
+		},
+		{
+			dir: 6,
+			name: "FINAT 6",
+			type: "Wound In",
+			edge: "Bottom Off First",
+			rot: 180
+		}
+	];
+	const [quantity, setQuantity] = (0, import_react.useState)(25e3);
+	const widthMm = 85;
+	const linearMeters = Math.round(quantity * 123 / 1e3);
+	const totalSqM = Number((quantity * widthMm * 123 / 1e6).toFixed(1));
+	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+		className: "relative overflow-hidden rounded-2xl bg-secondary/70 p-4 sm:p-5 border border-border/80 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.08)]",
+		children: [
+			/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+				className: "mb-4 grid grid-cols-3 gap-2.5 border-b border-border/60 pb-3.5 text-center",
+				children: [
+					/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+						className: "rounded-xl bg-card/80 px-2.5 py-2 border border-border/50 shadow-sm",
+						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+							className: "flex items-center justify-center gap-1 text-cyan-700 dark:text-cyan-400 mb-0.5",
+							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Disc, { className: "size-3" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+								className: "text-[10px] font-mono uppercase tracking-wider",
+								children: "Standards"
+							})]
+						}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+							className: "text-xs font-semibold text-foreground",
+							children: "FINAT 1–8 Engine"
+						})]
+					}),
+					/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+						className: "rounded-xl bg-card/80 px-2.5 py-2 border border-border/50 shadow-sm",
+						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+							className: "flex items-center justify-center gap-1 text-emerald-700 dark:text-emerald-400 mb-0.5",
+							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Calculator, { className: "size-3" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+								className: "text-[10px] font-mono uppercase tracking-wider",
+								children: "Math Model"
+							})]
+						}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+							className: "text-xs font-semibold text-emerald-700 dark:text-emerald-400",
+							children: "Isomorphic CPQ"
+						})]
+					}),
+					/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+						className: "rounded-xl bg-card/80 px-2.5 py-2 border border-border/50 shadow-sm",
+						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+							className: "flex items-center justify-center gap-1 text-purple-700 dark:text-purple-400 mb-0.5",
+							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Database, { className: "size-3" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+								className: "text-[10px] font-mono uppercase tracking-wider",
+								children: "Security"
+							})]
+						}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+							className: "text-xs font-semibold text-purple-700 dark:text-purple-400",
+							children: "Supabase RLS"
+						})]
+					})
+				]
+			}),
+			/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+				className: "mb-3 flex items-center justify-between",
+				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+					className: "flex items-center gap-2",
+					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Layers, { className: "size-4 text-cyan-600 dark:text-cyan-400" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+						className: "text-xs font-semibold tracking-wide text-foreground",
+						children: "B2B Manufacturing Architecture"
+					})]
+				}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("span", {
+					className: "inline-flex items-center gap-1 rounded-full bg-cyan-500/10 px-2.5 py-0.5 text-[10px] font-mono font-semibold uppercase tracking-wider text-cyan-800 dark:text-cyan-300 border border-cyan-500/30",
+					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: "size-1.5 rounded-full bg-cyan-500 animate-pulse" }), "Interactive Telemetry"]
+				})]
+			}),
+			/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+				className: "grid grid-cols-3 gap-1.5 p-1 rounded-xl bg-card/60 border border-border/60 mb-3 text-[11px] font-medium text-center",
+				children: [
+					/* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
+						type: "button",
+						onClick: () => setActiveMode(0),
+						className: `py-1.5 px-2 rounded-lg transition-all ${activeMode === 0 ? "bg-card text-foreground font-semibold shadow-xs border border-border/60" : "text-muted-foreground hover:text-foreground"}`,
+						children: "FINAT Rewind"
+					}),
+					/* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
+						type: "button",
+						onClick: () => setActiveMode(1),
+						className: `py-1.5 px-2 rounded-lg transition-all ${activeMode === 1 ? "bg-card text-foreground font-semibold shadow-xs border border-border/60" : "text-muted-foreground hover:text-foreground"}`,
+						children: "CPQ Math Parity"
+					}),
+					/* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
+						type: "button",
+						onClick: () => setActiveMode(2),
+						className: `py-1.5 px-2 rounded-lg transition-all ${activeMode === 2 ? "bg-card text-foreground font-semibold shadow-xs border border-border/60" : "text-muted-foreground hover:text-foreground"}`,
+						children: "Sales CRM & SLA"
+					})
+				]
+			}),
+			activeMode === 0 && /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+				className: "rounded-xl bg-card/90 border border-border/60 p-3 space-y-3",
+				children: [
+					/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+						className: "flex items-center justify-between",
+						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+							className: "text-xs font-semibold text-foreground",
+							children: "European Automated Rewind Standards"
+						}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+							className: "text-[10px] font-mono text-cyan-700 dark:text-cyan-400 bg-cyan-50 dark:bg-cyan-500/10 px-2 py-0.5 rounded border border-cyan-300 dark:border-cyan-500/20 font-medium",
+							children: "High-Speed Applicator Ready"
+						})]
+					}),
+					/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+						className: "grid grid-cols-3 sm:grid-cols-6 gap-1.5",
+						children: finatOptions.map((f) => {
+							const isSelected = finatDir === f.dir;
+							return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("button", {
+								type: "button",
+								onClick: () => setFinatDir(f.dir),
+								className: `p-2 rounded-lg text-center transition-all border ${isSelected ? "border-cyan-500 bg-cyan-50 dark:bg-cyan-500/10 shadow-xs" : "border-border/50 bg-secondary/40 hover:bg-secondary"}`,
+								children: [
+									/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+										className: "text-[10px] font-mono font-bold text-foreground",
+										children: f.name
+									}),
+									/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+										className: "text-[9px] text-muted-foreground truncate",
+										children: f.type
+									}),
+									/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+										className: "mx-auto my-1 size-5 rounded border border-border flex items-center justify-center font-mono text-[9px] font-bold bg-card",
+										style: { transform: `rotate(${f.rot}deg)` },
+										children: "A"
+									})
+								]
+							}, f.dir);
+						})
+					}),
+					/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+						className: "flex items-center justify-between text-[11px] text-muted-foreground pt-1 border-t border-border/40 font-mono",
+						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("span", { children: ["Orientation: ", /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("strong", {
+							className: "text-foreground",
+							children: [
+								finatOptions.find((f) => f.dir === finatDir)?.name,
+								" (",
+								finatOptions.find((f) => f.dir === finatDir)?.type,
+								")"
+							]
+						})] }), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("span", { children: ["Lead: ", /* @__PURE__ */ (0, import_jsx_runtime.jsx)("strong", {
+							className: "text-cyan-700 dark:text-cyan-400",
+							children: finatOptions.find((f) => f.dir === finatDir)?.edge
+						})] })]
+					})
+				]
+			}),
+			activeMode === 1 && /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+				className: "rounded-xl bg-card/90 border border-border/60 p-3 space-y-3",
+				children: [
+					/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+						className: "flex items-center justify-between",
+						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+							className: "text-xs font-semibold text-foreground",
+							children: "Deterministic Estimating Math Model"
+						}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+							className: "text-[10px] font-mono text-emerald-800 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-300 dark:border-emerald-500/20 font-medium",
+							children: "100% Client/Server Test Parity"
+						})]
+					}),
+					/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+						className: "grid grid-cols-3 gap-2",
+						children: [
+							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
+								type: "button",
+								onClick: () => setQuantity(1e4),
+								className: `py-1 px-2 rounded-lg text-xs font-mono transition-all border ${quantity === 1e4 ? "border-emerald-500 bg-emerald-50 dark:bg-emerald-500/10 font-bold" : "border-border/50 bg-secondary/30"}`,
+								children: "10,000 pcs"
+							}),
+							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
+								type: "button",
+								onClick: () => setQuantity(25e3),
+								className: `py-1 px-2 rounded-lg text-xs font-mono transition-all border ${quantity === 25e3 ? "border-emerald-500 bg-emerald-50 dark:bg-emerald-500/10 font-bold" : "border-border/50 bg-secondary/30"}`,
+								children: "25,000 pcs"
+							}),
+							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
+								type: "button",
+								onClick: () => setQuantity(1e5),
+								className: `py-1 px-2 rounded-lg text-xs font-mono transition-all border ${quantity === 1e5 ? "border-emerald-500 bg-emerald-50 dark:bg-emerald-500/10 font-bold" : "border-border/50 bg-secondary/30"}`,
+								children: "100,000 pcs"
+							})
+						]
+					}),
+					/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+						className: "grid grid-cols-3 gap-2 text-center text-xs",
+						children: [
+							/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+								className: "p-2 rounded-lg bg-secondary/50 border border-border/40",
+								children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+									className: "text-[10px] font-mono text-muted-foreground",
+									children: "Linear Web"
+								}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+									className: "font-semibold text-foreground font-mono",
+									children: [linearMeters.toLocaleString(), " m"]
+								})]
+							}),
+							/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+								className: "p-2 rounded-lg bg-secondary/50 border border-border/40",
+								children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+									className: "text-[10px] font-mono text-muted-foreground",
+									children: "Surface Area"
+								}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+									className: "font-semibold text-foreground font-mono",
+									children: [totalSqM, " m²"]
+								})]
+							}),
+							/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+								className: "p-2 rounded-lg bg-secondary/50 border border-border/40",
+								children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+									className: "text-[10px] font-mono text-muted-foreground",
+									children: "CTP Plates"
+								}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+									className: "font-semibold text-emerald-700 dark:text-emerald-400 font-mono",
+									children: [6, " Sets (6-Col)"]
+								})]
+							})
+						]
+					})
+				]
+			}),
+			activeMode === 2 && /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+				className: "rounded-xl bg-card/90 border border-border/60 p-3 space-y-2.5",
+				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+					className: "flex items-center justify-between",
+					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+						className: "text-xs font-semibold text-foreground",
+						children: "Operational Decision Gates & 4-Hr SLA"
+					}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+						className: "text-[10px] font-mono text-amber-800 dark:text-amber-400 bg-amber-50 dark:bg-amber-500/10 px-2 py-0.5 rounded border border-amber-300 dark:border-amber-500/20 font-medium",
+						children: "Offline Wire / ACH Clearance"
+					})]
+				}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+					className: "grid gap-1.5 text-[11px]",
+					children: [
+						/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+							className: "flex items-center justify-between p-2 rounded-lg bg-secondary/40 border border-border/40",
+							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+								className: "font-medium text-foreground",
+								children: "01. RFQ Intake & Pre-flight"
+							}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("span", {
+								className: "text-emerald-700 dark:text-emerald-400 font-mono text-[10px] flex items-center gap-1 font-semibold",
+								children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(CircleCheck, { className: "size-3" }), " Magic Bytes Verified"]
+							})]
+						}),
+						/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+							className: "flex items-center justify-between p-2 rounded-lg bg-amber-500/10 border border-amber-500/30",
+							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+								className: "font-medium text-foreground",
+								children: "02. Estimator CPQ Dispatch"
+							}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("span", {
+								className: "text-amber-800 dark:text-amber-400 font-mono text-[10px] flex items-center gap-1 font-semibold",
+								children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Clock, { className: "size-3 animate-spin" }), " 4-Hr SLA Active"]
+							})]
+						}),
+						/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+							className: "flex items-center justify-between p-2 rounded-lg bg-secondary/40 border border-border/40",
+							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+								className: "font-medium text-foreground",
+								children: "03. Production Run & Dispatch"
+							}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+								className: "text-muted-foreground font-mono text-[10px]",
+								children: "Heidelberg / Flexo Line"
+							})]
+						})
+					]
+				})]
+			})
+		]
 	});
 }
 var Sheet = Dialog$1;
@@ -803,10 +1116,12 @@ function MarqueeTicker() {
 	const items = [
 		"FULL-STACK BUILDER",
 		"FOUNDER @ TRELIO",
+		"APEX PACKAGING & CPQ",
+		"FINAT 1–8 ENGINE",
 		"REACT & NODE.JS",
 		"AUTHORIZATION-BEFORE-EXECUTION",
-		"MULTI-TENANT SAAS",
-		"POSTGRESQL",
+		"SUPABASE & POSTGRESQL RLS",
+		"ISOMORPHIC CPQ MATH",
 		"TYPESCRIPT",
 		"PAYMENTS & AUDIT LOGS"
 	];
@@ -1746,12 +2061,18 @@ function HeroTerminal() {
 							className: "text-foreground/70 dark:text-muted-foreground",
 							children: "flagship:"
 						}),
-						" ",
+						" [",
 						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
 							className: "text-purple-800 dark:text-purple-300 font-medium",
-							children: "\"Trelio.in (Auth-Before-Execution)\""
+							children: "\"Trelio.in\""
 						}),
-						","
+						",",
+						" ",
+						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+							className: "text-cyan-800 dark:text-cyan-300 font-medium",
+							children: "\"Apex Packaging CPQ\""
+						}),
+						"],"
 					]
 				}),
 				/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
@@ -1776,7 +2097,7 @@ function HeroTerminal() {
 						" ",
 						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
 							className: "text-emerald-800 dark:text-emerald-300 font-medium",
-							children: "\"PostgreSQL\""
+							children: "\"Supabase / Postgres\""
 						}),
 						"],"
 					]
@@ -1797,7 +2118,7 @@ function HeroTerminal() {
 						" ",
 						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
 							className: "text-amber-800 dark:text-amber-300 font-medium",
-							children: "\"HMAC-SHA256\""
+							children: "\"PostgreSQL RLS\""
 						}),
 						"],"
 					]
@@ -1812,7 +2133,7 @@ function HeroTerminal() {
 						" ",
 						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
 							className: "text-emerald-800 dark:text-emerald-400 font-bold",
-							children: "\"Available for Client Work\""
+							children: "\"Available for High-Impact Work\""
 						})
 					]
 				}),
@@ -2069,82 +2390,104 @@ function About({ email, pdfUrl, summary, education, skillsList, resume }) {
 }
 function BusinessCard({ items }) {
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-		className: "grid gap-6",
-		children: items.map((project) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Card, {
-			className: "card-specular relative overflow-hidden p-2 rounded-2xl bg-gradient-to-br from-card via-card to-emerald-500/10 dark:to-emerald-500/10",
-			children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "absolute top-0 inset-x-0 h-0.5 bg-gradient-to-r from-emerald-400 via-teal-400 to-cyan-500" }), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-				className: "p-4 sm:p-6",
-				children: [
-					project.liveUrl && /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("a", {
-						href: project.liveUrl,
-						target: "_blank",
-						rel: "noopener noreferrer",
-						className: "mb-4 inline-flex items-center gap-1.5 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-3.5 py-1 text-xs font-semibold text-emerald-400 hover:bg-emerald-500/20 transition-all shadow-[0_0_12px_rgba(52,211,153,0.18)]",
-						children: [
-							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: "size-1.5 rounded-full bg-emerald-400 animate-ping" }),
-							/* @__PURE__ */ (0, import_jsx_runtime.jsx)(ExternalLink, { className: "size-3" }),
-							project.liveUrl.replace(/^https?:\/\//, "")
-						]
-					}),
-					/* @__PURE__ */ (0, import_jsx_runtime.jsx)(TrelioPreview, {}),
-					/* @__PURE__ */ (0, import_jsx_runtime.jsxs)(CardHeader, {
-						className: "px-0 pb-0 pt-6",
-						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-							className: "flex items-start justify-between gap-3",
-							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(CardTitle, {
-								className: "font-serif text-2xl sm:text-3xl",
-								children: project.title
-							}), project.badge && /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Badge, {
-								variant: "sage",
-								className: "shadow-sm bg-emerald-500/15 text-emerald-400 border-emerald-500/30",
-								children: project.badge
+		className: "grid gap-8",
+		children: items.map((project) => {
+			const isApex = project.id === "apex";
+			const gradientBorder = isApex ? "from-cyan-400 via-blue-500 to-indigo-500" : "from-emerald-400 via-teal-400 to-cyan-500";
+			const cardGradient = isApex ? "to-cyan-500/10 dark:to-cyan-500/10" : "to-emerald-500/10 dark:to-emerald-500/10";
+			const liveBadgeColor = isApex ? "border-cyan-500/30 bg-cyan-500/10 text-cyan-800 dark:text-cyan-300 hover:bg-cyan-500/20 shadow-[0_0_12px_rgba(6,182,212,0.18)]" : "border-emerald-500/30 bg-emerald-500/10 text-emerald-800 dark:text-emerald-300 hover:bg-emerald-500/20 shadow-[0_0_12px_rgba(52,211,153,0.18)]";
+			const pingColor = isApex ? "bg-cyan-400" : "bg-emerald-400";
+			const badgeColor = isApex ? "bg-cyan-500/15 text-cyan-800 dark:text-cyan-300 border-cyan-500/30" : "bg-emerald-500/15 text-emerald-800 dark:text-emerald-300 border-emerald-500/30";
+			return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Card, {
+				className: `card-specular relative overflow-hidden p-2 rounded-2xl bg-gradient-to-br from-card via-card ${cardGradient}`,
+				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: `absolute top-0 inset-x-0 h-0.5 bg-gradient-to-r ${gradientBorder}` }), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+					className: "p-4 sm:p-6",
+					children: [
+						/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+							className: "mb-4 flex flex-wrap items-center justify-between gap-2",
+							children: [project.liveUrl && /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("a", {
+								href: project.liveUrl,
+								target: "_blank",
+								rel: "noopener noreferrer",
+								className: `inline-flex items-center gap-1.5 rounded-full border px-3.5 py-1 text-xs font-semibold transition-all ${liveBadgeColor}`,
+								children: [
+									/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: `size-1.5 rounded-full ${pingColor} animate-ping` }),
+									/* @__PURE__ */ (0, import_jsx_runtime.jsx)(ExternalLink, { className: "size-3" }),
+									project.liveUrl.replace(/^https?:\/\//, "")
+								]
+							}), project.githubUrl && /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("a", {
+								href: project.githubUrl,
+								target: "_blank",
+								rel: "noopener noreferrer",
+								className: "inline-flex items-center gap-1.5 rounded-full border border-border/80 bg-secondary/60 px-3 py-1 text-xs font-medium text-muted-foreground hover:text-foreground hover:bg-secondary transition-all shadow-xs",
+								title: "View Source Repository",
+								children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Github, { className: "size-3.5" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { children: "Source Code" })]
 							})]
-						}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(CardDescription, {
-							className: "mt-2 max-w-2xl text-base leading-relaxed",
-							children: project.description
-						})]
-					}),
-					/* @__PURE__ */ (0, import_jsx_runtime.jsx)(CardFooter, {
-						className: "mt-5 flex flex-wrap gap-2 px-0",
-						children: project.stack.map((tech) => {
-							const isFrontend = [
-								"React",
-								"TypeScript",
-								"Tailwind",
-								"Next.js"
-							].includes(tech);
-							const isBackend = [
-								"Node.js",
-								"PostgreSQL",
-								"REST APIs",
-								"Express"
-							].includes(tech);
-							const isSecurity = [
-								"AES-256-GCM",
-								"HMAC",
-								"Clerk",
-								"Audit logs"
-							].some((s) => tech.includes(s));
-							const isPayments = [
-								"Payments",
-								"Multi-tenant",
-								"Razorpay",
-								"UPI"
-							].some((s) => tech.includes(s));
-							let badgeStyle = "bg-secondary text-foreground border-border";
-							if (isFrontend) badgeStyle = "border-cyan-300 dark:border-cyan-500/30 bg-cyan-50 dark:bg-cyan-500/10 text-cyan-800 dark:text-cyan-300";
-							else if (isBackend) badgeStyle = "border-emerald-300 dark:border-emerald-500/30 bg-emerald-50 dark:bg-emerald-500/10 text-emerald-800 dark:text-emerald-300";
-							else if (isSecurity) badgeStyle = "border-purple-300 dark:border-purple-500/30 bg-purple-50 dark:bg-purple-500/10 text-purple-800 dark:text-purple-300";
-							else if (isPayments) badgeStyle = "border-amber-300 dark:border-amber-500/30 bg-amber-50 dark:bg-amber-500/10 text-amber-800 dark:text-amber-300";
-							return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-								className: `inline-flex items-center rounded-lg px-2.5 py-1 text-xs font-medium border shadow-xs ${badgeStyle}`,
-								children: tech
-							}, tech);
+						}),
+						isApex ? /* @__PURE__ */ (0, import_jsx_runtime.jsx)(ApexPreview, {}) : /* @__PURE__ */ (0, import_jsx_runtime.jsx)(TrelioPreview, {}),
+						/* @__PURE__ */ (0, import_jsx_runtime.jsxs)(CardHeader, {
+							className: "px-0 pb-0 pt-6",
+							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+								className: "flex items-start justify-between gap-3",
+								children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(CardTitle, {
+									className: "font-serif text-2xl sm:text-3xl",
+									children: project.title
+								}), project.badge && /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Badge, {
+									variant: "outline",
+									className: `shadow-xs font-mono text-[11px] uppercase tracking-wider ${badgeColor}`,
+									children: project.badge
+								})]
+							}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(CardDescription, {
+								className: "mt-2 max-w-2xl text-base leading-relaxed text-muted-foreground",
+								children: project.description
+							})]
+						}),
+						/* @__PURE__ */ (0, import_jsx_runtime.jsx)(CardFooter, {
+							className: "mt-5 flex flex-wrap gap-2 px-0",
+							children: project.stack.map((tech) => {
+								const isFrontend = [
+									"React",
+									"TypeScript",
+									"Tailwind",
+									"Next.js",
+									"GSAP",
+									"Vite"
+								].includes(tech);
+								const isBackend = [
+									"Node.js",
+									"PostgreSQL",
+									"REST APIs",
+									"Express",
+									"Supabase RLS"
+								].includes(tech);
+								const isSecurity = [
+									"AES-256-GCM",
+									"HMAC",
+									"Clerk",
+									"Audit logs"
+								].some((s) => tech.includes(s));
+								const isProduct = [
+									"Payments",
+									"Multi-tenant",
+									"Razorpay",
+									"UPI",
+									"CPQ Engine"
+								].some((s) => tech.includes(s));
+								let badgeStyle = "bg-secondary text-foreground border-border";
+								if (isFrontend) badgeStyle = "border-cyan-300 dark:border-cyan-500/30 bg-cyan-50 dark:bg-cyan-500/10 text-cyan-800 dark:text-cyan-300";
+								else if (isBackend) badgeStyle = "border-emerald-300 dark:border-emerald-500/30 bg-emerald-50 dark:bg-emerald-500/10 text-emerald-800 dark:text-emerald-300";
+								else if (isSecurity) badgeStyle = "border-purple-300 dark:border-purple-500/30 bg-purple-50 dark:bg-purple-500/10 text-purple-800 dark:text-purple-300";
+								else if (isProduct) badgeStyle = "border-amber-300 dark:border-amber-500/30 bg-amber-50 dark:bg-amber-500/10 text-amber-800 dark:text-amber-300";
+								return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+									className: `inline-flex items-center rounded-lg px-2.5 py-1 text-xs font-medium border shadow-xs ${badgeStyle}`,
+									children: tech
+								}, tech);
+							})
 						})
-					})
-				]
-			})]
-		}, project.id))
+					]
+				})]
+			}, project.id);
+		})
 	});
 }
 function Projects({ businessesList, sideProjectsList, email, pdfUrl, summary, education, skillsList, resume }) {

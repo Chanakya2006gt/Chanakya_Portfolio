@@ -1,11 +1,11 @@
 import { i as __toESM } from "../_runtime.mjs";
 import { n as put, t as head } from "../_libs/@vercel/blob+[...].mjs";
-import { a as getPortfolioData, i as writeContent, n as readContent, r as restoreBackup, u as __exportAll } from "./content.server-CpZv_ci3.mjs";
+import { a as getPortfolioData, i as writeContent, n as readContent, r as restoreBackup, u as __exportAll } from "./content.server-Caa_9xpY.mjs";
 import { u as require_react } from "../_libs/@floating-ui/react-dom+[...].mjs";
 import { f as createRouter, g as createRootRoute, h as createFileRoute, l as Scripts, m as lazyRouteComponent, p as Outlet, u as HeadContent } from "../_libs/@tanstack/react-router+[...].mjs";
 import { s as require_jsx_runtime } from "../_libs/@radix-ui/react-collection+[...].mjs";
 import { n as TSS_SERVER_FUNCTION, r as getServerFnById, t as createServerFn } from "./ssr.mjs";
-import { d as RotateCw, i as TriangleAlert, k as Compass, z as ArrowLeft } from "../_libs/lucide-react.mjs";
+import { H as ArrowLeft, d as RotateCw, i as TriangleAlert, j as Compass } from "../_libs/lucide-react.mjs";
 import { n as Portal, r as Provider, t as Content2 } from "../_libs/@radix-ui/react-tooltip+[...].mjs";
 import { n as clsx } from "../_libs/class-variance-authority+clsx.mjs";
 import { t as twMerge } from "../_libs/tailwind-merge.mjs";
@@ -14,7 +14,7 @@ import { i as string, n as object, r as record, t as array } from "../_libs/zod.
 import crypto from "node:crypto";
 import path from "node:path";
 import fs from "node:fs";
-//#region node_modules/.nitro/vite/services/ssr/assets/router-HhiZOV9y.js
+//#region node_modules/.nitro/vite/services/ssr/assets/router-1CNGQstZ.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 function AppErrorComponent({ error }) {
@@ -104,7 +104,7 @@ var TooltipContent = import_react.forwardRef(({ className, sideOffset = 6, ...pr
 	...props
 }) }));
 TooltipContent.displayName = Content2.displayName;
-var styles_default = "/assets/styles-C9HY0AvB.css";
+var styles_default = "/assets/styles-Dj_sptir.css";
 var APP_NAME = "Nagulagam Chanakya — Full-Stack Developer & SaaS Founder";
 var APP_DESC = "Official portfolio of Nagulagam Chanakya — Full-Stack Developer & Founder of Trelio. Specializing in React, Node.js, TypeScript, PostgreSQL, and applied software security.";
 var SITE_URL = "https://chanakya-portfolio-orcin.vercel.app";
@@ -274,14 +274,14 @@ var createSsrRpc = (functionId) => {
 	});
 };
 var fetchContent = createServerFn({ method: "GET" }).handler(createSsrRpc("2b99909e19342163fb9618a3b1f343b57fe68205625d940d83a174e978667293"));
-var $$splitComponentImporter$2 = () => import("./routes-IGV4TbJ2.mjs");
+var $$splitComponentImporter$2 = () => import("./routes-DM2JSIbf.mjs");
 var Route$11 = createFileRoute("/")({
 	loader: () => fetchContent(),
 	component: lazyRouteComponent($$splitComponentImporter$2, "component")
 });
-var $$splitComponentImporter$1 = () => import("./admin-DqBkAx6O.mjs");
+var $$splitComponentImporter$1 = () => import("./admin-C_BsMliZ.mjs");
 var Route$10 = createFileRoute("/admin/")({ component: lazyRouteComponent($$splitComponentImporter$1, "component") });
-var $$splitComponentImporter = () => import("./login-pHCFAB-w.mjs");
+var $$splitComponentImporter = () => import("./login-VZWani67.mjs");
 var Route$9 = createFileRoute("/admin/login")({ component: lazyRouteComponent($$splitComponentImporter, "component") });
 var envCache = null;
 var lastCacheTime = 0;
@@ -481,6 +481,11 @@ function getFallbackReply(messages) {
 * **Availability**: ${workAvailability}
 
 For more details, check out the **Resume** button or contact him at [${email}](mailto:${email}) / [LinkedIn](${linkedinUrl}).`;
+	if (lastUserMsg.includes("apex") || lastUserMsg.includes("packaging") || lastUserMsg.includes("converting") || lastUserMsg.includes("cpq") || lastUserMsg.includes("finat")) return `Here is what you need to know about **Apex Packaging & Converting** (https://industrial-packaging-platform.vercel.app):
+
+* **System Overview**: Enterprise cloud-native B2B manufacturing & CPQ platform connecting procurement clients with industrial converting and offset print lines.
+* **Key Innovations**: Interactive 5-step CAD & FINAT 1–8 technical reel visualizer, isomorphic linear-meter estimating math with 100% test parity, and a role-based sales CRM with 4-hour SLA monitors.
+* **Tech Stack**: React 18, TypeScript, Supabase (PostgreSQL 15 + RLS), Node.js, Tailwind CSS, and GSAP.`;
 	if (lastUserMsg.includes("trelio") || lastUserMsg.includes("business") || lastUserMsg.includes("product")) return `Here is what you need to know about **Trelio** (https://trelio.in):
 
 * **Problem Solved**: Eliminates unpaid client work for freelancers/agencies through an *Authorization-Before-Execution (ABE)* milestone locking model.
@@ -489,9 +494,9 @@ For more details, check out the **Resume** button or contact him at [${email}](m
 	if (lastUserMsg.includes("tech") || lastUserMsg.includes("stack") || lastUserMsg.includes("skill") || lastUserMsg.includes("language")) return `Here is Chanakya's core technical toolkit:
 
 * **Languages & Core**: TypeScript, JavaScript, Java, SQL
-* **Frontend**: React, Tailwind CSS, React Query, Vite, TanStack Start, shadcn/ui
-* **Backend & Data**: Node.js, Express, PostgreSQL, Drizzle ORM, Redis, REST APIs
-* **Security & Infrastructure**: AES-256-GCM, HMAC webhooks, Clerk Auth, Razorpay`;
+* **Frontend**: React, Tailwind CSS, React Query, Vite, TanStack Start, shadcn/ui, GSAP
+* **Backend & Data**: Node.js, Express, PostgreSQL, Supabase RLS, Drizzle ORM, Redis, REST APIs
+* **Security & Infrastructure**: AES-256-GCM, HMAC webhooks, Clerk Auth, Supabase RLS, Razorpay`;
 	if (lastUserMsg.includes("are you hiring") || lastUserMsg.includes("is trelio hiring") || lastUserMsg.includes("open positions") || lastUserMsg.includes("job openings") || lastUserMsg.includes("internship")) return `Regarding team openings:
 
 * **Status**: ${hiringStatus}

@@ -1,5 +1,5 @@
 import { n as put, t as head } from "../_libs/@vercel/blob+[...].mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/content.server-CpZv_ci3.js
+//#region node_modules/.nitro/vite/services/ssr/assets/content.server-Caa_9xpY.js
 var __defProp = Object.defineProperty;
 var __exportAll = (all, no_symbols) => {
 	let target = {};
@@ -25,6 +25,23 @@ var businesses$1 = [{
 	featured: true,
 	badge: "Live product",
 	kind: "business"
+}, {
+	id: "apex",
+	title: "Apex Packaging & Converting",
+	description: "Enterprise B2B manufacturing & CPQ platform for industrial packaging converters. Features an interactive FINAT 1–8 rewind visualizer, isomorphic linear-meter estimating math with 100% test parity, and a role-based sales operations CRM.",
+	liveUrl: "https://industrial-packaging-platform.vercel.app",
+	githubUrl: "https://github.com/Chanakya2006gt/Industrial-packaging-platform",
+	stack: [
+		"React",
+		"TypeScript",
+		"Supabase RLS",
+		"Node.js",
+		"GSAP",
+		"CPQ Engine"
+	],
+	featured: true,
+	badge: "B2B Platform",
+	kind: "business"
 }];
 var sideProjects$1 = [{
 	id: "portfolio",
@@ -45,16 +62,18 @@ var skills$1 = {
 		"TypeScript",
 		"Tailwind",
 		"shadcn/ui",
-		"Vite"
+		"GSAP"
 	],
 	Backend: [
 		"Node.js",
 		"Express",
 		"PostgreSQL",
+		"Supabase RLS",
 		"REST APIs"
 	],
 	Product: [
 		"Multi-tenant",
+		"CPQ Engines",
 		"Payments",
 		"Audit logs",
 		"Auth flows"
@@ -100,6 +119,23 @@ var portfolio_data_default = {
 		"featured": true,
 		"badge": "Live product",
 		"kind": "business"
+	}, {
+		"id": "apex",
+		"title": "Apex Packaging & Converting",
+		"description": "Enterprise B2B manufacturing & CPQ platform for industrial packaging converters. Features an interactive FINAT 1–8 rewind visualizer, isomorphic linear-meter estimating math with 100% test parity, and a role-based sales operations CRM.",
+		"liveUrl": "https://industrial-packaging-platform.vercel.app",
+		"githubUrl": "https://github.com/Chanakya2006gt/Industrial-packaging-platform",
+		"stack": [
+			"React",
+			"TypeScript",
+			"Supabase RLS",
+			"Node.js",
+			"GSAP",
+			"CPQ Engine"
+		],
+		"featured": true,
+		"badge": "B2B Platform",
+		"kind": "business"
 	}],
 	sideProjects: [{
 		"id": "portfolio",
@@ -120,16 +156,18 @@ var portfolio_data_default = {
 			"TypeScript",
 			"Tailwind",
 			"shadcn/ui",
-			"Vite"
+			"GSAP"
 		],
 		"Backend": [
 			"Node.js",
 			"Express",
 			"PostgreSQL",
+			"Supabase RLS",
 			"REST APIs"
 		],
 		"Product": [
 			"Multi-tenant",
+			"CPQ Engines",
 			"Payments",
 			"Audit logs",
 			"Auth flows"

@@ -109,6 +109,14 @@ function getFallbackReply(messages: any[]): string {
 For more details, check out the **Resume** button or contact him at [${email}](mailto:${email}) / [LinkedIn](${linkedinUrl}).`;
   }
 
+  if (lastUserMsg.includes("apex") || lastUserMsg.includes("packaging") || lastUserMsg.includes("converting") || lastUserMsg.includes("cpq") || lastUserMsg.includes("finat")) {
+    return `Here is what you need to know about **Apex Packaging & Converting** (https://industrial-packaging-platform.vercel.app):
+
+* **System Overview**: Enterprise cloud-native B2B manufacturing & CPQ platform connecting procurement clients with industrial converting and offset print lines.
+* **Key Innovations**: Interactive 5-step CAD & FINAT 1–8 technical reel visualizer, isomorphic linear-meter estimating math with 100% test parity, and a role-based sales CRM with 4-hour SLA monitors.
+* **Tech Stack**: React 18, TypeScript, Supabase (PostgreSQL 15 + RLS), Node.js, Tailwind CSS, and GSAP.`;
+  }
+
   if (lastUserMsg.includes("trelio") || lastUserMsg.includes("business") || lastUserMsg.includes("product")) {
     return `Here is what you need to know about **Trelio** (https://trelio.in):
 
@@ -121,9 +129,9 @@ For more details, check out the **Resume** button or contact him at [${email}](m
     return `Here is Chanakya's core technical toolkit:
 
 * **Languages & Core**: TypeScript, JavaScript, Java, SQL
-* **Frontend**: React, Tailwind CSS, React Query, Vite, TanStack Start, shadcn/ui
-* **Backend & Data**: Node.js, Express, PostgreSQL, Drizzle ORM, Redis, REST APIs
-* **Security & Infrastructure**: AES-256-GCM, HMAC webhooks, Clerk Auth, Razorpay`;
+* **Frontend**: React, Tailwind CSS, React Query, Vite, TanStack Start, shadcn/ui, GSAP
+* **Backend & Data**: Node.js, Express, PostgreSQL, Supabase RLS, Drizzle ORM, Redis, REST APIs
+* **Security & Infrastructure**: AES-256-GCM, HMAC webhooks, Clerk Auth, Supabase RLS, Razorpay`;
   }
 
   // Check if visitor is asking about hiring candidates vs hiring Chanakya

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ArrowRight, ArrowUp, ExternalLink, Mail, Check, Copy, Terminal, Sparkles, FileText } from "lucide-react";
+import { ArrowRight, ArrowUp, ExternalLink, Mail, Check, Copy, Terminal, Sparkles, FileText, Github } from "lucide-react";
 import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
 import {
@@ -27,6 +27,7 @@ import {
 
 import { businesses as defaultBusinesses, sideProjects as defaultSideProjects, skills as defaultSkills, Project } from "@/data/projects";
 import { SidePreview, TrelioPreview } from "@/components/trelio-preview";
+import { ApexPreview } from "@/components/apex-preview";
 import { SiteNav } from "@/components/site-nav";
 import { LeftRailNav } from "@/components/left-rail-nav";
 import { ParticleField } from "@/components/particle-field";
@@ -82,25 +83,27 @@ function HeroTerminal() {
           <span className="text-emerald-800 dark:text-emerald-400 font-medium">"Full-Stack Builder & Founder"</span>,
         </div>
         <div className="pl-4">
-          <span className="text-foreground/70 dark:text-muted-foreground">flagship:</span>{" "}
-          <span className="text-purple-800 dark:text-purple-300 font-medium">"Trelio.in (Auth-Before-Execution)"</span>,
+          <span className="text-foreground/70 dark:text-muted-foreground">flagship:</span> [
+          <span className="text-purple-800 dark:text-purple-300 font-medium">"Trelio.in"</span>,{" "}
+          <span className="text-cyan-800 dark:text-cyan-300 font-medium">"Apex Packaging CPQ"</span>
+          ],
         </div>
         <div className="pl-4">
           <span className="text-foreground/70 dark:text-muted-foreground">stack:</span> [
           <span className="text-cyan-800 dark:text-cyan-300 font-medium">"React"</span>,{" "}
           <span className="text-cyan-800 dark:text-cyan-300 font-medium">"TypeScript"</span>,{" "}
-          <span className="text-emerald-800 dark:text-emerald-300 font-medium">"PostgreSQL"</span>
+          <span className="text-emerald-800 dark:text-emerald-300 font-medium">"Supabase / Postgres"</span>
           ],
         </div>
         <div className="pl-4">
           <span className="text-foreground/70 dark:text-muted-foreground">security:</span> [
           <span className="text-amber-800 dark:text-amber-300 font-medium">"AES-256-GCM"</span>,{" "}
-          <span className="text-amber-800 dark:text-amber-300 font-medium">"HMAC-SHA256"</span>
+          <span className="text-amber-800 dark:text-amber-300 font-medium">"PostgreSQL RLS"</span>
           ],
         </div>
         <div className="pl-4">
           <span className="text-foreground/70 dark:text-muted-foreground">status:</span>{" "}
-          <span className="text-emerald-800 dark:text-emerald-400 font-bold">"Available for Client Work"</span>
+          <span className="text-emerald-800 dark:text-emerald-400 font-bold">"Available for High-Impact Work"</span>
         </div>
         <div>&#125;;</div>
 
@@ -320,60 +323,102 @@ interface BusinessCardProps {
 
 function BusinessCard({ items }: BusinessCardProps) {
   return (
-    <div className="grid gap-6">
-      {items.map((project) => (
-        <Card key={project.id} className="card-specular relative overflow-hidden p-2 rounded-2xl bg-gradient-to-br from-card via-card to-emerald-500/10 dark:to-emerald-500/10">
-          {/* Top multi-stop chromatic gradient accent line */}
-          <div className="absolute top-0 inset-x-0 h-0.5 bg-gradient-to-r from-emerald-400 via-teal-400 to-cyan-500" />
-          <div className="p-4 sm:p-6">
-            {project.liveUrl && (
-              <a
-                href={project.liveUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mb-4 inline-flex items-center gap-1.5 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-3.5 py-1 text-xs font-semibold text-emerald-400 hover:bg-emerald-500/20 transition-all shadow-[0_0_12px_rgba(52,211,153,0.18)]"
-              >
-                <span className="size-1.5 rounded-full bg-emerald-400 animate-ping" />
-                <ExternalLink className="size-3" />
-                {project.liveUrl.replace(/^https?:\/\//, "")}
-              </a>
-            )}
-            <TrelioPreview />
-            <CardHeader className="px-0 pb-0 pt-6">
-              <div className="flex items-start justify-between gap-3">
-                <CardTitle className="font-serif text-2xl sm:text-3xl">{project.title}</CardTitle>
-                {project.badge && <Badge variant="sage" className="shadow-sm bg-emerald-500/15 text-emerald-400 border-emerald-500/30">{project.badge}</Badge>}
-              </div>
-              <CardDescription className="mt-2 max-w-2xl text-base leading-relaxed">
-                {project.description}
-              </CardDescription>
-            </CardHeader>
-            <CardFooter className="mt-5 flex flex-wrap gap-2 px-0">
-              {project.stack.map((tech) => {
-                const isFrontend = ["React", "TypeScript", "Tailwind", "Next.js"].includes(tech);
-                const isBackend = ["Node.js", "PostgreSQL", "REST APIs", "Express"].includes(tech);
-                const isSecurity = ["AES-256-GCM", "HMAC", "Clerk", "Audit logs"].some((s) => tech.includes(s));
-                const isPayments = ["Payments", "Multi-tenant", "Razorpay", "UPI"].some((s) => tech.includes(s));
+    <div className="grid gap-8">
+      {items.map((project) => {
+        const isApex = project.id === "apex";
+        const gradientBorder = isApex
+          ? "from-cyan-400 via-blue-500 to-indigo-500"
+          : "from-emerald-400 via-teal-400 to-cyan-500";
+        const cardGradient = isApex
+          ? "to-cyan-500/10 dark:to-cyan-500/10"
+          : "to-emerald-500/10 dark:to-emerald-500/10";
+        const liveBadgeColor = isApex
+          ? "border-cyan-500/30 bg-cyan-500/10 text-cyan-800 dark:text-cyan-300 hover:bg-cyan-500/20 shadow-[0_0_12px_rgba(6,182,212,0.18)]"
+          : "border-emerald-500/30 bg-emerald-500/10 text-emerald-800 dark:text-emerald-300 hover:bg-emerald-500/20 shadow-[0_0_12px_rgba(52,211,153,0.18)]";
+        const pingColor = isApex ? "bg-cyan-400" : "bg-emerald-400";
+        const badgeColor = isApex
+          ? "bg-cyan-500/15 text-cyan-800 dark:text-cyan-300 border-cyan-500/30"
+          : "bg-emerald-500/15 text-emerald-800 dark:text-emerald-300 border-emerald-500/30";
 
-                let badgeStyle = "bg-secondary text-foreground border-border";
-                if (isFrontend) badgeStyle = "border-cyan-300 dark:border-cyan-500/30 bg-cyan-50 dark:bg-cyan-500/10 text-cyan-800 dark:text-cyan-300";
-                else if (isBackend) badgeStyle = "border-emerald-300 dark:border-emerald-500/30 bg-emerald-50 dark:bg-emerald-500/10 text-emerald-800 dark:text-emerald-300";
-                else if (isSecurity) badgeStyle = "border-purple-300 dark:border-purple-500/30 bg-purple-50 dark:bg-purple-500/10 text-purple-800 dark:text-purple-300";
-                else if (isPayments) badgeStyle = "border-amber-300 dark:border-amber-500/30 bg-amber-50 dark:bg-amber-500/10 text-amber-800 dark:text-amber-300";
-
-                return (
-                  <span
-                    key={tech}
-                    className={`inline-flex items-center rounded-lg px-2.5 py-1 text-xs font-medium border shadow-xs ${badgeStyle}`}
+        return (
+          <Card
+            key={project.id}
+            className={`card-specular relative overflow-hidden p-2 rounded-2xl bg-gradient-to-br from-card via-card ${cardGradient}`}
+          >
+            {/* Top multi-stop chromatic gradient accent line */}
+            <div className={`absolute top-0 inset-x-0 h-0.5 bg-gradient-to-r ${gradientBorder}`} />
+            <div className="p-4 sm:p-6">
+              <div className="mb-4 flex flex-wrap items-center justify-between gap-2">
+                {project.liveUrl && (
+                  <a
+                    href={project.liveUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`inline-flex items-center gap-1.5 rounded-full border px-3.5 py-1 text-xs font-semibold transition-all ${liveBadgeColor}`}
                   >
-                    {tech}
-                  </span>
-                );
-              })}
-            </CardFooter>
-          </div>
-        </Card>
-      ))}
+                    <span className={`size-1.5 rounded-full ${pingColor} animate-ping`} />
+                    <ExternalLink className="size-3" />
+                    {project.liveUrl.replace(/^https?:\/\//, "")}
+                  </a>
+                )}
+                {project.githubUrl && (
+                  <a
+                    href={project.githubUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 rounded-full border border-border/80 bg-secondary/60 px-3 py-1 text-xs font-medium text-muted-foreground hover:text-foreground hover:bg-secondary transition-all shadow-xs"
+                    title="View Source Repository"
+                  >
+                    <Github className="size-3.5" />
+                    <span>Source Code</span>
+                  </a>
+                )}
+              </div>
+
+              {/* Project-specific Interactive Telemetry Preview */}
+              {isApex ? <ApexPreview /> : <TrelioPreview />}
+
+              <CardHeader className="px-0 pb-0 pt-6">
+                <div className="flex items-start justify-between gap-3">
+                  <CardTitle className="font-serif text-2xl sm:text-3xl">{project.title}</CardTitle>
+                  {project.badge && (
+                    <Badge variant="outline" className={`shadow-xs font-mono text-[11px] uppercase tracking-wider ${badgeColor}`}>
+                      {project.badge}
+                    </Badge>
+                  )}
+                </div>
+                <CardDescription className="mt-2 max-w-2xl text-base leading-relaxed text-muted-foreground">
+                  {project.description}
+                </CardDescription>
+              </CardHeader>
+
+              <CardFooter className="mt-5 flex flex-wrap gap-2 px-0">
+                {project.stack.map((tech) => {
+                  const isFrontend = ["React", "TypeScript", "Tailwind", "Next.js", "GSAP", "Vite"].includes(tech);
+                  const isBackend = ["Node.js", "PostgreSQL", "REST APIs", "Express", "Supabase RLS"].includes(tech);
+                  const isSecurity = ["AES-256-GCM", "HMAC", "Clerk", "Audit logs"].some((s) => tech.includes(s));
+                  const isProduct = ["Payments", "Multi-tenant", "Razorpay", "UPI", "CPQ Engine"].some((s) => tech.includes(s));
+
+                  let badgeStyle = "bg-secondary text-foreground border-border";
+                  if (isFrontend) badgeStyle = "border-cyan-300 dark:border-cyan-500/30 bg-cyan-50 dark:bg-cyan-500/10 text-cyan-800 dark:text-cyan-300";
+                  else if (isBackend) badgeStyle = "border-emerald-300 dark:border-emerald-500/30 bg-emerald-50 dark:bg-emerald-500/10 text-emerald-800 dark:text-emerald-300";
+                  else if (isSecurity) badgeStyle = "border-purple-300 dark:border-purple-500/30 bg-purple-50 dark:bg-purple-500/10 text-purple-800 dark:text-purple-300";
+                  else if (isProduct) badgeStyle = "border-amber-300 dark:border-amber-500/30 bg-amber-50 dark:bg-amber-500/10 text-amber-800 dark:text-amber-300";
+
+                  return (
+                    <span
+                      key={tech}
+                      className={`inline-flex items-center rounded-lg px-2.5 py-1 text-xs font-medium border shadow-xs ${badgeStyle}`}
+                    >
+                      {tech}
+                    </span>
+                  );
+                })}
+              </CardFooter>
+            </div>
+          </Card>
+        );
+      })}
     </div>
   );
 }

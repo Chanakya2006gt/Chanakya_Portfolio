@@ -2,10 +2,12 @@ export function MarqueeTicker() {
   const items = [
     "FULL-STACK BUILDER",
     "FOUNDER @ TRELIO",
+    "APEX PACKAGING & CPQ",
+    "FINAT 1–8 ENGINE",
     "REACT & NODE.JS",
     "AUTHORIZATION-BEFORE-EXECUTION",
-    "MULTI-TENANT SAAS",
-    "POSTGRESQL",
+    "SUPABASE & POSTGRESQL RLS",
+    "ISOMORPHIC CPQ MATH",
     "TYPESCRIPT",
     "PAYMENTS & AUDIT LOGS",
   ];

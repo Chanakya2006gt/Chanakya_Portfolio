@@ -22,6 +22,18 @@ export const businesses: Project[] = [
     badge: "Live product",
     kind: "business",
   },
+  {
+    id: "apex",
+    title: "Apex Packaging & Converting",
+    description:
+      "Enterprise B2B manufacturing & CPQ platform for industrial packaging converters. Features an interactive FINAT 1–8 rewind visualizer, isomorphic linear-meter estimating math with 100% test parity, and a role-based sales operations CRM.",
+    liveUrl: "https://industrial-packaging-platform.vercel.app",
+    githubUrl: "https://github.com/Chanakya2006gt/Industrial-packaging-platform",
+    stack: ["React", "TypeScript", "Supabase RLS", "Node.js", "GSAP", "CPQ Engine"],
+    featured: true,
+    badge: "B2B Platform",
+    kind: "business",
+  },
 ];
 
 export const sideProjects: Project[] = [
@@ -37,9 +49,9 @@ export const sideProjects: Project[] = [
 ];
 
 export const skills: Record<string, string[]> = {
-  Frontend: ["React", "TypeScript", "Tailwind", "shadcn/ui", "Vite"],
-  Backend: ["Node.js", "Express", "PostgreSQL", "REST APIs"],
-  Product: ["Multi-tenant", "Payments", "Audit logs", "Auth flows"],
+  Frontend: ["React", "TypeScript", "Tailwind", "shadcn/ui", "GSAP"],
+  Backend: ["Node.js", "Express", "PostgreSQL", "Supabase RLS", "REST APIs"],
+  Product: ["Multi-tenant", "CPQ Engines", "Payments", "Audit logs", "Auth flows"],
   Tools: ["Git", "Playwright", "Vercel", "Razorpay"],
 };
 
