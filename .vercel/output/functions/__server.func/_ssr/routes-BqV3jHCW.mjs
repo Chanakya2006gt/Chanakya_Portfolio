@@ -5,11 +5,11 @@ import { s as require_jsx_runtime } from "../_libs/@radix-ui/react-collection+[.
 import { A as Copy, B as ArrowUp, C as Layers, D as ExternalLink, E as FileText, F as Check, I as Calculator, L as Building2, M as CodeXml, N as Clock, O as Disc, P as CircleCheck, R as Bot, T as Github, V as ArrowRight, _ as MapPin, b as Lock, c as ShieldCheck, f as RefreshCw, g as Menu, h as Moon, k as Database, l as Send, n as X, o as Sun, p as Printer, r as User, t as Zap, v as Mail, w as GraduationCap, x as Linkedin, z as Award } from "../_libs/lucide-react.mjs";
 import { a as DialogOverlay$1, c as DialogTrigger$1, i as DialogDescription$1, n as DialogClose, o as DialogPortal$1, r as DialogContent$1, s as DialogTitle$1, t as Dialog$1 } from "../_libs/@radix-ui/react-dialog+[...].mjs";
 import { n as toast } from "../_libs/sonner.mjs";
-import { n as Route$11, r as cn } from "./router-6kzB7uyu.mjs";
-import { a as CardFooter, c as Input, i as CardDescription, l as Label, n as Card, o as CardHeader, r as CardContent, s as CardTitle, t as Button } from "./card-Cr9AVFFR.mjs";
-import { a as TabsTrigger, i as TabsList, n as Tabs, o as Textarea, r as TabsContent, t as Badge } from "./badge-D2lFhkUa.mjs";
+import { n as Route$11, r as cn } from "./router-nipAkGw1.mjs";
+import { a as CardFooter, c as Input, i as CardDescription, l as Label, n as Card, o as CardHeader, r as CardContent, s as CardTitle, t as Button } from "./card-D6QbDPWp.mjs";
+import { a as TabsTrigger, i as TabsList, n as Tabs, o as Textarea, r as TabsContent, t as Badge } from "./badge-io4gvfUt.mjs";
 import { t as Root } from "../_libs/radix-ui__react-separator.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/routes-DAWIfw6U.js
+//#region node_modules/.nitro/vite/services/ssr/assets/routes-BqV3jHCW.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 var Separator = import_react.forwardRef(({ className, orientation = "horizontal", decorative = true, ...props }, ref) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Root, {
@@ -170,15 +170,6 @@ function TrelioPreview() {
 		]
 	});
 }
-function SidePreview({ title }) {
-	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-		className: "relative flex h-28 items-end overflow-hidden rounded-xl bg-secondary/80 p-4 border border-border/60 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.06)]",
-		children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(163,194,171,0.08),transparent_70%)]" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
-			className: "relative font-serif text-xl text-foreground/90",
-			children: title
-		})]
-	});
-}
 function ApexPreview() {
 	const [activeMode, setActiveMode] = (0, import_react.useState)(0);
 	const [finatDir, setFinatDir] = (0, import_react.useState)(1);
@@ -230,18 +221,20 @@ function ApexPreview() {
 	const widthMm = 85;
 	const linearMeters = Math.round(quantity * 123 / 1e3);
 	const totalSqM = Number((quantity * widthMm * 123 / 1e6).toFixed(1));
+	const ctpPlates = 6;
+	const selectedFinat = finatOptions.find((f) => f.dir === finatDir) || finatOptions[0];
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-		className: "relative overflow-hidden rounded-2xl bg-secondary/70 p-4 sm:p-5 border border-border/80 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.08)]",
+		className: "relative overflow-hidden rounded-2xl bg-secondary/80 p-4 sm:p-5 border border-border/80 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.08)]",
 		children: [
 			/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 				className: "mb-4 grid grid-cols-3 gap-2.5 border-b border-border/60 pb-3.5 text-center",
 				children: [
 					/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-						className: "rounded-xl bg-card/80 px-2.5 py-2 border border-border/50 shadow-sm",
+						className: "rounded-xl bg-card/90 px-3 py-2 border border-border/60 shadow-xs",
 						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-							className: "flex items-center justify-center gap-1 text-cyan-700 dark:text-cyan-400 mb-0.5",
-							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Disc, { className: "size-3" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
-								className: "text-[10px] font-mono uppercase tracking-wider",
+							className: "flex items-center justify-center gap-1.5 text-cyan-800 dark:text-cyan-400 mb-0.5",
+							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Disc, { className: "size-3.5" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+								className: "text-[10px] font-mono uppercase tracking-wider font-semibold",
 								children: "Standards"
 							})]
 						}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
@@ -250,28 +243,28 @@ function ApexPreview() {
 						})]
 					}),
 					/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-						className: "rounded-xl bg-card/80 px-2.5 py-2 border border-border/50 shadow-sm",
+						className: "rounded-xl bg-card/90 px-3 py-2 border border-border/60 shadow-xs",
 						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-							className: "flex items-center justify-center gap-1 text-emerald-700 dark:text-emerald-400 mb-0.5",
-							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Calculator, { className: "size-3" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
-								className: "text-[10px] font-mono uppercase tracking-wider",
+							className: "flex items-center justify-center gap-1.5 text-emerald-800 dark:text-emerald-400 mb-0.5",
+							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Calculator, { className: "size-3.5" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+								className: "text-[10px] font-mono uppercase tracking-wider font-semibold",
 								children: "Math Model"
 							})]
 						}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
-							className: "text-xs font-semibold text-emerald-700 dark:text-emerald-400",
+							className: "text-xs font-semibold text-emerald-800 dark:text-emerald-400",
 							children: "Isomorphic CPQ"
 						})]
 					}),
 					/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-						className: "rounded-xl bg-card/80 px-2.5 py-2 border border-border/50 shadow-sm",
+						className: "rounded-xl bg-card/90 px-3 py-2 border border-border/60 shadow-xs",
 						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-							className: "flex items-center justify-center gap-1 text-purple-700 dark:text-purple-400 mb-0.5",
-							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Database, { className: "size-3" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
-								className: "text-[10px] font-mono uppercase tracking-wider",
+							className: "flex items-center justify-center gap-1.5 text-purple-800 dark:text-purple-400 mb-0.5",
+							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Database, { className: "size-3.5" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+								className: "text-[10px] font-mono uppercase tracking-wider font-semibold",
 								children: "Security"
 							})]
 						}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
-							className: "text-xs font-semibold text-purple-700 dark:text-purple-400",
+							className: "text-xs font-semibold text-purple-800 dark:text-purple-400",
 							children: "Supabase RLS"
 						})]
 					})
@@ -281,40 +274,40 @@ function ApexPreview() {
 				className: "mb-3 flex items-center justify-between",
 				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 					className: "flex items-center gap-2",
-					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Layers, { className: "size-4 text-cyan-600 dark:text-cyan-400" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Layers, { className: "size-4 text-cyan-700 dark:text-cyan-400" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
 						className: "text-xs font-semibold tracking-wide text-foreground",
 						children: "B2B Manufacturing Architecture"
 					})]
 				}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("span", {
-					className: "inline-flex items-center gap-1 rounded-full bg-cyan-500/10 px-2.5 py-0.5 text-[10px] font-mono font-semibold uppercase tracking-wider text-cyan-800 dark:text-cyan-300 border border-cyan-500/30",
-					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: "size-1.5 rounded-full bg-cyan-500 animate-pulse" }), "Interactive Telemetry"]
+					className: "inline-flex items-center gap-1.5 rounded-full bg-cyan-500/10 px-2.5 py-0.5 text-[10px] font-mono font-semibold uppercase tracking-wider text-cyan-800 dark:text-cyan-300 border border-cyan-500/30",
+					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: "size-1.5 rounded-full bg-cyan-500 animate-pulse" }), "Live Interactive"]
 				})]
 			}),
 			/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-				className: "grid grid-cols-3 gap-1.5 p-1 rounded-xl bg-card/60 border border-border/60 mb-3 text-[11px] font-medium text-center",
+				className: "grid grid-cols-3 gap-1.5 p-1 rounded-xl bg-card/70 border border-border/70 mb-3 text-[11px] font-medium text-center shadow-inner",
 				children: [
 					/* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
 						type: "button",
 						onClick: () => setActiveMode(0),
-						className: `py-1.5 px-2 rounded-lg transition-all ${activeMode === 0 ? "bg-card text-foreground font-semibold shadow-xs border border-border/60" : "text-muted-foreground hover:text-foreground"}`,
+						className: `py-1.5 px-2 rounded-lg transition-all ${activeMode === 0 ? "bg-secondary text-foreground font-bold shadow-xs border border-border" : "text-muted-foreground hover:text-foreground"}`,
 						children: "FINAT Rewind"
 					}),
 					/* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
 						type: "button",
 						onClick: () => setActiveMode(1),
-						className: `py-1.5 px-2 rounded-lg transition-all ${activeMode === 1 ? "bg-card text-foreground font-semibold shadow-xs border border-border/60" : "text-muted-foreground hover:text-foreground"}`,
+						className: `py-1.5 px-2 rounded-lg transition-all ${activeMode === 1 ? "bg-secondary text-foreground font-bold shadow-xs border border-border" : "text-muted-foreground hover:text-foreground"}`,
 						children: "CPQ Math Parity"
 					}),
 					/* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
 						type: "button",
 						onClick: () => setActiveMode(2),
-						className: `py-1.5 px-2 rounded-lg transition-all ${activeMode === 2 ? "bg-card text-foreground font-semibold shadow-xs border border-border/60" : "text-muted-foreground hover:text-foreground"}`,
+						className: `py-1.5 px-2 rounded-lg transition-all ${activeMode === 2 ? "bg-secondary text-foreground font-bold shadow-xs border border-border" : "text-muted-foreground hover:text-foreground"}`,
 						children: "Sales CRM & SLA"
 					})
 				]
 			}),
 			activeMode === 0 && /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-				className: "rounded-xl bg-card/90 border border-border/60 p-3 space-y-3",
+				className: "rounded-xl bg-card/95 border border-border/70 p-3.5 space-y-3 shadow-xs",
 				children: [
 					/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 						className: "flex items-center justify-between",
@@ -322,18 +315,18 @@ function ApexPreview() {
 							className: "text-xs font-semibold text-foreground",
 							children: "European Automated Rewind Standards"
 						}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-							className: "text-[10px] font-mono text-cyan-700 dark:text-cyan-400 bg-cyan-50 dark:bg-cyan-500/10 px-2 py-0.5 rounded border border-cyan-300 dark:border-cyan-500/20 font-medium",
+							className: "text-[10px] font-mono text-cyan-800 dark:text-cyan-300 bg-cyan-50 dark:bg-cyan-500/15 px-2 py-0.5 rounded-full border border-cyan-300 dark:border-cyan-500/30 font-semibold",
 							children: "High-Speed Applicator Ready"
 						})]
 					}),
 					/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-						className: "grid grid-cols-3 sm:grid-cols-6 gap-1.5",
+						className: "grid grid-cols-3 sm:grid-cols-6 gap-2",
 						children: finatOptions.map((f) => {
 							const isSelected = finatDir === f.dir;
 							return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("button", {
 								type: "button",
 								onClick: () => setFinatDir(f.dir),
-								className: `p-2 rounded-lg text-center transition-all border ${isSelected ? "border-cyan-500 bg-cyan-50 dark:bg-cyan-500/10 shadow-xs" : "border-border/50 bg-secondary/40 hover:bg-secondary"}`,
+								className: `p-2 rounded-xl text-center transition-all border ${isSelected ? "border-cyan-500 bg-cyan-50 dark:bg-cyan-500/15 shadow-sm ring-1 ring-cyan-500/40" : "border-border/60 bg-secondary/40 hover:bg-secondary"}`,
 								children: [
 									/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
 										className: "text-[10px] font-mono font-bold text-foreground",
@@ -344,7 +337,7 @@ function ApexPreview() {
 										children: f.type
 									}),
 									/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-										className: "mx-auto my-1 size-5 rounded border border-border flex items-center justify-center font-mono text-[9px] font-bold bg-card",
+										className: "mx-auto my-1.5 size-6 rounded-lg border border-border flex items-center justify-center font-mono text-[10px] font-bold bg-card shadow-xs",
 										style: { transform: `rotate(${f.rot}deg)` },
 										children: "A"
 									})
@@ -353,24 +346,24 @@ function ApexPreview() {
 						})
 					}),
 					/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-						className: "flex items-center justify-between text-[11px] text-muted-foreground pt-1 border-t border-border/40 font-mono",
+						className: "flex flex-wrap items-center justify-between text-xs text-muted-foreground pt-2 border-t border-border/50 font-mono gap-1",
 						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("span", { children: ["Orientation: ", /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("strong", {
 							className: "text-foreground",
 							children: [
-								finatOptions.find((f) => f.dir === finatDir)?.name,
+								selectedFinat.name,
 								" (",
-								finatOptions.find((f) => f.dir === finatDir)?.type,
+								selectedFinat.type,
 								")"
 							]
-						})] }), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("span", { children: ["Lead: ", /* @__PURE__ */ (0, import_jsx_runtime.jsx)("strong", {
+						})] }), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("span", { children: ["Lead Edge: ", /* @__PURE__ */ (0, import_jsx_runtime.jsx)("strong", {
 							className: "text-cyan-700 dark:text-cyan-400",
-							children: finatOptions.find((f) => f.dir === finatDir)?.edge
+							children: selectedFinat.edge
 						})] })]
 					})
 				]
 			}),
 			activeMode === 1 && /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-				className: "rounded-xl bg-card/90 border border-border/60 p-3 space-y-3",
+				className: "rounded-xl bg-card/95 border border-border/70 p-3.5 space-y-3 shadow-xs",
 				children: [
 					/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 						className: "flex items-center justify-between",
@@ -378,7 +371,7 @@ function ApexPreview() {
 							className: "text-xs font-semibold text-foreground",
 							children: "Deterministic Estimating Math Model"
 						}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-							className: "text-[10px] font-mono text-emerald-800 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-300 dark:border-emerald-500/20 font-medium",
+							className: "text-[10px] font-mono text-emerald-800 dark:text-emerald-300 bg-emerald-50 dark:bg-emerald-500/15 px-2 py-0.5 rounded-full border border-emerald-300 dark:border-emerald-500/30 font-semibold",
 							children: "100% Client/Server Test Parity"
 						})]
 					}),
@@ -388,54 +381,54 @@ function ApexPreview() {
 							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
 								type: "button",
 								onClick: () => setQuantity(1e4),
-								className: `py-1 px-2 rounded-lg text-xs font-mono transition-all border ${quantity === 1e4 ? "border-emerald-500 bg-emerald-50 dark:bg-emerald-500/10 font-bold" : "border-border/50 bg-secondary/30"}`,
+								className: `py-1.5 px-2 rounded-xl text-xs font-mono transition-all border ${quantity === 1e4 ? "border-emerald-500 bg-emerald-50 dark:bg-emerald-500/15 font-bold shadow-xs text-foreground" : "border-border/60 bg-secondary/40 text-muted-foreground hover:text-foreground"}`,
 								children: "10,000 pcs"
 							}),
 							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
 								type: "button",
 								onClick: () => setQuantity(25e3),
-								className: `py-1 px-2 rounded-lg text-xs font-mono transition-all border ${quantity === 25e3 ? "border-emerald-500 bg-emerald-50 dark:bg-emerald-500/10 font-bold" : "border-border/50 bg-secondary/30"}`,
+								className: `py-1.5 px-2 rounded-xl text-xs font-mono transition-all border ${quantity === 25e3 ? "border-emerald-500 bg-emerald-50 dark:bg-emerald-500/15 font-bold shadow-xs text-foreground" : "border-border/60 bg-secondary/40 text-muted-foreground hover:text-foreground"}`,
 								children: "25,000 pcs"
 							}),
 							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
 								type: "button",
 								onClick: () => setQuantity(1e5),
-								className: `py-1 px-2 rounded-lg text-xs font-mono transition-all border ${quantity === 1e5 ? "border-emerald-500 bg-emerald-50 dark:bg-emerald-500/10 font-bold" : "border-border/50 bg-secondary/30"}`,
+								className: `py-1.5 px-2 rounded-xl text-xs font-mono transition-all border ${quantity === 1e5 ? "border-emerald-500 bg-emerald-50 dark:bg-emerald-500/15 font-bold shadow-xs text-foreground" : "border-border/60 bg-secondary/40 text-muted-foreground hover:text-foreground"}`,
 								children: "100,000 pcs"
 							})
 						]
 					}),
 					/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-						className: "grid grid-cols-3 gap-2 text-center text-xs",
+						className: "grid grid-cols-3 gap-2.5 text-center text-xs",
 						children: [
 							/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-								className: "p-2 rounded-lg bg-secondary/50 border border-border/40",
+								className: "p-2.5 rounded-xl bg-secondary/50 border border-border/50",
 								children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
 									className: "text-[10px] font-mono text-muted-foreground",
 									children: "Linear Web"
 								}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-									className: "font-semibold text-foreground font-mono",
+									className: "font-semibold text-foreground font-mono mt-0.5 text-sm",
 									children: [linearMeters.toLocaleString(), " m"]
 								})]
 							}),
 							/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-								className: "p-2 rounded-lg bg-secondary/50 border border-border/40",
+								className: "p-2.5 rounded-xl bg-secondary/50 border border-border/50",
 								children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
 									className: "text-[10px] font-mono text-muted-foreground",
 									children: "Surface Area"
 								}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-									className: "font-semibold text-foreground font-mono",
+									className: "font-semibold text-foreground font-mono mt-0.5 text-sm",
 									children: [totalSqM, " m²"]
 								})]
 							}),
 							/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-								className: "p-2 rounded-lg bg-secondary/50 border border-border/40",
+								className: "p-2.5 rounded-xl bg-secondary/50 border border-border/50",
 								children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
 									className: "text-[10px] font-mono text-muted-foreground",
 									children: "CTP Plates"
 								}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-									className: "font-semibold text-emerald-700 dark:text-emerald-400 font-mono",
-									children: [6, " Sets (6-Col)"]
+									className: "font-semibold text-emerald-700 dark:text-emerald-400 font-mono mt-0.5 text-sm",
+									children: [ctpPlates, " Sets (6-Col)"]
 								})]
 							})
 						]
@@ -443,46 +436,46 @@ function ApexPreview() {
 				]
 			}),
 			activeMode === 2 && /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-				className: "rounded-xl bg-card/90 border border-border/60 p-3 space-y-2.5",
+				className: "rounded-xl bg-card/95 border border-border/70 p-3.5 space-y-2.5 shadow-xs",
 				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 					className: "flex items-center justify-between",
 					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
 						className: "text-xs font-semibold text-foreground",
 						children: "Operational Decision Gates & 4-Hr SLA"
 					}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-						className: "text-[10px] font-mono text-amber-800 dark:text-amber-400 bg-amber-50 dark:bg-amber-500/10 px-2 py-0.5 rounded border border-amber-300 dark:border-amber-500/20 font-medium",
+						className: "text-[10px] font-mono text-amber-800 dark:text-amber-300 bg-amber-50 dark:bg-amber-500/15 px-2 py-0.5 rounded-full border border-amber-300 dark:border-amber-500/30 font-semibold",
 						children: "Offline Wire / ACH Clearance"
 					})]
 				}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-					className: "grid gap-1.5 text-[11px]",
+					className: "grid gap-2 text-xs",
 					children: [
 						/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-							className: "flex items-center justify-between p-2 rounded-lg bg-secondary/40 border border-border/40",
+							className: "flex items-center justify-between p-2.5 rounded-xl bg-secondary/40 border border-border/50",
 							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
 								className: "font-medium text-foreground",
 								children: "01. RFQ Intake & Pre-flight"
 							}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("span", {
-								className: "text-emerald-700 dark:text-emerald-400 font-mono text-[10px] flex items-center gap-1 font-semibold",
-								children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(CircleCheck, { className: "size-3" }), " Magic Bytes Verified"]
+								className: "text-emerald-700 dark:text-emerald-400 font-mono text-[11px] flex items-center gap-1 font-semibold",
+								children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(CircleCheck, { className: "size-3.5" }), " Magic Bytes Verified"]
 							})]
 						}),
 						/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-							className: "flex items-center justify-between p-2 rounded-lg bg-amber-500/10 border border-amber-500/30",
+							className: "flex items-center justify-between p-2.5 rounded-xl bg-amber-500/10 border border-amber-500/30",
 							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
 								className: "font-medium text-foreground",
 								children: "02. Estimator CPQ Dispatch"
 							}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("span", {
-								className: "text-amber-800 dark:text-amber-400 font-mono text-[10px] flex items-center gap-1 font-semibold",
-								children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Clock, { className: "size-3 animate-spin" }), " 4-Hr SLA Active"]
+								className: "text-amber-800 dark:text-amber-400 font-mono text-[11px] flex items-center gap-1 font-semibold",
+								children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Clock, { className: "size-3.5 animate-spin" }), " 4-Hr SLA Active"]
 							})]
 						}),
 						/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-							className: "flex items-center justify-between p-2 rounded-lg bg-secondary/40 border border-border/40",
+							className: "flex items-center justify-between p-2.5 rounded-xl bg-secondary/40 border border-border/50",
 							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
 								className: "font-medium text-foreground",
 								children: "03. Production Run & Dispatch"
 							}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-								className: "text-muted-foreground font-mono text-[10px]",
+								className: "text-muted-foreground font-mono text-[11px]",
 								children: "Heidelberg / Flexo Line"
 							})]
 						})
@@ -643,6 +636,9 @@ function SiteNav() {
 							const isActive = activeSection === sectionId;
 							return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("a", {
 								href: link.href,
+								onClick: () => {
+									if (sectionId === "projects" && typeof window !== "undefined") window.dispatchEvent(new CustomEvent("portfolio-tab-switch", { detail: { tab: "side" } }));
+								},
 								className: `text-sm transition-colors relative py-1 ${isActive ? "font-medium text-sage" : "text-muted-foreground hover:text-foreground"}`,
 								children: [link.label, isActive && /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: "absolute bottom-0 left-0 h-0.5 w-full rounded-full bg-sage transition-all duration-300" })]
 							}, link.href);
@@ -668,7 +664,10 @@ function SiteNav() {
 								className: "mt-8 flex flex-col gap-4",
 								children: navLinks.map((link) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)("a", {
 									href: link.href,
-									onClick: () => setOpen(false),
+									onClick: () => {
+										setOpen(false);
+										if (link.href === "#projects" && typeof window !== "undefined") window.dispatchEvent(new CustomEvent("portfolio-tab-switch", { detail: { tab: "side" } }));
+									},
 									className: "text-base text-muted-foreground hover:text-sage transition-colors",
 									children: link.label
 								}, link.href))
@@ -1051,6 +1050,9 @@ function LeftRailNav({ resume }) {
 				className: "flex flex-col items-center gap-3",
 				children: sections.map((id) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)("a", {
 					href: `#${id}`,
+					onClick: () => {
+						if (id === "projects" && typeof window !== "undefined") window.dispatchEvent(new CustomEvent("portfolio-tab-switch", { detail: { tab: "side" } }));
+					},
 					className: "group relative flex items-center justify-center",
 					title: id.charAt(0).toUpperCase() + id.slice(1),
 					children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: `block rounded-full transition-all duration-300 ${activeSection === id ? "size-2.5 nav-dot-active bg-sage" : "size-1.5 bg-muted-foreground/40 hover:bg-muted-foreground"}` })
@@ -2204,6 +2206,9 @@ function Hero({ tagline, availabilityStatus, liveCount, email, pdfUrl, summary, 
 								className: "group btn-sage-glow rounded-xl font-medium shadow-md active:scale-[0.98] transition-all pl-5 pr-2.5 py-2 inline-flex items-center gap-2.5",
 								children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("a", {
 									href: "#projects",
+									onClick: () => {
+										if (typeof window !== "undefined") window.dispatchEvent(new CustomEvent("portfolio-tab-switch", { detail: { tab: "side" } }));
+									},
 									children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { children: "View projects" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
 										className: "flex size-6 items-center justify-center rounded-lg bg-black/10 dark:bg-white/15 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5",
 										children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(ArrowRight, { className: "size-3.5" })
@@ -2490,8 +2495,86 @@ function BusinessCard({ items }) {
 		})
 	});
 }
+function PortfolioSitePreview() {
+	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+		className: "relative overflow-hidden rounded-xl bg-secondary/80 p-3.5 border border-border/70 shadow-xs",
+		children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+			className: "flex items-center justify-between border-b border-border/60 pb-2 mb-2.5",
+			children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+				className: "flex items-center gap-1.5",
+				children: [
+					/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: "size-2 rounded-full bg-[#ff5f56]" }),
+					/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: "size-2 rounded-full bg-[#ffbd2e]" }),
+					/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: "size-2 rounded-full bg-[#27c93f]" }),
+					/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+						className: "ml-1.5 font-mono text-[10px] text-muted-foreground font-semibold",
+						children: "tanstack-start.config.ts"
+					})
+				]
+			}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("span", {
+				className: "inline-flex items-center gap-1 text-[10px] font-mono text-purple-800 dark:text-purple-300 font-semibold bg-purple-50 dark:bg-purple-500/10 px-2 py-0.5 rounded border border-purple-300 dark:border-purple-500/20",
+				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: "size-1.5 rounded-full bg-purple-500 animate-pulse" }), "Nitro Edge"]
+			})]
+		}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+			className: "grid grid-cols-2 sm:grid-cols-4 gap-2 text-center text-[10px] font-mono",
+			children: [
+				/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+					className: "p-1.5 rounded-lg bg-card border border-border/50",
+					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+						className: "text-muted-foreground block text-[9px]",
+						children: "Framework"
+					}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+						className: "font-semibold text-foreground",
+						children: "TanStack Start"
+					})]
+				}),
+				/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+					className: "p-1.5 rounded-lg bg-card border border-border/50",
+					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+						className: "text-muted-foreground block text-[9px]",
+						children: "React Core"
+					}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+						className: "font-semibold text-emerald-800 dark:text-emerald-400",
+						children: "React 19 SSR"
+					})]
+				}),
+				/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+					className: "p-1.5 rounded-lg bg-card border border-border/50",
+					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+						className: "text-muted-foreground block text-[9px]",
+						children: "Styling"
+					}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+						className: "font-semibold text-cyan-800 dark:text-cyan-400",
+						children: "Tailwind v4"
+					})]
+				}),
+				/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+					className: "p-1.5 rounded-lg bg-card border border-border/50",
+					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+						className: "text-muted-foreground block text-[9px]",
+						children: "Deployment"
+					}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+						className: "font-semibold text-purple-800 dark:text-purple-400",
+						children: "Serverless Nitro"
+					})]
+				})
+			]
+		})]
+	});
+}
 function Projects({ businessesList, sideProjectsList, email, pdfUrl, summary, education, skillsList, resume }) {
 	const { ref, isVisible } = useScrollAnimation();
+	const [activeTab, setActiveTab] = (0, import_react.useState)("businesses");
+	(0, import_react.useEffect)(() => {
+		const handleSwitchTab = (e) => {
+			if (e.detail?.tab) setActiveTab(e.detail.tab);
+		};
+		window.addEventListener("portfolio-tab-switch", handleSwitchTab);
+		if (window.location.hash === "#projects") setActiveTab("side");
+		return () => {
+			window.removeEventListener("portfolio-tab-switch", handleSwitchTab);
+		};
+	}, []);
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("section", {
 		id: "projects",
 		ref,
@@ -2513,7 +2596,8 @@ function Projects({ businessesList, sideProjectsList, email, pdfUrl, summary, ed
 				children: "Serious SaaS products and engineered software built under real constraints."
 			}),
 			/* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Tabs, {
-				defaultValue: "businesses",
+				value: activeTab,
+				onValueChange: setActiveTab,
 				className: "mt-10",
 				children: [
 					/* @__PURE__ */ (0, import_jsx_runtime.jsxs)(TabsList, {
@@ -2601,7 +2685,7 @@ function Projects({ businessesList, sideProjectsList, email, pdfUrl, summary, ed
 							children: [sideProjectsList.map((project) => {
 								const isApex = project.id === "apex";
 								return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Card, {
-									className: `card-specular relative overflow-hidden p-2 flex flex-col justify-between rounded-2xl bg-gradient-to-br from-card via-card ${isApex ? "to-cyan-500/10 dark:to-cyan-500/10 sm:col-span-2" : "to-purple-500/10 dark:to-purple-500/10"}`,
+									className: `card-specular relative overflow-hidden p-2 flex flex-col justify-between rounded-2xl bg-gradient-to-br from-card via-card ${isApex ? "to-cyan-500/10 dark:to-cyan-500/10 sm:col-span-2" : "to-purple-500/10 dark:to-purple-500/10 sm:col-span-2"}`,
 									children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: `absolute top-0 inset-x-0 h-0.5 bg-gradient-to-r ${isApex ? "from-cyan-400 via-blue-500 to-indigo-500" : "from-purple-400 via-indigo-400 to-cyan-500"}` }), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 										className: "p-4 sm:p-6",
 										children: [
@@ -2611,7 +2695,7 @@ function Projects({ businessesList, sideProjectsList, email, pdfUrl, summary, ed
 													href: project.liveUrl,
 													target: "_blank",
 													rel: "noopener noreferrer",
-													className: `inline-flex items-center gap-1.5 rounded-full border px-3 py-0.5 text-xs font-semibold transition-all ${isApex ? "border-cyan-500/30 bg-cyan-500/10 text-cyan-800 dark:text-cyan-300 hover:bg-cyan-500/20 shadow-[0_0_10px_rgba(6,182,212,0.18)]" : "border-purple-500/30 bg-purple-500/10 text-purple-800 dark:text-purple-300 hover:bg-purple-500/20"}`,
+													className: `inline-flex items-center gap-1.5 rounded-full border px-3 py-1 text-xs font-semibold transition-all ${isApex ? "border-cyan-500/30 bg-cyan-500/10 text-cyan-800 dark:text-cyan-300 hover:bg-cyan-500/20 shadow-[0_0_10px_rgba(6,182,212,0.18)]" : "border-purple-500/30 bg-purple-500/10 text-purple-800 dark:text-purple-300 hover:bg-purple-500/20"}`,
 													children: [
 														/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: `size-1.5 rounded-full ${isApex ? "bg-cyan-400" : "bg-purple-400"} animate-ping` }),
 														/* @__PURE__ */ (0, import_jsx_runtime.jsx)(ExternalLink, { className: "size-3" }),
@@ -2621,33 +2705,33 @@ function Projects({ businessesList, sideProjectsList, email, pdfUrl, summary, ed
 													href: project.githubUrl,
 													target: "_blank",
 													rel: "noopener noreferrer",
-													className: "inline-flex items-center gap-1.5 rounded-full border border-border/80 bg-secondary/60 px-2.5 py-0.5 text-xs font-medium text-muted-foreground hover:text-foreground hover:bg-secondary transition-all shadow-xs",
+													className: "inline-flex items-center gap-1.5 rounded-full border border-border/80 bg-secondary/60 px-3 py-1 text-xs font-medium text-muted-foreground hover:text-foreground hover:bg-secondary transition-all shadow-xs",
 													title: "View Source Repository",
 													children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Github, { className: "size-3.5" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { children: "Source Code" })]
 												})]
 											}),
-											isApex ? /* @__PURE__ */ (0, import_jsx_runtime.jsx)(ApexPreview, {}) : /* @__PURE__ */ (0, import_jsx_runtime.jsx)(SidePreview, { title: project.title }),
+											isApex ? /* @__PURE__ */ (0, import_jsx_runtime.jsx)(ApexPreview, {}) : /* @__PURE__ */ (0, import_jsx_runtime.jsx)(PortfolioSitePreview, {}),
 											/* @__PURE__ */ (0, import_jsx_runtime.jsxs)(CardHeader, {
-												className: "px-0 pb-2 pt-4",
+												className: "px-0 pb-2 pt-5",
 												children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-													className: "flex items-center justify-between gap-2",
+													className: "flex items-start justify-between gap-3",
 													children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(CardTitle, {
-														className: `font-serif ${isApex ? "text-xl sm:text-2xl" : "text-lg"} font-semibold`,
+														className: "font-serif text-2xl sm:text-3xl",
 														children: project.title
 													}), project.badge && /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Badge, {
 														variant: "outline",
-														className: `shadow-xs font-mono text-[10px] uppercase tracking-wider ${isApex ? "bg-cyan-500/15 text-cyan-800 dark:text-cyan-300 border-cyan-500/30" : "bg-purple-500/15 text-purple-800 dark:text-purple-300 border-purple-500/30"}`,
+														className: `shadow-xs font-mono text-[11px] uppercase tracking-wider ${isApex ? "bg-cyan-500/15 text-cyan-800 dark:text-cyan-300 border-cyan-500/30" : "bg-purple-500/15 text-purple-800 dark:text-purple-300 border-purple-500/30"}`,
 														children: project.badge
 													})]
 												}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(CardDescription, {
-													className: "text-xs sm:text-sm text-muted-foreground mt-1.5 leading-relaxed",
+													className: "text-sm sm:text-base text-muted-foreground mt-2 leading-relaxed",
 													children: project.description
 												})]
 											}),
 											/* @__PURE__ */ (0, import_jsx_runtime.jsx)(CardContent, {
-												className: "flex flex-wrap gap-1.5 px-0 pt-3",
+												className: "flex flex-wrap gap-2 px-0 pt-4",
 												children: project.stack.map((tech) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-													className: `inline-flex items-center rounded-lg px-2.5 py-1 text-[11px] font-medium border shadow-2xs ${isApex ? "border-cyan-300 dark:border-cyan-500/25 bg-cyan-50 dark:bg-cyan-500/10 text-cyan-800 dark:text-cyan-300" : "border-purple-300 dark:border-purple-500/25 bg-purple-50 dark:bg-purple-500/10 text-purple-800 dark:text-purple-300"}`,
+													className: `inline-flex items-center rounded-lg px-2.5 py-1 text-xs font-medium border shadow-2xs ${isApex ? "border-cyan-300 dark:border-cyan-500/25 bg-cyan-50 dark:bg-cyan-500/10 text-cyan-800 dark:text-cyan-300" : "border-purple-300 dark:border-purple-500/25 bg-purple-50 dark:bg-purple-500/10 text-purple-800 dark:text-purple-300"}`,
 													children: tech
 												}, tech))
 											})

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { ArrowRight, ArrowUp, ExternalLink, Mail, Check, Copy, Terminal, Sparkles, FileText, Github } from "lucide-react";
 import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
@@ -177,7 +177,14 @@ function Hero({ tagline, availabilityStatus, liveCount, email, pdfUrl, summary, 
 
           <div className="rise-in rise-in-3 mt-10 flex flex-wrap items-center gap-3">
             <Button asChild size="lg" className="group btn-sage-glow rounded-xl font-medium shadow-md active:scale-[0.98] transition-all pl-5 pr-2.5 py-2 inline-flex items-center gap-2.5">
-              <a href="#projects">
+              <a
+                href="#projects"
+                onClick={() => {
+                  if (typeof window !== "undefined") {
+                    window.dispatchEvent(new CustomEvent("portfolio-tab-switch", { detail: { tab: "side" } }));
+                  }
+                }}
+              >
                 <span>View projects</span>
                 <span className="flex size-6 items-center justify-center rounded-lg bg-black/10 dark:bg-white/15 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
                   <ArrowRight className="size-3.5" />
@@ -422,6 +429,42 @@ function BusinessCard({ items }: BusinessCardProps) {
     </div>
   );
 }
+function PortfolioSitePreview() {
+  return (
+    <div className="relative overflow-hidden rounded-xl bg-secondary/80 p-3.5 border border-border/70 shadow-xs">
+      <div className="flex items-center justify-between border-b border-border/60 pb-2 mb-2.5">
+        <div className="flex items-center gap-1.5">
+          <span className="size-2 rounded-full bg-[#ff5f56]" />
+          <span className="size-2 rounded-full bg-[#ffbd2e]" />
+          <span className="size-2 rounded-full bg-[#27c93f]" />
+          <span className="ml-1.5 font-mono text-[10px] text-muted-foreground font-semibold">tanstack-start.config.ts</span>
+        </div>
+        <span className="inline-flex items-center gap-1 text-[10px] font-mono text-purple-800 dark:text-purple-300 font-semibold bg-purple-50 dark:bg-purple-500/10 px-2 py-0.5 rounded border border-purple-300 dark:border-purple-500/20">
+          <span className="size-1.5 rounded-full bg-purple-500 animate-pulse" />
+          Nitro Edge
+        </span>
+      </div>
+      <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 text-center text-[10px] font-mono">
+        <div className="p-1.5 rounded-lg bg-card border border-border/50">
+          <span className="text-muted-foreground block text-[9px]">Framework</span>
+          <span className="font-semibold text-foreground">TanStack Start</span>
+        </div>
+        <div className="p-1.5 rounded-lg bg-card border border-border/50">
+          <span className="text-muted-foreground block text-[9px]">React Core</span>
+          <span className="font-semibold text-emerald-800 dark:text-emerald-400">React 19 SSR</span>
+        </div>
+        <div className="p-1.5 rounded-lg bg-card border border-border/50">
+          <span className="text-muted-foreground block text-[9px]">Styling</span>
+          <span className="font-semibold text-cyan-800 dark:text-cyan-400">Tailwind v4</span>
+        </div>
+        <div className="p-1.5 rounded-lg bg-card border border-border/50">
+          <span className="text-muted-foreground block text-[9px]">Deployment</span>
+          <span className="font-semibold text-purple-800 dark:text-purple-400">Serverless Nitro</span>
+        </div>
+      </div>
+    </div>
+  );
+}
 
 interface ProjectsProps {
   businessesList: Project[];
@@ -436,6 +479,24 @@ interface ProjectsProps {
 
 function Projects({ businessesList, sideProjectsList, email, pdfUrl, summary, education, skillsList, resume }: ProjectsProps) {
   const { ref, isVisible } = useScrollAnimation();
+  const [activeTab, setActiveTab] = useState<string>("businesses");
+
+  useEffect(() => {
+    const handleSwitchTab = (e: any) => {
+      if (e.detail?.tab) {
+        setActiveTab(e.detail.tab);
+      }
+    };
+    window.addEventListener("portfolio-tab-switch" as any, handleSwitchTab);
+
+    if (window.location.hash === "#projects") {
+      setActiveTab("side");
+    }
+
+    return () => {
+      window.removeEventListener("portfolio-tab-switch" as any, handleSwitchTab);
+    };
+  }, []);
 
   return (
     <section
@@ -456,7 +517,7 @@ function Projects({ businessesList, sideProjectsList, email, pdfUrl, summary, ed
         Serious SaaS products and engineered software built under real constraints.
       </p>
 
-      <Tabs defaultValue="businesses" className="mt-10">
+      <Tabs value={activeTab} onValueChange={setActiveTab} className="mt-10">
         <TabsList className="bg-secondary/80 p-1 border border-border/70 flex-wrap h-auto rounded-xl shadow-inner">
           <TabsTrigger value="businesses" className="data-[state=active]:bg-card data-[state=active]:shadow-sm text-xs sm:text-sm rounded-lg">
             Flagship Products
@@ -525,7 +586,7 @@ function Projects({ businessesList, sideProjectsList, email, pdfUrl, summary, ed
                   className={`card-specular relative overflow-hidden p-2 flex flex-col justify-between rounded-2xl bg-gradient-to-br from-card via-card ${
                     isApex
                       ? "to-cyan-500/10 dark:to-cyan-500/10 sm:col-span-2"
-                      : "to-purple-500/10 dark:to-purple-500/10"
+                      : "to-purple-500/10 dark:to-purple-500/10 sm:col-span-2"
                   }`}
                 >
                   <div
@@ -542,7 +603,7 @@ function Projects({ businessesList, sideProjectsList, email, pdfUrl, summary, ed
                           href={project.liveUrl}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className={`inline-flex items-center gap-1.5 rounded-full border px-3 py-0.5 text-xs font-semibold transition-all ${
+                          className={`inline-flex items-center gap-1.5 rounded-full border px-3 py-1 text-xs font-semibold transition-all ${
                             isApex
                               ? "border-cyan-500/30 bg-cyan-500/10 text-cyan-800 dark:text-cyan-300 hover:bg-cyan-500/20 shadow-[0_0_10px_rgba(6,182,212,0.18)]"
                               : "border-purple-500/30 bg-purple-500/10 text-purple-800 dark:text-purple-300 hover:bg-purple-500/20"
@@ -558,7 +619,7 @@ function Projects({ businessesList, sideProjectsList, email, pdfUrl, summary, ed
                           href={project.githubUrl}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="inline-flex items-center gap-1.5 rounded-full border border-border/80 bg-secondary/60 px-2.5 py-0.5 text-xs font-medium text-muted-foreground hover:text-foreground hover:bg-secondary transition-all shadow-xs"
+                          className="inline-flex items-center gap-1.5 rounded-full border border-border/80 bg-secondary/60 px-3 py-1 text-xs font-medium text-muted-foreground hover:text-foreground hover:bg-secondary transition-all shadow-xs"
                           title="View Source Repository"
                         >
                           <Github className="size-3.5" />
@@ -567,17 +628,17 @@ function Projects({ businessesList, sideProjectsList, email, pdfUrl, summary, ed
                       )}
                     </div>
 
-                    {isApex ? <ApexPreview /> : <SidePreview title={project.title} />}
+                    {isApex ? <ApexPreview /> : <PortfolioSitePreview />}
 
-                    <CardHeader className="px-0 pb-2 pt-4">
-                      <div className="flex items-center justify-between gap-2">
-                        <CardTitle className={`font-serif ${isApex ? "text-xl sm:text-2xl" : "text-lg"} font-semibold`}>
+                    <CardHeader className="px-0 pb-2 pt-5">
+                      <div className="flex items-start justify-between gap-3">
+                        <CardTitle className="font-serif text-2xl sm:text-3xl">
                           {project.title}
                         </CardTitle>
                         {project.badge && (
                           <Badge
                             variant="outline"
-                            className={`shadow-xs font-mono text-[10px] uppercase tracking-wider ${
+                            className={`shadow-xs font-mono text-[11px] uppercase tracking-wider ${
                               isApex
                                 ? "bg-cyan-500/15 text-cyan-800 dark:text-cyan-300 border-cyan-500/30"
                                 : "bg-purple-500/15 text-purple-800 dark:text-purple-300 border-purple-500/30"
@@ -587,15 +648,15 @@ function Projects({ businessesList, sideProjectsList, email, pdfUrl, summary, ed
                           </Badge>
                         )}
                       </div>
-                      <CardDescription className="text-xs sm:text-sm text-muted-foreground mt-1.5 leading-relaxed">
+                      <CardDescription className="text-sm sm:text-base text-muted-foreground mt-2 leading-relaxed">
                         {project.description}
                       </CardDescription>
                     </CardHeader>
-                    <CardContent className="flex flex-wrap gap-1.5 px-0 pt-3">
+                    <CardContent className="flex flex-wrap gap-2 px-0 pt-4">
                       {project.stack.map((tech) => (
                         <span
                           key={tech}
-                          className={`inline-flex items-center rounded-lg px-2.5 py-1 text-[11px] font-medium border shadow-2xs ${
+                          className={`inline-flex items-center rounded-lg px-2.5 py-1 text-xs font-medium border shadow-2xs ${
                             isApex
                               ? "border-cyan-300 dark:border-cyan-500/25 bg-cyan-50 dark:bg-cyan-500/10 text-cyan-800 dark:text-cyan-300"
                               : "border-purple-300 dark:border-purple-500/25 bg-purple-50 dark:bg-purple-500/10 text-purple-800 dark:text-purple-300"

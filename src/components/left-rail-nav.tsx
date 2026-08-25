@@ -47,6 +47,11 @@ export function LeftRailNav({ resume }: { resume?: ResumeContent }) {
           <a
             key={id}
             href={`#${id}`}
+            onClick={() => {
+              if (id === "projects" && typeof window !== "undefined") {
+                window.dispatchEvent(new CustomEvent("portfolio-tab-switch", { detail: { tab: "side" } }));
+              }
+            }}
             className="group relative flex items-center justify-center"
             title={id.charAt(0).toUpperCase() + id.slice(1)}
           >

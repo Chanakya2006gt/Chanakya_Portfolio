@@ -35,6 +35,11 @@ export function SiteNav() {
                 <a
                   key={link.href}
                   href={link.href}
+                  onClick={() => {
+                    if (sectionId === "projects" && typeof window !== "undefined") {
+                      window.dispatchEvent(new CustomEvent("portfolio-tab-switch", { detail: { tab: "side" } }));
+                    }
+                  }}
                   className={`text-sm transition-colors relative py-1 ${
                     isActive
                       ? "font-medium text-sage"
@@ -74,7 +79,12 @@ export function SiteNav() {
                 <a
                   key={link.href}
                   href={link.href}
-                  onClick={() => setOpen(false)}
+                  onClick={() => {
+                    setOpen(false);
+                    if (link.href === "#projects" && typeof window !== "undefined") {
+                      window.dispatchEvent(new CustomEvent("portfolio-tab-switch", { detail: { tab: "side" } }));
+                    }
+                  }}
                   className="text-base text-muted-foreground hover:text-sage transition-colors"
                 >
                   {link.label}

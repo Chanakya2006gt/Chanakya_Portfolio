@@ -1,4 +1,4 @@
-//#region node_modules/.nitro/vite/services/ssr/assets/_tanstack-start-manifest_v-43WPd1sA.js
+//#region node_modules/.nitro/vite/services/ssr/assets/_tanstack-start-manifest_v-C8Q0KR2C.js
 var tsrStartManifest = () => ({ routes: {
 	__root__: {
 		filePath: "/Users/shresta/Chanakya_Portfolio/src/routes/__root.tsx",
@@ -17,23 +17,23 @@ var tsrStartManifest = () => ({ routes: {
 			"/api/admin/resume"
 		],
 		preloads: [
-			"/assets/index-i3Zqw29h.js",
+			"/assets/index-BJQzqXTE.js",
 			"/assets/rolldown-runtime-CbXtAM7H.js",
 			"/assets/dist-BgyKNZi8.js"
 		],
 		scripts: [{ attrs: {
 			type: "module",
 			async: !0,
-			src: "/assets/index-i3Zqw29h.js"
+			src: "/assets/index-BJQzqXTE.js"
 		} }]
 	},
 	"/": {
 		filePath: "/Users/shresta/Chanakya_Portfolio/src/routes/index.tsx",
 		children: void 0,
 		preloads: [
-			"/assets/routes-UultIeN4.js",
+			"/assets/routes-CrZzn_C4.js",
 			"/assets/user-iAJQSeGp.js",
-			"/assets/badge-B1FaToRz.js",
+			"/assets/badge-CK-cAAza.js",
 			"/assets/card-DFS3vp7c.js"
 		]
 	},
@@ -50,8 +50,8 @@ var tsrStartManifest = () => ({ routes: {
 		filePath: "/Users/shresta/Chanakya_Portfolio/src/routes/admin/index.tsx",
 		children: void 0,
 		preloads: [
-			"/assets/admin-DCD2K02S.js",
-			"/assets/badge-B1FaToRz.js",
+			"/assets/admin-Cj32dhqH.js",
+			"/assets/badge-CK-cAAza.js",
 			"/assets/card-DFS3vp7c.js"
 		]
 	}
