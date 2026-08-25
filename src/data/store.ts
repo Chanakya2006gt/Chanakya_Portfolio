@@ -34,6 +34,6 @@ export function getPortfolioData(): DynamicData {
     availabilityStatus: "Open for contracts & software engineering roles",
     workAvailability: "Open for contract work, consulting & engineering roles",
     hiringStatus: "Not hiring for any roles at this time (Chanakya is open to being hired for contracts/work)",
-    heroTagline: "I ship products under real constraints — not demos. Trelio is the serious work. Everything else stays in experiments.",
+    heroTagline: "I ship products under real constraints — not demos. Trelio is the primary work alongside focused software projects.",
   };
 }

@@ -167,7 +167,7 @@ function Hero({ tagline, availabilityStatus, liveCount, email, pdfUrl, summary, 
             </span>
           </h1>
           <p className="rise-in rise-in-2 mt-6 max-w-xl text-lg sm:text-xl leading-relaxed text-muted-foreground">
-            {tagline || "I ship products under real constraints — not demos. Trelio is the serious work. Everything else stays in experiments."}
+            {tagline || "I ship products under real constraints — not demos. Trelio is the primary work alongside focused software projects."}
           </p>
 
           <HeroStats status={availabilityStatus} liveCount={liveCount} />
@@ -294,7 +294,7 @@ function About({ email, pdfUrl, summary, education, skillsList, resume }: AboutP
               </div>
               <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                 Direct, metrics-first, no fluff. Build, get a user in front of it,
-                iterate. Side experiments stay labeled as experiments.
+                iterate. Clean code and reliable architecture come first.
               </p>
             </div>
             <Separator className="bg-border/60" />
@@ -304,8 +304,7 @@ function About({ email, pdfUrl, summary, education, skillsList, resume }: AboutP
                 <h4 className="text-sm font-semibold text-foreground">What I am doing now</h4>
               </div>
               <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
-                Full-stack on Trelio, DSA practice, and keeping the product scoped.
-                Career experiments stay secondary until the product has traction.
+                Full-stack engineering on Trelio, DSA practice, and building production-grade software.
               </p>
             </div>
           </div>
@@ -409,7 +408,7 @@ function Projects({ businessesList, sideProjectsList, email, pdfUrl, summary, ed
         Featured Projects
       </h2>
       <p className="mt-3 max-w-xl text-muted-foreground">
-        Serious SaaS products engineered under real constraints sit above experiments.
+        Serious SaaS products and engineered software built under real constraints.
       </p>
 
       <Tabs defaultValue="businesses" className="mt-10">
@@ -421,7 +420,7 @@ function Projects({ businessesList, sideProjectsList, email, pdfUrl, summary, ed
             Freelance Work
           </TabsTrigger>
           <TabsTrigger value="side" className="data-[state=active]:bg-card data-[state=active]:shadow-sm text-xs sm:text-sm rounded-lg">
-            Side Experiments
+            Side Projects
           </TabsTrigger>
         </TabsList>
 
@@ -469,7 +468,7 @@ function Projects({ businessesList, sideProjectsList, email, pdfUrl, summary, ed
           </Card>
         </TabsContent>
 
-        {/* Tab 3: Side Experiments */}
+        {/* Tab 3: Side Projects */}
         <TabsContent value="side" className="mt-6">
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {sideProjectsList.map((project) => (
@@ -514,9 +513,9 @@ function Projects({ businessesList, sideProjectsList, email, pdfUrl, summary, ed
             {/* Polite 'More to come' card */}
             <Card className="relative overflow-hidden p-6 border-dashed border-border/80 bg-secondary/30 flex flex-col items-center justify-center text-center min-h-[220px] rounded-2xl shadow-[inset_0_1px_0_0_rgba(255,255,255,0.04)]">
               <span className="size-2 rounded-full bg-cyan-600 dark:bg-cyan-400 shadow-[0_0_8px_#38bdf8] animate-pulse mb-3" />
-              <p className="font-serif text-lg text-foreground/90">More Experiments in Progress</p>
+              <p className="font-serif text-lg text-foreground/90">More Projects in Progress</p>
               <p className="text-xs text-muted-foreground mt-2 max-w-xs leading-relaxed">
-                Active labs in security primitives, database tooling, and open-source packages will be posted here as they are published.
+                Active tools, packages, and open-source software will be posted here as they are published.
               </p>
             </Card>
           </div>

@@ -1,5 +1,5 @@
 import { n as put, t as head } from "../_libs/@vercel/blob+[...].mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/content.server-CUsYYTQK.js
+//#region node_modules/.nitro/vite/services/ssr/assets/content.server-CpZv_ci3.js
 var __defProp = Object.defineProperty;
 var __exportAll = (all, no_symbols) => {
 	let target = {};
@@ -142,7 +142,7 @@ var portfolio_data_default = {
 		]
 	},
 	availabilityStatus: "Open for collaborations & full-time roles",
-	heroTagline: "I ship products under real constraints — not demos. Trelio is the serious work. Everything else stays in experiments.",
+	heroTagline: "I ship products under real constraints — not demos. Trelio is the primary work alongside focused software projects.",
 	resumeOverride: { "education": "SR University — B.Tech CSE (2028)" },
 	resume: {
 		"fullName": "NAGULAGAM CHANAKYA",
@@ -191,7 +191,7 @@ function getPortfolioData() {
 		availabilityStatus: "Open for contracts & software engineering roles",
 		workAvailability: "Open for contract work, consulting & engineering roles",
 		hiringStatus: "Not hiring for any roles at this time (Chanakya is open to being hired for contracts/work)",
-		heroTagline: "I ship products under real constraints — not demos. Trelio is the serious work. Everything else stays in experiments."
+		heroTagline: "I ship products under real constraints — not demos. Trelio is the primary work alongside focused software projects."
 	};
 }
 var content_server_exports = /* @__PURE__ */ __exportAll({

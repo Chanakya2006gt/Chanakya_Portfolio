@@ -261,7 +261,7 @@ function AdminDashboardPage() {
         <Tabs defaultValue="projects" className="space-y-6">
           <TabsList className="bg-secondary/60 border border-border p-1">
             <TabsTrigger value="projects" className="gap-2 text-xs">
-              <LayoutGrid className="size-3.5" /> Projects & Side Experiments
+              <LayoutGrid className="size-3.5" /> Flagship & Side Projects
             </TabsTrigger>
             <TabsTrigger value="resume" className="gap-2 text-xs">
               <FileText className="size-3.5" /> Resume & Qualifications
@@ -271,7 +271,7 @@ function AdminDashboardPage() {
             </TabsTrigger>
           </TabsList>
 
-          {/* TAB 1: Projects & Experiments */}
+          {/* TAB 1: Flagship & Side Projects */}
           <TabsContent value="projects" className="space-y-6">
             <div className="flex items-center justify-between">
               <div>
@@ -371,8 +371,8 @@ function AdminDashboardPage() {
 
             <div className="pt-6 border-t border-border flex items-center justify-between">
               <div>
-                <h3 className="text-lg font-semibold text-white">Side Projects & Experiments</h3>
-                <p className="text-xs text-muted-foreground">Add or update side projects and WIP labs.</p>
+                <h3 className="text-lg font-semibold text-white">Side Projects</h3>
+                <p className="text-xs text-muted-foreground">Add or update side projects and tools.</p>
               </div>
               <Button onClick={handleAddSideProject} variant="outline" size="sm" className="gap-1.5 text-sage border-sage/40">
                 <Plus className="size-4" /> Add Side Project

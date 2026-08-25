@@ -1,15 +1,15 @@
 import { i as __toESM } from "../_runtime.mjs";
-import { c as sideProjects$1, l as skills$1, o as businesses$1, s as navLinks } from "./content.server-CUsYYTQK.mjs";
+import { c as sideProjects$1, l as skills$1, o as businesses$1, s as navLinks } from "./content.server-CpZv_ci3.mjs";
 import { u as require_react } from "../_libs/@floating-ui/react-dom+[...].mjs";
 import { s as require_jsx_runtime } from "../_libs/@radix-ui/react-collection+[...].mjs";
 import { A as CodeXml, C as GraduationCap, D as Database, E as ExternalLink, F as Bot, I as Award, L as ArrowUp, M as CircleCheck, N as Check, O as Copy, P as Building2, R as ArrowRight, T as FileText, _ as MapPin, b as Lock, c as ShieldCheck, f as RefreshCw, g as Menu, h as Moon, j as Clock, l as Send, n as X, o as Sun, p as Printer, r as User, t as Zap, v as Mail, w as Github, x as Linkedin } from "../_libs/lucide-react.mjs";
 import { a as DialogOverlay$1, c as DialogTrigger$1, i as DialogDescription$1, n as DialogClose, o as DialogPortal$1, r as DialogContent$1, s as DialogTitle$1, t as Dialog$1 } from "../_libs/@radix-ui/react-dialog+[...].mjs";
 import { n as toast } from "../_libs/sonner.mjs";
-import { n as Route$11, r as cn } from "./router-DGfZpMmJ.mjs";
-import { a as CardFooter, c as Input, i as CardDescription, l as Label, n as Card, o as CardHeader, r as CardContent, s as CardTitle, t as Button } from "./card-C6onCuUy.mjs";
-import { a as TabsTrigger, i as TabsList, n as Tabs, o as Textarea, r as TabsContent, t as Badge } from "./badge-Hdc7Bkbj.mjs";
+import { n as Route$11, r as cn } from "./router-HhiZOV9y.mjs";
+import { a as CardFooter, c as Input, i as CardDescription, l as Label, n as Card, o as CardHeader, r as CardContent, s as CardTitle, t as Button } from "./card-DL8rH-eH.mjs";
+import { a as TabsTrigger, i as TabsList, n as Tabs, o as Textarea, r as TabsContent, t as Badge } from "./badge-BWIvpAyE.mjs";
 import { t as Root } from "../_libs/radix-ui__react-separator.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/routes-D732akIh.js
+//#region node_modules/.nitro/vite/services/ssr/assets/routes-IGV4TbJ2.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 var Separator = import_react.forwardRef(({ className, orientation = "horizontal", decorative = true, ...props }, ref) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Root, {
@@ -1868,7 +1868,7 @@ function Hero({ tagline, availabilityStatus, liveCount, email, pdfUrl, summary, 
 					}),
 					/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
 						className: "rise-in rise-in-2 mt-6 max-w-xl text-lg sm:text-xl leading-relaxed text-muted-foreground",
-						children: tagline || "I ship products under real constraints — not demos. Trelio is the serious work. Everything else stays in experiments."
+						children: tagline || "I ship products under real constraints — not demos. Trelio is the primary work alongside focused software projects."
 					}),
 					/* @__PURE__ */ (0, import_jsx_runtime.jsx)(HeroStats, {
 						status: availabilityStatus,
@@ -2047,7 +2047,7 @@ function About({ email, pdfUrl, summary, education, skillsList, resume }) {
 								})]
 							}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
 								className: "mt-2 text-sm text-muted-foreground leading-relaxed",
-								children: "Direct, metrics-first, no fluff. Build, get a user in front of it, iterate. Side experiments stay labeled as experiments."
+								children: "Direct, metrics-first, no fluff. Build, get a user in front of it, iterate. Clean code and reliable architecture come first."
 							})] }),
 							/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Separator, { className: "bg-border/60" }),
 							/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
@@ -2058,7 +2058,7 @@ function About({ email, pdfUrl, summary, education, skillsList, resume }) {
 								})]
 							}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
 								className: "mt-2 text-sm text-muted-foreground leading-relaxed",
-								children: "Full-stack on Trelio, DSA practice, and keeping the product scoped. Career experiments stay secondary until the product has traction."
+								children: "Full-stack engineering on Trelio, DSA practice, and building production-grade software."
 							})] })
 						]
 					})]
@@ -2167,7 +2167,7 @@ function Projects({ businessesList, sideProjectsList, email, pdfUrl, summary, ed
 			}),
 			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
 				className: "mt-3 max-w-xl text-muted-foreground",
-				children: "Serious SaaS products engineered under real constraints sit above experiments."
+				children: "Serious SaaS products and engineered software built under real constraints."
 			}),
 			/* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Tabs, {
 				defaultValue: "businesses",
@@ -2189,7 +2189,7 @@ function Projects({ businessesList, sideProjectsList, email, pdfUrl, summary, ed
 							/* @__PURE__ */ (0, import_jsx_runtime.jsx)(TabsTrigger, {
 								value: "side",
 								className: "data-[state=active]:bg-card data-[state=active]:shadow-sm text-xs sm:text-sm rounded-lg",
-								children: "Side Experiments"
+								children: "Side Projects"
 							})
 						]
 					}),
@@ -2296,11 +2296,11 @@ function Projects({ businessesList, sideProjectsList, email, pdfUrl, summary, ed
 									/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: "size-2 rounded-full bg-cyan-600 dark:bg-cyan-400 shadow-[0_0_8px_#38bdf8] animate-pulse mb-3" }),
 									/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
 										className: "font-serif text-lg text-foreground/90",
-										children: "More Experiments in Progress"
+										children: "More Projects in Progress"
 									}),
 									/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
 										className: "text-xs text-muted-foreground mt-2 max-w-xs leading-relaxed",
-										children: "Active labs in security primitives, database tooling, and open-source packages will be posted here as they are published."
+										children: "Active tools, packages, and open-source software will be posted here as they are published."
 									})
 								]
 							})]

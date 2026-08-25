@@ -4,9 +4,9 @@ import { _ as useNavigate } from "../_libs/@tanstack/react-router+[...].mjs";
 import { s as require_jsx_runtime } from "../_libs/@radix-ui/react-collection+[...].mjs";
 import { E as ExternalLink, S as LayoutGrid, T as FileText, a as Trash2, m as Plus, s as Sparkles, u as Save, y as LogOut } from "../_libs/lucide-react.mjs";
 import { n as toast } from "../_libs/sonner.mjs";
-import { c as Input, l as Label, n as Card, t as Button } from "./card-C6onCuUy.mjs";
-import { a as TabsTrigger, i as TabsList, n as Tabs, o as Textarea, r as TabsContent, t as Badge } from "./badge-Hdc7Bkbj.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/admin-Dp2Uhj90.js
+import { c as Input, l as Label, n as Card, t as Button } from "./card-DL8rH-eH.mjs";
+import { a as TabsTrigger, i as TabsList, n as Tabs, o as Textarea, r as TabsContent, t as Badge } from "./badge-BWIvpAyE.mjs";
+//#region node_modules/.nitro/vite/services/ssr/assets/admin-DqBkAx6O.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 function AdminDashboardPage() {
@@ -229,7 +229,7 @@ function AdminDashboardPage() {
 							/* @__PURE__ */ (0, import_jsx_runtime.jsxs)(TabsTrigger, {
 								value: "projects",
 								className: "gap-2 text-xs",
-								children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(LayoutGrid, { className: "size-3.5" }), " Projects & Side Experiments"]
+								children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(LayoutGrid, { className: "size-3.5" }), " Flagship & Side Projects"]
 							}),
 							/* @__PURE__ */ (0, import_jsx_runtime.jsxs)(TabsTrigger, {
 								value: "resume",
@@ -366,10 +366,10 @@ function AdminDashboardPage() {
 								className: "pt-6 border-t border-border flex items-center justify-between",
 								children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h3", {
 									className: "text-lg font-semibold text-white",
-									children: "Side Projects & Experiments"
+									children: "Side Projects"
 								}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
 									className: "text-xs text-muted-foreground",
-									children: "Add or update side projects and WIP labs."
+									children: "Add or update side projects and tools."
 								})] }), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Button, {
 									onClick: handleAddSideProject,
 									variant: "outline",
