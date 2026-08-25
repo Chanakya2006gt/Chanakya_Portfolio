@@ -7,24 +7,24 @@ export function TrelioPreview() {
   const stages = [
     {
       id: 0,
-      title: "Stage 01 · Scope Lock",
-      desc: "Client requirements & milestone deliverables cryptographically locked.",
-      status: "Verified",
+      title: "Stage 01 · Scope Lock & Agreement",
+      desc: "Scope deliverables and milestone terms are cryptographically locked and agreed upon.",
+      status: "Locked & Signed",
       done: true,
     },
     {
       id: 1,
-      title: "Stage 02 · Authorization & Escrow",
-      desc: "Payment authorized into escrow before contractor writes a single line of code.",
-      status: "Awaiting Client Auth",
+      title: "Stage 02 · Client Authorization & Payment",
+      desc: "Client approves and pays milestone directly to agency account to unlock next stage.",
+      status: "Awaiting Auth & Pay",
       done: false,
       active: true,
     },
     {
       id: 2,
-      title: "Stage 03 · Execution & Settlement",
-      desc: "Milestone proof verified; funds automatically settle to freelancer UPI.",
-      status: "Standby",
+      title: "Stage 03 · Execution & Direct Settlement",
+      desc: "Work executes once authorized; payment settles directly to agency with zero intermediary holding.",
+      status: "Locked Until Paid",
       done: false,
     },
   ];

@@ -15,7 +15,7 @@ export const businesses: Project[] = [
     id: "trelio",
     title: "Trelio",
     description:
-      "Authorization-before-execution SaaS for freelancers and agencies. Work is broken into stages that clients approve and pay one at a time, so execution never runs ahead of payment.",
+      "Authorization-before-execution SaaS for freelancers and agencies. Work is split into stages that clients must approve and pay before the next stage unlocks — so execution never runs ahead of payment.",
     liveUrl: "https://trelio.in",
     stack: ["React", "Node.js", "Multi-tenant", "Payments", "Audit logs"],
     featured: true,

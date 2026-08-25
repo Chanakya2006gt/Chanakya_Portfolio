@@ -1,5 +1,5 @@
 import { n as put, t as head } from "../_libs/@vercel/blob+[...].mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/content.server-bgipnv65.js
+//#region node_modules/.nitro/vite/services/ssr/assets/content.server-CUsYYTQK.js
 var __defProp = Object.defineProperty;
 var __exportAll = (all, no_symbols) => {
 	let target = {};
@@ -13,7 +13,7 @@ var __exportAll = (all, no_symbols) => {
 var businesses$1 = [{
 	id: "trelio",
 	title: "Trelio",
-	description: "Authorization-before-execution SaaS for freelancers and agencies. Work is broken into stages that clients approve and pay one at a time, so execution never runs ahead of payment.",
+	description: "Authorization-before-execution SaaS for freelancers and agencies. Work is split into stages that clients must approve and pay before the next stage unlocks — so execution never runs ahead of payment.",
 	liveUrl: "https://trelio.in",
 	stack: [
 		"React",
@@ -88,7 +88,7 @@ var portfolio_data_default = {
 	businesses: [{
 		"id": "trelio",
 		"title": "Trelio",
-		"description": "Authorization-before-execution SaaS for freelancers and agencies. Work is broken into stages that clients approve and pay one at a time, so execution never runs ahead of payment.",
+		"description": "Authorization-before-execution SaaS for freelancers and agencies. Work is split into stages that clients must approve and pay before the next stage unlocks — so execution never runs ahead of payment.",
 		"liveUrl": "https://trelio.in",
 		"stack": [
 			"React",
