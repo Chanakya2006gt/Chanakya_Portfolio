@@ -26,7 +26,7 @@ import {
 } from "@/components/ui/dialog";
 
 import { businesses as defaultBusinesses, sideProjects as defaultSideProjects, skills as defaultSkills, Project } from "@/data/projects";
-import { SidePreview, TrelioPreview } from "@/components/trelio-preview";
+import { TrelioPreview } from "@/components/trelio-preview";
 import { ApexPreview } from "@/components/apex-preview";
 import { SiteNav } from "@/components/site-nav";
 import { LeftRailNav } from "@/components/left-rail-nav";

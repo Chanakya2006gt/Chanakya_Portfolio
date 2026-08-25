@@ -111,12 +111,3 @@ export function TrelioPreview() {
     </div>
   );
 }
-
-export function SidePreview({ title }: { title: string }) {
-  return (
-    <div className="relative flex h-28 items-end overflow-hidden rounded-xl bg-secondary/80 p-4 border border-border/60 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.06)]">
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(163,194,171,0.08),transparent_70%)]" />
-      <p className="relative font-serif text-xl text-foreground/90">{title}</p>
-    </div>
-  );
-}

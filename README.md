@@ -24,13 +24,13 @@ Designed with inspiration from modern motion language, featuring an interactive 
 - **Prebuilt Quick Questions**: One-click action chips (`📄 Resume & Education`, `🚀 Tell me about Trelio`, `💻 Tech stack & skills`, `💼 Open for hiring?`, `📬 How to contact?`).
 
 ### 📄 4. Interactive Resume & Credentials Modal
-- Full interactive resume viewer with print/PDF support, downloadable PDF resume, email (`nagulagamchanakya2211@gmail.com`), SR University B.Tech CIS (2028), and deep-dive technical details of Trelio SaaS (SHA-256 e-signatures, ABE system, tamper-evident ledgers, AES-256-GCM).
+- Full interactive resume viewer with print/PDF support, downloadable PDF resume, email (`nagulagamchanakya2211@gmail.com`), SR University B.Tech CSE (2028), and deep-dive technical details of Trelio SaaS (SHA-256 e-signatures, ABE system, tamper-evident ledgers, AES-256-GCM).
 - Accessible via **Desktop Left Rail Sidebar** (below section dot indicators), **Hero CTA**, and **About Section**.
 
 ### 🎛️ 5. Private Admin Portal (`/admin` & `/admin/login`)
 - **Protected Access**: Credentials isolated in `.env` (`ADMIN_USERNAME`, `ADMIN_PASSWORD`).
 - **Session Security**: Cryptographically signed HMAC-SHA256 HTTP-only session cookies with expiration checks.
-- **Live Edit Capabilities**: Update projects/experiments, resume details, hero taglines, and live availability badges on the fly.
+- **Live Edit Capabilities**: Update products/projects, resume details, hero taglines, and live availability badges on the fly.
 
 ---
 
