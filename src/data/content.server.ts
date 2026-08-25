@@ -18,8 +18,28 @@ export async function readContent(): Promise<DynamicData> {
       if (res.ok) {
         const data = (await res.json()) as DynamicData;
         if (data && Array.isArray(data.businesses)) {
-          cached = { data, at: Date.now() };
-          return data;
+          const fallback = getPortfolioData();
+          const knownBusinessIds = new Set(data.businesses.map((b) => b.id));
+          const knownSideIds = new Set((data.sideProjects || []).map((s) => s.id));
+
+          // Merge any newly introduced projects from codebase
+          const mergedBusinesses = [...data.businesses];
+          for (const b of fallback.businesses) {
+            if (!knownBusinessIds.has(b.id)) mergedBusinesses.push(b);
+          }
+          const mergedSideProjects = [...(data.sideProjects || [])];
+          for (const s of fallback.sideProjects) {
+            if (!knownSideIds.has(s.id)) mergedSideProjects.push(s);
+          }
+
+          const mergedData: DynamicData = {
+            ...fallback,
+            ...data,
+            businesses: mergedBusinesses,
+            sideProjects: mergedSideProjects,
+          };
+          cached = { data: mergedData, at: Date.now() };
+          return mergedData;
         }
       }
     }

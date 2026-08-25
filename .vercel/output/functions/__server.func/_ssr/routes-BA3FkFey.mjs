@@ -1,15 +1,15 @@
 import { i as __toESM } from "../_runtime.mjs";
-import { c as sideProjects$1, l as skills$1, o as businesses$1, s as navLinks } from "./content.server-Caa_9xpY.mjs";
+import { c as sideProjects$1, l as skills$1, o as businesses$1, s as navLinks } from "./content.server-DZbb1O8k.mjs";
 import { u as require_react } from "../_libs/@floating-ui/react-dom+[...].mjs";
 import { s as require_jsx_runtime } from "../_libs/@radix-ui/react-collection+[...].mjs";
 import { A as Copy, B as ArrowUp, C as Layers, D as ExternalLink, E as FileText, F as Check, I as Calculator, L as Building2, M as CodeXml, N as Clock, O as Disc, P as CircleCheck, R as Bot, T as Github, V as ArrowRight, _ as MapPin, b as Lock, c as ShieldCheck, f as RefreshCw, g as Menu, h as Moon, k as Database, l as Send, n as X, o as Sun, p as Printer, r as User, t as Zap, v as Mail, w as GraduationCap, x as Linkedin, z as Award } from "../_libs/lucide-react.mjs";
 import { a as DialogOverlay$1, c as DialogTrigger$1, i as DialogDescription$1, n as DialogClose, o as DialogPortal$1, r as DialogContent$1, s as DialogTitle$1, t as Dialog$1 } from "../_libs/@radix-ui/react-dialog+[...].mjs";
 import { n as toast } from "../_libs/sonner.mjs";
-import { n as Route$11, r as cn } from "./router-1CNGQstZ.mjs";
-import { a as CardFooter, c as Input, i as CardDescription, l as Label, n as Card, o as CardHeader, r as CardContent, s as CardTitle, t as Button } from "./card-B73obx4b.mjs";
-import { a as TabsTrigger, i as TabsList, n as Tabs, o as Textarea, r as TabsContent, t as Badge } from "./badge-DDeW1FWY.mjs";
+import { n as Route$11, r as cn } from "./router-CBAFIhIa.mjs";
+import { a as CardFooter, c as Input, i as CardDescription, l as Label, n as Card, o as CardHeader, r as CardContent, s as CardTitle, t as Button } from "./card-DLwWNzUU.mjs";
+import { a as TabsTrigger, i as TabsList, n as Tabs, o as Textarea, r as TabsContent, t as Badge } from "./badge-COleoRH7.mjs";
 import { t as Root } from "../_libs/radix-ui__react-separator.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/routes-DM2JSIbf.js
+//#region node_modules/.nitro/vite/services/ssr/assets/routes-BA3FkFey.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 var Separator = import_react.forwardRef(({ className, orientation = "horizontal", decorative = true, ...props }, ref) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Root, {
@@ -2597,52 +2597,73 @@ function Projects({ businessesList, sideProjectsList, email, pdfUrl, summary, ed
 						value: "side",
 						className: "mt-6",
 						children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-							className: "grid gap-4 sm:grid-cols-2 lg:grid-cols-3",
-							children: [sideProjectsList.map((project) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Card, {
-								className: "card-specular relative overflow-hidden p-2 flex flex-col justify-between rounded-2xl bg-gradient-to-br from-card via-card to-purple-500/10 dark:to-purple-500/10",
-								children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "absolute top-0 inset-x-0 h-0.5 bg-gradient-to-r from-purple-400 via-indigo-400 to-cyan-500" }), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-									className: "p-4",
-									children: [
-										/* @__PURE__ */ (0, import_jsx_runtime.jsx)(SidePreview, { title: project.title }),
-										/* @__PURE__ */ (0, import_jsx_runtime.jsxs)(CardHeader, {
-											className: "px-0 pb-2 pt-4",
-											children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-												className: "flex items-center justify-between gap-2",
-												children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(CardTitle, {
-													className: "text-lg font-semibold",
-													children: project.title
-												}), project.liveUrl && /* @__PURE__ */ (0, import_jsx_runtime.jsx)("a", {
+							className: "grid gap-6 sm:grid-cols-2",
+							children: [sideProjectsList.map((project) => {
+								const isApex = project.id === "apex";
+								return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Card, {
+									className: `card-specular relative overflow-hidden p-2 flex flex-col justify-between rounded-2xl bg-gradient-to-br from-card via-card ${isApex ? "to-cyan-500/10 dark:to-cyan-500/10 sm:col-span-2" : "to-purple-500/10 dark:to-purple-500/10"}`,
+									children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: `absolute top-0 inset-x-0 h-0.5 bg-gradient-to-r ${isApex ? "from-cyan-400 via-blue-500 to-indigo-500" : "from-purple-400 via-indigo-400 to-cyan-500"}` }), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+										className: "p-4 sm:p-6",
+										children: [
+											/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+												className: "mb-4 flex flex-wrap items-center justify-between gap-2",
+												children: [project.liveUrl && /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("a", {
 													href: project.liveUrl,
 													target: "_blank",
 													rel: "noopener noreferrer",
-													className: "text-muted-foreground hover:text-purple-700 dark:hover:text-purple-400 transition-colors p-1",
-													title: "View Repository",
-													children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(ExternalLink, { className: "size-3.5" })
+													className: `inline-flex items-center gap-1.5 rounded-full border px-3 py-0.5 text-xs font-semibold transition-all ${isApex ? "border-cyan-500/30 bg-cyan-500/10 text-cyan-800 dark:text-cyan-300 hover:bg-cyan-500/20 shadow-[0_0_10px_rgba(6,182,212,0.18)]" : "border-purple-500/30 bg-purple-500/10 text-purple-800 dark:text-purple-300 hover:bg-purple-500/20"}`,
+													children: [
+														/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: `size-1.5 rounded-full ${isApex ? "bg-cyan-400" : "bg-purple-400"} animate-ping` }),
+														/* @__PURE__ */ (0, import_jsx_runtime.jsx)(ExternalLink, { className: "size-3" }),
+														project.liveUrl.replace(/^https?:\/\//, "")
+													]
+												}), project.githubUrl && /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("a", {
+													href: project.githubUrl,
+													target: "_blank",
+													rel: "noopener noreferrer",
+													className: "inline-flex items-center gap-1.5 rounded-full border border-border/80 bg-secondary/60 px-2.5 py-0.5 text-xs font-medium text-muted-foreground hover:text-foreground hover:bg-secondary transition-all shadow-xs",
+													title: "View Source Repository",
+													children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Github, { className: "size-3.5" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { children: "Source Code" })]
 												})]
-											}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(CardDescription, {
-												className: "text-xs line-clamp-2 mt-1",
-												children: project.description
-											})]
-										}),
-										/* @__PURE__ */ (0, import_jsx_runtime.jsx)(CardContent, {
-											className: "flex flex-wrap gap-1.5 px-0 pt-2",
-											children: project.stack.map((tech) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-												className: "inline-flex items-center rounded-lg px-2 py-0.5 text-[11px] font-medium border border-purple-300 dark:border-purple-500/25 bg-purple-50 dark:bg-purple-500/10 text-purple-800 dark:text-purple-300 shadow-2xs",
-												children: tech
-											}, tech))
-										})
-									]
-								})]
-							}, project.id)), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Card, {
-								className: "relative overflow-hidden p-6 border-dashed border-border/80 bg-secondary/30 flex flex-col items-center justify-center text-center min-h-[220px] rounded-2xl shadow-[inset_0_1px_0_0_rgba(255,255,255,0.04)]",
+											}),
+											isApex ? /* @__PURE__ */ (0, import_jsx_runtime.jsx)(ApexPreview, {}) : /* @__PURE__ */ (0, import_jsx_runtime.jsx)(SidePreview, { title: project.title }),
+											/* @__PURE__ */ (0, import_jsx_runtime.jsxs)(CardHeader, {
+												className: "px-0 pb-2 pt-4",
+												children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+													className: "flex items-center justify-between gap-2",
+													children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(CardTitle, {
+														className: `font-serif ${isApex ? "text-xl sm:text-2xl" : "text-lg"} font-semibold`,
+														children: project.title
+													}), project.badge && /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Badge, {
+														variant: "outline",
+														className: `shadow-xs font-mono text-[10px] uppercase tracking-wider ${isApex ? "bg-cyan-500/15 text-cyan-800 dark:text-cyan-300 border-cyan-500/30" : "bg-purple-500/15 text-purple-800 dark:text-purple-300 border-purple-500/30"}`,
+														children: project.badge
+													})]
+												}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(CardDescription, {
+													className: "text-xs sm:text-sm text-muted-foreground mt-1.5 leading-relaxed",
+													children: project.description
+												})]
+											}),
+											/* @__PURE__ */ (0, import_jsx_runtime.jsx)(CardContent, {
+												className: "flex flex-wrap gap-1.5 px-0 pt-3",
+												children: project.stack.map((tech) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+													className: `inline-flex items-center rounded-lg px-2.5 py-1 text-[11px] font-medium border shadow-2xs ${isApex ? "border-cyan-300 dark:border-cyan-500/25 bg-cyan-50 dark:bg-cyan-500/10 text-cyan-800 dark:text-cyan-300" : "border-purple-300 dark:border-purple-500/25 bg-purple-50 dark:bg-purple-500/10 text-purple-800 dark:text-purple-300"}`,
+													children: tech
+												}, tech))
+											})
+										]
+									})]
+								}, project.id);
+							}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Card, {
+								className: "relative overflow-hidden p-6 border-dashed border-border/80 bg-secondary/30 flex flex-col items-center justify-center text-center min-h-[160px] rounded-2xl shadow-[inset_0_1px_0_0_rgba(255,255,255,0.04)] sm:col-span-2",
 								children: [
-									/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: "size-2 rounded-full bg-cyan-600 dark:bg-cyan-400 shadow-[0_0_8px_#38bdf8] animate-pulse mb-3" }),
+									/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: "size-2 rounded-full bg-cyan-600 dark:bg-cyan-400 shadow-[0_0_8px_#38bdf8] animate-pulse mb-2" }),
 									/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
-										className: "font-serif text-lg text-foreground/90",
+										className: "font-serif text-base text-foreground/90",
 										children: "More Projects in Progress"
 									}),
 									/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
-										className: "text-xs text-muted-foreground mt-2 max-w-xs leading-relaxed",
+										className: "text-xs text-muted-foreground mt-1.5 max-w-sm leading-relaxed",
 										children: "Active tools, packages, and open-source software will be posted here as they are published."
 									})
 								]
@@ -2889,7 +2910,7 @@ function PortfolioHome({ initialData }) {
 				/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Hero, {
 					tagline: data?.heroTagline,
 					availabilityStatus: data?.availabilityStatus,
-					liveCount: businessesList.length,
+					liveCount: businessesList.filter((p) => Boolean(p.liveUrl)).length + sideProjectsList.filter((p) => p.id === "apex").length,
 					email: data?.resumeOverride?.email,
 					pdfUrl: data?.resumeOverride?.resumePdfUrl,
 					summary: data?.resumeOverride?.summary,

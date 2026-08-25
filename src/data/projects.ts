@@ -22,6 +22,9 @@ export const businesses: Project[] = [
     badge: "Live product",
     kind: "business",
   },
+];
+
+export const sideProjects: Project[] = [
   {
     id: "apex",
     title: "Apex Packaging & Converting",
@@ -32,11 +35,8 @@ export const businesses: Project[] = [
     stack: ["React", "TypeScript", "Supabase RLS", "Node.js", "GSAP", "CPQ Engine"],
     featured: true,
     badge: "B2B Platform",
-    kind: "business",
+    kind: "side",
   },
-];
-
-export const sideProjects: Project[] = [
   {
     id: "portfolio",
     title: "This site",

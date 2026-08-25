@@ -15,7 +15,9 @@
       "featured": true,
       "badge": "Live product",
       "kind": "business"
-    },
+    }
+  ],
+  "sideProjects": [
     {
       "id": "apex",
       "title": "Apex Packaging & Converting",
@@ -32,10 +34,8 @@
       ],
       "featured": true,
       "badge": "B2B Platform",
-      "kind": "business"
-    }
-  ],
-  "sideProjects": [
+      "kind": "side"
+    },
     {
       "id": "portfolio",
       "title": "This site",

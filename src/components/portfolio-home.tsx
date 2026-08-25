@@ -515,51 +515,106 @@ function Projects({ businessesList, sideProjectsList, email, pdfUrl, summary, ed
 
         {/* Tab 3: Side Projects */}
         <TabsContent value="side" className="mt-6">
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {sideProjectsList.map((project) => (
-              <Card
-                key={project.id}
-                className="card-specular relative overflow-hidden p-2 flex flex-col justify-between rounded-2xl bg-gradient-to-br from-card via-card to-purple-500/10 dark:to-purple-500/10"
-              >
-                <div className="absolute top-0 inset-x-0 h-0.5 bg-gradient-to-r from-purple-400 via-indigo-400 to-cyan-500" />
-                <div className="p-4">
-                  <SidePreview title={project.title} />
-                  <CardHeader className="px-0 pb-2 pt-4">
-                    <div className="flex items-center justify-between gap-2">
-                      <CardTitle className="text-lg font-semibold">{project.title}</CardTitle>
+          <div className="grid gap-6 sm:grid-cols-2">
+            {sideProjectsList.map((project) => {
+              const isApex = project.id === "apex";
+
+              return (
+                <Card
+                  key={project.id}
+                  className={`card-specular relative overflow-hidden p-2 flex flex-col justify-between rounded-2xl bg-gradient-to-br from-card via-card ${
+                    isApex
+                      ? "to-cyan-500/10 dark:to-cyan-500/10 sm:col-span-2"
+                      : "to-purple-500/10 dark:to-purple-500/10"
+                  }`}
+                >
+                  <div
+                    className={`absolute top-0 inset-x-0 h-0.5 bg-gradient-to-r ${
+                      isApex
+                        ? "from-cyan-400 via-blue-500 to-indigo-500"
+                        : "from-purple-400 via-indigo-400 to-cyan-500"
+                    }`}
+                  />
+                  <div className="p-4 sm:p-6">
+                    <div className="mb-4 flex flex-wrap items-center justify-between gap-2">
                       {project.liveUrl && (
                         <a
                           href={project.liveUrl}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="text-muted-foreground hover:text-purple-700 dark:hover:text-purple-400 transition-colors p-1"
-                          title="View Repository"
+                          className={`inline-flex items-center gap-1.5 rounded-full border px-3 py-0.5 text-xs font-semibold transition-all ${
+                            isApex
+                              ? "border-cyan-500/30 bg-cyan-500/10 text-cyan-800 dark:text-cyan-300 hover:bg-cyan-500/20 shadow-[0_0_10px_rgba(6,182,212,0.18)]"
+                              : "border-purple-500/30 bg-purple-500/10 text-purple-800 dark:text-purple-300 hover:bg-purple-500/20"
+                          }`}
                         >
-                          <ExternalLink className="size-3.5" />
+                          <span className={`size-1.5 rounded-full ${isApex ? "bg-cyan-400" : "bg-purple-400"} animate-ping`} />
+                          <ExternalLink className="size-3" />
+                          {project.liveUrl.replace(/^https?:\/\//, "")}
+                        </a>
+                      )}
+                      {project.githubUrl && (
+                        <a
+                          href={project.githubUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-1.5 rounded-full border border-border/80 bg-secondary/60 px-2.5 py-0.5 text-xs font-medium text-muted-foreground hover:text-foreground hover:bg-secondary transition-all shadow-xs"
+                          title="View Source Repository"
+                        >
+                          <Github className="size-3.5" />
+                          <span>Source Code</span>
                         </a>
                       )}
                     </div>
-                    <CardDescription className="text-xs line-clamp-2 mt-1">{project.description}</CardDescription>
-                  </CardHeader>
-                  <CardContent className="flex flex-wrap gap-1.5 px-0 pt-2">
-                    {project.stack.map((tech) => (
-                      <span
-                        key={tech}
-                        className="inline-flex items-center rounded-lg px-2 py-0.5 text-[11px] font-medium border border-purple-300 dark:border-purple-500/25 bg-purple-50 dark:bg-purple-500/10 text-purple-800 dark:text-purple-300 shadow-2xs"
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                  </CardContent>
-                </div>
-              </Card>
-            ))}
+
+                    {isApex ? <ApexPreview /> : <SidePreview title={project.title} />}
+
+                    <CardHeader className="px-0 pb-2 pt-4">
+                      <div className="flex items-center justify-between gap-2">
+                        <CardTitle className={`font-serif ${isApex ? "text-xl sm:text-2xl" : "text-lg"} font-semibold`}>
+                          {project.title}
+                        </CardTitle>
+                        {project.badge && (
+                          <Badge
+                            variant="outline"
+                            className={`shadow-xs font-mono text-[10px] uppercase tracking-wider ${
+                              isApex
+                                ? "bg-cyan-500/15 text-cyan-800 dark:text-cyan-300 border-cyan-500/30"
+                                : "bg-purple-500/15 text-purple-800 dark:text-purple-300 border-purple-500/30"
+                            }`}
+                          >
+                            {project.badge}
+                          </Badge>
+                        )}
+                      </div>
+                      <CardDescription className="text-xs sm:text-sm text-muted-foreground mt-1.5 leading-relaxed">
+                        {project.description}
+                      </CardDescription>
+                    </CardHeader>
+                    <CardContent className="flex flex-wrap gap-1.5 px-0 pt-3">
+                      {project.stack.map((tech) => (
+                        <span
+                          key={tech}
+                          className={`inline-flex items-center rounded-lg px-2.5 py-1 text-[11px] font-medium border shadow-2xs ${
+                            isApex
+                              ? "border-cyan-300 dark:border-cyan-500/25 bg-cyan-50 dark:bg-cyan-500/10 text-cyan-800 dark:text-cyan-300"
+                              : "border-purple-300 dark:border-purple-500/25 bg-purple-50 dark:bg-purple-500/10 text-purple-800 dark:text-purple-300"
+                          }`}
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </CardContent>
+                  </div>
+                </Card>
+              );
+            })}
 
             {/* Polite 'More to come' card */}
-            <Card className="relative overflow-hidden p-6 border-dashed border-border/80 bg-secondary/30 flex flex-col items-center justify-center text-center min-h-[220px] rounded-2xl shadow-[inset_0_1px_0_0_rgba(255,255,255,0.04)]">
-              <span className="size-2 rounded-full bg-cyan-600 dark:bg-cyan-400 shadow-[0_0_8px_#38bdf8] animate-pulse mb-3" />
-              <p className="font-serif text-lg text-foreground/90">More Projects in Progress</p>
-              <p className="text-xs text-muted-foreground mt-2 max-w-xs leading-relaxed">
+            <Card className="relative overflow-hidden p-6 border-dashed border-border/80 bg-secondary/30 flex flex-col items-center justify-center text-center min-h-[160px] rounded-2xl shadow-[inset_0_1px_0_0_rgba(255,255,255,0.04)] sm:col-span-2">
+              <span className="size-2 rounded-full bg-cyan-600 dark:bg-cyan-400 shadow-[0_0_8px_#38bdf8] animate-pulse mb-2" />
+              <p className="font-serif text-base text-foreground/90">More Projects in Progress</p>
+              <p className="text-xs text-muted-foreground mt-1.5 max-w-sm leading-relaxed">
                 Active tools, packages, and open-source software will be posted here as they are published.
               </p>
             </Card>
@@ -785,7 +840,7 @@ export function PortfolioHome({ initialData }: { initialData?: DynamicData | nul
         <Hero
           tagline={data?.heroTagline}
           availabilityStatus={data?.availabilityStatus}
-          liveCount={businessesList.length}
+          liveCount={businessesList.filter((p) => Boolean(p.liveUrl)).length + sideProjectsList.filter((p) => p.id === "apex").length}
           email={data?.resumeOverride?.email}
           pdfUrl={data?.resumeOverride?.resumePdfUrl}
           summary={data?.resumeOverride?.summary}

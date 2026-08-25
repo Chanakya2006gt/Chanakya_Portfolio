@@ -1,5 +1,5 @@
 import { n as put, t as head } from "../_libs/@vercel/blob+[...].mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/content.server-Caa_9xpY.js
+//#region node_modules/.nitro/vite/services/ssr/assets/content.server-DZbb1O8k.js
 var __defProp = Object.defineProperty;
 var __exportAll = (all, no_symbols) => {
 	let target = {};
@@ -25,7 +25,8 @@ var businesses$1 = [{
 	featured: true,
 	badge: "Live product",
 	kind: "business"
-}, {
+}];
+var sideProjects$1 = [{
 	id: "apex",
 	title: "Apex Packaging & Converting",
 	description: "Enterprise B2B manufacturing & CPQ platform for industrial packaging converters. Features an interactive FINAT 1–8 rewind visualizer, isomorphic linear-meter estimating math with 100% test parity, and a role-based sales operations CRM.",
@@ -41,9 +42,8 @@ var businesses$1 = [{
 	],
 	featured: true,
 	badge: "B2B Platform",
-	kind: "business"
-}];
-var sideProjects$1 = [{
+	kind: "side"
+}, {
 	id: "portfolio",
 	title: "This site",
 	description: "Personal developer portfolio built with TanStack Start, React 19 SSR, and Tailwind CSS v4 with full theme synchronization and Nitro serverless deployment.",
@@ -119,7 +119,8 @@ var portfolio_data_default = {
 		"featured": true,
 		"badge": "Live product",
 		"kind": "business"
-	}, {
+	}],
+	sideProjects: [{
 		"id": "apex",
 		"title": "Apex Packaging & Converting",
 		"description": "Enterprise B2B manufacturing & CPQ platform for industrial packaging converters. Features an interactive FINAT 1–8 rewind visualizer, isomorphic linear-meter estimating math with 100% test parity, and a role-based sales operations CRM.",
@@ -135,9 +136,8 @@ var portfolio_data_default = {
 		],
 		"featured": true,
 		"badge": "B2B Platform",
-		"kind": "business"
-	}],
-	sideProjects: [{
+		"kind": "side"
+	}, {
 		"id": "portfolio",
 		"title": "This site",
 		"description": "Personal developer portfolio built with TanStack Start, React 19 SSR, and Tailwind CSS v4 with full theme synchronization and Nitro serverless deployment.",
@@ -251,11 +251,24 @@ async function readContent() {
 			if (res.ok) {
 				const data = await res.json();
 				if (data && Array.isArray(data.businesses)) {
+					const fallback = getPortfolioData();
+					const knownBusinessIds = new Set(data.businesses.map((b) => b.id));
+					const knownSideIds = new Set((data.sideProjects || []).map((s) => s.id));
+					const mergedBusinesses = [...data.businesses];
+					for (const b of fallback.businesses) if (!knownBusinessIds.has(b.id)) mergedBusinesses.push(b);
+					const mergedSideProjects = [...data.sideProjects || []];
+					for (const s of fallback.sideProjects) if (!knownSideIds.has(s.id)) mergedSideProjects.push(s);
+					const mergedData = {
+						...fallback,
+						...data,
+						businesses: mergedBusinesses,
+						sideProjects: mergedSideProjects
+					};
 					cached = {
-						data,
+						data: mergedData,
 						at: Date.now()
 					};
-					return data;
+					return mergedData;
 				}
 			}
 		}
