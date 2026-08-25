@@ -465,7 +465,7 @@ function Projects({ businessesList, sideProjectsList, email, pdfUrl, summary, ed
             Freelance Work
           </TabsTrigger>
           <TabsTrigger value="side" className="data-[state=active]:bg-card data-[state=active]:shadow-sm text-xs sm:text-sm rounded-lg">
-            Side Projects
+            Projects
           </TabsTrigger>
         </TabsList>
 
@@ -513,7 +513,7 @@ function Projects({ businessesList, sideProjectsList, email, pdfUrl, summary, ed
           </Card>
         </TabsContent>
 
-        {/* Tab 3: Side Projects */}
+        {/* Tab 3: Projects */}
         <TabsContent value="side" className="mt-6">
           <div className="grid gap-6 sm:grid-cols-2">
             {sideProjectsList.map((project) => {

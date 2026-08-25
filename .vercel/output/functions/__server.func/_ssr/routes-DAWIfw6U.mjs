@@ -5,11 +5,11 @@ import { s as require_jsx_runtime } from "../_libs/@radix-ui/react-collection+[.
 import { A as Copy, B as ArrowUp, C as Layers, D as ExternalLink, E as FileText, F as Check, I as Calculator, L as Building2, M as CodeXml, N as Clock, O as Disc, P as CircleCheck, R as Bot, T as Github, V as ArrowRight, _ as MapPin, b as Lock, c as ShieldCheck, f as RefreshCw, g as Menu, h as Moon, k as Database, l as Send, n as X, o as Sun, p as Printer, r as User, t as Zap, v as Mail, w as GraduationCap, x as Linkedin, z as Award } from "../_libs/lucide-react.mjs";
 import { a as DialogOverlay$1, c as DialogTrigger$1, i as DialogDescription$1, n as DialogClose, o as DialogPortal$1, r as DialogContent$1, s as DialogTitle$1, t as Dialog$1 } from "../_libs/@radix-ui/react-dialog+[...].mjs";
 import { n as toast } from "../_libs/sonner.mjs";
-import { n as Route$11, r as cn } from "./router-CBAFIhIa.mjs";
-import { a as CardFooter, c as Input, i as CardDescription, l as Label, n as Card, o as CardHeader, r as CardContent, s as CardTitle, t as Button } from "./card-DLwWNzUU.mjs";
-import { a as TabsTrigger, i as TabsList, n as Tabs, o as Textarea, r as TabsContent, t as Badge } from "./badge-COleoRH7.mjs";
+import { n as Route$11, r as cn } from "./router-6kzB7uyu.mjs";
+import { a as CardFooter, c as Input, i as CardDescription, l as Label, n as Card, o as CardHeader, r as CardContent, s as CardTitle, t as Button } from "./card-Cr9AVFFR.mjs";
+import { a as TabsTrigger, i as TabsList, n as Tabs, o as Textarea, r as TabsContent, t as Badge } from "./badge-D2lFhkUa.mjs";
 import { t as Root } from "../_libs/radix-ui__react-separator.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/routes-BA3FkFey.js
+//#region node_modules/.nitro/vite/services/ssr/assets/routes-DAWIfw6U.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 var Separator = import_react.forwardRef(({ className, orientation = "horizontal", decorative = true, ...props }, ref) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Root, {
@@ -2532,7 +2532,7 @@ function Projects({ businessesList, sideProjectsList, email, pdfUrl, summary, ed
 							/* @__PURE__ */ (0, import_jsx_runtime.jsx)(TabsTrigger, {
 								value: "side",
 								className: "data-[state=active]:bg-card data-[state=active]:shadow-sm text-xs sm:text-sm rounded-lg",
-								children: "Side Projects"
+								children: "Projects"
 							})
 						]
 					}),

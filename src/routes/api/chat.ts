@@ -57,7 +57,7 @@ ${summary}
 # FEATURED PRODUCTS:
 ${businessList}
 
-# SIDE PROJECTS & TOOLING:
+# PROJECTS & TOOLING:
 ${sideProjectList}
 
 --------------------------------------------------------------------------------

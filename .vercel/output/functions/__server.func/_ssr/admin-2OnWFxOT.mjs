@@ -4,9 +4,9 @@ import { _ as useNavigate } from "../_libs/@tanstack/react-router+[...].mjs";
 import { s as require_jsx_runtime } from "../_libs/@radix-ui/react-collection+[...].mjs";
 import { D as ExternalLink, E as FileText, S as LayoutGrid, a as Trash2, m as Plus, s as Sparkles, u as Save, y as LogOut } from "../_libs/lucide-react.mjs";
 import { n as toast } from "../_libs/sonner.mjs";
-import { c as Input, l as Label, n as Card, t as Button } from "./card-DLwWNzUU.mjs";
-import { a as TabsTrigger, i as TabsList, n as Tabs, o as Textarea, r as TabsContent, t as Badge } from "./badge-COleoRH7.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/admin-B6DQRFcF.js
+import { c as Input, l as Label, n as Card, t as Button } from "./card-Cr9AVFFR.mjs";
+import { a as TabsTrigger, i as TabsList, n as Tabs, o as Textarea, r as TabsContent, t as Badge } from "./badge-D2lFhkUa.mjs";
+//#region node_modules/.nitro/vite/services/ssr/assets/admin-2OnWFxOT.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 function AdminDashboardPage() {
@@ -144,8 +144,8 @@ function AdminDashboardPage() {
 		if (!data) return;
 		const newProj = {
 			id: `proj_${Date.now()}`,
-			title: "New Side Project",
-			description: "Short description of the new experiment or project.",
+			title: "New Project",
+			description: "Short description of the new project or tool.",
 			stack: ["React", "TypeScript"],
 			kind: "side"
 		};
@@ -229,7 +229,7 @@ function AdminDashboardPage() {
 							/* @__PURE__ */ (0, import_jsx_runtime.jsxs)(TabsTrigger, {
 								value: "projects",
 								className: "gap-2 text-xs",
-								children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(LayoutGrid, { className: "size-3.5" }), " Flagship & Side Projects"]
+								children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(LayoutGrid, { className: "size-3.5" }), " Flagship & Projects"]
 							}),
 							/* @__PURE__ */ (0, import_jsx_runtime.jsxs)(TabsTrigger, {
 								value: "resume",
@@ -366,16 +366,16 @@ function AdminDashboardPage() {
 								className: "pt-6 border-t border-border flex items-center justify-between",
 								children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h3", {
 									className: "text-lg font-semibold text-white",
-									children: "Side Projects"
+									children: "Projects"
 								}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
 									className: "text-xs text-muted-foreground",
-									children: "Add or update side projects and tools."
+									children: "Add or update projects and tools."
 								})] }), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Button, {
 									onClick: handleAddSideProject,
 									variant: "outline",
 									size: "sm",
 									className: "gap-1.5 text-sage border-sage/40",
-									children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Plus, { className: "size-4" }), " Add Side Project"]
+									children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Plus, { className: "size-4" }), " Add Project"]
 								})]
 							}),
 							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
