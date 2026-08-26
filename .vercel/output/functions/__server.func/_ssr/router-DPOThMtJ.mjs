@@ -14,7 +14,7 @@ import { i as string, n as object, r as record, t as array } from "../_libs/zod.
 import crypto from "node:crypto";
 import path from "node:path";
 import fs from "node:fs";
-//#region node_modules/.nitro/vite/services/ssr/assets/router-DeBuoNyh.js
+//#region node_modules/.nitro/vite/services/ssr/assets/router-DPOThMtJ.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 function AppErrorComponent({ error }) {
@@ -104,7 +104,7 @@ var TooltipContent = import_react.forwardRef(({ className, sideOffset = 6, ...pr
 	...props
 }) }));
 TooltipContent.displayName = Content2.displayName;
-var styles_default = "/assets/styles-BHOHdQl6.css";
+var styles_default = "/assets/styles-CUv_s_Ca.css";
 var APP_NAME = "Nagulagam Chanakya — Full-Stack Developer & SaaS Founder";
 var APP_DESC = "Official portfolio of Nagulagam Chanakya — Full-Stack Developer & Founder of Trelio. Specializing in React, Node.js, TypeScript, PostgreSQL, and applied software security.";
 var SITE_URL = "https://chanakya-portfolio-orcin.vercel.app";
@@ -126,6 +126,11 @@ var JSON_LD = {
 				"@type": "CollegeOrUniversity",
 				"name": "SR University",
 				"department": "Computer Science & Engineering"
+			},
+			"hasOccupation": {
+				"@type": "Occupation",
+				"name": "Full-Stack Software Engineer & Founder",
+				"skills": "React, Node.js, TypeScript, PostgreSQL, Applied Cryptography, Multi-tenant SaaS"
 			},
 			"sameAs": ["https://github.com/Chanakya2006gt", "https://www.linkedin.com/in/nagulagam-chanakya-b93514315"],
 			"knowsAbout": [
@@ -302,14 +307,14 @@ var createSsrRpc = (functionId) => {
 	});
 };
 var fetchContent = createServerFn({ method: "GET" }).handler(createSsrRpc("2b99909e19342163fb9618a3b1f343b57fe68205625d940d83a174e978667293"));
-var $$splitComponentImporter$2 = () => import("./routes-DV23X7NJ.mjs");
+var $$splitComponentImporter$2 = () => import("./routes-zNlyDaYv.mjs");
 var Route$11 = createFileRoute("/")({
 	loader: () => fetchContent(),
 	component: lazyRouteComponent($$splitComponentImporter$2, "component")
 });
-var $$splitComponentImporter$1 = () => import("./admin-62TkHiyC.mjs");
+var $$splitComponentImporter$1 = () => import("./admin-Cb5hWaof.mjs");
 var Route$10 = createFileRoute("/admin/")({ component: lazyRouteComponent($$splitComponentImporter$1, "component") });
-var $$splitComponentImporter = () => import("./login-DouJUEut.mjs");
+var $$splitComponentImporter = () => import("./login-C-Wphnkx.mjs");
 var Route$9 = createFileRoute("/admin/login")({ component: lazyRouteComponent($$splitComponentImporter, "component") });
 var envCache = null;
 var lastCacheTime = 0;
@@ -565,7 +570,10 @@ var Route$8 = createFileRoute("/api/chat")({ server: { handlers: { POST: async (
 	assertEnvGuards();
 	if (isChatRateLimited(request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() || "127.0.0.1")) return new Response(JSON.stringify({ reply: "You're sending messages a bit too fast. Please wait a moment before trying again." }), {
 		status: 429,
-		headers: { "Content-Type": "application/json" }
+		headers: {
+			"Content-Type": "application/json",
+			"Retry-After": "60"
+		}
 	});
 	let messages = [];
 	try {

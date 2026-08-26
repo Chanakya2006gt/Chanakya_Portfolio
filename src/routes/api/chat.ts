@@ -194,7 +194,13 @@ export const Route = createFileRoute("/api/chat")({
             JSON.stringify({
               reply: "You're sending messages a bit too fast. Please wait a moment before trying again.",
             }),
-            { status: 429, headers: { "Content-Type": "application/json" } }
+            {
+              status: 429,
+              headers: {
+                "Content-Type": "application/json",
+                "Retry-After": "60",
+              },
+            }
           );
         }
 

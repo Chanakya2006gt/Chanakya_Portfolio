@@ -536,12 +536,12 @@ function Projects({ businessesList, sideProjectsList, email, pdfUrl, summary, ed
         </TabsList>
 
         {/* Tab 1: Flagship Products */}
-        <TabsContent value="businesses" className="mt-6">
+        <TabsContent value="businesses" className="mt-6 animate-in fade-in-50 duration-200">
           <BusinessCard items={businessesList} />
         </TabsContent>
 
         {/* Tab 2: Freelance Work */}
-        <TabsContent value="contracts" className="mt-6">
+        <TabsContent value="contracts" className="mt-6 animate-in fade-in-50 duration-200">
           <Card className="card-specular p-8 sm:p-12 text-center rounded-2xl relative overflow-hidden bg-gradient-to-br from-card via-card to-amber-500/10 dark:to-amber-500/10">
             <div className="absolute top-0 inset-x-0 h-0.5 bg-gradient-to-r from-amber-400 via-yellow-400 to-amber-500" />
             <div className="mx-auto max-w-md space-y-3">
@@ -580,7 +580,7 @@ function Projects({ businessesList, sideProjectsList, email, pdfUrl, summary, ed
         </TabsContent>
 
         {/* Tab 3: Projects */}
-        <TabsContent value="side" className="mt-6">
+        <TabsContent value="side" className="mt-6 animate-in fade-in-50 duration-200">
           <div className="grid gap-6 sm:grid-cols-2">
             {sideProjectsList.map((project) => {
               const isApex = project.id === "apex";
@@ -896,13 +896,19 @@ export function PortfolioHome({ initialData }: { initialData?: DynamicData | nul
 
   return (
     <div id="top" className="min-h-screen bg-background text-foreground relative">
+      <a
+        href="#main-content"
+        className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[10000] focus:px-4 focus:py-2 focus:bg-card focus:text-foreground focus:border focus:border-sage focus:rounded-xl focus:shadow-xl font-medium text-sm transition-all"
+      >
+        Skip to main content
+      </a>
       <IntroOverlay />
 
       <LeftRailNav resume={data?.resume} />
       <SiteNav />
       <Companion />
 
-      <main>
+      <main id="main-content">
         <Hero
           tagline={data?.heroTagline}
           availabilityStatus={data?.availabilityStatus}

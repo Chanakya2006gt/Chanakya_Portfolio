@@ -26,6 +26,11 @@ const JSON_LD = {
         "name": "SR University",
         "department": "Computer Science & Engineering"
       },
+      "hasOccupation": {
+        "@type": "Occupation",
+        "name": "Full-Stack Software Engineer & Founder",
+        "skills": "React, Node.js, TypeScript, PostgreSQL, Applied Cryptography, Multi-tenant SaaS"
+      },
       "sameAs": [
         "https://github.com/Chanakya2006gt",
         "https://www.linkedin.com/in/nagulagam-chanakya-b93514315"

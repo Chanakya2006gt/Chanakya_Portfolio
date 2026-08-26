@@ -52,14 +52,15 @@ export function LeftRailNav({ resume }: { resume?: ResumeContent }) {
                 window.dispatchEvent(new CustomEvent("portfolio-tab-switch", { detail: { tab: "side" } }));
               }
             }}
-            className="group relative flex items-center justify-center"
+            className="group relative flex items-center justify-center p-2 rounded-full hover:bg-secondary/40 transition-colors"
             title={id.charAt(0).toUpperCase() + id.slice(1)}
+            aria-label={`Jump to ${id} section`}
           >
             <span
               className={`block rounded-full transition-all duration-300 ${
                 activeSection === id
                   ? "size-2.5 nav-dot-active bg-sage"
-                  : "size-1.5 bg-muted-foreground/40 hover:bg-muted-foreground"
+                  : "size-1.5 bg-muted-foreground/40 group-hover:bg-muted-foreground"
               }`}
             />
           </a>

@@ -108,6 +108,17 @@ export function TrelioPreview() {
           );
         })}
       </div>
+
+      {/* Zero Escrow Risk / Direct Settlement Architecture Callout */}
+      <div className="mt-3 flex flex-wrap items-center justify-between gap-2 p-2.5 rounded-xl bg-card/90 border border-border/60 text-[11px] font-mono text-muted-foreground shadow-xs">
+        <span className="flex items-center gap-1.5 text-foreground font-medium">
+          <ShieldCheck className="size-3.5 text-sage" />
+          <span>Zero Escrow Risk</span>
+        </span>
+        <span className="text-[10px] text-sage font-semibold">
+          Direct Merchant Settlement · Instant Unlock
+        </span>
+      </div>
     </div>
   );
 }

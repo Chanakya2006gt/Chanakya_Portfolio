@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 
 interface Particle {
   id: number;
@@ -13,6 +13,8 @@ interface Particle {
 
 export function ParticleField() {
   const [particles, setParticles] = useState<Particle[]>([]);
+  const [isVisible, setIsVisible] = useState(true);
+  const containerRef = useRef<HTMLDivElement | null>(null);
 
   // Generate random particles ONLY on client after hydration to avoid SSR hydration mismatch
   useEffect(() => {
@@ -32,10 +34,40 @@ export function ParticleField() {
     setParticles(generated);
   }, []);
 
+  // IntersectionObserver + Document Visibility to pause animations when offscreen
+  useEffect(() => {
+    if (!containerRef.current || typeof IntersectionObserver === "undefined") return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsVisible(entry.isIntersecting && !document.hidden);
+      },
+      { threshold: 0.05 }
+    );
+
+    observer.observe(containerRef.current);
+
+    const handleVisibilityChange = () => {
+      if (document.hidden) {
+        setIsVisible(false);
+      } else if (containerRef.current) {
+        const rect = containerRef.current.getBoundingClientRect();
+        setIsVisible(rect.bottom > 0 && rect.top < window.innerHeight);
+      }
+    };
+
+    document.addEventListener("visibilitychange", handleVisibilityChange);
+
+    return () => {
+      observer.disconnect();
+      document.removeEventListener("visibilitychange", handleVisibilityChange);
+    };
+  }, []);
+
   if (particles.length === 0) return null;
 
   return (
-    <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
+    <div ref={containerRef} className="absolute inset-0 overflow-hidden pointer-events-none z-0" aria-hidden="true">
       {particles.map((p) => (
         <div
           key={p.id}
@@ -48,6 +80,7 @@ export function ParticleField() {
             opacity: p.opacity,
             animationDuration: `${p.duration}s`,
             animationDelay: `${p.delay}s`,
+            animationPlayState: isVisible ? "running" : "paused",
           }}
         />
       ))}

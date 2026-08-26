@@ -5,11 +5,11 @@ import { s as require_jsx_runtime } from "../_libs/@radix-ui/react-collection+[.
 import { A as Copy, B as ArrowUp, C as Layers, D as ExternalLink, E as FileText, F as Check, I as Calculator, L as Building2, M as CodeXml, N as Clock, O as Disc, P as CircleCheck, R as Bot, T as Github, V as ArrowRight, _ as MapPin, b as Lock, c as ShieldCheck, f as RefreshCw, g as Menu, h as Moon, k as Database, l as Send, n as X, o as Sun, p as Printer, r as User, t as Zap, v as Mail, w as GraduationCap, x as Linkedin, z as Award } from "../_libs/lucide-react.mjs";
 import { a as DialogOverlay$1, c as DialogTrigger$1, i as DialogDescription$1, n as DialogClose, o as DialogPortal$1, r as DialogContent$1, s as DialogTitle$1, t as Dialog$1 } from "../_libs/@radix-ui/react-dialog+[...].mjs";
 import { n as toast } from "../_libs/sonner.mjs";
-import { n as Route$11, r as cn } from "./router-DeBuoNyh.mjs";
-import { a as CardFooter, c as Input, i as CardDescription, l as Label, n as Card, o as CardHeader, r as CardContent, s as CardTitle, t as Button } from "./card-Ds2_8egp.mjs";
-import { a as TabsTrigger, i as TabsList, n as Tabs, o as Textarea, r as TabsContent, t as Badge } from "./badge-BoYhBTgx.mjs";
+import { n as Route$11, r as cn } from "./router-DPOThMtJ.mjs";
+import { a as CardFooter, c as Input, i as CardDescription, l as Label, n as Card, o as CardHeader, r as CardContent, s as CardTitle, t as Button } from "./card-U7B5fQxk.mjs";
+import { a as TabsTrigger, i as TabsList, n as Tabs, o as Textarea, r as TabsContent, t as Badge } from "./badge-B-EdBXlC.mjs";
 import { t as Root } from "../_libs/radix-ui__react-separator.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/routes-DV23X7NJ.js
+//#region node_modules/.nitro/vite/services/ssr/assets/routes-zNlyDaYv.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 var Separator = import_react.forwardRef(({ className, orientation = "horizontal", decorative = true, ...props }, ref) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Root, {
@@ -166,6 +166,16 @@ function TrelioPreview() {
 						})]
 					}, stage.title);
 				})
+			}),
+			/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+				className: "mt-3 flex flex-wrap items-center justify-between gap-2 p-2.5 rounded-xl bg-card/90 border border-border/60 text-[11px] font-mono text-muted-foreground shadow-xs",
+				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("span", {
+					className: "flex items-center gap-1.5 text-foreground font-medium",
+					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(ShieldCheck, { className: "size-3.5 text-sage" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { children: "Zero Escrow Risk" })]
+				}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+					className: "text-[10px] text-sage font-semibold",
+					children: "Direct Merchant Settlement · Instant Unlock"
+				})]
 			})
 		]
 	});
@@ -1053,9 +1063,10 @@ function LeftRailNav({ resume }) {
 					onClick: () => {
 						if (id === "projects" && typeof window !== "undefined") window.dispatchEvent(new CustomEvent("portfolio-tab-switch", { detail: { tab: "side" } }));
 					},
-					className: "group relative flex items-center justify-center",
+					className: "group relative flex items-center justify-center p-2 rounded-full hover:bg-secondary/40 transition-colors",
 					title: id.charAt(0).toUpperCase() + id.slice(1),
-					children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: `block rounded-full transition-all duration-300 ${activeSection === id ? "size-2.5 nav-dot-active bg-sage" : "size-1.5 bg-muted-foreground/40 hover:bg-muted-foreground"}` })
+					"aria-label": `Jump to ${id} section`,
+					children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: `block rounded-full transition-all duration-300 ${activeSection === id ? "size-2.5 nav-dot-active bg-sage" : "size-1.5 bg-muted-foreground/40 group-hover:bg-muted-foreground"}` })
 				}, id))
 			}),
 			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "my-1 h-8 w-px bg-border/60" }),
@@ -1081,6 +1092,8 @@ function LeftRailNav({ resume }) {
 }
 function ParticleField() {
 	const [particles, setParticles] = (0, import_react.useState)([]);
+	const [isVisible, setIsVisible] = (0, import_react.useState)(true);
+	const containerRef = (0, import_react.useRef)(null);
 	(0, import_react.useEffect)(() => {
 		const generated = Array.from({ length: 34 }).map((_, i) => {
 			const isIndigo = i % 5 === 0;
@@ -1097,9 +1110,30 @@ function ParticleField() {
 		});
 		setParticles(generated);
 	}, []);
+	(0, import_react.useEffect)(() => {
+		if (!containerRef.current || typeof IntersectionObserver === "undefined") return;
+		const observer = new IntersectionObserver(([entry]) => {
+			setIsVisible(entry.isIntersecting && !document.hidden);
+		}, { threshold: .05 });
+		observer.observe(containerRef.current);
+		const handleVisibilityChange = () => {
+			if (document.hidden) setIsVisible(false);
+			else if (containerRef.current) {
+				const rect = containerRef.current.getBoundingClientRect();
+				setIsVisible(rect.bottom > 0 && rect.top < window.innerHeight);
+			}
+		};
+		document.addEventListener("visibilitychange", handleVisibilityChange);
+		return () => {
+			observer.disconnect();
+			document.removeEventListener("visibilitychange", handleVisibilityChange);
+		};
+	}, []);
 	if (particles.length === 0) return null;
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+		ref: containerRef,
 		className: "absolute inset-0 overflow-hidden pointer-events-none z-0",
+		"aria-hidden": "true",
 		children: particles.map((p) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
 			className: `absolute rounded-full animate-particle-float ${p.colorClass}`,
 			style: {
@@ -1109,7 +1143,8 @@ function ParticleField() {
 				height: `${p.size}px`,
 				opacity: p.opacity,
 				animationDuration: `${p.duration}s`,
-				animationDelay: `${p.delay}s`
+				animationDelay: `${p.delay}s`,
+				animationPlayState: isVisible ? "running" : "paused"
 			}
 		}, p.id))
 	});
@@ -1780,6 +1815,8 @@ function Companion({ footerOnly = false }) {
 	}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 		className: "fixed bottom-6 right-6 z-40 flex items-end flex-col pointer-events-auto",
 		children: [showBubble && !isChatOpen && /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+			role: "status",
+			"aria-live": "polite",
 			className: "mb-2 max-w-xs animate-rise-in rounded-2xl border border-sage/40 bg-card/95 px-4 py-2.5 text-xs font-medium text-foreground shadow-[0_0_20px_rgba(0,0,0,0.5)] backdrop-blur-md",
 			children: SPEECH_BUBBLES[bubbleIndex]
 		}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("button", {
@@ -2658,12 +2695,12 @@ function Projects({ businessesList, sideProjectsList, email, pdfUrl, summary, ed
 					}),
 					/* @__PURE__ */ (0, import_jsx_runtime.jsx)(TabsContent, {
 						value: "businesses",
-						className: "mt-6",
+						className: "mt-6 animate-in fade-in-50 duration-200",
 						children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(BusinessCard, { items: businessesList })
 					}),
 					/* @__PURE__ */ (0, import_jsx_runtime.jsx)(TabsContent, {
 						value: "contracts",
-						className: "mt-6",
+						className: "mt-6 animate-in fade-in-50 duration-200",
 						children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Card, {
 							className: "card-specular p-8 sm:p-12 text-center rounded-2xl relative overflow-hidden bg-gradient-to-br from-card via-card to-amber-500/10 dark:to-amber-500/10",
 							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "absolute top-0 inset-x-0 h-0.5 bg-gradient-to-r from-amber-400 via-yellow-400 to-amber-500" }), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
@@ -2715,7 +2752,7 @@ function Projects({ businessesList, sideProjectsList, email, pdfUrl, summary, ed
 					}),
 					/* @__PURE__ */ (0, import_jsx_runtime.jsx)(TabsContent, {
 						value: "side",
-						className: "mt-6",
+						className: "mt-6 animate-in fade-in-50 duration-200",
 						children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 							className: "grid gap-6 sm:grid-cols-2",
 							children: [sideProjectsList.map((project) => {
@@ -3022,47 +3059,55 @@ function PortfolioHome({ initialData }) {
 		id: "top",
 		className: "min-h-screen bg-background text-foreground relative",
 		children: [
+			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("a", {
+				href: "#main-content",
+				className: "sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[10000] focus:px-4 focus:py-2 focus:bg-card focus:text-foreground focus:border focus:border-sage focus:rounded-xl focus:shadow-xl font-medium text-sm transition-all",
+				children: "Skip to main content"
+			}),
 			/* @__PURE__ */ (0, import_jsx_runtime.jsx)(IntroOverlay, {}),
 			/* @__PURE__ */ (0, import_jsx_runtime.jsx)(LeftRailNav, { resume: data?.resume }),
 			/* @__PURE__ */ (0, import_jsx_runtime.jsx)(SiteNav, {}),
 			/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Companion, {}),
-			/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("main", { children: [
-				/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Hero, {
-					tagline: data?.heroTagline,
-					availabilityStatus: data?.availabilityStatus,
-					liveCount: businessesList.filter((p) => Boolean(p.liveUrl)).length + sideProjectsList.filter((p) => p.id === "apex").length,
-					email: data?.resumeOverride?.email,
-					pdfUrl: data?.resumeOverride?.resumePdfUrl,
-					summary: data?.resumeOverride?.summary,
-					education: data?.resumeOverride?.education,
-					skillsList,
-					resume: data?.resume
-				}),
-				/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Separator, {}),
-				/* @__PURE__ */ (0, import_jsx_runtime.jsx)(About, {
-					email: data?.resumeOverride?.email,
-					pdfUrl: data?.resumeOverride?.resumePdfUrl,
-					summary: data?.resumeOverride?.summary,
-					education: data?.resumeOverride?.education,
-					skillsList,
-					resume: data?.resume
-				}),
-				/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Separator, {}),
-				/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Projects, {
-					businessesList,
-					sideProjectsList,
-					email: data?.resumeOverride?.email,
-					pdfUrl: data?.resumeOverride?.resumePdfUrl,
-					summary: data?.resumeOverride?.summary,
-					education: data?.resumeOverride?.education,
-					skillsList,
-					resume: data?.resume
-				}),
-				/* @__PURE__ */ (0, import_jsx_runtime.jsx)(MarqueeTicker, {}),
-				/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Skills, { skillsList }),
-				/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Separator, {}),
-				/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Contact, {})
-			] }),
+			/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("main", {
+				id: "main-content",
+				children: [
+					/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Hero, {
+						tagline: data?.heroTagline,
+						availabilityStatus: data?.availabilityStatus,
+						liveCount: businessesList.filter((p) => Boolean(p.liveUrl)).length + sideProjectsList.filter((p) => p.id === "apex").length,
+						email: data?.resumeOverride?.email,
+						pdfUrl: data?.resumeOverride?.resumePdfUrl,
+						summary: data?.resumeOverride?.summary,
+						education: data?.resumeOverride?.education,
+						skillsList,
+						resume: data?.resume
+					}),
+					/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Separator, {}),
+					/* @__PURE__ */ (0, import_jsx_runtime.jsx)(About, {
+						email: data?.resumeOverride?.email,
+						pdfUrl: data?.resumeOverride?.resumePdfUrl,
+						summary: data?.resumeOverride?.summary,
+						education: data?.resumeOverride?.education,
+						skillsList,
+						resume: data?.resume
+					}),
+					/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Separator, {}),
+					/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Projects, {
+						businessesList,
+						sideProjectsList,
+						email: data?.resumeOverride?.email,
+						pdfUrl: data?.resumeOverride?.resumePdfUrl,
+						summary: data?.resumeOverride?.summary,
+						education: data?.resumeOverride?.education,
+						skillsList,
+						resume: data?.resume
+					}),
+					/* @__PURE__ */ (0, import_jsx_runtime.jsx)(MarqueeTicker, {}),
+					/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Skills, { skillsList }),
+					/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Separator, {}),
+					/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Contact, {})
+				]
+			}),
 			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("footer", {
 				className: "border-t border-border/80 bg-card/40 pt-16 pb-12",
 				children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {

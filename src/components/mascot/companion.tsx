@@ -73,7 +73,11 @@ export function Companion({ footerOnly = false }: CompanionProps) {
       <div className="fixed bottom-6 right-6 z-40 flex items-end flex-col pointer-events-auto">
         {/* Speech Bubble */}
         {showBubble && !isChatOpen && (
-          <div className="mb-2 max-w-xs animate-rise-in rounded-2xl border border-sage/40 bg-card/95 px-4 py-2.5 text-xs font-medium text-foreground shadow-[0_0_20px_rgba(0,0,0,0.5)] backdrop-blur-md">
+          <div
+            role="status"
+            aria-live="polite"
+            className="mb-2 max-w-xs animate-rise-in rounded-2xl border border-sage/40 bg-card/95 px-4 py-2.5 text-xs font-medium text-foreground shadow-[0_0_20px_rgba(0,0,0,0.5)] backdrop-blur-md"
+          >
             {SPEECH_BUBBLES[bubbleIndex]}
           </div>
         )}
