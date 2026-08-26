@@ -319,9 +319,24 @@ function About({ email, pdfUrl, summary, education, skillsList, resume }: AboutP
                 <span className="size-2 rounded-full bg-indigo shadow-[0_0_8px_#818cf8]" />
                 <h4 className="text-sm font-semibold text-foreground">What I am doing now</h4>
               </div>
-              <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
-                Full-stack engineering on Trelio, DSA practice, and building production-grade software.
-              </p>
+              <ul className="mt-2.5 space-y-1.5 text-xs text-muted-foreground leading-relaxed">
+                <li className="flex items-start gap-2">
+                  <span className="mt-1.5 size-1 rounded-full bg-indigo shrink-0" />
+                  <span><strong className="text-foreground font-medium">Trelio SaaS:</strong> Scaling milestone authorization and direct settlement engine.</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="mt-1.5 size-1 rounded-full bg-cyan-400 shrink-0" />
+                  <span><strong className="text-foreground font-medium">Industrial CPQ:</strong> Refining FINAT 1–8 automated rewind geometry math.</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="mt-1.5 size-1 rounded-full bg-sage shrink-0" />
+                  <span><strong className="text-foreground font-medium">Agentic Tooling:</strong> Designing multi-agent skill systems for rapid software delivery.</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="mt-1.5 size-1 rounded-full bg-amber-400 shrink-0" />
+                  <span><strong className="text-foreground font-medium">Availability:</strong> Open for contract engagements & high-impact software roles.</span>
+                </li>
+              </ul>
             </div>
           </div>
         </div>
