@@ -1,5 +1,5 @@
 import { n as put, t as head } from "../_libs/@vercel/blob+[...].mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/content.server-DZbb1O8k.js
+//#region node_modules/.nitro/vite/services/ssr/assets/content.server-xcdZLFWz.js
 var __defProp = Object.defineProperty;
 var __exportAll = (all, no_symbols) => {
 	let target = {};
@@ -57,6 +57,13 @@ var sideProjects$1 = [{
 	kind: "side"
 }];
 var skills$1 = {
+	"Agentic & AI": [
+		"Google Antigravity",
+		"Claude Code",
+		"Agentic Workflows",
+		"Custom Skill Plugins",
+		"Automated Auditing"
+	],
 	Frontend: [
 		"React",
 		"TypeScript",
@@ -151,6 +158,13 @@ var portfolio_data_default = {
 		"kind": "side"
 	}],
 	skills: {
+		"Agentic & AI": [
+			"Google Antigravity",
+			"Claude Code",
+			"Agentic Workflows",
+			"Custom Skill Plugins",
+			"Automated Auditing"
+		],
 		"Frontend": [
 			"React",
 			"TypeScript",

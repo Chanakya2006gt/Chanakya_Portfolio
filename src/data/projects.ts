@@ -49,6 +49,7 @@ export const sideProjects: Project[] = [
 ];
 
 export const skills: Record<string, string[]> = {
+  "Agentic & AI": ["Google Antigravity", "Claude Code", "Agentic Workflows", "Custom Skill Plugins", "Automated Auditing"],
   Frontend: ["React", "TypeScript", "Tailwind", "shadcn/ui", "GSAP"],
   Backend: ["Node.js", "Express", "PostgreSQL", "Supabase RLS", "REST APIs"],
   Product: ["Multi-tenant", "CPQ Engines", "Payments", "Audit logs", "Auth flows"],

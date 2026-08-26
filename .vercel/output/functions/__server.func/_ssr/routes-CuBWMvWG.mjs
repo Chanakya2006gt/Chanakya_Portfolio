@@ -1,15 +1,15 @@
 import { i as __toESM } from "../_runtime.mjs";
-import { c as sideProjects$1, l as skills$1, o as businesses$1, s as navLinks } from "./content.server-DZbb1O8k.mjs";
+import { c as sideProjects$1, l as skills$1, o as businesses$1, s as navLinks } from "./content.server-xcdZLFWz.mjs";
 import { u as require_react } from "../_libs/@floating-ui/react-dom+[...].mjs";
 import { s as require_jsx_runtime } from "../_libs/@radix-ui/react-collection+[...].mjs";
 import { A as Copy, B as ArrowUp, C as Layers, D as ExternalLink, E as FileText, F as Check, I as Calculator, L as Building2, M as CodeXml, N as Clock, O as Disc, P as CircleCheck, R as Bot, T as Github, V as ArrowRight, _ as MapPin, b as Lock, c as ShieldCheck, f as RefreshCw, g as Menu, h as Moon, k as Database, l as Send, n as X, o as Sun, p as Printer, r as User, t as Zap, v as Mail, w as GraduationCap, x as Linkedin, z as Award } from "../_libs/lucide-react.mjs";
 import { a as DialogOverlay$1, c as DialogTrigger$1, i as DialogDescription$1, n as DialogClose, o as DialogPortal$1, r as DialogContent$1, s as DialogTitle$1, t as Dialog$1 } from "../_libs/@radix-ui/react-dialog+[...].mjs";
 import { n as toast } from "../_libs/sonner.mjs";
-import { n as Route$11, r as cn } from "./router-DPOThMtJ.mjs";
-import { a as CardFooter, c as Input, i as CardDescription, l as Label, n as Card, o as CardHeader, r as CardContent, s as CardTitle, t as Button } from "./card-U7B5fQxk.mjs";
-import { a as TabsTrigger, i as TabsList, n as Tabs, o as Textarea, r as TabsContent, t as Badge } from "./badge-B-EdBXlC.mjs";
+import { n as Route$11, r as cn } from "./router-a6OIhlSy.mjs";
+import { a as CardFooter, c as Input, i as CardDescription, l as Label, n as Card, o as CardHeader, r as CardContent, s as CardTitle, t as Button } from "./card-B0DjhP37.mjs";
+import { a as TabsTrigger, i as TabsList, n as Tabs, o as Textarea, r as TabsContent, t as Badge } from "./badge-DBBINeOg.mjs";
 import { t as Root } from "../_libs/radix-ui__react-separator.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/routes-zNlyDaYv.js
+//#region node_modules/.nitro/vite/services/ssr/assets/routes-CuBWMvWG.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 var Separator = import_react.forwardRef(({ className, orientation = "horizontal", decorative = true, ...props }, ref) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Root, {
@@ -2119,7 +2119,7 @@ function HeroTerminal() {
 						" ",
 						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
 							className: "text-emerald-800 dark:text-emerald-400 font-medium",
-							children: "\"Full-Stack Builder & Founder\""
+							children: "\"AI-Native Builder & Founder\""
 						}),
 						","
 					]
@@ -2150,12 +2150,39 @@ function HeroTerminal() {
 					children: [
 						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
 							className: "text-foreground/70 dark:text-muted-foreground",
+							children: "workflow:"
+						}),
+						" [",
+						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+							className: "text-purple-800 dark:text-purple-300 font-medium",
+							children: "\"Agentic AI\""
+						}),
+						",",
+						" ",
+						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+							className: "text-cyan-800 dark:text-cyan-300 font-medium",
+							children: "\"Antigravity\""
+						}),
+						",",
+						" ",
+						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+							className: "text-emerald-800 dark:text-emerald-300 font-medium",
+							children: "\"Claude Code\""
+						}),
+						"],"
+					]
+				}),
+				/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+					className: "pl-4",
+					children: [
+						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+							className: "text-foreground/70 dark:text-muted-foreground",
 							children: "stack:"
 						}),
 						" [",
 						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
 							className: "text-cyan-800 dark:text-cyan-300 font-medium",
-							children: "\"React\""
+							children: "\"React 19\""
 						}),
 						",",
 						" ",
@@ -2408,7 +2435,7 @@ function About({ email, pdfUrl, summary, education, skillsList, resume }) {
 											children: "Core Focus"
 										}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
 											className: "text-xs font-semibold text-sage",
-											children: "SaaS & Security"
+											children: "Agentic AI & SaaS"
 										})]
 									})
 								]
@@ -2437,11 +2464,11 @@ function About({ email, pdfUrl, summary, education, skillsList, resume }) {
 								className: "flex items-center gap-2",
 								children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: "size-2 rounded-full bg-emerald-400 shadow-[0_0_8px_#34d399]" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("h4", {
 									className: "text-sm font-semibold text-foreground",
-									children: "How I work"
+									children: "How I work · Agentic Velocity"
 								})]
 							}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
 								className: "mt-2 text-sm text-muted-foreground leading-relaxed",
-								children: "Direct, metrics-first, no fluff. Build, get a user in front of it, iterate. Clean code and reliable architecture come first."
+								children: "Specification-first builder. I direct autonomous AI agents (Google Antigravity, Claude Code) with specialized skill plugins, strict design tokens (60-30-10 palette, WCAG 2.2 AA), and cryptographic guardrails (AES-256-GCM, Postgres RLS) to ship hardened production systems in days instead of months."
 							})] }),
 							/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Separator, { className: "bg-border/60" }),
 							/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
@@ -2836,15 +2863,20 @@ function Skills({ skillsList }) {
 	const { ref, isVisible } = useScrollAnimation();
 	const getDomainConfig = (category) => {
 		const cat = category.toLowerCase();
+		if (cat.includes("agentic") || cat.includes("ai")) return {
+			dotClass: "bg-emerald-600 dark:bg-emerald-400 shadow-[0_0_8px_#10b981]",
+			badgeClass: "bg-emerald-50 text-emerald-800 border-emerald-300 hover:bg-emerald-100 dark:bg-emerald-500/10 dark:text-emerald-300 dark:border-emerald-500/25 dark:hover:bg-emerald-500/20",
+			borderGlow: "from-emerald-400 via-teal-400 to-cyan-500"
+		};
 		if (cat.includes("frontend")) return {
 			dotClass: "bg-cyan-600 dark:bg-cyan-400 shadow-[0_0_8px_#38bdf8]",
 			badgeClass: "bg-cyan-50 text-cyan-800 border-cyan-300 hover:bg-cyan-100 dark:bg-cyan-500/10 dark:text-cyan-300 dark:border-cyan-500/25 dark:hover:bg-cyan-500/20",
 			borderGlow: "from-cyan-400 via-blue-400 to-indigo-500"
 		};
 		if (cat.includes("backend")) return {
-			dotClass: "bg-emerald-600 dark:bg-emerald-400 shadow-[0_0_8px_#34d399]",
-			badgeClass: "bg-emerald-50 text-emerald-800 border-emerald-300 hover:bg-emerald-100 dark:bg-emerald-500/10 dark:text-emerald-300 dark:border-emerald-500/25 dark:hover:bg-emerald-500/20",
-			borderGlow: "from-emerald-400 via-teal-400 to-emerald-500"
+			dotClass: "bg-indigo dark:bg-indigo shadow-[0_0_8px_#818cf8]",
+			badgeClass: "bg-indigo-50 text-indigo-900 border-indigo-200 hover:bg-indigo-100 dark:bg-indigo/10 dark:text-indigo-300 dark:border-indigo/30 dark:hover:bg-indigo/20",
+			borderGlow: "from-indigo-400 via-purple-400 to-indigo-500"
 		};
 		if (cat.includes("product") || cat.includes("database")) return {
 			dotClass: "bg-purple-600 dark:bg-purple-400 shadow-[0_0_8px_#c084fc]",

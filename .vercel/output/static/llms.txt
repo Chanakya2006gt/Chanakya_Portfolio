@@ -1,10 +1,10 @@
 # Nagulagam Chanakya — Portfolio & Technical Index
 
-> Full-Stack Software Engineer & Founder of Trelio SaaS. Specializing in applied cryptography, payment workflows, multi-tenant architectures, and deterministic CPQ math models.
+> AI-Native Software Engineer & Founder of Trelio SaaS. Specializing in autonomous multi-agent orchestration, applied cryptography, payment workflows, multi-tenant architectures, and deterministic CPQ math models.
 
 ## Core Information
 - **Name**: Nagulagam Chanakya
-- **Role**: Full-Stack Engineer & SaaS Founder
+- **Role**: AI-Native Full-Stack Engineer & SaaS Founder
 - **Location**: Warangal, Telangana, India
 - **Education**: B.Tech in Computer Science & Engineering (Graduating 2028), SR University
 - **Email**: nagulagamchanakya2211@gmail.com
@@ -35,9 +35,11 @@
 - **Stack**: React, TypeScript, Node.js, Supabase RLS, GSAP, Isomorphic Math CPQ.
 
 ## Technical Skills & Specialties
+- **Agentic & AI Engineering**: Multi-agent orchestration (Google Antigravity, Claude Code), custom skill plugins, specification-driven development, deterministic verification loops.
 - **Frontend**: React 19, TypeScript, Next.js, TanStack Start (SSR), Tailwind CSS v4, shadcn/ui, GSAP, Radix UI.
 - **Backend & Data**: Node.js, Express, PostgreSQL, Supabase RLS, Drizzle ORM, Redis, REST APIs, additive migrations.
 - **Security & Cryptography**: AES-256-GCM, HMAC-SHA256, Clerk auth, timing-safe session tokens.
+- **Design & Quality**: 60-30-10 color hierarchy, WCAG 2.2 AA accessibility compliance, automated QA audits.
 - **Testing & Tooling**: Playwright E2E, Vite, Nitro Serverless, Git.
 
 ## Availability

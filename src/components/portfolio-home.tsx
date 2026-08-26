@@ -80,7 +80,7 @@ function HeroTerminal() {
         </div>
         <div className="pl-4">
           <span className="text-foreground/70 dark:text-muted-foreground">role:</span>{" "}
-          <span className="text-emerald-800 dark:text-emerald-400 font-medium">"Full-Stack Builder & Founder"</span>,
+          <span className="text-emerald-800 dark:text-emerald-400 font-medium">"AI-Native Builder & Founder"</span>,
         </div>
         <div className="pl-4">
           <span className="text-foreground/70 dark:text-muted-foreground">flagship:</span> [
@@ -89,8 +89,15 @@ function HeroTerminal() {
           ],
         </div>
         <div className="pl-4">
+          <span className="text-foreground/70 dark:text-muted-foreground">workflow:</span> [
+          <span className="text-purple-800 dark:text-purple-300 font-medium">"Agentic AI"</span>,{" "}
+          <span className="text-cyan-800 dark:text-cyan-300 font-medium">"Antigravity"</span>,{" "}
+          <span className="text-emerald-800 dark:text-emerald-300 font-medium">"Claude Code"</span>
+          ],
+        </div>
+        <div className="pl-4">
           <span className="text-foreground/70 dark:text-muted-foreground">stack:</span> [
-          <span className="text-cyan-800 dark:text-cyan-300 font-medium">"React"</span>,{" "}
+          <span className="text-cyan-800 dark:text-cyan-300 font-medium">"React 19"</span>,{" "}
           <span className="text-cyan-800 dark:text-cyan-300 font-medium">"TypeScript"</span>,{" "}
           <span className="text-emerald-800 dark:text-emerald-300 font-medium">"Supabase / Postgres"</span>
           ],
@@ -275,7 +282,7 @@ function About({ email, pdfUrl, summary, education, skillsList, resume }: AboutP
               </div>
               <div className="col-span-2 rounded-xl border border-border/70 bg-card/80 p-3 sm:col-span-1 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.08)]">
                 <p className="text-[11px] font-mono text-muted-foreground uppercase tracking-wider">Core Focus</p>
-                <p className="text-xs font-semibold text-sage">SaaS & Security</p>
+                <p className="text-xs font-semibold text-sage">Agentic AI & SaaS</p>
               </div>
             </div>
 
@@ -300,11 +307,10 @@ function About({ email, pdfUrl, summary, education, skillsList, resume }: AboutP
             <div>
               <div className="flex items-center gap-2">
                 <span className="size-2 rounded-full bg-emerald-400 shadow-[0_0_8px_#34d399]" />
-                <h4 className="text-sm font-semibold text-foreground">How I work</h4>
+                <h4 className="text-sm font-semibold text-foreground">How I work · Agentic Velocity</h4>
               </div>
               <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
-                Direct, metrics-first, no fluff. Build, get a user in front of it,
-                iterate. Clean code and reliable architecture come first.
+                Specification-first builder. I direct autonomous AI agents (Google Antigravity, Claude Code) with specialized skill plugins, strict design tokens (60-30-10 palette, WCAG 2.2 AA), and cryptographic guardrails (AES-256-GCM, Postgres RLS) to ship hardened production systems in days instead of months.
               </p>
             </div>
             <Separator className="bg-border/60" />
@@ -700,6 +706,13 @@ function Skills({ skillsList }: SkillsProps) {
 
   const getDomainConfig = (category: string) => {
     const cat = category.toLowerCase();
+    if (cat.includes("agentic") || cat.includes("ai")) {
+      return {
+        dotClass: "bg-emerald-600 dark:bg-emerald-400 shadow-[0_0_8px_#10b981]",
+        badgeClass: "bg-emerald-50 text-emerald-800 border-emerald-300 hover:bg-emerald-100 dark:bg-emerald-500/10 dark:text-emerald-300 dark:border-emerald-500/25 dark:hover:bg-emerald-500/20",
+        borderGlow: "from-emerald-400 via-teal-400 to-cyan-500",
+      };
+    }
     if (cat.includes("frontend")) {
       return {
         dotClass: "bg-cyan-600 dark:bg-cyan-400 shadow-[0_0_8px_#38bdf8]",
@@ -709,9 +722,9 @@ function Skills({ skillsList }: SkillsProps) {
     }
     if (cat.includes("backend")) {
       return {
-        dotClass: "bg-emerald-600 dark:bg-emerald-400 shadow-[0_0_8px_#34d399]",
-        badgeClass: "bg-emerald-50 text-emerald-800 border-emerald-300 hover:bg-emerald-100 dark:bg-emerald-500/10 dark:text-emerald-300 dark:border-emerald-500/25 dark:hover:bg-emerald-500/20",
-        borderGlow: "from-emerald-400 via-teal-400 to-emerald-500",
+        dotClass: "bg-indigo dark:bg-indigo shadow-[0_0_8px_#818cf8]",
+        badgeClass: "bg-indigo-50 text-indigo-900 border-indigo-200 hover:bg-indigo-100 dark:bg-indigo/10 dark:text-indigo-300 dark:border-indigo/30 dark:hover:bg-indigo/20",
+        borderGlow: "from-indigo-400 via-purple-400 to-indigo-500",
       };
     }
     if (cat.includes("product") || cat.includes("database")) {

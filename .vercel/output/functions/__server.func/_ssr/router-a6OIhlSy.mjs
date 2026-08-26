@@ -1,6 +1,6 @@
 import { i as __toESM } from "../_runtime.mjs";
 import { n as put, t as head } from "../_libs/@vercel/blob+[...].mjs";
-import { a as getPortfolioData, i as writeContent, n as readContent, r as restoreBackup, u as __exportAll } from "./content.server-DZbb1O8k.mjs";
+import { a as getPortfolioData, i as writeContent, n as readContent, r as restoreBackup, u as __exportAll } from "./content.server-xcdZLFWz.mjs";
 import { u as require_react } from "../_libs/@floating-ui/react-dom+[...].mjs";
 import { f as createRouter, g as createRootRoute, h as createFileRoute, l as Scripts, m as lazyRouteComponent, p as Outlet, u as HeadContent } from "../_libs/@tanstack/react-router+[...].mjs";
 import { s as require_jsx_runtime } from "../_libs/@radix-ui/react-collection+[...].mjs";
@@ -14,7 +14,7 @@ import { i as string, n as object, r as record, t as array } from "../_libs/zod.
 import crypto from "node:crypto";
 import path from "node:path";
 import fs from "node:fs";
-//#region node_modules/.nitro/vite/services/ssr/assets/router-DPOThMtJ.js
+//#region node_modules/.nitro/vite/services/ssr/assets/router-a6OIhlSy.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 function AppErrorComponent({ error }) {
@@ -104,7 +104,7 @@ var TooltipContent = import_react.forwardRef(({ className, sideOffset = 6, ...pr
 	...props
 }) }));
 TooltipContent.displayName = Content2.displayName;
-var styles_default = "/assets/styles-CUv_s_Ca.css";
+var styles_default = "/assets/styles-BQiUCO1k.css";
 var APP_NAME = "Nagulagam Chanakya — Full-Stack Developer & SaaS Founder";
 var APP_DESC = "Official portfolio of Nagulagam Chanakya — Full-Stack Developer & Founder of Trelio. Specializing in React, Node.js, TypeScript, PostgreSQL, and applied software security.";
 var SITE_URL = "https://chanakya-portfolio-orcin.vercel.app";
@@ -129,11 +129,13 @@ var JSON_LD = {
 			},
 			"hasOccupation": {
 				"@type": "Occupation",
-				"name": "Full-Stack Software Engineer & Founder",
-				"skills": "React, Node.js, TypeScript, PostgreSQL, Applied Cryptography, Multi-tenant SaaS"
+				"name": "AI-Native Software Engineer & Founder",
+				"skills": "Agentic AI Orchestration, Google Antigravity, Claude Code, React, Node.js, TypeScript, PostgreSQL, Applied Cryptography, Multi-tenant SaaS"
 			},
 			"sameAs": ["https://github.com/Chanakya2006gt", "https://www.linkedin.com/in/nagulagam-chanakya-b93514315"],
 			"knowsAbout": [
+				"Agentic Software Engineering",
+				"Autonomous Coding Agents",
 				"React",
 				"Node.js",
 				"TypeScript",
@@ -307,14 +309,14 @@ var createSsrRpc = (functionId) => {
 	});
 };
 var fetchContent = createServerFn({ method: "GET" }).handler(createSsrRpc("2b99909e19342163fb9618a3b1f343b57fe68205625d940d83a174e978667293"));
-var $$splitComponentImporter$2 = () => import("./routes-zNlyDaYv.mjs");
+var $$splitComponentImporter$2 = () => import("./routes-CuBWMvWG.mjs");
 var Route$11 = createFileRoute("/")({
 	loader: () => fetchContent(),
 	component: lazyRouteComponent($$splitComponentImporter$2, "component")
 });
-var $$splitComponentImporter$1 = () => import("./admin-Cb5hWaof.mjs");
+var $$splitComponentImporter$1 = () => import("./admin-DKs6W3nc.mjs");
 var Route$10 = createFileRoute("/admin/")({ component: lazyRouteComponent($$splitComponentImporter$1, "component") });
-var $$splitComponentImporter = () => import("./login-C-Wphnkx.mjs");
+var $$splitComponentImporter = () => import("./login-B76kcgcF.mjs");
 var Route$9 = createFileRoute("/admin/login")({ component: lazyRouteComponent($$splitComponentImporter, "component") });
 var envCache = null;
 var lastCacheTime = 0;
@@ -446,7 +448,7 @@ Your job is to speak from a crisp, business-oriented perspective for recruiters,
 
 # WHO IS CHANAKYA:
 * **Name**: Nagulagam Chanakya
-* **Role**: Full-Stack Developer & SaaS Founder (Trelio)
+* **Role**: AI-Native Full-Stack Developer & SaaS Founder (Trelio)
 * **Education**: ${education}, Warangal, Telangana, India
 * **Work / Contract Availability (When someone wants to hire Chanakya)**: ${workAvailability}
 * **Team Hiring Status (Is Chanakya hiring anyone for his team?)**: ${hiringStatus}
@@ -458,11 +460,11 @@ Your job is to speak from a crisp, business-oriented perspective for recruiters,
 ${summary}
 
 # CORE STACK & EXPERTISE:
-* **Full-Stack**: React, Node.js, Express, PostgreSQL, TypeScript, JavaScript, Java, SQL
-* **Frontend**: Tailwind CSS, React Query, Vite, TanStack Start, shadcn/ui
-* **Backend & Data**: PostgreSQL, Drizzle ORM, Redis, REST APIs, additive migrations
-* **Security & Payments**: AES-256-GCM encryption, HMAC webhook verification, Clerk auth, Razorpay
-* **Practices**: System design, software security, Playwright e2e testing, AI-assisted engineering workflows
+* **Agentic & AI Engineering**: Multi-agent orchestration (Google Antigravity, Claude Code), custom skill plugins, specification-driven development, deterministic verification loops
+* **Full-Stack & Frontend**: React 19, TypeScript, TanStack Start (SSR), Tailwind CSS v4, shadcn/ui, GSAP
+* **Backend & Data**: Node.js, Express, PostgreSQL, Drizzle ORM, Supabase RLS, REST APIs, additive migrations
+* **Security & Payments**: AES-256-GCM encryption, HMAC webhook verification, timing-safe session tokens, Clerk auth, Razorpay / direct UPI settlement
+* **Practices**: System design, software security, Playwright e2e testing, 60-30-10 design system tokens, WCAG 2.2 accessibility
 
 # FEATURED PRODUCTS:
 ${data.businesses.map((b) => `* **${b.title}** (${b.badge || "Live Product"}): ${b.description} | Tech: ${b.stack.join(", ")}${b.liveUrl ? ` | Live: ${b.liveUrl}` : ""}`).join("\n")}

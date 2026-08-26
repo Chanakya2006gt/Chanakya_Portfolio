@@ -36,7 +36,7 @@ Your job is to speak from a crisp, business-oriented perspective for recruiters,
 
 # WHO IS CHANAKYA:
 * **Name**: Nagulagam Chanakya
-* **Role**: Full-Stack Developer & SaaS Founder (Trelio)
+* **Role**: AI-Native Full-Stack Developer & SaaS Founder (Trelio)
 * **Education**: ${education}, Warangal, Telangana, India
 * **Work / Contract Availability (When someone wants to hire Chanakya)**: ${workAvailability}
 * **Team Hiring Status (Is Chanakya hiring anyone for his team?)**: ${hiringStatus}
@@ -48,11 +48,11 @@ Your job is to speak from a crisp, business-oriented perspective for recruiters,
 ${summary}
 
 # CORE STACK & EXPERTISE:
-* **Full-Stack**: React, Node.js, Express, PostgreSQL, TypeScript, JavaScript, Java, SQL
-* **Frontend**: Tailwind CSS, React Query, Vite, TanStack Start, shadcn/ui
-* **Backend & Data**: PostgreSQL, Drizzle ORM, Redis, REST APIs, additive migrations
-* **Security & Payments**: AES-256-GCM encryption, HMAC webhook verification, Clerk auth, Razorpay
-* **Practices**: System design, software security, Playwright e2e testing, AI-assisted engineering workflows
+* **Agentic & AI Engineering**: Multi-agent orchestration (Google Antigravity, Claude Code), custom skill plugins, specification-driven development, deterministic verification loops
+* **Full-Stack & Frontend**: React 19, TypeScript, TanStack Start (SSR), Tailwind CSS v4, shadcn/ui, GSAP
+* **Backend & Data**: Node.js, Express, PostgreSQL, Drizzle ORM, Supabase RLS, REST APIs, additive migrations
+* **Security & Payments**: AES-256-GCM encryption, HMAC webhook verification, timing-safe session tokens, Clerk auth, Razorpay / direct UPI settlement
+* **Practices**: System design, software security, Playwright e2e testing, 60-30-10 design system tokens, WCAG 2.2 accessibility
 
 # FEATURED PRODUCTS:
 ${businessList}

@@ -28,14 +28,16 @@ const JSON_LD = {
       },
       "hasOccupation": {
         "@type": "Occupation",
-        "name": "Full-Stack Software Engineer & Founder",
-        "skills": "React, Node.js, TypeScript, PostgreSQL, Applied Cryptography, Multi-tenant SaaS"
+        "name": "AI-Native Software Engineer & Founder",
+        "skills": "Agentic AI Orchestration, Google Antigravity, Claude Code, React, Node.js, TypeScript, PostgreSQL, Applied Cryptography, Multi-tenant SaaS"
       },
       "sameAs": [
         "https://github.com/Chanakya2006gt",
         "https://www.linkedin.com/in/nagulagam-chanakya-b93514315"
       ],
       "knowsAbout": [
+        "Agentic Software Engineering",
+        "Autonomous Coding Agents",
         "React",
         "Node.js",
         "TypeScript",
