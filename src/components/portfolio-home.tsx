@@ -489,12 +489,17 @@ function Projects({ businessesList, sideProjectsList, email, pdfUrl, summary, ed
     };
     window.addEventListener("portfolio-tab-switch" as any, handleSwitchTab);
 
-    if (window.location.hash === "#projects") {
-      setActiveTab("side");
-    }
+    const checkHash = () => {
+      if (window.location.hash === "#projects") {
+        setActiveTab("side");
+      }
+    };
+    checkHash();
+    window.addEventListener("hashchange", checkHash);
 
     return () => {
       window.removeEventListener("portfolio-tab-switch" as any, handleSwitchTab);
+      window.removeEventListener("hashchange", checkHash);
     };
   }, []);
 

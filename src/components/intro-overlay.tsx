@@ -25,23 +25,57 @@ const SCATTER: Array<{ tx: string; ty: string; rot: string }> = [
 
 export function IntroOverlay() {
   // "entering" is the SSR-safe default — overlay is fully opaque black.
-  // On the client, useEffect drives through the phases.
+  // On the client, useEffect drives through the phases or skips if already seen.
   const [phase, setPhase] = useState<"entering" | "hold" | "pulse2" | "explode" | "gone">("entering");
 
   useEffect(() => {
-    // All timers are client-only. SSR renders static "entering" phase (solid black).
-    const t1 = setTimeout(() => setPhase("hold"),    700);
-    const t2 = setTimeout(() => setPhase("pulse2"),  2200);
+    // Check if user has already seen the intro this session, or prefers reduced motion
+    const hasSeen = typeof window !== "undefined" && sessionStorage.getItem("chanakya_intro_seen") === "1";
+    const prefersReducedMotion = typeof window !== "undefined" && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    if (hasSeen || prefersReducedMotion) {
+      setPhase("gone");
+      return;
+    }
+
+    const t1 = setTimeout(() => setPhase("hold"), 700);
+    const t2 = setTimeout(() => setPhase("pulse2"), 2200);
     const t3 = setTimeout(() => setPhase("explode"), 3500);
-    const t4 = setTimeout(() => setPhase("gone"),    4100);
-    return () => { clearTimeout(t1); clearTimeout(t2); clearTimeout(t3); clearTimeout(t4); };
+    const t4 = setTimeout(() => {
+      setPhase("gone");
+      sessionStorage.setItem("chanakya_intro_seen", "1");
+    }, 4100);
+
+    // ESC key listener to skip immediately
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        setPhase("gone");
+        sessionStorage.setItem("chanakya_intro_seen", "1");
+      }
+    };
+    window.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      clearTimeout(t1);
+      clearTimeout(t2);
+      clearTimeout(t3);
+      clearTimeout(t4);
+      window.removeEventListener("keydown", handleKeyDown);
+    };
   }, []);
+
+  const handleSkip = () => {
+    setPhase("gone");
+    if (typeof window !== "undefined") {
+      sessionStorage.setItem("chanakya_intro_seen", "1");
+    }
+  };
 
   if (phase === "gone") return null;
 
   const letters = "CHANAKYA".split("");
   const isExploding = phase === "explode";
-  const isHolding   = phase === "hold" || phase === "pulse2";
+  const isHolding = phase === "hold" || phase === "pulse2";
 
   return (
     <div
@@ -52,6 +86,17 @@ export function IntroOverlay() {
         pointerEvents: isExploding ? "none" : "auto",
       }}
     >
+      {/* ── Skip Button ── */}
+      <button
+        type="button"
+        onClick={handleSkip}
+        aria-label="Skip introduction"
+        className="absolute top-5 right-5 z-20 inline-flex items-center gap-1.5 rounded-full border border-white/15 bg-white/5 px-3 py-1 text-[11px] font-mono tracking-wider text-white/70 backdrop-blur-md transition-all hover:border-white/30 hover:bg-white/10 hover:text-white active:scale-95 shadow-sm cursor-pointer"
+      >
+        <span>Skip</span>
+        <kbd className="rounded bg-white/10 px-1.5 py-0.5 text-[9px] font-sans font-medium text-white/50 border border-white/10">ESC</kbd>
+      </button>
+
       {/* ── Aura bloom layer 1 — ambient ── */}
       <div
         className="absolute rounded-full bg-sage/15 blur-3xl"

@@ -9,32 +9,64 @@ const SITE_URL = "https://chanakya-portfolio-orcin.vercel.app";
 
 const JSON_LD = {
   "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Nagulagam Chanakya",
-  "url": SITE_URL,
-  "jobTitle": "Full-Stack Developer & Founder",
-  "worksFor": {
-    "@type": "Organization",
-    "name": "Trelio",
-    "url": "https://trelio.in"
-  },
-  "alumniOf": {
-    "@type": "CollegeOrUniversity",
-    "name": "SR University"
-  },
-  "sameAs": [
-    "https://github.com/Chanakya2006gt",
-    "https://www.linkedin.com/in/nagulagam-chanakya-b93514315"
-  ],
-  "knowsAbout": [
-    "React",
-    "Node.js",
-    "TypeScript",
-    "PostgreSQL",
-    "Tailwind CSS",
-    "Software Security",
-    "SaaS Architecture",
-    "Payment Systems"
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": `${SITE_URL}/#person`,
+      "name": "Nagulagam Chanakya",
+      "url": SITE_URL,
+      "jobTitle": "Full-Stack Developer & Founder",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Trelio",
+        "url": "https://trelio.in"
+      },
+      "alumniOf": {
+        "@type": "CollegeOrUniversity",
+        "name": "SR University",
+        "department": "Computer Science & Engineering"
+      },
+      "sameAs": [
+        "https://github.com/Chanakya2006gt",
+        "https://www.linkedin.com/in/nagulagam-chanakya-b93514315"
+      ],
+      "knowsAbout": [
+        "React",
+        "Node.js",
+        "TypeScript",
+        "PostgreSQL",
+        "Tailwind CSS",
+        "Software Security",
+        "SaaS Architecture",
+        "Payment Systems",
+        "CPQ Engines"
+      ]
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://trelio.in/#app",
+      "name": "Trelio",
+      "url": "https://trelio.in",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Web",
+      "description": "Authorization-before-execution SaaS ensuring verified scope lock, client authorization, and direct settlement.",
+      "author": {
+        "@id": `${SITE_URL}/#person`
+      }
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://industrial-packaging-platform.vercel.app/#app",
+      "name": "Apex Packaging & Converting",
+      "url": "https://industrial-packaging-platform.vercel.app",
+      "codeRepository": "https://github.com/Chanakya2006gt/Industrial-packaging-platform",
+      "applicationCategory": "ManufacturingApplication",
+      "operatingSystem": "Web",
+      "description": "Cloud-native B2B CPQ and sales estimating platform for industrial packaging converters with FINAT 1–8 rewind standards engine.",
+      "author": {
+        "@id": `${SITE_URL}/#person`
+      }
+    }
   ]
 };
 

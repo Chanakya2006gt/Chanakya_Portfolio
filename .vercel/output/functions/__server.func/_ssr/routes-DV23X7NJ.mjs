@@ -5,11 +5,11 @@ import { s as require_jsx_runtime } from "../_libs/@radix-ui/react-collection+[.
 import { A as Copy, B as ArrowUp, C as Layers, D as ExternalLink, E as FileText, F as Check, I as Calculator, L as Building2, M as CodeXml, N as Clock, O as Disc, P as CircleCheck, R as Bot, T as Github, V as ArrowRight, _ as MapPin, b as Lock, c as ShieldCheck, f as RefreshCw, g as Menu, h as Moon, k as Database, l as Send, n as X, o as Sun, p as Printer, r as User, t as Zap, v as Mail, w as GraduationCap, x as Linkedin, z as Award } from "../_libs/lucide-react.mjs";
 import { a as DialogOverlay$1, c as DialogTrigger$1, i as DialogDescription$1, n as DialogClose, o as DialogPortal$1, r as DialogContent$1, s as DialogTitle$1, t as Dialog$1 } from "../_libs/@radix-ui/react-dialog+[...].mjs";
 import { n as toast } from "../_libs/sonner.mjs";
-import { n as Route$11, r as cn } from "./router-Bl6CXzDk.mjs";
-import { a as CardFooter, c as Input, i as CardDescription, l as Label, n as Card, o as CardHeader, r as CardContent, s as CardTitle, t as Button } from "./card-5zSZONlX.mjs";
-import { a as TabsTrigger, i as TabsList, n as Tabs, o as Textarea, r as TabsContent, t as Badge } from "./badge-qXDdhslk.mjs";
+import { n as Route$11, r as cn } from "./router-DeBuoNyh.mjs";
+import { a as CardFooter, c as Input, i as CardDescription, l as Label, n as Card, o as CardHeader, r as CardContent, s as CardTitle, t as Button } from "./card-Ds2_8egp.mjs";
+import { a as TabsTrigger, i as TabsList, n as Tabs, o as Textarea, r as TabsContent, t as Badge } from "./badge-BoYhBTgx.mjs";
 import { t as Root } from "../_libs/radix-ui__react-separator.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/routes-DU7iz3DF.js
+//#region node_modules/.nitro/vite/services/ssr/assets/routes-DV23X7NJ.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 var Separator = import_react.forwardRef(({ className, orientation = "horizontal", decorative = true, ...props }, ref) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Root, {
@@ -1845,17 +1845,38 @@ var SCATTER = [
 function IntroOverlay() {
 	const [phase, setPhase] = (0, import_react.useState)("entering");
 	(0, import_react.useEffect)(() => {
+		const hasSeen = typeof window !== "undefined" && sessionStorage.getItem("chanakya_intro_seen") === "1";
+		const prefersReducedMotion = typeof window !== "undefined" && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+		if (hasSeen || prefersReducedMotion) {
+			setPhase("gone");
+			return;
+		}
 		const t1 = setTimeout(() => setPhase("hold"), 700);
 		const t2 = setTimeout(() => setPhase("pulse2"), 2200);
 		const t3 = setTimeout(() => setPhase("explode"), 3500);
-		const t4 = setTimeout(() => setPhase("gone"), 4100);
+		const t4 = setTimeout(() => {
+			setPhase("gone");
+			sessionStorage.setItem("chanakya_intro_seen", "1");
+		}, 4100);
+		const handleKeyDown = (e) => {
+			if (e.key === "Escape") {
+				setPhase("gone");
+				sessionStorage.setItem("chanakya_intro_seen", "1");
+			}
+		};
+		window.addEventListener("keydown", handleKeyDown);
 		return () => {
 			clearTimeout(t1);
 			clearTimeout(t2);
 			clearTimeout(t3);
 			clearTimeout(t4);
+			window.removeEventListener("keydown", handleKeyDown);
 		};
 	}, []);
+	const handleSkip = () => {
+		setPhase("gone");
+		if (typeof window !== "undefined") sessionStorage.setItem("chanakya_intro_seen", "1");
+	};
 	if (phase === "gone") return null;
 	const letters = "CHANAKYA".split("");
 	const isExploding = phase === "explode";
@@ -1868,6 +1889,16 @@ function IntroOverlay() {
 			pointerEvents: isExploding ? "none" : "auto"
 		},
 		children: [
+			/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("button", {
+				type: "button",
+				onClick: handleSkip,
+				"aria-label": "Skip introduction",
+				className: "absolute top-5 right-5 z-20 inline-flex items-center gap-1.5 rounded-full border border-white/15 bg-white/5 px-3 py-1 text-[11px] font-mono tracking-wider text-white/70 backdrop-blur-md transition-all hover:border-white/30 hover:bg-white/10 hover:text-white active:scale-95 shadow-sm cursor-pointer",
+				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { children: "Skip" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("kbd", {
+					className: "rounded bg-white/10 px-1.5 py-0.5 text-[9px] font-sans font-medium text-white/50 border border-white/10",
+					children: "ESC"
+				})]
+			}),
 			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
 				className: "absolute rounded-full bg-sage/15 blur-3xl",
 				style: {
@@ -2570,9 +2601,14 @@ function Projects({ businessesList, sideProjectsList, email, pdfUrl, summary, ed
 			if (e.detail?.tab) setActiveTab(e.detail.tab);
 		};
 		window.addEventListener("portfolio-tab-switch", handleSwitchTab);
-		if (window.location.hash === "#projects") setActiveTab("side");
+		const checkHash = () => {
+			if (window.location.hash === "#projects") setActiveTab("side");
+		};
+		checkHash();
+		window.addEventListener("hashchange", checkHash);
 		return () => {
 			window.removeEventListener("portfolio-tab-switch", handleSwitchTab);
+			window.removeEventListener("hashchange", checkHash);
 		};
 	}, []);
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("section", {
