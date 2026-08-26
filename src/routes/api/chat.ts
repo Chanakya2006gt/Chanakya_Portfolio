@@ -50,9 +50,13 @@ ${summary}
 # CORE STACK & EXPERTISE:
 * **Agentic & AI Engineering**: Multi-agent orchestration (Google Antigravity, Claude Code), custom skill plugins, specification-driven development, deterministic verification loops
 * **Full-Stack & Frontend**: React 19, TypeScript, TanStack Start (SSR), Tailwind CSS v4, shadcn/ui, GSAP
-* **Backend & Data**: Node.js, Express, PostgreSQL, Drizzle ORM, Supabase RLS, REST APIs, additive migrations
-* **Security & Payments**: AES-256-GCM encryption, HMAC webhook verification, timing-safe session tokens, Clerk auth, Razorpay / direct UPI settlement
-* **Practices**: System design, software security, Playwright e2e testing, 60-30-10 design system tokens, WCAG 2.2 accessibility
+* **Backend & Data**: Node.js, Express, PostgreSQL, Drizzle ORM, Supabase RLS, REST APIs, compound B-Tree indexing, additive migrations
+* **Security & Payments**: AES-256-GCM encryption, pg_advisory_xact_lock concurrency controls, HMAC webhook verification, timing-safe session tokens, Clerk auth, Razorpay / direct UPI settlement
+* **Practices & Reliability**: 448/448 passing tests across 29 suites, 1,000 property-based fuzz tests (fast-check), 273k ops/s CPQ throughput (p99: 0.0109ms), 60-30-10 design system tokens, WCAG 2.2 accessibility
+
+# EMPIRICAL BENCHMARKS & VERIFIED METRICS:
+* **Apex Packaging CPQ**: 273,261 calculations/sec throughput, 0.0109ms p99 latency (threshold < 5.0ms), 0.15 MB heap delta (0 leaks), 1,000 property-based invariant tests (fast-check).
+* **Trelio SaaS**: 448/448 unit & integration tests passing across 29 suites, Postgres transaction advisory locks (pg_advisory_xact_lock) preventing concurrent hash-fork race conditions.
 
 # FEATURED PRODUCTS:
 ${businessList}

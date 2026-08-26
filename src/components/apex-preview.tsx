@@ -40,17 +40,17 @@ export function ApexPreview() {
         </div>
         <div className="rounded-xl bg-card/90 px-3 py-2 border border-border/60 shadow-xs">
           <div className="flex items-center justify-center gap-1.5 text-emerald-800 dark:text-emerald-400 mb-0.5">
-            <Calculator className="size-3.5" />
-            <p className="text-[10px] font-mono uppercase tracking-wider font-semibold">Math Model</p>
+            <Gauge className="size-3.5" />
+            <p className="text-[10px] font-mono uppercase tracking-wider font-semibold">Throughput</p>
           </div>
-          <p className="text-xs font-semibold text-emerald-800 dark:text-emerald-400">Isomorphic CPQ</p>
+          <p className="text-xs font-semibold text-emerald-800 dark:text-emerald-400">273k ops/s · p99: 0.01ms</p>
         </div>
         <div className="rounded-xl bg-card/90 px-3 py-2 border border-border/60 shadow-xs">
           <div className="flex items-center justify-center gap-1.5 text-purple-800 dark:text-purple-400 mb-0.5">
             <Database className="size-3.5" />
-            <p className="text-[10px] font-mono uppercase tracking-wider font-semibold">Security</p>
+            <p className="text-[10px] font-mono uppercase tracking-wider font-semibold">Fuzz Tested</p>
           </div>
-          <p className="text-xs font-semibold text-purple-800 dark:text-purple-400">Supabase RLS</p>
+          <p className="text-xs font-semibold text-purple-800 dark:text-purple-400">1k Invariants Pass</p>
         </div>
       </div>
 
@@ -206,6 +206,26 @@ export function ApexPreview() {
             <div className="p-2.5 rounded-xl bg-secondary/50 border border-border/50">
               <div className="text-[10px] font-mono text-muted-foreground">CTP Plates</div>
               <div className="font-semibold text-emerald-700 dark:text-emerald-400 font-mono mt-0.5 text-sm">{ctpPlates} Sets (6-Col)</div>
+            </div>
+          </div>
+
+          {/* Empirical Benchmark Telemetry Grid */}
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 pt-1 border-t border-border/60 text-center">
+            <div className="p-2 rounded-lg bg-emerald-50/50 dark:bg-emerald-500/10 border border-emerald-300 dark:border-emerald-500/20">
+              <span className="text-[9px] font-mono uppercase text-emerald-700 dark:text-emerald-300 font-semibold block">Throughput</span>
+              <span className="text-xs font-mono font-bold text-foreground">273,261 ops/s</span>
+            </div>
+            <div className="p-2 rounded-lg bg-cyan-50/50 dark:bg-cyan-500/10 border border-cyan-300 dark:border-cyan-500/20">
+              <span className="text-[9px] font-mono uppercase text-cyan-700 dark:text-cyan-300 font-semibold block">p99 Latency</span>
+              <span className="text-xs font-mono font-bold text-foreground">0.0109 ms</span>
+            </div>
+            <div className="p-2 rounded-lg bg-purple-50/50 dark:bg-purple-500/10 border border-purple-300 dark:border-purple-500/20">
+              <span className="text-[9px] font-mono uppercase text-purple-700 dark:text-purple-300 font-semibold block">fast-check Fuzz</span>
+              <span className="text-xs font-mono font-bold text-foreground">1,000 Invariants</span>
+            </div>
+            <div className="p-2 rounded-lg bg-indigo-50/50 dark:bg-indigo/10 border border-indigo-200 dark:border-indigo/20">
+              <span className="text-[9px] font-mono uppercase text-indigo-700 dark:text-indigo-300 font-semibold block">Heap Delta</span>
+              <span className="text-xs font-mono font-bold text-foreground">0.15 MB (0 Leaks)</span>
             </div>
           </div>
         </div>

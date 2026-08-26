@@ -34,25 +34,25 @@ export function TrelioPreview() {
       {/* Real Architecture / Constraints Proof Strip */}
       <div className="mb-4 grid grid-cols-3 gap-2.5 border-b border-border/60 pb-3.5 text-center">
         <div className="rounded-xl bg-card/80 px-2.5 py-2 border border-border/50 shadow-sm">
-          <div className="flex items-center justify-center gap-1 text-muted-foreground mb-0.5">
-            <Database className="size-3" />
-            <p className="text-[10px] font-mono uppercase tracking-wider">Schema</p>
+          <div className="flex items-center justify-center gap-1 text-emerald-800 dark:text-emerald-400 mb-0.5">
+            <CheckCircle2 className="size-3" />
+            <p className="text-[10px] font-mono uppercase tracking-wider font-semibold">Test Suite</p>
           </div>
-          <p className="text-xs font-semibold text-foreground">38 DB Tables</p>
+          <p className="text-xs font-semibold text-emerald-800 dark:text-emerald-400">448 / 448 Pass</p>
         </div>
         <div className="rounded-xl bg-card/80 px-2.5 py-2 border border-border/50 shadow-sm">
           <div className="flex items-center justify-center gap-1 text-indigo mb-0.5">
             <Lock className="size-3" />
-            <p className="text-[10px] font-mono uppercase tracking-wider">Key Security</p>
+            <p className="text-[10px] font-mono uppercase tracking-wider font-semibold">Concurrency</p>
           </div>
-          <p className="text-xs font-semibold text-indigo">AES-256-GCM</p>
+          <p className="text-[11px] font-semibold text-indigo font-mono">pg_advisory_lock</p>
         </div>
         <div className="rounded-xl bg-card/80 px-2.5 py-2 border border-border/50 shadow-sm">
           <div className="flex items-center justify-center gap-1 text-sage mb-0.5">
-            <Zap className="size-3" />
-            <p className="text-[10px] font-mono uppercase tracking-wider">Settlement</p>
+            <ShieldCheck className="size-3" />
+            <p className="text-[10px] font-mono uppercase tracking-wider font-semibold">Encryption</p>
           </div>
-          <p className="text-xs font-semibold text-sage">Direct UPI/Rzp</p>
+          <p className="text-xs font-semibold text-sage">AES-256-GCM</p>
         </div>
       </div>
 

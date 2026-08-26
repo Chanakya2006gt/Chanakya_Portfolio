@@ -5,7 +5,7 @@ import { u as require_react } from "../_libs/@floating-ui/react-dom+[...].mjs";
 import { f as createRouter, g as createRootRoute, h as createFileRoute, l as Scripts, m as lazyRouteComponent, p as Outlet, u as HeadContent } from "../_libs/@tanstack/react-router+[...].mjs";
 import { s as require_jsx_runtime } from "../_libs/@radix-ui/react-collection+[...].mjs";
 import { n as TSS_SERVER_FUNCTION, r as getServerFnById, t as createServerFn } from "./ssr.mjs";
-import { H as ArrowLeft, d as RotateCw, i as TriangleAlert, j as Compass } from "../_libs/lucide-react.mjs";
+import { V as ArrowLeft, j as Compass, r as TriangleAlert, u as RotateCw } from "../_libs/lucide-react.mjs";
 import { n as Portal, r as Provider, t as Content2 } from "../_libs/@radix-ui/react-tooltip+[...].mjs";
 import { n as clsx } from "../_libs/class-variance-authority+clsx.mjs";
 import { t as twMerge } from "../_libs/tailwind-merge.mjs";
@@ -14,7 +14,7 @@ import { i as string, n as object, r as record, t as array } from "../_libs/zod.
 import crypto from "node:crypto";
 import path from "node:path";
 import fs from "node:fs";
-//#region node_modules/.nitro/vite/services/ssr/assets/router-BbWiw3An.js
+//#region node_modules/.nitro/vite/services/ssr/assets/router-CaE5O16P.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 function AppErrorComponent({ error }) {
@@ -104,7 +104,7 @@ var TooltipContent = import_react.forwardRef(({ className, sideOffset = 6, ...pr
 	...props
 }) }));
 TooltipContent.displayName = Content2.displayName;
-var styles_default = "/assets/styles-CsYsxHfc.css";
+var styles_default = "/assets/styles-DDlu597M.css";
 var APP_NAME = "Nagulagam Chanakya — Full-Stack Developer & SaaS Founder";
 var APP_DESC = "Official portfolio of Nagulagam Chanakya — Full-Stack Developer & Founder of Trelio. Specializing in React, Node.js, TypeScript, PostgreSQL, and applied software security.";
 var SITE_URL = "https://chanakya-portfolio-orcin.vercel.app";
@@ -136,6 +136,9 @@ var JSON_LD = {
 			"knowsAbout": [
 				"Agentic Software Engineering",
 				"Autonomous Coding Agents",
+				"High-Concurrency Systems",
+				"Property-Based Testing",
+				"Database Optimization",
 				"React",
 				"Node.js",
 				"TypeScript",
@@ -309,14 +312,14 @@ var createSsrRpc = (functionId) => {
 	});
 };
 var fetchContent = createServerFn({ method: "GET" }).handler(createSsrRpc("2b99909e19342163fb9618a3b1f343b57fe68205625d940d83a174e978667293"));
-var $$splitComponentImporter$2 = () => import("./routes-BagVLpqo.mjs");
+var $$splitComponentImporter$2 = () => import("./routes-cYIbfVND.mjs");
 var Route$11 = createFileRoute("/")({
 	loader: () => fetchContent(),
 	component: lazyRouteComponent($$splitComponentImporter$2, "component")
 });
-var $$splitComponentImporter$1 = () => import("./admin-DgXzrpd5.mjs");
+var $$splitComponentImporter$1 = () => import("./admin-B21htnvv.mjs");
 var Route$10 = createFileRoute("/admin/")({ component: lazyRouteComponent($$splitComponentImporter$1, "component") });
-var $$splitComponentImporter = () => import("./login-GSmwzZjJ.mjs");
+var $$splitComponentImporter = () => import("./login-D7u6r6--.mjs");
 var Route$9 = createFileRoute("/admin/login")({ component: lazyRouteComponent($$splitComponentImporter, "component") });
 var envCache = null;
 var lastCacheTime = 0;
@@ -462,9 +465,13 @@ ${summary}
 # CORE STACK & EXPERTISE:
 * **Agentic & AI Engineering**: Multi-agent orchestration (Google Antigravity, Claude Code), custom skill plugins, specification-driven development, deterministic verification loops
 * **Full-Stack & Frontend**: React 19, TypeScript, TanStack Start (SSR), Tailwind CSS v4, shadcn/ui, GSAP
-* **Backend & Data**: Node.js, Express, PostgreSQL, Drizzle ORM, Supabase RLS, REST APIs, additive migrations
-* **Security & Payments**: AES-256-GCM encryption, HMAC webhook verification, timing-safe session tokens, Clerk auth, Razorpay / direct UPI settlement
-* **Practices**: System design, software security, Playwright e2e testing, 60-30-10 design system tokens, WCAG 2.2 accessibility
+* **Backend & Data**: Node.js, Express, PostgreSQL, Drizzle ORM, Supabase RLS, REST APIs, compound B-Tree indexing, additive migrations
+* **Security & Payments**: AES-256-GCM encryption, pg_advisory_xact_lock concurrency controls, HMAC webhook verification, timing-safe session tokens, Clerk auth, Razorpay / direct UPI settlement
+* **Practices & Reliability**: 448/448 passing tests across 29 suites, 1,000 property-based fuzz tests (fast-check), 273k ops/s CPQ throughput (p99: 0.0109ms), 60-30-10 design system tokens, WCAG 2.2 accessibility
+
+# EMPIRICAL BENCHMARKS & VERIFIED METRICS:
+* **Apex Packaging CPQ**: 273,261 calculations/sec throughput, 0.0109ms p99 latency (threshold < 5.0ms), 0.15 MB heap delta (0 leaks), 1,000 property-based invariant tests (fast-check).
+* **Trelio SaaS**: 448/448 unit & integration tests passing across 29 suites, Postgres transaction advisory locks (pg_advisory_xact_lock) preventing concurrent hash-fork race conditions.
 
 # FEATURED PRODUCTS:
 ${data.businesses.map((b) => `* **${b.title}** (${b.badge || "Live Product"}): ${b.description} | Tech: ${b.stack.join(", ")}${b.liveUrl ? ` | Live: ${b.liveUrl}` : ""}`).join("\n")}

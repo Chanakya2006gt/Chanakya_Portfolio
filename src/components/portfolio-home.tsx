@@ -80,8 +80,24 @@ function HeroTerminal() {
         </div>
         <div className="pl-4">
           <span className="text-foreground/70 dark:text-muted-foreground">role:</span>{" "}
-          <span className="text-emerald-800 dark:text-emerald-400 font-medium">"AI-Native Builder & Founder"</span>,
+          <span className="text-emerald-800 dark:text-emerald-400 font-medium">"AI-Native Systems Architect & Founder"</span>,
         </div>
+        <div className="pl-4">
+          <span className="text-foreground/70 dark:text-muted-foreground">benchmarks:</span> &#123;
+        </div>
+        <div className="pl-8">
+          <span className="text-foreground/70 dark:text-muted-foreground">cpqThroughput:</span>{" "}
+          <span className="text-emerald-800 dark:text-emerald-400 font-medium">"273k ops/s (p99: 0.01ms)"</span>,
+        </div>
+        <div className="pl-8">
+          <span className="text-foreground/70 dark:text-muted-foreground">verifiedTests:</span>{" "}
+          <span className="text-cyan-800 dark:text-cyan-300 font-medium">"448/448 pass (29 suites)"</span>,
+        </div>
+        <div className="pl-8">
+          <span className="text-foreground/70 dark:text-muted-foreground">fuzzTesting:</span>{" "}
+          <span className="text-purple-800 dark:text-purple-300 font-medium">"1k invariants (fast-check)"</span>
+        </div>
+        <div className="pl-4">&#125;,</div>
         <div className="pl-4">
           <span className="text-foreground/70 dark:text-muted-foreground">flagship:</span> [
           <span className="text-purple-800 dark:text-purple-300 font-medium">"Trelio.in"</span>,{" "}

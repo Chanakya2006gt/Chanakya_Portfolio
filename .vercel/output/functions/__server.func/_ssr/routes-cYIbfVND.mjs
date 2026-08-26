@@ -2,14 +2,14 @@ import { i as __toESM } from "../_runtime.mjs";
 import { c as sideProjects$1, l as skills$1, o as businesses$1, s as navLinks } from "./content.server-xcdZLFWz.mjs";
 import { u as require_react } from "../_libs/@floating-ui/react-dom+[...].mjs";
 import { s as require_jsx_runtime } from "../_libs/@radix-ui/react-collection+[...].mjs";
-import { A as Copy, B as ArrowUp, C as Layers, D as ExternalLink, E as FileText, F as Check, I as Calculator, L as Building2, M as CodeXml, N as Clock, O as Disc, P as CircleCheck, R as Bot, T as Github, V as ArrowRight, _ as MapPin, b as Lock, c as ShieldCheck, f as RefreshCw, g as Menu, h as Moon, k as Database, l as Send, n as X, o as Sun, p as Printer, r as User, t as Zap, v as Mail, w as GraduationCap, x as Linkedin, z as Award } from "../_libs/lucide-react.mjs";
+import { A as Copy, B as ArrowRight, C as GraduationCap, D as ExternalLink, E as FileText, F as Check, I as Building2, L as Bot, M as CodeXml, N as Clock, O as Disc, P as CircleCheck, R as Award, S as Layers, T as Gauge, _ as Mail, a as Sun, b as Linkedin, c as Send, d as RefreshCw, f as Printer, g as MapPin, h as Menu, k as Database, m as Moon, n as User, s as ShieldCheck, t as X, w as Github, y as Lock, z as ArrowUp } from "../_libs/lucide-react.mjs";
 import { a as DialogOverlay$1, c as DialogTrigger$1, i as DialogDescription$1, n as DialogClose, o as DialogPortal$1, r as DialogContent$1, s as DialogTitle$1, t as Dialog$1 } from "../_libs/@radix-ui/react-dialog+[...].mjs";
 import { n as toast } from "../_libs/sonner.mjs";
-import { n as Route$11, r as cn } from "./router-BbWiw3An.mjs";
-import { a as CardFooter, c as Input, i as CardDescription, l as Label, n as Card, o as CardHeader, r as CardContent, s as CardTitle, t as Button } from "./card-DuzicZRE.mjs";
-import { a as TabsTrigger, i as TabsList, n as Tabs, o as Textarea, r as TabsContent, t as Badge } from "./badge-D_hiNbv3.mjs";
+import { n as Route$11, r as cn } from "./router-CaE5O16P.mjs";
+import { a as CardFooter, c as Input, i as CardDescription, l as Label, n as Card, o as CardHeader, r as CardContent, s as CardTitle, t as Button } from "./card-C7IPEX_v.mjs";
+import { a as TabsTrigger, i as TabsList, n as Tabs, o as Textarea, r as TabsContent, t as Badge } from "./badge-BntUSYHD.mjs";
 import { t as Root } from "../_libs/radix-ui__react-separator.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/routes-BagVLpqo.js
+//#region node_modules/.nitro/vite/services/ssr/assets/routes-cYIbfVND.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 var Separator = import_react.forwardRef(({ className, orientation = "horizontal", decorative = true, ...props }, ref) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Root, {
@@ -69,14 +69,14 @@ function TrelioPreview() {
 					/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 						className: "rounded-xl bg-card/80 px-2.5 py-2 border border-border/50 shadow-sm",
 						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-							className: "flex items-center justify-center gap-1 text-muted-foreground mb-0.5",
-							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Database, { className: "size-3" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
-								className: "text-[10px] font-mono uppercase tracking-wider",
-								children: "Schema"
+							className: "flex items-center justify-center gap-1 text-emerald-800 dark:text-emerald-400 mb-0.5",
+							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(CircleCheck, { className: "size-3" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+								className: "text-[10px] font-mono uppercase tracking-wider font-semibold",
+								children: "Test Suite"
 							})]
 						}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
-							className: "text-xs font-semibold text-foreground",
-							children: "38 DB Tables"
+							className: "text-xs font-semibold text-emerald-800 dark:text-emerald-400",
+							children: "448 / 448 Pass"
 						})]
 					}),
 					/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
@@ -84,25 +84,25 @@ function TrelioPreview() {
 						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 							className: "flex items-center justify-center gap-1 text-indigo mb-0.5",
 							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Lock, { className: "size-3" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
-								className: "text-[10px] font-mono uppercase tracking-wider",
-								children: "Key Security"
+								className: "text-[10px] font-mono uppercase tracking-wider font-semibold",
+								children: "Concurrency"
 							})]
 						}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
-							className: "text-xs font-semibold text-indigo",
-							children: "AES-256-GCM"
+							className: "text-[11px] font-semibold text-indigo font-mono",
+							children: "pg_advisory_lock"
 						})]
 					}),
 					/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 						className: "rounded-xl bg-card/80 px-2.5 py-2 border border-border/50 shadow-sm",
 						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 							className: "flex items-center justify-center gap-1 text-sage mb-0.5",
-							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Zap, { className: "size-3" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
-								className: "text-[10px] font-mono uppercase tracking-wider",
-								children: "Settlement"
+							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(ShieldCheck, { className: "size-3" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+								className: "text-[10px] font-mono uppercase tracking-wider font-semibold",
+								children: "Encryption"
 							})]
 						}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
 							className: "text-xs font-semibold text-sage",
-							children: "Direct UPI/Rzp"
+							children: "AES-256-GCM"
 						})]
 					})
 				]
@@ -256,13 +256,13 @@ function ApexPreview() {
 						className: "rounded-xl bg-card/90 px-3 py-2 border border-border/60 shadow-xs",
 						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 							className: "flex items-center justify-center gap-1.5 text-emerald-800 dark:text-emerald-400 mb-0.5",
-							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Calculator, { className: "size-3.5" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Gauge, { className: "size-3.5" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
 								className: "text-[10px] font-mono uppercase tracking-wider font-semibold",
-								children: "Math Model"
+								children: "Throughput"
 							})]
 						}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
 							className: "text-xs font-semibold text-emerald-800 dark:text-emerald-400",
-							children: "Isomorphic CPQ"
+							children: "273k ops/s · p99: 0.01ms"
 						})]
 					}),
 					/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
@@ -271,11 +271,11 @@ function ApexPreview() {
 							className: "flex items-center justify-center gap-1.5 text-purple-800 dark:text-purple-400 mb-0.5",
 							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Database, { className: "size-3.5" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
 								className: "text-[10px] font-mono uppercase tracking-wider font-semibold",
-								children: "Security"
+								children: "Fuzz Tested"
 							})]
 						}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
 							className: "text-xs font-semibold text-purple-800 dark:text-purple-400",
-							children: "Supabase RLS"
+							children: "1k Invariants Pass"
 						})]
 					})
 				]
@@ -439,6 +439,51 @@ function ApexPreview() {
 								}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 									className: "font-semibold text-emerald-700 dark:text-emerald-400 font-mono mt-0.5 text-sm",
 									children: [ctpPlates, " Sets (6-Col)"]
+								})]
+							})
+						]
+					}),
+					/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+						className: "grid grid-cols-2 sm:grid-cols-4 gap-2 pt-1 border-t border-border/60 text-center",
+						children: [
+							/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+								className: "p-2 rounded-lg bg-emerald-50/50 dark:bg-emerald-500/10 border border-emerald-300 dark:border-emerald-500/20",
+								children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+									className: "text-[9px] font-mono uppercase text-emerald-700 dark:text-emerald-300 font-semibold block",
+									children: "Throughput"
+								}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+									className: "text-xs font-mono font-bold text-foreground",
+									children: "273,261 ops/s"
+								})]
+							}),
+							/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+								className: "p-2 rounded-lg bg-cyan-50/50 dark:bg-cyan-500/10 border border-cyan-300 dark:border-cyan-500/20",
+								children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+									className: "text-[9px] font-mono uppercase text-cyan-700 dark:text-cyan-300 font-semibold block",
+									children: "p99 Latency"
+								}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+									className: "text-xs font-mono font-bold text-foreground",
+									children: "0.0109 ms"
+								})]
+							}),
+							/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+								className: "p-2 rounded-lg bg-purple-50/50 dark:bg-purple-500/10 border border-purple-300 dark:border-purple-500/20",
+								children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+									className: "text-[9px] font-mono uppercase text-purple-700 dark:text-purple-300 font-semibold block",
+									children: "fast-check Fuzz"
+								}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+									className: "text-xs font-mono font-bold text-foreground",
+									children: "1,000 Invariants"
+								})]
+							}),
+							/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+								className: "p-2 rounded-lg bg-indigo-50/50 dark:bg-indigo/10 border border-indigo-200 dark:border-indigo/20",
+								children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+									className: "text-[9px] font-mono uppercase text-indigo-700 dark:text-indigo-300 font-semibold block",
+									children: "Heap Delta"
+								}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+									className: "text-xs font-mono font-bold text-foreground",
+									children: "0.15 MB (0 Leaks)"
 								})]
 							})
 						]
@@ -2119,10 +2164,65 @@ function HeroTerminal() {
 						" ",
 						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
 							className: "text-emerald-800 dark:text-emerald-400 font-medium",
-							children: "\"AI-Native Builder & Founder\""
+							children: "\"AI-Native Systems Architect & Founder\""
 						}),
 						","
 					]
+				}),
+				/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+					className: "pl-4",
+					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+						className: "text-foreground/70 dark:text-muted-foreground",
+						children: "benchmarks:"
+					}), " {"]
+				}),
+				/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+					className: "pl-8",
+					children: [
+						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+							className: "text-foreground/70 dark:text-muted-foreground",
+							children: "cpqThroughput:"
+						}),
+						" ",
+						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+							className: "text-emerald-800 dark:text-emerald-400 font-medium",
+							children: "\"273k ops/s (p99: 0.01ms)\""
+						}),
+						","
+					]
+				}),
+				/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+					className: "pl-8",
+					children: [
+						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+							className: "text-foreground/70 dark:text-muted-foreground",
+							children: "verifiedTests:"
+						}),
+						" ",
+						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+							className: "text-cyan-800 dark:text-cyan-300 font-medium",
+							children: "\"448/448 pass (29 suites)\""
+						}),
+						","
+					]
+				}),
+				/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+					className: "pl-8",
+					children: [
+						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+							className: "text-foreground/70 dark:text-muted-foreground",
+							children: "fuzzTesting:"
+						}),
+						" ",
+						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+							className: "text-purple-800 dark:text-purple-300 font-medium",
+							children: "\"1k invariants (fast-check)\""
+						})
+					]
+				}),
+				/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+					className: "pl-4",
+					children: "},"
 				}),
 				/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 					className: "pl-4",

@@ -208,64 +208,6 @@ var Building2 = createLucideIcon("building-2", [
 * This source code is licensed under the ISC license.
 * See the LICENSE file in the root directory of this source tree.
 */
-var Calculator = createLucideIcon("calculator", [
-	["rect", {
-		width: "16",
-		height: "20",
-		x: "4",
-		y: "2",
-		rx: "2",
-		key: "1nb95v"
-	}],
-	["line", {
-		x1: "8",
-		x2: "16",
-		y1: "6",
-		y2: "6",
-		key: "x4nwl0"
-	}],
-	["line", {
-		x1: "16",
-		x2: "16",
-		y1: "14",
-		y2: "18",
-		key: "wjye3r"
-	}],
-	["path", {
-		d: "M16 10h.01",
-		key: "1m94wz"
-	}],
-	["path", {
-		d: "M12 10h.01",
-		key: "1nrarc"
-	}],
-	["path", {
-		d: "M8 10h.01",
-		key: "19clt8"
-	}],
-	["path", {
-		d: "M12 14h.01",
-		key: "1etili"
-	}],
-	["path", {
-		d: "M8 14h.01",
-		key: "6423bh"
-	}],
-	["path", {
-		d: "M12 18h.01",
-		key: "mhygvu"
-	}],
-	["path", {
-		d: "M8 18h.01",
-		key: "lrp35t"
-	}]
-]);
-/**
-* @license lucide-react v0.510.0 - ISC
-*
-* This source code is licensed under the ISC license.
-* See the LICENSE file in the root directory of this source tree.
-*/
 var Check = createLucideIcon("check", [["path", {
 	d: "M20 6 9 17l-5-5",
 	key: "1gmf2c"
@@ -441,6 +383,19 @@ var FileText = createLucideIcon("file-text", [
 		key: "z1uh3a"
 	}]
 ]);
+/**
+* @license lucide-react v0.510.0 - ISC
+*
+* This source code is licensed under the ISC license.
+* See the LICENSE file in the root directory of this source tree.
+*/
+var Gauge = createLucideIcon("gauge", [["path", {
+	d: "m12 14 4-4",
+	key: "9kzdfg"
+}], ["path", {
+	d: "M3.34 19a10 10 0 1 1 17.32 0",
+	key: "19p75a"
+}]]);
 /**
 * @license lucide-react v0.510.0 - ISC
 *
@@ -938,15 +893,5 @@ var X = createLucideIcon("x", [["path", {
 	d: "m6 6 12 12",
 	key: "d8bk6v"
 }]]);
-/**
-* @license lucide-react v0.510.0 - ISC
-*
-* This source code is licensed under the ISC license.
-* See the LICENSE file in the root directory of this source tree.
-*/
-var Zap = createLucideIcon("zap", [["path", {
-	d: "M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z",
-	key: "1xq2db"
-}]]);
 //#endregion
-export { Copy as A, ArrowUp as B, Layers as C, ExternalLink as D, FileText as E, Check as F, ArrowLeft as H, Calculator as I, Building2 as L, CodeXml as M, Clock as N, Disc as O, CircleCheck as P, Bot as R, LayoutGrid as S, Github as T, ArrowRight as V, MapPin as _, Trash2 as a, Lock as b, ShieldCheck as c, RotateCw as d, RefreshCw as f, Menu as g, Moon as h, TriangleAlert as i, Compass as j, Database as k, Send as l, Plus as m, X as n, Sun as o, Printer as p, User as r, Sparkles as s, Zap as t, Save as u, Mail as v, GraduationCap as w, Linkedin as x, LogOut as y, Award as z };
+export { Copy as A, ArrowRight as B, GraduationCap as C, ExternalLink as D, FileText as E, Check as F, Building2 as I, Bot as L, CodeXml as M, Clock as N, Disc as O, CircleCheck as P, Award as R, Layers as S, Gauge as T, ArrowLeft as V, Mail as _, Sun as a, Linkedin as b, Send as c, RefreshCw as d, Printer as f, MapPin as g, Menu as h, Trash2 as i, Compass as j, Database as k, Save as l, Moon as m, User as n, Sparkles as o, Plus as p, TriangleAlert as r, ShieldCheck as s, X as t, RotateCw as u, LogOut as v, Github as w, LayoutGrid as x, Lock as y, ArrowUp as z };

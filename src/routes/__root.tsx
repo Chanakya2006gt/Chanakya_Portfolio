@@ -38,6 +38,9 @@ const JSON_LD = {
       "knowsAbout": [
         "Agentic Software Engineering",
         "Autonomous Coding Agents",
+        "High-Concurrency Systems",
+        "Property-Based Testing",
+        "Database Optimization",
         "React",
         "Node.js",
         "TypeScript",
