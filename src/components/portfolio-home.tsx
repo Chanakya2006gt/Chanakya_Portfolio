@@ -1,5 +1,5 @@
-import { useState, useEffect } from "react";
-import { ArrowRight, ArrowUp, ExternalLink, Mail, Check, Copy, Terminal, Sparkles, FileText, Github } from "lucide-react";
+import { useState } from "react";
+import { ArrowUp, ExternalLink, Mail, ShieldCheck, CheckCircle2, XCircle, Code2, Github } from "lucide-react";
 import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
 import {
@@ -12,7 +12,6 @@ import {
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
@@ -25,97 +24,72 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 
-import { businesses as defaultBusinesses, sideProjects as defaultSideProjects, skills as defaultSkills, Project } from "@/data/projects";
 import { TrelioPreview } from "@/components/trelio-preview";
 import { ApexPreview } from "@/components/apex-preview";
 import { OfferLadder } from "@/components/offer-ladder";
 import { HeroQuoteCard } from "@/components/hero-quote-card";
 import { SiteNav } from "@/components/site-nav";
-import { LeftRailNav } from "@/components/left-rail-nav";
-import { ParticleField } from "@/components/particle-field";
-import { MarqueeTicker } from "@/components/marquee-ticker";
-import { HeroStats } from "@/components/hero-stats";
-import { ContactCards } from "@/components/contact-cards";
-import { Companion } from "@/components/mascot/companion";
-import { CompanionSvg } from "@/components/mascot/companion-svg";
-import { IntroOverlay } from "@/components/intro-overlay";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
-
-import { ResumeModal } from "@/components/resume-modal";
 import { DynamicData } from "@/data/store";
 
-
 interface HeroProps {
-  tagline?: string;
   availabilityStatus?: string;
-  liveCount?: number;
-  email?: string;
-  pdfUrl?: string;
-  summary?: string;
-  education?: string;
-  skillsList?: Record<string, string[]>;
-  resume?: DynamicData["resume"];
 }
 
-function Hero({ tagline, availabilityStatus, liveCount, email, pdfUrl, summary, education, skillsList, resume }: HeroProps) {
+function Hero({ availabilityStatus }: HeroProps) {
+  const currentStatus = availabilityStatus || "Taking 2 builds a month · booking the next slot";
+
   return (
-    <section className="relative mx-auto flex min-h-[92vh] max-w-5xl flex-col justify-center px-5 py-20 lg:py-28 overflow-hidden">
+    <section className="relative mx-auto flex min-h-[85vh] max-w-5xl flex-col justify-center px-5 py-16 lg:py-24 overflow-hidden">
       {/* Architectural Dot-Matrix Background Grid */}
-      <div className="absolute inset-0 bg-grid-pattern pointer-events-none -z-10 opacity-60 dark:opacity-70" />
-      {/* Background ambient multi-color glow mesh */}
-      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[500px] bg-gradient-to-tr from-emerald-500/15 via-indigo-500/10 to-cyan-500/10 blur-[130px] rounded-full pointer-events-none -z-10" />
-      <ParticleField />
-      
+      <div className="absolute inset-0 bg-grid-pattern pointer-events-none -z-10 opacity-50 dark:opacity-60" />
+      {/* Subtle ambient multi-color glow */}
+      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-gradient-to-tr from-emerald-500/10 via-teal-500/5 to-indigo-500/10 blur-[120px] rounded-full pointer-events-none -z-10" />
+
       <div className="relative z-10 grid gap-12 lg:grid-cols-[1.2fr_1.1fr] lg:items-center">
         <div>
-          <div className="rise-in inline-flex items-center gap-2 rounded-full border border-emerald-600/30 dark:border-emerald-500/30 bg-emerald-50 dark:bg-emerald-500/10 px-3.5 py-1 text-xs font-semibold tracking-wide text-emerald-800 dark:text-emerald-400 shadow-sm backdrop-blur-sm">
+          <div className="inline-flex items-center gap-2 rounded-full border border-emerald-600/30 dark:border-emerald-500/30 bg-emerald-50 dark:bg-emerald-500/10 px-3.5 py-1 text-xs font-semibold tracking-wide text-emerald-800 dark:text-emerald-400 shadow-sm">
             <span className="size-2 rounded-full bg-emerald-600 dark:bg-emerald-400 shadow-[0_0_8px_#10b981] animate-pulse" />
             Quote-to-job systems · plants and agencies
           </div>
-          <h1 className="rise-in rise-in-1 mt-5 font-serif text-4xl sm:text-5xl md:text-6xl leading-[1.08] tracking-[-0.03em]">
+
+          <h1 className="mt-5 font-serif text-4xl sm:text-5xl md:text-6xl leading-[1.08] tracking-[-0.03em]">
             <span className="text-foreground">Quotes and jobs shouldn't </span>
             <span className="bg-gradient-to-r from-emerald-800 via-teal-800 to-cyan-900 dark:from-emerald-400 dark:via-teal-300 dark:to-cyan-400 bg-clip-text text-transparent font-bold">
               live on WhatsApp.
             </span>
           </h1>
-          <p className="rise-in rise-in-2 mt-6 max-w-xl text-lg sm:text-xl leading-relaxed text-muted-foreground">
-            I build the system a plant or an agency actually runs: quote → confirm → work. Fixed price. You keep the repo. Live on a converting workflow and on Trelio.
+
+          <p className="mt-6 max-w-xl text-lg sm:text-xl leading-relaxed text-muted-foreground">
+            I build the system a plant or an agency actually runs: quote → confirm → work. Fixed price. You keep the repo. Live on an industrial converting workflow and on Trelio.
           </p>
 
-          <HeroStats status={availabilityStatus} liveCount={liveCount} />
+          <div className="mt-6 inline-flex items-center gap-2 rounded-xl border border-border/80 bg-secondary/50 px-3.5 py-1.5 text-xs text-foreground font-mono">
+            <span className="size-2 rounded-full bg-emerald-500" />
+            <span>Capacity: <strong className="font-semibold text-emerald-700 dark:text-emerald-400">{currentStatus}</strong></span>
+          </div>
 
-          <div className="rise-in rise-in-3 mt-10 flex flex-wrap items-center gap-3">
-            <Button asChild size="lg" className="group btn-sage-glow rounded-xl font-medium shadow-md active:scale-[0.98] transition-all pl-5 pr-2.5 py-2 inline-flex items-center gap-2.5">
+          <div className="mt-8 flex flex-wrap items-center gap-3.5">
+            <Button asChild size="lg" className="btn-sage-glow rounded-xl font-medium shadow-md active:scale-[0.98] transition-all px-6 py-2.5">
               <a href="#pricing">
-                <span>Book a Paid Diagnosis (₹40k)</span>
-                <span className="flex size-6 items-center justify-center rounded-lg bg-black/10 dark:bg-white/15 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
-                  <ArrowRight className="size-3.5" />
-                </span>
+                <span>Book a ₹40k Diagnosis →</span>
               </a>
             </Button>
-            <Button asChild size="lg" variant="outline" className="rounded-xl border-border/80 hover:border-indigo hover:text-indigo font-medium shadow-sm active:scale-[0.98] transition-all">
+            <Button asChild size="lg" variant="outline" className="rounded-xl border-border/80 hover:border-cyan-500/50 hover:text-cyan-800 dark:hover:text-cyan-300 font-medium shadow-sm active:scale-[0.98] transition-all">
               <a
-                href="#projects"
-                onClick={() => {
-                  if (typeof window !== "undefined") {
-                    window.dispatchEvent(new CustomEvent("portfolio-tab-switch", { detail: { tab: "plants" } }));
-                  }
-                }}
+                href="https://industrial-packaging-platform.vercel.app"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2"
               >
-                <span>Try Live Quoting System ↓</span>
-              </a>
-            </Button>
-            <Button asChild size="lg" variant="outline" className="rounded-xl border-border/80 hover:bg-secondary shadow-sm active:scale-[0.98] transition-all">
-              <a href="#contact">
-                <Mail className="size-4" />
-                Contact
+                <span>Open Live Plant Quote</span>
+                <ExternalLink className="size-3.5" />
               </a>
             </Button>
           </div>
         </div>
 
-        {/* Hero Right Visual: Live Interactive Quote-to-Job Preview Card */}
-        <div className="rise-in rise-in-2 flex flex-col items-center justify-center">
+        <div>
           <HeroQuoteCard />
         </div>
       </div>
@@ -123,306 +97,14 @@ function Hero({ tagline, availabilityStatus, liveCount, email, pdfUrl, summary, 
   );
 }
 
-interface AboutProps {
-  email?: string;
-  pdfUrl?: string;
-  summary?: string;
-  education?: string;
-  skillsList?: Record<string, string[]>;
-  resume?: DynamicData["resume"];
-}
-
-function About({ email, pdfUrl, summary, education, skillsList, resume }: AboutProps) {
+function LiveSystems() {
   const { ref, isVisible } = useScrollAnimation();
 
   return (
     <section
-      id="about"
+      id="systems"
       ref={ref}
-      className={`border-y border-border/60 bg-secondary/30 transition-all duration-700 ${
-        isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-      }`}
-    >
-      <div className="mx-auto max-w-5xl px-5 py-24">
-        <div className="flex items-center gap-2">
-          <span className="h-4 w-1 rounded-full bg-sage" />
-          <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">About</p>
-        </div>
-        <h2 className="mt-3 font-serif text-3xl tracking-tight sm:text-4xl">
-          Operational software for quotes, approvals & payments.
-        </h2>
-        <div className="mt-8 grid gap-8 md:grid-cols-2">
-          <div className="space-y-5 text-muted-foreground leading-relaxed">
-            <p>
-              Most growing businesses and agencies lose revenue in the same place: the friction gap between a quote and a confirmed payment. I build the operational software that closes it.
-            </p>
-            <p>
-              Right now most of my time goes to <span className="font-medium text-foreground">Trelio</span>: a SaaS that forces client
-              approval before work is executed using an <code className="rounded bg-secondary px-1.5 py-0.5 text-xs text-indigo font-mono">Authorization-Before-Execution</code> model. The problem is simple: freelancers and agencies should never work for free.
-            </p>
-
-            {/* Quick-scan highlights pill strip for recruiters & visitors */}
-            <div className="grid grid-cols-2 gap-3 pt-2 sm:grid-cols-3">
-              <div className="rounded-xl border border-border/70 bg-card/80 p-3 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.08)]">
-                <p className="text-[11px] font-mono text-muted-foreground uppercase tracking-wider">Location</p>
-                <p className="text-xs font-semibold text-foreground">Warangal, India</p>
-              </div>
-              <div className="rounded-xl border border-border/70 bg-card/80 p-3 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.08)]">
-                <p className="text-[11px] font-mono text-muted-foreground uppercase tracking-wider">Engagement Model</p>
-                <p className="text-xs font-semibold text-foreground">Independent Engineer</p>
-              </div>
-              <div className="col-span-2 rounded-xl border border-border/70 bg-card/80 p-3 sm:col-span-1 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.08)]">
-                <p className="text-[11px] font-mono text-muted-foreground uppercase tracking-wider">Core Focus</p>
-                <p className="text-xs font-semibold text-sage">Quotes & Approvals</p>
-              </div>
-            </div>
-
-            <div className="pt-2">
-              <ResumeModal
-                resume={resume}
-                email={email}
-                pdfUrl={pdfUrl}
-                summary={summary}
-                education={education}
-                skillsList={skillsList}
-                trigger={
-                  <Button variant="outline" className="gap-2 border-border/80 hover:border-sage hover:text-sage text-foreground rounded-xl shadow-sm">
-                    <FileText className="size-4" />
-                    Read Full Credentials & Background →
-                  </Button>
-                }
-              />
-            </div>
-          </div>
-          <div className="card-specular rounded-2xl p-6 space-y-4">
-            <div>
-              <div className="flex items-center gap-2">
-                <span className="size-2 rounded-full bg-emerald-400 shadow-[0_0_8px_#34d399]" />
-                <h4 className="text-sm font-semibold text-foreground">How I work · Direct Seniority</h4>
-              </div>
-              <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
-                You work directly with me. No account managers, no junior developers, no handoffs. The engineer who scopes your system is the engineer who writes the code, designs the data model, and stays on call.
-              </p>
-            </div>
-            <Separator className="bg-border/60" />
-            <div>
-              <div className="flex items-center gap-2">
-                <span className="size-2 rounded-full bg-indigo shadow-[0_0_8px_#818cf8]" />
-                <h4 className="text-sm font-semibold text-foreground">What I am doing now</h4>
-              </div>
-              <ul className="mt-2.5 space-y-1.5 text-xs text-muted-foreground leading-relaxed">
-                <li className="flex items-start gap-2">
-                  <span className="mt-1.5 size-1 rounded-full bg-indigo shrink-0" />
-                  <span><strong className="text-foreground font-medium">Trelio SaaS:</strong> Scaling milestone authorization and direct settlement engine.</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="mt-1.5 size-1 rounded-full bg-cyan-400 shrink-0" />
-                  <span><strong className="text-foreground font-medium">Industrial CPQ:</strong> Developing FINAT 1–8 automated rewind geometry math and sales estimating.</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="mt-1.5 size-1 rounded-full bg-sage shrink-0" />
-                  <span><strong className="text-foreground font-medium">Delivery Factory:</strong> Automated testing, deterministic state machines, and zero-downtime releases.</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="mt-1.5 size-1 rounded-full bg-amber-400 shrink-0" />
-                  <span><strong className="text-foreground font-medium">Capacity:</strong> Taking 2 builds a month · booking the next slot.</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-interface BusinessCardProps {
-  items: Project[];
-}
-
-function BusinessCard({ items }: BusinessCardProps) {
-  return (
-    <div className="grid gap-8">
-      {items.map((project) => {
-        const isApex = project.id === "apex";
-        const gradientBorder = isApex
-          ? "from-cyan-400 via-blue-500 to-indigo-500"
-          : "from-emerald-400 via-teal-400 to-cyan-500";
-        const cardGradient = isApex
-          ? "to-cyan-500/10 dark:to-cyan-500/10"
-          : "to-emerald-500/10 dark:to-emerald-500/10";
-        const liveBadgeColor = isApex
-          ? "border-cyan-500/30 bg-cyan-500/10 text-cyan-800 dark:text-cyan-300 hover:bg-cyan-500/20 shadow-[0_0_12px_rgba(6,182,212,0.18)]"
-          : "border-emerald-500/30 bg-emerald-500/10 text-emerald-800 dark:text-emerald-300 hover:bg-emerald-500/20 shadow-[0_0_12px_rgba(52,211,153,0.18)]";
-        const pingColor = isApex ? "bg-cyan-400" : "bg-emerald-400";
-        const badgeColor = isApex
-          ? "bg-cyan-500/15 text-cyan-800 dark:text-cyan-300 border-cyan-500/30"
-          : "bg-emerald-500/15 text-emerald-800 dark:text-emerald-300 border-emerald-500/30";
-
-        return (
-          <Card
-            key={project.id}
-            className={`card-specular relative overflow-hidden p-2 rounded-2xl bg-gradient-to-br from-card via-card ${cardGradient}`}
-          >
-            {/* Top multi-stop chromatic gradient accent line */}
-            <div className={`absolute top-0 inset-x-0 h-0.5 bg-gradient-to-r ${gradientBorder}`} />
-            <div className="p-4 sm:p-6">
-              <div className="mb-4 flex flex-wrap items-center justify-between gap-2">
-                {project.liveUrl && (
-                  <a
-                    href={project.liveUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={`inline-flex items-center gap-1.5 rounded-full border px-3.5 py-1 text-xs font-semibold transition-all ${liveBadgeColor}`}
-                  >
-                    <span className={`size-1.5 rounded-full ${pingColor} animate-ping`} />
-                    <ExternalLink className="size-3" />
-                    {project.liveUrl.replace(/^https?:\/\//, "")}
-                  </a>
-                )}
-                {project.githubUrl && (
-                  <a
-                    href={project.githubUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1.5 rounded-full border border-border/80 bg-secondary/60 px-3 py-1 text-xs font-medium text-muted-foreground hover:text-foreground hover:bg-secondary transition-all shadow-xs"
-                    title="View Source Repository"
-                  >
-                    <Github className="size-3.5" />
-                    <span>Source Code</span>
-                  </a>
-                )}
-              </div>
-
-              {/* Project-specific Interactive Telemetry Preview */}
-              {isApex ? <ApexPreview /> : <TrelioPreview />}
-
-              <CardHeader className="px-0 pb-0 pt-6">
-                <div className="flex items-start justify-between gap-3">
-                  <CardTitle className="font-serif text-2xl sm:text-3xl">{project.title}</CardTitle>
-                  {project.badge && (
-                    <Badge variant="outline" className={`shadow-xs font-mono text-[11px] uppercase tracking-wider ${badgeColor}`}>
-                      {project.badge}
-                    </Badge>
-                  )}
-                </div>
-                <CardDescription className="mt-2 max-w-2xl text-base leading-relaxed text-muted-foreground">
-                  {project.description}
-                </CardDescription>
-              </CardHeader>
-
-              <CardFooter className="mt-5 flex flex-wrap gap-2 px-0">
-                {project.stack.map((tech) => {
-                  const isFrontend = ["React", "TypeScript", "Tailwind", "Next.js", "GSAP", "Vite"].includes(tech);
-                  const isBackend = ["Node.js", "PostgreSQL", "REST APIs", "Express", "Supabase RLS"].includes(tech);
-                  const isSecurity = ["AES-256-GCM", "HMAC", "Clerk", "Audit logs"].some((s) => tech.includes(s));
-                  const isProduct = ["Payments", "Multi-tenant", "Razorpay", "UPI", "CPQ Engine"].some((s) => tech.includes(s));
-
-                  let badgeStyle = "bg-secondary text-foreground border-border";
-                  if (isFrontend) badgeStyle = "border-cyan-300 dark:border-cyan-500/30 bg-cyan-50 dark:bg-cyan-500/10 text-cyan-800 dark:text-cyan-300";
-                  else if (isBackend) badgeStyle = "border-emerald-300 dark:border-emerald-500/30 bg-emerald-50 dark:bg-emerald-500/10 text-emerald-800 dark:text-emerald-300";
-                  else if (isSecurity) badgeStyle = "border-purple-300 dark:border-purple-500/30 bg-purple-50 dark:bg-purple-500/10 text-purple-800 dark:text-purple-300";
-                  else if (isProduct) badgeStyle = "border-amber-300 dark:border-amber-500/30 bg-amber-50 dark:bg-amber-500/10 text-amber-800 dark:text-amber-300";
-
-                  return (
-                    <span
-                      key={tech}
-                      className={`inline-flex items-center rounded-lg px-2.5 py-1 text-xs font-medium border shadow-xs ${badgeStyle}`}
-                    >
-                      {tech}
-                    </span>
-                  );
-                })}
-              </CardFooter>
-            </div>
-          </Card>
-        );
-      })}
-    </div>
-  );
-}
-function PortfolioSitePreview() {
-  return (
-    <div className="relative overflow-hidden rounded-xl bg-secondary/80 p-3.5 border border-border/70 shadow-xs">
-      <div className="flex items-center justify-between border-b border-border/60 pb-2 mb-2.5">
-        <div className="flex items-center gap-1.5">
-          <span className="size-2 rounded-full bg-[#ff5f56]" />
-          <span className="size-2 rounded-full bg-[#ffbd2e]" />
-          <span className="size-2 rounded-full bg-[#27c93f]" />
-          <span className="ml-1.5 font-mono text-[10px] text-muted-foreground font-semibold">tanstack-start.config.ts</span>
-        </div>
-        <span className="inline-flex items-center gap-1 text-[10px] font-mono text-purple-800 dark:text-purple-300 font-semibold bg-purple-50 dark:bg-purple-500/10 px-2 py-0.5 rounded border border-purple-300 dark:border-purple-500/20">
-          <span className="size-1.5 rounded-full bg-purple-500 animate-pulse" />
-          Nitro Edge
-        </span>
-      </div>
-      <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 text-center text-[10px] font-mono">
-        <div className="p-1.5 rounded-lg bg-card border border-border/50">
-          <span className="text-muted-foreground block text-[9px]">Framework</span>
-          <span className="font-semibold text-foreground">TanStack Start</span>
-        </div>
-        <div className="p-1.5 rounded-lg bg-card border border-border/50">
-          <span className="text-muted-foreground block text-[9px]">React Core</span>
-          <span className="font-semibold text-emerald-800 dark:text-emerald-400">React 19 SSR</span>
-        </div>
-        <div className="p-1.5 rounded-lg bg-card border border-border/50">
-          <span className="text-muted-foreground block text-[9px]">Styling</span>
-          <span className="font-semibold text-cyan-800 dark:text-cyan-400">Tailwind v4</span>
-        </div>
-        <div className="p-1.5 rounded-lg bg-card border border-border/50">
-          <span className="text-muted-foreground block text-[9px]">Deployment</span>
-          <span className="font-semibold text-purple-800 dark:text-purple-400">Serverless Nitro</span>
-        </div>
-      </div>
-    </div>
-  );
-}
-
-interface ProjectsProps {
-  businessesList: Project[];
-  sideProjectsList: Project[];
-  email?: string;
-  pdfUrl?: string;
-  summary?: string;
-  education?: string;
-  skillsList?: Record<string, string[]>;
-  resume?: DynamicData["resume"];
-}
-
-function Projects({ businessesList, sideProjectsList, email, pdfUrl, summary, education, skillsList, resume }: ProjectsProps) {
-  const { ref, isVisible } = useScrollAnimation();
-  const [activeTab, setActiveTab] = useState<string>("plants");
-
-  useEffect(() => {
-    const handleSwitchTab = (e: any) => {
-      if (e.detail?.tab) {
-        setActiveTab(e.detail.tab);
-      }
-    };
-    window.addEventListener("portfolio-tab-switch" as any, handleSwitchTab);
-
-    const checkHash = () => {
-      if (window.location.hash === "#projects") {
-        setActiveTab("plants");
-      }
-    };
-    checkHash();
-    window.addEventListener("hashchange", checkHash);
-
-    return () => {
-      window.removeEventListener("portfolio-tab-switch" as any, handleSwitchTab);
-      window.removeEventListener("hashchange", checkHash);
-    };
-  }, []);
-
-  const apexProject = sideProjectsList.find((p) => p.id === "apex") || sideProjectsList[0];
-  const portfolioProject = sideProjectsList.find((p) => p.id === "portfolio") || sideProjectsList[1];
-
-  return (
-    <section
-      id="projects"
-      ref={ref}
-      className={`mx-auto max-w-5xl px-5 py-24 transition-all duration-700 ${
+      className={`mx-auto max-w-5xl px-5 py-20 transition-all duration-700 ${
         isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
       }`}
     >
@@ -437,245 +119,221 @@ function Projects({ businessesList, sideProjectsList, email, pdfUrl, summary, ed
         Operational systems deployed on custom domains with active users and real transaction constraints.
       </p>
 
-      <Tabs value={activeTab} onValueChange={setActiveTab} className="mt-10">
-        <TabsList className="bg-secondary/80 p-1 border border-border/70 flex-wrap h-auto rounded-xl shadow-inner">
-          <TabsTrigger value="plants" className="data-[state=active]:bg-card data-[state=active]:shadow-sm text-xs sm:text-sm rounded-lg">
-            Manufacturing & Converting (Apex)
-          </TabsTrigger>
-          <TabsTrigger value="agencies" className="data-[state=active]:bg-card data-[state=active]:shadow-sm text-xs sm:text-sm rounded-lg">
-            Agencies & Studios (Trelio)
-          </TabsTrigger>
-          <TabsTrigger value="code" className="data-[state=active]:bg-card data-[state=active]:shadow-sm text-xs sm:text-sm rounded-lg">
-            Open-Source Architecture
-          </TabsTrigger>
-        </TabsList>
-
-        {/* Tab 1: Plants & Converting (Apex) */}
-        <TabsContent value="plants" className="mt-6 animate-in fade-in-50 duration-200">
-          {apexProject && (
-            <Card className="card-specular relative overflow-hidden p-2 flex flex-col justify-between rounded-2xl bg-gradient-to-br from-card via-card to-cyan-500/10 dark:to-cyan-500/10">
-              <div className="absolute top-0 inset-x-0 h-0.5 bg-gradient-to-r from-cyan-400 via-blue-500 to-indigo-500" />
-              <div className="p-4 sm:p-6">
-                <div className="mb-4 flex flex-wrap items-center justify-between gap-2">
-                  {apexProject.liveUrl && (
-                    <a
-                      href={apexProject.liveUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1.5 rounded-full border px-3 py-1 text-xs font-semibold transition-all border-cyan-500/30 bg-cyan-500/10 text-cyan-800 dark:text-cyan-300 hover:bg-cyan-500/20 shadow-[0_0_10px_rgba(6,182,212,0.18)]"
-                    >
-                      <span className="size-1.5 rounded-full bg-cyan-400 animate-ping" />
-                      <ExternalLink className="size-3" />
-                      {apexProject.liveUrl.replace(/^https?:\/\//, "")}
-                    </a>
-                  )}
-                  {apexProject.githubUrl && (
-                    <a
-                      href={apexProject.githubUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1.5 rounded-full border border-border/80 bg-secondary/60 px-3 py-1 text-xs font-medium text-muted-foreground hover:text-foreground hover:bg-secondary transition-all shadow-xs"
-                      title="View Source Repository"
-                    >
-                      <Github className="size-3.5" />
-                      <span>Source Code</span>
-                    </a>
-                  )}
-                </div>
-
-                <ApexPreview />
-
-                <CardHeader className="px-0 pb-2 pt-5">
-                  <div className="flex items-start justify-between gap-3">
-                    <CardTitle className="font-serif text-2xl sm:text-3xl">
-                      {apexProject.title}
-                    </CardTitle>
-                    <Badge variant="outline" className="shadow-xs font-mono text-[11px] uppercase tracking-wider bg-cyan-500/15 text-cyan-800 dark:text-cyan-300 border-cyan-500/30">
-                      Industrial CPQ
-                    </Badge>
-                  </div>
-                  <CardDescription className="text-sm text-muted-foreground leading-relaxed pt-1.5">
-                    {apexProject.description}
-                  </CardDescription>
-                </CardHeader>
-
-                <CardContent className="px-0 pt-4 pb-2">
-                  <div className="flex flex-wrap gap-1.5">
-                    {apexProject.stack.map((tech) => (
-                      <Badge key={tech} variant="secondary" className="font-mono text-xs font-normal border border-border/50">
-                        {tech}
-                      </Badge>
-                    ))}
-                  </div>
-                </CardContent>
-
-                <CardFooter className="px-0 pt-4 flex items-center justify-between border-t border-border/60">
-                  <span className="font-mono text-xs text-muted-foreground">Production Industrial Platform</span>
-                  {apexProject.liveUrl && (
-                    <Button asChild size="sm" className="btn-sage-glow rounded-xl font-semibold shadow-xs">
-                      <a href={apexProject.liveUrl} target="_blank" rel="noopener noreferrer">
-                        <span>Launch Platform</span>
-                        <ExternalLink className="ml-1.5 size-3.5" />
-                      </a>
-                    </Button>
-                  )}
-                </CardFooter>
+      <div className="mt-10 space-y-12">
+        <Card className="card-specular relative overflow-hidden p-2 flex flex-col justify-between rounded-2xl bg-gradient-to-br from-card via-card to-cyan-500/10 dark:to-cyan-500/10 border-border/80 shadow-md">
+          <div className="absolute top-0 inset-x-0 h-0.5 bg-gradient-to-r from-cyan-400 via-blue-500 to-indigo-500" />
+          <div className="p-4 sm:p-6">
+            <div className="mb-4 flex flex-wrap items-center justify-between gap-2">
+              <div className="inline-flex items-center gap-2">
+                <span className="size-2 rounded-full bg-cyan-500 animate-pulse" />
+                <span className="font-mono text-xs font-semibold text-cyan-800 dark:text-cyan-300">Manufacturing & Converting Plant System</span>
               </div>
-            </Card>
-          )}
-        </TabsContent>
-
-        {/* Tab 2: Agencies & Studios (Trelio) */}
-        <TabsContent value="agencies" className="mt-6 animate-in fade-in-50 duration-200">
-          <BusinessCard items={businessesList} />
-        </TabsContent>
-
-        {/* Tab 3: Open-Source Code */}
-        <TabsContent value="code" className="mt-6 animate-in fade-in-50 duration-200">
-          {portfolioProject && (
-            <Card className="card-specular relative overflow-hidden p-2 flex flex-col justify-between rounded-2xl bg-gradient-to-br from-card via-card to-purple-500/10 dark:to-purple-500/10">
-              <div className="absolute top-0 inset-x-0 h-0.5 bg-gradient-to-r from-purple-400 via-indigo-400 to-cyan-500" />
-              <div className="p-4 sm:p-6">
-                <div className="mb-4 flex flex-wrap items-center justify-between gap-2">
-                  <span className="inline-flex items-center gap-1.5 rounded-full border px-3 py-1 text-xs font-semibold border-purple-500/30 bg-purple-500/10 text-purple-800 dark:text-purple-300">
-                    <span className="size-1.5 rounded-full bg-purple-400 animate-ping" />
-                    Open Source
-                  </span>
-                  <a
-                    href="https://github.com/Chanakya2006gt/Chanakya_Portfolio"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1.5 rounded-full border border-border/80 bg-secondary/60 px-3 py-1 text-xs font-medium text-muted-foreground hover:text-foreground hover:bg-secondary transition-all shadow-xs"
-                  >
-                    <Github className="size-3.5" />
-                    <span>View Repository</span>
-                  </a>
-                </div>
-
-                <PortfolioSitePreview />
-
-                <CardHeader className="px-0 pb-2 pt-5">
-                  <div className="flex items-start justify-between gap-3">
-                    <CardTitle className="font-serif text-2xl sm:text-3xl">
-                      {portfolioProject.title}
-                    </CardTitle>
-                    <Badge variant="outline" className="shadow-xs font-mono text-[11px] uppercase tracking-wider bg-purple-500/15 text-purple-800 dark:text-purple-300 border-purple-500/30">
-                      Portfolio Architecture
-                    </Badge>
-                  </div>
-                  <CardDescription className="text-sm text-muted-foreground leading-relaxed pt-1.5">
-                    {portfolioProject.description}
-                  </CardDescription>
-                </CardHeader>
-
-                <CardContent className="px-0 pt-4 pb-2">
-                  <div className="flex flex-wrap gap-1.5">
-                    {portfolioProject.stack.map((tech) => (
-                      <Badge key={tech} variant="secondary" className="font-mono text-xs font-normal border border-border/50">
-                        {tech}
-                      </Badge>
-                    ))}
-                  </div>
-                </CardContent>
+              <div className="flex items-center gap-2">
+                <a
+                  href="https://industrial-packaging-platform.vercel.app"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 rounded-full border border-cyan-500/30 bg-cyan-500/10 px-3 py-1 text-xs font-semibold text-cyan-800 dark:text-cyan-300 hover:bg-cyan-500/20 shadow-xs transition-all"
+                >
+                  <ExternalLink className="size-3" />
+                  <span>Open Live System ↗</span>
+                </a>
+                <a
+                  href="https://github.com/Chanakya2006gt/Industrial-packaging-platform"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 rounded-full border border-border/80 bg-secondary/60 px-3 py-1 text-xs font-medium text-muted-foreground hover:text-foreground hover:bg-secondary transition-all shadow-xs"
+                >
+                  <Github className="size-3" />
+                  <span>Repo</span>
+                </a>
               </div>
-            </Card>
-          )}
-        </TabsContent>
-      </Tabs>
+            </div>
+
+            <ApexPreview />
+
+            <CardHeader className="px-0 pb-2 pt-6">
+              <div className="flex items-start justify-between gap-3">
+                <CardTitle className="font-serif text-2xl sm:text-3xl">
+                  Apex Packaging & Converting CPQ
+                </CardTitle>
+                <Badge variant="outline" className="shadow-xs font-mono text-[11px] uppercase tracking-wider bg-cyan-500/15 text-cyan-800 dark:text-cyan-300 border-cyan-500/30">
+                  Industrial CPQ
+                </Badge>
+              </div>
+              <CardDescription className="text-sm sm:text-base text-muted-foreground leading-relaxed pt-2">
+                Enterprise CPQ and job estimating platform built for industrial label converters and packaging plants.
+              </CardDescription>
+            </CardHeader>
+
+            <CardContent className="px-0 pt-3 pb-2">
+              <div className="grid gap-3 sm:grid-cols-3 pt-2 text-xs sm:text-sm">
+                <div className="p-3.5 rounded-xl border border-border/60 bg-secondary/30">
+                  <strong className="text-foreground block font-medium mb-1">Floor-Ready Math</strong>
+                  <p className="text-muted-foreground text-xs leading-relaxed">Calculates running meters, substrate weights, and linear pricing directly from FINAT 1–8 roll unwind specs.</p>
+                </div>
+                <div className="p-3.5 rounded-xl border border-border/60 bg-secondary/30">
+                  <strong className="text-foreground block font-medium mb-1">One-Pass Estimating</strong>
+                  <p className="text-muted-foreground text-xs leading-relaxed">Replaces multi-person spreadsheet chains with a quoting flow a plant clerk can finish in 90 seconds without errors.</p>
+                </div>
+                <div className="p-3.5 rounded-xl border border-border/60 bg-secondary/30">
+                  <strong className="text-foreground block font-medium mb-1">Production Security</strong>
+                  <p className="text-muted-foreground text-xs leading-relaxed">Role-based sales operations, PostgreSQL RLS tenant data isolation, and instant PDF quote generation.</p>
+                </div>
+              </div>
+            </CardContent>
+
+            <CardFooter className="px-0 pt-4 flex flex-wrap items-center justify-between border-t border-border/60 gap-3">
+              <span className="font-mono text-xs text-muted-foreground">Stack: React · TypeScript · PostgreSQL RLS · CPQ Math Engine</span>
+              <Button asChild size="sm" className="btn-sage-glow rounded-xl font-semibold shadow-xs">
+                <a href="https://industrial-packaging-platform.vercel.app" target="_blank" rel="noopener noreferrer">
+                  <span>Open Live Quoting Platform</span>
+                  <ExternalLink className="ml-1.5 size-3.5" />
+                </a>
+              </Button>
+            </CardFooter>
+          </div>
+        </Card>
+
+        <Card className="card-specular relative overflow-hidden p-2 flex flex-col justify-between rounded-2xl bg-gradient-to-br from-card via-card to-indigo/10 dark:to-indigo/10 border-border/80 shadow-md">
+          <div className="absolute top-0 inset-x-0 h-0.5 bg-gradient-to-r from-indigo via-purple-500 to-sage" />
+          <div className="p-4 sm:p-6">
+            <div className="mb-4 flex flex-wrap items-center justify-between gap-2">
+              <div className="inline-flex items-center gap-2">
+                <span className="size-2 rounded-full bg-indigo animate-pulse" />
+                <span className="font-mono text-xs font-semibold text-indigo">Agency Milestone & Payment System</span>
+              </div>
+              <a
+                href="https://trelio.in"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 rounded-full border border-indigo/30 bg-indigo/10 px-3 py-1 text-xs font-semibold text-indigo hover:bg-indigo/20 shadow-xs transition-all"
+              >
+                <ExternalLink className="size-3" />
+                <span>Open Trelio.in ↗</span>
+              </a>
+            </div>
+
+            <TrelioPreview />
+
+            <CardHeader className="px-0 pb-2 pt-6">
+              <div className="flex items-start justify-between gap-3">
+                <CardTitle className="font-serif text-2xl sm:text-3xl">
+                  Trelio — Stage Lock & Direct Settlement
+                </CardTitle>
+                <Badge variant="outline" className="shadow-xs font-mono text-[11px] uppercase tracking-wider bg-indigo/15 text-indigo border-indigo/30">
+                  Live SaaS
+                </Badge>
+              </div>
+              <CardDescription className="text-sm sm:text-base text-muted-foreground leading-relaxed pt-2">
+                Authorization-Before-Execution SaaS for freelancers and creative studios to eliminate unpaid work and runaway revisions.
+              </CardDescription>
+            </CardHeader>
+
+            <CardContent className="px-0 pt-3 pb-2">
+              <div className="grid gap-3 sm:grid-cols-3 pt-2 text-xs sm:text-sm">
+                <div className="p-3.5 rounded-xl border border-border/60 bg-secondary/30">
+                  <strong className="text-foreground block font-medium mb-1">Stage Lock Control</strong>
+                  <p className="text-muted-foreground text-xs leading-relaxed">Work stays locked and paused; Stage 02 never opens until the client authorizes and settles Stage 01.</p>
+                </div>
+                <div className="p-3.5 rounded-xl border border-border/60 bg-secondary/30">
+                  <strong className="text-foreground block font-medium mb-1">Direct Bank Settlement</strong>
+                  <p className="text-muted-foreground text-xs leading-relaxed">Client payments flow straight into your merchant account. Zero escrow, no middleman holding your funds.</p>
+                </div>
+                <div className="p-3.5 rounded-xl border border-border/60 bg-secondary/30">
+                  <strong className="text-foreground block font-medium mb-1">Verified Audit Trail</strong>
+                  <p className="text-muted-foreground text-xs leading-relaxed">448 automated test suites verifying immutable approval timestamps and multi-tenant security.</p>
+                </div>
+              </div>
+            </CardContent>
+
+            <CardFooter className="px-0 pt-4 flex flex-wrap items-center justify-between border-t border-border/60 gap-3">
+              <span className="font-mono text-xs text-muted-foreground">Stack: React · Node.js · Multi-Tenant Postgres · Payment Gateway</span>
+              <Button asChild size="sm" className="btn-sage-glow rounded-xl font-semibold shadow-xs">
+                <a href="https://trelio.in" target="_blank" rel="noopener noreferrer">
+                  <span>Launch Trelio.in</span>
+                  <ExternalLink className="ml-1.5 size-3.5" />
+                </a>
+              </Button>
+            </CardFooter>
+          </div>
+        </Card>
+      </div>
     </section>
   );
 }
 
-interface SkillsProps {
-  skillsList: Record<string, string[]>;
-}
-
-function Skills({ skillsList }: SkillsProps) {
+function TrustAndTerms() {
   const { ref, isVisible } = useScrollAnimation();
-
-  const getDomainConfig = (category: string) => {
-    const cat = category.toLowerCase();
-    if (cat.includes("agentic") || cat.includes("ai")) {
-      return {
-        dotClass: "bg-emerald-600 dark:bg-emerald-400 shadow-[0_0_8px_#10b981]",
-        badgeClass: "bg-emerald-50 text-emerald-800 border-emerald-300 hover:bg-emerald-100 dark:bg-emerald-500/10 dark:text-emerald-300 dark:border-emerald-500/25 dark:hover:bg-emerald-500/20",
-        borderGlow: "from-emerald-400 via-teal-400 to-cyan-500",
-      };
-    }
-    if (cat.includes("frontend")) {
-      return {
-        dotClass: "bg-cyan-600 dark:bg-cyan-400 shadow-[0_0_8px_#38bdf8]",
-        badgeClass: "bg-cyan-50 text-cyan-800 border-cyan-300 hover:bg-cyan-100 dark:bg-cyan-500/10 dark:text-cyan-300 dark:border-cyan-500/25 dark:hover:bg-cyan-500/20",
-        borderGlow: "from-cyan-400 via-blue-400 to-indigo-500",
-      };
-    }
-    if (cat.includes("backend")) {
-      return {
-        dotClass: "bg-indigo dark:bg-indigo shadow-[0_0_8px_#818cf8]",
-        badgeClass: "bg-indigo-50 text-indigo-900 border-indigo-200 hover:bg-indigo-100 dark:bg-indigo/10 dark:text-indigo-300 dark:border-indigo/30 dark:hover:bg-indigo/20",
-        borderGlow: "from-indigo-400 via-purple-400 to-indigo-500",
-      };
-    }
-    if (cat.includes("product") || cat.includes("database")) {
-      return {
-        dotClass: "bg-purple-600 dark:bg-purple-400 shadow-[0_0_8px_#c084fc]",
-        badgeClass: "bg-purple-50 text-purple-800 border-purple-300 hover:bg-purple-100 dark:bg-purple-500/10 dark:text-purple-300 dark:border-purple-500/25 dark:hover:bg-purple-500/20",
-        borderGlow: "from-purple-400 via-indigo-400 to-purple-500",
-      };
-    }
-    return {
-      dotClass: "bg-amber-600 dark:bg-amber-400 shadow-[0_0_8px_#fbbf24]",
-      badgeClass: "bg-amber-50 text-amber-800 border-amber-300 hover:bg-amber-100 dark:bg-amber-500/10 dark:text-amber-300 dark:border-amber-500/25 dark:hover:bg-amber-500/20",
-      borderGlow: "from-amber-400 via-yellow-400 to-amber-500",
-    };
-  };
 
   return (
     <section
-      id="skills"
+      id="about"
       ref={ref}
       className={`border-y border-border/60 bg-secondary/30 transition-all duration-700 ${
         isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
       }`}
     >
-      <div className="mx-auto max-w-5xl px-5 py-24">
+      <div className="mx-auto max-w-5xl px-5 py-20">
         <div className="flex items-center gap-2">
-          <span className="h-4 w-1 rounded-full bg-cyan-400 shadow-[0_0_8px_#38bdf8]" />
-          <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">Stack</p>
+          <span className="h-4 w-1 rounded-full bg-sage" />
+          <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">Trust & Ground Rules</p>
         </div>
         <h2 className="mt-3 font-serif text-3xl tracking-tight sm:text-4xl">
-          Skills & Core Technologies
+          How engagements work and what you actually own.
         </h2>
-        <p className="mt-3 max-w-xl text-muted-foreground">
-          Production-tested toolchain across full-stack architecture, systems security, and reliable databases.
+        <p className="mt-3 max-w-2xl text-muted-foreground text-sm sm:text-base leading-relaxed">
+          Clear terms, fixed prices, and direct senior engineering. No hidden scope creep, no junior handoffs.
         </p>
+
         <div className="mt-10 grid gap-6 sm:grid-cols-2">
-          {Object.entries(skillsList).map(([category, items]) => {
-            const config = getDomainConfig(category);
-            return (
-              <div key={category} className="card-specular relative overflow-hidden rounded-2xl p-6">
-                <div className={`absolute top-0 inset-x-0 h-0.5 bg-gradient-to-r ${config.borderGlow}`} />
-                <div className="flex items-center justify-between mb-4">
-                  <div className="flex items-center gap-2">
-                    <span className={`size-2 rounded-full ${config.dotClass}`} />
-                    <h3 className="text-xs font-bold tracking-wider text-foreground/90 uppercase">{category}</h3>
-                  </div>
-                  <span className="text-[11px] font-mono text-muted-foreground">{items.length} skills</span>
-                </div>
-                <div className="flex flex-wrap gap-2">
-                  {items.map((skill) => (
-                    <Badge
-                      key={skill}
-                      variant="outline"
-                      className={`rounded-lg px-3 py-1.5 text-xs font-medium tracking-normal transition-all hover:scale-105 cursor-default border shadow-xs ${config.badgeClass}`}
-                    >
-                      {skill}
-                    </Badge>
-                  ))}
-                </div>
+          <Card className="card-specular p-6 rounded-2xl border-border/70 bg-card/80">
+            <div className="flex items-center gap-2.5 mb-3">
+              <div className="flex size-8 items-center justify-center rounded-lg bg-emerald-500/15 text-emerald-700 dark:text-emerald-400 border border-emerald-500/30">
+                <ShieldCheck className="size-4" />
               </div>
-            );
-          })}
+              <h3 className="font-serif text-lg font-semibold text-foreground">Who Builds Your System</h3>
+            </div>
+            <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
+              <strong>Nagulagam Chanakya</strong> (Warangal, India). I build operational software full-time and operate a team of 3 on Trelio. You work directly with the engineer who designs the data model, writes the code, and supports the release. No account managers or sub-contracting.
+            </p>
+          </Card>
+
+          <Card className="card-specular p-6 rounded-2xl border-border/70 bg-card/80">
+            <div className="flex items-center gap-2.5 mb-3">
+              <div className="flex size-8 items-center justify-center rounded-lg bg-cyan-500/15 text-cyan-700 dark:text-cyan-400 border border-cyan-500/30">
+                <Code2 className="size-4" />
+              </div>
+              <h3 className="font-serif text-lg font-semibold text-foreground">What You Keep & Own</h3>
+            </div>
+            <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
+              <strong>100% Code & Infrastructure Ownership.</strong> You receive the complete git repository, database migrations, CI/CD pipelines, and deployment configs. Everything deploys to your own cloud infrastructure and custom domain.
+            </p>
+          </Card>
+
+          <Card className="card-specular p-6 rounded-2xl border-border/70 bg-card/80">
+            <div className="flex items-center gap-2.5 mb-3">
+              <div className="flex size-8 items-center justify-center rounded-lg bg-amber-500/15 text-amber-700 dark:text-amber-400 border border-amber-500/30">
+                <XCircle className="size-4" />
+              </div>
+              <h3 className="font-serif text-lg font-semibold text-foreground">What I Refuse To Build</h3>
+            </div>
+            <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
+              <strong>No generic brochure websites, no 50-page PowerPoint decks, and no unmanageable full-company ERPs in 15 days.</strong> I build the whole of one critical, revenue-blocking operational workflow (quotes, approvals, or payments) and engineer it to absolute completion.
+            </p>
+          </Card>
+
+          <Card className="card-specular p-6 rounded-2xl border-border/70 bg-card/80">
+            <div className="flex items-center gap-2.5 mb-3">
+              <div className="flex size-8 items-center justify-center rounded-lg bg-indigo/15 text-indigo border border-indigo/30">
+                <CheckCircle2 className="size-4" />
+              </div>
+              <h3 className="font-serif text-lg font-semibold text-foreground">How The Money Works</h3>
+            </div>
+            <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
+              <strong>Fixed prices with 100% diagnosis credit.</strong> The ₹40,000 paid diagnosis is fully credited against your 15-day build. Builds are structured in milestones: work pauses if a milestone payment is pending, so neither party ever takes unbounded risk.
+            </p>
+          </Card>
         </div>
       </div>
     </section>
@@ -688,34 +346,28 @@ function Contact() {
 
   const handleNoteSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const data = new FormData(e.currentTarget);
-    const subject = String(data.get("subject") || "").trim();
-    const body = String(data.get("body") || "").trim();
+    const formData = new FormData(e.currentTarget);
+    const subject = (formData.get("subject") as string) || "";
+    const body = (formData.get("body") as string) || "";
 
-    if (!subject || !body) {
+    if (!subject.trim() || !body.trim()) {
       toast.error("Please fill in both subject and message");
       return;
     }
 
     toast.success("Opening your email client...");
     setDialogOpen(false);
-
-    const encSubject = encodeURIComponent(subject);
-    const encBody = encodeURIComponent(body);
-    window.location.href = `mailto:nagulagamchanakya2211@gmail.com?subject=${encSubject}&body=${encBody}`;
+    window.location.href = `mailto:nagulagamchanakya2211@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   };
 
   return (
     <section
       id="contact"
       ref={ref}
-      className={`relative mx-auto max-w-5xl px-5 py-24 transition-all duration-700 overflow-hidden ${
+      className={`relative mx-auto max-w-5xl px-5 py-20 transition-all duration-700 overflow-hidden ${
         isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
       }`}
     >
-      {/* Subtle top glow for landing zone */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[500px] h-[250px] bg-gradient-to-b from-sage/10 via-indigo/5 to-transparent blur-[80px] rounded-full pointer-events-none -z-10" />
-
       <div className="flex items-center gap-2">
         <span className="h-4 w-1 rounded-full bg-sage" />
         <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">Contact</p>
@@ -724,14 +376,10 @@ function Contact() {
         Let's build your operational workflow.
       </h2>
       <p className="mt-4 max-w-lg text-lg text-foreground/90 font-serif italic">
-        "Available for Quote-to-Job Builds and Paid Diagnoses."
+        "Fixed-price quote-to-job systems for plants and agencies. Straight to engineering."
       </p>
 
-      <div className="mt-10">
-        <ContactCards />
-      </div>
-
-      <div className="mt-10 flex flex-wrap items-center gap-3 justify-center sm:justify-start">
+      <div className="mt-10 flex flex-wrap items-center gap-3">
         <Dialog open={dialogOpen} onOpenChange={setDialogOpen}>
           <DialogTrigger asChild>
             <Button size="lg" className="btn-sage-glow rounded-xl px-7 shadow-md">
@@ -755,35 +403,10 @@ function Contact() {
                 <Label htmlFor="body" className="text-xs">Message</Label>
                 <Textarea id="body" name="body" placeholder="What are the details of your operational workflow?" required rows={4} className="rounded-xl bg-secondary/50" />
               </div>
-              <div className="flex gap-2">
-                <Button type="submit" className="rounded-xl mt-2 flex-1 btn-sage-glow">Open mail client</Button>
-                <Button
-                  type="button"
-                  variant="outline"
-                  className="rounded-xl mt-2 border-border/80 hover:border-sage hover:text-sage"
-                  onClick={() => {
-                    navigator.clipboard.writeText("nagulagamchanakya2211@gmail.com");
-                    toast.success("Email address copied to clipboard!");
-                  }}
-                >
-                  Copy Address
-                </Button>
-              </div>
+              <Button type="submit" className="rounded-xl mt-2 btn-sage-glow">Open mail client</Button>
             </form>
           </DialogContent>
         </Dialog>
-
-        <Button
-          size="lg"
-          variant="outline"
-          className="rounded-xl border-border/80 hover:border-sage/50 hover:bg-secondary/60 transition-all"
-          onClick={() => {
-            navigator.clipboard.writeText("nagulagamchanakya2211@gmail.com");
-            toast.success("Copied nagulagamchanakya2211@gmail.com to clipboard!");
-          }}
-        >
-          Copy Email Address
-        </Button>
       </div>
     </section>
   );
@@ -791,10 +414,6 @@ function Contact() {
 
 export function PortfolioHome({ initialData }: { initialData?: DynamicData | null }) {
   const [data] = useState<DynamicData | null>(initialData || null);
-
-  const businessesList = data?.businesses || defaultBusinesses;
-  const sideProjectsList = data?.sideProjects || defaultSideProjects;
-  const skillsList = data?.skills || defaultSkills;
 
   return (
     <div id="top" className="min-h-screen bg-background text-foreground relative">
@@ -804,88 +423,44 @@ export function PortfolioHome({ initialData }: { initialData?: DynamicData | nul
       >
         Skip to main content
       </a>
-      <IntroOverlay />
 
-      <LeftRailNav resume={data?.resume} />
       <SiteNav />
-      <Companion />
 
       <main id="main-content">
-        <Hero
-          tagline={data?.heroTagline}
-          availabilityStatus={data?.availabilityStatus}
-          liveCount={businessesList.filter((p) => Boolean(p.liveUrl)).length + sideProjectsList.filter((p) => p.id === "apex").length}
-          email={data?.resumeOverride?.email}
-          pdfUrl={data?.resumeOverride?.resumePdfUrl}
-          summary={data?.resumeOverride?.summary}
-          education={data?.resumeOverride?.education}
-          skillsList={skillsList}
-          resume={data?.resume}
-        />
+        <Hero availabilityStatus={data?.availabilityStatus} />
         <Separator />
         <OfferLadder />
         <Separator />
-        <Projects
-          businessesList={businessesList}
-          sideProjectsList={sideProjectsList}
-          email={data?.resumeOverride?.email}
-          pdfUrl={data?.resumeOverride?.resumePdfUrl}
-          summary={data?.resumeOverride?.summary}
-          education={data?.resumeOverride?.education}
-          skillsList={skillsList}
-          resume={data?.resume}
-        />
+        <LiveSystems />
         <Separator />
-        <About
-          email={data?.resumeOverride?.email}
-          pdfUrl={data?.resumeOverride?.resumePdfUrl}
-          summary={data?.resumeOverride?.summary}
-          education={data?.resumeOverride?.education}
-          skillsList={skillsList}
-          resume={data?.resume}
-        />
-        <MarqueeTicker />
-        <Skills skillsList={skillsList} />
+        <TrustAndTerms />
         <Separator />
         <Contact />
       </main>
 
-      <footer className="border-t border-border/80 bg-card/40 pt-16 pb-12">
-        <div className="mx-auto max-w-5xl px-5 text-center sm:text-left">
-          <div className="flex flex-col items-center justify-between gap-6 sm:flex-row">
+      <footer className="border-t border-border/80 bg-card/40 py-12">
+        <div className="mx-auto max-w-5xl px-5">
+          <div className="flex flex-col items-center justify-between gap-4 text-xs text-muted-foreground sm:flex-row">
             <div>
-              <h3 className="font-serif text-3xl font-normal tracking-tight sm:text-4xl">
-                LET'S BUILD SOMETHING{" "}
-                <span className="rounded-md bg-sage/20 px-2 py-0.5 text-sage border border-sage/30">
-                  REAL
-                </span>{" "}
-                TOGETHER.
-              </h3>
-              <p className="mt-2 text-sm text-muted-foreground">
-                Independent Systems Engineer · Quote-to-cash, approval & payment workflows.
-              </p>
+              <p className="font-medium text-foreground">Nagulagam Chanakya</p>
+              <p className="text-muted-foreground mt-0.5">Quote-to-job systems for plants and agencies · nagulagamchanakya2211@gmail.com</p>
             </div>
-            <a
-              href="#top"
-              className="flex size-12 items-center justify-center rounded-full border border-border bg-secondary text-muted-foreground transition-all hover:border-sage hover:text-sage hover:scale-110"
-              title="Back to top"
-            >
-              <ArrowUp className="size-5" />
-            </a>
-          </div>
-
-          <Companion footerOnly />
-
-          <Separator className="my-8" />
-
-          <div className="flex flex-col gap-4 text-xs text-muted-foreground sm:flex-row sm:items-center sm:justify-between">
-            <p>© {new Date().getFullYear()} Nagulagam Chanakya · Independent Systems Engineer</p>
-            <div className="flex items-center gap-4 text-xs font-mono">
+            <div className="flex flex-wrap items-center gap-4 text-xs font-mono">
               <a href="#pricing" className="hover:text-foreground transition-colors">Pricing</a>
+              <a href="#systems" className="hover:text-foreground transition-colors">Live Systems</a>
               <a href="/method" className="hover:text-foreground transition-colors">Method</a>
-              <a href="#projects" className="hover:text-foreground transition-colors">Live Systems</a>
+              <a href="#about" className="hover:text-foreground transition-colors">Trust & Terms</a>
               <a href="#contact" className="hover:text-foreground transition-colors">Contact</a>
+              <a href="https://github.com/Chanakya2006gt" target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors">GitHub</a>
+              <a href="https://www.linkedin.com/in/nagulagam-chanakya-b93514315" target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors">LinkedIn</a>
             </div>
+          </div>
+          <Separator className="my-6" />
+          <div className="flex items-center justify-between text-[11px] text-muted-foreground">
+            <p>© {new Date().getFullYear()} Nagulagam Chanakya. Fixed-price operational software.</p>
+            <a href="#top" className="hover:text-foreground transition-colors inline-flex items-center gap-1">
+              Back to top <ArrowUp className="size-3" />
+            </a>
           </div>
         </div>
       </footer>

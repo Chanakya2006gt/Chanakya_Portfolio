@@ -1,5 +1,5 @@
 import { n as put, t as head } from "../_libs/@vercel/blob+[...].mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/content.server-Dw8Lz3Ro.js
+//#region node_modules/.nitro/vite/services/ssr/assets/content.server-BolRseyh.js
 var __defProp = Object.defineProperty;
 var __exportAll = (all, no_symbols) => {
 	let target = {};
@@ -98,16 +98,16 @@ var navLinks = [
 		label: "Pricing"
 	},
 	{
-		href: "#projects",
+		href: "#systems",
 		label: "Live Systems"
 	},
 	{
-		href: "#about",
-		label: "About"
+		href: "/method",
+		label: "Method"
 	},
 	{
-		href: "#skills",
-		label: "Skills"
+		href: "#about",
+		label: "Trust & Terms"
 	},
 	{
 		href: "#contact",
@@ -356,4 +356,4 @@ async function restoreBackup() {
 	}
 }
 //#endregion
-export { getPortfolioData as a, sideProjects$1 as c, writeContent as i, skills$1 as l, readContent as n, businesses$1 as o, restoreBackup as r, navLinks as s, content_server_exports as t, __exportAll as u };
+export { getPortfolioData as a, writeContent as i, readContent as n, navLinks as o, restoreBackup as r, __exportAll as s, content_server_exports as t };

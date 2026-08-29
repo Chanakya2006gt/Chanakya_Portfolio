@@ -3,8 +3,8 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { Toaster } from "sonner";
 import appCss from "../styles.css?url";
 
-const APP_NAME = "Nagulagam Chanakya — Full-Stack Developer & SaaS Founder";
-const APP_DESC = "Official portfolio of Nagulagam Chanakya — Full-Stack Developer & Founder of Trelio. Specializing in React, Node.js, TypeScript, PostgreSQL, and applied software security.";
+const APP_NAME = "Nagulagam Chanakya — Quote-to-Job Systems for Plants & Agencies";
+const APP_DESC = "I build the systems plants and agencies actually run: quote → confirm → work. Fixed price. You keep the repository. Live on an industrial converting workflow and on Trelio.";
 const SITE_URL = "https://chanakya-portfolio-orcin.vercel.app";
 
 const JSON_LD = {

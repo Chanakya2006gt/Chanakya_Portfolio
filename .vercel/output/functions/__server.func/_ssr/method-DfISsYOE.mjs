@@ -1,12 +1,10 @@
-import "../_runtime.mjs";
-import { u as require_react } from "../_libs/@floating-ui/react-dom+[...].mjs";
 import { _ as Link } from "../_libs/@tanstack/react-router+[...].mjs";
 import { s as require_jsx_runtime } from "../_libs/@radix-ui/react-collection+[...].mjs";
-import { A as Database, C as Layers, E as FileText, M as CodeXml, P as CircleCheck, U as ArrowRight, W as ArrowLeft, a as Terminal, c as ShieldCheck } from "../_libs/lucide-react.mjs";
-import { n as Card, t as Button } from "./card-DVCpRiMc.mjs";
-import { t as Badge } from "./badge-uYrgT7Hg.mjs";
-import { n as useScrollAnimation, t as ThemeToggle } from "./theme-toggle-DbV0dIJj.mjs";
-require_react();
+import { A as CircleCheck, E as CodeXml, I as ArrowRight, L as ArrowLeft, b as FileText, c as ShieldCheck, k as CirclePlay, r as UserCheck, w as Database } from "../_libs/lucide-react.mjs";
+import { n as Card, t as Button } from "./card-DzGZOiKj.mjs";
+import { t as Badge } from "./badge-2bi-7vGo.mjs";
+import { n as useScrollAnimation, t as ThemeToggle } from "./theme-toggle-ClGkjqVs.mjs";
+//#region node_modules/.nitro/vite/services/ssr/assets/method-DfISsYOE.js
 var import_jsx_runtime = require_jsx_runtime();
 function MethodSection() {
 	const { ref, isVisible } = useScrollAnimation();
@@ -15,113 +13,113 @@ function MethodSection() {
 		ref,
 		className: `border-y border-border/60 bg-secondary/30 transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`,
 		children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-			className: "mx-auto max-w-5xl px-5 py-24",
+			className: "mx-auto max-w-5xl px-5 py-20",
 			children: [
 				/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 					className: "flex items-center gap-2",
 					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: "h-4 w-1 rounded-full bg-sage" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
 						className: "text-xs font-semibold uppercase tracking-wider text-muted-foreground",
-						children: "The Delivery Factory"
+						children: "The 15-Day Method"
 					})]
 				}),
 				/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 					className: "mt-3 flex flex-col md:flex-row md:items-end md:justify-between gap-4",
 					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h2", {
 						className: "font-serif text-3xl tracking-tight sm:text-4xl",
-						children: "The 15-Day Systems Factory"
+						children: "How 15 days actually run step-by-step."
 					}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
 						className: "mt-2 max-w-2xl text-muted-foreground text-sm sm:text-base leading-relaxed",
-						children: "How a single independent engineer delivers production-grade operational systems in 15 days with more predictability than a 10-person agency."
+						children: "Predictable, fixed-price engineering without agency overhead. You know exactly what you provide, what you click, and when your system goes live."
 					})] }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Badge, {
 						variant: "outline",
 						className: "border-border/80 font-mono text-xs px-3 py-1 self-start md:self-auto shrink-0",
-						children: "Repeatable 5-Phase Operating System"
+						children: "5 Grounded Phases · Fixed 15 Days"
 					})]
 				}),
 				/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-					className: "mt-12 space-y-6",
+					className: "mt-10 space-y-6",
 					children: [
 						{
 							phase: "Phase 01",
-							days: "Days 1–2",
-							title: "Workflow Teardown & Specification",
-							badge: "Discovery & Spec",
-							desc: "We analyze your current manual workflow (spreadsheets, WhatsApp, email) and map every state transition: quote generation, client approvals, revisions, and payment settlement.",
-							deliverable: "Written Workflow Specification & Architecture Blueprint",
+							days: "Days 1–3",
+							title: "Paid Diagnosis & Live Prototype",
+							badge: "De-Risking",
+							desc: "We tear down your current manual quoting or payment path and map every edge case into deterministic software rules.",
+							whatYouGive: "2 sample quotes, 1 rate sheet/spreadsheet, and a 45-minute phone walkthrough.",
+							whatYouClickOrSign: "1 deployed working screen on a live URL + written workflow map + guaranteed fixed quote for the build.",
 							icon: FileText,
-							color: "emerald",
 							points: [
-								"Complete state machine & transition rules mapped",
-								"Strict boundary checklist: core in-scope vs out-of-scope distractions",
-								"Stack selection tailored to throughput & scale requirements"
+								"Every quote state, revision rule, and approval bottleneck mapped",
+								"100% of the ₹40k diagnosis credited against the full build",
+								"You test the working UI on your phone before committing to the build"
 							]
 						},
 						{
 							phase: "Phase 02",
-							days: "Days 3–4",
-							title: "Data Modeling & Security Guardrails",
-							badge: "System Design",
-							desc: "We establish the foundational data architecture before writing application code, locking down PostgreSQL schemas, multi-tenant boundaries, and cryptographic defenses.",
-							deliverable: "Living ARCHITECTURE.md, SECURITY.md & Migration Schemas",
+							days: "Days 4–5",
+							title: "Math & Logic Lock",
+							badge: "Architecture",
+							desc: "We encode your floor specs, material yields, roll geometries, or milestone payment triggers into automated calculation logic.",
+							whatYouGive: "Confirmation of rate tiers, material specs, and team role permissions (e.g. clerk vs GM).",
+							whatYouClickOrSign: "Calculation engine verified against 100% of your sample quotes with zero math drift.",
 							icon: Database,
-							color: "indigo",
 							points: [
-								"Multi-tenant PostgreSQL schema design with state invariants",
-								"Row-Level Security (RLS), HMAC signatures & AES-256 deliverable encryption",
-								"Accessible design token system (60-30-10 palette, WCAG 2.2 AA)"
+								"Deterministic rate formulas passing all your historical test cases",
+								"Role-based access rules locking down operator vs management actions",
+								"Zero calculation errors before a single frontend screen is styled"
 							]
 						},
 						{
 							phase: "Phase 03",
-							days: "Day 5",
-							title: "Milestone Blueprint & Verification Gates",
-							badge: "Implementation Plan",
-							desc: "We break the full build into sequential 2-day milestones with explicit automated testing criteria and manual verification gates before execution begins.",
-							deliverable: "Tailored implementation_plan.md & DECISION_LOG.md",
-							icon: Layers,
-							color: "cyan",
+							days: "Days 6–10",
+							title: "Core System Assembly",
+							badge: "Engineering",
+							desc: "Full-stack construction: assembling the clerk interface, PDF quote generators, audit ledger, and payment integrations.",
+							whatYouGive: "Logo/brand assets, custom domain DNS access, and gateway credentials (if collecting payments).",
+							whatYouClickOrSign: "Private staging environment where your staff can create real quotes and export confirmed PDFs.",
+							icon: CodeXml,
 							points: [
-								"Sequential milestone roadmap with zero ambiguity",
-								"Automated test acceptance criteria defined in advance",
-								"Single source of truth decision log initialized"
+								"Clerk can configure a complete quote in under 90 seconds",
+								"Instant branded PDF quote generator matching floor specs",
+								"Stage locks and direct bank settlement routes connected"
 							]
 						},
 						{
 							phase: "Phase 04",
-							days: "Days 6–11",
-							title: "Full-Stack Execution & System Assembly",
-							badge: "Core Engineering",
-							desc: "Modular, high-velocity development assembling the client interface, API endpoints, payment gateway webhooks (Razorpay/Stripe), and deterministic business logic.",
-							deliverable: "Working Staging Deployment on Live URL",
-							icon: CodeXml,
-							color: "purple",
+							days: "Days 11–13",
+							title: "Floor Stress Testing & Review",
+							badge: "Verification",
+							desc: "Your team runs live production quotes through the staging system in parallel with your existing WhatsApp/Excel process.",
+							whatYouGive: "5 real incoming quote requests run in parallel by your clerks.",
+							whatYouClickOrSign: "Review and sign-off on the staging system after verifying speed, quote accuracy, and UX.",
+							icon: UserCheck,
 							points: [
-								"Frontend UI, SSR hydration & responsive layout implementation",
-								"Deterministic isomorphic calculation engines (e.g. CPQ pricing math)",
-								"Payment webhooks, audit trails & transactional locking"
+								"Clerks test real jobs to catch real-world workflow friction",
+								"Automated regression suites ensuring no edge cases break",
+								"Refinements completed within 24 hours of feedback"
 							]
 						},
 						{
 							phase: "Phase 05",
-							days: "Days 12–15",
-							title: "Hardening, Automated Testing & Handover",
-							badge: "Definition of Done",
-							desc: "Zero-compromise verification: every user flow is battle-tested with automated Playwright suites, security headers are verified, and the full repository is handed over.",
-							deliverable: "Production Go-Live on Custom Domain + 14-Day Warranty",
+							days: "Days 14–15",
+							title: "Custom Domain Go-Live & Code Handover",
+							badge: "Handover",
+							desc: "We point the system to your custom domain, transfer the full git repository, and begin your 14-day operational warranty.",
+							whatYouGive: "Final sign-off and custom domain DNS pointer.",
+							whatYouClickOrSign: "Live system on your domain + full repository transfer + 10-minute video walkthrough + 14-day warranty.",
 							icon: ShieldCheck,
-							color: "emerald",
 							points: [
-								"Automated Playwright smoke & integration suites covering every route",
-								"Web quality, Core Web Vitals & CSP security header audits",
-								"Video walkthrough recording (Loom) + repository transfer + 14-day warranty"
+								"100% repository handover: you own the code and the database",
+								"Complete video walkthrough for your team and future maintenance",
+								"14 days of dedicated on-call support for any questions or tweaks"
 							]
 						}
-					].map((item, idx) => {
+					].map((item) => {
 						const Icon = item.icon;
 						return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Card, {
-							className: "card-specular relative overflow-hidden rounded-2xl p-6 sm:p-7 border border-border/70 bg-card/90 shadow-sm transition-all hover:border-border",
+							className: "card-specular relative overflow-hidden rounded-2xl p-6 sm:p-7 border border-border/70 bg-card/90 shadow-sm",
 							children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-								className: "grid gap-6 md:grid-cols-[1.2fr_1.8fr] items-start",
+								className: "grid gap-6 md:grid-cols-[1.1fr_1.9fr] items-start",
 								children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 									className: "space-y-3",
 									children: [
@@ -148,25 +146,34 @@ function MethodSection() {
 											className: "text-xs sm:text-sm text-muted-foreground leading-relaxed",
 											children: item.desc
 										}),
-										/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-											className: "pt-1",
-											children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-												className: "inline-flex items-center gap-1.5 rounded-lg bg-secondary/80 px-2.5 py-1 border border-border/60 text-[11px] font-mono text-foreground font-semibold",
-												children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Terminal, { className: "size-3 text-sage" }), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("span", { children: ["Deliverable: ", item.deliverable] })]
-											})
+										/* @__PURE__ */ (0, import_jsx_runtime.jsx)("ul", {
+											className: "space-y-2 text-xs text-foreground/90 pt-1",
+											children: item.points.map((pt, pIdx) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("li", {
+												className: "flex items-start gap-2",
+												children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(CircleCheck, { className: "size-3.5 text-sage shrink-0 mt-0.5" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { children: pt })]
+											}, pIdx))
 										})
 									]
 								}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-									className: "rounded-xl border border-border/60 bg-secondary/40 p-4 sm:p-5 space-y-2.5",
-									children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
-										className: "text-[11px] font-mono font-bold uppercase tracking-wider text-muted-foreground",
-										children: "Execution Checkpoints:"
-									}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("ul", {
-										className: "space-y-2 text-xs sm:text-sm text-foreground/90",
-										children: item.points.map((pt, pIdx) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("li", {
-											className: "flex items-start gap-2",
-											children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(CircleCheck, { className: "size-4 text-sage shrink-0 mt-0.5" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { children: pt })]
-										}, pIdx))
+									className: "space-y-3",
+									children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+										className: "rounded-xl border border-border/60 bg-secondary/40 p-4",
+										children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+											className: "flex items-center gap-2 text-xs font-mono font-bold uppercase tracking-wider text-muted-foreground mb-1.5",
+											children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(UserCheck, { className: "size-3.5 text-sage" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { children: "What You Must Give:" })]
+										}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+											className: "text-xs sm:text-sm text-foreground/90 font-medium leading-relaxed",
+											children: item.whatYouGive
+										})]
+									}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+										className: "rounded-xl border border-emerald-500/30 bg-emerald-500/5 dark:bg-emerald-500/10 p-4",
+										children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+											className: "flex items-center gap-2 text-xs font-mono font-bold uppercase tracking-wider text-emerald-800 dark:text-emerald-400 mb-1.5",
+											children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(CirclePlay, { className: "size-3.5 text-emerald-700 dark:text-emerald-400" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { children: "What You Can Click / Sign:" })]
+										}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+											className: "text-xs sm:text-sm text-foreground font-semibold leading-relaxed",
+											children: item.whatYouClickOrSign
+										})]
 									})]
 								})]
 							})
@@ -179,10 +186,10 @@ function MethodSection() {
 						className: "space-y-1 text-center sm:text-left",
 						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h4", {
 							className: "font-serif text-lg text-foreground font-semibold",
-							children: "Ready to de-risk your workflow?"
+							children: "Start with Phase 1 · Paid Diagnosis"
 						}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
 							className: "text-xs sm:text-sm text-muted-foreground",
-							children: "Start with a 3-Day Paid Diagnosis (₹40,000) — 100% credited against the full build if you proceed."
+							children: "3 days, ₹40,000, 100% credited against the build. You get 1 working screen and a guaranteed fixed quote."
 						})]
 					}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("a", {
 						href: "/#pricing",
@@ -205,7 +212,7 @@ function MethodPage() {
 					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Link, {
 						to: "/",
 						className: "inline-flex items-center gap-2 text-xs sm:text-sm font-semibold text-muted-foreground hover:text-foreground transition-colors",
-						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(ArrowLeft, { className: "size-4" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { children: "Back to Portfolio" })]
+						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(ArrowLeft, { className: "size-4" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { children: "Back to Systems" })]
 					}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 						className: "flex items-center gap-3",
 						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(ThemeToggle, {}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Button, {
@@ -232,9 +239,9 @@ function MethodPage() {
 					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("p", { children: [
 						"© ",
 						(/* @__PURE__ */ new Date()).getFullYear(),
-						" Nagulagam Chanakya · Independent Systems Engineer"
+						" Nagulagam Chanakya · Quote-to-job systems"
 					] }), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-						className: "flex items-center gap-4",
+						className: "flex items-center gap-4 font-mono",
 						children: [
 							/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Link, {
 								to: "/",
@@ -244,9 +251,15 @@ function MethodPage() {
 							}),
 							/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Link, {
 								to: "/",
-								hash: "projects",
+								hash: "systems",
 								className: "hover:text-foreground transition-colors",
 								children: "Live Systems"
+							}),
+							/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Link, {
+								to: "/",
+								hash: "about",
+								className: "hover:text-foreground transition-colors",
+								children: "Trust & Terms"
 							}),
 							/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Link, {
 								to: "/",

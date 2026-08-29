@@ -29,17 +29,13 @@ export function SiteNav() {
         <div className="flex items-center gap-4">
           <nav className="hidden items-center gap-7 md:flex">
             {navLinks.map((link) => {
-              const sectionId = link.href.replace("#", "");
-              const isActive = activeSection === sectionId;
+              const isExternalOrRoute = link.href.startsWith("/");
+              const sectionId = link.href.replace("#", "").replace("/", "");
+              const isActive = !isExternalOrRoute && activeSection === sectionId;
               return (
                 <a
                   key={link.href}
                   href={link.href}
-                  onClick={() => {
-                    if (sectionId === "projects" && typeof window !== "undefined") {
-                      window.dispatchEvent(new CustomEvent("portfolio-tab-switch", { detail: { tab: "plants" } }));
-                    }
-                  }}
                   className={`text-sm transition-colors relative py-1 ${
                     isActive
                       ? "font-medium text-sage"
@@ -79,12 +75,7 @@ export function SiteNav() {
                 <a
                   key={link.href}
                   href={link.href}
-                  onClick={() => {
-                    setOpen(false);
-                    if (link.href === "#projects" && typeof window !== "undefined") {
-                      window.dispatchEvent(new CustomEvent("portfolio-tab-switch", { detail: { tab: "side" } }));
-                    }
-                  }}
+                  onClick={() => setOpen(false)}
                   className="text-base text-muted-foreground hover:text-sage transition-colors"
                 >
                   {link.label}

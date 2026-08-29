@@ -1,11 +1,11 @@
 import { i as __toESM } from "../_runtime.mjs";
 import { n as put, t as head } from "../_libs/@vercel/blob+[...].mjs";
-import { a as getPortfolioData, i as writeContent, n as readContent, r as restoreBackup, u as __exportAll } from "./content.server-Dw8Lz3Ro.mjs";
+import { a as getPortfolioData, i as writeContent, n as readContent, r as restoreBackup, s as __exportAll } from "./content.server-BolRseyh.mjs";
 import { u as require_react } from "../_libs/@floating-ui/react-dom+[...].mjs";
 import { f as createRouter, g as createRootRoute, h as createFileRoute, l as Scripts, m as lazyRouteComponent, p as Outlet, u as HeadContent } from "../_libs/@tanstack/react-router+[...].mjs";
 import { s as require_jsx_runtime } from "../_libs/@radix-ui/react-collection+[...].mjs";
 import { n as TSS_SERVER_FUNCTION, r as getServerFnById, t as createServerFn } from "./ssr.mjs";
-import { W as ArrowLeft, d as RotateCw, j as Compass, r as TriangleAlert } from "../_libs/lucide-react.mjs";
+import { L as ArrowLeft, T as Compass, i as TriangleAlert, u as RotateCw } from "../_libs/lucide-react.mjs";
 import { n as Portal, r as Provider, t as Content2 } from "../_libs/@radix-ui/react-tooltip+[...].mjs";
 import { n as clsx } from "../_libs/class-variance-authority+clsx.mjs";
 import { t as twMerge } from "../_libs/tailwind-merge.mjs";
@@ -14,7 +14,7 @@ import { i as string, n as object, r as record, t as array } from "../_libs/zod.
 import crypto from "node:crypto";
 import path from "node:path";
 import fs from "node:fs";
-//#region node_modules/.nitro/vite/services/ssr/assets/router-7GA-CDT7.js
+//#region node_modules/.nitro/vite/services/ssr/assets/router-p-iOHWZP.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 function AppErrorComponent({ error }) {
@@ -104,9 +104,9 @@ var TooltipContent = import_react.forwardRef(({ className, sideOffset = 6, ...pr
 	...props
 }) }));
 TooltipContent.displayName = Content2.displayName;
-var styles_default = "/assets/styles-DyR155cu.css";
-var APP_NAME = "Nagulagam Chanakya — Full-Stack Developer & SaaS Founder";
-var APP_DESC = "Official portfolio of Nagulagam Chanakya — Full-Stack Developer & Founder of Trelio. Specializing in React, Node.js, TypeScript, PostgreSQL, and applied software security.";
+var styles_default = "/assets/styles-B7VB9NXf.css";
+var APP_NAME = "Nagulagam Chanakya — Quote-to-Job Systems for Plants & Agencies";
+var APP_DESC = "I build the systems plants and agencies actually run: quote → confirm → work. Fixed price. You keep the repository. Live on an industrial converting workflow and on Trelio.";
 var SITE_URL = "https://chanakya-portfolio-orcin.vercel.app";
 var JSON_LD = {
 	"@context": "https://schema.org",
@@ -312,22 +312,22 @@ var createSsrRpc = (functionId) => {
 	});
 };
 var fetchContent = createServerFn({ method: "GET" }).handler(createSsrRpc("2b99909e19342163fb9618a3b1f343b57fe68205625d940d83a174e978667293"));
-var $$splitComponentImporter$3 = () => import("./routes-Bu9GzhOS.mjs");
+var $$splitComponentImporter$3 = () => import("./routes-MZiUCONZ.mjs");
 var Route$12 = createFileRoute("/")({
 	loader: () => fetchContent(),
 	component: lazyRouteComponent($$splitComponentImporter$3, "component")
 });
-var $$splitComponentImporter$2 = () => import("./method-xNd6GTLj.mjs");
+var $$splitComponentImporter$2 = () => import("./method-DfISsYOE.mjs");
 var Route$11 = createFileRoute("/method")({
 	component: lazyRouteComponent($$splitComponentImporter$2, "component"),
-	head: () => ({ meta: [{ title: "The 15-Day Systems Factory — Nagulagam Chanakya" }, {
+	head: () => ({ meta: [{ title: "The 15-Day Method — Quote-to-Job Systems for Plants & Agencies" }, {
 		name: "description",
-		content: "The 5-phase operating system used by independent engineer Nagulagam Chanakya to build, test, and ship hardened quote-to-cash operational software in 15 days."
+		content: "The 5-phase method used by Nagulagam Chanakya to build, test, and ship hardened quote-to-job operational software in 15 days."
 	}] })
 });
-var $$splitComponentImporter$1 = () => import("./admin-CymmxIPl.mjs");
+var $$splitComponentImporter$1 = () => import("./admin-CrxnpMVe.mjs");
 var Route$10 = createFileRoute("/admin/")({ component: lazyRouteComponent($$splitComponentImporter$1, "component") });
-var $$splitComponentImporter = () => import("./login-XYS6dkk1.mjs");
+var $$splitComponentImporter = () => import("./login-Bt6Kr88j.mjs");
 var Route$9 = createFileRoute("/admin/login")({ component: lazyRouteComponent($$splitComponentImporter, "component") });
 var envCache = null;
 var lastCacheTime = 0;

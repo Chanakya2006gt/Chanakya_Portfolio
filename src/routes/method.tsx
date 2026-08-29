@@ -8,8 +8,8 @@ export const Route = createFileRoute("/method")({
   component: MethodPage,
   head: () => ({
     meta: [
-      { title: "The 15-Day Systems Factory — Nagulagam Chanakya" },
-      { name: "description", content: "The 5-phase operating system used by independent engineer Nagulagam Chanakya to build, test, and ship hardened quote-to-cash operational software in 15 days." },
+      { title: "The 15-Day Method — Quote-to-Job Systems for Plants & Agencies" },
+      { name: "description", content: "The 5-phase method used by Nagulagam Chanakya to build, test, and ship hardened quote-to-job operational software in 15 days." },
     ],
   }),
 });
@@ -25,7 +25,7 @@ function MethodPage() {
             className="inline-flex items-center gap-2 text-xs sm:text-sm font-semibold text-muted-foreground hover:text-foreground transition-colors"
           >
             <ArrowLeft className="size-4" />
-            <span>Back to Portfolio</span>
+            <span>Back to Systems</span>
           </Link>
 
           <div className="flex items-center gap-3">
@@ -48,10 +48,11 @@ function MethodPage() {
       {/* Minimal Footer */}
       <footer className="border-t border-border/60 py-12 text-center text-xs text-muted-foreground">
         <div className="mx-auto max-w-5xl px-5 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p>© {new Date().getFullYear()} Nagulagam Chanakya · Independent Systems Engineer</p>
-          <div className="flex items-center gap-4">
+          <p>© {new Date().getFullYear()} Nagulagam Chanakya · Quote-to-job systems</p>
+          <div className="flex items-center gap-4 font-mono">
             <Link to="/" hash="pricing" className="hover:text-foreground transition-colors">Pricing</Link>
-            <Link to="/" hash="projects" className="hover:text-foreground transition-colors">Live Systems</Link>
+            <Link to="/" hash="systems" className="hover:text-foreground transition-colors">Live Systems</Link>
+            <Link to="/" hash="about" className="hover:text-foreground transition-colors">Trust & Terms</Link>
             <Link to="/" hash="contact" className="hover:text-foreground transition-colors">Contact</Link>
           </div>
         </div>
