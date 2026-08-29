@@ -1,5 +1,5 @@
 import { n as put, t as head } from "../_libs/@vercel/blob+[...].mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/content.server-xcdZLFWz.js
+//#region node_modules/.nitro/vite/services/ssr/assets/content.server-lt71HV32.js
 var __defProp = Object.defineProperty;
 var __exportAll = (all, no_symbols) => {
 	let target = {};
@@ -193,7 +193,7 @@ var portfolio_data_default = {
 			"Razorpay"
 		]
 	},
-	availabilityStatus: "Open for collaborations & full-time roles",
+	availabilityStatus: "Taking 2 sprints per month · Next opening: September",
 	heroTagline: "I ship products under real constraints — not demos. Trelio is the primary work alongside focused software projects.",
 	resumeOverride: { "education": "SR University — B.Tech CSE (2028)" },
 	resume: {
@@ -201,11 +201,11 @@ var portfolio_data_default = {
 		"title": "Full-Stack & Security-Conscious Software Engineer",
 		"location": "Warangal, Telangana, India",
 		"email": "nagulagamchanakya2211@gmail.com",
-		"summary": "Computer and Information Science student with hands-on experience building and shipping a full-stack, security-conscious SaaS product. Comfortable owning architecture, security, and product decisions across the full development lifecycle.",
+		"summary": "Full-stack software engineer with hands-on experience architecting and shipping production SaaS platforms and deterministic calculation engines. Comfortable owning system design, database security, and end-to-end product implementation.",
 		"education": {
 			"institution": "SR University",
 			"location": "Warangal, Telangana",
-			"degree": "SR University — B.Tech CIS (Expected 2028)",
+			"degree": "SR University — B.Tech CSE (Expected 2028)",
 			"coursework": "Data Structures & Algorithms, Object-Oriented Programming, Database Management Systems, Operating Systems, Computer Networks, Software Engineering"
 		},
 		"sections": [{
@@ -240,9 +240,9 @@ function getPortfolioData() {
 		businesses: businesses$1,
 		sideProjects: sideProjects$1,
 		skills: skills$1,
-		availabilityStatus: "Open for contracts & software engineering roles",
-		workAvailability: "Open for contract work, consulting & engineering roles",
-		hiringStatus: "Not hiring for any roles at this time (Chanakya is open to being hired for contracts/work)",
+		availabilityStatus: "Taking 2 sprints per month · Next opening: September",
+		workAvailability: "Available for 15-Day Systems Sprints and fixed-scope technical engagements",
+		hiringStatus: "Not hiring for any roles at this time (Chanakya is an independent engineer taking fixed-scope sprints)",
 		heroTagline: "I ship products under real constraints — not demos. Trelio is the primary work alongside focused software projects."
 	};
 }

@@ -10,11 +10,11 @@ export interface Message {
 }
 
 const PREBUILT_QUESTIONS = [
-  { label: "📄 Resume & Education", query: "Can you summarize Chanakya's resume, education, and qualifications?" },
+  { label: "📋 15-Day Systems Sprint", query: "What does a 15-Day Systems Sprint include and how does Chanakya work?" },
   { label: "🚀 Tell me about Trelio", query: "What is Trelio and how does it work?" },
   { label: "💻 Tech stack & skills", query: "What tech stack and skills does Chanakya specialize in?" },
-  { label: "💼 Open for hiring?", query: "Is Chanakya open for full-time software engineering roles?" },
-  { label: "📬 How to contact?", query: "How can I contact or email Chanakya?" },
+  { label: "📄 Credentials & Proof", query: "Can you summarize Chanakya's technical credentials, architecture, and verified benchmarks?" },
+  { label: "📬 How to contact?", query: "How can I contact or email Chanakya to book a sprint?" },
 ];
 
 interface CompanionChatProps {

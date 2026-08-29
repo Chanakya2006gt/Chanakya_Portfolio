@@ -45,11 +45,11 @@ export function ResumeModal({
   const execSummary =
     resume?.summary ||
     summary ||
-    "Computer and Information Science student with hands-on experience building and shipping a full-stack, security-conscious SaaS product. Comfortable owning architecture, security, and product decisions across the full development lifecycle.";
+    "Full-stack software engineer with hands-on experience architecting and shipping production SaaS platforms and deterministic calculation engines. Comfortable owning system design, database security, and end-to-end product implementation.";
 
   const eduInstitution = resume?.education?.institution || "SR University";
   const eduLocation = resume?.education?.location || "Warangal, Telangana";
-  const eduDegree = resume?.education?.degree || education || "SR University — B.Tech CIS (Expected 2028)";
+  const eduDegree = resume?.education?.degree || education || "SR University — B.Tech CSE (Expected 2028)";
   const eduCoursework =
     resume?.education?.coursework ||
     "Data Structures & Algorithms, Object-Oriented Programming, Database Management Systems, Operating Systems, Computer Networks, Software Engineering";

@@ -1,6 +1,6 @@
 import { i as __toESM } from "../_runtime.mjs";
 import { n as put, t as head } from "../_libs/@vercel/blob+[...].mjs";
-import { a as getPortfolioData, i as writeContent, n as readContent, r as restoreBackup, u as __exportAll } from "./content.server-xcdZLFWz.mjs";
+import { a as getPortfolioData, i as writeContent, n as readContent, r as restoreBackup, u as __exportAll } from "./content.server-lt71HV32.mjs";
 import { u as require_react } from "../_libs/@floating-ui/react-dom+[...].mjs";
 import { f as createRouter, g as createRootRoute, h as createFileRoute, l as Scripts, m as lazyRouteComponent, p as Outlet, u as HeadContent } from "../_libs/@tanstack/react-router+[...].mjs";
 import { s as require_jsx_runtime } from "../_libs/@radix-ui/react-collection+[...].mjs";
@@ -14,7 +14,7 @@ import { i as string, n as object, r as record, t as array } from "../_libs/zod.
 import crypto from "node:crypto";
 import path from "node:path";
 import fs from "node:fs";
-//#region node_modules/.nitro/vite/services/ssr/assets/router-CaE5O16P.js
+//#region node_modules/.nitro/vite/services/ssr/assets/router-Bnqhw2yS.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 function AppErrorComponent({ error }) {
@@ -104,7 +104,7 @@ var TooltipContent = import_react.forwardRef(({ className, sideOffset = 6, ...pr
 	...props
 }) }));
 TooltipContent.displayName = Content2.displayName;
-var styles_default = "/assets/styles-DDlu597M.css";
+var styles_default = "/assets/styles-B5rceZBU.css";
 var APP_NAME = "Nagulagam Chanakya — Full-Stack Developer & SaaS Founder";
 var APP_DESC = "Official portfolio of Nagulagam Chanakya — Full-Stack Developer & Founder of Trelio. Specializing in React, Node.js, TypeScript, PostgreSQL, and applied software security.";
 var SITE_URL = "https://chanakya-portfolio-orcin.vercel.app";
@@ -312,14 +312,14 @@ var createSsrRpc = (functionId) => {
 	});
 };
 var fetchContent = createServerFn({ method: "GET" }).handler(createSsrRpc("2b99909e19342163fb9618a3b1f343b57fe68205625d940d83a174e978667293"));
-var $$splitComponentImporter$2 = () => import("./routes-cYIbfVND.mjs");
+var $$splitComponentImporter$2 = () => import("./routes-D3pkv3P1.mjs");
 var Route$11 = createFileRoute("/")({
 	loader: () => fetchContent(),
 	component: lazyRouteComponent($$splitComponentImporter$2, "component")
 });
-var $$splitComponentImporter$1 = () => import("./admin-B21htnvv.mjs");
+var $$splitComponentImporter$1 = () => import("./admin-BRezSDVI.mjs");
 var Route$10 = createFileRoute("/admin/")({ component: lazyRouteComponent($$splitComponentImporter$1, "component") });
-var $$splitComponentImporter = () => import("./login-D7u6r6--.mjs");
+var $$splitComponentImporter = () => import("./login-DqDWbnfV.mjs");
 var Route$9 = createFileRoute("/admin/login")({ component: lazyRouteComponent($$splitComponentImporter, "component") });
 var envCache = null;
 var lastCacheTime = 0;
@@ -451,10 +451,10 @@ Your job is to speak from a crisp, business-oriented perspective for recruiters,
 
 # WHO IS CHANAKYA:
 * **Name**: Nagulagam Chanakya
-* **Role**: AI-Native Full-Stack Developer & SaaS Founder (Trelio)
+* **Role**: Independent Software Engineer & SaaS Founder (Trelio)
 * **Education**: ${education}, Warangal, Telangana, India
-* **Work / Contract Availability (When someone wants to hire Chanakya)**: ${workAvailability}
-* **Team Hiring Status (Is Chanakya hiring anyone for his team?)**: ${hiringStatus}
+* **Work & Sprint Availability**: ${workAvailability} (Takes 2 fixed-scope sprints/month; entry rung is 3-Day Scope & Proof for ₹40,000 credited to full sprint)
+* **Team Hiring Status**: ${hiringStatus}
 * **Email**: ${email}
 * **LinkedIn**: ${linkedinUrl}
 * **GitHub**: ${githubUrl}

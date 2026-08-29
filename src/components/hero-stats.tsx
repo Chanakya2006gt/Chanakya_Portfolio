@@ -3,7 +3,7 @@ interface HeroStatsProps {
   liveCount?: number;
 }
 
-export function HeroStats({ status = "Open for collaborations & full-time roles", liveCount = 1 }: HeroStatsProps) {
+export function HeroStats({ status = "Taking 2 sprints per month · Next opening: September", liveCount = 1 }: HeroStatsProps) {
   return (
     <div className="mt-8 flex flex-wrap items-center gap-3">
       {/* Blinking availability dot */}

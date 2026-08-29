@@ -1,15 +1,15 @@
 import { i as __toESM } from "../_runtime.mjs";
-import { c as sideProjects$1, l as skills$1, o as businesses$1, s as navLinks } from "./content.server-xcdZLFWz.mjs";
+import { c as sideProjects$1, l as skills$1, o as businesses$1, s as navLinks } from "./content.server-lt71HV32.mjs";
 import { u as require_react } from "../_libs/@floating-ui/react-dom+[...].mjs";
 import { s as require_jsx_runtime } from "../_libs/@radix-ui/react-collection+[...].mjs";
 import { A as Copy, B as ArrowRight, C as GraduationCap, D as ExternalLink, E as FileText, F as Check, I as Building2, L as Bot, M as CodeXml, N as Clock, O as Disc, P as CircleCheck, R as Award, S as Layers, T as Gauge, _ as Mail, a as Sun, b as Linkedin, c as Send, d as RefreshCw, f as Printer, g as MapPin, h as Menu, k as Database, m as Moon, n as User, s as ShieldCheck, t as X, w as Github, y as Lock, z as ArrowUp } from "../_libs/lucide-react.mjs";
 import { a as DialogOverlay$1, c as DialogTrigger$1, i as DialogDescription$1, n as DialogClose, o as DialogPortal$1, r as DialogContent$1, s as DialogTitle$1, t as Dialog$1 } from "../_libs/@radix-ui/react-dialog+[...].mjs";
 import { n as toast } from "../_libs/sonner.mjs";
-import { n as Route$11, r as cn } from "./router-CaE5O16P.mjs";
-import { a as CardFooter, c as Input, i as CardDescription, l as Label, n as Card, o as CardHeader, r as CardContent, s as CardTitle, t as Button } from "./card-C7IPEX_v.mjs";
-import { a as TabsTrigger, i as TabsList, n as Tabs, o as Textarea, r as TabsContent, t as Badge } from "./badge-BntUSYHD.mjs";
+import { n as Route$11, r as cn } from "./router-Bnqhw2yS.mjs";
+import { a as CardFooter, c as Input, i as CardDescription, l as Label, n as Card, o as CardHeader, r as CardContent, s as CardTitle, t as Button } from "./card-vwmfKTzl.mjs";
+import { a as TabsTrigger, i as TabsList, n as Tabs, o as Textarea, r as TabsContent, t as Badge } from "./badge-XmH6VNjM.mjs";
 import { t as Root } from "../_libs/radix-ui__react-separator.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/routes-cYIbfVND.js
+//#region node_modules/.nitro/vite/services/ssr/assets/routes-D3pkv3P1.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 var Separator = import_react.forwardRef(({ className, orientation = "horizontal", decorative = true, ...props }, ref) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Root, {
@@ -742,10 +742,10 @@ function ResumeModal({ trigger, open, onOpenChange, email, pdfUrl = "/api/resume
 	const jobTitle = resume?.title || "Full-Stack & Security-Conscious Software Engineer";
 	const loc = resume?.location || "Warangal, Telangana, India";
 	const contactEmail = resume?.email || email || "nagulagamchanakya2211@gmail.com";
-	const execSummary = resume?.summary || summary || "Computer and Information Science student with hands-on experience building and shipping a full-stack, security-conscious SaaS product. Comfortable owning architecture, security, and product decisions across the full development lifecycle.";
+	const execSummary = resume?.summary || summary || "Full-stack software engineer with hands-on experience architecting and shipping production SaaS platforms and deterministic calculation engines. Comfortable owning system design, database security, and end-to-end product implementation.";
 	const eduInstitution = resume?.education?.institution || "SR University";
 	const eduLocation = resume?.education?.location || "Warangal, Telangana";
-	const eduDegree = resume?.education?.degree || education || "SR University — B.Tech CIS (Expected 2028)";
+	const eduDegree = resume?.education?.degree || education || "SR University — B.Tech CSE (Expected 2028)";
 	const eduCoursework = resume?.education?.coursework || "Data Structures & Algorithms, Object-Oriented Programming, Database Management Systems, Operating Systems, Computer Networks, Software Engineering";
 	const effectiveSkills = resume?.skills || skillsList;
 	const sectionsToRender = resume?.sections && resume.sections.length > 0 ? resume.sections : [{
@@ -1225,7 +1225,7 @@ function MarqueeTicker() {
 		})
 	});
 }
-function HeroStats({ status = "Open for collaborations & full-time roles", liveCount = 1 }) {
+function HeroStats({ status = "Taking 2 sprints per month · Next opening: September", liveCount = 1 }) {
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 		className: "mt-8 flex flex-wrap items-center gap-3",
 		children: [
@@ -1504,8 +1504,8 @@ function CompanionSvg({ state, className = "", size = 80 }) {
 }
 var PREBUILT_QUESTIONS = [
 	{
-		label: "📄 Resume & Education",
-		query: "Can you summarize Chanakya's resume, education, and qualifications?"
+		label: "📋 15-Day Systems Sprint",
+		query: "What does a 15-Day Systems Sprint include and how does Chanakya work?"
 	},
 	{
 		label: "🚀 Tell me about Trelio",
@@ -1516,12 +1516,12 @@ var PREBUILT_QUESTIONS = [
 		query: "What tech stack and skills does Chanakya specialize in?"
 	},
 	{
-		label: "💼 Open for hiring?",
-		query: "Is Chanakya open for full-time software engineering roles?"
+		label: "📄 Credentials & Proof",
+		query: "Can you summarize Chanakya's technical credentials, architecture, and verified benchmarks?"
 	},
 	{
 		label: "📬 How to contact?",
-		query: "How can I contact or email Chanakya?"
+		query: "How can I contact or email Chanakya to book a sprint?"
 	}
 ];
 function ChatFormattedText({ content }) {
@@ -2094,9 +2094,9 @@ function useScrollAnimation(threshold = .1) {
 function HeroTerminal() {
 	const [copied, setCopied] = (0, import_react.useState)(false);
 	const handleCopy = () => {
-		navigator.clipboard.writeText("npx chanakya@latest");
+		navigator.clipboard.writeText("git clone https://github.com/Chanakya2006gt/Chanakya_Portfolio.git");
 		setCopied(true);
-		toast.success("Copied `npx chanakya@latest` to clipboard!");
+		toast.success("Copied repo clone command to clipboard!");
 		setTimeout(() => setCopied(false), 2e3);
 	};
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
@@ -2164,7 +2164,7 @@ function HeroTerminal() {
 						" ",
 						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
 							className: "text-emerald-800 dark:text-emerald-400 font-medium",
-							children: "\"AI-Native Systems Architect & Founder\""
+							children: "\"Independent Software Engineer & Founder\""
 						}),
 						","
 					]
@@ -2250,33 +2250,6 @@ function HeroTerminal() {
 					children: [
 						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
 							className: "text-foreground/70 dark:text-muted-foreground",
-							children: "workflow:"
-						}),
-						" [",
-						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-							className: "text-purple-800 dark:text-purple-300 font-medium",
-							children: "\"Agentic AI\""
-						}),
-						",",
-						" ",
-						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-							className: "text-cyan-800 dark:text-cyan-300 font-medium",
-							children: "\"Antigravity\""
-						}),
-						",",
-						" ",
-						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-							className: "text-emerald-800 dark:text-emerald-300 font-medium",
-							children: "\"Claude Code\""
-						}),
-						"],"
-					]
-				}),
-				/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-					className: "pl-4",
-					children: [
-						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-							className: "text-foreground/70 dark:text-muted-foreground",
 							children: "stack:"
 						}),
 						" [",
@@ -2330,7 +2303,7 @@ function HeroTerminal() {
 						" ",
 						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
 							className: "text-emerald-800 dark:text-emerald-400 font-bold",
-							children: "\"Available for High-Impact Work\""
+							children: "\"Taking 2 Sprints / Month\""
 						})
 					]
 				}),
@@ -2344,7 +2317,7 @@ function HeroTerminal() {
 							children: "$"
 						}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("code", {
 							className: "text-foreground/80 dark:text-muted-foreground truncate font-semibold",
-							children: "npx chanakya@latest"
+							children: "git clone github.com/Chanakya2006gt/Chanakya_Portfolio"
 						})]
 					}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
 						type: "button",
@@ -2462,36 +2435,14 @@ function About({ email, pdfUrl, summary, education, skillsList, resume }) {
 				}),
 				/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h2", {
 					className: "mt-3 font-serif text-3xl tracking-tight sm:text-4xl",
-					children: "Builder first. Student second."
+					children: "Operational software for quotes, approvals & payments."
 				}),
 				/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 					className: "mt-8 grid gap-8 md:grid-cols-2",
 					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 						className: "space-y-5 text-muted-foreground leading-relaxed",
 						children: [
-							/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("p", { children: [
-								"Engineering student at ",
-								/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-									className: "font-medium text-foreground",
-									children: education || "SR University (B.Tech in CSE, 2028)"
-								}),
-								" focused on shipping real products. I care more about constraints — ",
-								/* @__PURE__ */ (0, import_jsx_runtime.jsx)("code", {
-									className: "rounded bg-secondary px-1.5 py-0.5 text-xs text-sage font-mono",
-									children: "secure payments"
-								}),
-								", ",
-								/* @__PURE__ */ (0, import_jsx_runtime.jsx)("code", {
-									className: "rounded bg-secondary px-1.5 py-0.5 text-xs text-sage font-mono",
-									children: "approvals"
-								}),
-								", and ",
-								/* @__PURE__ */ (0, import_jsx_runtime.jsx)("code", {
-									className: "rounded bg-secondary px-1.5 py-0.5 text-xs text-sage font-mono",
-									children: "multi-tenant systems"
-								}),
-								" — than collecting certificates."
-							] }),
+							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", { children: "Most growing businesses and agencies lose revenue in the same place: the friction gap between a quote and a confirmed payment. I build the operational software that closes it." }),
 							/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("p", { children: [
 								"Right now most of my time goes to ",
 								/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
@@ -2522,10 +2473,10 @@ function About({ email, pdfUrl, summary, education, skillsList, resume }) {
 										className: "rounded-xl border border-border/70 bg-card/80 p-3 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.08)]",
 										children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
 											className: "text-[11px] font-mono text-muted-foreground uppercase tracking-wider",
-											children: "Degree & Focus"
+											children: "Engagement Model"
 										}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
 											className: "text-xs font-semibold text-foreground",
-											children: "B.Tech CSE '28"
+											children: "Independent Engineer"
 										})]
 									}),
 									/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
@@ -2535,7 +2486,7 @@ function About({ email, pdfUrl, summary, education, skillsList, resume }) {
 											children: "Core Focus"
 										}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
 											className: "text-xs font-semibold text-sage",
-											children: "Agentic AI & SaaS"
+											children: "Quotes & Approvals"
 										})]
 									})
 								]
@@ -2552,7 +2503,7 @@ function About({ email, pdfUrl, summary, education, skillsList, resume }) {
 									trigger: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Button, {
 										variant: "outline",
 										className: "gap-2 border-border/80 hover:border-sage hover:text-sage text-foreground rounded-xl shadow-sm",
-										children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(FileText, { className: "size-4" }), "Read Full Resume & Credentials →"]
+										children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(FileText, { className: "size-4" }), "Read Full Credentials & Background →"]
 									})
 								})
 							})
@@ -2564,11 +2515,11 @@ function About({ email, pdfUrl, summary, education, skillsList, resume }) {
 								className: "flex items-center gap-2",
 								children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: "size-2 rounded-full bg-emerald-400 shadow-[0_0_8px_#34d399]" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("h4", {
 									className: "text-sm font-semibold text-foreground",
-									children: "How I work · Agentic Velocity"
+									children: "How I work · Direct Seniority"
 								})]
 							}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
 								className: "mt-2 text-sm text-muted-foreground leading-relaxed",
-								children: "Specification-first builder. I direct autonomous AI agents (Google Antigravity, Claude Code) with specialized skill plugins, strict design tokens (60-30-10 palette, WCAG 2.2 AA), and cryptographic guardrails (AES-256-GCM, Postgres RLS) to ship hardened production systems in days instead of months."
+								children: "You work directly with me. No account managers, no junior developers, no handoffs. The engineer who scopes your system is the engineer who writes the code, designs the data model, and stays on call."
 							})] }),
 							/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Separator, { className: "bg-border/60" }),
 							/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
@@ -2840,7 +2791,7 @@ function Projects({ businessesList, sideProjectsList, email, pdfUrl, summary, ed
 							/* @__PURE__ */ (0, import_jsx_runtime.jsx)(TabsTrigger, {
 								value: "contracts",
 								className: "data-[state=active]:bg-card data-[state=active]:shadow-sm text-xs sm:text-sm rounded-lg",
-								children: "Freelance Work"
+								children: "Fixed-Scope Sprints"
 							}),
 							/* @__PURE__ */ (0, import_jsx_runtime.jsx)(TabsTrigger, {
 								value: "side",
@@ -2868,11 +2819,11 @@ function Projects({ businessesList, sideProjectsList, email, pdfUrl, summary, ed
 									}),
 									/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h3", {
 										className: "font-serif text-2xl text-foreground",
-										children: "Available for Client & Freelance Engagements"
+										children: "15-Day Systems Sprints"
 									}),
 									/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
 										className: "text-sm text-muted-foreground leading-relaxed",
-										children: "I am currently open for freelance projects, full-stack consulting, and selective client work. As new engagements are delivered and cleared for public showcase, case studies and deliverables will be documented here."
+										children: "Fixed-scope technical engagements to design, build, test, and harden one critical operational workflow (quotes, approvals, or payments). Every sprint includes a written specification, automated test suite, and complete repository handover."
 									}),
 									/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 										className: "pt-3 flex flex-wrap items-center justify-center gap-3",
@@ -2882,7 +2833,7 @@ function Projects({ businessesList, sideProjectsList, email, pdfUrl, summary, ed
 											className: "group rounded-xl bg-amber-500 hover:bg-amber-600 text-black font-semibold shadow-md active:scale-[0.98] transition-all pl-4 pr-2 py-1.5 inline-flex items-center gap-2",
 											children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("a", {
 												href: "#contact",
-												children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { children: "Discuss a Project" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+												children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { children: "Inquire About a Sprint" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
 													className: "flex size-5 items-center justify-center rounded-md bg-black/15 transition-transform duration-200 group-hover:translate-x-0.5",
 													children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(ArrowRight, { className: "size-3 text-black" })
 												})]
@@ -3110,11 +3061,11 @@ function Contact() {
 			}),
 			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h2", {
 				className: "mt-3 font-serif text-3xl tracking-tight sm:text-4xl",
-				children: "Open for freelance work & conversations"
+				children: "Let's build your operational workflow."
 			}),
 			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
 				className: "mt-4 max-w-lg text-lg text-foreground/90 font-serif italic",
-				children: "\"Let's build something. I am available for freelance work, consulting, and select software engineering opportunities.\""
+				children: "\"Available for 15-Day Systems Sprints and fixed-scope technical engagements.\""
 			}),
 			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
 				className: "mt-10",
@@ -3157,7 +3108,7 @@ function Contact() {
 									}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Input, {
 										id: "subject",
 										name: "subject",
-										placeholder: "Project / Freelance Inquiry...",
+										placeholder: "Sprint Inquiry / Systems Workflow...",
 										required: true,
 										className: "rounded-xl bg-secondary/50"
 									})]

@@ -46,9 +46,9 @@ function HeroTerminal() {
   const [copied, setCopied] = useState(false);
 
   const handleCopy = () => {
-    navigator.clipboard.writeText("npx chanakya@latest");
+    navigator.clipboard.writeText("git clone https://github.com/Chanakya2006gt/Chanakya_Portfolio.git");
     setCopied(true);
-    toast.success("Copied `npx chanakya@latest` to clipboard!");
+    toast.success("Copied repo clone command to clipboard!");
     setTimeout(() => setCopied(false), 2000);
   };
 
@@ -80,7 +80,7 @@ function HeroTerminal() {
         </div>
         <div className="pl-4">
           <span className="text-foreground/70 dark:text-muted-foreground">role:</span>{" "}
-          <span className="text-emerald-800 dark:text-emerald-400 font-medium">"AI-Native Systems Architect & Founder"</span>,
+          <span className="text-emerald-800 dark:text-emerald-400 font-medium">"Independent Software Engineer & Founder"</span>,
         </div>
         <div className="pl-4">
           <span className="text-foreground/70 dark:text-muted-foreground">benchmarks:</span> &#123;
@@ -105,13 +105,6 @@ function HeroTerminal() {
           ],
         </div>
         <div className="pl-4">
-          <span className="text-foreground/70 dark:text-muted-foreground">workflow:</span> [
-          <span className="text-purple-800 dark:text-purple-300 font-medium">"Agentic AI"</span>,{" "}
-          <span className="text-cyan-800 dark:text-cyan-300 font-medium">"Antigravity"</span>,{" "}
-          <span className="text-emerald-800 dark:text-emerald-300 font-medium">"Claude Code"</span>
-          ],
-        </div>
-        <div className="pl-4">
           <span className="text-foreground/70 dark:text-muted-foreground">stack:</span> [
           <span className="text-cyan-800 dark:text-cyan-300 font-medium">"React 19"</span>,{" "}
           <span className="text-cyan-800 dark:text-cyan-300 font-medium">"TypeScript"</span>,{" "}
@@ -126,7 +119,7 @@ function HeroTerminal() {
         </div>
         <div className="pl-4">
           <span className="text-foreground/70 dark:text-muted-foreground">status:</span>{" "}
-          <span className="text-emerald-800 dark:text-emerald-400 font-bold">"Available for High-Impact Work"</span>
+          <span className="text-emerald-800 dark:text-emerald-400 font-bold">"Taking 2 Sprints / Month"</span>
         </div>
         <div>&#125;;</div>
 
@@ -134,7 +127,7 @@ function HeroTerminal() {
         <div className="mt-3 pt-3 border-t border-border/60 flex items-center justify-between gap-2 bg-secondary/50 -mx-4 -mb-4 sm:-mx-5 sm:-mb-5 p-3 rounded-b-2xl">
           <div className="flex items-center gap-2 text-[11px] text-foreground truncate font-mono">
             <span className="text-emerald-700 dark:text-emerald-400 font-bold">$</span>
-            <code className="text-foreground/80 dark:text-muted-foreground truncate font-semibold">npx chanakya@latest</code>
+            <code className="text-foreground/80 dark:text-muted-foreground truncate font-semibold">git clone github.com/Chanakya2006gt/Chanakya_Portfolio</code>
           </div>
           <button
             type="button"
@@ -272,14 +265,12 @@ function About({ email, pdfUrl, summary, education, skillsList, resume }: AboutP
           <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">About</p>
         </div>
         <h2 className="mt-3 font-serif text-3xl tracking-tight sm:text-4xl">
-          Builder first. Student second.
+          Operational software for quotes, approvals & payments.
         </h2>
         <div className="mt-8 grid gap-8 md:grid-cols-2">
           <div className="space-y-5 text-muted-foreground leading-relaxed">
             <p>
-              Engineering student at <span className="font-medium text-foreground">{education || "SR University (B.Tech in CSE, 2028)"}</span> focused on shipping real products. I care more
-              about constraints — <code className="rounded bg-secondary px-1.5 py-0.5 text-xs text-sage font-mono">secure payments</code>, <code className="rounded bg-secondary px-1.5 py-0.5 text-xs text-sage font-mono">approvals</code>, and <code className="rounded bg-secondary px-1.5 py-0.5 text-xs text-sage font-mono">multi-tenant systems</code> —
-              than collecting certificates.
+              Most growing businesses and agencies lose revenue in the same place: the friction gap between a quote and a confirmed payment. I build the operational software that closes it.
             </p>
             <p>
               Right now most of my time goes to <span className="font-medium text-foreground">Trelio</span>: a SaaS that forces client
@@ -293,12 +284,12 @@ function About({ email, pdfUrl, summary, education, skillsList, resume }: AboutP
                 <p className="text-xs font-semibold text-foreground">Warangal, India</p>
               </div>
               <div className="rounded-xl border border-border/70 bg-card/80 p-3 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.08)]">
-                <p className="text-[11px] font-mono text-muted-foreground uppercase tracking-wider">Degree & Focus</p>
-                <p className="text-xs font-semibold text-foreground">B.Tech CSE '28</p>
+                <p className="text-[11px] font-mono text-muted-foreground uppercase tracking-wider">Engagement Model</p>
+                <p className="text-xs font-semibold text-foreground">Independent Engineer</p>
               </div>
               <div className="col-span-2 rounded-xl border border-border/70 bg-card/80 p-3 sm:col-span-1 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.08)]">
                 <p className="text-[11px] font-mono text-muted-foreground uppercase tracking-wider">Core Focus</p>
-                <p className="text-xs font-semibold text-sage">Agentic AI & SaaS</p>
+                <p className="text-xs font-semibold text-sage">Quotes & Approvals</p>
               </div>
             </div>
 
@@ -313,7 +304,7 @@ function About({ email, pdfUrl, summary, education, skillsList, resume }: AboutP
                 trigger={
                   <Button variant="outline" className="gap-2 border-border/80 hover:border-sage hover:text-sage text-foreground rounded-xl shadow-sm">
                     <FileText className="size-4" />
-                    Read Full Resume & Credentials →
+                    Read Full Credentials & Background →
                   </Button>
                 }
               />
@@ -323,10 +314,10 @@ function About({ email, pdfUrl, summary, education, skillsList, resume }: AboutP
             <div>
               <div className="flex items-center gap-2">
                 <span className="size-2 rounded-full bg-emerald-400 shadow-[0_0_8px_#34d399]" />
-                <h4 className="text-sm font-semibold text-foreground">How I work · Agentic Velocity</h4>
+                <h4 className="text-sm font-semibold text-foreground">How I work · Direct Seniority</h4>
               </div>
               <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
-                Specification-first builder. I direct autonomous AI agents (Google Antigravity, Claude Code) with specialized skill plugins, strict design tokens (60-30-10 palette, WCAG 2.2 AA), and cryptographic guardrails (AES-256-GCM, Postgres RLS) to ship hardened production systems in days instead of months.
+                You work directly with me. No account managers, no junior developers, no handoffs. The engineer who scopes your system is the engineer who writes the code, designs the data model, and stays on call.
               </p>
             </div>
             <Separator className="bg-border/60" />
@@ -565,7 +556,7 @@ function Projects({ businessesList, sideProjectsList, email, pdfUrl, summary, ed
             Flagship Products
           </TabsTrigger>
           <TabsTrigger value="contracts" className="data-[state=active]:bg-card data-[state=active]:shadow-sm text-xs sm:text-sm rounded-lg">
-            Freelance Work
+            Fixed-Scope Sprints
           </TabsTrigger>
           <TabsTrigger value="side" className="data-[state=active]:bg-card data-[state=active]:shadow-sm text-xs sm:text-sm rounded-lg">
             Projects
@@ -577,7 +568,7 @@ function Projects({ businessesList, sideProjectsList, email, pdfUrl, summary, ed
           <BusinessCard items={businessesList} />
         </TabsContent>
 
-        {/* Tab 2: Freelance Work */}
+        {/* Tab 2: Fixed-Scope Sprints */}
         <TabsContent value="contracts" className="mt-6 animate-in fade-in-50 duration-200">
           <Card className="card-specular p-8 sm:p-12 text-center rounded-2xl relative overflow-hidden bg-gradient-to-br from-card via-card to-amber-500/10 dark:to-amber-500/10">
             <div className="absolute top-0 inset-x-0 h-0.5 bg-gradient-to-r from-amber-400 via-yellow-400 to-amber-500" />
@@ -585,14 +576,14 @@ function Projects({ businessesList, sideProjectsList, email, pdfUrl, summary, ed
               <div className="mx-auto flex size-12 items-center justify-center rounded-full bg-amber-100 dark:bg-amber-500/15 text-amber-800 dark:text-amber-400 border border-amber-300 dark:border-amber-500/30 shadow-sm dark:shadow-[0_0_15px_rgba(245,158,11,0.2)]">
                 <FileText className="size-5" />
               </div>
-              <h3 className="font-serif text-2xl text-foreground">Available for Client & Freelance Engagements</h3>
+              <h3 className="font-serif text-2xl text-foreground">15-Day Systems Sprints</h3>
               <p className="text-sm text-muted-foreground leading-relaxed">
-                I am currently open for freelance projects, full-stack consulting, and selective client work. As new engagements are delivered and cleared for public showcase, case studies and deliverables will be documented here.
+                Fixed-scope technical engagements to design, build, test, and harden one critical operational workflow (quotes, approvals, or payments). Every sprint includes a written specification, automated test suite, and complete repository handover.
               </p>
               <div className="pt-3 flex flex-wrap items-center justify-center gap-3">
                 <Button asChild size="sm" className="group rounded-xl bg-amber-500 hover:bg-amber-600 text-black font-semibold shadow-md active:scale-[0.98] transition-all pl-4 pr-2 py-1.5 inline-flex items-center gap-2">
                   <a href="#contact">
-                    <span>Discuss a Project</span>
+                    <span>Inquire About a Sprint</span>
                     <span className="flex size-5 items-center justify-center rounded-md bg-black/15 transition-transform duration-200 group-hover:translate-x-0.5">
                       <ArrowRight className="size-3 text-black" />
                     </span>
@@ -863,10 +854,10 @@ function Contact() {
         <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">Contact</p>
       </div>
       <h2 className="mt-3 font-serif text-3xl tracking-tight sm:text-4xl">
-        Open for freelance work & conversations
+        Let's build your operational workflow.
       </h2>
       <p className="mt-4 max-w-lg text-lg text-foreground/90 font-serif italic">
-        "Let's build something. I am available for freelance work, consulting, and select software engineering opportunities."
+        "Available for 15-Day Systems Sprints and fixed-scope technical engagements."
       </p>
 
       <div className="mt-10">
@@ -891,7 +882,7 @@ function Contact() {
             <form className="grid gap-4 mt-2" onSubmit={handleNoteSubmit}>
               <div className="grid gap-2">
                 <Label htmlFor="subject" className="text-xs">Subject</Label>
-                <Input id="subject" name="subject" placeholder="Project / Freelance Inquiry..." required className="rounded-xl bg-secondary/50" />
+                <Input id="subject" name="subject" placeholder="Sprint Inquiry / Systems Workflow..." required className="rounded-xl bg-secondary/50" />
               </div>
               <div className="grid gap-2">
                 <Label htmlFor="body" className="text-xs">Message</Label>
