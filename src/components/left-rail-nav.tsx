@@ -49,7 +49,7 @@ export function LeftRailNav({ resume }: { resume?: ResumeContent }) {
             href={`#${id}`}
             onClick={() => {
               if (id === "projects" && typeof window !== "undefined") {
-                window.dispatchEvent(new CustomEvent("portfolio-tab-switch", { detail: { tab: "side" } }));
+                window.dispatchEvent(new CustomEvent("portfolio-tab-switch", { detail: { tab: "plants" } }));
               }
             }}
             className="group relative flex items-center justify-center p-2 rounded-full hover:bg-secondary/40 transition-colors"

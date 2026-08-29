@@ -14,7 +14,7 @@ import { i as string, n as object, r as record, t as array } from "../_libs/zod.
 import crypto from "node:crypto";
 import path from "node:path";
 import fs from "node:fs";
-//#region node_modules/.nitro/vite/services/ssr/assets/router-Ac_lMXPM.js
+//#region node_modules/.nitro/vite/services/ssr/assets/router-7GA-CDT7.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 function AppErrorComponent({ error }) {
@@ -104,7 +104,7 @@ var TooltipContent = import_react.forwardRef(({ className, sideOffset = 6, ...pr
 	...props
 }) }));
 TooltipContent.displayName = Content2.displayName;
-var styles_default = "/assets/styles-CznoAhC5.css";
+var styles_default = "/assets/styles-DyR155cu.css";
 var APP_NAME = "Nagulagam Chanakya — Full-Stack Developer & SaaS Founder";
 var APP_DESC = "Official portfolio of Nagulagam Chanakya — Full-Stack Developer & Founder of Trelio. Specializing in React, Node.js, TypeScript, PostgreSQL, and applied software security.";
 var SITE_URL = "https://chanakya-portfolio-orcin.vercel.app";
@@ -312,12 +312,12 @@ var createSsrRpc = (functionId) => {
 	});
 };
 var fetchContent = createServerFn({ method: "GET" }).handler(createSsrRpc("2b99909e19342163fb9618a3b1f343b57fe68205625d940d83a174e978667293"));
-var $$splitComponentImporter$3 = () => import("./routes-DFDH55QZ.mjs");
+var $$splitComponentImporter$3 = () => import("./routes-Bu9GzhOS.mjs");
 var Route$12 = createFileRoute("/")({
 	loader: () => fetchContent(),
 	component: lazyRouteComponent($$splitComponentImporter$3, "component")
 });
-var $$splitComponentImporter$2 = () => import("./method-DujI4_7D.mjs");
+var $$splitComponentImporter$2 = () => import("./method-xNd6GTLj.mjs");
 var Route$11 = createFileRoute("/method")({
 	component: lazyRouteComponent($$splitComponentImporter$2, "component"),
 	head: () => ({ meta: [{ title: "The 15-Day Systems Factory — Nagulagam Chanakya" }, {
@@ -325,9 +325,9 @@ var Route$11 = createFileRoute("/method")({
 		content: "The 5-phase operating system used by independent engineer Nagulagam Chanakya to build, test, and ship hardened quote-to-cash operational software in 15 days."
 	}] })
 });
-var $$splitComponentImporter$1 = () => import("./admin-CqjYEOnN.mjs");
+var $$splitComponentImporter$1 = () => import("./admin-CymmxIPl.mjs");
 var Route$10 = createFileRoute("/admin/")({ component: lazyRouteComponent($$splitComponentImporter$1, "component") });
-var $$splitComponentImporter = () => import("./login-DRwnPJVl.mjs");
+var $$splitComponentImporter = () => import("./login-XYS6dkk1.mjs");
 var Route$9 = createFileRoute("/admin/login")({ component: lazyRouteComponent($$splitComponentImporter, "component") });
 var envCache = null;
 var lastCacheTime = 0;
@@ -538,19 +538,19 @@ To book a Paid Diagnosis, reach out at [${email}](mailto:${email}) or [LinkedIn]
 * **Frontend & SSR**: React 19, TypeScript, TanStack Start, Tailwind CSS v4, shadcn/ui, GSAP
 * **Backend & Data**: Node.js, Express, PostgreSQL, Drizzle ORM, Supabase RLS, compound B-Tree indexing
 * **Security & Reliability**: AES-256-GCM encryption, \`pg_advisory_xact_lock\` concurrency defense, automated Playwright test suites, WCAG 2.2 accessibility`;
-	if (lastUserMsg.includes("hire") || lastUserMsg.includes("job") || lastUserMsg.includes("role") || lastUserMsg.includes("work") || lastUserMsg.includes("contract") || lastUserMsg.includes("contact") || lastUserMsg.includes("email") || lastUserMsg.includes("available")) return `Chanakya operates as an independent software engineer taking fixed-scope technical engagements (**${workAvailability}**):
+	if (lastUserMsg.includes("hire") || lastUserMsg.includes("job") || lastUserMsg.includes("role") || lastUserMsg.includes("work") || lastUserMsg.includes("contract") || lastUserMsg.includes("contact") || lastUserMsg.includes("email") || lastUserMsg.includes("available")) return `Chanakya operates as an independent software engineer taking fixed-price technical builds (**${workAvailability}**):
 
-* **How to Start**: Book a **Scope & Proof** (₹40,000, 3 days, 100% credited to the build) to get a written spec, architecture model, and 1 deployed working screen.
-* **Main Engagement**: 15-Day Systems Sprint (₹3.5L – ₹6.0L) for quote-to-cash, approval, or payment workflows.
+* **How to Start**: Book a **Paid Diagnosis** (₹40,000, 3 days, 100% credited to the build) to get a written spec, data model layout, 1 deployed working screen, and a fixed build quote.
+* **Main Engagement**: One Workflow Built (₹3.5L – ₹6.0L, 15 days) for quote-to-job, approval, or payment workflows.
 * **Direct Contact**: [${email}](mailto:${email}) · [LinkedIn](${linkedinUrl}) · [GitHub](https://github.com/Chanakya2006gt)`;
 	return `Here is what I can share about Chanakya's work:
 
 * **Role**: Independent Software Engineer & SaaS Founder (Trelio.in, Apex Packaging CPQ)
-* **Focus**: Operational systems for quotes, approvals, and payments
+* **Focus**: Operational quote-to-job and payment systems for plants & agencies
 * **Capacity**: ${workAvailability}
-* **Engagement Ladder**: ₹40k Scope & Proof (3 days, credited) $\rightarrow$ ₹3.5L–₹6L 15-Day Systems Sprint
+* **Fixed-Price Model**: Step 1 · Paid Diagnosis (₹40k, 3 days, credited) → Step 2 · One Workflow Built (₹3.5L–₹6L, 15 days)
 
-For direct inquiries or sprint bookings:
+For direct inquiries or to book a paid diagnosis:
 * **Email**: [${email}](mailto:${email})
 * **LinkedIn**: [${linkedinUrl}](${linkedinUrl})`;
 }

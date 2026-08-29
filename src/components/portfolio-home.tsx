@@ -44,115 +44,6 @@ import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 import { ResumeModal } from "@/components/resume-modal";
 import { DynamicData } from "@/data/store";
 
-function HeroTerminal() {
-  const [copied, setCopied] = useState(false);
-
-  const handleCopy = () => {
-    navigator.clipboard.writeText("git clone https://github.com/Chanakya2006gt/Chanakya_Portfolio.git");
-    setCopied(true);
-    toast.success("Copied repo clone command to clipboard!");
-    setTimeout(() => setCopied(false), 2000);
-  };
-
-  return (
-    <div className="card-specular relative overflow-hidden rounded-2xl border border-border/80 bg-card backdrop-blur-xl shadow-[0_20px_50px_rgba(0,0,0,0.15)] dark:shadow-[0_20px_50px_rgba(0,0,0,0.45)] w-full max-w-md mx-auto">
-      {/* Terminal Titlebar with macOS Controls */}
-      <div className="flex items-center justify-between border-b border-border/70 bg-secondary/80 px-4 py-3">
-        <div className="flex items-center gap-2">
-          <span className="size-3 rounded-full bg-[#ff5f56] inline-block shadow-sm" />
-          <span className="size-3 rounded-full bg-[#ffbd2e] inline-block shadow-sm" />
-          <span className="size-3 rounded-full bg-[#27c93f] inline-block shadow-sm" />
-          <span className="ml-2 font-mono text-[11px] text-foreground/70 dark:text-muted-foreground font-semibold">chanakya.config.ts</span>
-        </div>
-        <div className="flex items-center gap-1.5 rounded-full bg-card px-2.5 py-0.5 border border-border/60 shadow-xs">
-          <CompanionSvg state="idle" size={14} />
-          <span className="font-mono text-[10px] text-emerald-700 dark:text-emerald-400 font-bold uppercase tracking-wider">v2.4</span>
-        </div>
-      </div>
-
-      {/* Code Body with High-Contrast Dark & Light Syntax Highlighting */}
-      <div className="p-4 sm:p-5 font-mono text-xs leading-relaxed space-y-1.5 select-text text-left">
-        <div>
-          <span className="text-purple-700 dark:text-purple-400 font-bold">const</span>{" "}
-          <span className="text-cyan-800 dark:text-cyan-300 font-bold">engineer</span> = &#123;
-        </div>
-        <div className="pl-4">
-          <span className="text-foreground/70 dark:text-muted-foreground">name:</span>{" "}
-          <span className="text-emerald-800 dark:text-emerald-400 font-medium">"Nagulagam Chanakya"</span>,
-        </div>
-        <div className="pl-4">
-          <span className="text-foreground/70 dark:text-muted-foreground">role:</span>{" "}
-          <span className="text-emerald-800 dark:text-emerald-400 font-medium">"Independent Software Engineer & Founder"</span>,
-        </div>
-        <div className="pl-4">
-          <span className="text-foreground/70 dark:text-muted-foreground">benchmarks:</span> &#123;
-        </div>
-        <div className="pl-8">
-          <span className="text-foreground/70 dark:text-muted-foreground">cpqThroughput:</span>{" "}
-          <span className="text-emerald-800 dark:text-emerald-400 font-medium">"273k ops/s (p99: 0.01ms)"</span>,
-        </div>
-        <div className="pl-8">
-          <span className="text-foreground/70 dark:text-muted-foreground">verifiedTests:</span>{" "}
-          <span className="text-cyan-800 dark:text-cyan-300 font-medium">"448/448 pass (29 suites)"</span>,
-        </div>
-        <div className="pl-8">
-          <span className="text-foreground/70 dark:text-muted-foreground">fuzzTesting:</span>{" "}
-          <span className="text-purple-800 dark:text-purple-300 font-medium">"1k invariants (fast-check)"</span>
-        </div>
-        <div className="pl-4">&#125;,</div>
-        <div className="pl-4">
-          <span className="text-foreground/70 dark:text-muted-foreground">flagship:</span> [
-          <span className="text-purple-800 dark:text-purple-300 font-medium">"Trelio.in"</span>,{" "}
-          <span className="text-cyan-800 dark:text-cyan-300 font-medium">"Apex Packaging CPQ"</span>
-          ],
-        </div>
-        <div className="pl-4">
-          <span className="text-foreground/70 dark:text-muted-foreground">stack:</span> [
-          <span className="text-cyan-800 dark:text-cyan-300 font-medium">"React 19"</span>,{" "}
-          <span className="text-cyan-800 dark:text-cyan-300 font-medium">"TypeScript"</span>,{" "}
-          <span className="text-emerald-800 dark:text-emerald-300 font-medium">"Supabase / Postgres"</span>
-          ],
-        </div>
-        <div className="pl-4">
-          <span className="text-foreground/70 dark:text-muted-foreground">security:</span> [
-          <span className="text-amber-800 dark:text-amber-300 font-medium">"AES-256-GCM"</span>,{" "}
-          <span className="text-amber-800 dark:text-amber-300 font-medium">"PostgreSQL RLS"</span>
-          ],
-        </div>
-        <div className="pl-4">
-          <span className="text-foreground/70 dark:text-muted-foreground">status:</span>{" "}
-          <span className="text-emerald-800 dark:text-emerald-400 font-bold">"Taking 2 Sprints / Month"</span>
-        </div>
-        <div>&#125;;</div>
-
-        {/* Interactive CLI Runner Footer */}
-        <div className="mt-3 pt-3 border-t border-border/60 flex items-center justify-between gap-2 bg-secondary/50 -mx-4 -mb-4 sm:-mx-5 sm:-mb-5 p-3 rounded-b-2xl">
-          <div className="flex items-center gap-2 text-[11px] text-foreground truncate font-mono">
-            <span className="text-emerald-700 dark:text-emerald-400 font-bold">$</span>
-            <code className="text-foreground/80 dark:text-muted-foreground truncate font-semibold">git clone github.com/Chanakya2006gt/Chanakya_Portfolio</code>
-          </div>
-          <button
-            type="button"
-            onClick={handleCopy}
-            className="inline-flex items-center gap-1.5 text-[10px] font-semibold uppercase tracking-wider px-2.5 py-1 rounded-lg bg-card border border-border/80 text-foreground hover:text-emerald-700 dark:hover:text-emerald-400 hover:border-emerald-500/40 transition-all shadow-sm shrink-0"
-          >
-            {copied ? (
-              <>
-                <Check className="size-3 text-emerald-700 dark:text-emerald-400" />
-                <span className="text-emerald-700 dark:text-emerald-400">Copied</span>
-              </>
-            ) : (
-              <>
-                <Copy className="size-3 text-muted-foreground" />
-                <span>Copy</span>
-              </>
-            )}
-          </button>
-        </div>
-      </div>
-    </div>
-  );
-}
 
 interface HeroProps {
   tagline?: string;
@@ -207,7 +98,7 @@ function Hero({ tagline, availabilityStatus, liveCount, email, pdfUrl, summary, 
                 href="#projects"
                 onClick={() => {
                   if (typeof window !== "undefined") {
-                    window.dispatchEvent(new CustomEvent("portfolio-tab-switch", { detail: { tab: "side" } }));
+                    window.dispatchEvent(new CustomEvent("portfolio-tab-switch", { detail: { tab: "plants" } }));
                   }
                 }}
               >
@@ -326,15 +217,15 @@ function About({ email, pdfUrl, summary, education, skillsList, resume }: AboutP
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="mt-1.5 size-1 rounded-full bg-cyan-400 shrink-0" />
-                  <span><strong className="text-foreground font-medium">Industrial CPQ:</strong> Refining FINAT 1–8 automated rewind geometry math.</span>
+                  <span><strong className="text-foreground font-medium">Industrial CPQ:</strong> Developing FINAT 1–8 automated rewind geometry math and sales estimating.</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="mt-1.5 size-1 rounded-full bg-sage shrink-0" />
-                  <span><strong className="text-foreground font-medium">Agentic Tooling:</strong> Designing multi-agent skill systems for rapid software delivery.</span>
+                  <span><strong className="text-foreground font-medium">Delivery Factory:</strong> Automated testing, deterministic state machines, and zero-downtime releases.</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="mt-1.5 size-1 rounded-full bg-amber-400 shrink-0" />
-                  <span><strong className="text-foreground font-medium">Availability:</strong> Open for contract engagements & high-impact software roles.</span>
+                  <span><strong className="text-foreground font-medium">Capacity:</strong> Taking 2 builds a month · booking the next slot.</span>
                 </li>
               </ul>
             </div>
@@ -500,7 +391,7 @@ interface ProjectsProps {
 
 function Projects({ businessesList, sideProjectsList, email, pdfUrl, summary, education, skillsList, resume }: ProjectsProps) {
   const { ref, isVisible } = useScrollAnimation();
-  const [activeTab, setActiveTab] = useState<string>("businesses");
+  const [activeTab, setActiveTab] = useState<string>("plants");
 
   useEffect(() => {
     const handleSwitchTab = (e: any) => {
@@ -512,7 +403,7 @@ function Projects({ businessesList, sideProjectsList, email, pdfUrl, summary, ed
 
     const checkHash = () => {
       if (window.location.hash === "#projects") {
-        setActiveTab("side");
+        setActiveTab("plants");
       }
     };
     checkHash();
@@ -524,6 +415,9 @@ function Projects({ businessesList, sideProjectsList, email, pdfUrl, summary, ed
     };
   }, []);
 
+  const apexProject = sideProjectsList.find((p) => p.id === "apex") || sideProjectsList[0];
+  const portfolioProject = sideProjectsList.find((p) => p.id === "portfolio") || sideProjectsList[1];
+
   return (
     <section
       id="projects"
@@ -534,178 +428,158 @@ function Projects({ businessesList, sideProjectsList, email, pdfUrl, summary, ed
     >
       <div className="flex items-center gap-2">
         <span className="h-4 w-1 rounded-full bg-emerald-600 dark:bg-emerald-400 shadow-[0_0_8px_#10b981]" />
-        <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">Work</p>
+        <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">Live Systems</p>
       </div>
       <h2 className="mt-3 font-serif text-3xl tracking-tight sm:text-4xl">
-        Featured Projects
+        Quote & Workflow Software in Production
       </h2>
-      <p className="mt-3 max-w-xl text-muted-foreground">
-        Serious SaaS products and engineered software built under real constraints.
+      <p className="mt-3 max-w-xl text-muted-foreground text-sm sm:text-base leading-relaxed">
+        Operational systems deployed on custom domains with active users and real transaction constraints.
       </p>
 
       <Tabs value={activeTab} onValueChange={setActiveTab} className="mt-10">
         <TabsList className="bg-secondary/80 p-1 border border-border/70 flex-wrap h-auto rounded-xl shadow-inner">
-          <TabsTrigger value="businesses" className="data-[state=active]:bg-card data-[state=active]:shadow-sm text-xs sm:text-sm rounded-lg">
-            Flagship Products
+          <TabsTrigger value="plants" className="data-[state=active]:bg-card data-[state=active]:shadow-sm text-xs sm:text-sm rounded-lg">
+            Manufacturing & Converting (Apex)
           </TabsTrigger>
-          <TabsTrigger value="contracts" className="data-[state=active]:bg-card data-[state=active]:shadow-sm text-xs sm:text-sm rounded-lg">
-            Fixed-Scope Sprints
+          <TabsTrigger value="agencies" className="data-[state=active]:bg-card data-[state=active]:shadow-sm text-xs sm:text-sm rounded-lg">
+            Agencies & Studios (Trelio)
           </TabsTrigger>
-          <TabsTrigger value="side" className="data-[state=active]:bg-card data-[state=active]:shadow-sm text-xs sm:text-sm rounded-lg">
-            Projects
+          <TabsTrigger value="code" className="data-[state=active]:bg-card data-[state=active]:shadow-sm text-xs sm:text-sm rounded-lg">
+            Open-Source Architecture
           </TabsTrigger>
         </TabsList>
 
-        {/* Tab 1: Flagship Products */}
-        <TabsContent value="businesses" className="mt-6 animate-in fade-in-50 duration-200">
+        {/* Tab 1: Plants & Converting (Apex) */}
+        <TabsContent value="plants" className="mt-6 animate-in fade-in-50 duration-200">
+          {apexProject && (
+            <Card className="card-specular relative overflow-hidden p-2 flex flex-col justify-between rounded-2xl bg-gradient-to-br from-card via-card to-cyan-500/10 dark:to-cyan-500/10">
+              <div className="absolute top-0 inset-x-0 h-0.5 bg-gradient-to-r from-cyan-400 via-blue-500 to-indigo-500" />
+              <div className="p-4 sm:p-6">
+                <div className="mb-4 flex flex-wrap items-center justify-between gap-2">
+                  {apexProject.liveUrl && (
+                    <a
+                      href={apexProject.liveUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 rounded-full border px-3 py-1 text-xs font-semibold transition-all border-cyan-500/30 bg-cyan-500/10 text-cyan-800 dark:text-cyan-300 hover:bg-cyan-500/20 shadow-[0_0_10px_rgba(6,182,212,0.18)]"
+                    >
+                      <span className="size-1.5 rounded-full bg-cyan-400 animate-ping" />
+                      <ExternalLink className="size-3" />
+                      {apexProject.liveUrl.replace(/^https?:\/\//, "")}
+                    </a>
+                  )}
+                  {apexProject.githubUrl && (
+                    <a
+                      href={apexProject.githubUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 rounded-full border border-border/80 bg-secondary/60 px-3 py-1 text-xs font-medium text-muted-foreground hover:text-foreground hover:bg-secondary transition-all shadow-xs"
+                      title="View Source Repository"
+                    >
+                      <Github className="size-3.5" />
+                      <span>Source Code</span>
+                    </a>
+                  )}
+                </div>
+
+                <ApexPreview />
+
+                <CardHeader className="px-0 pb-2 pt-5">
+                  <div className="flex items-start justify-between gap-3">
+                    <CardTitle className="font-serif text-2xl sm:text-3xl">
+                      {apexProject.title}
+                    </CardTitle>
+                    <Badge variant="outline" className="shadow-xs font-mono text-[11px] uppercase tracking-wider bg-cyan-500/15 text-cyan-800 dark:text-cyan-300 border-cyan-500/30">
+                      Industrial CPQ
+                    </Badge>
+                  </div>
+                  <CardDescription className="text-sm text-muted-foreground leading-relaxed pt-1.5">
+                    {apexProject.description}
+                  </CardDescription>
+                </CardHeader>
+
+                <CardContent className="px-0 pt-4 pb-2">
+                  <div className="flex flex-wrap gap-1.5">
+                    {apexProject.stack.map((tech) => (
+                      <Badge key={tech} variant="secondary" className="font-mono text-xs font-normal border border-border/50">
+                        {tech}
+                      </Badge>
+                    ))}
+                  </div>
+                </CardContent>
+
+                <CardFooter className="px-0 pt-4 flex items-center justify-between border-t border-border/60">
+                  <span className="font-mono text-xs text-muted-foreground">Production Industrial Platform</span>
+                  {apexProject.liveUrl && (
+                    <Button asChild size="sm" className="btn-sage-glow rounded-xl font-semibold shadow-xs">
+                      <a href={apexProject.liveUrl} target="_blank" rel="noopener noreferrer">
+                        <span>Launch Platform</span>
+                        <ExternalLink className="ml-1.5 size-3.5" />
+                      </a>
+                    </Button>
+                  )}
+                </CardFooter>
+              </div>
+            </Card>
+          )}
+        </TabsContent>
+
+        {/* Tab 2: Agencies & Studios (Trelio) */}
+        <TabsContent value="agencies" className="mt-6 animate-in fade-in-50 duration-200">
           <BusinessCard items={businessesList} />
         </TabsContent>
 
-        {/* Tab 2: Fixed-Scope Sprints */}
-        <TabsContent value="contracts" className="mt-6 animate-in fade-in-50 duration-200">
-          <Card className="card-specular p-8 sm:p-12 text-center rounded-2xl relative overflow-hidden bg-gradient-to-br from-card via-card to-amber-500/10 dark:to-amber-500/10">
-            <div className="absolute top-0 inset-x-0 h-0.5 bg-gradient-to-r from-amber-400 via-yellow-400 to-amber-500" />
-            <div className="mx-auto max-w-md space-y-3">
-              <div className="mx-auto flex size-12 items-center justify-center rounded-full bg-amber-100 dark:bg-amber-500/15 text-amber-800 dark:text-amber-400 border border-amber-300 dark:border-amber-500/30 shadow-sm dark:shadow-[0_0_15px_rgba(245,158,11,0.2)]">
-                <FileText className="size-5" />
-              </div>
-              <h3 className="font-serif text-2xl text-foreground">15-Day Systems Sprints</h3>
-              <p className="text-sm text-muted-foreground leading-relaxed">
-                Fixed-scope technical engagements to design, build, test, and harden one critical operational workflow (quotes, approvals, or payments). Every sprint includes a written specification, automated test suite, and complete repository handover.
-              </p>
-              <div className="pt-3 flex flex-wrap items-center justify-center gap-3">
-                <Button asChild size="sm" className="group rounded-xl bg-amber-500 hover:bg-amber-600 text-black font-semibold shadow-md active:scale-[0.98] transition-all pl-4 pr-2 py-1.5 inline-flex items-center gap-2">
-                  <a href="#contact">
-                    <span>Inquire About a Sprint</span>
-                    <span className="flex size-5 items-center justify-center rounded-md bg-black/15 transition-transform duration-200 group-hover:translate-x-0.5">
-                      <ArrowRight className="size-3 text-black" />
-                    </span>
+        {/* Tab 3: Open-Source Code */}
+        <TabsContent value="code" className="mt-6 animate-in fade-in-50 duration-200">
+          {portfolioProject && (
+            <Card className="card-specular relative overflow-hidden p-2 flex flex-col justify-between rounded-2xl bg-gradient-to-br from-card via-card to-purple-500/10 dark:to-purple-500/10">
+              <div className="absolute top-0 inset-x-0 h-0.5 bg-gradient-to-r from-purple-400 via-indigo-400 to-cyan-500" />
+              <div className="p-4 sm:p-6">
+                <div className="mb-4 flex flex-wrap items-center justify-between gap-2">
+                  <span className="inline-flex items-center gap-1.5 rounded-full border px-3 py-1 text-xs font-semibold border-purple-500/30 bg-purple-500/10 text-purple-800 dark:text-purple-300">
+                    <span className="size-1.5 rounded-full bg-purple-400 animate-ping" />
+                    Open Source
+                  </span>
+                  <a
+                    href="https://github.com/Chanakya2006gt/Chanakya_Portfolio"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 rounded-full border border-border/80 bg-secondary/60 px-3 py-1 text-xs font-medium text-muted-foreground hover:text-foreground hover:bg-secondary transition-all shadow-xs"
+                  >
+                    <Github className="size-3.5" />
+                    <span>View Repository</span>
                   </a>
-                </Button>
-                <ResumeModal
-                  resume={resume}
-                  email={email}
-                  pdfUrl={pdfUrl}
-                  summary={summary}
-                  education={education}
-                  skillsList={skillsList}
-                  trigger={
-                    <Button size="sm" variant="outline" className="rounded-xl border-border/80 hover:text-amber-800 dark:hover:text-amber-400 shadow-sm active:scale-[0.98] transition-all">
-                      View Credentials
-                    </Button>
-                  }
-                />
-              </div>
-            </div>
-          </Card>
-        </TabsContent>
+                </div>
 
-        {/* Tab 3: Projects */}
-        <TabsContent value="side" className="mt-6 animate-in fade-in-50 duration-200">
-          <div className="grid gap-6 sm:grid-cols-2">
-            {sideProjectsList.map((project) => {
-              const isApex = project.id === "apex";
+                <PortfolioSitePreview />
 
-              return (
-                <Card
-                  key={project.id}
-                  className={`card-specular relative overflow-hidden p-2 flex flex-col justify-between rounded-2xl bg-gradient-to-br from-card via-card ${
-                    isApex
-                      ? "to-cyan-500/10 dark:to-cyan-500/10 sm:col-span-2"
-                      : "to-purple-500/10 dark:to-purple-500/10 sm:col-span-2"
-                  }`}
-                >
-                  <div
-                    className={`absolute top-0 inset-x-0 h-0.5 bg-gradient-to-r ${
-                      isApex
-                        ? "from-cyan-400 via-blue-500 to-indigo-500"
-                        : "from-purple-400 via-indigo-400 to-cyan-500"
-                    }`}
-                  />
-                  <div className="p-4 sm:p-6">
-                    <div className="mb-4 flex flex-wrap items-center justify-between gap-2">
-                      {project.liveUrl && (
-                        <a
-                          href={project.liveUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className={`inline-flex items-center gap-1.5 rounded-full border px-3 py-1 text-xs font-semibold transition-all ${
-                            isApex
-                              ? "border-cyan-500/30 bg-cyan-500/10 text-cyan-800 dark:text-cyan-300 hover:bg-cyan-500/20 shadow-[0_0_10px_rgba(6,182,212,0.18)]"
-                              : "border-purple-500/30 bg-purple-500/10 text-purple-800 dark:text-purple-300 hover:bg-purple-500/20"
-                          }`}
-                        >
-                          <span className={`size-1.5 rounded-full ${isApex ? "bg-cyan-400" : "bg-purple-400"} animate-ping`} />
-                          <ExternalLink className="size-3" />
-                          {project.liveUrl.replace(/^https?:\/\//, "")}
-                        </a>
-                      )}
-                      {project.githubUrl && (
-                        <a
-                          href={project.githubUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="inline-flex items-center gap-1.5 rounded-full border border-border/80 bg-secondary/60 px-3 py-1 text-xs font-medium text-muted-foreground hover:text-foreground hover:bg-secondary transition-all shadow-xs"
-                          title="View Source Repository"
-                        >
-                          <Github className="size-3.5" />
-                          <span>Source Code</span>
-                        </a>
-                      )}
-                    </div>
-
-                    {isApex ? <ApexPreview /> : <PortfolioSitePreview />}
-
-                    <CardHeader className="px-0 pb-2 pt-5">
-                      <div className="flex items-start justify-between gap-3">
-                        <CardTitle className="font-serif text-2xl sm:text-3xl">
-                          {project.title}
-                        </CardTitle>
-                        {project.badge && (
-                          <Badge
-                            variant="outline"
-                            className={`shadow-xs font-mono text-[11px] uppercase tracking-wider ${
-                              isApex
-                                ? "bg-cyan-500/15 text-cyan-800 dark:text-cyan-300 border-cyan-500/30"
-                                : "bg-purple-500/15 text-purple-800 dark:text-purple-300 border-purple-500/30"
-                            }`}
-                          >
-                            {project.badge}
-                          </Badge>
-                        )}
-                      </div>
-                      <CardDescription className="text-sm sm:text-base text-muted-foreground mt-2 leading-relaxed">
-                        {project.description}
-                      </CardDescription>
-                    </CardHeader>
-                    <CardContent className="flex flex-wrap gap-2 px-0 pt-4">
-                      {project.stack.map((tech) => (
-                        <span
-                          key={tech}
-                          className={`inline-flex items-center rounded-lg px-2.5 py-1 text-xs font-medium border shadow-2xs ${
-                            isApex
-                              ? "border-cyan-300 dark:border-cyan-500/25 bg-cyan-50 dark:bg-cyan-500/10 text-cyan-800 dark:text-cyan-300"
-                              : "border-purple-300 dark:border-purple-500/25 bg-purple-50 dark:bg-purple-500/10 text-purple-800 dark:text-purple-300"
-                          }`}
-                        >
-                          {tech}
-                        </span>
-                      ))}
-                    </CardContent>
+                <CardHeader className="px-0 pb-2 pt-5">
+                  <div className="flex items-start justify-between gap-3">
+                    <CardTitle className="font-serif text-2xl sm:text-3xl">
+                      {portfolioProject.title}
+                    </CardTitle>
+                    <Badge variant="outline" className="shadow-xs font-mono text-[11px] uppercase tracking-wider bg-purple-500/15 text-purple-800 dark:text-purple-300 border-purple-500/30">
+                      Portfolio Architecture
+                    </Badge>
                   </div>
-                </Card>
-              );
-            })}
+                  <CardDescription className="text-sm text-muted-foreground leading-relaxed pt-1.5">
+                    {portfolioProject.description}
+                  </CardDescription>
+                </CardHeader>
 
-            {/* Polite 'More to come' card */}
-            <Card className="relative overflow-hidden p-6 border-dashed border-border/80 bg-secondary/30 flex flex-col items-center justify-center text-center min-h-[160px] rounded-2xl shadow-[inset_0_1px_0_0_rgba(255,255,255,0.04)] sm:col-span-2">
-              <span className="size-2 rounded-full bg-cyan-600 dark:bg-cyan-400 shadow-[0_0_8px_#38bdf8] animate-pulse mb-2" />
-              <p className="font-serif text-base text-foreground/90">More Projects in Progress</p>
-              <p className="text-xs text-muted-foreground mt-1.5 max-w-sm leading-relaxed">
-                Active tools, packages, and open-source software will be posted here as they are published.
-              </p>
+                <CardContent className="px-0 pt-4 pb-2">
+                  <div className="flex flex-wrap gap-1.5">
+                    {portfolioProject.stack.map((tech) => (
+                      <Badge key={tech} variant="secondary" className="font-mono text-xs font-normal border border-border/50">
+                        {tech}
+                      </Badge>
+                    ))}
+                  </div>
+                </CardContent>
+              </div>
             </Card>
-          </div>
+          )}
         </TabsContent>
       </Tabs>
     </section>
@@ -850,7 +724,7 @@ function Contact() {
         Let's build your operational workflow.
       </h2>
       <p className="mt-4 max-w-lg text-lg text-foreground/90 font-serif italic">
-        "Available for 15-Day Systems Sprints and fixed-scope technical engagements."
+        "Available for Quote-to-Job Builds and Paid Diagnoses."
       </p>
 
       <div className="mt-10">
@@ -875,11 +749,11 @@ function Contact() {
             <form className="grid gap-4 mt-2" onSubmit={handleNoteSubmit}>
               <div className="grid gap-2">
                 <Label htmlFor="subject" className="text-xs">Subject</Label>
-                <Input id="subject" name="subject" placeholder="Sprint Inquiry / Systems Workflow..." required className="rounded-xl bg-secondary/50" />
+                <Input id="subject" name="subject" placeholder="Paid Diagnosis / Quoting Workflow..." required className="rounded-xl bg-secondary/50" />
               </div>
               <div className="grid gap-2">
                 <Label htmlFor="body" className="text-xs">Message</Label>
-                <Textarea id="body" name="body" placeholder="What are the details of the project or opportunity?" required rows={4} className="rounded-xl bg-secondary/50" />
+                <Textarea id="body" name="body" placeholder="What are the details of your operational workflow?" required rows={4} className="rounded-xl bg-secondary/50" />
               </div>
               <div className="flex gap-2">
                 <Button type="submit" className="rounded-xl mt-2 flex-1 btn-sage-glow">Open mail client</Button>

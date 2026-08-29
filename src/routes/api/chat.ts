@@ -154,10 +154,10 @@ To book a Paid Diagnosis, reach out at [${email}](mailto:${email}) or [LinkedIn]
     lastUserMsg.includes("email") ||
     lastUserMsg.includes("available")
   ) {
-    return `Chanakya operates as an independent software engineer taking fixed-scope technical engagements (**${workAvailability}**):
+    return `Chanakya operates as an independent software engineer taking fixed-price technical builds (**${workAvailability}**):
 
-* **How to Start**: Book a **Scope & Proof** (₹40,000, 3 days, 100% credited to the build) to get a written spec, architecture model, and 1 deployed working screen.
-* **Main Engagement**: 15-Day Systems Sprint (₹3.5L – ₹6.0L) for quote-to-cash, approval, or payment workflows.
+* **How to Start**: Book a **Paid Diagnosis** (₹40,000, 3 days, 100% credited to the build) to get a written spec, data model layout, 1 deployed working screen, and a fixed build quote.
+* **Main Engagement**: One Workflow Built (₹3.5L – ₹6.0L, 15 days) for quote-to-job, approval, or payment workflows.
 * **Direct Contact**: [${email}](mailto:${email}) · [LinkedIn](${linkedinUrl}) · [GitHub](https://github.com/Chanakya2006gt)`;
   }
 
@@ -165,11 +165,11 @@ To book a Paid Diagnosis, reach out at [${email}](mailto:${email}) or [LinkedIn]
   return `Here is what I can share about Chanakya's work:
 
 * **Role**: Independent Software Engineer & SaaS Founder (Trelio.in, Apex Packaging CPQ)
-* **Focus**: Operational systems for quotes, approvals, and payments
+* **Focus**: Operational quote-to-job and payment systems for plants & agencies
 * **Capacity**: ${workAvailability}
-* **Engagement Ladder**: ₹40k Scope & Proof (3 days, credited) $\rightarrow$ ₹3.5L–₹6L 15-Day Systems Sprint
+* **Fixed-Price Model**: Step 1 · Paid Diagnosis (₹40k, 3 days, credited) → Step 2 · One Workflow Built (₹3.5L–₹6L, 15 days)
 
-For direct inquiries or sprint bookings:
+For direct inquiries or to book a paid diagnosis:
 * **Email**: [${email}](mailto:${email})
 * **LinkedIn**: [${linkedinUrl}](${linkedinUrl})`;
 }

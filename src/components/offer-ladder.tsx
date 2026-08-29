@@ -141,7 +141,15 @@ export function OfferLadder() {
             <ul className="space-y-2 text-xs text-foreground/90 pt-1">
               <li className="flex items-start gap-2">
                 <CheckCircle2 className="size-3.5 text-emerald-800 dark:text-emerald-400 shrink-0 mt-0.5" />
-                <span>Written workflow spec & state boundaries</span>
+                <span><strong>1 deployed working screen</strong> on a live URL you can test</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <CheckCircle2 className="size-3.5 text-emerald-800 dark:text-emerald-400 shrink-0 mt-0.5" />
+                <span><strong>Guaranteed fixed quote</strong> for the 15-day build</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <CheckCircle2 className="size-3.5 text-emerald-800 dark:text-emerald-400 shrink-0 mt-0.5" />
+                <span>Written workflow map & operational rules</span>
               </li>
               <li className="flex items-start gap-2">
                 <CheckCircle2 className="size-3.5 text-emerald-800 dark:text-emerald-400 shrink-0 mt-0.5" />
@@ -149,11 +157,7 @@ export function OfferLadder() {
               </li>
               <li className="flex items-start gap-2">
                 <CheckCircle2 className="size-3.5 text-emerald-800 dark:text-emerald-400 shrink-0 mt-0.5" />
-                <span><strong>1 deployed working screen</strong> on a live URL</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <CheckCircle2 className="size-3.5 text-emerald-800 dark:text-emerald-400 shrink-0 mt-0.5" />
-                <span>Guaranteed fixed quote for the 15-day build</span>
+                <span>10-minute video walkthrough explaining the build</span>
               </li>
             </ul>
           </div>

@@ -5,14 +5,14 @@ import { s as require_jsx_runtime } from "../_libs/@radix-ui/react-collection+[.
 import { A as Database, B as Award, C as Layers, D as Factory, E as FileText, F as Check, H as ArrowUpRight, I as Calculator, L as Building2, M as CodeXml, N as Clock, O as ExternalLink, P as CircleCheck, R as Briefcase, T as Github, U as ArrowRight, V as ArrowUp, _ as MapPin, b as Lock, c as ShieldCheck, f as RefreshCw, g as Menu, k as Disc, l as Send, n as User, p as Printer, t as X, v as Mail, w as GraduationCap, x as Linkedin, z as Bot } from "../_libs/lucide-react.mjs";
 import { a as DialogOverlay$1, c as DialogTrigger$1, i as DialogDescription$1, n as DialogClose, o as DialogPortal$1, r as DialogContent$1, s as DialogTitle$1, t as Dialog$1 } from "../_libs/@radix-ui/react-dialog+[...].mjs";
 import { n as toast } from "../_libs/sonner.mjs";
-import { n as Route$12, r as cn } from "./router-Ac_lMXPM.mjs";
-import { a as CardFooter, i as CardDescription, n as Card, o as CardHeader, r as CardContent, s as CardTitle, t as Button } from "./card-BdeV50cV.mjs";
-import { n as Label, t as Input } from "./label-BdkQG8D0.mjs";
-import { a as Textarea, i as TabsTrigger, n as TabsContent, r as TabsList, t as Tabs } from "./tabs-huupm5HF.mjs";
-import { t as Badge } from "./badge-0IHuHhl_.mjs";
-import { n as useScrollAnimation, t as ThemeToggle } from "./theme-toggle-D2HBRx68.mjs";
+import { n as Route$12, r as cn } from "./router-7GA-CDT7.mjs";
+import { a as CardFooter, i as CardDescription, n as Card, o as CardHeader, r as CardContent, s as CardTitle, t as Button } from "./card-DVCpRiMc.mjs";
+import { n as Label, t as Input } from "./label-CjQZaqyj.mjs";
+import { a as Textarea, i as TabsTrigger, n as TabsContent, r as TabsList, t as Tabs } from "./tabs-M7WxGvax.mjs";
+import { t as Badge } from "./badge-uYrgT7Hg.mjs";
+import { n as useScrollAnimation, t as ThemeToggle } from "./theme-toggle-DbV0dIJj.mjs";
 import { t as Root } from "../_libs/radix-ui__react-separator.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/routes-DFDH55QZ.js
+//#region node_modules/.nitro/vite/services/ssr/assets/routes-Bu9GzhOS.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 var Separator = import_react.forwardRef(({ className, orientation = "horizontal", decorative = true, ...props }, ref) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Root, {
@@ -676,7 +676,15 @@ function OfferLadder() {
 									children: [
 										/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("li", {
 											className: "flex items-start gap-2",
-											children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(CircleCheck, { className: "size-3.5 text-emerald-800 dark:text-emerald-400 shrink-0 mt-0.5" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { children: "Written workflow spec & state boundaries" })]
+											children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(CircleCheck, { className: "size-3.5 text-emerald-800 dark:text-emerald-400 shrink-0 mt-0.5" }), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("span", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("strong", { children: "1 deployed working screen" }), " on a live URL you can test"] })]
+										}),
+										/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("li", {
+											className: "flex items-start gap-2",
+											children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(CircleCheck, { className: "size-3.5 text-emerald-800 dark:text-emerald-400 shrink-0 mt-0.5" }), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("span", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("strong", { children: "Guaranteed fixed quote" }), " for the 15-day build"] })]
+										}),
+										/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("li", {
+											className: "flex items-start gap-2",
+											children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(CircleCheck, { className: "size-3.5 text-emerald-800 dark:text-emerald-400 shrink-0 mt-0.5" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { children: "Written workflow map & operational rules" })]
 										}),
 										/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("li", {
 											className: "flex items-start gap-2",
@@ -684,11 +692,7 @@ function OfferLadder() {
 										}),
 										/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("li", {
 											className: "flex items-start gap-2",
-											children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(CircleCheck, { className: "size-3.5 text-emerald-800 dark:text-emerald-400 shrink-0 mt-0.5" }), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("span", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("strong", { children: "1 deployed working screen" }), " on a live URL"] })]
-										}),
-										/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("li", {
-											className: "flex items-start gap-2",
-											children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(CircleCheck, { className: "size-3.5 text-emerald-800 dark:text-emerald-400 shrink-0 mt-0.5" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { children: "Guaranteed fixed quote for the 15-day build" })]
+											children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(CircleCheck, { className: "size-3.5 text-emerald-800 dark:text-emerald-400 shrink-0 mt-0.5" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { children: "10-minute video walkthrough explaining the build" })]
 										})
 									]
 								})
@@ -1086,7 +1090,7 @@ function SiteNav() {
 							return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("a", {
 								href: link.href,
 								onClick: () => {
-									if (sectionId === "projects" && typeof window !== "undefined") window.dispatchEvent(new CustomEvent("portfolio-tab-switch", { detail: { tab: "side" } }));
+									if (sectionId === "projects" && typeof window !== "undefined") window.dispatchEvent(new CustomEvent("portfolio-tab-switch", { detail: { tab: "plants" } }));
 								},
 								className: `text-sm transition-colors relative py-1 ${isActive ? "font-medium text-sage" : "text-muted-foreground hover:text-foreground"}`,
 								children: [link.label, isActive && /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: "absolute bottom-0 left-0 h-0.5 w-full rounded-full bg-sage transition-all duration-300" })]
@@ -1501,7 +1505,7 @@ function LeftRailNav({ resume }) {
 				children: sections.map((id) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)("a", {
 					href: `#${id}`,
 					onClick: () => {
-						if (id === "projects" && typeof window !== "undefined") window.dispatchEvent(new CustomEvent("portfolio-tab-switch", { detail: { tab: "side" } }));
+						if (id === "projects" && typeof window !== "undefined") window.dispatchEvent(new CustomEvent("portfolio-tab-switch", { detail: { tab: "plants" } }));
 					},
 					className: "group relative flex items-center justify-center p-2 rounded-full hover:bg-secondary/40 transition-colors",
 					title: id.charAt(0).toUpperCase() + id.slice(1),
@@ -2517,7 +2521,7 @@ function Hero({ tagline, availabilityStatus, liveCount, email, pdfUrl, summary, 
 								children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("a", {
 									href: "#projects",
 									onClick: () => {
-										if (typeof window !== "undefined") window.dispatchEvent(new CustomEvent("portfolio-tab-switch", { detail: { tab: "side" } }));
+										if (typeof window !== "undefined") window.dispatchEvent(new CustomEvent("portfolio-tab-switch", { detail: { tab: "plants" } }));
 									},
 									children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { children: "Try Live Quoting System ↓" })
 								})
@@ -2668,21 +2672,21 @@ function About({ email, pdfUrl, summary, education, skillsList, resume }) {
 										children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: "mt-1.5 size-1 rounded-full bg-cyan-400 shrink-0" }), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("span", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("strong", {
 											className: "text-foreground font-medium",
 											children: "Industrial CPQ:"
-										}), " Refining FINAT 1–8 automated rewind geometry math."] })]
+										}), " Developing FINAT 1–8 automated rewind geometry math and sales estimating."] })]
 									}),
 									/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("li", {
 										className: "flex items-start gap-2",
 										children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: "mt-1.5 size-1 rounded-full bg-sage shrink-0" }), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("span", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("strong", {
 											className: "text-foreground font-medium",
-											children: "Agentic Tooling:"
-										}), " Designing multi-agent skill systems for rapid software delivery."] })]
+											children: "Delivery Factory:"
+										}), " Automated testing, deterministic state machines, and zero-downtime releases."] })]
 									}),
 									/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("li", {
 										className: "flex items-start gap-2",
 										children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: "mt-1.5 size-1 rounded-full bg-amber-400 shrink-0" }), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("span", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("strong", {
 											className: "text-foreground font-medium",
-											children: "Availability:"
-										}), " Open for contract engagements & high-impact software roles."] })]
+											children: "Capacity:"
+										}), " Taking 2 builds a month · booking the next slot."] })]
 									})
 								]
 							})] })
@@ -2864,14 +2868,14 @@ function PortfolioSitePreview() {
 }
 function Projects({ businessesList, sideProjectsList, email, pdfUrl, summary, education, skillsList, resume }) {
 	const { ref, isVisible } = useScrollAnimation();
-	const [activeTab, setActiveTab] = (0, import_react.useState)("businesses");
+	const [activeTab, setActiveTab] = (0, import_react.useState)("plants");
 	(0, import_react.useEffect)(() => {
 		const handleSwitchTab = (e) => {
 			if (e.detail?.tab) setActiveTab(e.detail.tab);
 		};
 		window.addEventListener("portfolio-tab-switch", handleSwitchTab);
 		const checkHash = () => {
-			if (window.location.hash === "#projects") setActiveTab("side");
+			if (window.location.hash === "#projects") setActiveTab("plants");
 		};
 		checkHash();
 		window.addEventListener("hashchange", checkHash);
@@ -2880,6 +2884,8 @@ function Projects({ businessesList, sideProjectsList, email, pdfUrl, summary, ed
 			window.removeEventListener("hashchange", checkHash);
 		};
 	}, []);
+	const apexProject = sideProjectsList.find((p) => p.id === "apex") || sideProjectsList[0];
+	const portfolioProject = sideProjectsList.find((p) => p.id === "portfolio") || sideProjectsList[1];
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("section", {
 		id: "projects",
 		ref,
@@ -2889,16 +2895,16 @@ function Projects({ businessesList, sideProjectsList, email, pdfUrl, summary, ed
 				className: "flex items-center gap-2",
 				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: "h-4 w-1 rounded-full bg-emerald-600 dark:bg-emerald-400 shadow-[0_0_8px_#10b981]" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
 					className: "text-xs font-semibold uppercase tracking-wider text-muted-foreground",
-					children: "Work"
+					children: "Live Systems"
 				})]
 			}),
 			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h2", {
 				className: "mt-3 font-serif text-3xl tracking-tight sm:text-4xl",
-				children: "Featured Projects"
+				children: "Quote & Workflow Software in Production"
 			}),
 			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
-				className: "mt-3 max-w-xl text-muted-foreground",
-				children: "Serious SaaS products and engineered software built under real constraints."
+				className: "mt-3 max-w-xl text-muted-foreground text-sm sm:text-base leading-relaxed",
+				children: "Operational systems deployed on custom domains with active users and real transaction constraints."
 			}),
 			/* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Tabs, {
 				value: activeTab,
@@ -2909,72 +2915,94 @@ function Projects({ businessesList, sideProjectsList, email, pdfUrl, summary, ed
 						className: "bg-secondary/80 p-1 border border-border/70 flex-wrap h-auto rounded-xl shadow-inner",
 						children: [
 							/* @__PURE__ */ (0, import_jsx_runtime.jsx)(TabsTrigger, {
-								value: "businesses",
+								value: "plants",
 								className: "data-[state=active]:bg-card data-[state=active]:shadow-sm text-xs sm:text-sm rounded-lg",
-								children: "Flagship Products"
+								children: "Manufacturing & Converting (Apex)"
 							}),
 							/* @__PURE__ */ (0, import_jsx_runtime.jsx)(TabsTrigger, {
-								value: "contracts",
+								value: "agencies",
 								className: "data-[state=active]:bg-card data-[state=active]:shadow-sm text-xs sm:text-sm rounded-lg",
-								children: "Fixed-Scope Sprints"
+								children: "Agencies & Studios (Trelio)"
 							}),
 							/* @__PURE__ */ (0, import_jsx_runtime.jsx)(TabsTrigger, {
-								value: "side",
+								value: "code",
 								className: "data-[state=active]:bg-card data-[state=active]:shadow-sm text-xs sm:text-sm rounded-lg",
-								children: "Projects"
+								children: "Open-Source Architecture"
 							})
 						]
 					}),
 					/* @__PURE__ */ (0, import_jsx_runtime.jsx)(TabsContent, {
-						value: "businesses",
+						value: "plants",
 						className: "mt-6 animate-in fade-in-50 duration-200",
-						children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(BusinessCard, { items: businessesList })
-					}),
-					/* @__PURE__ */ (0, import_jsx_runtime.jsx)(TabsContent, {
-						value: "contracts",
-						className: "mt-6 animate-in fade-in-50 duration-200",
-						children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Card, {
-							className: "card-specular p-8 sm:p-12 text-center rounded-2xl relative overflow-hidden bg-gradient-to-br from-card via-card to-amber-500/10 dark:to-amber-500/10",
-							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "absolute top-0 inset-x-0 h-0.5 bg-gradient-to-r from-amber-400 via-yellow-400 to-amber-500" }), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-								className: "mx-auto max-w-md space-y-3",
+						children: apexProject && /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Card, {
+							className: "card-specular relative overflow-hidden p-2 flex flex-col justify-between rounded-2xl bg-gradient-to-br from-card via-card to-cyan-500/10 dark:to-cyan-500/10",
+							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "absolute top-0 inset-x-0 h-0.5 bg-gradient-to-r from-cyan-400 via-blue-500 to-indigo-500" }), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+								className: "p-4 sm:p-6",
 								children: [
-									/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-										className: "mx-auto flex size-12 items-center justify-center rounded-full bg-amber-100 dark:bg-amber-500/15 text-amber-800 dark:text-amber-400 border border-amber-300 dark:border-amber-500/30 shadow-sm dark:shadow-[0_0_15px_rgba(245,158,11,0.2)]",
-										children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(FileText, { className: "size-5" })
-									}),
-									/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h3", {
-										className: "font-serif text-2xl text-foreground",
-										children: "15-Day Systems Sprints"
-									}),
-									/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
-										className: "text-sm text-muted-foreground leading-relaxed",
-										children: "Fixed-scope technical engagements to design, build, test, and harden one critical operational workflow (quotes, approvals, or payments). Every sprint includes a written specification, automated test suite, and complete repository handover."
-									}),
 									/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-										className: "pt-3 flex flex-wrap items-center justify-center gap-3",
-										children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Button, {
+										className: "mb-4 flex flex-wrap items-center justify-between gap-2",
+										children: [apexProject.liveUrl && /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("a", {
+											href: apexProject.liveUrl,
+											target: "_blank",
+											rel: "noopener noreferrer",
+											className: "inline-flex items-center gap-1.5 rounded-full border px-3 py-1 text-xs font-semibold transition-all border-cyan-500/30 bg-cyan-500/10 text-cyan-800 dark:text-cyan-300 hover:bg-cyan-500/20 shadow-[0_0_10px_rgba(6,182,212,0.18)]",
+											children: [
+												/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: "size-1.5 rounded-full bg-cyan-400 animate-ping" }),
+												/* @__PURE__ */ (0, import_jsx_runtime.jsx)(ExternalLink, { className: "size-3" }),
+												apexProject.liveUrl.replace(/^https?:\/\//, "")
+											]
+										}), apexProject.githubUrl && /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("a", {
+											href: apexProject.githubUrl,
+											target: "_blank",
+											rel: "noopener noreferrer",
+											className: "inline-flex items-center gap-1.5 rounded-full border border-border/80 bg-secondary/60 px-3 py-1 text-xs font-medium text-muted-foreground hover:text-foreground hover:bg-secondary transition-all shadow-xs",
+											title: "View Source Repository",
+											children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Github, { className: "size-3.5" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { children: "Source Code" })]
+										})]
+									}),
+									/* @__PURE__ */ (0, import_jsx_runtime.jsx)(ApexPreview, {}),
+									/* @__PURE__ */ (0, import_jsx_runtime.jsxs)(CardHeader, {
+										className: "px-0 pb-2 pt-5",
+										children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+											className: "flex items-start justify-between gap-3",
+											children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(CardTitle, {
+												className: "font-serif text-2xl sm:text-3xl",
+												children: apexProject.title
+											}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Badge, {
+												variant: "outline",
+												className: "shadow-xs font-mono text-[11px] uppercase tracking-wider bg-cyan-500/15 text-cyan-800 dark:text-cyan-300 border-cyan-500/30",
+												children: "Industrial CPQ"
+											})]
+										}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(CardDescription, {
+											className: "text-sm text-muted-foreground leading-relaxed pt-1.5",
+											children: apexProject.description
+										})]
+									}),
+									/* @__PURE__ */ (0, import_jsx_runtime.jsx)(CardContent, {
+										className: "px-0 pt-4 pb-2",
+										children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+											className: "flex flex-wrap gap-1.5",
+											children: apexProject.stack.map((tech) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Badge, {
+												variant: "secondary",
+												className: "font-mono text-xs font-normal border border-border/50",
+												children: tech
+											}, tech))
+										})
+									}),
+									/* @__PURE__ */ (0, import_jsx_runtime.jsxs)(CardFooter, {
+										className: "px-0 pt-4 flex items-center justify-between border-t border-border/60",
+										children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+											className: "font-mono text-xs text-muted-foreground",
+											children: "Production Industrial Platform"
+										}), apexProject.liveUrl && /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Button, {
 											asChild: true,
 											size: "sm",
-											className: "group rounded-xl bg-amber-500 hover:bg-amber-600 text-black font-semibold shadow-md active:scale-[0.98] transition-all pl-4 pr-2 py-1.5 inline-flex items-center gap-2",
+											className: "btn-sage-glow rounded-xl font-semibold shadow-xs",
 											children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("a", {
-												href: "#contact",
-												children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { children: "Inquire About a Sprint" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-													className: "flex size-5 items-center justify-center rounded-md bg-black/15 transition-transform duration-200 group-hover:translate-x-0.5",
-													children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(ArrowRight, { className: "size-3 text-black" })
-												})]
-											})
-										}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(ResumeModal, {
-											resume,
-											email,
-											pdfUrl,
-											summary,
-											education,
-											skillsList,
-											trigger: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Button, {
-												size: "sm",
-												variant: "outline",
-												className: "rounded-xl border-border/80 hover:text-amber-800 dark:hover:text-amber-400 shadow-sm active:scale-[0.98] transition-all",
-												children: "View Credentials"
+												href: apexProject.liveUrl,
+												target: "_blank",
+												rel: "noopener noreferrer",
+												children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { children: "Launch Platform" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(ExternalLink, { className: "ml-1.5 size-3.5" })]
 											})
 										})]
 									})
@@ -2983,77 +3011,59 @@ function Projects({ businessesList, sideProjectsList, email, pdfUrl, summary, ed
 						})
 					}),
 					/* @__PURE__ */ (0, import_jsx_runtime.jsx)(TabsContent, {
-						value: "side",
+						value: "agencies",
 						className: "mt-6 animate-in fade-in-50 duration-200",
-						children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-							className: "grid gap-6 sm:grid-cols-2",
-							children: [sideProjectsList.map((project) => {
-								const isApex = project.id === "apex";
-								return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Card, {
-									className: `card-specular relative overflow-hidden p-2 flex flex-col justify-between rounded-2xl bg-gradient-to-br from-card via-card ${isApex ? "to-cyan-500/10 dark:to-cyan-500/10 sm:col-span-2" : "to-purple-500/10 dark:to-purple-500/10 sm:col-span-2"}`,
-									children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: `absolute top-0 inset-x-0 h-0.5 bg-gradient-to-r ${isApex ? "from-cyan-400 via-blue-500 to-indigo-500" : "from-purple-400 via-indigo-400 to-cyan-500"}` }), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-										className: "p-4 sm:p-6",
-										children: [
-											/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-												className: "mb-4 flex flex-wrap items-center justify-between gap-2",
-												children: [project.liveUrl && /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("a", {
-													href: project.liveUrl,
-													target: "_blank",
-													rel: "noopener noreferrer",
-													className: `inline-flex items-center gap-1.5 rounded-full border px-3 py-1 text-xs font-semibold transition-all ${isApex ? "border-cyan-500/30 bg-cyan-500/10 text-cyan-800 dark:text-cyan-300 hover:bg-cyan-500/20 shadow-[0_0_10px_rgba(6,182,212,0.18)]" : "border-purple-500/30 bg-purple-500/10 text-purple-800 dark:text-purple-300 hover:bg-purple-500/20"}`,
-													children: [
-														/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: `size-1.5 rounded-full ${isApex ? "bg-cyan-400" : "bg-purple-400"} animate-ping` }),
-														/* @__PURE__ */ (0, import_jsx_runtime.jsx)(ExternalLink, { className: "size-3" }),
-														project.liveUrl.replace(/^https?:\/\//, "")
-													]
-												}), project.githubUrl && /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("a", {
-													href: project.githubUrl,
-													target: "_blank",
-													rel: "noopener noreferrer",
-													className: "inline-flex items-center gap-1.5 rounded-full border border-border/80 bg-secondary/60 px-3 py-1 text-xs font-medium text-muted-foreground hover:text-foreground hover:bg-secondary transition-all shadow-xs",
-													title: "View Source Repository",
-													children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Github, { className: "size-3.5" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { children: "Source Code" })]
-												})]
-											}),
-											isApex ? /* @__PURE__ */ (0, import_jsx_runtime.jsx)(ApexPreview, {}) : /* @__PURE__ */ (0, import_jsx_runtime.jsx)(PortfolioSitePreview, {}),
-											/* @__PURE__ */ (0, import_jsx_runtime.jsxs)(CardHeader, {
-												className: "px-0 pb-2 pt-5",
-												children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-													className: "flex items-start justify-between gap-3",
-													children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(CardTitle, {
-														className: "font-serif text-2xl sm:text-3xl",
-														children: project.title
-													}), project.badge && /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Badge, {
-														variant: "outline",
-														className: `shadow-xs font-mono text-[11px] uppercase tracking-wider ${isApex ? "bg-cyan-500/15 text-cyan-800 dark:text-cyan-300 border-cyan-500/30" : "bg-purple-500/15 text-purple-800 dark:text-purple-300 border-purple-500/30"}`,
-														children: project.badge
-													})]
-												}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(CardDescription, {
-													className: "text-sm sm:text-base text-muted-foreground mt-2 leading-relaxed",
-													children: project.description
-												})]
-											}),
-											/* @__PURE__ */ (0, import_jsx_runtime.jsx)(CardContent, {
-												className: "flex flex-wrap gap-2 px-0 pt-4",
-												children: project.stack.map((tech) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-													className: `inline-flex items-center rounded-lg px-2.5 py-1 text-xs font-medium border shadow-2xs ${isApex ? "border-cyan-300 dark:border-cyan-500/25 bg-cyan-50 dark:bg-cyan-500/10 text-cyan-800 dark:text-cyan-300" : "border-purple-300 dark:border-purple-500/25 bg-purple-50 dark:bg-purple-500/10 text-purple-800 dark:text-purple-300"}`,
-													children: tech
-												}, tech))
-											})
-										]
-									})]
-								}, project.id);
-							}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Card, {
-								className: "relative overflow-hidden p-6 border-dashed border-border/80 bg-secondary/30 flex flex-col items-center justify-center text-center min-h-[160px] rounded-2xl shadow-[inset_0_1px_0_0_rgba(255,255,255,0.04)] sm:col-span-2",
+						children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(BusinessCard, { items: businessesList })
+					}),
+					/* @__PURE__ */ (0, import_jsx_runtime.jsx)(TabsContent, {
+						value: "code",
+						className: "mt-6 animate-in fade-in-50 duration-200",
+						children: portfolioProject && /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Card, {
+							className: "card-specular relative overflow-hidden p-2 flex flex-col justify-between rounded-2xl bg-gradient-to-br from-card via-card to-purple-500/10 dark:to-purple-500/10",
+							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "absolute top-0 inset-x-0 h-0.5 bg-gradient-to-r from-purple-400 via-indigo-400 to-cyan-500" }), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+								className: "p-4 sm:p-6",
 								children: [
-									/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: "size-2 rounded-full bg-cyan-600 dark:bg-cyan-400 shadow-[0_0_8px_#38bdf8] animate-pulse mb-2" }),
-									/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
-										className: "font-serif text-base text-foreground/90",
-										children: "More Projects in Progress"
+									/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+										className: "mb-4 flex flex-wrap items-center justify-between gap-2",
+										children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("span", {
+											className: "inline-flex items-center gap-1.5 rounded-full border px-3 py-1 text-xs font-semibold border-purple-500/30 bg-purple-500/10 text-purple-800 dark:text-purple-300",
+											children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: "size-1.5 rounded-full bg-purple-400 animate-ping" }), "Open Source"]
+										}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("a", {
+											href: "https://github.com/Chanakya2006gt/Chanakya_Portfolio",
+											target: "_blank",
+											rel: "noopener noreferrer",
+											className: "inline-flex items-center gap-1.5 rounded-full border border-border/80 bg-secondary/60 px-3 py-1 text-xs font-medium text-muted-foreground hover:text-foreground hover:bg-secondary transition-all shadow-xs",
+											children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Github, { className: "size-3.5" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { children: "View Repository" })]
+										})]
 									}),
-									/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
-										className: "text-xs text-muted-foreground mt-1.5 max-w-sm leading-relaxed",
-										children: "Active tools, packages, and open-source software will be posted here as they are published."
+									/* @__PURE__ */ (0, import_jsx_runtime.jsx)(PortfolioSitePreview, {}),
+									/* @__PURE__ */ (0, import_jsx_runtime.jsxs)(CardHeader, {
+										className: "px-0 pb-2 pt-5",
+										children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+											className: "flex items-start justify-between gap-3",
+											children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(CardTitle, {
+												className: "font-serif text-2xl sm:text-3xl",
+												children: portfolioProject.title
+											}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Badge, {
+												variant: "outline",
+												className: "shadow-xs font-mono text-[11px] uppercase tracking-wider bg-purple-500/15 text-purple-800 dark:text-purple-300 border-purple-500/30",
+												children: "Portfolio Architecture"
+											})]
+										}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(CardDescription, {
+											className: "text-sm text-muted-foreground leading-relaxed pt-1.5",
+											children: portfolioProject.description
+										})]
+									}),
+									/* @__PURE__ */ (0, import_jsx_runtime.jsx)(CardContent, {
+										className: "px-0 pt-4 pb-2",
+										children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+											className: "flex flex-wrap gap-1.5",
+											children: portfolioProject.stack.map((tech) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Badge, {
+												variant: "secondary",
+												className: "font-mono text-xs font-normal border border-border/50",
+												children: tech
+											}, tech))
+										})
 									})
 								]
 							})]
@@ -3190,7 +3200,7 @@ function Contact() {
 			}),
 			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
 				className: "mt-4 max-w-lg text-lg text-foreground/90 font-serif italic",
-				children: "\"Available for 15-Day Systems Sprints and fixed-scope technical engagements.\""
+				children: "\"Available for Quote-to-Job Builds and Paid Diagnoses.\""
 			}),
 			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
 				className: "mt-10",
@@ -3233,7 +3243,7 @@ function Contact() {
 									}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Input, {
 										id: "subject",
 										name: "subject",
-										placeholder: "Sprint Inquiry / Systems Workflow...",
+										placeholder: "Paid Diagnosis / Quoting Workflow...",
 										required: true,
 										className: "rounded-xl bg-secondary/50"
 									})]
@@ -3247,7 +3257,7 @@ function Contact() {
 									}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Textarea, {
 										id: "body",
 										name: "body",
-										placeholder: "What are the details of the project or opportunity?",
+										placeholder: "What are the details of your operational workflow?",
 										required: true,
 										rows: 4,
 										className: "rounded-xl bg-secondary/50"

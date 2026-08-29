@@ -37,7 +37,7 @@ export function SiteNav() {
                   href={link.href}
                   onClick={() => {
                     if (sectionId === "projects" && typeof window !== "undefined") {
-                      window.dispatchEvent(new CustomEvent("portfolio-tab-switch", { detail: { tab: "side" } }));
+                      window.dispatchEvent(new CustomEvent("portfolio-tab-switch", { detail: { tab: "plants" } }));
                     }
                   }}
                   className={`text-sm transition-colors relative py-1 ${
