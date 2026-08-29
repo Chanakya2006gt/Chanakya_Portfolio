@@ -87,7 +87,7 @@ export function ResumeModal({
 
   const defaultPractices = [
     "Ongoing practice in Data Structures & Algorithms & Java (LeetCode).",
-    "Directing AI-assisted development workflows for rapid production iteration.",
+    "Systems architecture, database optimization, and high-concurrency production engineering.",
     "Focus: Fintech, distributed backend systems, & applied software security.",
   ];
 

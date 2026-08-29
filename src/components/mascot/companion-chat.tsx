@@ -10,11 +10,11 @@ export interface Message {
 }
 
 const PREBUILT_QUESTIONS = [
-  { label: "📋 15-Day Systems Sprint", query: "What does a 15-Day Systems Sprint include and how does Chanakya work?" },
+  { label: "📋 Fixed-price builds & pricing", query: "What do your fixed-price builds include and how much does a paid diagnosis cost?" },
   { label: "🚀 Tell me about Trelio", query: "What is Trelio and how does it work?" },
+  { label: "🏭 Apex Packaging CPQ", query: "How does Apex Packaging handle FINAT standards and quotes?" },
   { label: "💻 Tech stack & skills", query: "What tech stack and skills does Chanakya specialize in?" },
-  { label: "📄 Credentials & Proof", query: "Can you summarize Chanakya's technical credentials, architecture, and verified benchmarks?" },
-  { label: "📬 How to contact?", query: "How can I contact or email Chanakya to book a sprint?" },
+  { label: "📬 How to contact?", query: "How can I contact Chanakya to book a paid diagnosis?" },
 ];
 
 interface CompanionChatProps {

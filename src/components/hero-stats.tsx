@@ -3,7 +3,7 @@ interface HeroStatsProps {
   liveCount?: number;
 }
 
-export function HeroStats({ status = "Taking 2 sprints per month · currently booking next month", liveCount = 1 }: HeroStatsProps) {
+export function HeroStats({ status = "Taking 2 builds a month · booking the next slot", liveCount = 2 }: HeroStatsProps) {
   return (
     <div className="mt-8 flex flex-wrap items-center gap-3">
       {/* Blinking availability dot */}
@@ -16,7 +16,7 @@ export function HeroStats({ status = "Taking 2 sprints per month · currently bo
       </div>
 
       <div className="flex items-center gap-2 rounded-full border border-border bg-secondary/50 px-3 py-1 text-xs text-muted-foreground">
-        <span className="font-semibold text-foreground">{liveCount}</span> Live Product{liveCount !== 1 ? "s" : ""}
+        <span className="font-semibold text-foreground">{liveCount}</span> Live Systems
       </div>
       <div className="flex items-center gap-2 rounded-full border border-border bg-secondary/50 px-3 py-1 text-xs text-muted-foreground">
         <span className="font-semibold text-foreground">Trelio</span> Founder

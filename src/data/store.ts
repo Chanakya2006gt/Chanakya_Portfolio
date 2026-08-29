@@ -31,9 +31,9 @@ export function getPortfolioData(): DynamicData {
     businesses: defaultBusinesses,
     sideProjects: defaultSideProjects,
     skills: defaultSkills,
-    availabilityStatus: "Taking 2 sprints per month · currently booking next month",
-    workAvailability: "Available for 15-Day Systems Sprints and fixed-scope technical engagements",
-    hiringStatus: "Not hiring for any roles at this time (Chanakya is an independent engineer taking fixed-scope sprints)",
+    availabilityStatus: "Taking 2 builds a month · booking the next slot",
+    workAvailability: "Available for fixed-price technical builds and paid diagnoses",
+    hiringStatus: "Not hiring for any roles at this time (Chanakya is an independent engineer taking fixed-price builds)",
     heroTagline: "I ship products under real constraints — not demos. Trelio is the primary work alongside focused software projects.",
   };
 }

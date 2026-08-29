@@ -1,32 +1,13 @@
-import { i as __toESM } from "../_runtime.mjs";
+import "../_runtime.mjs";
 import { u as require_react } from "../_libs/@floating-ui/react-dom+[...].mjs";
+import { _ as Link } from "../_libs/@tanstack/react-router+[...].mjs";
 import { s as require_jsx_runtime } from "../_libs/@radix-ui/react-collection+[...].mjs";
-import { H as ArrowRight, I as CircleCheck, O as FileText, P as CodeXml, a as Terminal, c as ShieldCheck, g as Moon, j as Database, o as Sun, w as Layers } from "../_libs/lucide-react.mjs";
-import { n as Card, t as Button } from "./card-BjQXDIgM.mjs";
-import { t as Badge } from "./badge-Iy52FwqH.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/theme-toggle-BBv5wsbS.js
-var import_react = /* @__PURE__ */ __toESM(require_react());
+import { A as Database, C as Layers, E as FileText, M as CodeXml, P as CircleCheck, U as ArrowRight, W as ArrowLeft, a as Terminal, c as ShieldCheck } from "../_libs/lucide-react.mjs";
+import { n as Card, t as Button } from "./card-BdeV50cV.mjs";
+import { t as Badge } from "./badge-0IHuHhl_.mjs";
+import { n as useScrollAnimation, t as ThemeToggle } from "./theme-toggle-D2HBRx68.mjs";
+require_react();
 var import_jsx_runtime = require_jsx_runtime();
-function useScrollAnimation(threshold = .1) {
-	const ref = (0, import_react.useRef)(null);
-	const [isVisible, setIsVisible] = (0, import_react.useState)(false);
-	(0, import_react.useEffect)(() => {
-		const element = ref.current;
-		if (!element) return;
-		const observer = new IntersectionObserver(([entry]) => {
-			if (entry.isIntersecting) {
-				setIsVisible(true);
-				observer.unobserve(element);
-			}
-		}, { threshold });
-		observer.observe(element);
-		return () => observer.disconnect();
-	}, [threshold]);
-	return {
-		ref,
-		isVisible
-	};
-}
 function MethodSection() {
 	const { ref, isVisible } = useScrollAnimation();
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("section", {
@@ -201,90 +182,84 @@ function MethodSection() {
 							children: "Ready to de-risk your workflow?"
 						}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
 							className: "text-xs sm:text-sm text-muted-foreground",
-							children: "Start with a 3-Day Scope & Proof (₹40,000) — 100% credited against the full sprint if you proceed."
+							children: "Start with a 3-Day Paid Diagnosis (₹40,000) — 100% credited against the full build if you proceed."
 						})]
 					}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("a", {
-						href: "#offers",
+						href: "/#pricing",
 						className: "btn-sage-glow shrink-0 rounded-xl px-5 py-2.5 text-xs sm:text-sm font-semibold shadow-md inline-flex items-center gap-2",
-						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { children: "View Offer Ladder" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(ArrowRight, { className: "size-4" })]
+						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { children: "View Fixed Pricing" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(ArrowRight, { className: "size-4" })]
 					})]
 				})
 			]
 		})
 	});
 }
-function ThemeToggle({ className = "", variant = "ghost", size = "icon" }) {
-	const [theme, setTheme] = (0, import_react.useState)("dark");
-	(0, import_react.useEffect)(() => {
-		const isLight = document.documentElement.classList.contains("light");
-		const storedTheme = localStorage.getItem("theme");
-		const systemPrefersLight = window.matchMedia("(prefers-color-scheme: light)").matches;
-		setTheme(storedTheme || (isLight || systemPrefersLight ? "light" : "dark"));
-		const mediaQuery = window.matchMedia("(prefers-color-scheme: light)");
-		const handleSystemThemeChange = (e) => {
-			if (!localStorage.getItem("theme")) {
-				const nextTheme = e.matches ? "light" : "dark";
-				setTheme(nextTheme);
-				if (nextTheme === "light") {
-					document.documentElement.classList.add("light");
-					document.documentElement.classList.remove("dark");
-				} else {
-					document.documentElement.classList.remove("light");
-					document.documentElement.classList.add("dark");
-				}
-			}
-		};
-		const handleThemeChange = (e) => {
-			const customEvent = e;
-			if (customEvent.detail) setTheme(customEvent.detail);
-			else {
-				const currentIsLight = document.documentElement.classList.contains("light");
-				setTheme(currentIsLight ? "light" : "dark");
-			}
-		};
-		const handleStorageChange = (e) => {
-			if (e.key === "theme" && (e.newValue === "dark" || e.newValue === "light")) {
-				setTheme(e.newValue);
-				if (e.newValue === "light") {
-					document.documentElement.classList.add("light");
-					document.documentElement.classList.remove("dark");
-				} else {
-					document.documentElement.classList.remove("light");
-					document.documentElement.classList.add("dark");
-				}
-			}
-		};
-		mediaQuery.addEventListener("change", handleSystemThemeChange);
-		window.addEventListener("theme-change", handleThemeChange);
-		window.addEventListener("storage", handleStorageChange);
-		return () => {
-			mediaQuery.removeEventListener("change", handleSystemThemeChange);
-			window.removeEventListener("theme-change", handleThemeChange);
-			window.removeEventListener("storage", handleStorageChange);
-		};
-	}, []);
-	const toggleTheme = () => {
-		const nextTheme = theme === "dark" ? "light" : "dark";
-		setTheme(nextTheme);
-		localStorage.setItem("theme", nextTheme);
-		if (nextTheme === "light") {
-			document.documentElement.classList.add("light");
-			document.documentElement.classList.remove("dark");
-		} else {
-			document.documentElement.classList.remove("light");
-			document.documentElement.classList.add("dark");
-		}
-		window.dispatchEvent(new CustomEvent("theme-change", { detail: nextTheme }));
-	};
-	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Button, {
-		variant,
-		size,
-		onClick: toggleTheme,
-		className: `rounded-full transition-transform active:scale-95 ${className}`,
-		title: theme === "dark" ? "Switch to Light Mode" : "Switch to Dark Mode",
-		"aria-label": "Toggle Theme",
-		children: theme === "dark" ? /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Sun, { className: "size-4 text-sage transition-all hover:rotate-45" }) : /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Moon, { className: "size-4 text-sage transition-all hover:-rotate-12" })
+function MethodPage() {
+	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+		className: "min-h-screen bg-background text-foreground selection:bg-emerald-500/20",
+		children: [
+			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("header", {
+				className: "sticky top-0 z-50 border-b border-border/70 bg-background/80 backdrop-blur-xl",
+				children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+					className: "mx-auto flex max-w-5xl items-center justify-between px-5 py-4",
+					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Link, {
+						to: "/",
+						className: "inline-flex items-center gap-2 text-xs sm:text-sm font-semibold text-muted-foreground hover:text-foreground transition-colors",
+						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(ArrowLeft, { className: "size-4" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { children: "Back to Portfolio" })]
+					}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+						className: "flex items-center gap-3",
+						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(ThemeToggle, {}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Button, {
+							asChild: true,
+							size: "sm",
+							className: "btn-sage-glow rounded-xl font-semibold shadow-sm",
+							children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Link, {
+								to: "/",
+								hash: "pricing",
+								children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { children: "View Pricing" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(ArrowRight, { className: "ml-1.5 size-3.5" })]
+							})
+						})]
+					})]
+				})
+			}),
+			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("main", {
+				id: "main-content",
+				children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(MethodSection, {})
+			}),
+			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("footer", {
+				className: "border-t border-border/60 py-12 text-center text-xs text-muted-foreground",
+				children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+					className: "mx-auto max-w-5xl px-5 flex flex-col sm:flex-row items-center justify-between gap-4",
+					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("p", { children: [
+						"© ",
+						(/* @__PURE__ */ new Date()).getFullYear(),
+						" Nagulagam Chanakya · Independent Systems Engineer"
+					] }), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+						className: "flex items-center gap-4",
+						children: [
+							/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Link, {
+								to: "/",
+								hash: "pricing",
+								className: "hover:text-foreground transition-colors",
+								children: "Pricing"
+							}),
+							/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Link, {
+								to: "/",
+								hash: "projects",
+								className: "hover:text-foreground transition-colors",
+								children: "Live Systems"
+							}),
+							/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Link, {
+								to: "/",
+								hash: "contact",
+								className: "hover:text-foreground transition-colors",
+								children: "Contact"
+							})
+						]
+					})]
+				})
+			})
+		]
 	});
 }
 //#endregion
-export { ThemeToggle as n, useScrollAnimation as r, MethodSection as t };
+export { MethodPage as component };

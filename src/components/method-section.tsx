@@ -179,14 +179,14 @@ export function MethodSection() {
           <div className="space-y-1 text-center sm:text-left">
             <h4 className="font-serif text-lg text-foreground font-semibold">Ready to de-risk your workflow?</h4>
             <p className="text-xs sm:text-sm text-muted-foreground">
-              Start with a 3-Day Scope & Proof (₹40,000) — 100% credited against the full sprint if you proceed.
+              Start with a 3-Day Paid Diagnosis (₹40,000) — 100% credited against the full build if you proceed.
             </p>
           </div>
           <a
-            href="#offers"
+            href="/#pricing"
             className="btn-sage-glow shrink-0 rounded-xl px-5 py-2.5 text-xs sm:text-sm font-semibold shadow-md inline-flex items-center gap-2"
           >
-            <span>View Offer Ladder</span>
+            <span>View Fixed Pricing</span>
             <ArrowRight className="size-4" />
           </a>
         </div>

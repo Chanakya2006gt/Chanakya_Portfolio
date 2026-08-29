@@ -31,8 +31,8 @@ function MethodPage() {
           <div className="flex items-center gap-3">
             <ThemeToggle />
             <Button asChild size="sm" className="btn-sage-glow rounded-xl font-semibold shadow-sm">
-              <Link to="/" hash="offers">
-                <span>View Offers</span>
+              <Link to="/" hash="pricing">
+                <span>View Pricing</span>
                 <ArrowRight className="ml-1.5 size-3.5" />
               </Link>
             </Button>
@@ -50,7 +50,7 @@ function MethodPage() {
         <div className="mx-auto max-w-5xl px-5 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p>© {new Date().getFullYear()} Nagulagam Chanakya · Independent Systems Engineer</p>
           <div className="flex items-center gap-4">
-            <Link to="/" hash="offers" className="hover:text-foreground transition-colors">Offers</Link>
+            <Link to="/" hash="pricing" className="hover:text-foreground transition-colors">Pricing</Link>
             <Link to="/" hash="projects" className="hover:text-foreground transition-colors">Live Systems</Link>
             <Link to="/" hash="contact" className="hover:text-foreground transition-colors">Contact</Link>
           </div>

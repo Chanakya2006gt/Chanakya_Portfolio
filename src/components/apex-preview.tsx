@@ -40,17 +40,17 @@ export function ApexPreview() {
         </div>
         <div className="rounded-xl bg-card/90 px-3 py-2 border border-border/60 shadow-xs">
           <div className="flex items-center justify-center gap-1.5 text-emerald-800 dark:text-emerald-400 mb-0.5">
-            <Gauge className="size-3.5" />
-            <p className="text-[10px] font-mono uppercase tracking-wider font-semibold">Throughput</p>
+            <Calculator className="size-3.5" />
+            <p className="text-[10px] font-mono uppercase tracking-wider font-semibold">Quoting Speed</p>
           </div>
-          <p className="text-xs font-semibold text-emerald-800 dark:text-emerald-400">273k ops/s · p99: 0.01ms</p>
+          <p className="text-xs font-semibold text-emerald-800 dark:text-emerald-400">One-pass, not spreadsheets</p>
         </div>
         <div className="rounded-xl bg-card/90 px-3 py-2 border border-border/60 shadow-xs">
           <div className="flex items-center justify-center gap-1.5 text-purple-800 dark:text-purple-400 mb-0.5">
             <Database className="size-3.5" />
-            <p className="text-[10px] font-mono uppercase tracking-wider font-semibold">Fuzz Tested</p>
+            <p className="text-[10px] font-mono uppercase tracking-wider font-semibold">Floor Specs</p>
           </div>
-          <p className="text-xs font-semibold text-purple-800 dark:text-purple-400">1k Invariants Pass</p>
+          <p className="text-xs font-semibold text-purple-800 dark:text-purple-400">Exact linear meters & area</p>
         </div>
       </div>
 

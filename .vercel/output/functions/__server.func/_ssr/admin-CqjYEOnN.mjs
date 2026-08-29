@@ -2,13 +2,13 @@ import { i as __toESM } from "../_runtime.mjs";
 import { u as require_react } from "../_libs/@floating-ui/react-dom+[...].mjs";
 import { v as useNavigate } from "../_libs/@tanstack/react-router+[...].mjs";
 import { s as require_jsx_runtime } from "../_libs/@radix-ui/react-collection+[...].mjs";
-import { C as LayoutGrid, O as FileText, b as LogOut, d as Save, h as Plus, i as Trash2, k as ExternalLink, s as Sparkles } from "../_libs/lucide-react.mjs";
+import { E as FileText, O as ExternalLink, S as LayoutGrid, i as Trash2, m as Plus, s as Sparkles, u as Save, y as LogOut } from "../_libs/lucide-react.mjs";
 import { n as toast } from "../_libs/sonner.mjs";
-import { n as Card, t as Button } from "./card-BjQXDIgM.mjs";
-import { n as Label, t as Input } from "./label-CO8-FG20.mjs";
-import { a as Textarea, i as TabsTrigger, n as TabsContent, r as TabsList, t as Tabs } from "./tabs-CQ3DZ1j1.mjs";
-import { t as Badge } from "./badge-Iy52FwqH.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/admin-4NwJv1Ae.js
+import { n as Card, t as Button } from "./card-BdeV50cV.mjs";
+import { n as Label, t as Input } from "./label-BdkQG8D0.mjs";
+import { a as Textarea, i as TabsTrigger, n as TabsContent, r as TabsList, t as Tabs } from "./tabs-huupm5HF.mjs";
+import { t as Badge } from "./badge-0IHuHhl_.mjs";
+//#region node_modules/.nitro/vite/services/ssr/assets/admin-CqjYEOnN.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 function AdminDashboardPage() {
@@ -573,7 +573,7 @@ function AdminDashboardPage() {
 										...data,
 										availabilityStatus: e.target.value
 									}),
-									placeholder: "e.g. Open for contracts & software engineering roles",
+									placeholder: "e.g. Taking 2 builds a month · booking the next slot",
 									className: "mt-1 bg-secondary/50 text-xs"
 								})] }),
 								/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
@@ -581,19 +581,19 @@ function AdminDashboardPage() {
 									children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [
 										/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Label, {
 											className: "text-xs font-semibold text-white",
-											children: "1. Work / Contract Availability (When someone wants to hire YOU)"
+											children: "1. Work / Technical Availability"
 										}),
 										/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
 											className: "text-[11px] text-muted-foreground mb-1",
-											children: "What you tell clients/recruiters wanting to hire you."
+											children: "What the companion tells clients wanting to hire you."
 										}),
 										/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Input, {
-											value: data.workAvailability || "Open for contract work, consulting & engineering roles",
+											value: data.workAvailability || "Available for fixed-price technical builds and paid diagnoses",
 											onChange: (e) => setData({
 												...data,
 												workAvailability: e.target.value
 											}),
-											placeholder: "e.g. Open for contract work & full-time roles",
+											placeholder: "e.g. Available for fixed-price technical builds & paid diagnoses",
 											className: "mt-1 bg-secondary/50 text-xs"
 										})
 									] }), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [

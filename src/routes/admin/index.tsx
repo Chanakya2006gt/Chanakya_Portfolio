@@ -537,19 +537,19 @@ function AdminDashboardPage() {
                 <Input
                   value={data.availabilityStatus}
                   onChange={(e) => setData({ ...data, availabilityStatus: e.target.value })}
-                  placeholder="e.g. Open for contracts & software engineering roles"
+                  placeholder="e.g. Taking 2 builds a month · booking the next slot"
                   className="mt-1 bg-secondary/50 text-xs"
                 />
               </div>
 
               <div className="grid gap-4 sm:grid-cols-2 pt-2 border-t border-border/60">
                 <div>
-                  <Label className="text-xs font-semibold text-white">1. Work / Contract Availability (When someone wants to hire YOU)</Label>
-                  <p className="text-[11px] text-muted-foreground mb-1">What you tell clients/recruiters wanting to hire you.</p>
+                  <Label className="text-xs font-semibold text-white">1. Work / Technical Availability</Label>
+                  <p className="text-[11px] text-muted-foreground mb-1">What the companion tells clients wanting to hire you.</p>
                   <Input
-                    value={data.workAvailability || "Open for contract work, consulting & engineering roles"}
+                    value={data.workAvailability || "Available for fixed-price technical builds and paid diagnoses"}
                     onChange={(e) => setData({ ...data, workAvailability: e.target.value })}
-                    placeholder="e.g. Open for contract work & full-time roles"
+                    placeholder="e.g. Available for fixed-price technical builds & paid diagnoses"
                     className="mt-1 bg-secondary/50 text-xs"
                   />
                 </div>

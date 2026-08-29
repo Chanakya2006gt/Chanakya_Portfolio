@@ -1,5 +1,5 @@
 import { n as put, t as head } from "../_libs/@vercel/blob+[...].mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/content.server-CamQzWbx.js
+//#region node_modules/.nitro/vite/services/ssr/assets/content.server-Dw8Lz3Ro.js
 var __defProp = Object.defineProperty;
 var __exportAll = (all, no_symbols) => {
 	let target = {};
@@ -94,20 +94,16 @@ var skills$1 = {
 };
 var navLinks = [
 	{
-		href: "#offers",
-		label: "Offers"
-	},
-	{
-		href: "#method",
-		label: "Method"
-	},
-	{
-		href: "#about",
-		label: "About"
+		href: "#pricing",
+		label: "Pricing"
 	},
 	{
 		href: "#projects",
 		label: "Live Systems"
+	},
+	{
+		href: "#about",
+		label: "About"
 	},
 	{
 		href: "#skills",
@@ -201,7 +197,7 @@ var portfolio_data_default = {
 			"Razorpay"
 		]
 	},
-	availabilityStatus: "Taking 2 sprints per month · currently booking next month",
+	availabilityStatus: "Taking 2 builds a month · booking the next slot",
 	heroTagline: "I ship products under real constraints — not demos. Trelio is the primary work alongside focused software projects.",
 	resumeOverride: { "education": "SR University — B.Tech CSE (2028)" },
 	resume: {
@@ -248,9 +244,9 @@ function getPortfolioData() {
 		businesses: businesses$1,
 		sideProjects: sideProjects$1,
 		skills: skills$1,
-		availabilityStatus: "Taking 2 sprints per month · currently booking next month",
-		workAvailability: "Available for 15-Day Systems Sprints and fixed-scope technical engagements",
-		hiringStatus: "Not hiring for any roles at this time (Chanakya is an independent engineer taking fixed-scope sprints)",
+		availabilityStatus: "Taking 2 builds a month · booking the next slot",
+		workAvailability: "Available for fixed-price technical builds and paid diagnoses",
+		hiringStatus: "Not hiring for any roles at this time (Chanakya is an independent engineer taking fixed-price builds)",
 		heroTagline: "I ship products under real constraints — not demos. Trelio is the primary work alongside focused software projects."
 	};
 }
