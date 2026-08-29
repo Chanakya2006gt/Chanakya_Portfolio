@@ -1,5 +1,5 @@
 import { n as put, t as head } from "../_libs/@vercel/blob+[...].mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/content.server-osXMLVNu.js
+//#region node_modules/.nitro/vite/services/ssr/assets/content.server-CamQzWbx.js
 var __defProp = Object.defineProperty;
 var __exportAll = (all, no_symbols) => {
 	let target = {};
@@ -94,12 +94,20 @@ var skills$1 = {
 };
 var navLinks = [
 	{
+		href: "#offers",
+		label: "Offers"
+	},
+	{
+		href: "#method",
+		label: "Method"
+	},
+	{
 		href: "#about",
 		label: "About"
 	},
 	{
 		href: "#projects",
-		label: "Projects"
+		label: "Live Systems"
 	},
 	{
 		href: "#skills",

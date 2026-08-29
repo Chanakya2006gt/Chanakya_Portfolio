@@ -1,15 +1,18 @@
 import { i as __toESM } from "../_runtime.mjs";
-import { c as sideProjects$1, l as skills$1, o as businesses$1, s as navLinks } from "./content.server-osXMLVNu.mjs";
+import { c as sideProjects$1, l as skills$1, o as businesses$1, s as navLinks } from "./content.server-CamQzWbx.mjs";
 import { u as require_react } from "../_libs/@floating-ui/react-dom+[...].mjs";
 import { s as require_jsx_runtime } from "../_libs/@radix-ui/react-collection+[...].mjs";
-import { A as Copy, B as ArrowRight, C as GraduationCap, D as ExternalLink, E as FileText, F as Check, I as Building2, L as Bot, M as CodeXml, N as Clock, O as Disc, P as CircleCheck, R as Award, S as Layers, T as Gauge, _ as Mail, a as Sun, b as Linkedin, c as Send, d as RefreshCw, f as Printer, g as MapPin, h as Menu, k as Database, m as Moon, n as User, s as ShieldCheck, t as X, w as Github, y as Lock, z as ArrowUp } from "../_libs/lucide-react.mjs";
+import { A as Disc, B as Award, D as Gauge, E as Github, F as Clock, H as ArrowRight, I as CircleCheck, L as Check, M as Copy, O as FileText, P as CodeXml, R as Building2, S as Linkedin, T as GraduationCap, V as ArrowUp, _ as Menu, c as ShieldCheck, j as Database, k as ExternalLink, l as ShieldAlert, m as Printer, n as User, p as RefreshCw, s as Sparkles, t as X, u as Send, v as MapPin, w as Layers, x as Lock, y as Mail, z as Bot } from "../_libs/lucide-react.mjs";
 import { a as DialogOverlay$1, c as DialogTrigger$1, i as DialogDescription$1, n as DialogClose, o as DialogPortal$1, r as DialogContent$1, s as DialogTitle$1, t as Dialog$1 } from "../_libs/@radix-ui/react-dialog+[...].mjs";
 import { n as toast } from "../_libs/sonner.mjs";
-import { n as Route$11, r as cn } from "./router-BEVk1dcA.mjs";
-import { a as CardFooter, c as Input, i as CardDescription, l as Label, n as Card, o as CardHeader, r as CardContent, s as CardTitle, t as Button } from "./card-LGFtm7pz.mjs";
-import { a as TabsTrigger, i as TabsList, n as Tabs, o as Textarea, r as TabsContent, t as Badge } from "./badge-Pacj8VQ9.mjs";
+import { n as Route$12, r as cn } from "./router-BZTitpWq.mjs";
+import { a as CardFooter, i as CardDescription, n as Card, o as CardHeader, r as CardContent, s as CardTitle, t as Button } from "./card-BjQXDIgM.mjs";
+import { n as Label, t as Input } from "./label-CO8-FG20.mjs";
+import { a as Textarea, i as TabsTrigger, n as TabsContent, r as TabsList, t as Tabs } from "./tabs-CQ3DZ1j1.mjs";
+import { t as Badge } from "./badge-Iy52FwqH.mjs";
+import { n as ThemeToggle, r as useScrollAnimation, t as MethodSection } from "./theme-toggle-BBv5wsbS.mjs";
 import { t as Root } from "../_libs/radix-ui__react-separator.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/routes-BdHn28WC.js
+//#region node_modules/.nitro/vite/services/ssr/assets/routes-CxcQ20ip.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 var Separator = import_react.forwardRef(({ className, orientation = "horizontal", decorative = true, ...props }, ref) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Root, {
@@ -540,6 +543,368 @@ function ApexPreview() {
 		]
 	});
 }
+function OfferLadder() {
+	const { ref, isVisible } = useScrollAnimation();
+	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("section", {
+		id: "offers",
+		ref,
+		className: `mx-auto max-w-5xl px-5 py-24 transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"}`,
+		children: [
+			/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+				className: "flex items-center gap-2",
+				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: "h-4 w-1 rounded-full bg-emerald-600 dark:bg-emerald-400 shadow-[0_0_8px_#10b981]" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+					className: "text-xs font-semibold uppercase tracking-wider text-muted-foreground",
+					children: "Productized Engagements"
+				})]
+			}),
+			/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+				className: "mt-3 flex flex-col md:flex-row md:items-end md:justify-between gap-4",
+				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h2", {
+					className: "font-serif text-3xl tracking-tight sm:text-4xl",
+					children: "Fixed-Scope Systems Sprints"
+				}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+					className: "mt-2 max-w-2xl text-muted-foreground text-sm sm:text-base leading-relaxed",
+					children: "Engagements run from ₹40,000 for a scoping sprint to ₹6L for a full workflow build. There is almost always a rung that fits."
+				})] }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+					className: "flex items-center gap-2 shrink-0",
+					children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Badge, {
+						variant: "outline",
+						className: "border-emerald-600/30 dark:border-emerald-500/30 text-emerald-800 dark:text-emerald-400 bg-emerald-50/50 dark:bg-emerald-500/10 font-mono text-xs px-3 py-1",
+						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: "size-1.5 rounded-full bg-emerald-500 mr-1.5 animate-pulse inline-block" }), "2 Sprints / Month Capacity"]
+					})
+				})]
+			}),
+			/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+				className: "mt-12 grid gap-6 lg:grid-cols-3 items-stretch",
+				children: [
+					/* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Card, {
+						className: "card-specular relative flex flex-col justify-between rounded-2xl p-6 sm:p-7 border-2 border-emerald-600/40 dark:border-emerald-500/40 bg-gradient-to-b from-card via-card to-emerald-500/5 shadow-lg",
+						children: [
+							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+								className: "absolute -top-3 left-6",
+								children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Badge, {
+									className: "bg-emerald-600 text-white font-semibold text-[11px] px-2.5 py-0.5 shadow-sm",
+									children: "Recommended Entry"
+								})
+							}),
+							/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+								className: "space-y-4",
+								children: [
+									/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+										className: "flex items-center justify-between pt-1",
+										children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+											className: "text-xs font-mono font-bold uppercase tracking-wider text-emerald-800 dark:text-emerald-400",
+											children: "Rung 0 · Entry Scoping"
+										}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("h3", {
+											className: "font-serif text-2xl text-foreground mt-0.5",
+											children: "Scope & Proof"
+										})] })
+									}),
+									/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+										className: "border-y border-border/60 py-3.5 space-y-1",
+										children: [
+											/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+												className: "flex items-baseline gap-2",
+												children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+													className: "text-3xl font-bold font-mono tracking-tight text-foreground",
+													children: "₹40,000"
+												}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+													className: "text-xs text-muted-foreground font-mono",
+													children: "fixed"
+												})]
+											}),
+											/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("p", {
+												className: "text-xs font-semibold text-emerald-800 dark:text-emerald-400 flex items-center gap-1",
+												children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Sparkles, { className: "size-3 shrink-0" }), "100% credited against full sprint"]
+											}),
+											/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("p", {
+												className: "text-xs text-muted-foreground font-mono flex items-center gap-1.5 pt-1",
+												children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Clock, { className: "size-3 shrink-0" }), "3 Business Days Turnaround"]
+											})
+										]
+									}),
+									/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+										className: "text-xs text-muted-foreground leading-relaxed",
+										children: "De-risks your project before committing to a full build. You receive exact architecture and a working deployed screen."
+									}),
+									/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+										className: "space-y-2 pt-2",
+										children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+											className: "text-[11px] font-mono uppercase tracking-wider text-muted-foreground font-bold",
+											children: "Deliverables Included:"
+										}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("ul", {
+											className: "space-y-2 text-xs text-foreground/90",
+											children: [
+												/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("li", {
+													className: "flex items-start gap-2",
+													children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(CircleCheck, { className: "size-3.5 text-emerald-800 dark:text-emerald-400 shrink-0 mt-0.5" }), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("span", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("strong", { children: "Written Workflow Specification" }), " (States, rules & out-of-scope bounds)"] })]
+												}),
+												/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("li", {
+													className: "flex items-start gap-2",
+													children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(CircleCheck, { className: "size-3.5 text-emerald-800 dark:text-emerald-400 shrink-0 mt-0.5" }), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("span", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("strong", { children: "Data Model & Architecture Sketch" }), " (PostgreSQL schemas & RLS)"] })]
+												}),
+												/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("li", {
+													className: "flex items-start gap-2",
+													children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(CircleCheck, { className: "size-3.5 text-emerald-800 dark:text-emerald-400 shrink-0 mt-0.5" }), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("span", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("strong", { children: "1 Deployed Working Screen" }), " (Live clickable URL you can test)"] })]
+												}),
+												/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("li", {
+													className: "flex items-start gap-2",
+													children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(CircleCheck, { className: "size-3.5 text-emerald-800 dark:text-emerald-400 shrink-0 mt-0.5" }), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("span", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("strong", { children: "10-Minute Loom Walkthrough" }), " explaining technical trade-offs"] })]
+												}),
+												/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("li", {
+													className: "flex items-start gap-2",
+													children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(CircleCheck, { className: "size-3.5 text-emerald-800 dark:text-emerald-400 shrink-0 mt-0.5" }), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("span", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("strong", { children: "Guaranteed Fixed Quote" }), " for the full 15-day sprint"] })]
+												})
+											]
+										})]
+									})
+								]
+							}),
+							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+								className: "pt-6 mt-6 border-t border-border/60",
+								children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Button, {
+									asChild: true,
+									className: "w-full btn-sage-glow rounded-xl font-semibold shadow-md active:scale-[0.98] transition-all",
+									children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("a", {
+										href: "#contact",
+										children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { children: "Book a Scope & Proof" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(ArrowRight, { className: "ml-2 size-4" })]
+									})
+								})
+							})
+						]
+					}),
+					/* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Card, {
+						className: "card-specular relative flex flex-col justify-between rounded-2xl p-6 sm:p-7 border border-border/80 bg-card shadow-md",
+						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+							className: "space-y-4",
+							children: [
+								/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+									className: "flex items-center justify-between",
+									children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+										className: "text-xs font-mono font-bold uppercase tracking-wider text-indigo",
+										children: "Rung 1 · Full Build"
+									}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("h3", {
+										className: "font-serif text-2xl text-foreground mt-0.5",
+										children: "15-Day Systems Sprint"
+									})] })
+								}),
+								/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+									className: "border-y border-border/60 py-3.5 space-y-1",
+									children: [
+										/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+											className: "flex items-baseline gap-2",
+											children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+												className: "text-3xl font-bold font-mono tracking-tight text-foreground",
+												children: "₹3.5L – ₹6.0L"
+											}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+												className: "text-xs text-muted-foreground font-mono",
+												children: "fixed"
+											})]
+										}),
+										/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+											className: "text-xs text-muted-foreground",
+											children: "One workflow (Quotes/CPQ, Approvals, or Payments)"
+										}),
+										/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("p", {
+											className: "text-xs text-muted-foreground font-mono flex items-center gap-1.5 pt-1",
+											children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Clock, { className: "size-3 shrink-0 text-indigo" }), "15 Business Days to Staging & Production"]
+										})
+									]
+								}),
+								/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+									className: "text-xs text-muted-foreground leading-relaxed",
+									children: "Complete operational software built, tested, security-hardened, and documented."
+								}),
+								/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+									className: "space-y-2 pt-2",
+									children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+										className: "text-[11px] font-mono uppercase tracking-wider text-muted-foreground font-bold",
+										children: "Deliverables Included:"
+									}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("ul", {
+										className: "space-y-2 text-xs text-foreground/90",
+										children: [
+											/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("li", {
+												className: "flex items-start gap-2",
+												children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Check, { className: "size-3.5 text-indigo shrink-0 mt-0.5" }), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("span", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("strong", { children: "Production Workflow Deployed" }), " on client custom domain"] })]
+											}),
+											/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("li", {
+												className: "flex items-start gap-2",
+												children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Check, { className: "size-3.5 text-indigo shrink-0 mt-0.5" }), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("span", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("strong", { children: "Automated Test Suite" }), " covering every state transition"] })]
+											}),
+											/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("li", {
+												className: "flex items-start gap-2",
+												children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Check, { className: "size-3.5 text-indigo shrink-0 mt-0.5" }), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("span", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("strong", { children: "Security Hardening Pass" }), " (Postgres RLS, HMAC, sanitization)"] })]
+											}),
+											/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("li", {
+												className: "flex items-start gap-2",
+												children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Check, { className: "size-3.5 text-indigo shrink-0 mt-0.5" }), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("span", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("strong", { children: "Complete Repository Handover" }), " + documented README & specs"] })]
+											}),
+											/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("li", {
+												className: "flex items-start gap-2",
+												children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Check, { className: "size-3.5 text-indigo shrink-0 mt-0.5" }), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("span", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("strong", { children: "14 Days Post-Launch Warranty" }), " for immediate bug fixes"] })]
+											})
+										]
+									})]
+								})
+							]
+						}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+							className: "pt-6 mt-6 border-t border-border/60",
+							children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Button, {
+								asChild: true,
+								variant: "outline",
+								className: "w-full rounded-xl border-border/80 hover:border-indigo hover:text-indigo font-semibold shadow-sm active:scale-[0.98] transition-all",
+								children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("a", {
+									href: "#contact",
+									children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { children: "Inquire for Sprint" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(ArrowRight, { className: "ml-2 size-4" })]
+								})
+							})
+						})]
+					}),
+					/* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Card, {
+						className: "card-specular relative flex flex-col justify-between rounded-2xl p-6 sm:p-7 border border-border/80 bg-card shadow-md",
+						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+							className: "space-y-4",
+							children: [
+								/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+									className: "flex items-center justify-between",
+									children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+										className: "text-xs font-mono font-bold uppercase tracking-wider text-amber-800 dark:text-amber-400",
+										children: "Rung 2 · Retainer"
+									}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("h3", {
+										className: "font-serif text-2xl text-foreground mt-0.5",
+										children: "Harden & Care"
+									})] })
+								}),
+								/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+									className: "border-y border-border/60 py-3.5 space-y-1",
+									children: [
+										/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+											className: "flex items-baseline gap-2",
+											children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+												className: "text-3xl font-bold font-mono tracking-tight text-foreground",
+												children: "₹20k – ₹35k"
+											}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+												className: "text-xs text-muted-foreground font-mono",
+												children: "/ month"
+											})]
+										}),
+										/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+											className: "text-xs text-muted-foreground",
+											children: "Optional post-launch care & priority SLA"
+										}),
+										/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("p", {
+											className: "text-xs text-muted-foreground font-mono flex items-center gap-1.5 pt-1",
+											children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(ShieldCheck, { className: "size-3 shrink-0 text-amber-800 dark:text-amber-400" }), "Direct priority engineer access"]
+										})
+									]
+								}),
+								/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+									className: "text-xs text-muted-foreground leading-relaxed",
+									children: "Keeps your operational software running with zero downtime, dependency updates, and priority bug resolution."
+								}),
+								/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+									className: "space-y-2 pt-2",
+									children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+										className: "text-[11px] font-mono uppercase tracking-wider text-muted-foreground font-bold",
+										children: "Deliverables Included:"
+									}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("ul", {
+										className: "space-y-2 text-xs text-foreground/90",
+										children: [
+											/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("li", {
+												className: "flex items-start gap-2",
+												children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Check, { className: "size-3.5 text-amber-800 dark:text-amber-400 shrink-0 mt-0.5" }), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("span", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("strong", { children: "Monthly Maintenance Allowance" }), " for small tweaks & updates"] })]
+											}),
+											/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("li", {
+												className: "flex items-start gap-2",
+												children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Check, { className: "size-3.5 text-amber-800 dark:text-amber-400 shrink-0 mt-0.5" }), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("span", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("strong", { children: "Priority SLA Response" }), " on operational blockers"] })]
+											}),
+											/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("li", {
+												className: "flex items-start gap-2",
+												children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Check, { className: "size-3.5 text-amber-800 dark:text-amber-400 shrink-0 mt-0.5" }), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("span", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("strong", { children: "Security Patching & Upgrades" }), " for dependencies & databases"] })]
+											}),
+											/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("li", {
+												className: "flex items-start gap-2",
+												children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Check, { className: "size-3.5 text-amber-800 dark:text-amber-400 shrink-0 mt-0.5" }), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("span", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("strong", { children: "Authorization-Before-Execution Rule" }), ": work pauses if invoice unpaid"] })]
+											})
+										]
+									})]
+								})
+							]
+						}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+							className: "pt-6 mt-6 border-t border-border/60",
+							children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Button, {
+								asChild: true,
+								variant: "outline",
+								className: "w-full rounded-xl border-border/80 hover:text-amber-800 dark:hover:text-amber-400 font-semibold shadow-sm active:scale-[0.98] transition-all",
+								children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("a", {
+									href: "#contact",
+									children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { children: "Ask About Care" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(ArrowRight, { className: "ml-2 size-4" })]
+								})
+							})
+						})]
+					})
+				]
+			}),
+			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+				className: "mt-10 rounded-2xl border border-border/70 bg-secondary/40 p-6 sm:p-8",
+				children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+					className: "grid gap-6 md:grid-cols-2 items-start",
+					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+						className: "space-y-3",
+						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+							className: "flex items-center gap-2",
+							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(CircleCheck, { className: "size-4 text-emerald-800 dark:text-emerald-400" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("h4", {
+								className: "text-sm font-bold uppercase tracking-wide text-foreground",
+								children: "A Scope & Proof is a good fit if:"
+							})]
+						}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("ul", {
+							className: "space-y-2 text-xs sm:text-sm text-muted-foreground leading-relaxed",
+							children: [
+								/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("li", {
+									className: "flex items-start gap-2",
+									children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+										className: "text-emerald-800 dark:text-emerald-400 font-bold",
+										children: "•"
+									}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { children: "You have an operational workflow currently held together by spreadsheets, WhatsApp, or manual follow-ups." })]
+								}),
+								/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("li", {
+									className: "flex items-start gap-2",
+									children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+										className: "text-emerald-800 dark:text-emerald-400 font-bold",
+										children: "•"
+									}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { children: "You want a guaranteed, fixed quote and architecture spec before committing to a full build." })]
+								}),
+								/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("li", {
+									className: "flex items-start gap-2",
+									children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+										className: "text-emerald-800 dark:text-emerald-400 font-bold",
+										children: "•"
+									}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { children: "You would rather inspect 1 real working screen than sit through a vague slide deck presentation." })]
+								})
+							]
+						})]
+					}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+						className: "space-y-3 border-t md:border-t-0 md:border-l border-border/60 pt-4 md:pt-0 md:pl-6",
+						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+							className: "flex items-center gap-2",
+							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(ShieldAlert, { className: "size-4 text-amber-800 dark:text-amber-400" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("h4", {
+								className: "text-sm font-bold uppercase tracking-wide text-foreground",
+								children: "Client-Side Sprint Constraints:"
+							})]
+						}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("p", {
+							className: "text-xs sm:text-sm text-muted-foreground leading-relaxed",
+							children: [
+								"To guarantee 15-day delivery: ",
+								/* @__PURE__ */ (0, import_jsx_runtime.jsx)("strong", { children: "One workflow per sprint. Maximum two decision-makers." }),
+								" API keys, branding assets, and domain DNS provided by Day 2. Visual redesigns outside agreed tokens and multi-region DB clustering are quoted separately."
+							]
+						})]
+					})]
+				})
+			})
+		]
+	});
+}
 var Sheet = Dialog$1;
 var SheetTrigger = DialogTrigger$1;
 var SheetPortal = DialogPortal$1;
@@ -591,79 +956,6 @@ function useActiveSection(sectionIds) {
 		return () => window.removeEventListener("scroll", handleScroll);
 	}, [sectionIds]);
 	return activeSection;
-}
-function ThemeToggle({ className = "", variant = "ghost", size = "icon" }) {
-	const [theme, setTheme] = (0, import_react.useState)("dark");
-	(0, import_react.useEffect)(() => {
-		const isLight = document.documentElement.classList.contains("light");
-		const storedTheme = localStorage.getItem("theme");
-		const systemPrefersLight = window.matchMedia("(prefers-color-scheme: light)").matches;
-		setTheme(storedTheme || (isLight || systemPrefersLight ? "light" : "dark"));
-		const mediaQuery = window.matchMedia("(prefers-color-scheme: light)");
-		const handleSystemThemeChange = (e) => {
-			if (!localStorage.getItem("theme")) {
-				const nextTheme = e.matches ? "light" : "dark";
-				setTheme(nextTheme);
-				if (nextTheme === "light") {
-					document.documentElement.classList.add("light");
-					document.documentElement.classList.remove("dark");
-				} else {
-					document.documentElement.classList.remove("light");
-					document.documentElement.classList.add("dark");
-				}
-			}
-		};
-		const handleThemeChange = (e) => {
-			const customEvent = e;
-			if (customEvent.detail) setTheme(customEvent.detail);
-			else {
-				const currentIsLight = document.documentElement.classList.contains("light");
-				setTheme(currentIsLight ? "light" : "dark");
-			}
-		};
-		const handleStorageChange = (e) => {
-			if (e.key === "theme" && (e.newValue === "dark" || e.newValue === "light")) {
-				setTheme(e.newValue);
-				if (e.newValue === "light") {
-					document.documentElement.classList.add("light");
-					document.documentElement.classList.remove("dark");
-				} else {
-					document.documentElement.classList.remove("light");
-					document.documentElement.classList.add("dark");
-				}
-			}
-		};
-		mediaQuery.addEventListener("change", handleSystemThemeChange);
-		window.addEventListener("theme-change", handleThemeChange);
-		window.addEventListener("storage", handleStorageChange);
-		return () => {
-			mediaQuery.removeEventListener("change", handleSystemThemeChange);
-			window.removeEventListener("theme-change", handleThemeChange);
-			window.removeEventListener("storage", handleStorageChange);
-		};
-	}, []);
-	const toggleTheme = () => {
-		const nextTheme = theme === "dark" ? "light" : "dark";
-		setTheme(nextTheme);
-		localStorage.setItem("theme", nextTheme);
-		if (nextTheme === "light") {
-			document.documentElement.classList.add("light");
-			document.documentElement.classList.remove("dark");
-		} else {
-			document.documentElement.classList.remove("light");
-			document.documentElement.classList.add("dark");
-		}
-		window.dispatchEvent(new CustomEvent("theme-change", { detail: nextTheme }));
-	};
-	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Button, {
-		variant,
-		size,
-		onClick: toggleTheme,
-		className: `rounded-full transition-transform active:scale-95 ${className}`,
-		title: theme === "dark" ? "Switch to Light Mode" : "Switch to Dark Mode",
-		"aria-label": "Toggle Theme",
-		children: theme === "dark" ? /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Sun, { className: "size-4 text-sage transition-all hover:rotate-45" }) : /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Moon, { className: "size-4 text-sage transition-all hover:-rotate-12" })
-	});
 }
 var navSections = navLinks.map((l) => l.href.replace("#", ""));
 function SiteNav() {
@@ -1066,6 +1358,8 @@ function ResumeModal({ trigger, open, onOpenChange, email, pdfUrl = "/api/resume
 	});
 }
 var sections = [
+	"offers",
+	"method",
 	"about",
 	"projects",
 	"skills",
@@ -2071,26 +2365,6 @@ function IntroOverlay() {
 		]
 	});
 }
-function useScrollAnimation(threshold = .1) {
-	const ref = (0, import_react.useRef)(null);
-	const [isVisible, setIsVisible] = (0, import_react.useState)(false);
-	(0, import_react.useEffect)(() => {
-		const element = ref.current;
-		if (!element) return;
-		const observer = new IntersectionObserver(([entry]) => {
-			if (entry.isIntersecting) {
-				setIsVisible(true);
-				observer.unobserve(element);
-			}
-		}, { threshold });
-		observer.observe(element);
-		return () => observer.disconnect();
-	}, [threshold]);
-	return {
-		ref,
-		isVisible
-	};
-}
 function HeroTerminal() {
 	const [copied, setCopied] = (0, import_react.useState)(false);
 	const handleCopy = () => {
@@ -2345,21 +2619,21 @@ function Hero({ tagline, availabilityStatus, liveCount, email, pdfUrl, summary, 
 				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [
 					/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 						className: "rise-in inline-flex items-center gap-2 rounded-full border border-emerald-600/30 dark:border-emerald-500/30 bg-emerald-50 dark:bg-emerald-500/10 px-3.5 py-1 text-xs font-semibold tracking-wide text-emerald-800 dark:text-emerald-400 shadow-sm backdrop-blur-sm",
-						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: "size-2 rounded-full bg-emerald-600 dark:bg-emerald-400 shadow-[0_0_8px_#10b981] animate-pulse" }), "Full-Stack Builder · SaaS Founder"]
+						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: "size-2 rounded-full bg-emerald-600 dark:bg-emerald-400 shadow-[0_0_8px_#10b981] animate-pulse" }), "Nagulagam Chanakya · Independent Systems Engineer"]
 					}),
 					/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("h1", {
-						className: "rise-in rise-in-1 mt-5 font-serif text-5xl leading-[1.08] tracking-[-0.035em] sm:text-6xl md:text-7xl",
+						className: "rise-in rise-in-1 mt-5 font-serif text-4xl sm:text-5xl md:text-6xl leading-[1.08] tracking-[-0.03em]",
 						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-							className: "text-foreground font-bold",
-							children: "Nagulagam "
+							className: "text-foreground",
+							children: "I build the operational software that runs "
 						}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
 							className: "bg-gradient-to-r from-emerald-800 via-teal-800 to-cyan-900 dark:from-emerald-400 dark:via-teal-300 dark:to-cyan-400 bg-clip-text text-transparent font-bold",
-							children: "Chanakya"
+							children: "quotes, approvals, and payments."
 						})]
 					}),
 					/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
 						className: "rise-in rise-in-2 mt-6 max-w-xl text-lg sm:text-xl leading-relaxed text-muted-foreground",
-						children: tagline || "I ship products under real constraints — not demos. Trelio is the primary work alongside focused software projects."
+						children: "Independent engineer. One workflow, built and hardened in 15 days — with a written scope, automated test suite, and a repository you own."
 					}),
 					/* @__PURE__ */ (0, import_jsx_runtime.jsx)(HeroStats, {
 						status: availabilityStatus,
@@ -2373,28 +2647,24 @@ function Hero({ tagline, availabilityStatus, liveCount, email, pdfUrl, summary, 
 								size: "lg",
 								className: "group btn-sage-glow rounded-xl font-medium shadow-md active:scale-[0.98] transition-all pl-5 pr-2.5 py-2 inline-flex items-center gap-2.5",
 								children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("a", {
-									href: "#projects",
-									onClick: () => {
-										if (typeof window !== "undefined") window.dispatchEvent(new CustomEvent("portfolio-tab-switch", { detail: { tab: "side" } }));
-									},
-									children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { children: "View projects" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+									href: "#offers",
+									children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { children: "Start a Scope & Proof (₹40k)" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
 										className: "flex size-6 items-center justify-center rounded-lg bg-black/10 dark:bg-white/15 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5",
 										children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(ArrowRight, { className: "size-3.5" })
 									})]
 								})
 							}),
-							/* @__PURE__ */ (0, import_jsx_runtime.jsx)(ResumeModal, {
-								resume,
-								email,
-								pdfUrl,
-								summary,
-								education,
-								skillsList,
-								trigger: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Button, {
-									size: "lg",
-									variant: "outline",
-									className: "rounded-xl border-border/80 hover:border-emerald-600 dark:hover:border-emerald-400 hover:text-emerald-700 dark:hover:text-emerald-400 font-medium shadow-sm active:scale-[0.98] transition-all",
-									children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(FileText, { className: "mr-1.5 size-4" }), "View Resume"]
+							/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Button, {
+								asChild: true,
+								size: "lg",
+								variant: "outline",
+								className: "rounded-xl border-border/80 hover:border-indigo hover:text-indigo font-medium shadow-sm active:scale-[0.98] transition-all",
+								children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("a", {
+									href: "#projects",
+									onClick: () => {
+										if (typeof window !== "undefined") window.dispatchEvent(new CustomEvent("portfolio-tab-switch", { detail: { tab: "side" } }));
+									},
+									children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { children: "Explore Live Systems ↓" })
 								})
 							}),
 							/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Button, {
@@ -3195,6 +3465,10 @@ function PortfolioHome({ initialData }) {
 						resume: data?.resume
 					}),
 					/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Separator, {}),
+					/* @__PURE__ */ (0, import_jsx_runtime.jsx)(OfferLadder, {}),
+					/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Separator, {}),
+					/* @__PURE__ */ (0, import_jsx_runtime.jsx)(MethodSection, {}),
+					/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Separator, {}),
 					/* @__PURE__ */ (0, import_jsx_runtime.jsx)(About, {
 						email: data?.resumeOverride?.email,
 						pdfUrl: data?.resumeOverride?.resumePdfUrl,
@@ -3241,7 +3515,7 @@ function PortfolioHome({ initialData }) {
 								]
 							}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
 								className: "mt-2 text-sm text-muted-foreground",
-								children: "Building Trelio. Open for high-impact software engineering roles."
+								children: "Independent Systems Engineer · Quote-to-cash, approval & payment workflows."
 							})] }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("a", {
 								href: "#top",
 								className: "flex size-12 items-center justify-center rounded-full border border-border bg-secondary text-muted-foreground transition-all hover:border-sage hover:text-sage hover:scale-110",
@@ -3252,12 +3526,36 @@ function PortfolioHome({ initialData }) {
 						/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Companion, { footerOnly: true }),
 						/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Separator, { className: "my-8" }),
 						/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-							className: "flex flex-col gap-2 text-xs text-muted-foreground sm:flex-row sm:items-center sm:justify-between",
+							className: "flex flex-col gap-4 text-xs text-muted-foreground sm:flex-row sm:items-center sm:justify-between",
 							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("p", { children: [
 								"© ",
 								(/* @__PURE__ */ new Date()).getFullYear(),
-								" Nagulagam Chanakya. All rights reserved."
-							] }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", { children: "Designed & Engineered with care · Trelio SaaS" })]
+								" Nagulagam Chanakya · Independent Systems Engineer"
+							] }), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+								className: "flex items-center gap-4 text-xs font-mono",
+								children: [
+									/* @__PURE__ */ (0, import_jsx_runtime.jsx)("a", {
+										href: "#offers",
+										className: "hover:text-foreground transition-colors",
+										children: "Offers"
+									}),
+									/* @__PURE__ */ (0, import_jsx_runtime.jsx)("a", {
+										href: "/method",
+										className: "hover:text-foreground transition-colors",
+										children: "Method"
+									}),
+									/* @__PURE__ */ (0, import_jsx_runtime.jsx)("a", {
+										href: "#projects",
+										className: "hover:text-foreground transition-colors",
+										children: "Live Systems"
+									}),
+									/* @__PURE__ */ (0, import_jsx_runtime.jsx)("a", {
+										href: "#contact",
+										className: "hover:text-foreground transition-colors",
+										children: "Contact"
+									})
+								]
+							})]
 						})
 					]
 				})
@@ -3266,7 +3564,7 @@ function PortfolioHome({ initialData }) {
 	});
 }
 function Home() {
-	const data = Route$11.useLoaderData();
+	const data = Route$12.useLoaderData();
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(PortfolioHome, { initialData: data });
 }
 //#endregion

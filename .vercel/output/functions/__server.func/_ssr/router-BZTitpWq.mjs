@@ -1,11 +1,11 @@
 import { i as __toESM } from "../_runtime.mjs";
 import { n as put, t as head } from "../_libs/@vercel/blob+[...].mjs";
-import { a as getPortfolioData, i as writeContent, n as readContent, r as restoreBackup, u as __exportAll } from "./content.server-osXMLVNu.mjs";
+import { a as getPortfolioData, i as writeContent, n as readContent, r as restoreBackup, u as __exportAll } from "./content.server-CamQzWbx.mjs";
 import { u as require_react } from "../_libs/@floating-ui/react-dom+[...].mjs";
 import { f as createRouter, g as createRootRoute, h as createFileRoute, l as Scripts, m as lazyRouteComponent, p as Outlet, u as HeadContent } from "../_libs/@tanstack/react-router+[...].mjs";
 import { s as require_jsx_runtime } from "../_libs/@radix-ui/react-collection+[...].mjs";
 import { n as TSS_SERVER_FUNCTION, r as getServerFnById, t as createServerFn } from "./ssr.mjs";
-import { V as ArrowLeft, j as Compass, r as TriangleAlert, u as RotateCw } from "../_libs/lucide-react.mjs";
+import { N as Compass, U as ArrowLeft, f as RotateCw, r as TriangleAlert } from "../_libs/lucide-react.mjs";
 import { n as Portal, r as Provider, t as Content2 } from "../_libs/@radix-ui/react-tooltip+[...].mjs";
 import { n as clsx } from "../_libs/class-variance-authority+clsx.mjs";
 import { t as twMerge } from "../_libs/tailwind-merge.mjs";
@@ -14,7 +14,7 @@ import { i as string, n as object, r as record, t as array } from "../_libs/zod.
 import crypto from "node:crypto";
 import path from "node:path";
 import fs from "node:fs";
-//#region node_modules/.nitro/vite/services/ssr/assets/router-BEVk1dcA.js
+//#region node_modules/.nitro/vite/services/ssr/assets/router-BZTitpWq.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 function AppErrorComponent({ error }) {
@@ -104,7 +104,7 @@ var TooltipContent = import_react.forwardRef(({ className, sideOffset = 6, ...pr
 	...props
 }) }));
 TooltipContent.displayName = Content2.displayName;
-var styles_default = "/assets/styles-B5rceZBU.css";
+var styles_default = "/assets/styles-BALowYGd.css";
 var APP_NAME = "Nagulagam Chanakya — Full-Stack Developer & SaaS Founder";
 var APP_DESC = "Official portfolio of Nagulagam Chanakya — Full-Stack Developer & Founder of Trelio. Specializing in React, Node.js, TypeScript, PostgreSQL, and applied software security.";
 var SITE_URL = "https://chanakya-portfolio-orcin.vercel.app";
@@ -173,7 +173,7 @@ var JSON_LD = {
 		}
 	]
 };
-var Route$12 = createRootRoute({
+var Route$13 = createRootRoute({
 	head: () => ({
 		meta: [
 			{ charSet: "utf-8" },
@@ -312,14 +312,22 @@ var createSsrRpc = (functionId) => {
 	});
 };
 var fetchContent = createServerFn({ method: "GET" }).handler(createSsrRpc("2b99909e19342163fb9618a3b1f343b57fe68205625d940d83a174e978667293"));
-var $$splitComponentImporter$2 = () => import("./routes-BdHn28WC.mjs");
-var Route$11 = createFileRoute("/")({
+var $$splitComponentImporter$3 = () => import("./routes-CxcQ20ip.mjs");
+var Route$12 = createFileRoute("/")({
 	loader: () => fetchContent(),
-	component: lazyRouteComponent($$splitComponentImporter$2, "component")
+	component: lazyRouteComponent($$splitComponentImporter$3, "component")
 });
-var $$splitComponentImporter$1 = () => import("./admin-B09p4sFh.mjs");
+var $$splitComponentImporter$2 = () => import("./method-BkSd2nbH.mjs");
+var Route$11 = createFileRoute("/method")({
+	component: lazyRouteComponent($$splitComponentImporter$2, "component"),
+	head: () => ({ meta: [{ title: "The 15-Day Systems Factory — Nagulagam Chanakya" }, {
+		name: "description",
+		content: "The 5-phase operating system used by independent engineer Nagulagam Chanakya to build, test, and ship hardened quote-to-cash operational software in 15 days."
+	}] })
+});
+var $$splitComponentImporter$1 = () => import("./admin-4NwJv1Ae.mjs");
 var Route$10 = createFileRoute("/admin/")({ component: lazyRouteComponent($$splitComponentImporter$1, "component") });
-var $$splitComponentImporter = () => import("./login-BxJonfp8.mjs");
+var $$splitComponentImporter = () => import("./login-nR_DKwQT.mjs");
 var Route$9 = createFileRoute("/admin/login")({ component: lazyRouteComponent($$splitComponentImporter, "component") });
 var envCache = null;
 var lastCacheTime = 0;
@@ -1118,71 +1126,77 @@ var Route = createFileRoute("/api/admin/resume")({ server: { handlers: { POST: a
 		}), { headers: { "Content-Type": "application/json" } });
 	}
 } } } });
-var IndexRoute = Route$11.update({
+var IndexRoute = Route$12.update({
 	id: "/",
 	path: "/",
-	getParentRoute: () => Route$12
+	getParentRoute: () => Route$13
+});
+var MethodRoute = Route$11.update({
+	id: "/method",
+	path: "/method",
+	getParentRoute: () => Route$13
 });
 var AdminIndexRoute = Route$10.update({
 	id: "/admin/",
 	path: "/admin/",
-	getParentRoute: () => Route$12
+	getParentRoute: () => Route$13
 });
 var rootRouteChildren = {
 	IndexRoute,
+	MethodRoute,
 	AdminLoginRoute: Route$9.update({
 		id: "/admin/login",
 		path: "/admin/login",
-		getParentRoute: () => Route$12
+		getParentRoute: () => Route$13
 	}),
 	ApiChatRoute: Route$8.update({
 		id: "/api/chat",
 		path: "/api/chat",
-		getParentRoute: () => Route$12
+		getParentRoute: () => Route$13
 	}),
 	ApiHealthRoute: Route$7.update({
 		id: "/api/health",
 		path: "/api/health",
-		getParentRoute: () => Route$12
+		getParentRoute: () => Route$13
 	}),
 	ApiResumeRoute: Route$6.update({
 		id: "/api/resume",
 		path: "/api/resume",
-		getParentRoute: () => Route$12
+		getParentRoute: () => Route$13
 	}),
 	AdminIndexRoute,
 	ApiAdminCheckRoute: Route$5.update({
 		id: "/api/admin/check",
 		path: "/api/admin/check",
-		getParentRoute: () => Route$12
+		getParentRoute: () => Route$13
 	}),
 	ApiAdminDataRoute: Route$4.update({
 		id: "/api/admin/data",
 		path: "/api/admin/data",
-		getParentRoute: () => Route$12
+		getParentRoute: () => Route$13
 	}),
 	ApiAdminLoginRoute: Route$3.update({
 		id: "/api/admin/login",
 		path: "/api/admin/login",
-		getParentRoute: () => Route$12
+		getParentRoute: () => Route$13
 	}),
 	ApiAdminLogoutRoute: Route$2.update({
 		id: "/api/admin/logout",
 		path: "/api/admin/logout",
-		getParentRoute: () => Route$12
+		getParentRoute: () => Route$13
 	}),
 	ApiAdminRestoreRoute: Route$1.update({
 		id: "/api/admin/restore",
 		path: "/api/admin/restore",
-		getParentRoute: () => Route$12
+		getParentRoute: () => Route$13
 	}),
 	ApiAdminResumeRoute: Route.update({
 		id: "/api/admin/resume",
 		path: "/api/admin/resume",
-		getParentRoute: () => Route$12
+		getParentRoute: () => Route$13
 	})
 };
-var routeTree = Route$12._addFileChildren(rootRouteChildren)._addFileTypes();
+var routeTree = Route$13._addFileChildren(rootRouteChildren)._addFileTypes();
 var router_exports = /* @__PURE__ */ __exportAll({ getRouter: () => getRouter });
 function getRouter() {
 	return createRouter({
@@ -1192,4 +1206,4 @@ function getRouter() {
 	});
 }
 //#endregion
-export { Route$11 as n, cn as r, router_exports as t };
+export { Route$12 as n, cn as r, router_exports as t };

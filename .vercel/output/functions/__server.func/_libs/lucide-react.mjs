@@ -730,6 +730,26 @@ var Send = createLucideIcon("send", [["path", {
 * This source code is licensed under the ISC license.
 * See the LICENSE file in the root directory of this source tree.
 */
+var ShieldAlert = createLucideIcon("shield-alert", [
+	["path", {
+		d: "M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z",
+		key: "oel41y"
+	}],
+	["path", {
+		d: "M12 8v4",
+		key: "1got3b"
+	}],
+	["path", {
+		d: "M12 16h.01",
+		key: "1drbdi"
+	}]
+]);
+/**
+* @license lucide-react v0.510.0 - ISC
+*
+* This source code is licensed under the ISC license.
+* See the LICENSE file in the root directory of this source tree.
+*/
 var ShieldCheck = createLucideIcon("shield-check", [["path", {
 	d: "M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z",
 	key: "oel41y"
@@ -817,6 +837,22 @@ var Sun = createLucideIcon("sun", [
 * This source code is licensed under the ISC license.
 * See the LICENSE file in the root directory of this source tree.
 */
+var Terminal = createLucideIcon("terminal", [["polyline", {
+	points: "4 17 10 11 4 5",
+	key: "akl6gq"
+}], ["line", {
+	x1: "12",
+	x2: "20",
+	y1: "19",
+	y2: "19",
+	key: "q2wloq"
+}]]);
+/**
+* @license lucide-react v0.510.0 - ISC
+*
+* This source code is licensed under the ISC license.
+* See the LICENSE file in the root directory of this source tree.
+*/
 var Trash2 = createLucideIcon("trash-2", [
 	["path", {
 		d: "M3 6h18",
@@ -894,4 +930,4 @@ var X = createLucideIcon("x", [["path", {
 	key: "d8bk6v"
 }]]);
 //#endregion
-export { Copy as A, ArrowRight as B, GraduationCap as C, ExternalLink as D, FileText as E, Check as F, Building2 as I, Bot as L, CodeXml as M, Clock as N, Disc as O, CircleCheck as P, Award as R, Layers as S, Gauge as T, ArrowLeft as V, Mail as _, Sun as a, Linkedin as b, Send as c, RefreshCw as d, Printer as f, MapPin as g, Menu as h, Trash2 as i, Compass as j, Database as k, Save as l, Moon as m, User as n, Sparkles as o, Plus as p, TriangleAlert as r, ShieldCheck as s, X as t, RotateCw as u, LogOut as v, Github as w, LayoutGrid as x, Lock as y, ArrowUp as z };
+export { Disc as A, Award as B, LayoutGrid as C, Gauge as D, Github as E, Clock as F, ArrowRight as H, CircleCheck as I, Check as L, Copy as M, Compass as N, FileText as O, CodeXml as P, Building2 as R, Linkedin as S, GraduationCap as T, ArrowLeft as U, ArrowUp as V, Menu as _, Terminal as a, LogOut as b, ShieldCheck as c, Save as d, RotateCw as f, Moon as g, Plus as h, Trash2 as i, Database as j, ExternalLink as k, ShieldAlert as l, Printer as m, User as n, Sun as o, RefreshCw as p, TriangleAlert as r, Sparkles as s, X as t, Send as u, MapPin as v, Layers as w, Lock as x, Mail as y, Bot as z };

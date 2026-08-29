@@ -28,6 +28,8 @@ import {
 import { businesses as defaultBusinesses, sideProjects as defaultSideProjects, skills as defaultSkills, Project } from "@/data/projects";
 import { TrelioPreview } from "@/components/trelio-preview";
 import { ApexPreview } from "@/components/apex-preview";
+import { OfferLadder } from "@/components/offer-ladder";
+import { MethodSection } from "@/components/method-section";
 import { SiteNav } from "@/components/site-nav";
 import { LeftRailNav } from "@/components/left-rail-nav";
 import { ParticleField } from "@/components/particle-field";
@@ -177,22 +179,30 @@ function Hero({ tagline, availabilityStatus, liveCount, email, pdfUrl, summary, 
         <div>
           <div className="rise-in inline-flex items-center gap-2 rounded-full border border-emerald-600/30 dark:border-emerald-500/30 bg-emerald-50 dark:bg-emerald-500/10 px-3.5 py-1 text-xs font-semibold tracking-wide text-emerald-800 dark:text-emerald-400 shadow-sm backdrop-blur-sm">
             <span className="size-2 rounded-full bg-emerald-600 dark:bg-emerald-400 shadow-[0_0_8px_#10b981] animate-pulse" />
-            Full-Stack Builder · SaaS Founder
+            Nagulagam Chanakya · Independent Systems Engineer
           </div>
-          <h1 className="rise-in rise-in-1 mt-5 font-serif text-5xl leading-[1.08] tracking-[-0.035em] sm:text-6xl md:text-7xl">
-            <span className="text-foreground font-bold">Nagulagam </span>
+          <h1 className="rise-in rise-in-1 mt-5 font-serif text-4xl sm:text-5xl md:text-6xl leading-[1.08] tracking-[-0.03em]">
+            <span className="text-foreground">I build the operational software that runs </span>
             <span className="bg-gradient-to-r from-emerald-800 via-teal-800 to-cyan-900 dark:from-emerald-400 dark:via-teal-300 dark:to-cyan-400 bg-clip-text text-transparent font-bold">
-              Chanakya
+              quotes, approvals, and payments.
             </span>
           </h1>
           <p className="rise-in rise-in-2 mt-6 max-w-xl text-lg sm:text-xl leading-relaxed text-muted-foreground">
-            {tagline || "I ship products under real constraints — not demos. Trelio is the primary work alongside focused software projects."}
+            Independent engineer. One workflow, built and hardened in 15 days — with a written scope, automated test suite, and a repository you own.
           </p>
 
           <HeroStats status={availabilityStatus} liveCount={liveCount} />
 
           <div className="rise-in rise-in-3 mt-10 flex flex-wrap items-center gap-3">
             <Button asChild size="lg" className="group btn-sage-glow rounded-xl font-medium shadow-md active:scale-[0.98] transition-all pl-5 pr-2.5 py-2 inline-flex items-center gap-2.5">
+              <a href="#offers">
+                <span>Start a Scope & Proof (₹40k)</span>
+                <span className="flex size-6 items-center justify-center rounded-lg bg-black/10 dark:bg-white/15 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
+                  <ArrowRight className="size-3.5" />
+                </span>
+              </a>
+            </Button>
+            <Button asChild size="lg" variant="outline" className="rounded-xl border-border/80 hover:border-indigo hover:text-indigo font-medium shadow-sm active:scale-[0.98] transition-all">
               <a
                 href="#projects"
                 onClick={() => {
@@ -201,26 +211,9 @@ function Hero({ tagline, availabilityStatus, liveCount, email, pdfUrl, summary, 
                   }
                 }}
               >
-                <span>View projects</span>
-                <span className="flex size-6 items-center justify-center rounded-lg bg-black/10 dark:bg-white/15 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
-                  <ArrowRight className="size-3.5" />
-                </span>
+                <span>Explore Live Systems ↓</span>
               </a>
             </Button>
-            <ResumeModal
-              resume={resume}
-              email={email}
-              pdfUrl={pdfUrl}
-              summary={summary}
-              education={education}
-              skillsList={skillsList}
-              trigger={
-                <Button size="lg" variant="outline" className="rounded-xl border-border/80 hover:border-emerald-600 dark:hover:border-emerald-400 hover:text-emerald-700 dark:hover:text-emerald-400 font-medium shadow-sm active:scale-[0.98] transition-all">
-                  <FileText className="mr-1.5 size-4" />
-                  View Resume
-                </Button>
-              }
-            />
             <Button asChild size="lg" variant="outline" className="rounded-xl border-border/80 hover:bg-secondary shadow-sm active:scale-[0.98] transition-all">
               <a href="#contact">
                 <Mail className="size-4" />
@@ -956,6 +949,10 @@ export function PortfolioHome({ initialData }: { initialData?: DynamicData | nul
           resume={data?.resume}
         />
         <Separator />
+        <OfferLadder />
+        <Separator />
+        <MethodSection />
+        <Separator />
         <About
           email={data?.resumeOverride?.email}
           pdfUrl={data?.resumeOverride?.resumePdfUrl}
@@ -993,7 +990,7 @@ export function PortfolioHome({ initialData }: { initialData?: DynamicData | nul
                 TOGETHER.
               </h3>
               <p className="mt-2 text-sm text-muted-foreground">
-                Building Trelio. Open for high-impact software engineering roles.
+                Independent Systems Engineer · Quote-to-cash, approval & payment workflows.
               </p>
             </div>
             <a
@@ -1009,9 +1006,14 @@ export function PortfolioHome({ initialData }: { initialData?: DynamicData | nul
 
           <Separator className="my-8" />
 
-          <div className="flex flex-col gap-2 text-xs text-muted-foreground sm:flex-row sm:items-center sm:justify-between">
-            <p>© {new Date().getFullYear()} Nagulagam Chanakya. All rights reserved.</p>
-            <p>Designed & Engineered with care · Trelio SaaS</p>
+          <div className="flex flex-col gap-4 text-xs text-muted-foreground sm:flex-row sm:items-center sm:justify-between">
+            <p>© {new Date().getFullYear()} Nagulagam Chanakya · Independent Systems Engineer</p>
+            <div className="flex items-center gap-4 text-xs font-mono">
+              <a href="#offers" className="hover:text-foreground transition-colors">Offers</a>
+              <a href="/method" className="hover:text-foreground transition-colors">Method</a>
+              <a href="#projects" className="hover:text-foreground transition-colors">Live Systems</a>
+              <a href="#contact" className="hover:text-foreground transition-colors">Contact</a>
+            </div>
           </div>
         </div>
       </footer>

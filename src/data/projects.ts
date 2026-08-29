@@ -57,8 +57,10 @@ export const skills: Record<string, string[]> = {
 };
 
 export const navLinks = [
+  { href: "#offers", label: "Offers" },
+  { href: "#method", label: "Method" },
   { href: "#about", label: "About" },
-  { href: "#projects", label: "Projects" },
+  { href: "#projects", label: "Live Systems" },
   { href: "#skills", label: "Skills" },
   { href: "#contact", label: "Contact" },
 ] as const;

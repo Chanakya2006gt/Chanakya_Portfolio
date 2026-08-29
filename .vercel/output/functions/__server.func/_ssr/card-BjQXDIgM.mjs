@@ -2,9 +2,8 @@ import { i as __toESM } from "../_runtime.mjs";
 import { u as require_react } from "../_libs/@floating-ui/react-dom+[...].mjs";
 import { n as Slot, s as require_jsx_runtime } from "../_libs/@radix-ui/react-collection+[...].mjs";
 import { t as cva } from "../_libs/class-variance-authority+clsx.mjs";
-import { r as cn } from "./router-BEVk1dcA.mjs";
-import { t as Root } from "../_libs/radix-ui__react-label.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/card-LGFtm7pz.js
+import { r as cn } from "./router-BZTitpWq.mjs";
+//#region node_modules/.nitro/vite/services/ssr/assets/card-BjQXDIgM.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 var buttonVariants = cva("inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-[color,background-color,box-shadow,transform,opacity] duration-150 ease-out disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 outline-none focus-visible:ring-2 focus-visible:ring-ring/60 active:not-disabled:scale-[0.96]", {
@@ -41,21 +40,6 @@ var Button = import_react.forwardRef(({ className, variant, size, asChild = fals
 	});
 });
 Button.displayName = "Button";
-var Input = import_react.forwardRef(({ className, type, ...props }, ref) => {
-	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("input", {
-		type,
-		className: cn("flex h-11 w-full rounded-lg border border-input bg-secondary px-3 py-2 text-sm text-foreground shadow-none transition-[box-shadow,border-color] duration-150 placeholder:text-muted-foreground/70 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/50 disabled:cursor-not-allowed disabled:opacity-50", className),
-		ref,
-		...props
-	});
-});
-Input.displayName = "Input";
-var Label = import_react.forwardRef(({ className, ...props }, ref) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Root, {
-	ref,
-	className: cn("text-sm font-medium leading-none text-foreground", className),
-	...props
-}));
-Label.displayName = Root.displayName;
 var Card = import_react.forwardRef(({ className, ...props }, ref) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
 	ref,
 	className: cn("rounded-2xl bg-card text-card-foreground shadow-[var(--shadow-border)] transition-[box-shadow,transform] duration-150 ease-out", className),
@@ -93,4 +77,4 @@ var CardFooter = import_react.forwardRef(({ className, ...props }, ref) => /* @_
 }));
 CardFooter.displayName = "CardFooter";
 //#endregion
-export { CardFooter as a, Input as c, CardDescription as i, Label as l, Card as n, CardHeader as o, CardContent as r, CardTitle as s, Button as t };
+export { CardFooter as a, CardDescription as i, Card as n, CardHeader as o, CardContent as r, CardTitle as s, Button as t };

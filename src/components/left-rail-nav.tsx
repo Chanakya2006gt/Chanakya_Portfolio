@@ -4,7 +4,7 @@ import { ResumeModal } from "@/components/resume-modal";
 import { ThemeToggle } from "@/components/theme-toggle";
 import type { ResumeContent } from "@/data/resume-schema";
 
-const sections = ["about", "projects", "skills", "contact"];
+const sections = ["offers", "method", "about", "projects", "skills", "contact"];
 
 export function LeftRailNav({ resume }: { resume?: ResumeContent }) {
   const activeSection = useActiveSection(sections);
