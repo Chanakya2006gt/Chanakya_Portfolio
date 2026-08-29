@@ -14,7 +14,7 @@ import { i as string, n as object, r as record, t as array } from "../_libs/zod.
 import crypto from "node:crypto";
 import path from "node:path";
 import fs from "node:fs";
-//#region node_modules/.nitro/vite/services/ssr/assets/router-p-iOHWZP.js
+//#region node_modules/.nitro/vite/services/ssr/assets/router-CKIW8MQz.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 function AppErrorComponent({ error }) {
@@ -116,38 +116,29 @@ var JSON_LD = {
 			"@id": `${SITE_URL}/#person`,
 			"name": "Nagulagam Chanakya",
 			"url": SITE_URL,
-			"jobTitle": "Full-Stack Developer & Founder",
+			"jobTitle": "Quote-to-Job Systems Engineer & Founder",
 			"worksFor": {
 				"@type": "Organization",
 				"name": "Trelio",
 				"url": "https://trelio.in"
 			},
-			"alumniOf": {
-				"@type": "CollegeOrUniversity",
-				"name": "SR University",
-				"department": "Computer Science & Engineering"
-			},
 			"hasOccupation": {
 				"@type": "Occupation",
-				"name": "AI-Native Software Engineer & Founder",
-				"skills": "Agentic AI Orchestration, Google Antigravity, Claude Code, React, Node.js, TypeScript, PostgreSQL, Applied Cryptography, Multi-tenant SaaS"
+				"name": "Quote-to-Job Systems Engineer",
+				"skills": "Quote-to-Job Systems, Industrial CPQ Engines, FINAT Standards, Authorization-Before-Execution, Stage Locks, Payment Gateways, Multi-tenant Architecture, React, Node.js, PostgreSQL"
 			},
 			"sameAs": ["https://github.com/Chanakya2006gt", "https://www.linkedin.com/in/nagulagam-chanakya-b93514315"],
 			"knowsAbout": [
-				"Agentic Software Engineering",
-				"Autonomous Coding Agents",
-				"High-Concurrency Systems",
-				"Property-Based Testing",
-				"Database Optimization",
+				"Quote-to-Job Systems",
+				"Industrial CPQ Engines",
+				"Converting Plant Workflows",
+				"FINAT 1-8 Rewind Standards",
+				"Authorization-Before-Execution",
+				"Payment Settlement Architecture",
+				"PostgreSQL Data Modeling",
 				"React",
 				"Node.js",
-				"TypeScript",
-				"PostgreSQL",
-				"Tailwind CSS",
-				"Software Security",
-				"SaaS Architecture",
-				"Payment Systems",
-				"CPQ Engines"
+				"TypeScript"
 			]
 		},
 		{
@@ -157,7 +148,7 @@ var JSON_LD = {
 			"url": "https://trelio.in",
 			"applicationCategory": "BusinessApplication",
 			"operatingSystem": "Web",
-			"description": "Authorization-before-execution SaaS ensuring verified scope lock, client authorization, and direct settlement.",
+			"description": "Authorization-before-execution SaaS ensuring verified stage locks, client milestone authorization, and direct settlement.",
 			"author": { "@id": `${SITE_URL}/#person` }
 		},
 		{
@@ -168,7 +159,7 @@ var JSON_LD = {
 			"codeRepository": "https://github.com/Chanakya2006gt/Industrial-packaging-platform",
 			"applicationCategory": "ManufacturingApplication",
 			"operatingSystem": "Web",
-			"description": "Cloud-native B2B CPQ and sales estimating platform for industrial packaging converters with FINAT 1–8 rewind standards engine.",
+			"description": "B2B CPQ and sales estimating platform for industrial packaging converters with FINAT 1–8 rewind standards engine.",
 			"author": { "@id": `${SITE_URL}/#person` }
 		}
 	]
@@ -192,7 +183,7 @@ var Route$13 = createRootRoute({
 			},
 			{
 				name: "keywords",
-				content: "Nagulagam Chanakya, Chanakya, Full-Stack Developer, Trelio, React, Node.js, TypeScript, PostgreSQL, Portfolio, Software Engineer, Warangal, SR University"
+				content: "Quote-to-job systems, industrial CPQ platform, packaging converting quoting, FINAT unwind standards, milestone authorization SaaS, Trelio, Nagulagam Chanakya, fixed-price software build, plants and agencies"
 			},
 			{
 				name: "author",
@@ -224,7 +215,7 @@ var Route$13 = createRootRoute({
 			},
 			{
 				property: "og:site_name",
-				content: "Nagulagam Chanakya Portfolio"
+				content: "Nagulagam Chanakya — Quote-to-Job Systems"
 			},
 			{
 				name: "twitter:card",
@@ -312,12 +303,12 @@ var createSsrRpc = (functionId) => {
 	});
 };
 var fetchContent = createServerFn({ method: "GET" }).handler(createSsrRpc("2b99909e19342163fb9618a3b1f343b57fe68205625d940d83a174e978667293"));
-var $$splitComponentImporter$3 = () => import("./routes-MZiUCONZ.mjs");
+var $$splitComponentImporter$3 = () => import("./routes-CNGn3kU5.mjs");
 var Route$12 = createFileRoute("/")({
 	loader: () => fetchContent(),
 	component: lazyRouteComponent($$splitComponentImporter$3, "component")
 });
-var $$splitComponentImporter$2 = () => import("./method-DfISsYOE.mjs");
+var $$splitComponentImporter$2 = () => import("./method-DfypeP4-.mjs");
 var Route$11 = createFileRoute("/method")({
 	component: lazyRouteComponent($$splitComponentImporter$2, "component"),
 	head: () => ({ meta: [{ title: "The 15-Day Method — Quote-to-Job Systems for Plants & Agencies" }, {
@@ -325,9 +316,9 @@ var Route$11 = createFileRoute("/method")({
 		content: "The 5-phase method used by Nagulagam Chanakya to build, test, and ship hardened quote-to-job operational software in 15 days."
 	}] })
 });
-var $$splitComponentImporter$1 = () => import("./admin-CrxnpMVe.mjs");
+var $$splitComponentImporter$1 = () => import("./admin-C-WNpJHz.mjs");
 var Route$10 = createFileRoute("/admin/")({ component: lazyRouteComponent($$splitComponentImporter$1, "component") });
-var $$splitComponentImporter = () => import("./login-Bt6Kr88j.mjs");
+var $$splitComponentImporter = () => import("./login-CVJ0Avzj.mjs");
 var Route$9 = createFileRoute("/admin/login")({ component: lazyRouteComponent($$splitComponentImporter, "component") });
 var envCache = null;
 var lastCacheTime = 0;

@@ -15,41 +15,32 @@ const JSON_LD = {
       "@id": `${SITE_URL}/#person`,
       "name": "Nagulagam Chanakya",
       "url": SITE_URL,
-      "jobTitle": "Full-Stack Developer & Founder",
+      "jobTitle": "Quote-to-Job Systems Engineer & Founder",
       "worksFor": {
         "@type": "Organization",
         "name": "Trelio",
         "url": "https://trelio.in"
       },
-      "alumniOf": {
-        "@type": "CollegeOrUniversity",
-        "name": "SR University",
-        "department": "Computer Science & Engineering"
-      },
       "hasOccupation": {
         "@type": "Occupation",
-        "name": "AI-Native Software Engineer & Founder",
-        "skills": "Agentic AI Orchestration, Google Antigravity, Claude Code, React, Node.js, TypeScript, PostgreSQL, Applied Cryptography, Multi-tenant SaaS"
+        "name": "Quote-to-Job Systems Engineer",
+        "skills": "Quote-to-Job Systems, Industrial CPQ Engines, FINAT Standards, Authorization-Before-Execution, Stage Locks, Payment Gateways, Multi-tenant Architecture, React, Node.js, PostgreSQL"
       },
       "sameAs": [
         "https://github.com/Chanakya2006gt",
         "https://www.linkedin.com/in/nagulagam-chanakya-b93514315"
       ],
       "knowsAbout": [
-        "Agentic Software Engineering",
-        "Autonomous Coding Agents",
-        "High-Concurrency Systems",
-        "Property-Based Testing",
-        "Database Optimization",
+        "Quote-to-Job Systems",
+        "Industrial CPQ Engines",
+        "Converting Plant Workflows",
+        "FINAT 1-8 Rewind Standards",
+        "Authorization-Before-Execution",
+        "Payment Settlement Architecture",
+        "PostgreSQL Data Modeling",
         "React",
         "Node.js",
-        "TypeScript",
-        "PostgreSQL",
-        "Tailwind CSS",
-        "Software Security",
-        "SaaS Architecture",
-        "Payment Systems",
-        "CPQ Engines"
+        "TypeScript"
       ]
     },
     {
@@ -59,7 +50,7 @@ const JSON_LD = {
       "url": "https://trelio.in",
       "applicationCategory": "BusinessApplication",
       "operatingSystem": "Web",
-      "description": "Authorization-before-execution SaaS ensuring verified scope lock, client authorization, and direct settlement.",
+      "description": "Authorization-before-execution SaaS ensuring verified stage locks, client milestone authorization, and direct settlement.",
       "author": {
         "@id": `${SITE_URL}/#person`
       }
@@ -72,7 +63,7 @@ const JSON_LD = {
       "codeRepository": "https://github.com/Chanakya2006gt/Industrial-packaging-platform",
       "applicationCategory": "ManufacturingApplication",
       "operatingSystem": "Web",
-      "description": "Cloud-native B2B CPQ and sales estimating platform for industrial packaging converters with FINAT 1–8 rewind standards engine.",
+      "description": "B2B CPQ and sales estimating platform for industrial packaging converters with FINAT 1–8 rewind standards engine.",
       "author": {
         "@id": `${SITE_URL}/#person`
       }
@@ -88,7 +79,7 @@ export const Route = createRootRoute({
       { title: APP_NAME },
       { name: "theme-color", content: "#0a0a0b" },
       { name: "description", content: APP_DESC },
-      { name: "keywords", content: "Nagulagam Chanakya, Chanakya, Full-Stack Developer, Trelio, React, Node.js, TypeScript, PostgreSQL, Portfolio, Software Engineer, Warangal, SR University" },
+      { name: "keywords", content: "Quote-to-job systems, industrial CPQ platform, packaging converting quoting, FINAT unwind standards, milestone authorization SaaS, Trelio, Nagulagam Chanakya, fixed-price software build, plants and agencies" },
       { name: "author", content: "Nagulagam Chanakya" },
       { name: "robots", content: "index, follow" },
       
@@ -98,7 +89,7 @@ export const Route = createRootRoute({
       { property: "og:image", content: `${SITE_URL}/og.jpg` },
       { property: "og:url", content: SITE_URL },
       { property: "og:type", content: "website" },
-      { property: "og:site_name", content: "Nagulagam Chanakya Portfolio" },
+      { property: "og:site_name", content: "Nagulagam Chanakya — Quote-to-Job Systems" },
 
       // Twitter / X Cards
       { name: "twitter:card", content: "summary_large_image" },
