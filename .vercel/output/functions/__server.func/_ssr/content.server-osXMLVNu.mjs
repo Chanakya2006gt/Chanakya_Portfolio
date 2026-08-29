@@ -1,5 +1,5 @@
 import { n as put, t as head } from "../_libs/@vercel/blob+[...].mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/content.server-lt71HV32.js
+//#region node_modules/.nitro/vite/services/ssr/assets/content.server-osXMLVNu.js
 var __defProp = Object.defineProperty;
 var __exportAll = (all, no_symbols) => {
 	let target = {};
@@ -193,7 +193,7 @@ var portfolio_data_default = {
 			"Razorpay"
 		]
 	},
-	availabilityStatus: "Taking 2 sprints per month · Next opening: September",
+	availabilityStatus: "Taking 2 sprints per month · currently booking next month",
 	heroTagline: "I ship products under real constraints — not demos. Trelio is the primary work alongside focused software projects.",
 	resumeOverride: { "education": "SR University — B.Tech CSE (2028)" },
 	resume: {
@@ -240,7 +240,7 @@ function getPortfolioData() {
 		businesses: businesses$1,
 		sideProjects: sideProjects$1,
 		skills: skills$1,
-		availabilityStatus: "Taking 2 sprints per month · Next opening: September",
+		availabilityStatus: "Taking 2 sprints per month · currently booking next month",
 		workAvailability: "Available for 15-Day Systems Sprints and fixed-scope technical engagements",
 		hiringStatus: "Not hiring for any roles at this time (Chanakya is an independent engineer taking fixed-scope sprints)",
 		heroTagline: "I ship products under real constraints — not demos. Trelio is the primary work alongside focused software projects."

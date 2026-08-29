@@ -1,15 +1,15 @@
 import { i as __toESM } from "../_runtime.mjs";
-import { c as sideProjects$1, l as skills$1, o as businesses$1, s as navLinks } from "./content.server-lt71HV32.mjs";
+import { c as sideProjects$1, l as skills$1, o as businesses$1, s as navLinks } from "./content.server-osXMLVNu.mjs";
 import { u as require_react } from "../_libs/@floating-ui/react-dom+[...].mjs";
 import { s as require_jsx_runtime } from "../_libs/@radix-ui/react-collection+[...].mjs";
 import { A as Copy, B as ArrowRight, C as GraduationCap, D as ExternalLink, E as FileText, F as Check, I as Building2, L as Bot, M as CodeXml, N as Clock, O as Disc, P as CircleCheck, R as Award, S as Layers, T as Gauge, _ as Mail, a as Sun, b as Linkedin, c as Send, d as RefreshCw, f as Printer, g as MapPin, h as Menu, k as Database, m as Moon, n as User, s as ShieldCheck, t as X, w as Github, y as Lock, z as ArrowUp } from "../_libs/lucide-react.mjs";
 import { a as DialogOverlay$1, c as DialogTrigger$1, i as DialogDescription$1, n as DialogClose, o as DialogPortal$1, r as DialogContent$1, s as DialogTitle$1, t as Dialog$1 } from "../_libs/@radix-ui/react-dialog+[...].mjs";
 import { n as toast } from "../_libs/sonner.mjs";
-import { n as Route$11, r as cn } from "./router-Bnqhw2yS.mjs";
-import { a as CardFooter, c as Input, i as CardDescription, l as Label, n as Card, o as CardHeader, r as CardContent, s as CardTitle, t as Button } from "./card-vwmfKTzl.mjs";
-import { a as TabsTrigger, i as TabsList, n as Tabs, o as Textarea, r as TabsContent, t as Badge } from "./badge-XmH6VNjM.mjs";
+import { n as Route$11, r as cn } from "./router-BEVk1dcA.mjs";
+import { a as CardFooter, c as Input, i as CardDescription, l as Label, n as Card, o as CardHeader, r as CardContent, s as CardTitle, t as Button } from "./card-LGFtm7pz.mjs";
+import { a as TabsTrigger, i as TabsList, n as Tabs, o as Textarea, r as TabsContent, t as Badge } from "./badge-Pacj8VQ9.mjs";
 import { t as Root } from "../_libs/radix-ui__react-separator.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/routes-D3pkv3P1.js
+//#region node_modules/.nitro/vite/services/ssr/assets/routes-BdHn28WC.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 var Separator = import_react.forwardRef(({ className, orientation = "horizontal", decorative = true, ...props }, ref) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Root, {
@@ -1225,7 +1225,7 @@ function MarqueeTicker() {
 		})
 	});
 }
-function HeroStats({ status = "Taking 2 sprints per month · Next opening: September", liveCount = 1 }) {
+function HeroStats({ status = "Taking 2 sprints per month · currently booking next month", liveCount = 1 }) {
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 		className: "mt-8 flex flex-wrap items-center gap-3",
 		children: [

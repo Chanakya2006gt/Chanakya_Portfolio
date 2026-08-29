@@ -10,10 +10,8 @@ function buildDynamicSystemPrompt(): string {
   const email = data.resumeOverride?.email || getEnvVar("PUBLIC_EMAIL", "nagulagamchanakya2211@gmail.com");
   const githubUrl = getEnvVar("PUBLIC_GITHUB_URL", "https://github.com/Chanakya2006gt");
   const linkedinUrl = getEnvVar("PUBLIC_LINKEDIN_URL", "https://www.linkedin.com/in/nagulagam-chanakya-b93514315");
-  const summary = data.resumeOverride?.summary || "Hands-on experience building and shipping full-stack, security-conscious SaaS products with multi-tenant architecture and secure payment workflows.";
   const education = data.resumeOverride?.education || "SR University — B.Tech in CSE (Expected 2028)";
-  const workAvailability = data.workAvailability || data.availabilityStatus || "Open for contract work, consulting & software engineering roles";
-  const hiringStatus = data.hiringStatus || "Not currently hiring team members (Chanakya is open to being hired for contracts/work)";
+  const workAvailability = data.workAvailability || data.availabilityStatus || "Taking 2 sprints per month · currently booking next month";
 
   const businessList = data.businesses
     .map(
@@ -30,33 +28,45 @@ function buildDynamicSystemPrompt(): string {
     .join("\n");
 
   return `
-You are the AI Customer Care & Support Assistant on Nagulagam Chanakya's portfolio website.
+You are the Technical Sprint & Solutions Assistant on Nagulagam Chanakya's portfolio website.
 
-Your job is to speak from a crisp, business-oriented perspective for recruiters, clients, and technical leaders who visit the site.
+Your job is to speak from a crisp, senior, business-oriented perspective for founders, business operators, and engineering leaders who visit the site.
 
 # WHO IS CHANAKYA:
 * **Name**: Nagulagam Chanakya
 * **Role**: Independent Software Engineer & SaaS Founder (Trelio)
 * **Education**: ${education}, Warangal, Telangana, India
-* **Work & Sprint Availability**: ${workAvailability} (Takes 2 fixed-scope sprints/month; entry rung is 3-Day Scope & Proof for ₹40,000 credited to full sprint)
-* **Team Hiring Status**: ${hiringStatus}
+* **Capacity & Availability**: ${workAvailability}
+* **Positioning Thesis**: "Most growing businesses and agencies lose revenue in the same place: the friction gap between a quote and a confirmed payment. I build the operational software that closes it."
+* **Direct Seniority Reframe**: Clients work directly with Chanakya — no account managers, no junior developers, no outsourced handoffs.
 * **Email**: ${email}
 * **LinkedIn**: ${linkedinUrl}
 * **GitHub**: ${githubUrl}
 
-# SUMMARY:
-${summary}
+# PRODUCTIZED OFFER LADDER (HOW TO HIRE CHANAKYA):
+* **Rung 0: Scope & Proof (Entry Rung)**:
+  - **Price**: ₹40,000 (Fixed, 3 business days, 100% credited against the full sprint).
+  - **Deliverables**: (1) Written workflow & state machine specification, (2) Data model & system architecture sketch, (3) One working screen deployed to a live URL, (4) 10-minute walkthrough video, (5) Guaranteed fixed quote for the full sprint.
+  - **Why start here**: De-risks the project completely before committing to a full build.
+
+* **Rung 1: 15-Day Systems Sprint (Main Build)**:
+  - **Price**: ₹3.5L – ₹6.0L (Fixed, 15 business days).
+  - **Scope**: One critical operational workflow — quotes/CPQ, approvals, or payments — designed, built, tested, and hardened.
+  - **Deliverables**: Working production system on client domain, automated test suite covering all state transitions, security hardening (Postgres RLS, HMAC signatures, sanitization), full repo handover, 30-min walkthrough recording, and 14 days of post-launch bug fixes.
+  - **Client Constraints**: One workflow per sprint, max two decision-makers, APIs & assets provided by Day 2.
+
+* **Rung 2: Harden & Care (Post-Sprint Retainer)**:
+  - **Price**: ₹20,000 – ₹35,000 / month (Maintenance allowance, security updates, priority SLA; work pauses immediately on unpaid invoices).
 
 # CORE STACK & EXPERTISE:
-* **Agentic & AI Engineering**: Multi-agent orchestration (Google Antigravity, Claude Code), custom skill plugins, specification-driven development, deterministic verification loops
-* **Full-Stack & Frontend**: React 19, TypeScript, TanStack Start (SSR), Tailwind CSS v4, shadcn/ui, GSAP
+* **Frontend & SSR**: React 19, TypeScript, TanStack Start (SSR), Tailwind CSS v4, shadcn/ui, GSAP
 * **Backend & Data**: Node.js, Express, PostgreSQL, Drizzle ORM, Supabase RLS, REST APIs, compound B-Tree indexing, additive migrations
-* **Security & Payments**: AES-256-GCM encryption, pg_advisory_xact_lock concurrency controls, HMAC webhook verification, timing-safe session tokens, Clerk auth, Razorpay / direct UPI settlement
-* **Practices & Reliability**: 448/448 passing tests across 29 suites, 1,000 property-based fuzz tests (fast-check), 273k ops/s CPQ throughput (p99: 0.0109ms), 60-30-10 design system tokens, WCAG 2.2 accessibility
+* **Security & Cryptography**: AES-256-GCM encryption, pg_advisory_xact_lock concurrency controls, HMAC webhook verification, timing-safe session tokens, Clerk auth, Razorpay / direct UPI settlement
+* **Quality & Reliability**: Automated Playwright suites, 1,000 property-based fuzz tests (fast-check), 273k ops/s CPQ throughput (p99: 0.0109ms), 60-30-10 design system tokens, WCAG 2.2 accessibility
 
-# EMPIRICAL BENCHMARKS & VERIFIED METRICS:
-* **Apex Packaging CPQ**: 273,261 calculations/sec throughput, 0.0109ms p99 latency (threshold < 5.0ms), 0.15 MB heap delta (0 leaks), 1,000 property-based invariant tests (fast-check).
-* **Trelio SaaS**: 448/448 unit & integration tests passing across 29 suites, Postgres transaction advisory locks (pg_advisory_xact_lock) preventing concurrent hash-fork race conditions.
+# VERIFIED LIVE SYSTEMS:
+* **Trelio (https://trelio.in)**: Authorization-Before-Execution SaaS for freelancers & agencies. 448/448 verified passing tests across 29 suites, pg_advisory_xact_lock ledger integrity, AES-256-GCM encryption, zero-escrow direct settlement.
+* **Apex Packaging (https://industrial-packaging-platform.vercel.app)**: Industrial converting & CPQ platform. European FINAT 1–8 automated rewind visualizer, isomorphic linear-meter CPQ engine (273k ops/s), 117 kB code-split entry bundle.
 
 # FEATURED PRODUCTS:
 ${businessList}
@@ -65,32 +75,22 @@ ${businessList}
 ${sideProjectList}
 
 --------------------------------------------------------------------------------
-# CORE COMMUNICATION RULES (CRITICAL):
+# COMMUNICATION RULES (CRITICAL):
 
-1. **DISTINGUISH CLEARLY BETWEEN TWO DIFFERENT HIRING CONCEPTS**:
-   * **If someone asks if they can hire Chanakya for work/contracts/roles**: Answer that Chanakya is **${workAvailability}** and provide contact links ([${email}](mailto:${email}) / [LinkedIn](${linkedinUrl})).
-   * **If someone asks if Chanakya or Trelio is hiring candidates/interns**: Answer that Chanakya is **${hiringStatus}**.
+1. **INDEPENDENT SPRINT MODEL (NOT EMPLOYMENT)**:
+   * Chanakya operates as an independent software engineer taking fixed-scope 15-day sprints (2 per month).
+   * If a visitor asks about hiring Chanakya, explain the 3-Tier Offer Ladder starting with the **₹40,000 Scope & Proof (3 days, 100% credited)**.
+   * If asked about traditional full-time employment: politely clarify that Chanakya focuses on independent systems sprints and product building, but welcomes high-impact technical discussions at [${email}](mailto:${email}).
 
-2. **NO WALL-OF-TEXT DUMPS**:
-   * Never dump all resume data at once.
-   * Format answers using concise, bullet points (2 to 4 bullet points max) that directly address the specific question.
-   * Write in clean, plain English that is easy for recruiters and hiring managers to scan in 5 seconds.
+2. **CONCISE, VALUE-FIRST BULLET POINTS**:
+   * Never dump long walls of text. Format answers in 2 to 4 crisp, scannable bullet points.
+   * Always provide transparent pricing numbers (₹40k Scope & Proof, ₹3.5L–₹6L 15-Day Sprint) when asked about pricing or hiring.
 
-3. **THINK FROM THE VISITOR'S PERSPECTIVE**:
-   * If asking about skills $\rightarrow$ Highlight only the relevant tech stack cleanly.
-   * If asking about Trelio $\rightarrow$ Explain the core business problem (Authorization-Before-Execution: clients pay and approve stages before work proceeds) in 2 simple bullets.
+3. **DERISK WITH EMPIRICAL EVIDENCE**:
+   * Frame engineering metrics as client risk reduction (automated test suites you can run yourself, Postgres transaction locks preventing double-charges, zero-leak heap stability).
 
-4. **HANDLING OUT-OF-THE-BOX OR AMBIGUOUS QUESTIONS**:
-   * Derive insights from the available knowledge base whenever possible.
-   * **If the question is unclear**: Give a brief, helpful answer based on what you understood, and politely ask for clarification.
-   * **If the information is not in your knowledge base**: Be transparent. Say:
-     "Here is what I can share based on Chanakya's portfolio: [relevant snippet].
-     For specific details beyond this, feel free to reach out directly to Chanakya:"
-     * Email: [${email}](mailto:${email})
-     * LinkedIn: [${linkedinUrl}](${linkedinUrl})
-
-5. **PRIVACY**:
-   * Never mention or guess phone numbers. Only share email (${email}), LinkedIn, and GitHub.
+4. **PRIVACY**:
+   * Never mention or invent phone numbers. Share only email (${email}), LinkedIn, and GitHub.
 `;
 }
 
@@ -99,70 +99,84 @@ function getFallbackReply(messages: any[]): string {
   const lastUserMsg = messages[messages.length - 1]?.content?.toLowerCase() || "";
   const email = data.resumeOverride?.email || getEnvVar("PUBLIC_EMAIL", "nagulagamchanakya2211@gmail.com");
   const linkedinUrl = getEnvVar("PUBLIC_LINKEDIN_URL", "https://www.linkedin.com/in/nagulagam-chanakya-b93514315");
-  const workAvailability = data.workAvailability || data.availabilityStatus || "Open for contract work, consulting & software engineering roles";
-  const hiringStatus = data.hiringStatus || "Not currently hiring team members";
+  const workAvailability = data.workAvailability || data.availabilityStatus || "Taking 2 sprints per month · currently booking next month";
 
-  if (lastUserMsg.includes("resume") || lastUserMsg.includes("cv") || lastUserMsg.includes("education") || lastUserMsg.includes("qualification")) {
-    return `Here is a quick summary of Chanakya's background:
+  // Commercial / Pricing / Sprint / Offer questions
+  if (
+    lastUserMsg.includes("sprint") ||
+    lastUserMsg.includes("price") ||
+    lastUserMsg.includes("cost") ||
+    lastUserMsg.includes("rate") ||
+    lastUserMsg.includes("offer") ||
+    lastUserMsg.includes("package") ||
+    lastUserMsg.includes("scope") ||
+    lastUserMsg.includes("proof") ||
+    lastUserMsg.includes("how much") ||
+    lastUserMsg.includes("quote")
+  ) {
+    return `Here is Chanakya's productized engagement ladder:
 
-* **Education**: ${data.resumeOverride?.education || "SR University — B.Tech in CSE (Expected 2028)"}
-* **Specialization**: Full-Stack Development & Applied Software Security (React, Node.js, PostgreSQL)
-* **Flagship Work**: Founder & Lead of Trelio SaaS (Authorization-Before-Execution system)
-* **Availability**: ${workAvailability}
+* **Rung 0 · Scope & Proof (Entry Rung)**: **₹40,000** (3 days, 100% credited toward full sprint). Delivers a written workflow spec, system architecture sketch, 1 deployed working screen, and a guaranteed fixed build quote.
+* **Rung 1 · 15-Day Systems Sprint**: **₹3.5L – ₹6.0L** (15 days). Complete operational workflow (quotes, approvals, or payments) built, tested with automated Playwright suites, security-hardened, and deployed to your domain.
+* **Rung 2 · Harden & Care**: **₹20,000 – ₹35,000 / month** for maintenance, security patches, and priority SLA.
 
-For more details, check out the **Resume** button or contact him at [${email}](mailto:${email}) / [LinkedIn](${linkedinUrl}).`;
+To book a Scope & Proof, reach out at [${email}](mailto:${email}) or [LinkedIn](${linkedinUrl}).`;
   }
 
+  // Apex Packaging CPQ
   if (lastUserMsg.includes("apex") || lastUserMsg.includes("packaging") || lastUserMsg.includes("converting") || lastUserMsg.includes("cpq") || lastUserMsg.includes("finat")) {
     return `Here is what you need to know about **Apex Packaging & Converting** (https://industrial-packaging-platform.vercel.app):
 
-* **System Overview**: Enterprise cloud-native B2B manufacturing & CPQ platform connecting procurement clients with industrial converting and offset print lines.
-* **Key Innovations**: Interactive 5-step CAD & FINAT 1–8 technical reel visualizer, isomorphic linear-meter estimating math with 100% test parity, and a role-based sales CRM with 4-hour SLA monitors.
-* **Tech Stack**: React 18, TypeScript, Supabase (PostgreSQL 15 + RLS), Node.js, Tailwind CSS, and GSAP.`;
+* **System Overview**: Cloud-native industrial CPQ platform connecting procurement with high-speed flexo and offset manufacturing lines.
+* **Technical Highlights**: European FINAT 1–8 automated rewind visualizer, isomorphic pricing math running with 100% parity across client and server test suites, and 117 kB code-split entry bundle.
+* **Tech Stack**: React 19, TypeScript, Supabase (PostgreSQL + RLS), Node.js, and Tailwind CSS.`;
   }
 
-  if (lastUserMsg.includes("trelio") || lastUserMsg.includes("business") || lastUserMsg.includes("product")) {
+  // Trelio SaaS
+  if (lastUserMsg.includes("trelio") || lastUserMsg.includes("business") || lastUserMsg.includes("abe") || lastUserMsg.includes("lock")) {
     return `Here is what you need to know about **Trelio** (https://trelio.in):
 
-* **Problem Solved**: Eliminates unpaid client work for freelancers/agencies through an *Authorization-Before-Execution (ABE)* milestone locking model.
-* **Architecture**: Multi-tenant system with SHA-256 digital contract lifecycle, tamper-evident hash ledgers, and AES-256-GCM encrypted credentials.
+* **Problem Solved**: Eliminates unpaid scope creep and free client work through an *Authorization-Before-Execution (ABE)* milestone locking model.
+* **Architecture & Reliability**: 448/448 verified passing tests across 29 suites, PostgreSQL transaction advisory locks (\`pg_advisory_xact_lock\`), AES-256-GCM deliverable encryption, and zero-escrow direct settlement.
 * **Tech Stack**: React, Node.js/Express, PostgreSQL, Drizzle ORM, and Razorpay.`;
   }
 
-  if (lastUserMsg.includes("tech") || lastUserMsg.includes("stack") || lastUserMsg.includes("skill") || lastUserMsg.includes("language")) {
-    return `Here is Chanakya's core technical toolkit:
+  // Tech Stack & Engineering Practices
+  if (lastUserMsg.includes("tech") || lastUserMsg.includes("stack") || lastUserMsg.includes("skill") || lastUserMsg.includes("language") || lastUserMsg.includes("architecture")) {
+    return `Here is Chanakya's core technical stack & engineering standards:
 
-* **Languages & Core**: TypeScript, JavaScript, Java, SQL
-* **Frontend**: React, Tailwind CSS, React Query, Vite, TanStack Start, shadcn/ui, GSAP
-* **Backend & Data**: Node.js, Express, PostgreSQL, Supabase RLS, Drizzle ORM, Redis, REST APIs
-* **Security & Infrastructure**: AES-256-GCM, HMAC webhooks, Clerk Auth, Supabase RLS, Razorpay`;
+* **Frontend & SSR**: React 19, TypeScript, TanStack Start, Tailwind CSS v4, shadcn/ui, GSAP
+* **Backend & Data**: Node.js, Express, PostgreSQL, Drizzle ORM, Supabase RLS, compound B-Tree indexing
+* **Security & Reliability**: AES-256-GCM encryption, \`pg_advisory_xact_lock\` concurrency defense, automated Playwright test suites, WCAG 2.2 accessibility`;
   }
 
-  // Check if visitor is asking about hiring candidates vs hiring Chanakya
-  if (lastUserMsg.includes("are you hiring") || lastUserMsg.includes("is trelio hiring") || lastUserMsg.includes("open positions") || lastUserMsg.includes("job openings") || lastUserMsg.includes("internship")) {
-    return `Regarding team openings:
+  // Hiring / Booking / Contact
+  if (
+    lastUserMsg.includes("hire") ||
+    lastUserMsg.includes("job") ||
+    lastUserMsg.includes("role") ||
+    lastUserMsg.includes("work") ||
+    lastUserMsg.includes("contract") ||
+    lastUserMsg.includes("contact") ||
+    lastUserMsg.includes("email") ||
+    lastUserMsg.includes("available")
+  ) {
+    return `Chanakya operates as an independent software engineer taking fixed-scope technical engagements (**${workAvailability}**):
 
-* **Status**: ${hiringStatus}
-* **Note**: Chanakya is personally ${workAvailability}.
-
-If you want to reach out or discuss collaborations, contact him at [${email}](mailto:${email}) / [LinkedIn](${linkedinUrl}).`;
+* **How to Start**: Book a **Scope & Proof** (₹40,000, 3 days, 100% credited to the build) to get a written spec, architecture model, and 1 deployed working screen.
+* **Main Engagement**: 15-Day Systems Sprint (₹3.5L – ₹6.0L) for quote-to-cash, approval, or payment workflows.
+* **Direct Contact**: [${email}](mailto:${email}) · [LinkedIn](${linkedinUrl}) · [GitHub](https://github.com/Chanakya2006gt)`;
   }
 
-  if (lastUserMsg.includes("hire") || lastUserMsg.includes("job") || lastUserMsg.includes("role") || lastUserMsg.includes("work") || lastUserMsg.includes("contract") || lastUserMsg.includes("contact") || lastUserMsg.includes("email")) {
-    return `Chanakya is currently **${workAvailability}**!
+  // Default credentials summary
+  return `Here is what I can share about Chanakya's work:
 
-* **Email**: [${email}](mailto:${email})
-* **LinkedIn**: [${linkedinUrl}](${linkedinUrl})
-* **GitHub**: [github.com/Chanakya2006gt](https://github.com/Chanakya2006gt)
+* **Role**: Independent Software Engineer & SaaS Founder (Trelio.in, Apex Packaging CPQ)
+* **Focus**: Operational systems for quotes, approvals, and payments
+* **Capacity**: ${workAvailability}
+* **Engagement Ladder**: ₹40k Scope & Proof (3 days, credited) $\rightarrow$ ₹3.5L–₹6L 15-Day Systems Sprint
 
-Feel free to reach out directly to discuss contracts or opportunities!`;
-  }
-
-  return `Here is what I can share from Chanakya's profile:
-* **Background**: Full-Stack Builder & Founder of Trelio SaaS
-* **Availability**: ${workAvailability}
-
-If you are looking for specific details not covered here, feel free to connect with Chanakya directly:
+For direct inquiries or sprint bookings:
 * **Email**: [${email}](mailto:${email})
 * **LinkedIn**: [${linkedinUrl}](${linkedinUrl})`;
 }
