@@ -50,7 +50,7 @@ export function OfferLadder() {
                   : "text-muted-foreground hover:text-foreground"
               }`}
             >
-              For Plants & Converting
+              Quote → confirm → produce
             </button>
             <button
               type="button"
@@ -61,13 +61,13 @@ export function OfferLadder() {
                   : "text-muted-foreground hover:text-foreground"
               }`}
             >
-              For Agencies & Studios
+              Work → approve → get paid
             </button>
           </div>
         </div>
 
         <div className="grid gap-6 md:grid-cols-2">
-          {/* Door 1: Manufacturing & Converting */}
+          {/* Door 1: Physical / Converting / Fabricating Workflow */}
           <div
             className={`rounded-xl border p-5 transition-all ${
               activeDoor === "plant"
@@ -77,17 +77,17 @@ export function OfferLadder() {
           >
             <div className="flex items-center gap-2 mb-3">
               <Factory className="size-4.5 text-emerald-800 dark:text-emerald-400" />
-              <h3 className="font-serif text-lg font-semibold text-foreground">Plants & Converting Lines</h3>
+              <h3 className="font-serif text-lg font-semibold text-foreground">Quote → confirm → produce</h3>
             </div>
             <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
-              <strong>The Problem:</strong> Quotes die in Excel and WhatsApp; roll specs and core sizes get mis-entered.
+              <strong>The Problem:</strong> Quotes die in Excel and WhatsApp; specs and rates get mis-entered on the way to the floor.
             </p>
             <p className="text-xs sm:text-sm text-foreground/90 font-medium mt-2 leading-relaxed">
               <strong>The Result:</strong> A quoting path a plant clerk can finish in one pass — calculating linear meters, substrate weights, and rates directly from the specs your production floor runs.
             </p>
           </div>
 
-          {/* Door 2: Agencies & Production Studios */}
+          {/* Door 2: Services / Agencies / Contractors Workflow */}
           <div
             className={`rounded-xl border p-5 transition-all ${
               activeDoor === "agency"
@@ -97,7 +97,7 @@ export function OfferLadder() {
           >
             <div className="flex items-center gap-2 mb-3">
               <Briefcase className="size-4.5 text-indigo" />
-              <h3 className="font-serif text-lg font-semibold text-foreground">Agencies & Studios</h3>
+              <h3 className="font-serif text-lg font-semibold text-foreground">Work → approve → get paid</h3>
             </div>
             <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
               <strong>The Problem:</strong> Work runs ahead of payment; clients demand urgent changes while milestone invoices sit unpaid.

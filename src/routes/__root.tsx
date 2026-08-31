@@ -3,8 +3,8 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { Toaster } from "sonner";
 import appCss from "../styles.css?url";
 
-const APP_NAME = "Nagulagam Chanakya — Quote-to-Job Systems for Plants & Agencies";
-const APP_DESC = "I build the systems plants and agencies actually run: quote → confirm → work. Fixed price. You keep the repository. Live on an industrial converting workflow and on Trelio.";
+const APP_NAME = "Nagulagam Chanakya — Quote-to-Job Systems for Operating Businesses";
+const APP_DESC = "I build the system a business actually runs: quote → confirm → work. Fixed price. You keep the repository. Live on an industrial converting workflow and on Trelio.";
 const SITE_URL = "https://chanakya-portfolio-orcin.vercel.app";
 
 const JSON_LD = {
@@ -79,7 +79,7 @@ export const Route = createRootRoute({
       { title: APP_NAME },
       { name: "theme-color", content: "#0a0a0b" },
       { name: "description", content: APP_DESC },
-      { name: "keywords", content: "Quote-to-job systems, industrial CPQ platform, packaging converting quoting, FINAT unwind standards, milestone authorization SaaS, Trelio, Nagulagam Chanakya, fixed-price software build, plants and agencies" },
+      { name: "keywords", content: "Quote-to-job systems, industrial CPQ platform, packaging converting quoting, FINAT unwind standards, milestone authorization SaaS, Trelio, Nagulagam Chanakya, fixed-price software build, operating businesses" },
       { name: "author", content: "Nagulagam Chanakya" },
       { name: "robots", content: "index, follow" },
       

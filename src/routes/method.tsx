@@ -8,7 +8,7 @@ export const Route = createFileRoute("/method")({
   component: MethodPage,
   head: () => ({
     meta: [
-      { title: "The 15-Day Method — Quote-to-Job Systems for Plants & Agencies" },
+      { title: "The 15-Day Method — Quote-to-Job Systems for Operating Businesses" },
       { name: "description", content: "The 5-phase method used by Nagulagam Chanakya to build, test, and ship hardened quote-to-job operational software in 15 days." },
     ],
   }),

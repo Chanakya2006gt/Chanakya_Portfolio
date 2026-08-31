@@ -51,7 +51,7 @@ function Hero({ availabilityStatus }: HeroProps) {
         <div>
           <div className="inline-flex items-center gap-2 rounded-full border border-emerald-600/30 dark:border-emerald-500/30 bg-emerald-50 dark:bg-emerald-500/10 px-3.5 py-1 text-xs font-semibold tracking-wide text-emerald-800 dark:text-emerald-400 shadow-sm">
             <span className="size-2 rounded-full bg-emerald-600 dark:bg-emerald-400 shadow-[0_0_8px_#10b981] animate-pulse" />
-            Quote-to-job systems · plants and agencies
+            Quote-to-job systems · for businesses that quote, approve and deliver
           </div>
 
           <h1 className="mt-5 font-serif text-4xl sm:text-5xl md:text-6xl leading-[1.08] tracking-[-0.03em]">
@@ -63,7 +63,7 @@ function Hero({ availabilityStatus }: HeroProps) {
           </h1>
 
           <p className="mt-6 max-w-xl text-lg sm:text-xl leading-relaxed text-muted-foreground">
-            I build the system a plant or an agency actually runs: quote → confirm → work. Fixed price. You keep the repo. Live on an industrial converting workflow and on Trelio.
+            I build the system a business actually runs: quote → confirm → work. Fixed price. You keep the repo. Live on an industrial converting workflow and on Trelio.
           </p>
 
           <div className="mt-6 inline-flex items-center gap-2 rounded-xl border border-border/80 bg-secondary/50 px-3.5 py-1.5 text-xs text-foreground font-mono">
@@ -390,7 +390,7 @@ function Contact() {
         Let's build your operational workflow.
       </h2>
       <p className="mt-4 max-w-lg text-lg text-foreground/90 font-serif italic">
-        "Fixed-price quote-to-job systems for plants and agencies. Straight to engineering."
+        "Fixed-price quote-to-job systems for operating businesses. Straight to engineering."
       </p>
 
       <div className="mt-10 flex flex-wrap items-center gap-3">
@@ -459,7 +459,7 @@ export function PortfolioHome({ initialData }: { initialData?: DynamicData | nul
           <div className="flex flex-col items-center justify-between gap-4 text-xs text-muted-foreground sm:flex-row">
             <div>
               <p className="font-medium text-foreground">Nagulagam Chanakya</p>
-              <p className="text-muted-foreground mt-0.5">Quote-to-job systems for plants and agencies · nagulagamchanakya2211@gmail.com</p>
+              <p className="text-muted-foreground mt-0.5">Quote-to-job systems for operating businesses · nagulagamchanakya2211@gmail.com</p>
             </div>
             <div className="flex flex-wrap items-center gap-4 text-xs font-mono">
               <a href="#pricing" className="hover:text-foreground transition-colors">Pricing</a>

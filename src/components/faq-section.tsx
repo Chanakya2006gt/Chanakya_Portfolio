@@ -42,6 +42,11 @@ const faqs: FAQItem[] = [
     answer:
       "The scope is fixed in the diagnosis precisely so this doesn't happen. If something in my control runs over, I finish it at no extra cost — the price was agreed before the work started.",
   },
+  {
+    question: "What kinds of businesses do you build for?",
+    answer:
+      "Any business where work is gated on a quote or an approval. So far that's been an industrial converting line and a multi-tenant payment platform — but the same shape appears in fabrication, interiors, printing, events, equipment rental and contracting. If your process is someone asks for a price → someone approves → work starts → someone pays, it's the same system. The diagnosis tells us in three days whether it fits.",
+  },
 ];
 
 export function FaqSection() {
