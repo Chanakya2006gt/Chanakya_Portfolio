@@ -5,14 +5,14 @@ import { s as require_jsx_runtime } from "../_libs/@radix-ui/react-collection+[.
 import { A as CircleCheck, C as Disc, D as Clock, E as CodeXml, F as ArrowUpRight, I as ArrowRight, M as Calculator, N as Briefcase, O as CircleX, P as ArrowUp, S as ExternalLink, c as ShieldCheck, g as Lock, j as Check, m as Mail, p as Menu, t as X, v as Layers, w as Database, x as Factory, y as Github } from "../_libs/lucide-react.mjs";
 import { a as DialogOverlay$1, c as DialogTrigger$1, i as DialogDescription$1, n as DialogClose, o as DialogPortal$1, r as DialogContent$1, s as DialogTitle$1, t as Dialog$1 } from "../_libs/@radix-ui/react-dialog+[...].mjs";
 import { n as toast } from "../_libs/sonner.mjs";
-import { n as Route$12, r as cn } from "./router-CKIW8MQz.mjs";
-import { a as CardFooter, i as CardDescription, n as Card, o as CardHeader, r as CardContent, s as CardTitle, t as Button } from "./card-C-9En5gP.mjs";
-import { n as Label, t as Input } from "./label-BxL4uagu.mjs";
-import { t as Textarea } from "./textarea-D_gkSQyM.mjs";
-import { t as Badge } from "./badge-D4TAfh1n.mjs";
-import { n as useScrollAnimation, t as ThemeToggle } from "./theme-toggle-Bcgdd1SU.mjs";
+import { n as Route$12, r as cn } from "./router-K5QXP8B8.mjs";
+import { a as CardFooter, i as CardDescription, n as Card, o as CardHeader, r as CardContent, s as CardTitle, t as Button } from "./card-Di2CkXXG.mjs";
+import { n as Label, t as Input } from "./label-DC3BFKST.mjs";
+import { t as Textarea } from "./textarea-CLh4rT8F.mjs";
+import { t as Badge } from "./badge-BOotTN9w.mjs";
+import { n as useScrollAnimation, t as ThemeToggle } from "./theme-toggle-DA-lvNgg.mjs";
 import { t as Root } from "../_libs/radix-ui__react-separator.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/routes-CNGn3kU5.js
+//#region node_modules/.nitro/vite/services/ssr/assets/routes-CPHCX0Um.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 var Separator = import_react.forwardRef(({ className, orientation = "horizontal", decorative = true, ...props }, ref) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Root, {
@@ -1074,54 +1074,87 @@ function SiteNav() {
 			children: [
 				/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("a", {
 					href: "#top",
-					className: "text-sm font-medium tracking-tight",
+					className: "text-sm font-medium tracking-tight hover:opacity-80 transition-opacity",
 					children: ["Chanakya", /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
 						className: "text-sage",
 						children: "."
 					})]
 				}),
+				/* @__PURE__ */ (0, import_jsx_runtime.jsx)("nav", {
+					className: "hidden items-center gap-6 lg:gap-7 md:flex",
+					children: navLinks.map((link) => {
+						const isExternalOrRoute = link.href.startsWith("/");
+						const sectionId = link.href.replace("#", "").replace("/", "");
+						const isActive = !isExternalOrRoute && activeSection === sectionId;
+						return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("a", {
+							href: link.href,
+							className: `text-sm transition-colors relative py-1 ${isActive ? "font-medium text-sage" : "text-muted-foreground hover:text-foreground"}`,
+							children: [link.label, isActive && /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: "absolute bottom-0 left-0 h-0.5 w-full rounded-full bg-sage transition-all duration-300" })]
+						}, link.href);
+					})
+				}),
 				/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-					className: "flex items-center gap-4",
-					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("nav", {
-						className: "hidden items-center gap-7 md:flex",
-						children: navLinks.map((link) => {
-							const isExternalOrRoute = link.href.startsWith("/");
-							const sectionId = link.href.replace("#", "").replace("/", "");
-							const isActive = !isExternalOrRoute && activeSection === sectionId;
-							return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("a", {
-								href: link.href,
-								className: `text-sm transition-colors relative py-1 ${isActive ? "font-medium text-sage" : "text-muted-foreground hover:text-foreground"}`,
-								children: [link.label, isActive && /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: "absolute bottom-0 left-0 h-0.5 w-full rounded-full bg-sage transition-all duration-300" })]
-							}, link.href);
+					className: "hidden md:flex items-center gap-3",
+					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(ThemeToggle, {}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Button, {
+						asChild: true,
+						size: "sm",
+						className: "btn-sage-glow rounded-xl font-semibold shadow-xs text-xs px-3.5 py-1.5 h-9",
+						children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("a", {
+							href: "/#pricing",
+							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { children: "Book a ₹40k Diagnosis" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(ArrowRight, { className: "ml-1 size-3.5" })]
 						})
-					}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(ThemeToggle, { className: "hidden md:flex" })]
+					})]
 				}),
 				/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 					className: "flex items-center gap-2 md:hidden",
-					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(ThemeToggle, {}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Sheet, {
-						open,
-						onOpenChange: setOpen,
-						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(SheetTrigger, {
+					children: [
+						/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Button, {
 							asChild: true,
-							children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Button, {
-								variant: "ghost",
-								size: "icon",
-								"aria-label": "Open menu",
-								children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Menu, {})
+							size: "sm",
+							className: "btn-sage-glow rounded-lg font-semibold text-[11px] px-2.5 py-1 h-8",
+							children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("a", {
+								href: "/#pricing",
+								children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { children: "₹40k Diagnosis" })
 							})
-						}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(SheetContent, {
-							side: "right",
-							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(SheetHeader, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(SheetTitle, { children: "Menu" }) }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-								className: "mt-8 flex flex-col gap-4",
-								children: navLinks.map((link) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)("a", {
-									href: link.href,
-									onClick: () => setOpen(false),
-									className: "text-base text-muted-foreground hover:text-sage transition-colors",
-									children: link.label
-								}, link.href))
+						}),
+						/* @__PURE__ */ (0, import_jsx_runtime.jsx)(ThemeToggle, {}),
+						/* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Sheet, {
+							open,
+							onOpenChange: setOpen,
+							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(SheetTrigger, {
+								asChild: true,
+								children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Button, {
+									variant: "ghost",
+									size: "icon",
+									"aria-label": "Open menu",
+									className: "h-8 w-8",
+									children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Menu, { className: "size-4" })
+								})
+							}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(SheetContent, {
+								side: "right",
+								children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(SheetHeader, { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(SheetTitle, { children: "Menu" }) }), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+									className: "mt-8 flex flex-col gap-4",
+									children: [navLinks.map((link) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)("a", {
+										href: link.href,
+										onClick: () => setOpen(false),
+										className: "text-base text-muted-foreground hover:text-sage transition-colors",
+										children: link.label
+									}, link.href)), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+										className: "pt-4 border-t border-border/60",
+										children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Button, {
+											asChild: true,
+											className: "btn-sage-glow w-full rounded-xl font-semibold justify-center",
+											children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("a", {
+												href: "/#pricing",
+												onClick: () => setOpen(false),
+												children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { children: "Book a ₹40k Diagnosis →" })
+											})
+										})
+									})]
+								})]
 							})]
-						})]
-					})]
+						})
+					]
 				})
 			]
 		})

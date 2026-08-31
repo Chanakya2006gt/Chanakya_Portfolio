@@ -30,10 +30,10 @@ function MethodPage() {
 
           <div className="flex items-center gap-3">
             <ThemeToggle />
-            <Button asChild size="sm" className="btn-sage-glow rounded-xl font-semibold shadow-sm">
+            <Button asChild size="sm" className="btn-sage-glow rounded-xl font-semibold shadow-xs text-xs px-3.5 py-1.5 h-9">
               <Link to="/" hash="pricing">
-                <span>View Pricing</span>
-                <ArrowRight className="ml-1.5 size-3.5" />
+                <span>Book a ₹40k Diagnosis</span>
+                <ArrowRight className="ml-1 size-3.5" />
               </Link>
             </Button>
           </div>

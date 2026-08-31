@@ -1,10 +1,10 @@
 import { _ as Link } from "../_libs/@tanstack/react-router+[...].mjs";
 import { s as require_jsx_runtime } from "../_libs/@radix-ui/react-collection+[...].mjs";
 import { A as CircleCheck, E as CodeXml, I as ArrowRight, L as ArrowLeft, b as FileText, c as ShieldCheck, k as CirclePlay, r as UserCheck, w as Database } from "../_libs/lucide-react.mjs";
-import { n as Card, t as Button } from "./card-C-9En5gP.mjs";
-import { t as Badge } from "./badge-D4TAfh1n.mjs";
-import { n as useScrollAnimation, t as ThemeToggle } from "./theme-toggle-Bcgdd1SU.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/method-DfypeP4-.js
+import { n as Card, t as Button } from "./card-Di2CkXXG.mjs";
+import { t as Badge } from "./badge-BOotTN9w.mjs";
+import { n as useScrollAnimation, t as ThemeToggle } from "./theme-toggle-DA-lvNgg.mjs";
+//#region node_modules/.nitro/vite/services/ssr/assets/method-XhJzcCej.js
 var import_jsx_runtime = require_jsx_runtime();
 function MethodSection() {
 	const { ref, isVisible } = useScrollAnimation();
@@ -218,11 +218,11 @@ function MethodPage() {
 						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(ThemeToggle, {}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Button, {
 							asChild: true,
 							size: "sm",
-							className: "btn-sage-glow rounded-xl font-semibold shadow-sm",
+							className: "btn-sage-glow rounded-xl font-semibold shadow-xs text-xs px-3.5 py-1.5 h-9",
 							children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Link, {
 								to: "/",
 								hash: "pricing",
-								children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { children: "View Pricing" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(ArrowRight, { className: "ml-1.5 size-3.5" })]
+								children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { children: "Book a ₹40k Diagnosis" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(ArrowRight, { className: "ml-1 size-3.5" })]
 							})
 						})]
 					})]
