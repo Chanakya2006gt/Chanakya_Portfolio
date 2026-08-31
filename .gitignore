@@ -12,6 +12,7 @@ dist/
 .nitro/
 .tanstack/
 .cache/
+.vercel/
 
 # System and IDE
 .DS_Store
