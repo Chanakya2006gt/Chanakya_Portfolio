@@ -177,11 +177,11 @@ export function OfferLadder() {
 
             <div className="border-y border-border/60 py-3.5 space-y-1">
               <div className="flex items-baseline gap-2">
-                <span className="text-3xl font-bold font-mono tracking-tight text-foreground">₹3.5L – ₹6.0L</span>
-                <span className="text-xs text-muted-foreground font-mono">fixed</span>
+                <span className="text-3xl font-bold font-mono tracking-tight text-foreground">Fixed quote</span>
+                <span className="text-xs text-muted-foreground font-mono">from the diagnosis</span>
               </div>
               <p className="text-xs text-muted-foreground">
-                15 business days to staging & production
+                15 business days to staging &amp; production · exact price quoted before you commit
               </p>
             </div>
 
