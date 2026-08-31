@@ -1,4 +1,4 @@
-//#region node_modules/.nitro/vite/services/ssr/assets/_tanstack-start-manifest_v-bVKJkzUJ.js
+//#region node_modules/.nitro/vite/services/ssr/assets/_tanstack-start-manifest_v-BWTruTnN.js
 var tsrStartManifest = () => ({ routes: {
 	__root__: {
 		filePath: "/Users/shresta/Chanakya_Portfolio/src/routes/__root.tsx",
@@ -18,24 +18,24 @@ var tsrStartManifest = () => ({ routes: {
 			"/api/admin/resume"
 		],
 		preloads: [
-			"/assets/index-CDepEH7J.js",
+			"/assets/index-BQVMXh9Q.js",
 			"/assets/utils-DeRnrXep.js",
 			"/assets/dist-B0pR-aw3.js"
 		],
 		scripts: [{ attrs: {
 			type: "module",
 			async: !0,
-			src: "/assets/index-CDepEH7J.js"
+			src: "/assets/index-BQVMXh9Q.js"
 		} }]
 	},
 	"/": {
 		filePath: "/Users/shresta/Chanakya_Portfolio/src/routes/index.tsx",
 		children: void 0,
 		preloads: [
-			"/assets/routes-JotioqL3.js",
+			"/assets/routes-BktPIGay.js",
 			"/assets/shield-check-tC7CY7hK.js",
 			"/assets/theme-toggle-B3Z6Mk3S.js",
-			"/assets/textarea-DunSSd9F.js",
+			"/assets/textarea-CjI8x6Cq.js",
 			"/assets/lock-wd1sD0JH.js",
 			"/assets/card-BLKkoIBa.js",
 			"/assets/label-DCPYxjCr.js",
@@ -46,7 +46,7 @@ var tsrStartManifest = () => ({ routes: {
 		filePath: "/Users/shresta/Chanakya_Portfolio/src/routes/method.tsx",
 		children: void 0,
 		preloads: [
-			"/assets/method-DAsVd_Ll.js",
+			"/assets/method-grRnEvXK.js",
 			"/assets/shield-check-tC7CY7hK.js",
 			"/assets/theme-toggle-B3Z6Mk3S.js",
 			"/assets/file-text-BjKBfzHu.js",
@@ -69,8 +69,8 @@ var tsrStartManifest = () => ({ routes: {
 		filePath: "/Users/shresta/Chanakya_Portfolio/src/routes/admin/index.tsx",
 		children: void 0,
 		preloads: [
-			"/assets/admin-C5X_1SJ1.js",
-			"/assets/textarea-DunSSd9F.js",
+			"/assets/admin-LzxJTZux.js",
+			"/assets/textarea-CjI8x6Cq.js",
 			"/assets/file-text-BjKBfzHu.js",
 			"/assets/card-BLKkoIBa.js",
 			"/assets/label-DCPYxjCr.js",

@@ -32,11 +32,6 @@ export function OfferLadder() {
             From a 3-day diagnosis to a complete workflow built and handed over in 15 days.
           </p>
         </div>
-
-        <Badge variant="outline" className="border-emerald-600/30 dark:border-emerald-500/30 text-emerald-800 dark:text-emerald-400 bg-emerald-50/50 dark:bg-emerald-500/10 font-mono text-xs px-3 py-1 self-start md:self-auto shrink-0">
-          <span className="size-1.5 rounded-full bg-emerald-500 mr-1.5 animate-pulse inline-block" />
-          Taking 2 builds a month · booking the next slot
-        </Badge>
       </div>
 
       {/* Two Doors Section (Plant vs Agency) */}

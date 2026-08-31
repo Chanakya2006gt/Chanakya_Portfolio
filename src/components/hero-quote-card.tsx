@@ -134,10 +134,10 @@ export function HeroQuoteCard() {
         {/* Footer Link */}
         <div className="pt-2 border-t border-border/60 flex items-center justify-between text-xs">
           <a
-            href="#projects"
+            href="#systems"
             className="text-muted-foreground hover:text-foreground font-medium transition-colors inline-flex items-center gap-1"
           >
-            <span>Try live interactive system</span>
+            <span>See systems built</span>
             <ArrowRight className="size-3" />
           </a>
           <span className="font-mono text-[11px] text-muted-foreground">Fixed price · You keep repo</span>

@@ -14,7 +14,7 @@ import { i as string, n as object, r as record, t as array } from "../_libs/zod.
 import crypto from "node:crypto";
 import path from "node:path";
 import fs from "node:fs";
-//#region node_modules/.nitro/vite/services/ssr/assets/router-K5QXP8B8.js
+//#region node_modules/.nitro/vite/services/ssr/assets/router-C1tUT4G1.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 function AppErrorComponent({ error }) {
@@ -104,7 +104,7 @@ var TooltipContent = import_react.forwardRef(({ className, sideOffset = 6, ...pr
 	...props
 }) }));
 TooltipContent.displayName = Content2.displayName;
-var styles_default = "/assets/styles-DRtOZ31_.css";
+var styles_default = "/assets/styles-DpsqO4Qk.css";
 var APP_NAME = "Nagulagam Chanakya — Quote-to-Job Systems for Plants & Agencies";
 var APP_DESC = "I build the systems plants and agencies actually run: quote → confirm → work. Fixed price. You keep the repository. Live on an industrial converting workflow and on Trelio.";
 var SITE_URL = "https://chanakya-portfolio-orcin.vercel.app";
@@ -303,12 +303,12 @@ var createSsrRpc = (functionId) => {
 	});
 };
 var fetchContent = createServerFn({ method: "GET" }).handler(createSsrRpc("2b99909e19342163fb9618a3b1f343b57fe68205625d940d83a174e978667293"));
-var $$splitComponentImporter$3 = () => import("./routes-CPHCX0Um.mjs");
+var $$splitComponentImporter$3 = () => import("./routes-uooI_t25.mjs");
 var Route$12 = createFileRoute("/")({
 	loader: () => fetchContent(),
 	component: lazyRouteComponent($$splitComponentImporter$3, "component")
 });
-var $$splitComponentImporter$2 = () => import("./method-XhJzcCej.mjs");
+var $$splitComponentImporter$2 = () => import("./method-DAMSMIzH.mjs");
 var Route$11 = createFileRoute("/method")({
 	component: lazyRouteComponent($$splitComponentImporter$2, "component"),
 	head: () => ({ meta: [{ title: "The 15-Day Method — Quote-to-Job Systems for Plants & Agencies" }, {
@@ -316,9 +316,9 @@ var Route$11 = createFileRoute("/method")({
 		content: "The 5-phase method used by Nagulagam Chanakya to build, test, and ship hardened quote-to-job operational software in 15 days."
 	}] })
 });
-var $$splitComponentImporter$1 = () => import("./admin-zUkVTY5H.mjs");
+var $$splitComponentImporter$1 = () => import("./admin-BNBFW0dX.mjs");
 var Route$10 = createFileRoute("/admin/")({ component: lazyRouteComponent($$splitComponentImporter$1, "component") });
-var $$splitComponentImporter = () => import("./login-DMKVWb2W.mjs");
+var $$splitComponentImporter = () => import("./login-Db99BeST.mjs");
 var Route$9 = createFileRoute("/admin/login")({ component: lazyRouteComponent($$splitComponentImporter, "component") });
 var envCache = null;
 var lastCacheTime = 0;

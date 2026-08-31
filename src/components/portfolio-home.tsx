@@ -41,8 +41,8 @@ function Hero({ availabilityStatus }: HeroProps) {
 
   return (
     <section className="relative mx-auto flex min-h-[85vh] max-w-5xl flex-col justify-center px-5 py-16 lg:py-24 overflow-hidden">
-      {/* Architectural Dot-Matrix Background Grid */}
-      <div className="absolute inset-0 bg-grid-pattern pointer-events-none -z-10 opacity-50 dark:opacity-60" />
+      {/* Architectural Dot-Matrix Background Grid — visible in dark, hidden in light */}
+      <div className="absolute inset-0 bg-grid-pattern pointer-events-none -z-10 opacity-0 dark:opacity-60" />
       {/* Subtle ambient multi-color glow */}
       <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-gradient-to-tr from-emerald-500/10 via-teal-500/5 to-indigo-500/10 blur-[120px] rounded-full pointer-events-none -z-10" />
 
@@ -55,7 +55,8 @@ function Hero({ availabilityStatus }: HeroProps) {
 
           <h1 className="mt-5 font-serif text-4xl sm:text-5xl md:text-6xl leading-[1.08] tracking-[-0.03em]">
             <span className="text-foreground">Quotes and jobs shouldn't </span>
-            <span className="bg-gradient-to-r from-emerald-800 via-teal-800 to-cyan-900 dark:from-emerald-400 dark:via-teal-300 dark:to-cyan-400 bg-clip-text text-transparent font-bold">
+            {/* Dark mode: gradient. Light mode: flat forest green — gradient is invisible on cream */}
+            <span className="font-bold text-emerald-800 dark:bg-gradient-to-r dark:from-emerald-400 dark:via-teal-300 dark:to-cyan-400 dark:bg-clip-text dark:text-transparent">
               live on WhatsApp.
             </span>
           </h1>
@@ -110,13 +111,13 @@ function LiveSystems() {
     >
       <div className="flex items-center gap-2">
         <span className="h-4 w-1 rounded-full bg-emerald-600 dark:bg-emerald-400 shadow-[0_0_8px_#10b981]" />
-        <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">Live Systems</p>
+        <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">Systems Built</p>
       </div>
       <h2 className="mt-3 font-serif text-3xl tracking-tight sm:text-4xl">
-        Quote & Workflow Software in Production
+        Quote & Workflow Software — Built and Running
       </h2>
       <p className="mt-3 max-w-xl text-muted-foreground text-sm sm:text-base leading-relaxed">
-        Operational systems deployed on custom domains with active users and real transaction constraints.
+        Two systems built to production standard: one CPQ platform modelled on a real Zambian packaging converter's quoting workflow, and Trelio — a live authorization-before-execution SaaS.
       </p>
 
       <div className="mt-10 space-y-12">
@@ -125,8 +126,8 @@ function LiveSystems() {
           <div className="p-4 sm:p-6">
             <div className="mb-4 flex flex-wrap items-center justify-between gap-2">
               <div className="inline-flex items-center gap-2">
-                <span className="size-2 rounded-full bg-cyan-500 animate-pulse" />
-                <span className="font-mono text-xs font-semibold text-cyan-800 dark:text-cyan-300">Manufacturing & Converting Plant System</span>
+                <span className="size-2 rounded-full bg-cyan-500" />
+                <span className="font-mono text-xs font-semibold text-cyan-800 dark:text-cyan-300">Industrial Converting Plant CPQ</span>
               </div>
               <div className="flex items-center gap-2">
                 <a
@@ -136,7 +137,7 @@ function LiveSystems() {
                   className="inline-flex items-center gap-1.5 rounded-full border border-cyan-500/30 bg-cyan-500/10 px-3 py-1 text-xs font-semibold text-cyan-800 dark:text-cyan-300 hover:bg-cyan-500/20 shadow-xs transition-all"
                 >
                   <ExternalLink className="size-3" />
-                  <span>Open Live System ↗</span>
+                  <span>Open Live Demo ↗</span>
                 </a>
                 <a
                   href="https://github.com/Chanakya2006gt/Industrial-packaging-platform"
@@ -158,13 +159,22 @@ function LiveSystems() {
                   Apex Packaging & Converting CPQ
                 </CardTitle>
                 <Badge variant="outline" className="shadow-xs font-mono text-[11px] uppercase tracking-wider bg-cyan-500/15 text-cyan-800 dark:text-cyan-300 border-cyan-500/30">
-                  Industrial CPQ
+                  Reference Build
                 </Badge>
               </div>
               <CardDescription className="text-sm sm:text-base text-muted-foreground leading-relaxed pt-2">
-                Enterprise CPQ and job estimating platform built for industrial label converters and packaging plants.
+                CPQ and job estimating platform built to the spec of Printfast Zambia — a real label converter's quoting operation. Models their exact floor workflow: FINAT rewind standards, substrate costing, roll geometry.
               </CardDescription>
             </CardHeader>
+
+            {/* System output stat strip */}
+            <div className="mx-0 mt-1 mb-2 flex flex-wrap items-center gap-x-5 gap-y-2 rounded-xl border border-border/60 bg-secondary/30 px-4 py-3 font-mono text-xs text-muted-foreground">
+              <span><strong className="text-foreground">Output:</strong> 50,000-label BOPP 60μm roll quote</span>
+              <span className="hidden sm:inline text-border/60">·</span>
+              <span><strong className="text-foreground">Time:</strong> under 4 seconds, one pass</span>
+              <span className="hidden sm:inline text-border/60">·</span>
+              <span><strong className="text-foreground">Source:</strong> floor specs, not a spreadsheet</span>
+            </div>
 
             <CardContent className="px-0 pt-3 pb-2">
               <div className="grid gap-3 sm:grid-cols-3 pt-2 text-xs sm:text-sm">
@@ -187,7 +197,7 @@ function LiveSystems() {
               <span className="font-mono text-xs text-muted-foreground">Stack: React · TypeScript · PostgreSQL RLS · CPQ Math Engine</span>
               <Button asChild size="sm" className="btn-sage-glow rounded-xl font-semibold shadow-xs">
                 <a href="https://industrial-packaging-platform.vercel.app" target="_blank" rel="noopener noreferrer">
-                  <span>Open Live Quoting Platform</span>
+                  <span>Open Live Demo</span>
                   <ExternalLink className="ml-1.5 size-3.5" />
                 </a>
               </Button>

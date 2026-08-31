@@ -5,14 +5,14 @@ import { s as require_jsx_runtime } from "../_libs/@radix-ui/react-collection+[.
 import { A as CircleCheck, C as Disc, D as Clock, E as CodeXml, F as ArrowUpRight, I as ArrowRight, M as Calculator, N as Briefcase, O as CircleX, P as ArrowUp, S as ExternalLink, c as ShieldCheck, g as Lock, j as Check, m as Mail, p as Menu, t as X, v as Layers, w as Database, x as Factory, y as Github } from "../_libs/lucide-react.mjs";
 import { a as DialogOverlay$1, c as DialogTrigger$1, i as DialogDescription$1, n as DialogClose, o as DialogPortal$1, r as DialogContent$1, s as DialogTitle$1, t as Dialog$1 } from "../_libs/@radix-ui/react-dialog+[...].mjs";
 import { n as toast } from "../_libs/sonner.mjs";
-import { n as Route$12, r as cn } from "./router-K5QXP8B8.mjs";
-import { a as CardFooter, i as CardDescription, n as Card, o as CardHeader, r as CardContent, s as CardTitle, t as Button } from "./card-Di2CkXXG.mjs";
-import { n as Label, t as Input } from "./label-DC3BFKST.mjs";
-import { t as Textarea } from "./textarea-CLh4rT8F.mjs";
-import { t as Badge } from "./badge-BOotTN9w.mjs";
-import { n as useScrollAnimation, t as ThemeToggle } from "./theme-toggle-DA-lvNgg.mjs";
+import { n as Route$12, r as cn } from "./router-C1tUT4G1.mjs";
+import { a as CardFooter, i as CardDescription, n as Card, o as CardHeader, r as CardContent, s as CardTitle, t as Button } from "./card-CpXfvomq.mjs";
+import { n as Label, t as Input } from "./label-C7KXHHGL.mjs";
+import { t as Textarea } from "./textarea-BRKlp9Ie.mjs";
+import { t as Badge } from "./badge-xt0rxaAV.mjs";
+import { n as useScrollAnimation, t as ThemeToggle } from "./theme-toggle-CmLif29k.mjs";
 import { t as Root } from "../_libs/radix-ui__react-separator.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/routes-CPHCX0Um.js
+//#region node_modules/.nitro/vite/services/ssr/assets/routes-uooI_t25.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 var Separator = import_react.forwardRef(({ className, orientation = "horizontal", decorative = true, ...props }, ref) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Root, {
@@ -558,19 +558,15 @@ function OfferLadder() {
 					children: "Quote-to-Job Systems"
 				})]
 			}),
-			/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
 				className: "mt-3 flex flex-col md:flex-row md:items-end md:justify-between gap-4",
-				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h2", {
+				children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h2", {
 					className: "font-serif text-3xl tracking-tight sm:text-4xl",
 					children: "Fixed-price technical engagements"
 				}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
 					className: "mt-2 max-w-2xl text-muted-foreground text-sm sm:text-base leading-relaxed",
 					children: "From a 3-day diagnosis to a complete workflow built and handed over in 15 days."
-				})] }), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Badge, {
-					variant: "outline",
-					className: "border-emerald-600/30 dark:border-emerald-500/30 text-emerald-800 dark:text-emerald-400 bg-emerald-50/50 dark:bg-emerald-500/10 font-mono text-xs px-3 py-1 self-start md:self-auto shrink-0",
-					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: "size-1.5 rounded-full bg-emerald-500 mr-1.5 animate-pulse inline-block" }), "Taking 2 builds a month · booking the next slot"]
-				})]
+				})] })
 			}),
 			/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 				className: "mt-12 rounded-2xl border border-border/80 bg-secondary/40 p-6 sm:p-8",
@@ -1000,9 +996,9 @@ function HeroQuoteCard() {
 			})] }), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 				className: "pt-2 border-t border-border/60 flex items-center justify-between text-xs",
 				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("a", {
-					href: "#projects",
+					href: "#systems",
 					className: "text-muted-foreground hover:text-foreground font-medium transition-colors inline-flex items-center gap-1",
-					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { children: "Try live interactive system" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(ArrowRight, { className: "size-3" })]
+					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { children: "See systems built" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(ArrowRight, { className: "size-3" })]
 				}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
 					className: "font-mono text-[11px] text-muted-foreground",
 					children: "Fixed price · You keep repo"
@@ -1164,7 +1160,7 @@ function Hero({ availabilityStatus }) {
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("section", {
 		className: "relative mx-auto flex min-h-[85vh] max-w-5xl flex-col justify-center px-5 py-16 lg:py-24 overflow-hidden",
 		children: [
-			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "absolute inset-0 bg-grid-pattern pointer-events-none -z-10 opacity-50 dark:opacity-60" }),
+			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "absolute inset-0 bg-grid-pattern pointer-events-none -z-10 opacity-0 dark:opacity-60" }),
 			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-gradient-to-tr from-emerald-500/10 via-teal-500/5 to-indigo-500/10 blur-[120px] rounded-full pointer-events-none -z-10" }),
 			/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 				className: "relative z-10 grid gap-12 lg:grid-cols-[1.2fr_1.1fr] lg:items-center",
@@ -1179,7 +1175,7 @@ function Hero({ availabilityStatus }) {
 							className: "text-foreground",
 							children: "Quotes and jobs shouldn't "
 						}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-							className: "bg-gradient-to-r from-emerald-800 via-teal-800 to-cyan-900 dark:from-emerald-400 dark:via-teal-300 dark:to-cyan-400 bg-clip-text text-transparent font-bold",
+							className: "font-bold text-emerald-800 dark:bg-gradient-to-r dark:from-emerald-400 dark:via-teal-300 dark:to-cyan-400 dark:bg-clip-text dark:text-transparent",
 							children: "live on WhatsApp."
 						})]
 					}),
@@ -1234,16 +1230,16 @@ function LiveSystems() {
 				className: "flex items-center gap-2",
 				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: "h-4 w-1 rounded-full bg-emerald-600 dark:bg-emerald-400 shadow-[0_0_8px_#10b981]" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
 					className: "text-xs font-semibold uppercase tracking-wider text-muted-foreground",
-					children: "Live Systems"
+					children: "Systems Built"
 				})]
 			}),
 			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h2", {
 				className: "mt-3 font-serif text-3xl tracking-tight sm:text-4xl",
-				children: "Quote & Workflow Software in Production"
+				children: "Quote & Workflow Software — Built and Running"
 			}),
 			/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
 				className: "mt-3 max-w-xl text-muted-foreground text-sm sm:text-base leading-relaxed",
-				children: "Operational systems deployed on custom domains with active users and real transaction constraints."
+				children: "Two systems built to production standard: one CPQ platform modelled on a real Zambian packaging converter's quoting workflow, and Trelio — a live authorization-before-execution SaaS."
 			}),
 			/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 				className: "mt-10 space-y-12",
@@ -1256,9 +1252,9 @@ function LiveSystems() {
 								className: "mb-4 flex flex-wrap items-center justify-between gap-2",
 								children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 									className: "inline-flex items-center gap-2",
-									children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: "size-2 rounded-full bg-cyan-500 animate-pulse" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+									children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: "size-2 rounded-full bg-cyan-500" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
 										className: "font-mono text-xs font-semibold text-cyan-800 dark:text-cyan-300",
-										children: "Manufacturing & Converting Plant System"
+										children: "Industrial Converting Plant CPQ"
 									})]
 								}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
 									className: "flex items-center gap-2",
@@ -1267,7 +1263,7 @@ function LiveSystems() {
 										target: "_blank",
 										rel: "noopener noreferrer",
 										className: "inline-flex items-center gap-1.5 rounded-full border border-cyan-500/30 bg-cyan-500/10 px-3 py-1 text-xs font-semibold text-cyan-800 dark:text-cyan-300 hover:bg-cyan-500/20 shadow-xs transition-all",
-										children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(ExternalLink, { className: "size-3" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { children: "Open Live System ↗" })]
+										children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(ExternalLink, { className: "size-3" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { children: "Open Live Demo ↗" })]
 									}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("a", {
 										href: "https://github.com/Chanakya2006gt/Industrial-packaging-platform",
 										target: "_blank",
@@ -1288,12 +1284,37 @@ function LiveSystems() {
 									}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Badge, {
 										variant: "outline",
 										className: "shadow-xs font-mono text-[11px] uppercase tracking-wider bg-cyan-500/15 text-cyan-800 dark:text-cyan-300 border-cyan-500/30",
-										children: "Industrial CPQ"
+										children: "Reference Build"
 									})]
 								}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(CardDescription, {
 									className: "text-sm sm:text-base text-muted-foreground leading-relaxed pt-2",
-									children: "Enterprise CPQ and job estimating platform built for industrial label converters and packaging plants."
+									children: "CPQ and job estimating platform built to the spec of Printfast Zambia — a real label converter's quoting operation. Models their exact floor workflow: FINAT rewind standards, substrate costing, roll geometry."
 								})]
+							}),
+							/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+								className: "mx-0 mt-1 mb-2 flex flex-wrap items-center gap-x-5 gap-y-2 rounded-xl border border-border/60 bg-secondary/30 px-4 py-3 font-mono text-xs text-muted-foreground",
+								children: [
+									/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("span", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("strong", {
+										className: "text-foreground",
+										children: "Output:"
+									}), " 50,000-label BOPP 60μm roll quote"] }),
+									/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+										className: "hidden sm:inline text-border/60",
+										children: "·"
+									}),
+									/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("span", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("strong", {
+										className: "text-foreground",
+										children: "Time:"
+									}), " under 4 seconds, one pass"] }),
+									/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+										className: "hidden sm:inline text-border/60",
+										children: "·"
+									}),
+									/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("span", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("strong", {
+										className: "text-foreground",
+										children: "Source:"
+									}), " floor specs, not a spreadsheet"] })
+								]
 							}),
 							/* @__PURE__ */ (0, import_jsx_runtime.jsx)(CardContent, {
 								className: "px-0 pt-3 pb-2",
@@ -1346,7 +1367,7 @@ function LiveSystems() {
 										href: "https://industrial-packaging-platform.vercel.app",
 										target: "_blank",
 										rel: "noopener noreferrer",
-										children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { children: "Open Live Quoting Platform" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(ExternalLink, { className: "ml-1.5 size-3.5" })]
+										children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { children: "Open Live Demo" }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)(ExternalLink, { className: "ml-1.5 size-3.5" })]
 									})
 								})]
 							})
