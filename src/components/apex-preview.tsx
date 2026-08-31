@@ -211,13 +211,13 @@ export function ApexPreview() {
 
           {/* Empirical Benchmark Telemetry Grid */}
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 pt-1 border-t border-border/60 text-center">
+            <div className="p-2 rounded-lg bg-cyan-50/50 dark:bg-cyan-500/10 border border-cyan-300 dark:border-cyan-500/20">
+              <span className="text-[9px] font-mono uppercase text-cyan-700 dark:text-cyan-300 font-semibold block">Tenant Isolation</span>
+              <span className="text-xs font-mono font-bold text-foreground">43 RLS Policies</span>
+            </div>
             <div className="p-2 rounded-lg bg-emerald-50/50 dark:bg-emerald-500/10 border border-emerald-300 dark:border-emerald-500/20">
               <span className="text-[9px] font-mono uppercase text-emerald-700 dark:text-emerald-300 font-semibold block">Throughput</span>
               <span className="text-xs font-mono font-bold text-foreground">273,261 ops/s</span>
-            </div>
-            <div className="p-2 rounded-lg bg-cyan-50/50 dark:bg-cyan-500/10 border border-cyan-300 dark:border-cyan-500/20">
-              <span className="text-[9px] font-mono uppercase text-cyan-700 dark:text-cyan-300 font-semibold block">p99 Latency</span>
-              <span className="text-xs font-mono font-bold text-foreground">0.0109 ms</span>
             </div>
             <div className="p-2 rounded-lg bg-purple-50/50 dark:bg-purple-500/10 border border-purple-300 dark:border-purple-500/20">
               <span className="text-[9px] font-mono uppercase text-purple-700 dark:text-purple-300 font-semibold block">fast-check Fuzz</span>

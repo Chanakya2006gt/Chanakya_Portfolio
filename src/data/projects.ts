@@ -17,7 +17,7 @@ export const businesses: Project[] = [
     description:
       "Authorization-before-execution SaaS for freelancers and agencies. Work is split into stages that clients must approve and pay before the next stage unlocks — so execution never runs ahead of payment.",
     liveUrl: "https://trelio.in",
-    stack: ["React", "Node.js", "Multi-tenant", "Payments", "Audit logs"],
+    stack: ["Multi-tenant", "PostgreSQL RLS", "Payments", "Audit ledger", "React", "Node.js"],
     featured: true,
     badge: "Live product",
     kind: "business",
@@ -35,15 +35,6 @@ export const sideProjects: Project[] = [
     stack: ["React", "TypeScript", "Supabase RLS", "Node.js", "GSAP", "CPQ Engine"],
     featured: true,
     badge: "B2B Platform",
-    kind: "side",
-  },
-  {
-    id: "portfolio",
-    title: "This site",
-    description:
-      "Personal developer portfolio built with TanStack Start, React 19 SSR, and Tailwind CSS v4 with full theme synchronization and Nitro serverless deployment.",
-    stack: ["TanStack Start", "React 19", "Tailwind v4", "shadcn/ui"],
-    liveUrl: "https://github.com/Chanakya2006gt/Chanakya_Portfolio",
     kind: "side",
   },
 ];

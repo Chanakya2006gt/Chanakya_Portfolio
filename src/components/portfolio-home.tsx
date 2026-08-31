@@ -212,7 +212,7 @@ function LiveSystems() {
             <div className="mb-4 flex flex-wrap items-center justify-between gap-2">
               <div className="inline-flex items-center gap-2">
                 <span className="size-2 rounded-full bg-indigo animate-pulse" />
-                <span className="font-mono text-xs font-semibold text-indigo">Agency Milestone & Payment System</span>
+                <span className="font-mono text-xs font-semibold text-indigo">Multi-Tenant Payment & Approval Platform</span>
               </div>
               <a
                 href="https://trelio.in"
@@ -236,6 +236,9 @@ function LiveSystems() {
                   Live SaaS
                 </Badge>
               </div>
+              <p className="mt-1 text-xs text-muted-foreground">
+                In continuous development since March 2026 · 623 commits · 58 test suites · multi-tenant, payments, RLS, audit ledger
+              </p>
               <CardDescription className="text-sm sm:text-base text-muted-foreground leading-relaxed pt-2">
                 Authorization-Before-Execution SaaS for freelancers and creative studios to eliminate unpaid work and runaway revisions.
               </CardDescription>
