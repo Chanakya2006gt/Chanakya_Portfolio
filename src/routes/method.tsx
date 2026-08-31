@@ -32,7 +32,7 @@ function MethodPage() {
             <ThemeToggle />
             <Button asChild size="sm" className="btn-sage-glow rounded-xl font-semibold shadow-xs text-xs px-3.5 py-1.5 h-9">
               <Link to="/" hash="pricing">
-                <span>Book a ₹40k Diagnosis</span>
+                <span>Book a ₹20k Diagnosis</span>
                 <ArrowRight className="ml-1 size-3.5" />
               </Link>
             </Button>

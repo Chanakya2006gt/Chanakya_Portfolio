@@ -121,7 +121,7 @@ export function OfferLadder() {
 
             <div className="border-y border-border/60 py-3.5 space-y-1">
               <div className="flex items-baseline gap-2">
-                <span className="text-3xl font-bold font-mono tracking-tight text-foreground">₹40,000</span>
+                <span className="text-3xl font-bold font-mono tracking-tight text-foreground">₹20,000</span>
                 <span className="text-xs text-muted-foreground font-mono">fixed</span>
               </div>
               <p className="text-xs font-semibold text-emerald-800 dark:text-emerald-400">
@@ -160,7 +160,7 @@ export function OfferLadder() {
           <div className="pt-6 mt-6 border-t border-border/60">
             <Button asChild className="w-full btn-sage-glow rounded-xl font-semibold shadow-md active:scale-[0.98] transition-all">
               <a href="#contact">
-                <span>Book a Paid Diagnosis (₹40k)</span>
+                <span>Book a Paid Diagnosis (₹20k)</span>
                 <ArrowRight className="ml-2 size-4" />
               </a>
             </Button>

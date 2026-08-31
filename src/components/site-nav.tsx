@@ -55,7 +55,7 @@ export function SiteNav() {
           <ThemeToggle />
           <Button asChild size="sm" className="btn-sage-glow rounded-xl font-semibold shadow-xs text-xs px-3.5 py-1.5 h-9">
             <a href="/#pricing">
-              <span>Book a ₹40k Diagnosis</span>
+              <span>Book a ₹20k Diagnosis</span>
               <ArrowRight className="ml-1 size-3.5" />
             </a>
           </Button>
@@ -65,7 +65,7 @@ export function SiteNav() {
         <div className="flex items-center gap-2 md:hidden">
           <Button asChild size="sm" className="btn-sage-glow rounded-lg font-semibold text-[11px] px-2.5 py-1 h-8">
             <a href="/#pricing">
-              <span>₹40k Diagnosis</span>
+              <span>₹20k Diagnosis</span>
             </a>
           </Button>
           <ThemeToggle />
@@ -98,7 +98,7 @@ export function SiteNav() {
                 <div className="pt-4 border-t border-border/60">
                   <Button asChild className="btn-sage-glow w-full rounded-xl font-semibold justify-center">
                     <a href="/#pricing" onClick={() => setOpen(false)}>
-                      <span>Book a ₹40k Diagnosis →</span>
+                      <span>Book a ₹20k Diagnosis →</span>
                     </a>
                   </Button>
                 </div>

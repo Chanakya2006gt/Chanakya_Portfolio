@@ -18,7 +18,7 @@ export function MethodSection() {
       icon: FileText,
       points: [
         "Every quote state, revision rule, and approval bottleneck mapped",
-        "100% of the ₹40k diagnosis credited against the full build",
+        "100% of the ₹20k diagnosis credited against the full build",
         "You test the working UI on your phone before committing to the build",
       ],
     },
@@ -188,7 +188,7 @@ export function MethodSection() {
           <div className="space-y-1 text-center sm:text-left">
             <h4 className="font-serif text-lg text-foreground font-semibold">Start with Phase 1 · Paid Diagnosis</h4>
             <p className="text-xs sm:text-sm text-muted-foreground">
-              3 days, ₹40,000, 100% credited against the build. You get 1 working screen and a guaranteed fixed quote.
+              3 days, ₹20,000, 100% credited against the build. You get 1 working screen and a guaranteed fixed quote.
             </p>
           </div>
           <a

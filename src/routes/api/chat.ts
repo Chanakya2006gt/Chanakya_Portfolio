@@ -45,7 +45,7 @@ Your job is to speak from a crisp, direct, business-oriented perspective for pla
 
 # FIXED-PRICE ENGAGEMENTS (HOW TO WORK WITH CHANAKYA):
 * **Step 1 · Paid Diagnosis**:
-  - **Price**: ₹40,000 (Fixed, 3 business days, 100% credited against the build).
+  - **Price**: ₹20,000 (Fixed, 3 business days, 100% credited against the build).
   - **Deliverables**: (1) Written workflow spec & state boundaries, (2) Data model & database schema layout, (3) 1 deployed working screen on a live URL, (4) 10-minute walkthrough video, (5) Guaranteed fixed quote for the 15-day build.
   - **Why start here**: De-risks the project completely before committing to a full build.
 
@@ -71,12 +71,12 @@ Your job is to speak from a crisp, direct, business-oriented perspective for pla
 
 1. **DIRECT COMMERCIAL MODEL (NOT EMPLOYMENT)**:
    * Chanakya builds fixed-price quote-to-job systems (taking 2 builds a month).
-   * If a visitor asks about hiring Chanakya, explain the 3 steps starting with the **₹40,000 Paid Diagnosis (3 days, 100% credited)**.
+   * If a visitor asks about hiring Chanakya, explain the 3 steps starting with the **₹20,000 Paid Diagnosis (3 days, 100% credited)**.
    * If asked about traditional full-time employment: politely clarify that Chanakya focuses on fixed-price technical builds and product building, but welcomes high-impact technical discussions at [${email}](mailto:${email}).
 
 2. **CONCISE, VALUE-FIRST BULLET POINTS**:
    * Never dump long walls of text. Format answers in 2 to 4 crisp, scannable bullet points.
-   * Always provide transparent pricing numbers (₹40k Paid Diagnosis, ₹3.5L–₹6L One Workflow Built) when asked about rates.
+   * Always provide transparent pricing numbers (₹20k Paid Diagnosis, ₹3.5L–₹6L One Workflow Built) when asked about rates.
 
 3. **GROUNDED JOB UNITS**:
    * Talk in plant and agency outcomes (rates from the same spec the floor uses, client pays into your account before stage unlocks).
@@ -109,7 +109,7 @@ function getFallbackReply(messages: any[]): string {
   ) {
     return `Here is Chanakya's fixed-price engagement model:
 
-* **Step 1 · Paid Diagnosis**: **₹40,000** (3 days, 100% credited against the build). Delivers a written workflow spec, data model layout, 1 deployed working screen, and a guaranteed fixed build quote.
+* **Step 1 · Paid Diagnosis**: **₹20,000** (3 days, 100% credited against the build). Delivers a written workflow spec, data model layout, 1 deployed working screen, and a guaranteed fixed build quote.
 * **Step 2 · One Workflow Built**: **₹3.5L – ₹6.0L** (15 business days). Complete operational workflow (quotes, approvals, or payments) built, tested with automated test suites, security-hardened, and deployed to your domain.
 * **Step 3 · Keep It Running**: **₹20,000 – ₹35,000 / month** for maintenance, security patches, and direct engineer access.
 
@@ -156,7 +156,7 @@ To book a Paid Diagnosis, reach out at [${email}](mailto:${email}) or [LinkedIn]
   ) {
     return `Chanakya operates as an independent software engineer taking fixed-price technical builds (**${workAvailability}**):
 
-* **How to Start**: Book a **Paid Diagnosis** (₹40,000, 3 days, 100% credited to the build) to get a written spec, data model layout, 1 deployed working screen, and a fixed build quote.
+* **How to Start**: Book a **Paid Diagnosis** (₹20,000, 3 days, 100% credited to the build) to get a written spec, data model layout, 1 deployed working screen, and a fixed build quote.
 * **Main Engagement**: One Workflow Built (₹3.5L – ₹6.0L, 15 days) for quote-to-job, approval, or payment workflows.
 * **Direct Contact**: [${email}](mailto:${email}) · [LinkedIn](${linkedinUrl}) · [GitHub](https://github.com/Chanakya2006gt)`;
   }
@@ -167,7 +167,7 @@ To book a Paid Diagnosis, reach out at [${email}](mailto:${email}) or [LinkedIn]
 * **Role**: Independent Software Engineer & SaaS Founder (Trelio.in, Apex Packaging CPQ)
 * **Focus**: Operational quote-to-job and payment systems for plants & agencies
 * **Capacity**: ${workAvailability}
-* **Fixed-Price Model**: Step 1 · Paid Diagnosis (₹40k, 3 days, credited) → Step 2 · One Workflow Built (₹3.5L–₹6L, 15 days)
+* **Fixed-Price Model**: Step 1 · Paid Diagnosis (₹20k, 3 days, credited) → Step 2 · One Workflow Built (₹3.5L–₹6L, 15 days)
 
 For direct inquiries or to book a paid diagnosis:
 * **Email**: [${email}](mailto:${email})

@@ -73,7 +73,7 @@ function Hero({ availabilityStatus }: HeroProps) {
           <div className="mt-8 flex flex-wrap items-center gap-3.5">
             <Button asChild size="lg" className="btn-sage-glow rounded-xl font-medium shadow-md active:scale-[0.98] transition-all px-6 py-2.5">
               <a href="#pricing">
-                <span>Book a ₹40k Diagnosis →</span>
+                <span>Book a ₹20k Diagnosis →</span>
               </a>
             </Button>
             <Button asChild size="lg" variant="outline" className="rounded-xl border-border/80 hover:border-cyan-500/50 hover:text-cyan-800 dark:hover:text-cyan-300 font-medium shadow-sm active:scale-[0.98] transition-all">
@@ -341,7 +341,7 @@ function TrustAndTerms() {
               <h3 className="font-serif text-lg font-semibold text-foreground">How The Money Works</h3>
             </div>
             <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
-              <strong>Fixed prices with 100% diagnosis credit.</strong> The ₹40,000 paid diagnosis is fully credited against your 15-day build. Builds are structured in milestones: work pauses if a milestone payment is pending, so neither party ever takes unbounded risk.
+              <strong>Fixed prices with 100% diagnosis credit.</strong> The ₹20,000 paid diagnosis is fully credited against your 15-day build. Builds are structured in milestones: work pauses if a milestone payment is pending, so neither party ever takes unbounded risk.
             </p>
           </Card>
         </div>
