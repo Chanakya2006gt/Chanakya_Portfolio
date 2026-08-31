@@ -27,6 +27,7 @@ import {
 import { TrelioPreview } from "@/components/trelio-preview";
 import { ApexPreview } from "@/components/apex-preview";
 import { OfferLadder } from "@/components/offer-ladder";
+import { FaqSection } from "@/components/faq-section";
 import { HeroQuoteCard } from "@/components/hero-quote-card";
 import { SiteNav } from "@/components/site-nav";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
@@ -445,6 +446,8 @@ export function PortfolioHome({ initialData }: { initialData?: DynamicData | nul
         <Separator />
         <TrustAndTerms />
         <Separator />
+        <FaqSection />
+        <Separator />
         <Contact />
       </main>
 
@@ -459,6 +462,7 @@ export function PortfolioHome({ initialData }: { initialData?: DynamicData | nul
               <a href="#pricing" className="hover:text-foreground transition-colors">Pricing</a>
               <a href="#systems" className="hover:text-foreground transition-colors">Live Systems</a>
               <a href="/method" className="hover:text-foreground transition-colors">Method</a>
+              <a href="#faq" className="hover:text-foreground transition-colors">FAQ</a>
               <a href="#about" className="hover:text-foreground transition-colors">Trust & Terms</a>
               <a href="#contact" className="hover:text-foreground transition-colors">Contact</a>
               <a href="https://github.com/Chanakya2006gt" target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors">GitHub</a>
