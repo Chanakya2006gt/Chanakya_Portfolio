@@ -117,7 +117,7 @@ function LiveSystems() {
         Quote & Workflow Software — Built and Running
       </h2>
       <p className="mt-3 max-w-xl text-muted-foreground text-sm sm:text-base leading-relaxed">
-        Two systems built to production standard: one CPQ platform modelled on a real Zambian packaging converter's quoting workflow, and Trelio — a live authorization-before-execution SaaS.
+        Two systems built to production standard: one CPQ platform modelled on an industrial label converter's quoting workflow, and Trelio — a live authorization-before-execution SaaS.
       </p>
 
       <div className="mt-10 space-y-12">
@@ -163,7 +163,7 @@ function LiveSystems() {
                 </Badge>
               </div>
               <CardDescription className="text-sm sm:text-base text-muted-foreground leading-relaxed pt-2">
-                CPQ and job estimating platform built to the spec of Printfast Zambia — a real label converter's quoting operation. Models their exact floor workflow: FINAT rewind standards, substrate costing, roll geometry.
+                CPQ and job estimating platform built to the spec of a working label converter's quoting operation. Models their exact floor workflow: FINAT rewind standards, substrate costing, roll geometry.
               </CardDescription>
             </CardHeader>
 
