@@ -18,3 +18,9 @@ dist/
 .DS_Store
 *.log
 *.mp4
+
+# Internal strategy & planning documents — never publish
+memory_portfolio.md
+market-rate-repo-valuation.md
+portfolio-*.md
+universalizing-plan-review.md
