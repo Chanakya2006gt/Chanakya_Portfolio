@@ -8,20 +8,15 @@ interface CompanionSvgProps {
 
 export function CompanionSvg({ state, className = "", size = 80 }: CompanionSvgProps) {
   // State specific transformations and styling
-  const isSleeping = state === "sleep";
   const isWaving = state === "wave" || state === "celebrate";
-  const isRunningRight = state === "run-right";
-  const isRunningLeft = state === "run-left";
   const isJumping = state === "jump";
   const isExcited = state === "excited";
 
   return (
     <div
       className={`relative flex items-center justify-center transition-transform duration-300 ${
-        isSleeping ? "rotate-[-12deg]" : ""
-      } ${isRunningRight ? "translate-x-3 rotate-6" : ""} ${
-        isRunningLeft ? "-translate-x-3 -rotate-6" : ""
-      } ${isJumping ? "-translate-y-8 scale-110" : ""} ${className}`}
+        isJumping ? "-translate-y-8 scale-110" : ""
+      } ${className}`}
       style={{ width: size, height: size }}
     >
       <svg
@@ -101,18 +96,8 @@ export function CompanionSvg({ state, className = "", size = 80 }: CompanionSvgP
         <line x1="57" y1="43" x2="63" y2="43" stroke="#8fa896" strokeWidth="1.5" />
 
         {/* Glowing Eyes */}
-        {!isSleeping ? (
-          <>
-            <circle cx="50.5" cy="43" r="2.5" fill="#8fa896" className="animate-pulse" />
-            <circle cx="69.5" cy="43" r="2.5" fill="#8fa896" className="animate-pulse" />
-          </>
-        ) : (
-          <>
-            {/* Zzz closed eyes */}
-            <path d="M48 43H53" stroke="#8fa896" strokeWidth="1.5" strokeLinecap="round" />
-            <path d="M67 43H72" stroke="#8fa896" strokeWidth="1.5" strokeLinecap="round" />
-          </>
-        )}
+        <circle cx="50.5" cy="43" r="2.5" fill="#8fa896" className="animate-pulse" />
+        <circle cx="69.5" cy="43" r="2.5" fill="#8fa896" className="animate-pulse" />
 
         {/* Mouth */}
         <path
@@ -162,13 +147,6 @@ export function CompanionSvg({ state, className = "", size = 80 }: CompanionSvgP
           </radialGradient>
         </defs>
       </svg>
-
-      {/* Floating ZZZ bubbles when sleeping */}
-      {isSleeping && (
-        <span className="absolute -top-2 right-1 font-mono text-xs font-bold text-sage animate-bounce">
-          Zzz...
-        </span>
-      )}
     </div>
   );
 }

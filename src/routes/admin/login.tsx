@@ -54,7 +54,7 @@ function AdminLoginPage() {
       {/* Subtle ambient background glow */}
       <div className="absolute size-96 rounded-full bg-sage/10 blur-3xl pointer-events-none" />
 
-      <Card className="w-full max-w-md border-border/80 bg-card/90 shadow-[0_0_50px_rgba(0,0,0,0.6)] backdrop-blur-xl animate-rise-in relative z-10">
+      <Card className="w-full max-w-md border-border/80 bg-card/90 shadow-[0_0_50px_rgba(0,0,0,0.6)] backdrop-blur-xl rise-in relative z-10">
         <CardHeader className="text-center pb-2">
           <div className="mx-auto mb-3 flex size-12 items-center justify-center rounded-2xl border border-sage/40 bg-sage/10 text-sage">
             <ShieldCheck className="size-6" />
