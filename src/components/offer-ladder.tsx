@@ -1,5 +1,5 @@
 import React from "react";
-import { CheckCircle2, ArrowRight, Clock, Check, ShieldCheck, Factory, Briefcase, ArrowUpRight } from "lucide-react";
+import { CheckCircle2, ArrowRight, Clock, Check, ShieldCheck, Factory, Briefcase, ShoppingBag, ArrowUpRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -37,11 +37,11 @@ export function OfferLadder() {
       <div className="mt-12 rounded-2xl border border-border/80 bg-secondary/40 p-6 sm:p-8">
         <div className="border-b border-border/60 pb-4 mb-6">
           <p className="text-xs font-mono font-bold uppercase tracking-wider text-muted-foreground">
-            Two Types of Workflows Built:
+            Three Types of Workflows Built:
           </p>
         </div>
 
-        <div className="grid gap-6 md:grid-cols-2">
+        <div className="grid gap-6 md:grid-cols-3">
           {/* Door 1: Physical / Converting / Fabricating Workflow */}
           <div className="rounded-xl border border-emerald-600/40 bg-card p-5 shadow-sm">
             <div className="flex items-center gap-2 mb-3">
@@ -67,6 +67,46 @@ export function OfferLadder() {
             </p>
             <p className="text-xs sm:text-sm text-foreground/90 font-medium mt-2 leading-relaxed">
               <strong>The Result:</strong> Stage locks where the next phase of work stays locked until the current milestone is paid directly into your merchant account.
+            </p>
+          </div>
+
+          {/* Door 3: B2B Commerce / Distributors / Portals Workflow */}
+          <div className="rounded-xl border border-cyan-500/40 bg-card p-5 shadow-sm">
+            <div className="flex items-center gap-2 mb-3">
+              <ShoppingBag className="size-4.5 text-cyan-600 dark:text-cyan-400" />
+              <h3 className="font-serif text-lg font-semibold text-foreground">Browse → order → fulfil</h3>
+            </div>
+            <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
+              <strong>The Problem:</strong> Your buyers don't pay list price. Every account has its own rates, credit terms and someone who has to approve the order before it ships — and none of that fits a standard store.
+            </p>
+            <p className="text-xs sm:text-sm text-foreground/90 font-medium mt-2 leading-relaxed">
+              <strong>The Result:</strong> A storefront that knows who is logged in: account-specific pricing, credit limits, approval before dispatch, and stock that matches what the ERP actually says.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      {/* How I Quote Strip */}
+      <div className="mt-8 rounded-2xl border border-border/80 bg-card/60 p-6 sm:p-7 backdrop-blur-xs">
+        <p className="text-xs font-mono font-bold uppercase tracking-wider text-muted-foreground mb-4">
+          How I Quote
+        </p>
+        <div className="space-y-4 text-xs sm:text-sm">
+          <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1 sm:gap-4">
+            <span className="font-semibold text-foreground">You know what you want built</span>
+            <span className="font-mono text-emerald-800 dark:text-emerald-400 font-semibold shrink-0">Free fixed quote, same day</span>
+          </div>
+          <p className="text-xs text-muted-foreground leading-relaxed">
+            Marketing site, landing page, a defined feature. Scope is describable in one call, so charging to scope it would be dishonest.
+          </p>
+
+          <div className="border-t border-border/60 pt-4">
+            <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1 sm:gap-4">
+              <span className="font-semibold text-foreground">You know the problem, not the solution</span>
+              <span className="font-mono text-emerald-800 dark:text-emerald-400 font-semibold shrink-0">₹20,000 diagnosis, 100% credited</span>
+            </div>
+            <p className="text-xs text-muted-foreground leading-relaxed mt-1">
+              Quoting, approvals, B2B commerce, anything touching an existing system. The findings change what gets built, so the scoping is real work.
             </p>
           </div>
         </div>

@@ -44,4 +44,9 @@ export const faqs: FAQItem[] = [
     answer:
       "Any business where work is gated on a quote or an approval. So far that's been an industrial converting line and a multi-tenant payment platform — but the same shape appears in fabrication, interiors, printing, events, equipment rental and contracting. If your process is someone asks for a price → someone approves → work starts → someone pays, it's the same system. The diagnosis tells us in three days whether it fits.",
   },
+  {
+    question: "Do you build regular websites too?",
+    answer:
+      "Yes — marketing sites, landing pages, straightforward builds. Those don't need a paid diagnosis: the scope is clear from one conversation, so the quote is free and usually same-day. The ₹20,000 diagnosis exists for work where I genuinely can't quote you honestly without digging first — quoting logic, approval flows, anything wired into a system you already run. If I can quote it for free, I will.",
+  },
 ];
