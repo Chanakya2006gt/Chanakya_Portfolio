@@ -30,6 +30,7 @@ import { OfferLadder } from "@/components/offer-ladder";
 import { FaqSection } from "@/components/faq-section";
 import { HeroQuoteCard } from "@/components/hero-quote-card";
 import { SiteNav } from "@/components/site-nav";
+import { Companion } from "@/components/mascot/companion";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 import { DynamicData } from "@/data/store";
 
@@ -481,6 +482,8 @@ export function PortfolioHome({ initialData }: { initialData?: DynamicData | nul
           </div>
         </div>
       </footer>
+
+      <Companion />
     </div>
   );
 }
