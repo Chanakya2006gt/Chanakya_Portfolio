@@ -1,22 +1,23 @@
 # Product Requirements Document (PRD) — Nagulagam Chanakya Portfolio
 
-**Product Name**: Nagulagam Chanakya Portfolio & Admin Portal  
-**Owner**: Nagulagam Chanakya (Full-Stack Builder & Founder)  
-**Status**: Released / Production Ready  
-**Target URL**: `http://localhost:8080` (Local Dev) / Custom Domain (Production)
+**Product Name**: Nagulagam Chanakya Portfolio & Operating Systems Portal  
+**Owner**: Nagulagam Chanakya (Software Engineer & Founder)  
+**Status**: Production Ready  
+**Target URL**: `https://chanakya-portfolio-orcin.vercel.app` (Canonical Production) / `http://localhost:8080` (Local Dev)
 
 ---
 
 ## 🎯 1. Executive Summary & Goals
 
-### Goal
-Build a high-performance, security-first personal portfolio and admin management portal that presents Nagulagam Chanakya's professional identity, technical skills, resume credentials, and flagship SaaS product (**Trelio**) with motion inspiration.
+### Primary Commercial Goal
+Qualify inbound operational software buyers and sell **₹20,000 paid diagnoses** (100% credited against 15-day custom builds) to businesses seeking custom quote-to-job, milestone-locking, or B2B commerce workflows.
 
 ### Key Objectives
-1. **Differentiate**: Stand out with a 4.1s cinematic intro overlay, an interactive Paimon/Gagan-style mascot companion, and an OpenAI-backed Customer Care Assistant.
-2. **Showcase Engineering Depth**: Detail the full security architecture of Trelio SaaS (SHA-256 contracts, tamper-evident hash ledgers, AES-256-GCM, ABE milestone system).
-3. **Interactive Resume Experience**: Provide instant access to Chanakya's full resume via a dedicated modal with print/PDF support and multi-location triggers (Left Rail Sidebar below dots, Hero CTA, About section).
-4. **Empower Owner via Admin Dashboard**: Provide a protected `/admin` portal authenticated via `.env` credentials to update projects, experiments, resume info, and availability status on the fly.
+1. **Offer Clarity & Price Transparency**: Clearly communicate the 3-step engagement ladder (₹20,000 Paid Diagnosis → Fixed Quote from Diagnosis → Optional Care Retainer) without floor-anchor traps or ambiguity.
+2. **Empirical Proof of Shipped Systems**: Showcase real production systems (Apex Packaging CPQ with FINAT 1–8 visualizer & 43 RLS policies; Trelio SaaS with 623 commits and direct bank settlement).
+3. **Market Truth & Buyer Trust**: Address common objections upfront via an 8-question FAQ covering code ownership, 15-day timeline guarantees, and when off-the-shelf software like Zoho breaks.
+4. **Interactive AI Solutions Assistant**: Provide 24/7 commercial answers via an OpenAI-backed (`gpt-5.6-terra`) companion widget.
+5. **Private Content Management**: Maintain an authenticated `/admin` portal for editing availability status, project details, and processing résumé updates.
 
 ---
 
@@ -24,53 +25,41 @@ Build a high-performance, security-first personal portfolio and admin management
 
 | Persona | Description | Primary Goal | Key Feature Used |
 |---|---|---|---|
-| **Recruiter / Hiring Manager** | Evaluates software engineers for full-time roles | Quickly assess technical stack, experience, and view/print resume | Hero CTA, Resume Modal, Left Rail Nav |
-| **Potential Client / Customer** | Looking for software engineering or SaaS solutions | Learn about Trelio SaaS, check security standards, get in touch | Projects Section, Companion Chatbot, Contact Cards |
-| **Engineering Collaborator** | Technical peer evaluating architecture and code rigor | Deep-dive into architecture, security protocols, and tech stack | Trelio Technical Breakdown, Skills Section |
-| **Site Owner (Chanakya)** | Manages portfolio content and availability status | Update project cards, resume details, and availability badges | Private Admin Portal (`/admin`) |
+| **Operations Owner / Business Principal** | Plant owner, agency director, contractor, or B2B business owner | Replace spreadsheet/WhatsApp quoting chaos with owned software | Hero CTA, Offer Ladder, FAQ, Contact Modal |
+| **Technical Evaluator / Due Diligence** | CTO, senior engineer, or technical co-founder evaluating rigor | Verify architecture, security posture, and code craftsmanship | Live Systems Previews, Method Page (`/method`), GitHub Repos |
+| **Site Owner (Chanakya)** | Manages commercial availability, content, and pipeline | Update availability status, project data, and résumé PDF | Private Admin Portal (`/admin`) |
 
 ---
 
-## 📋 3. Feature Requirements Matrix
+## 📋 3. Core Feature Requirements Matrix
 
 | ID | Feature | Priority | Description | Status |
 |---|---|---|---|---|
-| **FR-01** | Cinematic Intro Animation | **P0** | Fullscreen 4.1s letter drop-in, sage glow bloom hold, tagline fade-in, and explosion scatter reveal. SSR-safe zero-flash initial paint. | ✅ Delivered |
-| **FR-02** | Hero Section & Particle Background | **P0** | Heading, bio, availability badge with blinking dot, stats row, ambient particle field background, and CTA buttons. | ✅ Delivered |
-| **FR-03** | Desktop Left Rail Sidebar | **P0** | Fixed vertical navigation bar with social icons, active section scroll-spy indicator dots, and **Resume trigger icon below dots**. | ✅ Delivered |
-| **FR-04** | Interactive Resume Modal | **P0** | Interactive full-screen resume viewer displaying SR University education, tech skills, Trelio deep dive, and Print/PDF button. | ✅ Delivered |
-| **FR-05** | Interactive Mascot Companion | **P0** | Vector SVG mascot character with velocity scroll detection (runs left/right), sleep state (tilts + ZZZs after 45s idle), and full-size footer wave animation. | ✅ Delivered |
-| **FR-06** | Waving Arm Precision Anchor | **P0** | Waving arm path re-aligned with explicit shoulder `transformOrigin: "72px 68px"` so the hand stays attached to the body inside the orbital frame. | ✅ Delivered |
-| **FR-07** | Customer Care AI Assistant | **P0** | Slide-up chat modal connected to `/api/chat` with OpenAI `gpt-4o-mini`, system prompt knowledge base, offline fallbacks, and 5 prebuilt question chips. | ✅ Delivered |
-| **FR-08** | Admin Login Page (`/admin/login`) | **P0** | Dark glassmorphic login page validating against `ADMIN_USERNAME` and `ADMIN_PASSWORD` in `.env` and setting HttpOnly cookie. | ✅ Delivered |
-| **FR-09** | Admin Dashboard (`/admin`) | **P0** | Protected management dashboard for editing projects/experiments, resume details, hero taglines, and availability status. | ✅ Delivered |
-| **FR-10** | `.env.example` Template | **P0** | Configuration template covering `OPENAI_API_KEY`, `OPENAI_MODEL`, `ADMIN_USERNAME`, `ADMIN_PASSWORD`, and `ADMIN_SESSION_SECRET`. | ✅ Delivered |
-| **FR-11** | Open Graph & Social Sharing | **P1** | Full Open Graph (`og:image`, `og:title`, `og:description`) and Twitter card meta tags referencing `/og.jpg`. | ✅ Delivered |
-| **FR-12** | Contact Section & Cards | **P1** | 4-column contact link cards + validated direct note dialog with `sonner` toast feedback. | ✅ Delivered |
+| **FR-01** | Hero & Positioning Header | **P0** | Crisp value-first header ("Quotes and jobs shouldn't live on WhatsApp"), live capacity badge, and primary CTA. | ✅ Delivered |
+| **FR-02** | Three-Tier Offer Ladder | **P0** | Step 1 (₹20,000 Diagnosis), Step 2 (Fixed Quote from Diagnosis), Step 3 (Care Retainer), with 3 workflow doors. | ✅ Delivered |
+| **FR-03** | Apex Packaging CPQ Preview | **P0** | Interactive FINAT 1–8 rewind visualizer, isomorphic linear-meter estimator, and 43 RLS policies proof metric. | ✅ Delivered |
+| **FR-04** | Trelio Platform Preview | **P0** | Interactive milestone stage-lock state machine, direct merchant settlement breakdown, and verified test suites. | ✅ Delivered |
+| **FR-05** | Buyer-Facing FAQ Section | **P0** | Native `<details>` accordion with 8 substantive questions and synchronized `FAQPage` JSON-LD schema. | ✅ Delivered |
+| **FR-06** | The 15-Day Method Route | **P0** | Dedicated `/method` page detailing the 5-phase fixed-price delivery lifecycle from diagnosis to handover. | ✅ Delivered |
+| **FR-07** | AI Solutions Assistant | **P0** | Floating launcher widget connected to `/api/chat` (`gpt-5.6-terra`) with prebuilt quick questions and offline fallback. | ✅ Delivered |
+| **FR-08** | Private Admin Portal | **P0** | Authenticated management dashboard (`/admin`) with fail-closed HMAC session tokens and Vercel Blob persistence. | ✅ Delivered |
+| **FR-09** | Résumé AI Extraction Pipeline | **P1** | Multi-page PDF upload with vision OCR extraction (`gpt-5.6-terra`) and automated PII sanitization. | ✅ Delivered |
+| **FR-10** | Dual-Theme Support | **P1** | WCAG AAA compliant dark and light modes with theme toggle and zero contrast wash-out. | ✅ Delivered |
 
 ---
 
 ## ⚡ 4. Non-Functional Requirements (NFRs)
 
-### 1. Performance
-- **First Contentful Paint (FCP)**: < 1.2s.
-- **SSR Overlay Efficiency**: Solid black background renders in server HTML to eliminate visual flashes.
-- **60 FPS Motion**: Animations use CSS `transform` and `opacity` properties to leverage hardware GPU acceleration.
+### 1. Performance & Core Web Vitals
+- **LCP (Largest Contentful Paint)**: < 1.2s.
+- **CLS (Cumulative Layout Shift)**: 0.00 (all dynamic hover states use compositor-only `transform: translateY(-3px)`).
+- **Smooth 60fps Scroll**: Optimized IntersectionObserver reveals that detach once visible.
 
-### 2. Security
-- **Credential Storage**: Zero secrets in frontend code; all keys stored in `.env`.
-- **Session Management**: Admin session cookie configured as `HttpOnly; Path=/; SameSite=Lax`.
-- **API Proxying**: OpenAI API requests proxied through server handler `/api/chat` with token capping (`max_tokens: 500`).
+### 2. Security & Data Isolation
+- Zero secrets committed or bundled into client code.
+- Cryptographically signed HMAC-SHA256 session cookies with fail-closed production enforcement.
+- Strict client/server boundary in `src/data/` preventing `node:*` or `@vercel/blob` leaks to client bundles.
 
-### 3. Accessibility & Responsiveness
-- Responsive layout supporting viewports from **320px (mobile)** to **2560px (ultra-wide desktop)**.
-- High-contrast text compliance matching WCAG 2.1 AA guidelines.
-- Semantic HTML tags (`<header>`, `<main>`, `<section>`, `<aside>`, `<footer>`).
-
----
-
-## 📅 5. Delivery Status & Verification
-
-- **TypeScript Compilation**: Executed `tsc --noEmit` — passed with **0 errors**.
-- **Dev Server**: Active and running at `http://localhost:8080`.
-- **Documentation**: All 4 specifications (`README.md`, `ARCHITECTURE.md`, `SECURITY.md`, `PRD.md`) written and verified.
+### 3. Accessibility & SEO
+- WCAG 2.2 Level AA compliance with full keyboard navigation and skip-to-content links.
+- Rich Schema.org Knowledge Graph (`Person`, `Organization`, `SoftwareApplication`, `FAQPage`).

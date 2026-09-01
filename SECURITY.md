@@ -1,29 +1,37 @@
 # Security Policy & Architecture — Nagulagam Chanakya Portfolio
 
-This document outlines the security model, threat mitigations, credential management, and software security practices implemented in the Chanakya Portfolio and its underlying products.
+This document outlines the security model, threat mitigations, credential management, and software security practices implemented in the Chanakya Portfolio application.
 
 ---
 
 ## 🔒 1. Security Philosophy & Threat Model
 
 The application follows a **Defense-in-Depth** and **Zero-Trust** security posture:
-- **No Client Secrets**: API keys (`OPENAI_API_KEY`) and server secrets (`ADMIN_SESSION_SECRET`) are strictly isolated to server environment variables and never leaked to frontend bundles.
-- **Secure Authentication**: Admin routes (`/admin`) and mutation endpoints (`/api/admin/data`) require valid HTTP-only session cookies.
-- **Input Sanitization & Validation**: All user inputs (contact form, chat queries, admin edits) are sanitized and validated.
+- **No Client Secrets**: API keys (`OPENAI_API_KEY`, `BLOB_READ_WRITE_TOKEN`) and server secrets (`ADMIN_SESSION_SECRET`) are strictly isolated to server environment variables and never leaked into client bundles.
+- **Fail-Closed Session Architecture**: Admin routes (`/admin`) and mutation endpoints (`/api/admin/data`, `/api/admin/resume`) require cryptographically valid HMAC-SHA256 session cookies. In production, missing or default session secrets fail closed.
+- **Input Sanitization & Rate Limiting**: All user inputs (contact dialog, chat queries, admin JSON edits) are validated with strict schemas and protected by rate limiters.
 
 ---
 
 ## 🔑 2. Credential & Environment Variable Security
 
-### Environment Variable Isolation
-All sensitive credentials are defined in `.env` and excluded from source control (`.gitignore`):
+### Environment Variable Matrix
+All sensitive credentials are defined in `.env` and strictly excluded from source control (`.gitignore`):
 
-| Variable Name | Purpose | Scope | Security Measure |
+| Variable Name | Purpose | Scope | Security Policy |
 |---|---|---|---|
-| `OPENAI_API_KEY` | OpenAI API access | Server-side only | Never exposed to client JS |
-| `ADMIN_USERNAME` | Admin login username | Server-side only | Verified on server route |
-| `ADMIN_PASSWORD` | Admin login password | Server-side only | Verified on server route |
-| `ADMIN_SESSION_SECRET` | Admin session signature | Server-side only | Used for session verification |
+| `ADMIN_USERNAME` | Admin login username | Server-side only | Verified on `/api/admin/login` |
+| `ADMIN_PASSWORD` | Admin login password | Server-side only | Verified on `/api/admin/login` |
+| `ADMIN_SESSION_SECRET` | HMAC-SHA256 signature key | Server-side only | **Fails closed in production** if unset |
+| `OPENAI_API_KEY` | OpenAI API access token | Server-side only | Never exposed to client JavaScript |
+| `OPENAI_MODEL` | Chat completion model (`gpt-5.6-terra`) | Server-side only | Vision-capable model for chat & OCR |
+| `OPENAI_RESUME_MODEL` | OCR model for résumé extraction | Server-side only | Optional override (defaults to `OPENAI_MODEL`) |
+| `BLOB_READ_WRITE_TOKEN` | Vercel Blob read/write token | Server-side only | Required for dynamic storage & résumé PDF |
+| `SITE_URL` | Canonical site origin | Server / Metadata | Non-secret |
+| `PUBLIC_EMAIL` | Contact email address | Public / Shared | Non-secret (`nagulagamchanakya2211@gmail.com`) |
+| `PUBLIC_LINKEDIN_URL` | LinkedIn profile URL | Public / Shared | Non-secret |
+| `PUBLIC_GITHUB_URL` | GitHub profile URL | Public / Shared | Non-secret |
+| `PUBLIC_RESUME_PDF_URL` | Public PDF asset path | Public / Shared | Non-secret |
 
 ---
 
@@ -32,53 +40,52 @@ All sensitive credentials are defined in `.env` and excluded from source control
 ### Admin Portal Protection (`/admin` & `/admin/login`)
 
 1. **Authentication Endpoint (`POST /api/admin/login`)**:
-   - Compares incoming credentials against server-side `ADMIN_USERNAME` and `ADMIN_PASSWORD` (fail-closed if not configured).
+   - Compares incoming credentials against server-side `ADMIN_USERNAME` and `ADMIN_PASSWORD`.
    - On successful authentication, issues a cryptographically signed HMAC-SHA256 token using `ADMIN_SESSION_SECRET`:
      ```http
      Set-Cookie: admin_session=<base64Payload>.<hmacSignature>; Path=/; HttpOnly; SameSite=Lax; Max-Age=86400; Secure
      ```
 
-2. **HttpOnly Cookie Protection**:
+2. **Fail-Closed Production Defense**:
+   - If `ADMIN_SESSION_SECRET` is unset in production, session creation and validation immediately fail closed with an explicit error, preventing default-key forgery.
+
+3. **HttpOnly Cookie Protection**:
    - `HttpOnly`: Prevents client-side JavaScript (`document.cookie`) from accessing the session token, neutralizing Cross-Site Scripting (XSS) session theft.
    - `SameSite=Lax`: Mitigates Cross-Site Request Forgery (CSRF) attacks.
-   - `HMAC Signature Verification`: Every protected request (`/api/admin/check`, `POST /api/admin/data`) verifies the cryptographic signature with constant-time equality checks and enforces a 24-hour expiration.
-
-3. **Protected Mutation API (`POST /api/admin/data`)**:
-   - Cryptographically verifies the `admin_session` cookie signature. Unauthenticated or forged requests receive HTTP 401 Unauthorized.
+   - `HMAC Signature Verification`: Every protected request (`/api/admin/check`, `POST /api/admin/data`, `POST /api/admin/resume`) verifies the cryptographic signature with constant-time equality checks and enforces a 24-hour expiration.
 
 ---
 
 ## 🤖 4. AI Chat API Security (`/api/chat`)
 
-- **Server-Side Proxy**: Chat queries are sent to `/api/chat` on the TanStack Start server. The server attaches the `OPENAI_API_KEY` and calls OpenAI's API securely.
-- **Token Capping**: Requests are capped at `max_completion_tokens: 500` to prevent token exhaustion or denial-of-service billing spikes.
-- **System Prompt Guardrails**: System prompt enforces strict topic boundaries focused on Chanakya's professional background and SaaS work.
+- **Server-Side Proxy**: Chat queries are processed through the TanStack Start server handler. Client requests never access OpenAI directly.
+- **In-Memory Rate Limiting**: Enforces a limit of **20 requests per minute per IP** via an in-memory map. *(Note: On Vercel serverless functions, this limit applies per warm container instance).*
+- **Payload Sanitization & Size Caps**:
+  - Request history is capped at a maximum of 25 messages.
+  - Individual message payloads are truncated to 1,000 characters to prevent prompt-injection bloat and token-exhaustion denial of service.
+- **Spend Ceiling Enforcement**: The OpenAI project key must have a hard monthly spend cap configured in the OpenAI dashboard to ensure a bounded cost ceiling.
 
 ---
 
-## 🔐 5. Featured Product Security (Trelio SaaS Highlights)
+## 📄 5. Résumé PII Sanitization & OCR Pipeline
 
-As showcased in Chanakya's technical work and resume, the following advanced security patterns are engineered into Trelio SaaS:
-
-1. **Authorization-Before-Execution (ABE)**:
-   - Milestone locking mechanism that prevents execution of project work until explicit client approval and payment confirmation are recorded.
-
-2. **Contract Lifecycle & SHA-256 Hashes**:
-   - Milestone agreements are digitally generated, SHA-256 hashed, and bound to client e-signatures. Any scope edit automatically invalidates consensus and triggers mandatory re-consent.
-
-3. **Tamper-Evident Event Ledger**:
-   - Uses per-workspace cryptographic hash chains for critical actions (contract signing, milestone payments, scope edits), verified continuously by background worker tasks.
-
-4. **Cryptographic Storage & Webhook Verification**:
-   - Integration credentials encrypted at rest using **AES-256-GCM**.
-   - Inbound Webhooks (Razorpay) verified using HMAC SHA-256 signature validation to prevent payload tampering.
-
-5. **IDOR & Vulnerability Audit Rigor**:
-   - Code reviews enforce strict tenant-boundary checks (`where: { teamId, userId }`) on every database query, neutralizing Insecure Direct Object Reference (IDOR) vulnerabilities.
+The `/api/admin/resume` ingestion pipeline applies multi-layer privacy controls:
+1. **Model Prompt Redaction**: The vision extraction prompt explicitly instructs `gpt-5.6-terra` to omit phone numbers and GPA/CGPA scores.
+2. **Deterministic Regex Redaction (`redactSensitive`)**: Post-processing regex sanitization actively strips any accidental phone numbers, academic scores, and sensitive personal identifiers before data is committed to storage.
 
 ---
 
-## 📬 6. Vulnerability Disclosure
+## 🔐 6. Featured Product Security (Trelio SaaS Highlights)
+
+As referenced on the portfolio and live systems section, Trelio SaaS enforces:
+1. **Authorization-Before-Execution (ABE)**: Strict milestone state machine preventing work progression before client authorization and deposit.
+2. **PostgreSQL Concurrency Locking**: Uses `pg_advisory_xact_lock` to serialize concurrent state transitions and eliminate race conditions.
+3. **Immutable Audit Trails**: Verified event logging with cryptographic timestamps.
+4. **Tenant Data Isolation**: 43+ PostgreSQL Row-Level Security (RLS) policies enforcing multi-tenant isolation.
+
+---
+
+## 📬 7. Vulnerability Disclosure
 
 If you discover a potential security vulnerability, please report it directly to:
 - **Email**: `nagulagamchanakya2211@gmail.com`
