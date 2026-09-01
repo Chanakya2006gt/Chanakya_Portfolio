@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { CheckCircle2, ArrowRight, Clock, Check, ShieldCheck, Factory, Briefcase, ArrowUpRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
@@ -7,7 +7,6 @@ import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 
 export function OfferLadder() {
   const { ref, isVisible } = useScrollAnimation();
-  const [activeDoor, setActiveDoor] = useState<"plant" | "agency">("plant");
 
   return (
     <section
@@ -34,47 +33,17 @@ export function OfferLadder() {
         </div>
       </div>
 
-      {/* Two Doors Section (Plant vs Agency) */}
+      {/* Workflow Doors Section */}
       <div className="mt-12 rounded-2xl border border-border/80 bg-secondary/40 p-6 sm:p-8">
-        <div className="flex items-center justify-between border-b border-border/60 pb-4 mb-6">
+        <div className="border-b border-border/60 pb-4 mb-6">
           <p className="text-xs font-mono font-bold uppercase tracking-wider text-muted-foreground">
             Two Types of Workflows Built:
           </p>
-          <div className="flex items-center gap-1.5 p-1 rounded-xl bg-card border border-border/70 text-xs">
-            <button
-              type="button"
-              onClick={() => setActiveDoor("plant")}
-              className={`px-3 py-1 rounded-lg font-medium transition-all ${
-                activeDoor === "plant"
-                  ? "bg-emerald-600 text-white shadow-xs"
-                  : "text-muted-foreground hover:text-foreground"
-              }`}
-            >
-              Quote → confirm → produce
-            </button>
-            <button
-              type="button"
-              onClick={() => setActiveDoor("agency")}
-              className={`px-3 py-1 rounded-lg font-medium transition-all ${
-                activeDoor === "agency"
-                  ? "bg-indigo text-white shadow-xs"
-                  : "text-muted-foreground hover:text-foreground"
-              }`}
-            >
-              Work → approve → get paid
-            </button>
-          </div>
         </div>
 
         <div className="grid gap-6 md:grid-cols-2">
           {/* Door 1: Physical / Converting / Fabricating Workflow */}
-          <div
-            className={`rounded-xl border p-5 transition-all ${
-              activeDoor === "plant"
-                ? "border-emerald-600/40 bg-card shadow-sm"
-                : "border-border/60 bg-card/50 opacity-75 hover:opacity-100"
-            }`}
-          >
+          <div className="rounded-xl border border-emerald-600/40 bg-card p-5 shadow-sm">
             <div className="flex items-center gap-2 mb-3">
               <Factory className="size-4.5 text-emerald-800 dark:text-emerald-400" />
               <h3 className="font-serif text-lg font-semibold text-foreground">Quote → confirm → produce</h3>
@@ -88,13 +57,7 @@ export function OfferLadder() {
           </div>
 
           {/* Door 2: Services / Agencies / Contractors Workflow */}
-          <div
-            className={`rounded-xl border p-5 transition-all ${
-              activeDoor === "agency"
-                ? "border-indigo/40 bg-card shadow-sm"
-                : "border-border/60 bg-card/50 opacity-75 hover:opacity-100"
-            }`}
-          >
+          <div className="rounded-xl border border-indigo/40 bg-card p-5 shadow-sm">
             <div className="flex items-center gap-2 mb-3">
               <Briefcase className="size-4.5 text-indigo" />
               <h3 className="font-serif text-lg font-semibold text-foreground">Work → approve → get paid</h3>
