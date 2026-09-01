@@ -48,7 +48,7 @@ function Hero({ availabilityStatus }: HeroProps) {
       <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-gradient-to-tr from-emerald-500/10 via-teal-500/5 to-indigo-500/10 blur-[120px] rounded-full pointer-events-none -z-10" />
 
       <div className="relative z-10 grid gap-12 lg:grid-cols-[1.2fr_1.1fr] lg:items-center">
-        <div>
+        <div className="rise-in">
           <div className="inline-flex items-center gap-2 rounded-full border border-emerald-600/30 dark:border-emerald-500/30 bg-emerald-50 dark:bg-emerald-500/10 px-3.5 py-1 text-xs font-semibold tracking-wide text-emerald-800 dark:text-emerald-400 shadow-sm">
             <span className="size-2 rounded-full bg-emerald-600 dark:bg-emerald-400 shadow-[0_0_8px_#10b981] animate-pulse" />
             Quote-to-job systems · for businesses that quote, approve and deliver
