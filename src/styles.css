@@ -352,3 +352,22 @@
   background-image: radial-gradient(rgba(20, 23, 21, 0.14) 1.2px, transparent 1.2px);
 }
 
+/* Native FAQ Details Smooth Height Animation */
+details::details-content {
+  block-size: 0;
+  overflow: hidden;
+  transition: block-size 260ms ease, content-visibility 260ms allow-discrete;
+  transition-behavior: allow-discrete;
+}
+details[open]::details-content {
+  block-size: auto;
+}
+
+/* Scrollbar Hide Utility */
+.scrollbar-none {
+  scrollbar-width: none;
+}
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+

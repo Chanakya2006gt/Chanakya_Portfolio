@@ -1,6 +1,7 @@
 import { createRootRoute, HeadContent, Outlet, Scripts } from "@tanstack/react-router";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { Toaster } from "sonner";
+import { faqs } from "@/data/faqs";
 import appCss from "../styles.css?url";
 
 const APP_NAME = "Nagulagam Chanakya — Quote-to-Job Systems for Operating Businesses";
@@ -67,6 +68,18 @@ const JSON_LD = {
       "author": {
         "@id": `${SITE_URL}/#person`
       }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": `${SITE_URL}/#faq`,
+      "mainEntity": faqs.map((faq) => ({
+        "@type": "Question",
+        "name": faq.question,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": faq.answer,
+        },
+      })),
     }
   ]
 };
