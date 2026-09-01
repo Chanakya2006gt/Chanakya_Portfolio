@@ -1,7 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 
 export function useScrollAnimation<T extends HTMLElement = HTMLDivElement>(
-  threshold = 0.1,
+  threshold = 0,
+  rootMargin = "0px 0px -12% 0px",
 ) {
   const ref = useRef<T>(null);
   const [isVisible, setIsVisible] = useState(false);
@@ -17,12 +18,12 @@ export function useScrollAnimation<T extends HTMLElement = HTMLDivElement>(
           observer.unobserve(element);
         }
       },
-      { threshold },
+      { threshold, rootMargin },
     );
 
     observer.observe(element);
     return () => observer.disconnect();
-  }, [threshold]);
+  }, [threshold, rootMargin]);
 
   return { ref, isVisible };
 }
