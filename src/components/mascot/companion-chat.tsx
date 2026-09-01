@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from "react";
-import { Send, X, Bot, Sparkles, User, RefreshCw } from "lucide-react";
+import { Send, X, Bot, User, RefreshCw } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { CompanionSvg } from "./companion-svg";
 
@@ -11,9 +11,10 @@ export interface Message {
 
 const PREBUILT_QUESTIONS = [
   { label: "📋 Fixed-price builds & pricing", query: "What do your fixed-price builds include and how much does a paid diagnosis cost?" },
+  { label: "🤔 Why not just use Zoho?", query: "Why should I pay for a custom build instead of using Zoho or an off-the-shelf tool?" },
+  { label: "🏗️ Do you work with my industry?", query: "What kinds of businesses do you build for?" },
   { label: "🚀 Tell me about Trelio", query: "What is Trelio and how does it work?" },
   { label: "🏭 Apex Packaging CPQ", query: "How does Apex Packaging handle FINAT standards and quotes?" },
-  { label: "💻 Tech stack & skills", query: "What tech stack and skills does Chanakya specialize in?" },
   { label: "📬 How to contact?", query: "How can I contact Chanakya to book a paid diagnosis?" },
 ];
 
@@ -23,7 +24,6 @@ interface CompanionChatProps {
 }
 
 function ChatFormattedText({ content }: { content: string }) {
-  // Split into lines to render clean paragraph blocks & bullet lists
   const lines = content.split("\n");
 
   return (
@@ -34,7 +34,6 @@ function ChatFormattedText({ content }: { content: string }) {
           return <div key={idx} className="h-1" />;
         }
 
-        // Bullet point formatting (* or -)
         if (trimmed.startsWith("* ") || trimmed.startsWith("- ")) {
           const bulletText = trimmed.slice(2);
           return (
@@ -52,7 +51,6 @@ function ChatFormattedText({ content }: { content: string }) {
 }
 
 function renderInlineMarkdown(text: string): React.ReactNode[] {
-  // Regex to parse **bold**, [link](url), and *italic*
   const parts: React.ReactNode[] = [];
   const regex = /(\*\*.*?\*\*|\[.*?\]\(.*?\)|\*.*?\*)/g;
   let lastIndex = 0;
@@ -111,12 +109,13 @@ export function CompanionChat({ isOpen, onClose }: CompanionChatProps) {
       id: "welcome",
       role: "assistant",
       content:
-        "👋 Hi! I'm Chanakya's AI Support Companion. Ask me anything about Chanakya's work, Trelio SaaS, tech stack, or how to get in touch!",
+        "👋 I'm Chanakya's assistant. Ask me about pricing, how a build runs, what you own at the end, or whether your workflow is a fit.",
     },
   ]);
   const [input, setInput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
+  const inputRef = useRef<HTMLInputElement>(null);
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -125,8 +124,23 @@ export function CompanionChat({ isOpen, onClose }: CompanionChatProps) {
   useEffect(() => {
     if (isOpen) {
       scrollToBottom();
+      inputRef.current?.focus();
     }
   }, [messages, isOpen]);
+
+  // Escape key listener for accessible dismissal
+  useEffect(() => {
+    if (!isOpen) return;
+
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        onClose();
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [isOpen, onClose]);
 
   if (!isOpen) return null;
 
@@ -180,7 +194,12 @@ export function CompanionChat({ isOpen, onClose }: CompanionChatProps) {
   };
 
   return (
-    <div className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50 flex h-[520px] w-[90vw] max-w-[400px] flex-col overflow-hidden rounded-2xl border border-border bg-card shadow-[0_0_40px_rgba(0,0,0,0.6)] backdrop-blur-xl animate-rise-in">
+    <div
+      role="dialog"
+      aria-modal="true"
+      aria-label="AI Solutions Assistant"
+      className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50 flex h-[520px] max-h-[min(520px,80vh)] w-[90vw] max-w-[400px] flex-col overflow-hidden rounded-2xl border border-border bg-card shadow-[0_0_40px_rgba(0,0,0,0.6)] backdrop-blur-xl rise-in"
+    >
       {/* Header */}
       <div className="flex items-center justify-between border-b border-border/80 bg-secondary/80 px-4 py-3">
         <div className="flex items-center gap-3">
@@ -190,12 +209,12 @@ export function CompanionChat({ isOpen, onClose }: CompanionChatProps) {
           <div>
             <div className="flex items-center gap-1.5">
               <h3 className="text-xs font-semibold text-foreground">
-                Chanakya's Companion
+                Chanakya's Assistant
               </h3>
               <span className="flex size-2 rounded-full bg-sage animate-pulse" />
             </div>
             <p className="text-[10px] text-muted-foreground">
-              Customer Care & AI Assistant
+              Answers about pricing, scope and fit
             </p>
           </div>
         </div>
@@ -204,6 +223,7 @@ export function CompanionChat({ isOpen, onClose }: CompanionChatProps) {
           size="icon"
           className="size-8 rounded-full text-muted-foreground hover:text-foreground"
           onClick={onClose}
+          aria-label="Close Assistant"
         >
           <X className="size-4" />
         </Button>
@@ -256,7 +276,7 @@ export function CompanionChat({ isOpen, onClose }: CompanionChatProps) {
         {isLoading && (
           <div className="flex items-center gap-2 text-xs text-muted-foreground p-2">
             <RefreshCw className="size-3.5 animate-spin text-sage" />
-            <span>Companion is typing...</span>
+            <span>Assistant is typing...</span>
           </div>
         )}
         <div ref={messagesEndRef} />
@@ -271,10 +291,11 @@ export function CompanionChat({ isOpen, onClose }: CompanionChatProps) {
         className="border-t border-border/80 bg-secondary/50 p-2.5 flex items-center gap-2"
       >
         <input
+          ref={inputRef}
           type="text"
           value={input}
           onChange={(e) => setInput(e.target.value)}
-          placeholder="Ask Companion anything..."
+          placeholder="Ask anything about builds or pricing..."
           className="flex-1 rounded-xl border border-border/80 bg-card px-3 py-2 text-xs text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-sage/60"
         />
         <Button

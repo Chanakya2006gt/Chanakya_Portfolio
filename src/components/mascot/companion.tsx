@@ -4,18 +4,13 @@ import { CompanionChat } from "./companion-chat";
 import { useMascotState } from "@/hooks/use-mascot-state";
 
 const SPEECH_BUBBLES = [
-  "I built Trelio btw 🚀",
-  "Click to chat with AI Support! 💬",
-  "No free work for freelancers 💸",
-  "Scroll down, I'll race you!",
-  "Shipping products > tutorial hell",
+  "Ask me what a build actually costs 💬",
+  "Not sure if your workflow fits? Ask me.",
+  "Trelio and the Apex CPQ — I know both. Ask away.",
+  "Wondering why not Zoho? I'll tell you straight.",
 ];
 
-interface CompanionProps {
-  footerOnly?: boolean;
-}
-
-export function Companion({ footerOnly = false }: CompanionProps) {
+export function Companion() {
   const { state, triggerState } = useMascotState();
   const [bubbleIndex, setBubbleIndex] = useState(0);
   const [showBubble, setShowBubble] = useState(false);
@@ -44,27 +39,7 @@ export function Companion({ footerOnly = false }: CompanionProps) {
     }, 3500);
 
     return () => clearTimeout(greetingTimer);
-  }, []);
-
-  if (footerOnly) {
-    return (
-      <div className="flex flex-col items-center justify-center py-6">
-        <div
-          className="relative cursor-pointer"
-          onClick={() => {
-            setIsChatOpen(true);
-            triggerState("jump", 800);
-          }}
-        >
-          <div className="absolute -top-10 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full bg-card px-3 py-1 text-xs font-medium text-sage shadow-[0_0_12px_rgba(143,168,150,0.3)] border border-sage/30">
-            Click to Chat! 👋
-          </div>
-          <CompanionSvg state="wave" size={130} />
-        </div>
-        <CompanionChat isOpen={isChatOpen} onClose={() => setIsChatOpen(false)} />
-      </div>
-    );
-  }
+  }, [triggerState]);
 
   return (
     <>
@@ -76,7 +51,7 @@ export function Companion({ footerOnly = false }: CompanionProps) {
           <div
             role="status"
             aria-live="polite"
-            className="mb-2 max-w-xs animate-rise-in rounded-2xl border border-sage/40 bg-card/95 px-4 py-2.5 text-xs font-medium text-foreground shadow-[0_0_20px_rgba(0,0,0,0.5)] backdrop-blur-md"
+            className="mb-2 max-w-xs rise-in rounded-2xl border border-sage/40 bg-card/95 px-4 py-2.5 text-xs font-medium text-foreground shadow-[0_0_20px_rgba(0,0,0,0.5)] backdrop-blur-md"
           >
             {SPEECH_BUBBLES[bubbleIndex]}
           </div>
@@ -89,12 +64,13 @@ export function Companion({ footerOnly = false }: CompanionProps) {
             setShowBubble(true);
             triggerState("wave", 1500);
           }}
-          className="group flex items-center gap-2 rounded-full border border-border/80 bg-card/80 p-1.5 pr-4 shadow-[0_0_25px_rgba(0,0,0,0.5)] backdrop-blur-md transition-all duration-300 hover:border-sage/60 hover:shadow-[0_0_20px_rgba(143,168,150,0.25)]"
-          aria-label="Interactive Companion Customer Support"
+          className="group flex items-center gap-2 rounded-full border border-border/80 bg-card/80 p-1.5 pr-4 shadow-[0_0_25px_rgba(0,0,0,0.5)] backdrop-blur-md transition-all duration-300 hover:border-sage/60 hover:shadow-[0_0_20px_rgba(143,168,150,0.25)] focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-sage"
+          aria-label="AI Solutions Assistant"
+          aria-expanded={isChatOpen}
         >
           <CompanionSvg state={state} size={42} />
           <span className="text-xs font-medium text-muted-foreground transition-colors group-hover:text-sage flex items-center gap-1.5">
-            👋 Your Companion
+            Ask Assistant
             <span className="size-2 rounded-full bg-sage animate-ping" />
           </span>
         </button>
