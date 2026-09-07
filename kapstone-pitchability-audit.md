@@ -2,7 +2,7 @@
 
 **No code changed.** Read-only audit of all three repos: `Kapstone_corporate_HQ`, `Kapstone_home_services`, `kapston-proposal`.
 
-> **Correction (Sept 7):** the first version of this doc flagged the Nagarjuna modal in `Kapstone_home_services` as a fabricated celebrity quote. That was wrong — verified against live press coverage below. Section 2 has been rewritten accordingly.
+> **Corrections (Sept 7):** the first version of this doc flagged two things as fabricated that turned out to be real: the Nagarjuna modal in `Kapstone_home_services` (verified against live press coverage) and the client-logo marquee in `Kapstone_corporate_HQ` (verified against the live `kapstonservices.com/clients/` page). Sections 1 and 2 have been rewritten accordingly.
 
 ## The one thing to read before anything else
 
@@ -28,9 +28,9 @@ Two real gaps, though:
 - **The RFP modal's success screen is the one form on the site with no disclosure.** It says *"Our Regional Operations Lead... has been notified"* and shows a fake hotline number, as if a real workflow fired — but `handleSubmit` only sets local state and shows confetti. Nothing goes anywhere. Every other form on this site (Contact, Careers) says "demo only" at the equivalent moment; this one doesn't.
 - **Five different "filing" download links all point to the same PDF.** That's not illustrative, that's just wrong — a viewer who clicks "Q1 FY26 Results" and gets the FY25 annual report notices.
 
-Minor: the client-logo marquee (Wipro, L&T, Dr. Reddy's, etc.) is labeled illustrative, but a client list is the kind of claim that generates disputes even with fine print — I'd trim it or make the caveat louder before this goes in front of anyone at Kapston itself.
+**The client-logo marquee is grounded in reality, not invented.** Verified directly against the live `kapstonservices.com/clients/` page (screenshotted by Chanakya): it's a large, genuine client wall — Wipro confirmed present, alongside dozens of other real named clients (Wells Fargo, Hyundai, Shapoorji Pallonji, Hindalco, Aurobindo, ServiceNow, and more). My first pass here also undersold this — an earlier automated fetch of that same URL only surfaced a small testimonials section and missed the logo wall entirely, which is a tool limitation on image-heavy pages, not evidence the marquee was fabricated. I didn't independently confirm every single name the repo's marquee uses (L&T, Dr. Reddy's, Tech Mahindra specifically) against the screenshots I have, so if precision matters before showing this to Kapston, worth a quick side-by-side of `ClientMarquee.tsx` against the live page — but the pattern is confirmed real, not invented.
 
-**Bottom line:** fixable with copy changes, not a rebuild. Add a disclosure line to the RFP success state, fix or stub the filing links, and this is honestly presentable.
+**Bottom line:** fixable with copy changes, not a rebuild. Add a disclosure line to the RFP success state, and fix or stub the filing links.
 
 ---
 
