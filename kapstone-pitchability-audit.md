@@ -28,7 +28,7 @@ Two real gaps, though:
 - **The RFP modal's success screen is the one form on the site with no disclosure.** It says *"Our Regional Operations Lead... has been notified"* and shows a fake hotline number, as if a real workflow fired — but `handleSubmit` only sets local state and shows confetti. Nothing goes anywhere. Every other form on this site (Contact, Careers) says "demo only" at the equivalent moment; this one doesn't.
 - **Five different "filing" download links all point to the same PDF.** That's not illustrative, that's just wrong — a viewer who clicks "Q1 FY26 Results" and gets the FY25 annual report notices.
 
-**The client-logo marquee is grounded in reality, not invented.** Verified directly against the live `kapstonservices.com/clients/` page (screenshotted by Chanakya): it's a large, genuine client wall — Wipro confirmed present, alongside dozens of other real named clients (Wells Fargo, Hyundai, Shapoorji Pallonji, Hindalco, Aurobindo, ServiceNow, and more). My first pass here also undersold this — an earlier automated fetch of that same URL only surfaced a small testimonials section and missed the logo wall entirely, which is a tool limitation on image-heavy pages, not evidence the marquee was fabricated. I didn't independently confirm every single name the repo's marquee uses (L&T, Dr. Reddy's, Tech Mahindra specifically) against the screenshots I have, so if precision matters before showing this to Kapston, worth a quick side-by-side of `ClientMarquee.tsx` against the live page — but the pattern is confirmed real, not invented.
+**The client-logo marquee is grounded in reality, with one specific exception to fix.** Verified directly against the live `kapstonservices.com/clients/` page (screenshotted by Chanakya): it's a large, genuine client wall — Wipro confirmed present, alongside dozens of other real named clients (Wells Fargo, Hyundai, Shapoorji Pallonji, Hindalco, Aurobindo, ServiceNow, Yashoda Hospitals, KIMS Hospitals, Pfizer, Lodha, and more). My first pass here undersold this — an earlier automated fetch of that same URL only surfaced a small testimonials section and missed the logo wall entirely, which is a tool limitation on image-heavy pages, not evidence the marquee was fabricated. But Chanakya confirmed directly against the real page that **L&T, Dr. Reddy's, and Tech Mahindra are *not* on it** — those three specific names in the repo's marquee don't match the real client list, unlike Wipro. So this isn't "trim the whole marquee," it's narrower: swap those three names for real ones from the actual wall (Hyundai, Wells Fargo, Hindalco, Aurobindo, Shapoorji Pallonji are all confirmed real and unused) before this goes in front of Kapston.
 
 **Bottom line:** fixable with copy changes, not a rebuild. Add a disclosure line to the RFP success state, and fix or stub the filing links.
 
@@ -72,8 +72,9 @@ All three repos are unsolicited proposal work, not shipped client work — that 
 
 ## Priority order if you're doing anything before sending these anywhere
 
-1. Cite the source next to the Nagarjuna quote (home services) — a credibility upgrade, not a fix.
-2. Add a disclosure line to the RFP modal's success state, and fix the five-links-one-PDF issue (corporate HQ).
-3. Write a README for `kapston-proposal`.
-4. When you swap in real testimonials/reviews after reaching out to Kapston, make sure `verified: true` only stays set where it's actually true (home services).
-5. Confirm all three build cleanly from a fresh `npm i` on your own machine — all three failed `npm run build` in the sandboxed audit environment on a Rollup native-binary/arch mismatch (`@rollup/rollup-linux-arm64-gnu`), which reads as an environment issue rather than a source defect, but it should be verified locally before any live demo, not assumed.
+1. Swap L&T, Dr. Reddy's, and Tech Mahindra out of the client-logo marquee for real Kapston clients (corporate HQ) — the one confirmed inaccuracy across all three repos.
+2. Cite the source next to the Nagarjuna quote (home services) — a credibility upgrade, not a fix.
+3. Add a disclosure line to the RFP modal's success state, and fix the five-links-one-PDF issue (corporate HQ).
+4. Write a README for `kapston-proposal`.
+5. When you swap in real testimonials/reviews after reaching out to Kapston, make sure `verified: true` only stays set where it's actually true (home services).
+6. Confirm all three build cleanly from a fresh `npm i` on your own machine — all three failed `npm run build` in the sandboxed audit environment on a Rollup native-binary/arch mismatch (`@rollup/rollup-linux-arm64-gnu`), which reads as an environment issue rather than a source defect, but it should be verified locally before any live demo, not assumed.
