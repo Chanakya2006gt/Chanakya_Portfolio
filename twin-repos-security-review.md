@@ -4,6 +4,8 @@
 
 **Short answer:** the risk most people fear — shared credentials — is **not present**. But the duplication has caused a real leak in a different direction, and there is one handover-blocking item in PrintFast. No code was changed during this review; secrets were compared by hash, never printed.
 
+> **Context added after review:** `industrial-packaging-platform` is public *on purpose*, as portfolio proof. That is a good reason and the recommendations below are written to keep it public. Note that Finding 1 is not only a leak — it is actively damaging the showcase, which makes fixing it the highest-value item either way.
+
 ---
 
 ## ✅ Clean: no shared credentials, no leaked secrets
@@ -99,7 +101,9 @@ That is not a placeholder — it reads as a real credential. `SESSION_SECRET` on
 
 1. **Strip Zambian tax/currency from the public repo.** `ZRA_VAT_RATE`, every `…ZMW` identifier, the `ZMW` seed row, and the `VAT (16%)` quote strings need to become the correct jurisdiction and currency for whoever Apex Packaging actually represents — or a neutral placeholder. This fixes a live pricing bug and closes the leak in one pass. **Fix the mixed `$` / `ZMW` rendering at the same time.**
 2. **Rotate and placeholder the seed admin credential** in `Printfast_zambia_website/.env.example` before handover. Replace with an obvious placeholder plus a "rotate on first boot" note; confirm the real superadmin exists and the seed identity is disabled.
-3. **Decide whether `industrial-packaging-platform` should be public at all** while it is a structural twin of a live private client system. Making it private costs nothing and removes Finding 2 entirely.
+3. **Keep the repo public — that is a valid reason, and the code holds up to being read.** It is public deliberately, as portfolio proof. Nothing in Findings 1–3 argues for hiding it: Helmet + CSP, a CORS allowlist, tiered rate limiting, no committed secrets, and a test suite that includes parity and fuzzing tests are a genuinely good look. Public code is not insecure code; the bar is that it must withstand being read, and this mostly does. Two caveats to manage rather than hide from:
+   - **Confirm "Apex Packaging & Converting" is a persona, not a real company you have not cleared.** A public repo branded with a real client's name raises a consent question separate from anything technical. If it is a persona, ignore this.
+   - **PrintFast did not necessarily agree to have its architecture published.** The twin-ness means their production design is effectively public. That is a client-trust question, not a code question, and it is worth a sentence at handover. It fades naturally as the two diverge — which Fix 1 starts.
 4. **Untrack `frontend/node_modules/`** from the public repo and add it to `.gitignore`.
 5. **Keep a written note that the two share a template**, so a security fix in either gets mirrored. `docs/HANDOVER_READINESS_AUDIT.md:4` already calls the sibling a "near-twin" — that note should say explicitly that fixes must be applied to both.
 
