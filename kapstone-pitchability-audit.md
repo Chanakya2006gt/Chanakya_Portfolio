@@ -32,6 +32,16 @@ Two real gaps, though:
 
 **Bottom line:** fixable with copy changes, not a rebuild. Add a disclosure line to the RFP success state, and fix or stub the filing links.
 
+### Reference: confirmed real Kapston clients, for whoever implements the marquee fix
+
+Read off `kapstonservices.com/clients/` directly (screenshotted by Chanakya, Sept 7 2026) — not exhaustive, the page may have more above/below what was captured, but every name below is confirmed present on the live official site:
+
+Wipro, Wells Fargo, F5, Shiv Nadar University, Hetero, MassMutual, Vasudha Pharma, BHEL, ServiceNow, Citco, InfoVision, Tanla, Aurobindo, Natco, Divis, Laurus Labs, IMFA, Rane, Azad, HBL, Kaveri Seeds, Bharat Forge / Kalyani, Hyundai, Jamna Auto Industries, Shapoorji Pallonji, Aparna, Brigade, Jayabheri, Premier Energies, Nagarjuna NACL, Falcon Marine Exports, SeedWorks, ICFAI University, Amity University, Sri Sri Ravishankar Vidya Mandir, Howard Public School, CMR, Blueprint Projects, Gland Pharma, IIRM, Bhavyansh Infotech, CtrlS, MTAR, Hyderabad Golf Association, Page Industries (Jockey / Speedo), Caplin Point Laboratories, SF Express, MMCCC, Candeur, Yashoda Hospitals, Lodha, Pfizer, KIMS Hospitals, Hindalco, Aarti Industries, Gravity Pharma.
+
+(One more logo — "République Française" — also appeared on the page; flagging it separately since a government/diplomatic client is a different kind of claim than a corporate one and is worth a second look before using it, rather than assuming it belongs in the same pool.)
+
+Whoever picks up this fix: swap `L&T`, `Dr. Reddy's`, and `Tech Mahindra` in `ClientMarquee.tsx` for three names from this list — not a code change made here, just the reference data for that edit.
+
 ---
 
 ## 2. `Kapstone_home_services` — pitchable with disclosure
