@@ -88,3 +88,35 @@ All three repos are unsolicited proposal work, not shipped client work — that 
 4. Write a README for `kapston-proposal`.
 5. When you swap in real testimonials/reviews after reaching out to Kapston, make sure `verified: true` only stays set where it's actually true (home services).
 6. Confirm all three build cleanly from a fresh `npm i` on your own machine — all three failed `npm run build` in the sandboxed audit environment on a Rollup native-binary/arch mismatch (`@rollup/rollup-linux-arm64-gnu`), which reads as an environment issue rather than a source defect, but it should be verified locally before any live demo, not assumed.
+
+---
+
+## Re-verification pass — Sept 7, second review
+
+A second independent review was run against this audit. Every one of its claims was re-checked against the actual code and against primary sources. Results below. Implementation plans derived from this live in `kapstone-plans/`.
+
+### Confirmed (code re-read directly)
+
+- `ENTERPRISE_CLIENTS` in `companyData.ts` is exactly 10 entries: Wipro Limited, ICAI, KIMS Hospitals, Dr. Reddy's Laboratories, Larsen & Toubro (L&T), Hetero Drugs, Tech Mahindra, Apollo Health City, Aurobindo Pharma, GMR Group.
+- `RfpModal.tsx` `handleSubmit` is `setIsSubmitted(true)` + `confetti(...)` and nothing else. Success copy at ~line 240 says a Regional Operations Lead "has been notified."
+- OTP in `BookingDrawer.jsx` is `useState(['5', '8', '2', '0'])`; `handleVerifyOtp` is a `setTimeout`.
+- All four `testimonialsData.js` entries carry `verified: true`.
+- `kapston-proposal` has no `README.md`; commit `98ee331` ("chrome and honesty updates") is real; `mockPartners.ts` holds 7 partner records with PAN `BNXPK4921E`, UID `4829 1920 8921`, account `50100492817291`; `mockAuditLogs.ts` has `HDFC-NEFT-928104819`.
+
+### Confirmed against primary sources
+
+- **Registered office really is Plot # 287, MIG-2, IX Phase, KPHB, Kukatpally, Hyderabad 500072** — confirmed on Kapston's own NSE letterhead (7 July 2026 filing) and its MCA record. Plot # 75, Kavuri Hills is the **corporate** office. The repo labels Plot # 75 as "Registered office" in `Footer.tsx` and `ContactPage.tsx`. That is a real error. Fix in Plan 1, Task A4.
+- **FY26 revenue really is ₹831.89 Cr** (reported May 2026). The repo's `FY26 (Proj)` row says ₹650 Cr — materially below the published actual. Plan 1, Task A5.
+
+### Where the second review was itself wrong
+
+- **The home-services phone number is correct.** The review claimed `+91 96405 80000` was not a published number. The live official site `kapstonhomeservices.in` publishes exactly that number. The repo has it right — **do not change it.** The review confused it with the parent's control room (`+91 96 4050 4050`); both are real, and they are different numbers for different entities.
+- **The home-services address is defensible.** `kapstonhomeservices.in` lists "75, Kavuri Hills, Madhapur, Hyderabad- 500034" as its own Corporate address. The README labels it "HQ", which matches. There is a separate registered address (Vasista Bhavan, APHB Colony, Gachibowli) but calling Plot 75 the HQ is not false.
+- **`dist/` in `kapston-proposal`** exists on disk but is listed in `.gitignore` and untracked. Both the "it's there" and "it's not in the tree" observations are consistent — no action needed.
+
+### Things neither pass caught precisely
+
+- **`ClientMarquee.tsx` renders text names only — there are no logo images.** All the "logo wall" framing (including this document's earlier wording) was imprecise. It is a text list, and it already self-labels "Illustrative for layout. Text names only. Confirm against public disclosures."
+- **The filing-link problem is bigger than "five links, one PDF."** Eleven of sixteen `INVESTOR_FILINGS` entries point at the wrong document: nine at the FY25 annual report, two at the FY24 annual report. Only the five annual-report entries are self-consistent.
+- **ICAI is a confirmed real client** — it appears in a testimonial on the official clients page. Of the three names flagged for removal, only Dr. Reddy's, L&T and Tech Mahindra are unconfirmed; Apollo Health City and GMR Group are also unverified and need a decision.
+- **The `highlight` field is the real hallucination trap in Task A1.** Each client entry carries a specific operational claim ("Cleanroom facility maintenance & technical staffing support"). Swapping in a real client name means writing a new claim about a real company — which is exactly what must not be invented. Plan 1 handles this with a fixed generic string.
