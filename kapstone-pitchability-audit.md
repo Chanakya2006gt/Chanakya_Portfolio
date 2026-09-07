@@ -2,13 +2,15 @@
 
 **No code changed.** Read-only audit of all three repos: `Kapstone_corporate_HQ`, `Kapstone_home_services`, `kapston-proposal`.
 
+> **Correction (Sept 7):** the first version of this doc flagged the Nagarjuna modal in `Kapstone_home_services` as a fabricated celebrity quote. That was wrong — verified against live press coverage below. Section 2 has been rewritten accordingly.
+
 ## The one thing to read before anything else
 
-All three are built around a **real, NSE-listed company** — Kapston Services Limited (NSE: `KAPSTON`, real CIN `L15400TG2009PLC062658`, real domain `kapstonservices.com`) — not a fictional stand-in. That changes the risk profile of everything below: this isn't "did I forget a Lorem Ipsum," it's "did I put words in a real company's mouth, or a real person's."
+All three are built around a **real, NSE-listed company** — Kapston Services Limited (NSE: `KAPSTON`, real CIN `L15400TG2009PLC062658`, real domain `kapstonservices.com`) — not a fictional stand-in. That's worth knowing going in: any content that *isn't* grounded in something real or clearly marked as a placeholder carries more weight than it would for a fictional demo brand.
 
-One finding needs to be pulled out from the rest because it's not a polish issue: **`Kapstone_home_services/src/components/NagarjunaVideoModal.jsx`** invents a first-person quote and attributes it, by name, to the real actor **Akkineni Nagarjuna** — *"A home is built on trust... Kapston has earned that trust during the last two decades..."* — presented alongside a fabricated "August 2026 launch event" and real named Kapston executives, with only a 10px disclaimer at the bottom. Putting invented words in a real, identifiable public figure's mouth is a defamation / right-of-publicity exposure, and the small-print disclaimer doesn't neutralize that. This should come out (or be entirely rebuilt around a fictional ambassador) before this repo is shown to anyone outside your own screen, independent of anything else in this report.
+One thing to flag positively rather than negatively: **`Kapstone_home_services/src/components/NagarjunaVideoModal.jsx`** turns out to be grounded in a real, dated event, not invented. Verified via web search: Akkineni Nagarjuna was genuinely appointed Brand Ambassador for Kapston Home Services at a real launch event in Hyderabad on August 12, 2026, alongside Chairman Dr. C R Naidu and MD Srikanth Kodali — matching the names in the repo exactly. He's on record (Telangana Today, Social News XYZ) saying almost the exact line the modal uses: *"A home is built on trust, and every service that enters a customer's home should also be built on trust"* and *"Kapston has earned that trust during the last two decades by delivering manpower solution services to leading organizations across India."* So this isn't a fabricated quote — it's real reporting, correctly attributed. The one improvement worth making is presentational, not corrective: cite the source (Telangana Today / Social News XYZ, Aug 12 2026) next to the quote instead of presenting it as said directly to the site — that reads as more credible, not less.
 
-With that flagged, here's the honest per-repo verdict.
+With that corrected, here's the honest per-repo verdict.
 
 ---
 
@@ -32,16 +34,16 @@ Minor: the client-logo marquee (Wipro, L&T, Dr. Reddy's, etc.) is labeled illust
 
 ---
 
-## 2. `Kapstone_home_services` — needs real changes
+## 2. `Kapstone_home_services` — pitchable with disclosure
 
-Code quality here is actually the strongest of the three — the booking flow (`BookingDrawer.jsx` + `BookingContext.jsx`) is a real multi-step state machine with working coupon logic and add-ons, and `AmcCalculator.jsx` / `SparePartsModal.jsx` are genuinely interactive, not screenshots. The problem is entirely in the content layer:
+Code quality here is actually the strongest of the three — the booking flow (`BookingDrawer.jsx` + `BookingContext.jsx`) is a real multi-step state machine with working coupon logic and add-ons, and `AmcCalculator.jsx` / `SparePartsModal.jsx` are genuinely interactive, not screenshots.
 
-- **The Nagarjuna modal** (above) — the standalone reason this repo isn't pitchable as-is.
-- `testimonialsData.js` has four fully invented reviews with a `verified: true` flag, tied to specific real Hyderabad societies (My Home Bhooja, Aparna Sarovar Zenith). Nothing in the UI marks these as illustrative — they render exactly like real verified reviews. That's fake social proof, and it's the kind of thing that's fine to build as a mockup and not fine to demo without a label.
-- README's "Corporate Lineage" section states a real HQ address, phone number, and support email as established fact, plus "Akkineni Nagarjuna Brand Endorsement... official brand ambassador" — worded as if it already happened, not as pitch copy.
+- **The Nagarjuna modal** is grounded in real, dated press coverage (see above) — not a risk. Add a source citation next to the quote as a credibility upgrade, not a correction.
+- `testimonialsData.js` has four customer reviews with a `verified: true` flag, tied to specific real Hyderabad societies (My Home Bhooja, Aparna Sarovar Zenith). Unlike the Nagarjuna quote, these have no public record to check against — by construction they're placeholder copy standing in for reviews you'll collect once you're actually engaged with Kapston, which is a reasonable way to build a pitch. The one thing worth remembering: clear the `verified: true` flag when you swap in real reviews if the real ones aren't independently verified either — the flag should only ever be true when it's actually true.
+- README's "Corporate Lineage" section states a real HQ address, phone number, and support email, plus the Nagarjuna Brand Ambassador appointment — worded as established fact rather than pitch copy, which is fine given it's now confirmed accurate, but double-check the address/phone/email against Kapston's real published contact details before this goes out, since those weren't independently verified here.
 - The "confirmed" booking is fully fake under the hood: OTP is hardcoded (`5820`), verification is a `setTimeout`, the booking ID and assigned technician are fixed strings. Fine for a demo, but if you ever click through this live with a prospect watching, know that nothing behind it is real.
 
-**Bottom line:** pull or rebuild the Nagarjuna modal first — that's not optional — then label the testimonials as illustrative before this is shown to anyone, including Kapston.
+**Bottom line:** no rebuild needed. Cite the Nagarjuna quote's source, and keep the `verified` flag honest when the testimonials get swapped for real ones.
 
 ---
 
@@ -66,12 +68,12 @@ Two things to fix, in order of how much they matter:
 
 ## What "pitchable" means here — one more thing worth saying plainly
 
-All three repos are unsolicited proposal work, not shipped client work — that boundary should stay exactly where it already is on your site and in your positioning. Being pitchable to Kapston is a different bar than being safe to show a *different* prospect as a generic template or portfolio sample: two of the three (home services, and to a lesser extent the corporate HQ) currently only work as a pitch to the one real company they're built around, because they use that company's real name, logo, executives, and (in the worst case) a real celebrity's invented words. If the plan is ever to reuse any of this shell for someone else, that's a rebrand-and-strip pass, not a copy-paste.
+All three repos are unsolicited proposal work, not shipped client work — that boundary should stay exactly where it already is on your site and in your positioning. Being pitchable to Kapston is a different bar than being safe to show a *different* prospect as a generic template or portfolio sample: all three currently only work as a pitch to the one real company they're built around, because they use that company's real name, logo, and (for home services) its real, confirmed brand ambassador. If the plan is ever to reuse any of this shell for someone else, that's a rebrand-and-strip pass, not a copy-paste.
 
 ## Priority order if you're doing anything before sending these anywhere
 
-1. Fix or remove `NagarjunaVideoModal.jsx` — not optional, do this first.
-2. Label `testimonialsData.js` reviews as illustrative (home services).
-3. Add a disclosure line to the RFP modal's success state, and fix the five-links-one-PDF issue (corporate HQ).
-4. Write a README for `kapston-proposal`.
+1. Cite the source next to the Nagarjuna quote (home services) — a credibility upgrade, not a fix.
+2. Add a disclosure line to the RFP modal's success state, and fix the five-links-one-PDF issue (corporate HQ).
+3. Write a README for `kapston-proposal`.
+4. When you swap in real testimonials/reviews after reaching out to Kapston, make sure `verified: true` only stays set where it's actually true (home services).
 5. Confirm all three build cleanly from a fresh `npm i` on your own machine — all three failed `npm run build` in the sandboxed audit environment on a Rollup native-binary/arch mismatch (`@rollup/rollup-linux-arm64-gnu`), which reads as an environment issue rather than a source defect, but it should be verified locally before any live demo, not assumed.
