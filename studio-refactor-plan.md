@@ -14,6 +14,10 @@
 | WhatsApp | **+91 76740 40571** → `https://wa.me/917674040571` | §8 |
 | Chatbot | **Keep, rewritten**: no prices, no student details | §10 |
 | PrintFast testimonial | **Yes, after the website is handed over** | §9, §15 |
+| Design direction | **B**: Trelio's rules, the studio's own green | §11 |
+| Build timeline | **About 2 months** is the honest number (aim to deliver early) | §7.3, §7.6 |
+| "Why now" line | **Yes, kept low-key**: FAQ answer plus one closing line | §3, §7.2, §7.4 |
+| Founder photo | **Edited from the bike photo**; retake later without sunglasses | §7.2 |
 
 ---
 
@@ -60,7 +64,7 @@ Better Design's rule is to answer four questions first, and never invent the ans
 | **Who is it for?** | The owner or ops head of an Indian small or mid-sized business whose work waits on a quote or an approval. Flagship: manufacturing, printing and converting plants. Also contractors, agencies paid in stages, B2B distributors. | Known |
 | **What do they use today?** | Excel, WhatsApp and Tally. Sometimes Zoho or an off-the-shelf tool that can't do their math. | Known |
 | **The sharpest difference** | The software is built around *their* rates, specs and approval rules, by the person they talk to. Fixed quote before they commit. They own the code. | Known; the "builder on the call" part is your real edge as a solo operator |
-| **Why now?** | Custom software used to be out of reach for a business this size. It isn't any more. | **Assumption: confirm you want to say this** |
+| **Why now?** | Custom software used to be out of reach for a business this size. It isn't any more. | **Confirmed.** Say it quietly: an FAQ answer and one closing line (§7.2, §7.4), never in the hero |
 
 **Keep the H1:** *"Quotes and jobs shouldn't live on WhatsApp."* It passes all three positioning tests: a competitor's name doesn't fit it, a plant owner recognises their own day in it, and it names the alternative. Everything else on the page should serve the person that line speaks to.
 
@@ -249,6 +253,12 @@ If the capacity line ("Taking 2 builds a month") is true, move it next to the bo
 
 Use only claims you can stand behind. If you use rupee figures, they must come from a real job.
 
+Close the section with the "why now" line, small, in muted text:
+
+> *Software built around your own way of working used to be for big companies. Now it's for yours too.*
+
+(Better Design comprehension check: **Pass**, 8 seconds.) That's the whole "why now" on the homepage. It works because it sits right after the visitor recognises their own problem, so it reads as reassurance, not a pitch.
+
 **3. Work** (`id="work"`). Two or three cards, each linking to `/work/<case>`:
 - **A label and packaging printer** (PrintFast): the real client, the strongest card. Named only with permission (§9).
 - **Trelio**: "My own product. Each project stage stays locked until it's paid." Link to trelio.in.
@@ -269,7 +279,14 @@ Then the honest exclusion line: *Need a five-page brochure site? I'll point you 
 - You own the code, the domain and the accounts.
 - You get a fixed quote before you commit to the build.
 - You talk to the person who builds it. No account managers.
-- Founder block: **a real photo** (there is none in `public/` today), your name, two lines: who you are and where you work from. **No college, no degree, no year.**
+- Founder block: **a real photo**, your name, two lines: who you are and where you work from. **No college, no degree, no year.**
+
+**Founder photo (done, 21 Sept):** edited from the bike photo, in `brand-assets/founder/`:
+- `founder_4x5.jpg` (960×1200): the founder block. Cropped above the knees, so the trouser folds at the boots are gone. Background softened and desaturated so the yellow wall, building and washing line recede; he and the bike stay sharp.
+- `founder_square.jpg` (800×800): WhatsApp Business, Cal.com, LinkedIn.
+- `founder_16x9.jpg` (1600×900): a wide option for the founder band or a future OG image.
+- Keep the black shirt and the bike: relaxed, not corporate, and memorable.
+- **Known limits of an edit:** the source is 960×1280, so use it at founder-block size, not full-screen. And the **sunglasses hide your eyes**, which is the one thing a buyer deciding whether to trust a stranger looks at. When you can, retake with the same shirt, same bike, sunglasses off. Late-afternoon light, a plainer wall or an open road behind you, phone at chest height in portrait mode. Until then, this edit works.
 
 **7. FAQ**, with a sticky "Book a call" card beside it on desktop. Rewrites in §7.4.
 
@@ -285,7 +302,7 @@ Framework first ("Four steps"), then exactly four, in this order:
 |---|---|---|---|---|
 | 01 | **Intro call** | 20 min, free | You show me how a quote or job moves today. I tell you honestly if custom software is worth it for you. | A straight yes or no |
 | 02 | **Workflow Diagnosis** | About 3 days, paid | I map your rules and rates, and build one working screen on your real data. | That screen, a written spec, and a fixed quote for the build |
-| 03 | **Build** | About 15 days | Weekly check-ins. Your team tries it on real jobs before launch. | The system, live on your domain. The code is yours |
+| 03 | **Build** | Up to 8 weeks | Weekly check-ins. Your team tries it on real jobs before launch. | The system, live on your domain. The code is yours |
 | 04 | **Keep it running** | Optional, monthly | Changes as your business changes, and someone to call when something breaks | |
 
 Two lines under the table, which handle the paid diagnosis without a number:
@@ -294,6 +311,27 @@ Two lines under the table, which handle the paid diagnosis without a number:
 - *We talk about cost on the call, once I know what your workflow needs.*
 
 Check "credited in full" is still your policy before publishing it. Durations are process information, not price, so they stay.
+
+### 7.6 Timeline: quote the true number, deliver early
+
+The site says **15 days** (or a day-by-day 15-day schedule) in about 20 places today, and the honest build time is **about two months**. Every one of these has to change (grep `15 days\|15-day\|15 business days\|Days 1` to find them):
+- `offer-ladder.tsx:31, 146, 177, 187, 284`
+- `method-section.tsx:12, 27, 42, 57, 72, 99, 105, 113`
+- `method.tsx:11`
+- `faqs.ts:38`
+- `api/chat.ts:53, 116, 163, 173`
+- `README.md:13`
+
+On the site: **"Up to 8 weeks, depending on the workflow. The diagnosis gives you the exact timeline."**
+
+**Delivering in about a month against an 8-week promise is a good plan.** Early delivery is one of the few things clients remember and repeat. Two things make it land:
+
+- **Let the early date speak for itself.** Say "It's ready, three weeks early", and walk them through it. Only say you put other work aside if you actually did. If a month was always the plan, a staged sacrifice is the kind of detail that surfaces later (a client sees your calendar, or talks to your next client), and it quietly costs the trust the early finish earned. It also sets their expectation that next time will be a month.
+- **Spend part of the saved time on something they keep.** A 10-minute recorded walkthrough for their staff, a one-page "how to use it" sheet, a check-in call at day 30. That's what makes them remember you, and it's the moment to ask for the testimonial.
+
+One risk to watch: a longer quote can lose a deal to someone who quotes shorter. That's why the site says "up to", and the diagnosis sets the real date.
+
+**Capacity line:** "Taking 2 builds a month" doesn't fit a two-month build. Remove it (`portfolio-data.json:77`, `portfolio-home.tsx:42`) unless you want a line that's true, such as "Taking 2 new projects this quarter".
 
 ### 7.4 FAQ rewrites
 
@@ -304,7 +342,8 @@ Order them by what stops a plant owner from booking. Proposed:
 3. **Do I own the code?** Keep.
 4. **What happens after launch?** Keep the 14 days of fixes; replace the retainer price with *"then optional monthly support, if you want it"*.
 5. **What do you need from me?** Keep.
-6. **What if it isn't finished on time?** Keep, minus "at no extra cost" phrasing that invites a price discussion; say *"I finish it"*.
+6. **What if it isn't finished on time?** Rewrite the question (it currently says "in 15 days", `faqs.ts:38`). Keep the answer, minus the "at no extra cost" phrasing that invites a price discussion; say *"I finish it"*.
+7a. **Isn't custom software only for big companies?** *(new, the "why now")* *It used to be. Today one builder can shape a system around your business in about two months, so it's within reach for a business your size.* (Better Design comprehension check: **Pass**.)
 7. **What kinds of businesses do you build for?** Keep.
 8. **Do you build regular websites?** Rewrite to the honest exclusion: brochure sites are not the focus; you'll point them elsewhere.
 9. **Can you work with a business outside India?** Keep.
@@ -420,7 +459,7 @@ This supersedes Phase D of the earlier docs-and-motion plan, which re-mounted th
 **A. Adopt Trelio's system wholesale** (DM Serif, burnt orange, paper light theme).
 Gain: proven, fastest to build, consistent family look. Lose: the studio looks like the product, so visitors may think the studio *is* Trelio. Affects: every visitor. Fits less well because Trelio's orange is Trelio's identity.
 
-**B. Trelio's rules, the studio's own colour (recommended).** Keep Instrument Serif (already loaded) and Figtree; one accent, the existing deep green `#1f653b` from the light theme; Trelio's paper surfaces, hairline tables, bookend bands and motion tokens.
+**B. Trelio's rules, the studio's own colour (chosen, 21 Sept).** Keep Instrument Serif (already loaded) and Figtree; one accent, the existing deep green `#1f653b` from the light theme; Trelio's paper surfaces, hairline tables, bookend bands and motion tokens.
 Gain: continuity with today's site, distinct from Trelio, no new fonts. Lose: less instant borrowed polish; the green palette needs a contrast check on the navy bands. Affects: build time, lightly. Fits because it reuses what already works on both sites.
 
 **C. A fresh base from Better Design's catalogue.** Closest matches: [Atelier](https://better-design.com/design-systems/atelier) (cream canvas, restrained forest green, quiet editorial), [Editorial Warm](https://better-design.com/design-systems/editorial-warm) (cream, terracotta, Fraunces serif) and [Interior](https://better-design.com/design-systems/interior) (warm off-white, square-cornered, one accent).
@@ -504,15 +543,15 @@ Order matters because of the email dependency.
 
 **Decided (21 Sept):** studio name ChanBuilds; domain later; WhatsApp +91 76740 40571; chatbot kept and rewritten; PrintFast testimonial after handover. Booking tool: Cal.com recommended (§8). Confirm or pick another.
 
+Also decided: design direction B; build timeline about 2 months (site says "up to 8 weeks"); "why now" kept low-key; founder photo edited from the bike photo.
+
 **Still open:**
 
 1. **Booking tool**: go with Cal.com?
-2. **"Why now" line** (§3): say it or not?
-3. **Diagnosis credit**: is "credited in full if you build" still the policy?
-4. **Capacity line**: is "2 builds a month" true, and do you want it shown?
-5. **Design direction**: B (recommended), A, or a Better Design base (Atelier is closest)?
-6. **Founder photo**: can you get one taken?
-7. **Page title**: is the §13 proposal right?
+2. **Diagnosis credit**: is "credited in full if you build" still the policy?
+3. **Capacity line**: remove it, or replace with a true one (§7.6)?
+4. **Page title**: is the §13 proposal right?
+5. **Photo retake** without sunglasses: when you can (§7.2).
 
 ---
 
