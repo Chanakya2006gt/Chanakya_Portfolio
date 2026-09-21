@@ -2,7 +2,18 @@
 
 **Repo:** `Chanakya_Portfolio` (branch `dev`), live at `chanakya-portfolio-orcin.vercel.app`
 **Scope of this document:** analysis and plan only. No code was changed.
-**Date:** 21 Sept 2026
+**Date:** 21 Sept 2026 (updated the same day with Chanakya's decisions)
+
+### Decisions made
+
+| Decision | Answer | Where it changes the plan |
+|---|---|---|
+| Studio name | **ChanBuilds** (working name; may change at registration) | §13 |
+| Domain | **Later**, once client money comes in. Rename the free Vercel subdomain now | §13 |
+| Booking tool | Undecided → **recommend Cal.com free plan** | §8 |
+| WhatsApp | **+91 76740 40571** → `https://wa.me/917674040571` | §8 |
+| Chatbot | **Keep, rewritten**: no prices, no student details | §10 |
+| PrintFast testimonial | **Yes, after the website is handed over** | §9, §15 |
 
 ---
 
@@ -264,7 +275,7 @@ Then the honest exclusion line: *Need a five-page brochure site? I'll point you 
 
 **8. Closing band** (navy): a one-line H2, the same **Book a call** button, then *"Or message me on WhatsApp"* and your email. Under it, what happens next, as three numbered lines: you pick a slot; you get a confirmation with three quick questions; we talk for 20 minutes about how you quote today.
 
-**Footer**: studio name, domain email, Privacy, GitHub, LinkedIn. Drop "Back to top" and "Fixed-price operational software."
+**Footer**: ChanBuilds, *Built by Nagulagam Chanakya*, your one email address, WhatsApp, Privacy, GitHub, LinkedIn. Drop "Back to top" and "Fixed-price operational software."
 
 ### 7.3 The process section (no prices)
 
@@ -312,19 +323,38 @@ The FAQPage structured data regenerates from `faqs.ts`, so fixing the file fixes
 
 ## 8. Booking: the one functional feature to add
 
-**Recommendation:** an embedded scheduler on `/book`: Cal.com, SavvyCal or Calendly. Evil Martians uses Cal.com; Speedshop uses SavvyCal. Check current plan limits before choosing. A scheduler also sidesteps the email-sending blocker from earlier (Resend needs a verified domain): bookings arrive in your calendar and inbox without the site sending mail.
+**Recommendation: Cal.com, free plan,** embedded on `/book`.
 
-**Before the calendar, three questions** (only the last is required):
+What I checked on `cal.com/pricing` (21 Sept 2026): the individual plan is "Free forever", with "Unlimited event types & calendars", "Unlimited meetings", and Google Calendar and Google Meet integrations. It works with a Gmail account, so no domain is needed.
+
+Not confirmed on the free plan, so check while signing up:
+- **Custom booking questions.** "Change booking questions" appears under Cal.com's advanced features, so it may not be free.
+- **Branding.** Cal.com branding may show on the free booking page. That's fine for now.
+
+Why not Calendly's free plan: it allows one event type and one calendar, and no custom invitee questions. (Source: Cal.com's own blog, a competitor, so treat it with some caution.) You'll want at least two event types: *Intro call, 20 min* now, and *Diagnosis kickoff* later.
+
+**Setup:**
+- Booking link like `cal.com/chanbuilds`, if the username is free.
+- One event: **Intro call, 20 min**, on Google Meet, with a 10-minute buffer.
+- **Block your mid-sem and end-sem exam weeks** in Google Calendar now, so nobody can book into them. That's the availability constraint you mentioned earlier, handled by the calendar instead of by you.
+
+**Three questions before the call** (only the last is required):
 
 1. What does your business make or sell?
 2. How do quotes and jobs run today? (Excel / WhatsApp / Tally / Zoho / other)
 3. **What breaks most often?** *(required)*
 
-No budget field. Money is for the call.
+If the free plan won't let you add questions, ask them in your confirmation WhatsApp instead. No budget field either way. Money is for the call.
 
-**After booking, say what happens:** "You'll get a calendar invite now, and a WhatsApp or email from me the day before."
+**After booking, say what happens:** "You'll get a calendar invite now, and a WhatsApp from me the day before."
 
-**Second door:** a WhatsApp link (`wa.me/<number>` with a prefilled message) next to the calendar. Your buyers already live in WhatsApp; some won't book a calendar slot but will message.
+**WhatsApp, the second door:** next to the calendar, on the closing band, and in the chatbot hand-off:
+
+```
+https://wa.me/917674040571?text=Hi%20Chanakya%2C%20I%20found%20ChanBuilds%20and%20want%20to%20talk%20about%20how%20we%20handle%20quotes%20and%20jobs.
+```
+
+Use the free **WhatsApp Business** app on that number. You get a business profile named ChanBuilds, a greeting message for first contacts, and an away message you can switch on during exam weeks. Publishing a number does invite some spam; the Business app's labels make it easier to sort.
 
 **Remove** the `mailto:` dialog entirely.
 
@@ -336,7 +366,7 @@ No budget field. Money is for the call.
 
 Proof is the weakest part of the site and the one thing design can't fix.
 
-1. **PrintFast: your first real case study.** Once the handover is done, ask the owner for (a) permission to name them and (b) two or three sentences on what changed, with their name and role. A case page: *the problem → what was built → one outcome*. If they won't be named, "a label and packaging printer in Lusaka" is honest and still strong.
+1. **PrintFast: your first real case study** (decided: yes, after handover). Launch the Work section with Trelio and the Apex demo, then add the PrintFast card when the testimonial arrives. Once the handover is done, ask the owner for (a) permission to name them and (b) two or three sentences on what changed, with their name and role. A case page: *the problem → what was built → one outcome*. If they won't be named, "a label and packaging printer in Lusaka" is honest and still strong.
 2. **Your mother's boutique site.** Use it as a work sample if you like, but **don't present a review from your mother as an independent client testimonial.** A visitor who later learns the relationship will discount everything else on the page. If you show it, say whose business it is.
 3. **One number, verified.** Pick the test count that is true today, state it once, delete the others (`portfolio-home.tsx:241, 260`, `chat.ts:67, 137`, `llms.txt`).
 4. **Move the engineering metrics** (RLS policies, ops/s, invariants, heap) off the homepage onto the Apex case page, under a "for your technical person" heading. Some buyers have one; most don't.
@@ -347,12 +377,39 @@ Proof is the weakest part of the site and the one thing design can't fix.
 
 ## 10. The chatbot
 
-The "Ask Assistant" mascot is live (`portfolio-home.tsx:486`) and its prompt is built around prices and education. Two options:
+**Decision: keep it, rewritten.** The accepted trade-off: instant answers for visitors who'd rather ask than read, in exchange for an ongoing OpenAI cost and a bot that must be tested so it never states a price or invents a claim. The rewrite has to hold four rules.
 
-- **Remove it (recommended for this refactor).** Gain: no price leaks, no OpenAI spend, no risk of the bot inventing a claim to a prospect, one fewer competing action. Lose: an always-on answer channel. Affects: visitors who prefer chat. Fits because the page's single job is booking, and the FAQ plus WhatsApp covers the same questions with less risk.
-- **Keep it, rewritten.** Gain: instant answers. Lose: ongoing cost and review; a cartoon mascot with emoji reads as hobby, not studio. If kept: plain "Questions?" button, no mascot, and a prompt that only covers process and fit, **never discusses price**, and hands off to `/book`.
+**1. Look like part of the studio, not a mascot.**
+- Replace the cartoon companion and the "Ask Assistant" bubble with a plain **"Questions?"** button, bottom-right.
+- The panel is headed *Ask about ChanBuilds*. No emoji anywhere (the current quick prompts use "💬" and "📋").
 
-This supersedes Phase D of the earlier docs-and-motion plan, which re-mounted the companion.
+**2. Build the prompt from studio content, not the resume.**
+- Feed it a small `studio` object: name, who it's for, the four process steps (§7.3), the FAQ (§7.4), the booking link and WhatsApp link.
+- Delete everything that reads `resume`, `resumeOverride`, `skills` or `education` (`chat.ts:10, 13, 38`).
+- Delete every price in the prompt and the fallback replies (`chat.ts:48–59, 75, 80–82, 115–117, 162–163, 173`).
+
+**3. Hard rules in the system prompt:**
+- **Never state a price, a range, a ballpark, an hourly rate or a discount**, even when pressed. The answer to any cost question is: *cost depends on the workflow; Chanakya gives a fixed quote after the diagnosis and talks numbers on the call*, then the booking link and WhatsApp link.
+- Never mention education, college, age or student status.
+- Never invent a client, number, testimonial or result. Name PrintFast only after permission is granted.
+- When unsure, hand off to WhatsApp or the booking page rather than guess.
+- Short answers (roughly 80 words), ending with a next step when one fits.
+
+**4. Quick prompts:** *What do you build? · How does a project run? · Is this right for my business? · How do I start?* No pricing prompt. People will still ask; rule 3 handles it.
+
+**Keep** the existing rate limiting and PII redaction, and **set a monthly spend cap** on the OpenAI account before it goes live (the per-instance rate limiter isn't a real ceiling).
+
+**Acceptance test before shipping:** ask the bot these, and fail the release if any answer leaks a number, a college, or an invented client:
+1. "Ballpark, how much for a quoting system?"
+2. "What's your hourly rate?"
+3. "Is the diagnosis ₹20k?"
+4. "Where did you study?"
+5. "Are you a student?"
+6. "Who are your clients?"
+7. "Can you do it in 5 days for ₹50,000?"
+8. "Do you build brochure websites?"
+
+This supersedes Phase D of the earlier docs-and-motion plan, which re-mounted the companion as it was.
 
 ---
 
@@ -386,21 +443,27 @@ Gain: a professionally built component kit and review gates. Lose: more work, an
 - **`__root.tsx`**: drop "Fixed price." from the description and "fixed-price software build" from keywords. Add a `ProfessionalService` (or `Organization`) JSON-LD node for the studio; today there is only a `Person`. Keep the two `SoftwareApplication` nodes.
 - **Update `sitemap.xml`** for `/process`, `/book`, `/work/*`; redirect `/method` → `/process`.
 - **Refresh `og.jpg`** so link previews on WhatsApp show the new headline, not the old one.
-- **Custom domain and email** (§13): the canonical URL, sitemap, robots and llms.txt all hard-code `chanakya-portfolio-orcin.vercel.app` today.
+- **Canonical URL** (§13): `SITE_URL`, sitemap, robots and llms.txt all hard-code `chanakya-portfolio-orcin.vercel.app` today. Point them at `chanbuilds.vercel.app` now, and at the real domain later.
+- **Studio JSON-LD**: name the `ProfessionalService` node **ChanBuilds**, with `founder` pointing at the existing `Person` node and `contactPoint` using the WhatsApp number.
 
 ---
 
 ## 13. Identity
 
-These are the cheapest credibility upgrades on the list.
+**Studio name: ChanBuilds** (working name).
+- The wordmark "Chanakya." becomes **ChanBuilds**, with *Built by Nagulagam Chanakya* in the founder block and footer. The studio name gives the site a firm's shape; your name keeps the solo edge ("you talk to the person who builds it").
+- Proposed page title: *ChanBuilds — quoting and job software, built around your business.* Confirm before use.
+- A web search for "ChanBuilds" on 21 Sept found no business using the name. **That is not a trademark search.** Before registering, search it on the IP India public trademark search.
 
-- **A real domain.** `…-orcin.vercel.app` is the single loudest "student project" signal. A `.in` or `.com` domain is a small yearly cost, and it also unblocks domain email.
-- **Email on that domain** instead of `nagulagamchanakya2211@gmail.com`.
-- **A studio name, or not.** Two honest routes:
-  - *Founder-led under your own name* (Speedshop, Saintil). Gain: your solo edge is the pitch. Lose: harder to grow past one person later.
-  - *A studio name with you as the face.* Gain: reads as a firm. Lose: a name to choose and defend.
-  I won't invent one. Either works if the page says who builds the software.
-- **A founder photo.** None exists in `public/`. Every trusted solo operator in the research shows a face.
+**Domain: later.** Until then, a free fix for the loudest "student project" signal:
+- In Vercel → Project → Settings → Domains, add **`chanbuilds.vercel.app`**. It returned a 404 on 21 Sept, which suggests it's unclaimed; Vercel will tell you for certain.
+- Keep `chanakya-portfolio-orcin.vercel.app` attached and redirect it to the new one, so old links keep working.
+- Update `SITE_URL` and the canonical in `__root.tsx`, plus `sitemap.xml`, `robots.txt` and `llms.txt`.
+- When you buy the real domain, repeat these steps once more.
+
+**Email: one address everywhere.** The site uses `nagulagamchanakya2211@gmail.com`. Use one address across the site, Cal.com and the WhatsApp Business profile. A separate Gmail just for ChanBuilds is optional; it keeps client mail apart from personal mail. Domain email comes with the domain.
+
+**Founder photo:** still needed. None exists in `public/`, and every trusted solo operator in the research shows a face.
 
 ---
 
@@ -408,13 +471,13 @@ These are the cheapest credibility upgrades on the list.
 
 Order matters because of the email dependency.
 
-1. Add a `contactEmail` field to the content model; point `api/chat.ts:10` (if the bot survives) and the footer at it.
+1. Add a `contactEmail` field to the content model; point `api/chat.ts:10` and the footer at it.
 2. Delete `src/components/resume-modal.tsx` (dead code).
 3. Delete `src/routes/api/resume.ts` and `src/routes/api/admin/resume.ts`.
 4. Delete `src/data/resume-schema.ts`; remove `resume`, `resumeOverride`, `skills`, `hiringStatus`, `heroTagline` from `store.ts` and `portfolio-data.json`.
 5. Admin (`admin/index.tsx`): delete the "Resume & Qualifications" tab and the "Team Hiring Status" field.
 6. Delete the stored `resume.pdf` from Vercel Blob and the `OPENAI_RESUME_MODEL` env var.
-7. Chatbot: delete `mascot/*` and the `<Companion />` mount, or rewrite per §10.
+7. Chatbot: replace the `mascot/*` character UI with the plain "Questions?" panel and rewrite `api/chat.ts` per §10.
 8. Replace `offer-ladder.tsx` with the process section; reuse its three "door" cards for "Who it's for".
 9. Replace `method.tsx` / `method-section.tsx` with `/process`, no prices, plain step names.
 10. `faqs.ts`, `projects.ts` nav, `site-nav.tsx`, `portfolio-home.tsx`: every item in §4.2.
@@ -428,27 +491,28 @@ Order matters because of the email dependency.
 | Phase | What | Size | Done when |
 |---|---|---|---|
 | **0. Decisions** | Answer §16 | You | Answers written down |
-| **1. Stop the contradictions** | Strip every price and student remnant (§14), rewrite `llms.txt`, wire `/book` + WhatsApp, remove or rewrite the chatbot, add the two analytics events | 1–2 days | The grep in §14.12 is clean; a test booking lands in your calendar |
+| **1. Stop the contradictions** | Strip every price and student remnant (§14); rewrite `llms.txt`; rename to ChanBuilds and `chanbuilds.vercel.app`; set up Cal.com and WhatsApp Business; wire `/book` + WhatsApp; rewrite the chatbot (§10); add the two analytics events | 2–3 days | The grep in §14.12 is clean; a test booking lands in your calendar; the chatbot passes all eight test questions |
 | **2. New structure and copy** | §7 on the existing components: new section order, process table, FAQ rewrites, founder block | 2–3 days | Every section passes `check-comprehension` |
 | **3. Visual system** | §11.2: light only, one accent, remove the tells, Trelio patterns and motion | 3–4 days | `get-review-rules` clean; `inspect-spacing` at 390, 1440 and 1728 has no serious findings; before/after screenshots at the same widths |
-| **4. Proof** | PrintFast case page and testimonial; Apex page with the engineering detail; fix the Apex demo's currency | When permission arrives | At least one named client outcome on the homepage |
+| **4. Proof** | Fix the Apex demo's currency and add its case page now; PrintFast case page and testimonial **after the PrintFast handover** | PrintFast: after handover | At least one named client outcome on the homepage |
 
 **Why this order:** Phase 1 is small and the current site is actively working against you (it quotes ₹20,000 on every page and in the bot, and nobody can book). A redesign on top of a site with no booking path would look better and convert the same.
 
 ---
 
-## 16. Decisions I need from you
+## 16. Decisions
 
-1. **Studio name**, or founder-led under your own name?
-2. **Domain**: buy one now? (Needed for email and for the canonical URL.)
-3. **Scheduler**: Cal.com, SavvyCal or Calendly? And a WhatsApp number to publish?
-4. **Chatbot**: remove, or keep rewritten without prices?
-5. **PrintFast**: will you ask for a testimonial and permission to name them?
-6. **"Why now" line** (§3): say it or not?
-7. **Diagnosis credit**: is "credited in full if you build" still the policy?
-8. **Capacity line**: is "2 builds a month" true and do you want it shown?
-9. **Design direction**: B (recommended), A, or a Better Design base (Atelier is closest)?
-10. **Founder photo**: can you get one taken?
+**Decided (21 Sept):** studio name ChanBuilds; domain later; WhatsApp +91 76740 40571; chatbot kept and rewritten; PrintFast testimonial after handover. Booking tool: Cal.com recommended (§8). Confirm or pick another.
+
+**Still open:**
+
+1. **Booking tool**: go with Cal.com?
+2. **"Why now" line** (§3): say it or not?
+3. **Diagnosis credit**: is "credited in full if you build" still the policy?
+4. **Capacity line**: is "2 builds a month" true, and do you want it shown?
+5. **Design direction**: B (recommended), A, or a Better Design base (Atelier is closest)?
+6. **Founder photo**: can you get one taken?
+7. **Page title**: is the §13 proposal right?
 
 ---
 
