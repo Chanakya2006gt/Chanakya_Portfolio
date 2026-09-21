@@ -398,7 +398,7 @@ Use the free **WhatsApp Business** app on that number. You get a business profil
 
 **Remove** the `mailto:` dialog entirely.
 
-**Measure it:** add Vercel Web Analytics (or equivalent) and two events: *Book a call clicked* and *Booking completed*. Without them there is no way to tell whether the refactor worked.
+**Measure it:** add Vercel Web Analytics, page views only. The Hobby plan has no custom events, so views of `/book` are the booking-intent metric, and completed bookings are counted in the booking tool itself. Without this there is no way to tell whether the refactor worked.
 
 ---
 
@@ -531,7 +531,7 @@ Order matters because of the email dependency.
 | Phase | What | Size | Done when |
 |---|---|---|---|
 | **0. Decisions** | Answer §16 | You | Answers written down |
-| **1. Stop the contradictions** | Strip every price and student remnant (§14); rewrite `llms.txt`; rename to ChanBuilds and `chanbuilds.vercel.app`; set up Cal.com and WhatsApp Business; wire `/book` + WhatsApp; rewrite the chatbot (§10); add the two analytics events | 2–3 days | The grep in §14.12 is clean; a test booking lands in your calendar; the chatbot passes all eight test questions |
+| **1. Stop the contradictions** | Strip every price and student remnant (§14); rewrite `llms.txt`; rename to ChanBuilds and `chanbuilds.vercel.app`; set up Cal.com and WhatsApp Business; wire `/book` + WhatsApp; rewrite the chatbot (§10); add page-view analytics (Hobby has no custom events) | 2–3 days | The grep in §14.12 is clean; a test booking lands in your calendar; the chatbot passes all eight test questions |
 | **2. New structure and copy** | §7 on the existing components: new section order, process table, FAQ rewrites, founder block | 2–3 days | Every section passes `check-comprehension` |
 | **3. Visual system** | §11.2: light only, one accent, remove the tells, Trelio patterns and motion | 3–4 days | `get-review-rules` clean; `inspect-spacing` at 390, 1440 and 1728 has no serious findings; before/after screenshots at the same widths |
 | **4. Proof** | Fix the Apex demo's currency and add its case page now; PrintFast case page and testimonial **after the PrintFast handover** | PrintFast: after handover | At least one named client outcome on the homepage |
