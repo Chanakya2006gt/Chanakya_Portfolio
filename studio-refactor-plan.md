@@ -286,6 +286,7 @@ Then the honest exclusion line: *Need a five-page brochure site? I'll point you 
 - `founder_square.jpg` (800×800): WhatsApp Business, Cal.com, LinkedIn.
 - `founder_16x9.jpg` (1600×900): a wide option for the founder band or a future OG image.
 - Keep the black shirt and the bike: relaxed, not corporate, and memorable.
+- **Use the black-and-white versions** (`brand-assets/founder/bw/`, chosen 21 Sept). Upscaled 2× with Real-ESRGAN, which removes the WhatsApp compression blockiness without changing the face. Sizes: 4:5 at 1440×1800, square at 1000×1000, 16:9 at 1920×1080. Black and white also suits design B: a greyscale photo never competes with the single green accent.
 - **Known limits of an edit:** the source is 960×1280, so use it at founder-block size, not full-screen. And the **sunglasses hide your eyes**, which is the one thing a buyer deciding whether to trust a stranger looks at. When you can, retake with the same shirt, same bike, sunglasses off. Late-afternoon light, a plainer wall or an open road behind you, phone at chest height in portrait mode. Until then, this edit works.
 
 **7. FAQ**, with a sticky "Book a call" card beside it on desktop. Rewrites in §7.4.
