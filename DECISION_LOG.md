@@ -108,3 +108,39 @@ npm run build     # exited with code 0
 - **Command**:
   `npx vite preview --port 8081` + Playwright headless Chrome automation
   Result: 100% passed.
+
+---
+
+## 2026-09-22: Desktop Hero Two-Column Layout & Static Plant Quote Artifact Card
+
+### Architectural Rationale & Context
+- **Problem**: On wide desktop viewports (1440px+), the centered single-column hero left excess empty space on the right, lacking immediate tactile grounding in the software built.
+- **Decision**: Refactor `Hero()` into a 2-column grid (`lg:grid-cols-[minmax(0,1fr)_minmax(300px,400px)]`). Place the headline and pitch in the left column (`text-left`, `max-w-xl`), and balance it with a frozen, static reference build artifact card on the right (Apex Packaging · Plant quote).
+- **Invariants Preserved**:
+  - Exactly one file modified: `src/components/portfolio-home.tsx`
+  - Zero new routes, widgets, sliders, or external dependencies.
+  - Card is completely static and unclickable (no hover scale, no glow, no fake interactive tabs).
+  - Preserved typography tokens (`IBM Plex Sans` + `IBM Plex Mono`).
+
+### Shell Commands Executed
+```bash
+# 1. Verification of type safety, code style, and build
+npm run typecheck # exited with code 0
+npm run lint      # exited with code 0
+npm run build     # exited with code 0
+
+# 2. Scoped grep invariant checks
+grep -n "min-h-\[80vh\]" src/components/portfolio-home.tsx # 0 hits
+grep -n "animate-pulse" src/components/portfolio-home.tsx   # 0 hits
+
+# 3. Git commit & push
+git commit -m "feat(hero): add static plant quote artifact card to fill desktop fold"
+git push origin dev
+git checkout main && git merge dev && git push origin main
+```
+
+### URLs Verified Live
+- `https://chanakya-portfolio-orcin.vercel.app/`:
+  - Verified `Apex Packaging · Plant quote` and `50,000 labels · FINAT 4 rewind` present in live HTML payload.
+  - Verified H1 `"We build software that runs businesses."` rendering in `IBM Plex Sans`.
+
