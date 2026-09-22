@@ -9,7 +9,7 @@ export function AppNotFoundComponent() {
 
       <p className="font-mono text-xs uppercase tracking-widest text-sage">404</p>
 
-      <h1 className="font-serif text-2xl font-bold tracking-tight">
+      <h1 className="font-sans text-2xl font-semibold tracking-tight">
         This page doesn&apos;t exist
       </h1>
 

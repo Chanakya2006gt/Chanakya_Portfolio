@@ -59,7 +59,7 @@ function AdminLoginPage() {
           <div className="mx-auto mb-3 flex size-12 items-center justify-center rounded-2xl border border-sage/40 bg-sage/10 text-sage">
             <ShieldCheck className="size-6" />
           </div>
-          <CardTitle className="font-serif text-3xl font-bold tracking-tight text-white">
+          <CardTitle className="font-sans text-3xl font-semibold tracking-tight text-white">
             Admin Portal
           </CardTitle>
           <CardDescription className="text-xs text-muted-foreground mt-1">

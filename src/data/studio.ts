@@ -2,7 +2,7 @@
 // Do not hard-code these values anywhere else.
 
 export const STUDIO_NAME = "CK Builds";
-export const STUDIO_TAGLINE = "Bespoke Software for Operations & Quoting";
+export const STUDIO_TAGLINE = "We build software that runs businesses.";
 
 export const CONTACT_EMAIL = "nagulagamchanakya2211@gmail.com";
 

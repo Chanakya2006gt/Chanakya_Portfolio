@@ -86,7 +86,7 @@ function BookPage() {
             <span className="h-4 w-1 rounded-full bg-emerald-600 dark:bg-emerald-400 shadow-[0_0_8px_#10b981]" />
             <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">Consultation</p>
           </div>
-          <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight">
+          <h1 className="font-sans text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight">
             Book a 20-minute call
           </h1>
           <p className="text-base sm:text-lg text-muted-foreground">
@@ -99,7 +99,7 @@ function BookPage() {
           <div className="mt-8 p-6 rounded-2xl border border-sage/40 bg-card shadow-sm">
             <h2 className="text-base font-semibold text-foreground">Pick a calendar slot</h2>
             <p className="mt-1 text-xs text-muted-foreground">Directly select a time on our schedule.</p>
-            <Button asChild size="lg" className="mt-4 btn-sage-glow rounded-xl font-medium shadow-md">
+            <Button asChild size="lg" className="mt-4 rounded-xl font-medium shadow-md">
               <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer">
                 <span>Open Calendar →</span>
               </a>
@@ -114,7 +114,7 @@ function BookPage() {
               <div className="inline-flex size-12 items-center justify-center rounded-full bg-emerald-500/15 text-emerald-600 dark:text-emerald-400 mb-2">
                 <CheckCircle2 className="size-6" />
               </div>
-              <h2 className="font-serif text-2xl font-bold text-foreground">Inquiry Received</h2>
+              <h2 className="font-sans text-2xl font-semibold text-foreground tracking-tight">Inquiry Received</h2>
               <p className="text-sm text-muted-foreground max-w-md mx-auto leading-relaxed">
                 Thank you. We have received your details and will review your workflow. You will hear back within 24 hours to schedule the 20-minute call.
               </p>
@@ -188,7 +188,7 @@ function BookPage() {
                   type="submit"
                   disabled={status === "submitting"}
                   size="lg"
-                  className="btn-sage-glow rounded-xl font-medium shadow-md px-6"
+                  className="rounded-xl font-medium shadow-md px-6"
                 >
                   {status === "submitting" ? (
                     <span>Submitting...</span>

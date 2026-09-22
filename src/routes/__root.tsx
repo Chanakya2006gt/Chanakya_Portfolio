@@ -5,7 +5,7 @@ import { faqs } from "@/data/faqs";
 import { SITE_URL, STUDIO_NAME, CONTACT_EMAIL } from "@/data/studio";
 import appCss from "../styles.css?url";
 
-const APP_NAME = "CK Builds — Bespoke Software for Operations & Quoting";
+const APP_NAME = "CK Builds — We build software that runs businesses.";
 const APP_DESC = "CK Builds designs and engineers custom operational software, CPQ platforms, and workflow systems for growing businesses. Talk directly to the people who build it.";
 
 const JSON_LD = {
@@ -114,7 +114,7 @@ export const Route = createRootRoute({
       },
       {
         rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap",
+        href: "https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap",
       },
     ],
   }),

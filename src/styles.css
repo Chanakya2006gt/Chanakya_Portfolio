@@ -32,8 +32,8 @@
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
   --radius-2xl: calc(var(--radius) + 8px);
-  --font-sans: "Figtree", "Segoe UI", system-ui, sans-serif;
-  --font-serif: "Instrument Serif", "Times New Roman", serif;
+  --font-sans: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-serif: var(--font-sans);
   --font-mono: "IBM Plex Mono", ui-monospace, monospace;
 }
 
@@ -267,10 +267,6 @@
   animation-delay: 200ms;
 }
 
-/* Ambient Glow & Interactive Elevation Utilities */
-.btn-sage-glow:hover {
-  box-shadow: 0 0 24px rgba(143, 168, 150, 0.3), 0 0 45px rgba(143, 168, 150, 0.1);
-}
 
 .btn-indigo-glow:hover {
   box-shadow: 0 0 24px rgba(129, 140, 248, 0.35), 0 0 45px rgba(129, 140, 248, 0.12);
@@ -327,9 +323,6 @@
     0 16px 40px -8px rgba(0, 0, 0, 0.10);
 }
 
-.light .btn-sage-glow:hover {
-  box-shadow: 0 0 24px rgba(43, 90, 61, 0.25), 0 0 45px rgba(43, 90, 61, 0.10);
-}
 
 .light .nav-dot-active {
   box-shadow: 0 0 8px rgba(43, 90, 61, 0.6);

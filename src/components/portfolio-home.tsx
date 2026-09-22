@@ -18,28 +18,23 @@ function Hero() {
     <section className="relative mx-auto flex min-h-[80vh] max-w-5xl flex-col justify-center px-5 py-20 lg:py-28 overflow-hidden text-center sm:text-left">
       {/* Architectural Dot-Matrix Background Grid */}
       <div className="absolute inset-0 bg-grid-pattern pointer-events-none -z-10 opacity-0 dark:opacity-60" />
-      {/* Subtle ambient multi-color glow */}
-      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-gradient-to-tr from-emerald-500/10 via-teal-500/5 to-indigo-500/10 blur-[120px] rounded-full pointer-events-none -z-10" />
 
       <div className="relative z-10 max-w-3xl">
         <div className="inline-flex items-center gap-2 rounded-full border border-border/80 bg-secondary/60 px-3 py-1 text-xs font-mono text-muted-foreground mb-6 shadow-xs">
-          <span className="size-2 rounded-full bg-emerald-500 animate-pulse" />
+          <span className="size-2 rounded-full bg-emerald-500" />
           <span>{STUDIO_NAME} · Bespoke Software for Operations</span>
         </div>
 
-        <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl leading-[1.1] tracking-[-0.03em] font-normal">
-          <span className="text-foreground">Quotes, pricing, and operations shouldn't </span>
-          <span className="font-bold text-emerald-800 dark:bg-gradient-to-r dark:from-emerald-400 dark:via-teal-300 dark:to-cyan-400 dark:bg-clip-text dark:text-transparent">
-            live in WhatsApp and spreadsheets.
-          </span>
+        <h1 className="font-sans text-4xl sm:text-5xl md:text-6xl leading-[1.1] tracking-[-0.03em] font-semibold text-foreground">
+          We build software that runs businesses.
         </h1>
 
-        <p className="mt-6 max-w-2xl text-lg sm:text-xl leading-relaxed text-muted-foreground">
-          We design and build bespoke CPQ platforms, stage-locked workflows, and internal operating tools tailored to your business rules. Talk directly to the people who build it.
+        <p className="mt-6 max-w-2xl text-lg sm:text-xl leading-relaxed text-muted-foreground font-normal">
+          Quotes, pricing, and operations shouldn't live in WhatsApp and spreadsheets. We design and build bespoke CPQ platforms, stage-locked workflows, and internal operating tools tailored to your business rules. Talk directly to the people who build it.
         </p>
 
         <div className="mt-8 flex flex-wrap items-center justify-center sm:justify-start gap-3.5">
-          <Button asChild size="lg" className="btn-sage-glow rounded-xl font-medium shadow-md active:scale-[0.98] transition-all px-6 py-2.5">
+          <Button asChild size="lg" className="rounded-xl font-medium shadow-md active:scale-[0.98] transition-all px-6 py-2.5">
             <a href="/book">
               <span>Book a 20-minute call</span>
               <ArrowRight className="ml-2 size-4" />
@@ -75,10 +70,10 @@ function SelectedWork() {
         <span className="h-4 w-1 rounded-full bg-emerald-600 dark:bg-emerald-400 shadow-[0_0_8px_#10b981]" />
         <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">Selected Work</p>
       </div>
-      <h2 className="mt-3 font-serif text-3xl tracking-tight sm:text-4xl">
+      <h2 className="mt-3 font-sans text-3xl font-semibold tracking-tight sm:text-4xl">
         Systems Built & Operating
       </h2>
-      <p className="mt-3 max-w-2xl text-muted-foreground text-sm sm:text-base leading-relaxed">
+      <p className="mt-3 max-w-2xl text-muted-foreground text-sm sm:text-base leading-relaxed font-normal">
         Production systems engineered around real business constraints: one live multi-tenant SaaS product and one industrial manufacturing CPQ reference build.
       </p>
 
@@ -113,7 +108,7 @@ function SelectedWork() {
                 </a>
               </div>
 
-              <h3 className="font-serif text-2xl sm:text-3xl font-semibold text-foreground">
+              <h3 className="font-sans text-2xl sm:text-3xl font-semibold text-foreground tracking-tight">
                 Trelio — Milestone Authorization & Client Portal
               </h3>
 
@@ -170,7 +165,7 @@ function SelectedWork() {
                 </a>
               </div>
 
-              <h3 className="font-serif text-2xl sm:text-3xl font-semibold text-foreground">
+              <h3 className="font-sans text-2xl sm:text-3xl font-semibold text-foreground tracking-tight">
                 Apex Packaging — Industrial CPQ & Estimating Suite
               </h3>
 
@@ -216,7 +211,7 @@ function Capabilities() {
         <span className="h-4 w-1 rounded-full bg-emerald-600 dark:bg-emerald-400 shadow-[0_0_8px_#10b981]" />
         <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">Capabilities</p>
       </div>
-      <h2 className="mt-3 font-serif text-3xl tracking-tight sm:text-4xl">
+      <h2 className="mt-3 font-sans text-3xl font-semibold tracking-tight sm:text-4xl">
         What We Build
       </h2>
       <p className="mt-3 max-w-2xl text-muted-foreground text-sm sm:text-base leading-relaxed">
@@ -230,7 +225,7 @@ function Capabilities() {
             <div className="flex size-10 items-center justify-center rounded-xl bg-emerald-500/15 text-emerald-800 dark:text-emerald-400 border border-emerald-500/30">
               <Calculator className="size-5" />
             </div>
-            <h3 className="font-serif text-xl font-semibold text-foreground">
+            <h3 className="font-sans text-xl font-semibold text-foreground tracking-tight">
               Custom Quoting & CPQ Engines
             </h3>
             <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
@@ -245,7 +240,7 @@ function Capabilities() {
             <div className="flex size-10 items-center justify-center rounded-xl bg-cyan-500/15 text-cyan-800 dark:text-cyan-400 border border-cyan-500/30">
               <Lock className="size-5" />
             </div>
-            <h3 className="font-serif text-xl font-semibold text-foreground">
+            <h3 className="font-sans text-xl font-semibold text-foreground tracking-tight">
               Operational Workflows & Stage Locks
             </h3>
             <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
@@ -260,7 +255,7 @@ function Capabilities() {
             <div className="flex size-10 items-center justify-center rounded-xl bg-indigo/15 text-indigo border border-indigo/30">
               <Layers className="size-5" />
             </div>
-            <h3 className="font-serif text-xl font-semibold text-foreground">
+            <h3 className="font-sans text-xl font-semibold text-foreground tracking-tight">
               Internal Dashboards & Client Portals
             </h3>
             <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
@@ -287,7 +282,7 @@ function Standards() {
         <span className="h-4 w-1 rounded-full bg-emerald-600 dark:bg-emerald-400 shadow-[0_0_8px_#10b981]" />
         <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">Standards</p>
       </div>
-      <h2 className="mt-3 font-serif text-3xl tracking-tight sm:text-4xl">
+      <h2 className="mt-3 font-sans text-3xl font-semibold tracking-tight sm:text-4xl">
         Direct Partnership & Ownership
       </h2>
       <p className="mt-3 max-w-2xl text-muted-foreground text-sm sm:text-base leading-relaxed">
@@ -300,7 +295,7 @@ function Standards() {
             <div className="flex size-8 items-center justify-center rounded-lg bg-emerald-500/15 text-emerald-800 dark:text-emerald-400 border border-emerald-500/30">
               <ShieldCheck className="size-4" />
             </div>
-            <h3 className="font-serif text-base font-semibold text-foreground">Direct to Builders</h3>
+            <h3 className="font-sans text-base font-semibold text-foreground tracking-tight">Direct to Builders</h3>
           </div>
           <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
             You talk directly to the people who design, write, and deploy the system. No account managers or salespeople in the middle.
@@ -312,7 +307,7 @@ function Standards() {
             <div className="flex size-8 items-center justify-center rounded-lg bg-cyan-500/15 text-cyan-800 dark:text-cyan-400 border border-cyan-500/30">
               <Code2 className="size-4" />
             </div>
-            <h3 className="font-serif text-base font-semibold text-foreground">100% Code & Cloud IP</h3>
+            <h3 className="font-sans text-base font-semibold text-foreground tracking-tight">100% Code & Cloud IP</h3>
           </div>
           <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
             You receive complete repository, database schema, and cloud deployment configs. Everything runs on your custom domain with zero vendor lock-in.
@@ -324,7 +319,7 @@ function Standards() {
             <div className="flex size-8 items-center justify-center rounded-lg bg-indigo/15 text-indigo border border-indigo/30">
               <CheckCircle2 className="size-4" />
             </div>
-            <h3 className="font-serif text-base font-semibold text-foreground">Problem-Sized Scope</h3>
+            <h3 className="font-sans text-base font-semibold text-foreground tracking-tight">Problem-Sized Scope</h3>
           </div>
           <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
             We don't sell bloated 50-page ERPs. We solve the specific operational bottleneck that costs your business time or revenue.
@@ -350,7 +345,7 @@ function Contact() {
         <span className="h-4 w-1 rounded-full bg-emerald-600 dark:bg-emerald-400 shadow-[0_0_8px_#10b981]" />
         <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">Consultation</p>
       </div>
-      <h2 className="mt-3 font-serif text-3xl tracking-tight sm:text-4xl">
+      <h2 className="mt-3 font-sans text-3xl font-semibold tracking-tight sm:text-4xl">
         Let's look at how your business runs today.
       </h2>
       <p className="mt-4 max-w-lg text-base text-muted-foreground">
@@ -358,7 +353,7 @@ function Contact() {
       </p>
 
       <div className="mt-8 flex flex-wrap items-center gap-4">
-        <Button asChild size="lg" className="btn-sage-glow rounded-xl px-7 shadow-md">
+        <Button asChild size="lg" className="rounded-xl px-7 shadow-md">
           <a href="/book">
             <span>Book a 20-minute call</span>
             <ArrowRight className="ml-2 size-4" />

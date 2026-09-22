@@ -23,7 +23,7 @@ export function OfferLadder() {
 
       <div className="mt-3 flex flex-col md:flex-row md:items-end md:justify-between gap-4">
         <div>
-          <h2 className="font-serif text-3xl tracking-tight sm:text-4xl">
+          <h2 className="font-sans text-3xl font-semibold tracking-tight sm:text-4xl">
             How we work
           </h2>
           <p className="mt-2 max-w-2xl text-muted-foreground text-sm sm:text-base leading-relaxed">
@@ -43,7 +43,7 @@ export function OfferLadder() {
             </div>
             <div className="flex items-center gap-2 text-foreground">
               <PhoneCall className="size-4 text-emerald-800 dark:text-emerald-400" />
-              <h3 className="font-serif text-xl font-semibold">Discovery Call</h3>
+              <h3 className="font-sans text-xl font-semibold tracking-tight">Discovery Call</h3>
             </div>
             <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
               We look at how your quotes or jobs move today. If an off-the-shelf software tool solves your problem better or cheaper, we tell you directly.
@@ -65,7 +65,7 @@ export function OfferLadder() {
             </div>
             <div className="flex items-center gap-2 text-foreground">
               <FileSpreadsheet className="size-4 text-cyan-800 dark:text-cyan-400" />
-              <h3 className="font-serif text-xl font-semibold">Scope & Fixed Quote</h3>
+              <h3 className="font-sans text-xl font-semibold tracking-tight">Scope & Fixed Quote</h3>
             </div>
             <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
               Based on your exact workflow complexity and problem size, we provide a transparent, fixed-price quote and timeline before any build begins. No hidden hourly fees.
@@ -87,7 +87,7 @@ export function OfferLadder() {
             </div>
             <div className="flex items-center gap-2 text-foreground">
               <Rocket className="size-4 text-indigo" />
-              <h3 className="font-serif text-xl font-semibold">Build & Handover</h3>
+              <h3 className="font-sans text-xl font-semibold tracking-tight">Build & Handover</h3>
             </div>
             <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
               We engineer the system around your real data, test it on real jobs with your team, and deploy it to your cloud accounts.
@@ -103,7 +103,7 @@ export function OfferLadder() {
 
       {/* Primary CTA */}
       <div className="mt-10 text-center">
-        <Button asChild size="lg" className="btn-sage-glow rounded-xl font-medium shadow-md px-6 py-2.5">
+        <Button asChild size="lg" className="rounded-xl font-medium shadow-md px-6 py-2.5">
           <a href="/book">
             <span>Book a 20-minute call</span>
             <ArrowRight className="ml-2 size-4" />

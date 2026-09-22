@@ -189,7 +189,7 @@ function AdminDashboardPage() {
         <div className="mx-auto flex max-w-6xl items-center justify-between">
           <div className="flex items-center gap-3">
             <span className="flex size-3 rounded-full bg-sage animate-ping" />
-            <h1 className="font-serif text-2xl font-bold tracking-tight text-white">
+            <h1 className="font-sans text-2xl font-semibold tracking-tight text-white">
               Chanakya Admin Dashboard
             </h1>
             <Badge variant="sage" className="hidden sm:inline-flex text-[10px]">
