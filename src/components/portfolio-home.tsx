@@ -1,229 +1,199 @@
 import { useState } from "react";
-import { ArrowUp, ExternalLink, ShieldCheck, CheckCircle2, XCircle, Code2, Github } from "lucide-react";
+import { ArrowUp, ArrowRight, ExternalLink, ShieldCheck, Code2, CheckCircle2, Layers, Calculator, Lock } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
+import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 
-import { TrelioPreview } from "@/components/trelio-preview";
-import { ApexPreview } from "@/components/apex-preview";
 import { OfferLadder } from "@/components/offer-ladder";
 import { FaqSection } from "@/components/faq-section";
-import { HeroQuoteCard } from "@/components/hero-quote-card";
 import { SiteNav } from "@/components/site-nav";
 import { Companion } from "@/components/mascot/companion";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 import { DynamicData } from "@/data/store";
-import { WHATSAPP_URL, CONTACT_EMAIL, GITHUB_URL, LINKEDIN_URL } from "@/data/studio";
+import { STUDIO_NAME, WHATSAPP_URL, CONTACT_EMAIL, GITHUB_URL } from "@/data/studio";
 
 function Hero() {
   return (
-    <section className="relative mx-auto flex min-h-[85vh] max-w-5xl flex-col justify-center px-5 py-16 lg:py-24 overflow-hidden">
-      {/* Architectural Dot-Matrix Background Grid — visible in dark, hidden in light */}
+    <section className="relative mx-auto flex min-h-[80vh] max-w-5xl flex-col justify-center px-5 py-20 lg:py-28 overflow-hidden text-center sm:text-left">
+      {/* Architectural Dot-Matrix Background Grid */}
       <div className="absolute inset-0 bg-grid-pattern pointer-events-none -z-10 opacity-0 dark:opacity-60" />
       {/* Subtle ambient multi-color glow */}
       <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-gradient-to-tr from-emerald-500/10 via-teal-500/5 to-indigo-500/10 blur-[120px] rounded-full pointer-events-none -z-10" />
 
-      <div className="relative z-10 grid gap-12 lg:grid-cols-[1.2fr_1.1fr] lg:items-center">
-        <div className="rise-in">
-          <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl leading-[1.08] tracking-[-0.03em]">
-            <span className="text-foreground">Quotes and jobs shouldn't </span>
-            {/* Dark mode: gradient. Light mode: flat forest green — gradient is invisible on cream */}
-            <span className="font-bold text-emerald-800 dark:bg-gradient-to-r dark:from-emerald-400 dark:via-teal-300 dark:to-cyan-400 dark:bg-clip-text dark:text-transparent">
-              live on WhatsApp.
-            </span>
-          </h1>
-
-          <p className="mt-6 max-w-xl text-lg sm:text-xl leading-relaxed text-muted-foreground">
-            I build the quoting and job system your business runs on, around your own rates.
-          </p>
-
-          <div className="mt-8 flex flex-wrap items-center gap-3.5">
-            <Button asChild size="lg" className="btn-sage-glow rounded-xl font-medium shadow-md active:scale-[0.98] transition-all px-6 py-2.5">
-              <a href="/book">
-                <span>Book a 20-minute call →</span>
-              </a>
-            </Button>
-            <Button asChild size="lg" variant="outline" className="rounded-xl border-border/80 hover:border-cyan-500/50 hover:text-cyan-800 dark:hover:text-cyan-300 font-medium shadow-sm active:scale-[0.98] transition-all">
-              <a href="#systems" className="inline-flex items-center gap-2">
-                <span>See the work</span>
-              </a>
-            </Button>
-          </div>
-          <p className="mt-4 text-sm text-muted-foreground">First call is free.</p>
+      <div className="relative z-10 max-w-3xl">
+        <div className="inline-flex items-center gap-2 rounded-full border border-border/80 bg-secondary/60 px-3 py-1 text-xs font-mono text-muted-foreground mb-6 shadow-xs">
+          <span className="size-2 rounded-full bg-emerald-500 animate-pulse" />
+          <span>{STUDIO_NAME} · Bespoke Software for Operations</span>
         </div>
 
-        <div>
-          <HeroQuoteCard />
+        <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl leading-[1.1] tracking-[-0.03em] font-normal">
+          <span className="text-foreground">Quotes, pricing, and operations shouldn't </span>
+          <span className="font-bold text-emerald-800 dark:bg-gradient-to-r dark:from-emerald-400 dark:via-teal-300 dark:to-cyan-400 dark:bg-clip-text dark:text-transparent">
+            live in WhatsApp and spreadsheets.
+          </span>
+        </h1>
+
+        <p className="mt-6 max-w-2xl text-lg sm:text-xl leading-relaxed text-muted-foreground">
+          We design and build bespoke CPQ platforms, stage-locked workflows, and internal operating tools tailored to your business rules. Talk directly to the people who build it.
+        </p>
+
+        <div className="mt-8 flex flex-wrap items-center justify-center sm:justify-start gap-3.5">
+          <Button asChild size="lg" className="btn-sage-glow rounded-xl font-medium shadow-md active:scale-[0.98] transition-all px-6 py-2.5">
+            <a href="/book">
+              <span>Book a 20-minute call</span>
+              <ArrowRight className="ml-2 size-4" />
+            </a>
+          </Button>
+          <Button asChild size="lg" variant="outline" className="rounded-xl border-border/80 hover:border-emerald-500/50 hover:text-emerald-800 dark:hover:text-emerald-300 font-medium shadow-sm active:scale-[0.98] transition-all">
+            <a href="#work">
+              <span>See our work</span>
+            </a>
+          </Button>
         </div>
+
+        <p className="mt-4 text-xs sm:text-sm text-muted-foreground font-mono">
+          First call is free · Fixed quotes scoped to your problem size · 100% code ownership
+        </p>
       </div>
     </section>
   );
 }
 
-function LiveSystems() {
+function SelectedWork() {
   const { ref, isVisible } = useScrollAnimation();
 
   return (
     <section
-      id="systems"
+      id="work"
       ref={ref}
-      className={`mx-auto max-w-5xl px-5 py-20 transition-all duration-700 ${
+      className={`mx-auto max-w-5xl px-5 py-24 transition-all duration-700 ${
         isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
       }`}
     >
       <div className="flex items-center gap-2">
         <span className="h-4 w-1 rounded-full bg-emerald-600 dark:bg-emerald-400 shadow-[0_0_8px_#10b981]" />
-        <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">Systems Built</p>
+        <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">Selected Work</p>
       </div>
       <h2 className="mt-3 font-serif text-3xl tracking-tight sm:text-4xl">
-        Quote & Workflow Software — Built and Running
+        Systems Built & Operating
       </h2>
-      <p className="mt-3 max-w-xl text-muted-foreground text-sm sm:text-base leading-relaxed">
-        Two systems built to production standard: one CPQ platform modelled on an industrial label converter's quoting workflow, and Trelio — a live authorization-before-execution SaaS.
+      <p className="mt-3 max-w-2xl text-muted-foreground text-sm sm:text-base leading-relaxed">
+        Production systems engineered around real business constraints: one live multi-tenant SaaS product and one industrial manufacturing CPQ reference build.
       </p>
 
-      <div className="mt-10 space-y-12">
-        <Card className="card-specular relative overflow-hidden p-2 flex flex-col justify-between rounded-2xl bg-gradient-to-br from-card via-card to-cyan-500/10 dark:to-cyan-500/10 border-border/80 shadow-md">
-          <div className="absolute top-0 inset-x-0 h-0.5 bg-gradient-to-r from-cyan-400 via-blue-500 to-indigo-500" />
-          <div className="p-4 sm:p-6">
-            <div className="mb-4 flex flex-wrap items-center justify-between gap-2">
-              <div className="inline-flex items-center gap-2">
-                <span className="size-2 rounded-full bg-cyan-500" />
-                <span className="font-mono text-xs font-semibold text-cyan-800 dark:text-cyan-300">Industrial Converting Plant CPQ</span>
-              </div>
-              <div className="flex items-center gap-2">
+      <div className="mt-12 space-y-12">
+        {/* Card 1: Trelio */}
+        <Card className="card-specular relative overflow-hidden rounded-2xl border-border/80 bg-card shadow-md p-6 sm:p-8">
+          <div className="grid gap-6 lg:grid-cols-[1.1fr_1fr] lg:items-center">
+            {/* Image Preview */}
+            <div className="relative overflow-hidden rounded-xl border border-border/80 bg-secondary/30 shadow-inner group">
+              <img
+                src="/images/trelio-preview.png"
+                alt="Trelio Milestone Authorization and Client Portal Dashboard Preview"
+                className="w-full h-auto object-cover rounded-xl transition-transform duration-500 group-hover:scale-[1.02]"
+                loading="lazy"
+              />
+            </div>
+
+            {/* Content Details */}
+            <div className="space-y-4">
+              <div className="flex flex-wrap items-center justify-between gap-2">
+                <Badge variant="outline" className="font-mono text-[11px] uppercase tracking-wider bg-emerald-500/10 text-emerald-800 dark:text-emerald-300 border-emerald-500/30">
+                  Studio product · live
+                </Badge>
                 <a
-                  href="https://github.com/Chanakya2006gt/Industrial-packaging-platform"
+                  href="https://trelio.in"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 rounded-full border border-border/80 bg-secondary/60 px-3 py-1 text-xs font-medium text-muted-foreground hover:text-foreground hover:bg-secondary transition-all shadow-xs"
+                  className="inline-flex items-center gap-1.5 text-xs font-mono font-medium text-emerald-800 dark:text-emerald-400 hover:underline"
                 >
-                  <Github className="size-3" />
-                  <span>Repo</span>
+                  <span>Visit trelio.in</span>
+                  <ExternalLink className="size-3" />
                 </a>
               </div>
-            </div>
 
-            <ApexPreview />
+              <h3 className="font-serif text-2xl sm:text-3xl font-semibold text-foreground">
+                Trelio — Milestone Authorization & Client Portal
+              </h3>
 
-            <CardHeader className="px-0 pb-2 pt-6">
-              <div className="flex items-start justify-between gap-3">
-                <CardTitle className="font-serif text-2xl sm:text-3xl">
-                  Apex Packaging & Converting CPQ
-                </CardTitle>
-                <Badge variant="outline" className="shadow-xs font-mono text-[11px] uppercase tracking-wider bg-cyan-500/15 text-cyan-800 dark:text-cyan-300 border-cyan-500/30">
-                  Reference Build
-                </Badge>
+              <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
+                A multi-tenant client portal and payment authorization platform for creative studios and service firms.
+              </p>
+
+              <div className="rounded-xl border border-border/60 bg-secondary/40 p-4 text-xs sm:text-sm text-foreground/90 space-y-1.5">
+                <strong className="text-foreground block font-medium">What Was Engineered:</strong>
+                <p className="text-muted-foreground leading-relaxed">
+                  Built the authorization-before-execution engine, milestone escrow stage locks, immutable audit ledger, and multi-tenant billing so work never runs ahead of payment.
+                </p>
               </div>
-              <CardDescription className="text-sm sm:text-base text-muted-foreground leading-relaxed pt-2">
-                CPQ and job estimating platform built to the spec of a working label converter's quoting operation. Models their exact floor workflow: FINAT rewind standards, substrate costing, roll geometry.
-              </CardDescription>
-            </CardHeader>
 
-            {/* System output stat strip */}
-            <div className="mx-0 mt-1 mb-2 flex flex-wrap items-center gap-x-5 gap-y-2 rounded-xl border border-border/60 bg-secondary/30 px-4 py-3 font-mono text-xs text-muted-foreground">
-              <span><strong className="text-foreground">Output:</strong> 50,000-label BOPP 60μm roll quote</span>
-              <span className="hidden sm:inline text-border/60">·</span>
-              <span><strong className="text-foreground">Time:</strong> under 4 seconds, one pass</span>
-              <span className="hidden sm:inline text-border/60">·</span>
-              <span><strong className="text-foreground">Source:</strong> floor specs, not a spreadsheet</span>
-            </div>
-
-            <CardContent className="px-0 pt-3 pb-2">
-              <div className="grid gap-3 sm:grid-cols-3 pt-2 text-xs sm:text-sm">
-                <div className="p-3.5 rounded-xl border border-border/60 bg-secondary/30">
-                  <strong className="text-foreground block font-medium mb-1">Floor-Ready Math</strong>
-                  <p className="text-muted-foreground text-xs leading-relaxed">Calculates running meters, substrate weights, and linear pricing directly from FINAT 1–8 roll unwind specs.</p>
-                </div>
-                <div className="p-3.5 rounded-xl border border-border/60 bg-secondary/30">
-                  <strong className="text-foreground block font-medium mb-1">One-Pass Estimating</strong>
-                  <p className="text-muted-foreground text-xs leading-relaxed">Replaces multi-person spreadsheet chains with a quoting flow a plant clerk can finish in 90 seconds without errors.</p>
-                </div>
-                <div className="p-3.5 rounded-xl border border-border/60 bg-secondary/30">
-                  <strong className="text-foreground block font-medium mb-1">Production Security</strong>
-                  <p className="text-muted-foreground text-xs leading-relaxed">Role-based sales operations, PostgreSQL RLS tenant data isolation, and instant PDF quote generation.</p>
-                </div>
+              <div className="pt-2 flex flex-wrap items-center justify-between gap-3 text-xs font-mono text-muted-foreground border-t border-border/60">
+                <span>Stack: React · Node.js · PostgreSQL RLS · Stripe/Razorpay</span>
+                <Button asChild size="sm" variant="outline" className="rounded-xl border-border/80 text-xs">
+                  <a href="https://trelio.in" target="_blank" rel="noopener noreferrer">
+                    <span>Open Live Platform ↗</span>
+                  </a>
+                </Button>
               </div>
-            </CardContent>
-
-            <CardFooter className="px-0 pt-4 flex flex-wrap items-center justify-between border-t border-border/60 gap-3">
-              <span className="font-mono text-xs text-muted-foreground">Stack: React · TypeScript · PostgreSQL RLS · CPQ Math Engine</span>
-            </CardFooter>
+            </div>
           </div>
         </Card>
 
-        <Card className="card-specular relative overflow-hidden p-2 flex flex-col justify-between rounded-2xl bg-gradient-to-br from-card via-card to-indigo/10 dark:to-indigo/10 border-border/80 shadow-md">
-          <div className="absolute top-0 inset-x-0 h-0.5 bg-gradient-to-r from-indigo via-purple-500 to-sage" />
-          <div className="p-4 sm:p-6">
-            <div className="mb-4 flex flex-wrap items-center justify-between gap-2">
-              <div className="inline-flex items-center gap-2">
-                <span className="size-2 rounded-full bg-indigo animate-pulse" />
-                <span className="font-mono text-xs font-semibold text-indigo">Multi-Tenant Payment & Approval Platform</span>
-              </div>
-              <a
-                href="https://trelio.in"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 rounded-full border border-indigo/30 bg-indigo/10 px-3 py-1 text-xs font-semibold text-indigo hover:bg-indigo/20 shadow-xs transition-all"
-              >
-                <ExternalLink className="size-3" />
-                <span>Open Trelio.in ↗</span>
-              </a>
+        {/* Card 2: Apex Packaging CPQ */}
+        <Card className="card-specular relative overflow-hidden rounded-2xl border-border/80 bg-card shadow-md p-6 sm:p-8">
+          <div className="grid gap-6 lg:grid-cols-[1.1fr_1fr] lg:items-center">
+            {/* Image Preview */}
+            <div className="relative overflow-hidden rounded-xl border border-border/80 bg-secondary/30 shadow-inner group">
+              <img
+                src="/images/apex-preview.png"
+                alt="Apex Packaging Industrial CPQ and Estimating Suite Preview"
+                className="w-full h-auto object-cover rounded-xl transition-transform duration-500 group-hover:scale-[1.02]"
+                loading="lazy"
+              />
             </div>
 
-            <TrelioPreview />
-
-            <CardHeader className="px-0 pb-2 pt-6">
-              <div className="flex items-start justify-between gap-3">
-                <CardTitle className="font-serif text-2xl sm:text-3xl">
-                  Trelio — Stage Lock & Direct Settlement
-                </CardTitle>
-                <Badge variant="outline" className="shadow-xs font-mono text-[11px] uppercase tracking-wider bg-indigo/15 text-indigo border-indigo/30">
-                  Live SaaS
+            {/* Content Details */}
+            <div className="space-y-4">
+              <div className="flex flex-wrap items-center justify-between gap-2">
+                <Badge variant="outline" className="font-mono text-[11px] uppercase tracking-wider bg-cyan-500/10 text-cyan-800 dark:text-cyan-300 border-cyan-500/30">
+                  Reference build · industrial manufacturing
                 </Badge>
-              </div>
-              <p className="mt-1 text-xs text-muted-foreground">
-                In continuous development since March 2026 · multi-tenant, payments, RLS, audit ledger
-              </p>
-              <CardDescription className="text-sm sm:text-base text-muted-foreground leading-relaxed pt-2">
-                Authorization-Before-Execution SaaS for freelancers and creative studios to eliminate unpaid work and runaway revisions.
-              </CardDescription>
-            </CardHeader>
-
-            <CardContent className="px-0 pt-3 pb-2">
-              <div className="grid gap-3 sm:grid-cols-3 pt-2 text-xs sm:text-sm">
-                <div className="p-3.5 rounded-xl border border-border/60 bg-secondary/30">
-                  <strong className="text-foreground block font-medium mb-1">Stage Lock Control</strong>
-                  <p className="text-muted-foreground text-xs leading-relaxed">Work stays locked and paused; Stage 02 never opens until the client authorizes and settles Stage 01.</p>
-                </div>
-                <div className="p-3.5 rounded-xl border border-border/60 bg-secondary/30">
-                  <strong className="text-foreground block font-medium mb-1">Direct Bank Settlement</strong>
-                  <p className="text-muted-foreground text-xs leading-relaxed">Client payments flow straight into your merchant account. Zero escrow, no middleman holding your funds.</p>
-                </div>
-                <div className="p-3.5 rounded-xl border border-border/60 bg-secondary/30">
-                  <strong className="text-foreground block font-medium mb-1">Verified Audit Trail</strong>
-                  <p className="text-muted-foreground text-xs leading-relaxed">Automated tests cover approval timestamps and multi-tenant security.</p>
-                </div>
-              </div>
-            </CardContent>
-
-            <CardFooter className="px-0 pt-4 flex flex-wrap items-center justify-between border-t border-border/60 gap-3">
-              <span className="font-mono text-xs text-muted-foreground">Stack: React · Node.js · Multi-Tenant Postgres · Payment Gateway</span>
-              <Button asChild size="sm" className="btn-sage-glow rounded-xl font-semibold shadow-xs">
-                <a href="https://trelio.in" target="_blank" rel="noopener noreferrer">
-                  <span>Launch Trelio.in</span>
-                  <ExternalLink className="ml-1.5 size-3.5" />
+                <a
+                  href="https://industrial-packaging-platform.vercel.app"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 text-xs font-mono font-medium text-cyan-800 dark:text-cyan-400 hover:underline"
+                >
+                  <span>Live demo</span>
+                  <ExternalLink className="size-3" />
                 </a>
-              </Button>
-            </CardFooter>
+              </div>
+
+              <h3 className="font-serif text-2xl sm:text-3xl font-semibold text-foreground">
+                Apex Packaging — Industrial CPQ & Estimating Suite
+              </h3>
+
+              <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
+                Configure, Price, Quote (CPQ) software engineered to the exact manufacturing floor specs of an industrial label converter.
+              </p>
+
+              <div className="rounded-xl border border-border/60 bg-secondary/40 p-4 text-xs sm:text-sm text-foreground/90 space-y-1.5">
+                <strong className="text-foreground block font-medium">What Was Engineered:</strong>
+                <p className="text-muted-foreground leading-relaxed">
+                  Replaced multi-sheet spreadsheet chains with floor-accurate FINAT 1–8 roll unwind calculators, substrate costing, and automated PDF job spec generation.
+                </p>
+              </div>
+
+              <div className="pt-2 flex flex-wrap items-center justify-between gap-3 text-xs font-mono text-muted-foreground border-t border-border/60">
+                <span>Stack: React · TypeScript · PostgreSQL RLS · CPQ Math Engine</span>
+                <Button asChild size="sm" variant="outline" className="rounded-xl border-border/80 text-xs">
+                  <a href="https://industrial-packaging-platform.vercel.app" target="_blank" rel="noopener noreferrer">
+                    <span>View Reference Build ↗</span>
+                  </a>
+                </Button>
+              </div>
+            </div>
           </div>
         </Card>
       </div>
@@ -231,78 +201,135 @@ function LiveSystems() {
   );
 }
 
-function TrustAndTerms() {
+function Capabilities() {
   const { ref, isVisible } = useScrollAnimation();
 
   return (
     <section
-      id="about"
+      id="what-we-build"
       ref={ref}
-      className={`border-y border-border/60 bg-secondary/30 transition-all duration-700 ${
+      className={`mx-auto max-w-5xl px-5 py-24 transition-all duration-700 ${
         isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
       }`}
     >
-      <div className="mx-auto max-w-5xl px-5 py-20">
-        <div className="flex items-center gap-2">
-          <span className="h-4 w-1 rounded-full bg-sage" />
-          <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">Trust & Ground Rules</p>
-        </div>
-        <h2 className="mt-3 font-serif text-3xl tracking-tight sm:text-4xl">
-          How engagements work and what you actually own.
-        </h2>
-        <p className="mt-3 max-w-2xl text-muted-foreground text-sm sm:text-base leading-relaxed">
-          Clear terms, a fixed quote before you commit, and you work directly with the person who builds it.
-        </p>
+      <div className="flex items-center gap-2">
+        <span className="h-4 w-1 rounded-full bg-emerald-600 dark:bg-emerald-400 shadow-[0_0_8px_#10b981]" />
+        <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">Capabilities</p>
+      </div>
+      <h2 className="mt-3 font-serif text-3xl tracking-tight sm:text-4xl">
+        What We Build
+      </h2>
+      <p className="mt-3 max-w-2xl text-muted-foreground text-sm sm:text-base leading-relaxed">
+        We specialize in operational systems where revenue, accuracy, or delivery depends on complex business rules.
+      </p>
 
-        <div className="mt-10 grid gap-6 sm:grid-cols-2">
-          <Card className="card-specular p-6 rounded-2xl border-border/70 bg-card/80">
-            <div className="flex items-center gap-2.5 mb-3">
-              <div className="flex size-8 items-center justify-center rounded-lg bg-emerald-500/15 text-emerald-700 dark:text-emerald-400 border border-emerald-500/30">
-                <ShieldCheck className="size-4" />
-              </div>
-              <h3 className="font-serif text-lg font-semibold text-foreground">Who Builds Your System</h3>
+      <div className="mt-12 grid gap-6 md:grid-cols-3">
+        {/* Capability 1 */}
+        <Card className="card-specular relative flex flex-col justify-between rounded-2xl p-6 border border-border/80 bg-card shadow-sm">
+          <div className="space-y-4">
+            <div className="flex size-10 items-center justify-center rounded-xl bg-emerald-500/15 text-emerald-800 dark:text-emerald-400 border border-emerald-500/30">
+              <Calculator className="size-5" />
             </div>
+            <h3 className="font-serif text-xl font-semibold text-foreground">
+              Custom Quoting & CPQ Engines
+            </h3>
             <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
-              <strong>Nagulagam Chanakya</strong> (Warangal, India). I build operational software full-time and operate a team of 3 on Trelio. You work directly with the engineer who designs the data model, writes the code, and supports the release. No account managers or sub-contracting.
+              Deterministic pricing software that models your actual material yields, setup times, volume tiers, and floor geometry into instant, error-free customer quotes.
             </p>
-          </Card>
+          </div>
+        </Card>
 
-          <Card className="card-specular p-6 rounded-2xl border-border/70 bg-card/80">
-            <div className="flex items-center gap-2.5 mb-3">
-              <div className="flex size-8 items-center justify-center rounded-lg bg-cyan-500/15 text-cyan-700 dark:text-cyan-400 border border-cyan-500/30">
-                <Code2 className="size-4" />
-              </div>
-              <h3 className="font-serif text-lg font-semibold text-foreground">What You Keep & Own</h3>
+        {/* Capability 2 */}
+        <Card className="card-specular relative flex flex-col justify-between rounded-2xl p-6 border border-border/80 bg-card shadow-sm">
+          <div className="space-y-4">
+            <div className="flex size-10 items-center justify-center rounded-xl bg-cyan-500/15 text-cyan-800 dark:text-cyan-400 border border-cyan-500/30">
+              <Lock className="size-5" />
             </div>
+            <h3 className="font-serif text-xl font-semibold text-foreground">
+              Operational Workflows & Stage Locks
+            </h3>
             <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
-              <strong>100% Code & Infrastructure Ownership.</strong> You receive the complete git repository, database migrations, CI/CD pipelines, and deployment configs. Everything deploys to your own cloud infrastructure and custom domain.
+              Digital gates that protect your team from scope creep and unpaid work. Work, design revisions, or shipping only unlock once milestone sign-off and payments clear.
             </p>
-          </Card>
+          </div>
+        </Card>
 
-          <Card className="card-specular p-6 rounded-2xl border-border/70 bg-card/80">
-            <div className="flex items-center gap-2.5 mb-3">
-              <div className="flex size-8 items-center justify-center rounded-lg bg-amber-500/15 text-amber-700 dark:text-amber-400 border border-amber-500/30">
-                <XCircle className="size-4" />
-              </div>
-              <h3 className="font-serif text-lg font-semibold text-foreground">What I Refuse To Build</h3>
+        {/* Capability 3 */}
+        <Card className="card-specular relative flex flex-col justify-between rounded-2xl p-6 border border-border/80 bg-card shadow-sm">
+          <div className="space-y-4">
+            <div className="flex size-10 items-center justify-center rounded-xl bg-indigo/15 text-indigo border border-indigo/30">
+              <Layers className="size-5" />
             </div>
+            <h3 className="font-serif text-xl font-semibold text-foreground">
+              Internal Dashboards & Client Portals
+            </h3>
             <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
-              <strong>No 50-page PowerPoint decks and no unmanageable full-company ERPs.</strong> I build the whole of one critical, revenue-blocking operational workflow (quotes, approvals, or payments) and engineer it to absolute completion.
+              Centralized, role-based tools that replace messy WhatsApp chains and fragmented email threads with clean tracking for clerks, managers, and clients.
             </p>
-          </Card>
+          </div>
+        </Card>
+      </div>
+    </section>
+  );
+}
 
-          <Card className="card-specular p-6 rounded-2xl border-border/70 bg-card/80">
-            <div className="flex items-center gap-2.5 mb-3">
-              <div className="flex size-8 items-center justify-center rounded-lg bg-indigo/15 text-indigo border border-indigo/30">
-                <CheckCircle2 className="size-4" />
-              </div>
-              <h3 className="font-serif text-lg font-semibold text-foreground">A fixed quote before you commit</h3>
+function Standards() {
+  const { ref, isVisible } = useScrollAnimation();
+
+  return (
+    <section
+      ref={ref}
+      className={`mx-auto max-w-5xl px-5 py-24 transition-all duration-700 ${
+        isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+      }`}
+    >
+      <div className="flex items-center gap-2">
+        <span className="h-4 w-1 rounded-full bg-emerald-600 dark:bg-emerald-400 shadow-[0_0_8px_#10b981]" />
+        <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">Standards</p>
+      </div>
+      <h2 className="mt-3 font-serif text-3xl tracking-tight sm:text-4xl">
+        Direct Partnership & Ownership
+      </h2>
+      <p className="mt-3 max-w-2xl text-muted-foreground text-sm sm:text-base leading-relaxed">
+        Clear terms, fixed quotes, and direct communication.
+      </p>
+
+      <div className="mt-10 grid gap-6 sm:grid-cols-3">
+        <Card className="card-specular p-6 rounded-2xl border-border/70 bg-card shadow-sm">
+          <div className="flex items-center gap-2.5 mb-3">
+            <div className="flex size-8 items-center justify-center rounded-lg bg-emerald-500/15 text-emerald-800 dark:text-emerald-400 border border-emerald-500/30">
+              <ShieldCheck className="size-4" />
             </div>
-            <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
-              The diagnosis ends in a fixed quote for the build. Builds are structured in milestones: work pauses if a milestone payment is pending, so neither side takes unbounded risk.
-            </p>
-          </Card>
-        </div>
+            <h3 className="font-serif text-base font-semibold text-foreground">Direct to Builders</h3>
+          </div>
+          <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
+            You talk directly to the people who design, write, and deploy the system. No account managers or salespeople in the middle.
+          </p>
+        </Card>
+
+        <Card className="card-specular p-6 rounded-2xl border-border/70 bg-card shadow-sm">
+          <div className="flex items-center gap-2.5 mb-3">
+            <div className="flex size-8 items-center justify-center rounded-lg bg-cyan-500/15 text-cyan-800 dark:text-cyan-400 border border-cyan-500/30">
+              <Code2 className="size-4" />
+            </div>
+            <h3 className="font-serif text-base font-semibold text-foreground">100% Code & Cloud IP</h3>
+          </div>
+          <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
+            You receive complete repository, database schema, and cloud deployment configs. Everything runs on your custom domain with zero vendor lock-in.
+          </p>
+        </Card>
+
+        <Card className="card-specular p-6 rounded-2xl border-border/70 bg-card shadow-sm">
+          <div className="flex items-center gap-2.5 mb-3">
+            <div className="flex size-8 items-center justify-center rounded-lg bg-indigo/15 text-indigo border border-indigo/30">
+              <CheckCircle2 className="size-4" />
+            </div>
+            <h3 className="font-serif text-base font-semibold text-foreground">Problem-Sized Scope</h3>
+          </div>
+          <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
+            We don't sell bloated 50-page ERPs. We solve the specific operational bottleneck that costs your business time or revenue.
+          </p>
+        </Card>
       </div>
     </section>
   );
@@ -315,25 +342,26 @@ function Contact() {
     <section
       id="contact"
       ref={ref}
-      className={`relative mx-auto max-w-5xl px-5 py-20 transition-all duration-700 overflow-hidden ${
+      className={`relative mx-auto max-w-5xl px-5 py-24 transition-all duration-700 overflow-hidden ${
         isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
       }`}
     >
       <div className="flex items-center gap-2">
-        <span className="h-4 w-1 rounded-full bg-sage" />
-        <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">Contact</p>
+        <span className="h-4 w-1 rounded-full bg-emerald-600 dark:bg-emerald-400 shadow-[0_0_8px_#10b981]" />
+        <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">Consultation</p>
       </div>
       <h2 className="mt-3 font-serif text-3xl tracking-tight sm:text-4xl">
-        Let's look at how you quote today.
+        Let's look at how your business runs today.
       </h2>
       <p className="mt-4 max-w-lg text-base text-muted-foreground">
-        Twenty minutes, free. If custom software isn't worth it for you, I'll say so.
+        Twenty minutes, free. If custom software isn't worth it for you, we'll tell you directly.
       </p>
 
       <div className="mt-8 flex flex-wrap items-center gap-4">
         <Button asChild size="lg" className="btn-sage-glow rounded-xl px-7 shadow-md">
           <a href="/book">
             <span>Book a 20-minute call</span>
+            <ArrowRight className="ml-2 size-4" />
           </a>
         </Button>
         <Button asChild size="lg" variant="outline" className="rounded-xl border-border/80 font-medium">
@@ -342,7 +370,7 @@ function Contact() {
           </a>
         </Button>
         <a
-          href={`mailto:${CONTACT_EMAIL}`}
+          href={`mailto:${CONTACT_EMAIL}?subject=CK%20Builds%20Inquiry`}
           className="text-sm font-medium text-foreground underline underline-offset-4 hover:text-sage transition-colors"
         >
           {CONTACT_EMAIL}
@@ -354,9 +382,9 @@ function Contact() {
           What happens next
         </h3>
         <ol className="mt-3 space-y-2 text-xs sm:text-sm text-muted-foreground list-decimal list-inside">
-          <li>You pick a time.</li>
-          <li>I send you a WhatsApp message the day before.</li>
-          <li>We talk for 20 minutes about how you quote today.</li>
+          <li>You submit an inquiry on <a href="/book" className="underline hover:text-foreground">/book</a> or message on WhatsApp.</li>
+          <li>We confirm a time for a 20-minute call.</li>
+          <li>We review your quoting or workflow bottleneck and give you an honest recommendation.</li>
         </ol>
       </div>
     </section>
@@ -364,7 +392,7 @@ function Contact() {
 }
 
 export function PortfolioHome({ initialData }: { initialData?: DynamicData | null }) {
-  const [data] = useState<DynamicData | null>(initialData || null);
+  const [_data] = useState<DynamicData | null>(initialData || null);
 
   return (
     <div id="top" className="min-h-screen bg-background text-foreground relative">
@@ -380,11 +408,13 @@ export function PortfolioHome({ initialData }: { initialData?: DynamicData | nul
       <main id="main-content">
         <Hero />
         <Separator />
+        <SelectedWork />
+        <Separator />
+        <Capabilities />
+        <Separator />
         <OfferLadder />
         <Separator />
-        <LiveSystems />
-        <Separator />
-        <TrustAndTerms />
+        <Standards />
         <Separator />
         <FaqSection />
         <Separator />
@@ -395,22 +425,22 @@ export function PortfolioHome({ initialData }: { initialData?: DynamicData | nul
         <div className="mx-auto max-w-5xl px-5">
           <div className="flex flex-col items-center justify-between gap-4 text-xs text-muted-foreground sm:flex-row">
             <div>
-              <p className="font-medium text-foreground">ChanBuilds</p>
-              <p className="text-muted-foreground mt-0.5">Built by Nagulagam Chanakya · {CONTACT_EMAIL}</p>
+              <p className="font-medium text-foreground text-sm">{STUDIO_NAME}</p>
+              <p className="text-muted-foreground mt-0.5">Bespoke Software for Operations · {CONTACT_EMAIL}</p>
             </div>
             <div className="flex flex-wrap items-center gap-4 text-xs font-mono">
-              <a href="#systems" className="hover:text-foreground transition-colors">Work</a>
-              <a href="#process" className="hover:text-foreground transition-colors">Process</a>
+              <a href="#work" className="hover:text-foreground transition-colors">Work</a>
+              <a href="#what-we-build" className="hover:text-foreground transition-colors">Capabilities</a>
+              <a href="#how-we-work" className="hover:text-foreground transition-colors">Process</a>
               <a href="#faq" className="hover:text-foreground transition-colors">FAQ</a>
               <a href="/book" className="hover:text-foreground transition-colors">Book a call</a>
               <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors">WhatsApp</a>
               <a href={GITHUB_URL} target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors">GitHub</a>
-              <a href={LINKEDIN_URL} target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors">LinkedIn</a>
             </div>
           </div>
           <Separator className="my-6" />
           <div className="flex items-center justify-between text-[11px] text-muted-foreground">
-            <p>© {new Date().getFullYear()} ChanBuilds. Built by Nagulagam Chanakya.</p>
+            <p>© {new Date().getFullYear()} {STUDIO_NAME}. All rights reserved.</p>
             <a href="#top" className="hover:text-foreground transition-colors inline-flex items-center gap-1">
               Back to top <ArrowUp className="size-3" />
             </a>

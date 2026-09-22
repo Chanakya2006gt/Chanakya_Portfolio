@@ -12,6 +12,8 @@ import { navLinks } from "@/data/projects";
 import { useActiveSection } from "@/hooks/use-active-section";
 import { ThemeToggle } from "@/components/theme-toggle";
 
+import { STUDIO_NAME } from "@/data/studio";
+
 const navSections = navLinks.map((l) => l.href.replace("#", ""));
 
 export function SiteNav() {
@@ -22,7 +24,7 @@ export function SiteNav() {
     <header className="sticky top-0 z-40 border-b border-border/80 bg-background/80 backdrop-blur-md">
       <div className="mx-auto flex h-16 max-w-5xl items-center justify-between px-5">
         <a href="/#top" className="text-sm font-medium tracking-tight hover:opacity-80 transition-opacity">
-          ChanBuilds<span className="text-sage">.</span>
+          {STUDIO_NAME}<span className="text-sage">.</span>
         </a>
 
         {/* Center Navigation Links */}

@@ -2,50 +2,20 @@ import { createRootRoute, HeadContent, Outlet, Scripts } from "@tanstack/react-r
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { Toaster } from "sonner";
 import { faqs } from "@/data/faqs";
-import { SITE_URL, STUDIO_NAME, FOUNDER_NAME, CONTACT_EMAIL } from "@/data/studio";
+import { SITE_URL, STUDIO_NAME, CONTACT_EMAIL } from "@/data/studio";
 import appCss from "../styles.css?url";
 
-const APP_NAME = "ChanBuilds — quoting and job software, built around your business";
-const APP_DESC = "I build the quoting and job system your business runs on, around your own rates. You own the code. First call is free.";
+const APP_NAME = "CK Builds — Bespoke Software for Operations & Quoting";
+const APP_DESC = "CK Builds designs and engineers custom operational software, CPQ platforms, and workflow systems for growing businesses. Talk directly to the people who build it.";
 
 const JSON_LD = {
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": "Person",
-      "@id": `${SITE_URL}/#person`,
-      "name": FOUNDER_NAME,
-      "url": SITE_URL,
-      "jobTitle": "Founder, ChanBuilds",
-      "worksFor": { "@id": `${SITE_URL}/#studio` },
-      "hasOccupation": {
-        "@type": "Occupation",
-        "name": "Quote-to-Job Systems Engineer",
-        "skills": "Quote-to-Job Systems, Industrial CPQ Engines, FINAT Standards, Authorization-Before-Execution, Stage Locks, Payment Gateways, Multi-tenant Architecture, React, Node.js, PostgreSQL"
-      },
-      "sameAs": [
-        "https://github.com/Chanakya2006gt",
-        "https://www.linkedin.com/in/nagulagam-chanakya-b93514315"
-      ],
-      "knowsAbout": [
-        "Quote-to-Job Systems",
-        "Industrial CPQ Engines",
-        "Converting Plant Workflows",
-        "FINAT 1-8 Rewind Standards",
-        "Authorization-Before-Execution",
-        "Payment Settlement Architecture",
-        "PostgreSQL Data Modeling",
-        "React",
-        "Node.js",
-        "TypeScript"
-      ]
-    },
-    {
       "@type": "ProfessionalService",
       "@id": `${SITE_URL}/#studio`,
       "name": STUDIO_NAME,
       "url": SITE_URL,
-      "founder": { "@id": `${SITE_URL}/#person` },
       "description": APP_DESC,
       "areaServed": "Worldwide",
       "contactPoint": {
@@ -62,9 +32,9 @@ const JSON_LD = {
       "url": "https://trelio.in",
       "applicationCategory": "BusinessApplication",
       "operatingSystem": "Web",
-      "description": "Authorization-before-execution SaaS ensuring verified stage locks, client milestone authorization, and direct settlement.",
+      "description": "Client portal and milestone payment authorization SaaS ensuring verified stage locks and direct settlement.",
       "author": {
-        "@id": `${SITE_URL}/#person`
+        "@id": `${SITE_URL}/#studio`
       }
     },
     {
@@ -77,7 +47,7 @@ const JSON_LD = {
       "operatingSystem": "Web",
       "description": "B2B CPQ and sales estimating platform for industrial packaging converters with FINAT 1–8 rewind standards engine.",
       "author": {
-        "@id": `${SITE_URL}/#person`
+        "@id": `${SITE_URL}/#studio`
       }
     },
     {
@@ -103,8 +73,8 @@ export const Route = createRootRoute({
       { title: APP_NAME },
       { name: "theme-color", content: "#0a0a0b" },
       { name: "description", content: APP_DESC },
-      { name: "keywords", content: "ChanBuilds, Quote-to-job systems, industrial CPQ platform, packaging converting quoting, FINAT unwind standards, milestone authorization SaaS, Trelio, Nagulagam Chanakya, operating businesses" },
-      { name: "author", content: "Nagulagam Chanakya" },
+      { name: "keywords", content: "CK Builds, Quote-to-job systems, industrial CPQ platform, packaging converting quoting, FINAT unwind standards, milestone authorization SaaS, Trelio, operational software" },
+      { name: "author", content: "CK Builds" },
       { name: "robots", content: "index, follow" },
       
       // Open Graph (LinkedIn, Discord, WhatsApp, Facebook)

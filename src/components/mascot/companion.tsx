@@ -13,7 +13,7 @@ export function Companion() {
         <button
           onClick={() => setIsChatOpen((prev) => !prev)}
           className="group flex items-center gap-2 rounded-full border border-border/80 bg-card/90 px-4 py-2.5 shadow-[0_0_25px_rgba(0,0,0,0.3)] backdrop-blur-md transition-all duration-300 hover:border-sage/60 focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-sage"
-          aria-label="Ask a question about ChanBuilds"
+          aria-label="Ask a question about CK Builds"
           aria-expanded={isChatOpen}
         >
           <MessageCircle className="size-4 text-sage" />

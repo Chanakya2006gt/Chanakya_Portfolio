@@ -1,6 +1,6 @@
-# Security Policy & Architecture — Nagulagam Chanakya Portfolio
+# Security Policy & Architecture — CK Builds
 
-This document outlines the security model, threat mitigations, credential management, and software security practices implemented in the Chanakya Portfolio application.
+This document outlines the security model, threat mitigations, credential management, and software security practices implemented in the CK Builds application.
 
 ---
 

@@ -32,7 +32,7 @@ export const Route = createFileRoute("/api/health")({
 
         return new Response(
           JSON.stringify({
-            service: "chanakya-portfolio",
+            service: "ck-builds",
             status,
             timestamp: new Date().toISOString(),
           }),

@@ -15,6 +15,7 @@ import { Route as MethodRouteImport } from './routes/method'
 import { Route as AdminIndexRouteImport } from './routes/admin/index'
 import { Route as AdminLoginRouteImport } from './routes/admin/login'
 import { Route as ApiChatRouteImport } from './routes/api/chat'
+import { Route as ApiContactRouteImport } from './routes/api/contact'
 import { Route as ApiHealthRouteImport } from './routes/api/health'
 import { Route as ApiAdminCheckRouteImport } from './routes/api/admin/check'
 import { Route as ApiAdminDataRouteImport } from './routes/api/admin/data'
@@ -50,6 +51,11 @@ const AdminLoginRoute = AdminLoginRouteImport.update({
 const ApiChatRoute = ApiChatRouteImport.update({
   id: '/api/chat',
   path: '/api/chat',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiContactRoute = ApiContactRouteImport.update({
+  id: '/api/contact',
+  path: '/api/contact',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ApiHealthRoute = ApiHealthRouteImport.update({
@@ -89,6 +95,7 @@ export interface FileRoutesByFullPath {
   '/method': typeof MethodRoute
   '/admin/login': typeof AdminLoginRoute
   '/api/chat': typeof ApiChatRoute
+  '/api/contact': typeof ApiContactRoute
   '/api/health': typeof ApiHealthRoute
   '/admin/': typeof AdminIndexRoute
   '/api/admin/check': typeof ApiAdminCheckRoute
@@ -103,6 +110,7 @@ export interface FileRoutesByTo {
   '/method': typeof MethodRoute
   '/admin/login': typeof AdminLoginRoute
   '/api/chat': typeof ApiChatRoute
+  '/api/contact': typeof ApiContactRoute
   '/api/health': typeof ApiHealthRoute
   '/admin': typeof AdminIndexRoute
   '/api/admin/check': typeof ApiAdminCheckRoute
@@ -118,6 +126,7 @@ export interface FileRoutesById {
   '/method': typeof MethodRoute
   '/admin/login': typeof AdminLoginRoute
   '/api/chat': typeof ApiChatRoute
+  '/api/contact': typeof ApiContactRoute
   '/api/health': typeof ApiHealthRoute
   '/admin/': typeof AdminIndexRoute
   '/api/admin/check': typeof ApiAdminCheckRoute
@@ -134,6 +143,7 @@ export interface FileRouteTypes {
     | '/method'
     | '/admin/login'
     | '/api/chat'
+    | '/api/contact'
     | '/api/health'
     | '/admin/'
     | '/api/admin/check'
@@ -148,6 +158,7 @@ export interface FileRouteTypes {
     | '/method'
     | '/admin/login'
     | '/api/chat'
+    | '/api/contact'
     | '/api/health'
     | '/admin'
     | '/api/admin/check'
@@ -162,6 +173,7 @@ export interface FileRouteTypes {
     | '/method'
     | '/admin/login'
     | '/api/chat'
+    | '/api/contact'
     | '/api/health'
     | '/admin/'
     | '/api/admin/check'
@@ -177,6 +189,7 @@ export interface RootRouteChildren {
   MethodRoute: typeof MethodRoute
   AdminLoginRoute: typeof AdminLoginRoute
   ApiChatRoute: typeof ApiChatRoute
+  ApiContactRoute: typeof ApiContactRoute
   ApiHealthRoute: typeof ApiHealthRoute
   AdminIndexRoute: typeof AdminIndexRoute
   ApiAdminCheckRoute: typeof ApiAdminCheckRoute
@@ -230,6 +243,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ApiChatRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/api/contact': {
+      id: '/api/contact'
+      path: '/api/contact'
+      fullPath: '/api/contact'
+      preLoaderRoute: typeof ApiContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/api/health': {
       id: '/api/health'
       path: '/api/health'
@@ -281,6 +301,7 @@ const rootRouteChildren: RootRouteChildren = {
   MethodRoute: MethodRoute,
   AdminLoginRoute: AdminLoginRoute,
   ApiChatRoute: ApiChatRoute,
+  ApiContactRoute: ApiContactRoute,
   ApiHealthRoute: ApiHealthRoute,
   AdminIndexRoute: AdminIndexRoute,
   ApiAdminCheckRoute: ApiAdminCheckRoute,

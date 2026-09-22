@@ -5,53 +5,28 @@ export interface FAQItem {
 
 export const faqs: FAQItem[] = [
   {
-    question: "What does it cost?",
+    question: "How do you price projects?",
     answer:
-      "It depends on your workflow. That's why the first call is free and the diagnosis ends in a fixed quote. You'll know the exact number before you commit.",
+      "Pricing is scoped directly to your workflow complexity and problem size. On our initial 20-minute call, we review your current operations and provide an honest assessment followed by a transparent, fixed-price quote before any commitment.",
   },
   {
-    question: "Why not just use Zoho, or an off-the-shelf tool?",
+    question: "Why custom software over off-the-shelf SaaS (Zoho, Salesforce, etc.)?",
     answer:
-      "If your sales process is a standard linear funnel, Zoho is genuinely the right answer and I'll tell you so. Off-the-shelf tools break when the workflow is specific to how your operation actually runs — job specs, machine constraints, approval gates, staged payments. That's what I build. It's also one-time: no per-seat fee as your team grows.",
+      "Generic off-the-shelf software works fine for basic linear sales funnels, but breaks down when you have proprietary pricing logic, custom machine specs, or staged approval gates. We build exact-fit systems tailored to your rules, with zero recurring per-seat subscription taxes.",
   },
   {
-    question: "Do I own the code?",
+    question: "Who owns the code and data?",
     answer:
-      "Yes. Full repository handover, your domain, your database, your accounts. Nothing is locked to me — you can hand it to any engineer afterwards.",
+      "You own 100% of the code, database, and infrastructure. We transfer the complete repository, deployment scripts, and credentials directly to your cloud accounts. You are never locked in.",
   },
   {
-    question: "What happens after launch?",
+    question: "What types of businesses do you build for?",
     answer:
-      "Fourteen days of bug fixes are included. After that, optional monthly support covers maintenance, small changes and priority response. Plenty of projects don't need it.",
+      "Any business where revenue, production, or delivery is gated on a quote, approval, or staged workflow — including industrial manufacturing, custom fabrication, distribution, trade services, and creative studios.",
   },
   {
-    question: "What do you need from me?",
+    question: "What is required from our team to begin?",
     answer:
-      "Roughly two hours in the diagnosis, one decision-maker who can answer questions about the process, and access to whatever you use today — spreadsheets, WhatsApp threads, existing software. Content and any API credentials by day two of the build.",
-  },
-  {
-    question: "Can you work with a business outside India?",
-    answer:
-      "Yes. The work is remote and async by default, with scheduled calls in your working hours.",
-  },
-  {
-    question: "What if it isn't finished on time?",
-    answer:
-      "The scope and timeline are fixed in the diagnosis precisely so this doesn't happen. If something in my control runs over, I finish it.",
-  },
-  {
-    question: "What kinds of businesses do you build for?",
-    answer:
-      "Any business where work is gated on a quote or an approval. So far that's been an industrial converting line and a multi-tenant payment platform — but the same shape appears in fabrication, interiors, printing, events, equipment rental and contracting. If your process is someone asks for a price → someone approves → work starts → someone pays, it's the same system. The first call tells us whether it fits.",
-  },
-  {
-    question: "Isn't custom software only for big companies?",
-    answer:
-      "It used to be. Today one builder can shape a system around your business in about two months, so it's within reach for a business your size.",
-  },
-  {
-    question: "Do you build regular websites too?",
-    answer:
-      "Yes — marketing sites, landing pages, straightforward builds. Those don't need a paid diagnosis: the scope is clear from one conversation, so the quote is free and usually same-day. The paid diagnosis exists for work where I genuinely can't quote you honestly without digging first — quoting logic, approval flows, anything wired into a system you already run. If I can quote it for free, I will.",
+      "A decision-maker who understands your current operations, access to your existing rate sheets or spreadsheets, and 20 minutes for an initial workflow review.",
   },
 ];

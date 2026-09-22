@@ -106,7 +106,7 @@ export function CompanionChat({ isOpen, onClose }: CompanionChatProps) {
       id: "welcome",
       role: "assistant",
       content:
-        "Hi, I can answer questions about how ChanBuilds works, what you own at the end, and whether your workflow is a fit.",
+        "Hi, I can answer questions about how CK Builds works, what you own at the end, and whether your workflow is a fit.",
     },
   ]);
   const [input, setInput] = useState("");
@@ -194,7 +194,7 @@ export function CompanionChat({ isOpen, onClose }: CompanionChatProps) {
     <div
       role="dialog"
       aria-modal="true"
-      aria-label="Ask about ChanBuilds"
+      aria-label="Ask about CK Builds"
       className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50 flex h-[520px] max-h-[min(520px,80vh)] w-[90vw] max-w-[400px] flex-col overflow-hidden rounded-2xl border border-border bg-card shadow-[0_0_40px_rgba(0,0,0,0.6)] backdrop-blur-xl rise-in"
     >
       {/* Header */}
@@ -206,7 +206,7 @@ export function CompanionChat({ isOpen, onClose }: CompanionChatProps) {
           <div>
             <div className="flex items-center gap-1.5">
               <h3 className="text-xs font-semibold text-foreground">
-                Ask about ChanBuilds
+                Ask about CK Builds
               </h3>
               <span className="flex size-2 rounded-full bg-sage animate-pulse" />
             </div>

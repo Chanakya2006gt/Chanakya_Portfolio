@@ -1,21 +1,23 @@
-# ChanBuilds
+# CK Builds
 
-> ChanBuilds is a small software studio run by Nagulagam Chanakya. It builds the quoting and job system a business runs on, around the business's own rates and rules.
+> CK Builds is a boutique software studio that designs and builds custom quoting engines (CPQ), stage-locked operational workflows, and internal systems for growing businesses.
+
+## Capabilities
+- Custom Quoting & CPQ Engines: Deterministic pricing logic modeling floor geometry, material yields, and volume tiers into instant quotes.
+- Operational Workflows & Stage Locks: Milestone authorization gates preventing unpaid work and scope creep.
+- Internal Dashboards & Client Portals: Centralized operational tools replacing spreadsheets and WhatsApp threads.
 
 ## Who it is for
-Businesses where work starts with a quote or an approval: fabrication, interiors, printing, packaging, events, equipment rental, contracting. Simple websites are also built, with a free quote.
+Operational businesses where revenue or delivery is gated on a quote, approval, or staged workflow: manufacturing, custom fabrication, trade services, distribution, and creative studios.
 
 ## How a project runs
-1. Intro call: 20 minutes, free. An honest yes or no on whether custom software is worth it.
-2. Workflow Diagnosis: about 3 days, paid. One working screen on real data, a written spec, and a fixed quote for the build.
-3. Build: up to 8 weeks, with weekly check-ins. The client owns the code and it runs on their domain.
-4. Keep it running: optional monthly support. Fourteen days of bug fixes after launch are included.
-
-Pricing is discussed on the call, once the workflow is understood.
+1. Discovery call: 20 minutes, free. An honest evaluation of whether custom software makes business sense.
+2. Scope & Fixed Quote: Based on problem size and workflow complexity, a transparent fixed-price quote and timeline before any build begins.
+3. Build & Handover: Direct engineering around real data, staff stress testing, and live deployment. The client receives 100% repository and database ownership.
 
 ## Work
-- Trelio (https://trelio.in): a live product built and run by Nagulagam Chanakya. Clients approve and pay for each stage of work before the next stage unlocks.
-- Apex Packaging & Converting: a reference build of a quoting system for an industrial packaging converter. Source: https://github.com/Chanakya2006gt/Industrial-packaging-platform
+- Trelio (https://trelio.in): A live studio product built and operated in-house. Client portal and milestone payment authorization SaaS.
+- Apex Packaging & Converting: A reference build demonstrating an industrial CPQ estimating platform for packaging converters. Source: https://github.com/Chanakya2006gt/Industrial-packaging-platform
 
 ## Contact
 - Book a call: https://chanakya-portfolio-orcin.vercel.app/book

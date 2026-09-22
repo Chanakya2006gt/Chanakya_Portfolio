@@ -13,13 +13,13 @@ export type Project = {
 export const businesses: Project[] = [
   {
     id: "trelio",
-    title: "Trelio",
+    title: "Trelio — Milestone Authorization & Client Portal",
     description:
-      "Authorization-before-execution SaaS for freelancers and agencies. Work is split into stages that clients must approve and pay before the next stage unlocks — so execution never runs ahead of payment.",
+      "Client portal and milestone payment authorization SaaS for creative studios and agencies. Built with authorization-before-execution stage locks, immutable audit ledgers, and multi-tenant billing.",
     liveUrl: "https://trelio.in",
     stack: ["Multi-tenant", "PostgreSQL RLS", "Payments", "Audit ledger", "React", "Node.js"],
     featured: true,
-    badge: "Live product",
+    badge: "Studio product · live",
     kind: "business",
   },
 ];
@@ -27,20 +27,21 @@ export const businesses: Project[] = [
 export const sideProjects: Project[] = [
   {
     id: "apex",
-    title: "Apex Packaging & Converting",
+    title: "Apex Packaging — Industrial CPQ & Estimating Suite",
     description:
-      "Enterprise B2B manufacturing & CPQ platform for industrial packaging converters. Features an interactive FINAT 1–8 rewind visualizer, isomorphic linear-meter estimating math with 100% test parity, and a role-based sales operations CRM.",
+      "Configure, Price, Quote (CPQ) software engineered to the exact manufacturing floor specs of an industrial label converter. Features floor-accurate FINAT 1–8 rewind math, substrate yield calculators, and automated PDF job sheets.",
     liveUrl: "https://industrial-packaging-platform.vercel.app",
     githubUrl: "https://github.com/Chanakya2006gt/Industrial-packaging-platform",
-    stack: ["React", "TypeScript", "Supabase RLS", "Node.js", "GSAP", "CPQ Engine"],
+    stack: ["React", "TypeScript", "PostgreSQL RLS", "Node.js", "CPQ Engine"],
     featured: true,
-    badge: "B2B Platform",
+    badge: "Reference build · industrial manufacturing",
     kind: "side",
   },
 ];
 
 export const navLinks = [
-  { href: "#systems", label: "Work" },
-  { href: "#process", label: "Process" },
+  { href: "#work", label: "Work" },
+  { href: "#what-we-build", label: "What We Build" },
+  { href: "#how-we-work", label: "How We Work" },
   { href: "#faq", label: "FAQ" },
 ] as const;
