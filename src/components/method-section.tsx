@@ -1,5 +1,4 @@
 import { FileText, Database, Code2, ShieldCheck, ArrowRight, CheckCircle2, UserCheck, PlayCircle } from "lucide-react";
-import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 
@@ -9,7 +8,6 @@ export function MethodSection() {
   const phases = [
     {
       phase: "Phase 01",
-      days: "Days 1–3",
       title: "Paid Diagnosis & Live Prototype",
       badge: "De-Risking",
       desc: "We tear down your current manual quoting or payment path and map every edge case into deterministic software rules.",
@@ -18,13 +16,11 @@ export function MethodSection() {
       icon: FileText,
       points: [
         "Every quote state, revision rule, and approval bottleneck mapped",
-        "100% of the ₹20k diagnosis credited against the full build",
         "You test the working UI on your phone before committing to the build",
       ],
     },
     {
       phase: "Phase 02",
-      days: "Days 4–5",
       title: "Math & Logic Lock",
       badge: "Architecture",
       desc: "We encode your floor specs, material yields, roll geometries, or milestone payment triggers into automated calculation logic.",
@@ -39,7 +35,6 @@ export function MethodSection() {
     },
     {
       phase: "Phase 03",
-      days: "Days 6–10",
       title: "Core System Assembly",
       badge: "Engineering",
       desc: "Full-stack construction: assembling the clerk interface, PDF quote generators, audit ledger, and payment integrations.",
@@ -54,7 +49,6 @@ export function MethodSection() {
     },
     {
       phase: "Phase 04",
-      days: "Days 11–13",
       title: "Floor Stress Testing & Review",
       badge: "Verification",
       desc: "Your team runs live production quotes through the staging system in parallel with your existing WhatsApp/Excel process.",
@@ -69,7 +63,6 @@ export function MethodSection() {
     },
     {
       phase: "Phase 05",
-      days: "Days 14–15",
       title: "Custom Domain Go-Live & Code Handover",
       badge: "Handover",
       desc: "We point the system to your custom domain, transfer the full git repository, and begin your 14-day operational warranty.",
@@ -96,22 +89,18 @@ export function MethodSection() {
         {/* Eyebrow */}
         <div className="flex items-center gap-2">
           <span className="h-4 w-1 rounded-full bg-sage" />
-          <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">The 15-Day Method</p>
+          <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">How it works</p>
         </div>
 
         <div className="mt-3 flex flex-col md:flex-row md:items-end md:justify-between gap-4">
           <div>
             <h2 className="font-serif text-3xl tracking-tight sm:text-4xl">
-              How 15 days actually run step-by-step.
+              How a project runs, step by step.
             </h2>
             <p className="mt-2 max-w-2xl text-muted-foreground text-sm sm:text-base leading-relaxed">
-              Predictable, fixed-price engineering without agency overhead. You know exactly what you provide, what you click, and when your system goes live.
+              What you give at each step, and what you get back.
             </p>
           </div>
-
-          <Badge variant="outline" className="border-border/80 font-mono text-xs px-3 py-1 self-start md:self-auto shrink-0">
-            5 Grounded Phases · Fixed 15 Days
-          </Badge>
         </div>
 
         {/* 5-Phase Timeline Card List */}
@@ -133,7 +122,6 @@ export function MethodSection() {
                       <div>
                         <div className="flex items-center gap-2">
                           <span className="text-xs font-mono font-bold uppercase tracking-wider text-sage">{item.phase}</span>
-                          <span className="text-xs font-mono text-muted-foreground">· {item.days}</span>
                         </div>
                         <h3 className="font-serif text-xl sm:text-2xl text-foreground font-semibold">
                           {item.title}
@@ -186,16 +174,16 @@ export function MethodSection() {
         {/* Bottom CTA Banner */}
         <div className="mt-10 rounded-2xl border border-border/70 bg-gradient-to-r from-card via-card to-emerald-500/10 p-6 sm:p-7 flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="space-y-1 text-center sm:text-left">
-            <h4 className="font-serif text-lg text-foreground font-semibold">Start with Phase 1 · Paid Diagnosis</h4>
+            <h4 className="font-serif text-lg text-foreground font-semibold">Start with a free 20-minute call</h4>
             <p className="text-xs sm:text-sm text-muted-foreground">
-              3 days, ₹20,000, 100% credited against the build. You get 1 working screen and a guaranteed fixed quote.
+              We look at how you quote today. If it's a fit, the next step is the diagnosis.
             </p>
           </div>
           <a
-            href="/#pricing"
+            href="/book"
             className="btn-sage-glow shrink-0 rounded-xl px-5 py-2.5 text-xs sm:text-sm font-semibold shadow-md inline-flex items-center gap-2"
           >
-            <span>View Fixed Pricing</span>
+            <span>Book a call</span>
             <ArrowRight className="size-4" />
           </a>
         </div>

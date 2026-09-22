@@ -1,8 +1,7 @@
 import React from "react";
-import { CheckCircle2, ArrowRight, Clock, Check, ShieldCheck, Factory, Briefcase, ShoppingBag, ArrowUpRight } from "lucide-react";
+import { ArrowRight, Factory, Briefcase, ShoppingBag } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 
 export function OfferLadder() {
@@ -10,7 +9,7 @@ export function OfferLadder() {
 
   return (
     <section
-      id="pricing"
+      id="process"
       ref={ref}
       className={`mx-auto max-w-5xl px-5 py-24 transition-all duration-700 ${
         isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
@@ -19,16 +18,16 @@ export function OfferLadder() {
       {/* Eyebrow */}
       <div className="flex items-center gap-2">
         <span className="h-4 w-1 rounded-full bg-emerald-600 dark:bg-emerald-400 shadow-[0_0_8px_#10b981]" />
-        <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">Quote-to-Job Systems</p>
+        <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">How it works</p>
       </div>
 
       <div className="mt-3 flex flex-col md:flex-row md:items-end md:justify-between gap-4">
         <div>
           <h2 className="font-serif text-3xl tracking-tight sm:text-4xl">
-            Fixed-price technical engagements
+            How a project runs
           </h2>
           <p className="mt-2 max-w-2xl text-muted-foreground text-sm sm:text-base leading-relaxed">
-            From a 3-day diagnosis to a complete workflow built and handed over in 15 days.
+            Four steps, from a first call to a system your team uses every day.
           </p>
         </div>
       </div>
@@ -86,193 +85,98 @@ export function OfferLadder() {
         </div>
       </div>
 
-      {/* How I Quote Strip */}
-      <div className="mt-8 rounded-2xl border border-border/80 bg-card/60 p-6 sm:p-7 backdrop-blur-xs">
-        <p className="text-xs font-mono font-bold uppercase tracking-wider text-muted-foreground mb-4">
-          How I Quote
-        </p>
-        <div className="space-y-4 text-xs sm:text-sm">
-          <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1 sm:gap-4">
-            <span className="font-semibold text-foreground">You know what you want built</span>
-            <span className="font-mono text-emerald-800 dark:text-emerald-400 font-semibold shrink-0">Free fixed quote, same day</span>
-          </div>
-          <p className="text-xs text-muted-foreground leading-relaxed">
-            Marketing site, landing page, a defined feature. Scope is describable in one call, so charging to scope it would be dishonest.
-          </p>
-
-          <div className="border-t border-border/60 pt-4">
-            <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1 sm:gap-4">
-              <span className="font-semibold text-foreground">You know the problem, not the solution</span>
-              <span className="font-mono text-emerald-800 dark:text-emerald-400 font-semibold shrink-0">₹20,000 diagnosis, 100% credited</span>
+      {/* 4 Steps Section */}
+      <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4 items-stretch">
+        {/* Step 01: Intro call */}
+        <Card className="card-specular relative flex flex-col justify-between rounded-2xl p-6 border border-border/80 bg-card shadow-md">
+          <div className="space-y-3">
+            <div className="flex items-center justify-between">
+              <span className="font-mono text-xs font-bold text-sage">01</span>
+              <span className="text-xs font-mono text-muted-foreground">20 minutes · free</span>
             </div>
-            <p className="text-xs text-muted-foreground leading-relaxed mt-1">
-              Quoting, approvals, B2B commerce, anything touching an existing system. The findings change what gets built, so the scoping is real work.
+            <h3 className="font-serif text-xl font-semibold text-foreground">Intro call</h3>
+            <p className="text-xs text-muted-foreground leading-relaxed">
+              You show me how a quote or job moves today. I tell you honestly if custom software is worth it for you.
             </p>
           </div>
-        </div>
+          <div className="pt-4 mt-4 border-t border-border/60">
+            <p className="text-xs font-medium text-foreground/90">
+              You leave with: a straight yes or no.
+            </p>
+          </div>
+        </Card>
+
+        {/* Step 02: Workflow Diagnosis */}
+        <Card className="card-specular relative flex flex-col justify-between rounded-2xl p-6 border border-border/80 bg-card shadow-md">
+          <div className="space-y-3">
+            <div className="flex items-center justify-between">
+              <span className="font-mono text-xs font-bold text-sage">02</span>
+              <span className="text-xs font-mono text-muted-foreground">About 3 days · paid</span>
+            </div>
+            <h3 className="font-serif text-xl font-semibold text-foreground">Workflow Diagnosis</h3>
+            <p className="text-xs text-muted-foreground leading-relaxed">
+              I map your rules and rates, and build one working screen on your real data.
+            </p>
+          </div>
+          <div className="pt-4 mt-4 border-t border-border/60">
+            <p className="text-xs font-medium text-foreground/90">
+              You leave with: that screen, a written spec, and a fixed quote for the build.
+            </p>
+          </div>
+        </Card>
+
+        {/* Step 03: Build */}
+        <Card className="card-specular relative flex flex-col justify-between rounded-2xl p-6 border border-border/80 bg-card shadow-md">
+          <div className="space-y-3">
+            <div className="flex items-center justify-between">
+              <span className="font-mono text-xs font-bold text-sage">03</span>
+              <span className="text-xs font-mono text-muted-foreground">Up to 8 weeks</span>
+            </div>
+            <h3 className="font-serif text-xl font-semibold text-foreground">Build</h3>
+            <p className="text-xs text-muted-foreground leading-relaxed">
+              Weekly check-ins. Your team tries it on real jobs before launch.
+            </p>
+          </div>
+          <div className="pt-4 mt-4 border-t border-border/60">
+            <p className="text-xs font-medium text-foreground/90">
+              You leave with: the system, live on your domain. The code is yours.
+            </p>
+          </div>
+        </Card>
+
+        {/* Step 04: Keep it running */}
+        <Card className="card-specular relative flex flex-col justify-between rounded-2xl p-6 border border-border/80 bg-card shadow-md">
+          <div className="space-y-3">
+            <div className="flex items-center justify-between">
+              <span className="font-mono text-xs font-bold text-sage">04</span>
+              <span className="text-xs font-mono text-muted-foreground">Optional · monthly</span>
+            </div>
+            <h3 className="font-serif text-xl font-semibold text-foreground">Keep it running</h3>
+            <p className="text-xs text-muted-foreground leading-relaxed">
+              Changes as your business changes, and someone to call when something breaks.
+            </p>
+          </div>
+        </Card>
       </div>
 
-      {/* 3-Tier Price Cards */}
-      <div className="mt-8 grid gap-6 lg:grid-cols-3 items-stretch">
-        {/* Card 1: Paid Diagnosis */}
-        <Card className="card-specular relative flex flex-col justify-between rounded-2xl p-6 sm:p-7 border-2 border-emerald-600/40 dark:border-emerald-500/40 bg-gradient-to-b from-card via-card to-emerald-500/5 shadow-md">
-          <div className="space-y-4">
-            <div>
-              <p className="text-xs font-mono font-bold uppercase tracking-wider text-emerald-800 dark:text-emerald-400">Step 1 · 3 Days</p>
-              <h3 className="font-serif text-2xl text-foreground mt-0.5">Paid diagnosis</h3>
-            </div>
+      {/* Reassurance text */}
+      <div className="mt-8 text-center space-y-1">
+        <p className="text-xs sm:text-sm text-muted-foreground">
+          The diagnosis is paid because a real quote needs real work.
+        </p>
+        <p className="text-xs sm:text-sm text-muted-foreground">
+          We talk about cost on the call, once I know what your workflow needs.
+        </p>
+      </div>
 
-            <div className="border-y border-border/60 py-3.5 space-y-1">
-              <div className="flex items-baseline gap-2">
-                <span className="text-3xl font-bold font-mono tracking-tight text-foreground">₹20,000</span>
-                <span className="text-xs text-muted-foreground font-mono">fixed</span>
-              </div>
-              <p className="text-xs font-semibold text-emerald-800 dark:text-emerald-400">
-                100% credited against the build
-              </p>
-            </div>
-
-            <p className="text-xs text-muted-foreground leading-relaxed">
-              De-risks your project before committing to a full build. You see the exact architecture and one working screen.
-            </p>
-
-            <ul className="space-y-2 text-xs text-foreground/90 pt-1">
-              <li className="flex items-start gap-2">
-                <CheckCircle2 className="size-3.5 text-emerald-800 dark:text-emerald-400 shrink-0 mt-0.5" />
-                <span><strong>1 deployed working screen</strong> on a live URL you can test</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <CheckCircle2 className="size-3.5 text-emerald-800 dark:text-emerald-400 shrink-0 mt-0.5" />
-                <span><strong>Guaranteed fixed quote</strong> for the 15-day build</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <CheckCircle2 className="size-3.5 text-emerald-800 dark:text-emerald-400 shrink-0 mt-0.5" />
-                <span>Written workflow map & operational rules</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <CheckCircle2 className="size-3.5 text-emerald-800 dark:text-emerald-400 shrink-0 mt-0.5" />
-                <span>Data model & database schema layout</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <CheckCircle2 className="size-3.5 text-emerald-800 dark:text-emerald-400 shrink-0 mt-0.5" />
-                <span>10-minute video walkthrough explaining the build</span>
-              </li>
-            </ul>
-          </div>
-
-          <div className="pt-6 mt-6 border-t border-border/60">
-            <Button asChild className="w-full btn-sage-glow rounded-xl font-semibold shadow-md active:scale-[0.98] transition-all">
-              <a href="#contact">
-                <span>Book a Paid Diagnosis (₹20k)</span>
-                <ArrowRight className="ml-2 size-4" />
-              </a>
-            </Button>
-          </div>
-        </Card>
-
-        {/* Card 2: One Workflow Built */}
-        <Card className="card-specular relative flex flex-col justify-between rounded-2xl p-6 sm:p-7 border border-border/80 bg-card shadow-md">
-          <div className="space-y-4">
-            <div>
-              <p className="text-xs font-mono font-bold uppercase tracking-wider text-indigo">Step 2 · 15 Days</p>
-              <h3 className="font-serif text-2xl text-foreground mt-0.5">One workflow built</h3>
-            </div>
-
-            <div className="border-y border-border/60 py-3.5 space-y-1">
-              <div className="flex items-baseline gap-2">
-                <span className="text-3xl font-bold font-mono tracking-tight text-foreground">Fixed quote</span>
-                <span className="text-xs text-muted-foreground font-mono">from the diagnosis</span>
-              </div>
-              <p className="text-xs text-muted-foreground">
-                15 business days to staging &amp; production · exact price quoted before you commit
-              </p>
-            </div>
-
-            <p className="text-xs text-foreground font-medium leading-relaxed bg-secondary/50 p-2.5 rounded-lg border border-border/60">
-              The whole of one live process — e.g. RFQ through confirmed order — not a brochure, not the entire company.
-            </p>
-
-            <ul className="space-y-2 text-xs text-foreground/90 pt-1">
-              <li className="flex items-start gap-2">
-                <Check className="size-3.5 text-indigo shrink-0 mt-0.5" />
-                <span>Working system deployed on your custom domain</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <Check className="size-3.5 text-indigo shrink-0 mt-0.5" />
-                <span>Automated test suite covering every state transition</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <Check className="size-3.5 text-indigo shrink-0 mt-0.5" />
-                <span>Security pass (PostgreSQL RLS, webhook verification)</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <Check className="size-3.5 text-indigo shrink-0 mt-0.5" />
-                <span>Full source code repository handover + 14-day bug fix warranty</span>
-              </li>
-            </ul>
-          </div>
-
-          <div className="pt-6 mt-6 border-t border-border/60">
-            <Button asChild variant="outline" className="w-full rounded-xl border-border/80 hover:border-indigo hover:text-indigo font-semibold shadow-sm active:scale-[0.98] transition-all">
-              <a href="#contact">
-                <span>Inquire About a Build</span>
-                <ArrowRight className="ml-2 size-4" />
-              </a>
-            </Button>
-          </div>
-        </Card>
-
-        {/* Card 3: Keep It Running */}
-        <Card className="card-specular relative flex flex-col justify-between rounded-2xl p-6 sm:p-7 border border-border/80 bg-card shadow-md">
-          <div className="space-y-4">
-            <div>
-              <p className="text-xs font-mono font-bold uppercase tracking-wider text-amber-800 dark:text-amber-400">Step 3 · Ongoing</p>
-              <h3 className="font-serif text-2xl text-foreground mt-0.5">Keep it running</h3>
-            </div>
-
-            <div className="border-y border-border/60 py-3.5 space-y-1">
-              <div className="flex items-baseline gap-2">
-                <span className="text-3xl font-bold font-mono tracking-tight text-foreground">₹20k – ₹35k</span>
-                <span className="text-xs text-muted-foreground font-mono">/ month</span>
-              </div>
-              <p className="text-xs text-muted-foreground">
-                Optional post-launch maintenance & priority SLA
-              </p>
-            </div>
-
-            <p className="text-xs text-muted-foreground leading-relaxed">
-              Keeps your operational software running with database maintenance, dependency updates, and priority bug resolution.
-            </p>
-
-            <ul className="space-y-2 text-xs text-foreground/90 pt-1">
-              <li className="flex items-start gap-2">
-                <Check className="size-3.5 text-amber-800 dark:text-amber-400 shrink-0 mt-0.5" />
-                <span>Monthly maintenance allowance for workflow tweaks</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <Check className="size-3.5 text-amber-800 dark:text-amber-400 shrink-0 mt-0.5" />
-                <span>Priority response on operational blockers</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <Check className="size-3.5 text-amber-800 dark:text-amber-400 shrink-0 mt-0.5" />
-                <span>Security patching & database backups</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <Check className="size-3.5 text-amber-800 dark:text-amber-400 shrink-0 mt-0.5" />
-                <span>Direct engineer access — no ticketing queues</span>
-              </li>
-            </ul>
-          </div>
-
-          <div className="pt-6 mt-6 border-t border-border/60">
-            <Button asChild variant="outline" className="w-full rounded-xl border-border/80 hover:text-amber-800 dark:hover:text-amber-400 font-semibold shadow-sm active:scale-[0.98] transition-all">
-              <a href="#contact">
-                <span>Ask About Retainers</span>
-                <ArrowRight className="ml-2 size-4" />
-              </a>
-            </Button>
-          </div>
-        </Card>
+      {/* Primary CTA */}
+      <div className="mt-6 text-center">
+        <Button asChild size="lg" className="btn-sage-glow rounded-xl font-medium shadow-md px-6 py-2.5">
+          <a href="/book">
+            <span>Book a 20-minute call</span>
+            <ArrowRight className="ml-2 size-4" />
+          </a>
+        </Button>
       </div>
 
       {/* Lightweight Link to /method */}
@@ -281,8 +185,7 @@ export function OfferLadder() {
           href="/method"
           className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-mono text-muted-foreground hover:text-foreground underline underline-offset-4 transition-colors"
         >
-          <span>How 15 days actually run step-by-step → Read the Systems Factory</span>
-          <ArrowUpRight className="size-3.5" />
+          <span>See each step in detail →</span>
         </a>
       </div>
     </section>

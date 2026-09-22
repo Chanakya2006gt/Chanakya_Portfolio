@@ -1,13 +1,13 @@
 import { useState, useEffect } from "react";
 import { createFileRoute, useNavigate } from "@tanstack/react-router";
-import { LogOut, Plus, Trash2, Save, FileText, LayoutGrid, CheckCircle2, ShieldAlert, Sparkles, ExternalLink } from "lucide-react";
+import { LogOut, Plus, Trash2, Save, LayoutGrid, Sparkles, ExternalLink } from "lucide-react";
 import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { DynamicData } from "@/data/store";
 import { Project } from "@/data/projects";
@@ -92,38 +92,6 @@ function AdminDashboardPage() {
       toast.error("An error occurred while saving");
     } finally {
       setIsSaving(false);
-    }
-  };
-
-  const handleResumeUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files?.[0];
-    if (!file) return;
-    if (file.type !== "application/pdf") {
-      toast.error("Please choose a PDF file.");
-      return;
-    }
-    try {
-      const res = await fetch("/api/admin/resume", {
-        method: "POST",
-        headers: { "Content-Type": "application/pdf" },
-        body: file,
-      });
-      const json = await res.json();
-      if (res.ok && json.success) {
-        if (json.parsed === true) {
-          toast.success("Résumé uploaded and details updated from the PDF. Refresh the site to see the changes.");
-        } else if (json.parsed === false) {
-          toast.warning(json.parseError || "Résumé uploaded. The details couldn't be read automatically — you can edit them manually.");
-        } else {
-          toast.success("Résumé uploaded. It is live within ~1 minute.");
-        }
-      } else {
-        toast.error(json.error || "Upload failed.");
-      }
-    } catch {
-      toast.error("Upload failed.");
-    } finally {
-      e.target.value = "";
     }
   };
 
@@ -263,11 +231,8 @@ function AdminDashboardPage() {
             <TabsTrigger value="projects" className="gap-2 text-xs">
               <LayoutGrid className="size-3.5" /> Flagship & Projects
             </TabsTrigger>
-            <TabsTrigger value="resume" className="gap-2 text-xs">
-              <FileText className="size-3.5" /> Resume & Qualifications
-            </TabsTrigger>
             <TabsTrigger value="status" className="gap-2 text-xs">
-              <Sparkles className="size-3.5" /> Status & Tagline
+              <Sparkles className="size-3.5" /> Status & Availability
             </TabsTrigger>
           </TabsList>
 
@@ -437,100 +402,10 @@ function AdminDashboardPage() {
             </div>
           </TabsContent>
 
-          {/* TAB 2: Resume & Qualifications */}
-          <TabsContent value="resume" className="space-y-4">
-            <Card className="p-5 border-border bg-card space-y-4">
-              <h3 className="text-base font-semibold text-white">Resume Information Overrides</h3>
-
-              <div className="grid gap-4 sm:grid-cols-2">
-                <div>
-                  <Label className="text-xs">Primary Email</Label>
-                  <Input
-                    value={data.resumeOverride?.email || "nagulagamchanakya2211@gmail.com"}
-                    onChange={(e) => {
-                      setData({
-                        ...data,
-                        resumeOverride: { ...data.resumeOverride, email: e.target.value },
-                      });
-                    }}
-                    className="mt-1 bg-secondary/50 text-xs"
-                  />
-                </div>
-                <div>
-                  <Label className="text-xs">Résumé PDF (upload replaces the live file)</Label>
-                  <input
-                    type="file"
-                    accept="application/pdf"
-                    onChange={handleResumeUpload}
-                    className="mt-1 block w-full text-xs text-muted-foreground file:mr-3 file:rounded-md file:border-0 file:bg-sage/20 file:px-3 file:py-1.5 file:text-sage file:text-xs file:font-medium hover:file:bg-sage/30 cursor-pointer"
-                  />
-                  <p className="mt-1 text-[11px] text-muted-foreground">
-                    PDF only, max 4&nbsp;MB. Uploads immediately; no “Save” needed.
-                  </p>
-                </div>
-              </div>
-
-              <div>
-                <Label className="text-xs">Executive Summary</Label>
-                <Textarea
-                  value={data.resumeOverride?.summary || "Computer and Information Science student with hands-on experience building and shipping a full-stack, security-conscious SaaS product..."}
-                  onChange={(e) => {
-                    setData({
-                      ...data,
-                      resumeOverride: { ...data.resumeOverride, summary: e.target.value },
-                    });
-                  }}
-                  className="mt-1 bg-secondary/50 text-xs"
-                  rows={3}
-                />
-              </div>
-
-              <div>
-                <Label className="text-xs">Education Details</Label>
-                <Input
-                  value={data.resumeOverride?.education || "SR University — B.Tech CIS (2028)"}
-                  onChange={(e) => {
-                    setData({
-                      ...data,
-                      resumeOverride: { ...data.resumeOverride, education: e.target.value },
-                    });
-                  }}
-                  className="mt-1 bg-secondary/50 text-xs"
-                />
-              </div>
-
-              <div className="pt-2 border-t border-border flex items-center justify-between">
-                <div>
-                  <p className="text-xs font-medium text-foreground">Accidental AI update or bad overwrite?</p>
-                  <p className="text-[11px] text-muted-foreground">Restore the previous version of your portfolio content saved before the last change.</p>
-                </div>
-                <Button
-                  type="button"
-                  onClick={handleRestoreBackup}
-                  variant="outline"
-                  size="sm"
-                  className="text-xs border-sage/40 text-sage hover:bg-sage/10"
-                >
-                  Undo last update
-                </Button>
-              </div>
-            </Card>
-          </TabsContent>
-
-          {/* TAB 3: Status & Tagline */}
+          {/* TAB 2: Status & Availability */}
           <TabsContent value="status" className="space-y-4">
             <Card className="p-5 border-border bg-card space-y-4">
-              <h3 className="text-base font-semibold text-white">Hero & Availability Settings</h3>
-
-              <div>
-                <Label className="text-xs">Hero Subtitle / Tagline</Label>
-                <Textarea
-                  value={data.heroTagline}
-                  onChange={(e) => setData({ ...data, heroTagline: e.target.value })}
-                  className="mt-1 bg-secondary/50 text-xs"
-                  rows={2}
-                />
-              </div>
+              <h3 className="text-base font-semibold text-white">Availability Settings</h3>
 
               <div>
                 <Label className="text-xs">Blinking Availability Badge (Hero Section)</Label>
@@ -542,27 +417,20 @@ function AdminDashboardPage() {
                 />
               </div>
 
-              <div className="grid gap-4 sm:grid-cols-2 pt-2 border-t border-border/60">
+              <div className="pt-3 border-t border-border flex items-center justify-between">
                 <div>
-                  <Label className="text-xs font-semibold text-white">1. Work / Technical Availability</Label>
-                  <p className="text-[11px] text-muted-foreground mb-1">What the companion tells clients wanting to hire you.</p>
-                  <Input
-                    value={data.workAvailability || "Available for fixed-price technical builds and paid diagnoses"}
-                    onChange={(e) => setData({ ...data, workAvailability: e.target.value })}
-                    placeholder="e.g. Available for fixed-price technical builds & paid diagnoses"
-                    className="mt-1 bg-secondary/50 text-xs"
-                  />
+                  <p className="text-xs font-medium text-foreground">Accidental update or bad overwrite?</p>
+                  <p className="text-[11px] text-muted-foreground">Restore the previous version of your portfolio content saved before the last change.</p>
                 </div>
-                <div>
-                  <Label className="text-xs font-semibold text-white">2. Team Hiring Status (Are YOU hiring anyone?)</Label>
-                  <p className="text-[11px] text-muted-foreground mb-1">What you tell candidates asking if you/Trelio are hiring.</p>
-                  <Input
-                    value={data.hiringStatus || "Not currently hiring team members"}
-                    onChange={(e) => setData({ ...data, hiringStatus: e.target.value })}
-                    placeholder="e.g. Not currently hiring team members"
-                    className="mt-1 bg-secondary/50 text-xs"
-                  />
-                </div>
+                <Button
+                  type="button"
+                  onClick={handleRestoreBackup}
+                  variant="outline"
+                  size="sm"
+                  className="text-xs border-sage/40 text-sage hover:bg-sage/10"
+                >
+                  Undo last update
+                </Button>
               </div>
             </Card>
           </TabsContent>

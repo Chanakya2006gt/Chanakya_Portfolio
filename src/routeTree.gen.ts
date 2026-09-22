@@ -10,22 +10,26 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as BookRouteImport } from './routes/book'
 import { Route as MethodRouteImport } from './routes/method'
 import { Route as AdminIndexRouteImport } from './routes/admin/index'
 import { Route as AdminLoginRouteImport } from './routes/admin/login'
 import { Route as ApiChatRouteImport } from './routes/api/chat'
 import { Route as ApiHealthRouteImport } from './routes/api/health'
-import { Route as ApiResumeRouteImport } from './routes/api/resume'
 import { Route as ApiAdminCheckRouteImport } from './routes/api/admin/check'
 import { Route as ApiAdminDataRouteImport } from './routes/api/admin/data'
 import { Route as ApiAdminLoginRouteImport } from './routes/api/admin/login'
 import { Route as ApiAdminLogoutRouteImport } from './routes/api/admin/logout'
 import { Route as ApiAdminRestoreRouteImport } from './routes/api/admin/restore'
-import { Route as ApiAdminResumeRouteImport } from './routes/api/admin/resume'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BookRoute = BookRouteImport.update({
+  id: '/book',
+  path: '/book',
   getParentRoute: () => rootRouteImport,
 } as any)
 const MethodRoute = MethodRouteImport.update({
@@ -53,11 +57,6 @@ const ApiHealthRoute = ApiHealthRouteImport.update({
   path: '/api/health',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ApiResumeRoute = ApiResumeRouteImport.update({
-  id: '/api/resume',
-  path: '/api/resume',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const ApiAdminCheckRoute = ApiAdminCheckRouteImport.update({
   id: '/api/admin/check',
   path: '/api/admin/check',
@@ -83,120 +82,108 @@ const ApiAdminRestoreRoute = ApiAdminRestoreRouteImport.update({
   path: '/api/admin/restore',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ApiAdminResumeRoute = ApiAdminResumeRouteImport.update({
-  id: '/api/admin/resume',
-  path: '/api/admin/resume',
-  getParentRoute: () => rootRouteImport,
-} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/book': typeof BookRoute
   '/method': typeof MethodRoute
   '/admin/login': typeof AdminLoginRoute
   '/api/chat': typeof ApiChatRoute
   '/api/health': typeof ApiHealthRoute
-  '/api/resume': typeof ApiResumeRoute
   '/admin/': typeof AdminIndexRoute
   '/api/admin/check': typeof ApiAdminCheckRoute
   '/api/admin/data': typeof ApiAdminDataRoute
   '/api/admin/login': typeof ApiAdminLoginRoute
   '/api/admin/logout': typeof ApiAdminLogoutRoute
   '/api/admin/restore': typeof ApiAdminRestoreRoute
-  '/api/admin/resume': typeof ApiAdminResumeRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/book': typeof BookRoute
   '/method': typeof MethodRoute
   '/admin/login': typeof AdminLoginRoute
   '/api/chat': typeof ApiChatRoute
   '/api/health': typeof ApiHealthRoute
-  '/api/resume': typeof ApiResumeRoute
   '/admin': typeof AdminIndexRoute
   '/api/admin/check': typeof ApiAdminCheckRoute
   '/api/admin/data': typeof ApiAdminDataRoute
   '/api/admin/login': typeof ApiAdminLoginRoute
   '/api/admin/logout': typeof ApiAdminLogoutRoute
   '/api/admin/restore': typeof ApiAdminRestoreRoute
-  '/api/admin/resume': typeof ApiAdminResumeRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/book': typeof BookRoute
   '/method': typeof MethodRoute
   '/admin/login': typeof AdminLoginRoute
   '/api/chat': typeof ApiChatRoute
   '/api/health': typeof ApiHealthRoute
-  '/api/resume': typeof ApiResumeRoute
   '/admin/': typeof AdminIndexRoute
   '/api/admin/check': typeof ApiAdminCheckRoute
   '/api/admin/data': typeof ApiAdminDataRoute
   '/api/admin/login': typeof ApiAdminLoginRoute
   '/api/admin/logout': typeof ApiAdminLogoutRoute
   '/api/admin/restore': typeof ApiAdminRestoreRoute
-  '/api/admin/resume': typeof ApiAdminResumeRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/book'
     | '/method'
     | '/admin/login'
     | '/api/chat'
     | '/api/health'
-    | '/api/resume'
     | '/admin/'
     | '/api/admin/check'
     | '/api/admin/data'
     | '/api/admin/login'
     | '/api/admin/logout'
     | '/api/admin/restore'
-    | '/api/admin/resume'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/book'
     | '/method'
     | '/admin/login'
     | '/api/chat'
     | '/api/health'
-    | '/api/resume'
     | '/admin'
     | '/api/admin/check'
     | '/api/admin/data'
     | '/api/admin/login'
     | '/api/admin/logout'
     | '/api/admin/restore'
-    | '/api/admin/resume'
   id:
     | '__root__'
     | '/'
+    | '/book'
     | '/method'
     | '/admin/login'
     | '/api/chat'
     | '/api/health'
-    | '/api/resume'
     | '/admin/'
     | '/api/admin/check'
     | '/api/admin/data'
     | '/api/admin/login'
     | '/api/admin/logout'
     | '/api/admin/restore'
-    | '/api/admin/resume'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  BookRoute: typeof BookRoute
   MethodRoute: typeof MethodRoute
   AdminLoginRoute: typeof AdminLoginRoute
   ApiChatRoute: typeof ApiChatRoute
   ApiHealthRoute: typeof ApiHealthRoute
-  ApiResumeRoute: typeof ApiResumeRoute
   AdminIndexRoute: typeof AdminIndexRoute
   ApiAdminCheckRoute: typeof ApiAdminCheckRoute
   ApiAdminDataRoute: typeof ApiAdminDataRoute
   ApiAdminLoginRoute: typeof ApiAdminLoginRoute
   ApiAdminLogoutRoute: typeof ApiAdminLogoutRoute
   ApiAdminRestoreRoute: typeof ApiAdminRestoreRoute
-  ApiAdminResumeRoute: typeof ApiAdminResumeRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -206,6 +193,13 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/book': {
+      id: '/book'
+      path: '/book'
+      fullPath: '/book'
+      preLoaderRoute: typeof BookRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/method': {
@@ -243,13 +237,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ApiHealthRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/api/resume': {
-      id: '/api/resume'
-      path: '/api/resume'
-      fullPath: '/api/resume'
-      preLoaderRoute: typeof ApiResumeRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/api/admin/check': {
       id: '/api/admin/check'
       path: '/api/admin/check'
@@ -285,30 +272,22 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ApiAdminRestoreRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/api/admin/resume': {
-      id: '/api/admin/resume'
-      path: '/api/admin/resume'
-      fullPath: '/api/admin/resume'
-      preLoaderRoute: typeof ApiAdminResumeRouteImport
-      parentRoute: typeof rootRouteImport
-    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  BookRoute: BookRoute,
   MethodRoute: MethodRoute,
   AdminLoginRoute: AdminLoginRoute,
   ApiChatRoute: ApiChatRoute,
   ApiHealthRoute: ApiHealthRoute,
-  ApiResumeRoute: ApiResumeRoute,
   AdminIndexRoute: AdminIndexRoute,
   ApiAdminCheckRoute: ApiAdminCheckRoute,
   ApiAdminDataRoute: ApiAdminDataRoute,
   ApiAdminLoginRoute: ApiAdminLoginRoute,
   ApiAdminLogoutRoute: ApiAdminLogoutRoute,
   ApiAdminRestoreRoute: ApiAdminRestoreRoute,
-  ApiAdminResumeRoute: ApiAdminResumeRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

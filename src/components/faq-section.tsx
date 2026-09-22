@@ -21,7 +21,7 @@ export function FaqSection() {
         Frequently Asked Questions
       </h2>
       <p className="mt-3 max-w-2xl text-sm sm:text-base text-muted-foreground leading-relaxed">
-        Clear answers on pricing bands, technology choices, code ownership, and how builds actually run.
+        Straight answers on cost, ownership, timelines and fit.
       </p>
 
       <div className="mt-10 divide-y divide-border/60 rounded-2xl border border-border/80 bg-card/60 backdrop-blur-md overflow-hidden shadow-sm">

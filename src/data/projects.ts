@@ -39,19 +39,8 @@ export const sideProjects: Project[] = [
   },
 ];
 
-export const skills: Record<string, string[]> = {
-  "Agentic & AI": ["Google Antigravity", "Claude Code", "Agentic Workflows", "Custom Skill Plugins", "Automated Auditing"],
-  Frontend: ["React", "TypeScript", "Tailwind", "shadcn/ui", "GSAP"],
-  Backend: ["Node.js", "Express", "PostgreSQL", "Supabase RLS", "REST APIs"],
-  Product: ["Multi-tenant", "CPQ Engines", "Payments", "Audit logs", "Auth flows"],
-  Tools: ["Git", "Playwright", "Vercel", "Razorpay"],
-};
-
 export const navLinks = [
-  { href: "#pricing", label: "Pricing" },
-  { href: "#systems", label: "Live Systems" },
-  { href: "/method", label: "Method" },
+  { href: "#systems", label: "Work" },
+  { href: "#process", label: "Process" },
   { href: "#faq", label: "FAQ" },
-  { href: "#about", label: "Trust & Terms" },
-  { href: "#contact", label: "Contact" },
 ] as const;

@@ -3,13 +3,17 @@ import { ArrowLeft, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { MethodSection } from "@/components/method-section";
 import { ThemeToggle } from "@/components/theme-toggle";
+import { STUDIO_NAME, FOUNDER_NAME } from "@/data/studio";
 
 export const Route = createFileRoute("/method")({
   component: MethodPage,
   head: () => ({
     meta: [
-      { title: "The 15-Day Method — Quote-to-Job Systems for Operating Businesses" },
-      { name: "description", content: "The 5-phase method used by Nagulagam Chanakya to build, test, and ship hardened quote-to-job operational software in 15 days." },
+      { title: `How a project runs — ${STUDIO_NAME}` },
+      {
+        name: "description",
+        content: `How a ${STUDIO_NAME} project runs, from a free first call to a system your team uses every day. What you give at each step, and what you get back.`,
+      },
     ],
   }),
 });
@@ -25,16 +29,16 @@ function MethodPage() {
             className="inline-flex items-center gap-2 text-xs sm:text-sm font-semibold text-muted-foreground hover:text-foreground transition-colors"
           >
             <ArrowLeft className="size-4" />
-            <span>Back to Systems</span>
+            <span>Back to {STUDIO_NAME}</span>
           </Link>
 
           <div className="flex items-center gap-3">
             <ThemeToggle />
             <Button asChild size="sm" className="btn-sage-glow rounded-xl font-semibold shadow-xs text-xs px-3.5 py-1.5 h-9">
-              <Link to="/" hash="pricing">
-                <span>Book a ₹20k Diagnosis</span>
+              <a href="/book">
+                <span>Book a call</span>
                 <ArrowRight className="ml-1 size-3.5" />
-              </Link>
+              </a>
             </Button>
           </div>
         </div>
@@ -48,12 +52,11 @@ function MethodPage() {
       {/* Minimal Footer */}
       <footer className="border-t border-border/60 py-12 text-center text-xs text-muted-foreground">
         <div className="mx-auto max-w-5xl px-5 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p>© {new Date().getFullYear()} Nagulagam Chanakya · Quote-to-job systems</p>
+          <p>© {new Date().getFullYear()} {STUDIO_NAME} · Built by {FOUNDER_NAME}</p>
           <div className="flex items-center gap-4 font-mono">
-            <Link to="/" hash="pricing" className="hover:text-foreground transition-colors">Pricing</Link>
-            <Link to="/" hash="systems" className="hover:text-foreground transition-colors">Live Systems</Link>
-            <Link to="/" hash="about" className="hover:text-foreground transition-colors">Trust & Terms</Link>
+            <Link to="/" hash="systems" className="hover:text-foreground transition-colors">Work</Link>
             <Link to="/" hash="contact" className="hover:text-foreground transition-colors">Contact</Link>
+            <a href="/book" className="hover:text-foreground transition-colors">Book a call</a>
           </div>
         </div>
       </footer>

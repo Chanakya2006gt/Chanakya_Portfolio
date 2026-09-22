@@ -2,11 +2,11 @@ import { createRootRoute, HeadContent, Outlet, Scripts } from "@tanstack/react-r
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { Toaster } from "sonner";
 import { faqs } from "@/data/faqs";
+import { SITE_URL, STUDIO_NAME, FOUNDER_NAME, CONTACT_EMAIL } from "@/data/studio";
 import appCss from "../styles.css?url";
 
-const APP_NAME = "Nagulagam Chanakya — Quote-to-Job Systems for Operating Businesses";
-const APP_DESC = "I build the system a business actually runs: quote → confirm → work. Fixed price. You keep the repository. Live on an industrial converting workflow and on Trelio.";
-const SITE_URL = "https://chanakya-portfolio-orcin.vercel.app";
+const APP_NAME = "ChanBuilds — quoting and job software, built around your business";
+const APP_DESC = "I build the quoting and job system your business runs on, around your own rates. You own the code. First call is free.";
 
 const JSON_LD = {
   "@context": "https://schema.org",
@@ -14,14 +14,10 @@ const JSON_LD = {
     {
       "@type": "Person",
       "@id": `${SITE_URL}/#person`,
-      "name": "Nagulagam Chanakya",
+      "name": FOUNDER_NAME,
       "url": SITE_URL,
-      "jobTitle": "Quote-to-Job Systems Engineer & Founder",
-      "worksFor": {
-        "@type": "Organization",
-        "name": "Trelio",
-        "url": "https://trelio.in"
-      },
+      "jobTitle": "Founder, ChanBuilds",
+      "worksFor": { "@id": `${SITE_URL}/#studio` },
       "hasOccupation": {
         "@type": "Occupation",
         "name": "Quote-to-Job Systems Engineer",
@@ -43,6 +39,21 @@ const JSON_LD = {
         "Node.js",
         "TypeScript"
       ]
+    },
+    {
+      "@type": "ProfessionalService",
+      "@id": `${SITE_URL}/#studio`,
+      "name": STUDIO_NAME,
+      "url": SITE_URL,
+      "founder": { "@id": `${SITE_URL}/#person` },
+      "description": APP_DESC,
+      "areaServed": "Worldwide",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "sales",
+        "telephone": "+91-7674040571",
+        "email": CONTACT_EMAIL,
+      },
     },
     {
       "@type": "SoftwareApplication",
@@ -92,7 +103,7 @@ export const Route = createRootRoute({
       { title: APP_NAME },
       { name: "theme-color", content: "#0a0a0b" },
       { name: "description", content: APP_DESC },
-      { name: "keywords", content: "Quote-to-job systems, industrial CPQ platform, packaging converting quoting, FINAT unwind standards, milestone authorization SaaS, Trelio, Nagulagam Chanakya, fixed-price software build, operating businesses" },
+      { name: "keywords", content: "ChanBuilds, Quote-to-job systems, industrial CPQ platform, packaging converting quoting, FINAT unwind standards, milestone authorization SaaS, Trelio, Nagulagam Chanakya, operating businesses" },
       { name: "author", content: "Nagulagam Chanakya" },
       { name: "robots", content: "index, follow" },
       
@@ -102,7 +113,7 @@ export const Route = createRootRoute({
       { property: "og:image", content: `${SITE_URL}/og.jpg` },
       { property: "og:url", content: SITE_URL },
       { property: "og:type", content: "website" },
-      { property: "og:site_name", content: "Nagulagam Chanakya — Quote-to-Job Systems" },
+      { property: "og:site_name", content: STUDIO_NAME },
 
       // Twitter / X Cards
       { name: "twitter:card", content: "summary_large_image" },

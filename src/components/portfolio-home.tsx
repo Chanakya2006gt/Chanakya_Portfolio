@@ -1,6 +1,5 @@
 import { useState } from "react";
-import { ArrowUp, ExternalLink, Mail, ShieldCheck, CheckCircle2, XCircle, Code2, Github } from "lucide-react";
-import { toast } from "sonner";
+import { ArrowUp, ExternalLink, ShieldCheck, CheckCircle2, XCircle, Code2, Github } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -12,17 +11,6 @@ import {
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Textarea } from "@/components/ui/textarea";
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from "@/components/ui/dialog";
 
 import { TrelioPreview } from "@/components/trelio-preview";
 import { ApexPreview } from "@/components/apex-preview";
@@ -33,14 +21,9 @@ import { SiteNav } from "@/components/site-nav";
 import { Companion } from "@/components/mascot/companion";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 import { DynamicData } from "@/data/store";
+import { WHATSAPP_URL, CONTACT_EMAIL, GITHUB_URL, LINKEDIN_URL } from "@/data/studio";
 
-interface HeroProps {
-  availabilityStatus?: string;
-}
-
-function Hero({ availabilityStatus }: HeroProps) {
-  const currentStatus = availabilityStatus || "Taking 2 builds a month · booking the next slot";
-
+function Hero() {
   return (
     <section className="relative mx-auto flex min-h-[85vh] max-w-5xl flex-col justify-center px-5 py-16 lg:py-24 overflow-hidden">
       {/* Architectural Dot-Matrix Background Grid — visible in dark, hidden in light */}
@@ -50,12 +33,7 @@ function Hero({ availabilityStatus }: HeroProps) {
 
       <div className="relative z-10 grid gap-12 lg:grid-cols-[1.2fr_1.1fr] lg:items-center">
         <div className="rise-in">
-          <div className="inline-flex items-center gap-2 rounded-full border border-emerald-600/30 dark:border-emerald-500/30 bg-emerald-50 dark:bg-emerald-500/10 px-3.5 py-1 text-xs font-semibold tracking-wide text-emerald-800 dark:text-emerald-400 shadow-sm">
-            <span className="size-2 rounded-full bg-emerald-600 dark:bg-emerald-400 shadow-[0_0_8px_#10b981] animate-pulse" />
-            Quote-to-job systems · for businesses that quote, approve and deliver
-          </div>
-
-          <h1 className="mt-5 font-serif text-4xl sm:text-5xl md:text-6xl leading-[1.08] tracking-[-0.03em]">
+          <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl leading-[1.08] tracking-[-0.03em]">
             <span className="text-foreground">Quotes and jobs shouldn't </span>
             {/* Dark mode: gradient. Light mode: flat forest green — gradient is invisible on cream */}
             <span className="font-bold text-emerald-800 dark:bg-gradient-to-r dark:from-emerald-400 dark:via-teal-300 dark:to-cyan-400 dark:bg-clip-text dark:text-transparent">
@@ -64,32 +42,22 @@ function Hero({ availabilityStatus }: HeroProps) {
           </h1>
 
           <p className="mt-6 max-w-xl text-lg sm:text-xl leading-relaxed text-muted-foreground">
-            I build the system a business actually runs: quote → confirm → work. Fixed price. You keep the repo. Live on an industrial converting workflow and on Trelio.
+            I build the quoting and job system your business runs on, around your own rates.
           </p>
-
-          <div className="mt-6 inline-flex items-center gap-2 rounded-xl border border-border/80 bg-secondary/50 px-3.5 py-1.5 text-xs text-foreground font-mono">
-            <span className="size-2 rounded-full bg-emerald-500" />
-            <span>Capacity: <strong className="font-semibold text-emerald-700 dark:text-emerald-400">{currentStatus}</strong></span>
-          </div>
 
           <div className="mt-8 flex flex-wrap items-center gap-3.5">
             <Button asChild size="lg" className="btn-sage-glow rounded-xl font-medium shadow-md active:scale-[0.98] transition-all px-6 py-2.5">
-              <a href="#pricing">
-                <span>Book a ₹20k Diagnosis →</span>
+              <a href="/book">
+                <span>Book a 20-minute call →</span>
               </a>
             </Button>
             <Button asChild size="lg" variant="outline" className="rounded-xl border-border/80 hover:border-cyan-500/50 hover:text-cyan-800 dark:hover:text-cyan-300 font-medium shadow-sm active:scale-[0.98] transition-all">
-              <a
-                href="https://industrial-packaging-platform.vercel.app"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2"
-              >
-                <span>Open Live Plant Quote</span>
-                <ExternalLink className="size-3.5" />
+              <a href="#systems" className="inline-flex items-center gap-2">
+                <span>See the work</span>
               </a>
             </Button>
           </div>
+          <p className="mt-4 text-sm text-muted-foreground">First call is free.</p>
         </div>
 
         <div>
@@ -132,15 +100,6 @@ function LiveSystems() {
                 <span className="font-mono text-xs font-semibold text-cyan-800 dark:text-cyan-300">Industrial Converting Plant CPQ</span>
               </div>
               <div className="flex items-center gap-2">
-                <a
-                  href="https://industrial-packaging-platform.vercel.app"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 rounded-full border border-cyan-500/30 bg-cyan-500/10 px-3 py-1 text-xs font-semibold text-cyan-800 dark:text-cyan-300 hover:bg-cyan-500/20 shadow-xs transition-all"
-                >
-                  <ExternalLink className="size-3" />
-                  <span>Open Live Demo ↗</span>
-                </a>
                 <a
                   href="https://github.com/Chanakya2006gt/Industrial-packaging-platform"
                   target="_blank"
@@ -197,12 +156,6 @@ function LiveSystems() {
 
             <CardFooter className="px-0 pt-4 flex flex-wrap items-center justify-between border-t border-border/60 gap-3">
               <span className="font-mono text-xs text-muted-foreground">Stack: React · TypeScript · PostgreSQL RLS · CPQ Math Engine</span>
-              <Button asChild size="sm" className="btn-sage-glow rounded-xl font-semibold shadow-xs">
-                <a href="https://industrial-packaging-platform.vercel.app" target="_blank" rel="noopener noreferrer">
-                  <span>Open Live Demo</span>
-                  <ExternalLink className="ml-1.5 size-3.5" />
-                </a>
-              </Button>
             </CardFooter>
           </div>
         </Card>
@@ -238,7 +191,7 @@ function LiveSystems() {
                 </Badge>
               </div>
               <p className="mt-1 text-xs text-muted-foreground">
-                In continuous development since March 2026 · 623 commits · 58 test suites · multi-tenant, payments, RLS, audit ledger
+                In continuous development since March 2026 · multi-tenant, payments, RLS, audit ledger
               </p>
               <CardDescription className="text-sm sm:text-base text-muted-foreground leading-relaxed pt-2">
                 Authorization-Before-Execution SaaS for freelancers and creative studios to eliminate unpaid work and runaway revisions.
@@ -257,7 +210,7 @@ function LiveSystems() {
                 </div>
                 <div className="p-3.5 rounded-xl border border-border/60 bg-secondary/30">
                   <strong className="text-foreground block font-medium mb-1">Verified Audit Trail</strong>
-                  <p className="text-muted-foreground text-xs leading-relaxed">448 automated test suites verifying immutable approval timestamps and multi-tenant security.</p>
+                  <p className="text-muted-foreground text-xs leading-relaxed">Automated tests cover approval timestamps and multi-tenant security.</p>
                 </div>
               </div>
             </CardContent>
@@ -298,7 +251,7 @@ function TrustAndTerms() {
           How engagements work and what you actually own.
         </h2>
         <p className="mt-3 max-w-2xl text-muted-foreground text-sm sm:text-base leading-relaxed">
-          Clear terms, fixed prices, and direct senior engineering. No hidden scope creep, no junior handoffs.
+          Clear terms, a fixed quote before you commit, and you work directly with the person who builds it.
         </p>
 
         <div className="mt-10 grid gap-6 sm:grid-cols-2">
@@ -334,7 +287,7 @@ function TrustAndTerms() {
               <h3 className="font-serif text-lg font-semibold text-foreground">What I Refuse To Build</h3>
             </div>
             <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
-              <strong>No generic brochure websites, no 50-page PowerPoint decks, and no unmanageable full-company ERPs in 15 days.</strong> I build the whole of one critical, revenue-blocking operational workflow (quotes, approvals, or payments) and engineer it to absolute completion.
+              <strong>No 50-page PowerPoint decks and no unmanageable full-company ERPs.</strong> I build the whole of one critical, revenue-blocking operational workflow (quotes, approvals, or payments) and engineer it to absolute completion.
             </p>
           </Card>
 
@@ -343,10 +296,10 @@ function TrustAndTerms() {
               <div className="flex size-8 items-center justify-center rounded-lg bg-indigo/15 text-indigo border border-indigo/30">
                 <CheckCircle2 className="size-4" />
               </div>
-              <h3 className="font-serif text-lg font-semibold text-foreground">How The Money Works</h3>
+              <h3 className="font-serif text-lg font-semibold text-foreground">A fixed quote before you commit</h3>
             </div>
             <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
-              <strong>Fixed prices with 100% diagnosis credit.</strong> The ₹20,000 paid diagnosis is fully credited against your 15-day build. Builds are structured in milestones: work pauses if a milestone payment is pending, so neither party ever takes unbounded risk.
+              The diagnosis ends in a fixed quote for the build. Builds are structured in milestones: work pauses if a milestone payment is pending, so neither side takes unbounded risk.
             </p>
           </Card>
         </div>
@@ -357,23 +310,6 @@ function TrustAndTerms() {
 
 function Contact() {
   const { ref, isVisible } = useScrollAnimation();
-  const [dialogOpen, setDialogOpen] = useState(false);
-
-  const handleNoteSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    const formData = new FormData(e.currentTarget);
-    const subject = (formData.get("subject") as string) || "";
-    const body = (formData.get("body") as string) || "";
-
-    if (!subject.trim() || !body.trim()) {
-      toast.error("Please fill in both subject and message");
-      return;
-    }
-
-    toast.success("Opening your email client...");
-    setDialogOpen(false);
-    window.location.href = `mailto:nagulagamchanakya2211@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-  };
 
   return (
     <section
@@ -388,40 +324,40 @@ function Contact() {
         <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">Contact</p>
       </div>
       <h2 className="mt-3 font-serif text-3xl tracking-tight sm:text-4xl">
-        Let's build your operational workflow.
+        Let's look at how you quote today.
       </h2>
-      <p className="mt-4 max-w-lg text-lg text-foreground/90 font-serif italic">
-        "Fixed-price quote-to-job systems for operating businesses. Straight to engineering."
+      <p className="mt-4 max-w-lg text-base text-muted-foreground">
+        Twenty minutes, free. If custom software isn't worth it for you, I'll say so.
       </p>
 
-      <div className="mt-10 flex flex-wrap items-center gap-3">
-        <Dialog open={dialogOpen} onOpenChange={setDialogOpen}>
-          <DialogTrigger asChild>
-            <Button size="lg" className="btn-sage-glow rounded-xl px-7 shadow-md">
-              <Mail className="mr-2 size-4" />
-              Send a direct note
-            </Button>
-          </DialogTrigger>
-          <DialogContent className="rounded-2xl border-border/70 bg-card">
-            <DialogHeader>
-              <DialogTitle className="font-serif text-xl">Send a direct message</DialogTitle>
-              <DialogDescription>
-                Opens your mail client directly to <strong className="text-foreground">nagulagamchanakya2211@gmail.com</strong>.
-              </DialogDescription>
-            </DialogHeader>
-            <form className="grid gap-4 mt-2" onSubmit={handleNoteSubmit}>
-              <div className="grid gap-2">
-                <Label htmlFor="subject" className="text-xs">Subject</Label>
-                <Input id="subject" name="subject" placeholder="Paid Diagnosis / Quoting Workflow..." required className="rounded-xl bg-secondary/50" />
-              </div>
-              <div className="grid gap-2">
-                <Label htmlFor="body" className="text-xs">Message</Label>
-                <Textarea id="body" name="body" placeholder="What are the details of your operational workflow?" required rows={4} className="rounded-xl bg-secondary/50" />
-              </div>
-              <Button type="submit" className="rounded-xl mt-2 btn-sage-glow">Open mail client</Button>
-            </form>
-          </DialogContent>
-        </Dialog>
+      <div className="mt-8 flex flex-wrap items-center gap-4">
+        <Button asChild size="lg" className="btn-sage-glow rounded-xl px-7 shadow-md">
+          <a href="/book">
+            <span>Book a 20-minute call</span>
+          </a>
+        </Button>
+        <Button asChild size="lg" variant="outline" className="rounded-xl border-border/80 font-medium">
+          <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
+            <span>Message on WhatsApp</span>
+          </a>
+        </Button>
+        <a
+          href={`mailto:${CONTACT_EMAIL}`}
+          className="text-sm font-medium text-foreground underline underline-offset-4 hover:text-sage transition-colors"
+        >
+          {CONTACT_EMAIL}
+        </a>
+      </div>
+
+      <div className="mt-12 pt-8 border-t border-border/70 max-w-md">
+        <h3 className="text-sm font-semibold text-foreground">
+          What happens next
+        </h3>
+        <ol className="mt-3 space-y-2 text-xs sm:text-sm text-muted-foreground list-decimal list-inside">
+          <li>You pick a time.</li>
+          <li>I send you a WhatsApp message the day before.</li>
+          <li>We talk for 20 minutes about how you quote today.</li>
+        </ol>
       </div>
     </section>
   );
@@ -442,7 +378,7 @@ export function PortfolioHome({ initialData }: { initialData?: DynamicData | nul
       <SiteNav />
 
       <main id="main-content">
-        <Hero availabilityStatus={data?.availabilityStatus} />
+        <Hero />
         <Separator />
         <OfferLadder />
         <Separator />
@@ -459,23 +395,22 @@ export function PortfolioHome({ initialData }: { initialData?: DynamicData | nul
         <div className="mx-auto max-w-5xl px-5">
           <div className="flex flex-col items-center justify-between gap-4 text-xs text-muted-foreground sm:flex-row">
             <div>
-              <p className="font-medium text-foreground">Nagulagam Chanakya</p>
-              <p className="text-muted-foreground mt-0.5">Quote-to-job systems for operating businesses · nagulagamchanakya2211@gmail.com</p>
+              <p className="font-medium text-foreground">ChanBuilds</p>
+              <p className="text-muted-foreground mt-0.5">Built by Nagulagam Chanakya · {CONTACT_EMAIL}</p>
             </div>
             <div className="flex flex-wrap items-center gap-4 text-xs font-mono">
-              <a href="#pricing" className="hover:text-foreground transition-colors">Pricing</a>
-              <a href="#systems" className="hover:text-foreground transition-colors">Live Systems</a>
-              <a href="/method" className="hover:text-foreground transition-colors">Method</a>
+              <a href="#systems" className="hover:text-foreground transition-colors">Work</a>
+              <a href="#process" className="hover:text-foreground transition-colors">Process</a>
               <a href="#faq" className="hover:text-foreground transition-colors">FAQ</a>
-              <a href="#about" className="hover:text-foreground transition-colors">Trust & Terms</a>
-              <a href="#contact" className="hover:text-foreground transition-colors">Contact</a>
-              <a href="https://github.com/Chanakya2006gt" target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors">GitHub</a>
-              <a href="https://www.linkedin.com/in/nagulagam-chanakya-b93514315" target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors">LinkedIn</a>
+              <a href="/book" className="hover:text-foreground transition-colors">Book a call</a>
+              <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors">WhatsApp</a>
+              <a href={GITHUB_URL} target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors">GitHub</a>
+              <a href={LINKEDIN_URL} target="_blank" rel="noopener noreferrer" className="hover:text-foreground transition-colors">LinkedIn</a>
             </div>
           </div>
           <Separator className="my-6" />
           <div className="flex items-center justify-between text-[11px] text-muted-foreground">
-            <p>© {new Date().getFullYear()} Nagulagam Chanakya. Fixed-price operational software.</p>
+            <p>© {new Date().getFullYear()} ChanBuilds. Built by Nagulagam Chanakya.</p>
             <a href="#top" className="hover:text-foreground transition-colors inline-flex items-center gap-1">
               Back to top <ArrowUp className="size-3" />
             </a>

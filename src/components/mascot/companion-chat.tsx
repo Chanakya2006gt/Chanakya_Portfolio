@@ -1,7 +1,6 @@
 import { useState, useRef, useEffect } from "react";
-import { Send, X, Bot, User, RefreshCw } from "lucide-react";
+import { Send, X, Bot, User, RefreshCw, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { CompanionSvg } from "./companion-svg";
 
 export interface Message {
   id: string;
@@ -10,12 +9,10 @@ export interface Message {
 }
 
 const PREBUILT_QUESTIONS = [
-  { label: "📋 Fixed-price builds & pricing", query: "What do your fixed-price builds include and how much does a paid diagnosis cost?" },
-  { label: "🤔 Why not just use Zoho?", query: "Why should I pay for a custom build instead of using Zoho or an off-the-shelf tool?" },
-  { label: "🏗️ Do you work with my industry?", query: "What kinds of businesses do you build for?" },
-  { label: "🚀 Tell me about Trelio", query: "What is Trelio and how does it work?" },
-  { label: "🏭 Apex Packaging CPQ", query: "How does Apex Packaging handle FINAT standards and quotes?" },
-  { label: "📬 How to contact?", query: "How can I contact Chanakya to book a paid diagnosis?" },
+  { label: "What do you build?", query: "What do you build?" },
+  { label: "How does a project run?", query: "How does a project run?" },
+  { label: "Is this right for my business?", query: "Is this right for my business?" },
+  { label: "How do I start?", query: "How do I start?" },
 ];
 
 interface CompanionChatProps {
@@ -109,7 +106,7 @@ export function CompanionChat({ isOpen, onClose }: CompanionChatProps) {
       id: "welcome",
       role: "assistant",
       content:
-        "👋 I'm Chanakya's assistant. Ask me about pricing, how a build runs, what you own at the end, or whether your workflow is a fit.",
+        "Hi, I can answer questions about how ChanBuilds works, what you own at the end, and whether your workflow is a fit.",
     },
   ]);
   const [input, setInput] = useState("");
@@ -197,24 +194,24 @@ export function CompanionChat({ isOpen, onClose }: CompanionChatProps) {
     <div
       role="dialog"
       aria-modal="true"
-      aria-label="AI Solutions Assistant"
+      aria-label="Ask about ChanBuilds"
       className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50 flex h-[520px] max-h-[min(520px,80vh)] w-[90vw] max-w-[400px] flex-col overflow-hidden rounded-2xl border border-border bg-card shadow-[0_0_40px_rgba(0,0,0,0.6)] backdrop-blur-xl rise-in"
     >
       {/* Header */}
       <div className="flex items-center justify-between border-b border-border/80 bg-secondary/80 px-4 py-3">
         <div className="flex items-center gap-3">
-          <div className="relative flex size-10 items-center justify-center rounded-full border border-sage/40 bg-card">
-            <CompanionSvg state="idle" size={32} />
+          <div className="relative flex size-8 items-center justify-center rounded-full border border-sage/40 bg-card">
+            <MessageCircle className="size-4 text-sage" />
           </div>
           <div>
             <div className="flex items-center gap-1.5">
               <h3 className="text-xs font-semibold text-foreground">
-                Chanakya's Assistant
+                Ask about ChanBuilds
               </h3>
               <span className="flex size-2 rounded-full bg-sage animate-pulse" />
             </div>
             <p className="text-[10px] text-muted-foreground">
-              Answers about pricing, scope and fit
+              Answers about how a project runs and whether it fits
             </p>
           </div>
         </div>
@@ -295,7 +292,7 @@ export function CompanionChat({ isOpen, onClose }: CompanionChatProps) {
           type="text"
           value={input}
           onChange={(e) => setInput(e.target.value)}
-          placeholder="Ask anything about builds or pricing..."
+          placeholder="Ask about how a project runs..."
           className="flex-1 rounded-xl border border-border/80 bg-card px-3 py-2 text-xs text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-sage/60"
         />
         <Button

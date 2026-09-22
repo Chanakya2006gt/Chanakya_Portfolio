@@ -5,9 +5,9 @@ export interface FAQItem {
 
 export const faqs: FAQItem[] = [
   {
-    question: "What does a build actually cost?",
+    question: "What does it cost?",
     answer:
-      "Most builds land between ₹2L and ₹12L, depending on how many workflows and sites are involved. A single workflow for one location sits at the lower end; multi-site or multi-department systems at the upper. You get an exact fixed number out of the ₹20,000 diagnosis — before you commit to anything.",
+      "It depends on your workflow. That's why the first call is free and the diagnosis ends in a fixed quote. You'll know the exact number before you commit.",
   },
   {
     question: "Why not just use Zoho, or an off-the-shelf tool?",
@@ -22,7 +22,7 @@ export const faqs: FAQItem[] = [
   {
     question: "What happens after launch?",
     answer:
-      "Fourteen days of bug fixes are included. After that, an optional care retainer (₹20k–₹35k/month) covers maintenance, small changes and priority response. It's optional — plenty of projects don't need it.",
+      "Fourteen days of bug fixes are included. After that, optional monthly support covers maintenance, small changes and priority response. Plenty of projects don't need it.",
   },
   {
     question: "What do you need from me?",
@@ -35,18 +35,23 @@ export const faqs: FAQItem[] = [
       "Yes. The work is remote and async by default, with scheduled calls in your working hours.",
   },
   {
-    question: "What if it isn't finished in 15 days?",
+    question: "What if it isn't finished on time?",
     answer:
-      "The scope is fixed in the diagnosis precisely so this doesn't happen. If something in my control runs over, I finish it at no extra cost — the price was agreed before the work started.",
+      "The scope and timeline are fixed in the diagnosis precisely so this doesn't happen. If something in my control runs over, I finish it.",
   },
   {
     question: "What kinds of businesses do you build for?",
     answer:
-      "Any business where work is gated on a quote or an approval. So far that's been an industrial converting line and a multi-tenant payment platform — but the same shape appears in fabrication, interiors, printing, events, equipment rental and contracting. If your process is someone asks for a price → someone approves → work starts → someone pays, it's the same system. The diagnosis tells us in three days whether it fits.",
+      "Any business where work is gated on a quote or an approval. So far that's been an industrial converting line and a multi-tenant payment platform — but the same shape appears in fabrication, interiors, printing, events, equipment rental and contracting. If your process is someone asks for a price → someone approves → work starts → someone pays, it's the same system. The first call tells us whether it fits.",
+  },
+  {
+    question: "Isn't custom software only for big companies?",
+    answer:
+      "It used to be. Today one builder can shape a system around your business in about two months, so it's within reach for a business your size.",
   },
   {
     question: "Do you build regular websites too?",
     answer:
-      "Yes — marketing sites, landing pages, straightforward builds. Those don't need a paid diagnosis: the scope is clear from one conversation, so the quote is free and usually same-day. The ₹20,000 diagnosis exists for work where I genuinely can't quote you honestly without digging first — quoting logic, approval flows, anything wired into a system you already run. If I can quote it for free, I will.",
+      "Yes — marketing sites, landing pages, straightforward builds. Those don't need a paid diagnosis: the scope is clear from one conversation, so the quote is free and usually same-day. The paid diagnosis exists for work where I genuinely can't quote you honestly without digging first — quoting logic, approval flows, anything wired into a system you already run. If I can quote it for free, I will.",
   },
 ];

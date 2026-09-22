@@ -21,8 +21,8 @@ export function SiteNav() {
   return (
     <header className="sticky top-0 z-40 border-b border-border/80 bg-background/80 backdrop-blur-md">
       <div className="mx-auto flex h-16 max-w-5xl items-center justify-between px-5">
-        <a href="#top" className="text-sm font-medium tracking-tight hover:opacity-80 transition-opacity">
-          Chanakya<span className="text-sage">.</span>
+        <a href="/#top" className="text-sm font-medium tracking-tight hover:opacity-80 transition-opacity">
+          ChanBuilds<span className="text-sage">.</span>
         </a>
 
         {/* Center Navigation Links */}
@@ -31,10 +31,11 @@ export function SiteNav() {
             const isExternalOrRoute = link.href.startsWith("/");
             const sectionId = link.href.replace("#", "").replace("/", "");
             const isActive = !isExternalOrRoute && activeSection === sectionId;
+            const fullHref = link.href.startsWith("#") ? `/${link.href}` : link.href;
             return (
               <a
                 key={link.href}
-                href={link.href}
+                href={fullHref}
                 className={`text-sm transition-colors relative py-1 ${
                   isActive
                     ? "font-medium text-sage"
@@ -54,8 +55,8 @@ export function SiteNav() {
         <div className="hidden md:flex items-center gap-3">
           <ThemeToggle />
           <Button asChild size="sm" className="btn-sage-glow rounded-xl font-semibold shadow-xs text-xs px-3.5 py-1.5 h-9">
-            <a href="/#pricing">
-              <span>Book a ₹20k Diagnosis</span>
+            <a href="/book">
+              <span>Book a call</span>
               <ArrowRight className="ml-1 size-3.5" />
             </a>
           </Button>
@@ -64,8 +65,8 @@ export function SiteNav() {
         {/* Mobile menu trigger */}
         <div className="flex items-center gap-2 md:hidden">
           <Button asChild size="sm" className="btn-sage-glow rounded-lg font-semibold text-[11px] px-2.5 py-1 h-8">
-            <a href="/#pricing">
-              <span>₹20k Diagnosis</span>
+            <a href="/book">
+              <span>Book a call</span>
             </a>
           </Button>
           <ThemeToggle />
@@ -85,20 +86,23 @@ export function SiteNav() {
                 <SheetTitle>Menu</SheetTitle>
               </SheetHeader>
               <div className="mt-8 flex flex-col gap-4">
-                {navLinks.map((link) => (
-                  <a
-                    key={link.href}
-                    href={link.href}
-                    onClick={() => setOpen(false)}
-                    className="text-base text-muted-foreground hover:text-sage transition-colors"
-                  >
-                    {link.label}
-                  </a>
-                ))}
+                {navLinks.map((link) => {
+                  const fullHref = link.href.startsWith("#") ? `/${link.href}` : link.href;
+                  return (
+                    <a
+                      key={link.href}
+                      href={fullHref}
+                      onClick={() => setOpen(false)}
+                      className="text-base text-muted-foreground hover:text-sage transition-colors"
+                    >
+                      {link.label}
+                    </a>
+                  );
+                })}
                 <div className="pt-4 border-t border-border/60">
                   <Button asChild className="btn-sage-glow w-full rounded-xl font-semibold justify-center">
-                    <a href="/#pricing" onClick={() => setOpen(false)}>
-                      <span>Book a ₹20k Diagnosis →</span>
+                    <a href="/book" onClick={() => setOpen(false)}>
+                      <span>Book a call →</span>
                     </a>
                   </Button>
                 </div>
