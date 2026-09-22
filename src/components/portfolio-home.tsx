@@ -15,41 +15,96 @@ import { STUDIO_NAME, WHATSAPP_URL, CONTACT_EMAIL, GITHUB_URL } from "@/data/stu
 
 function Hero() {
   return (
-    <section className="relative mx-auto flex min-h-[80vh] max-w-5xl flex-col justify-center px-5 py-20 lg:py-28 overflow-hidden text-center sm:text-left">
+    <section className="relative mx-auto max-w-6xl px-5 py-16 lg:py-20">
       {/* Architectural Dot-Matrix Background Grid */}
       <div className="absolute inset-0 bg-grid-pattern pointer-events-none -z-10 opacity-0 dark:opacity-60" />
 
-      <div className="relative z-10 max-w-3xl">
-        <div className="inline-flex items-center gap-2 rounded-full border border-border/80 bg-secondary/60 px-3 py-1 text-xs font-mono text-muted-foreground mb-6 shadow-xs">
-          <span className="size-2 rounded-full bg-emerald-500" />
-          <span>{STUDIO_NAME} · Bespoke Software for Operations</span>
+      <div className="relative z-10 grid items-center gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(300px,400px)] lg:gap-14">
+        {/* LEFT: existing copy block */}
+        <div className="max-w-xl text-left">
+          <div className="inline-flex items-center gap-2 rounded-full border border-border/80 bg-secondary/60 px-3 py-1 text-xs font-mono text-muted-foreground mb-6 shadow-xs">
+            <span>{STUDIO_NAME} · Operational software</span>
+          </div>
+
+          <h1 className="font-sans text-4xl sm:text-5xl md:text-6xl leading-[1.1] tracking-[-0.03em] font-semibold text-foreground">
+            We build software that runs businesses.
+          </h1>
+
+          <p className="mt-6 max-w-2xl text-lg sm:text-xl leading-relaxed text-muted-foreground font-normal">
+            Quotes, pricing, and operations shouldn't live in WhatsApp and spreadsheets. We build CPQ engines, stage-locked workflows, and internal tools around your rules.
+          </p>
+
+          <div className="mt-8 flex flex-wrap items-center gap-3.5">
+            <Button asChild size="lg" className="rounded-xl font-medium shadow-md active:scale-[0.98] transition-all px-6 py-2.5">
+              <a href="/book">
+                <span>Book a 20-minute call</span>
+                <ArrowRight className="ml-2 size-4" />
+              </a>
+            </Button>
+            <Button asChild size="lg" variant="outline" className="rounded-xl border-border/80 hover:border-emerald-500/50 hover:text-emerald-800 dark:hover:text-emerald-300 font-medium shadow-sm active:scale-[0.98] transition-all">
+              <a href="#work">
+                <span>See our work</span>
+              </a>
+            </Button>
+          </div>
+
+          <p className="mt-4 text-xs sm:text-sm text-muted-foreground font-mono">
+            First call is free · Fixed quotes scoped to your problem size · 100% code ownership
+          </p>
         </div>
 
-        <h1 className="font-sans text-4xl sm:text-5xl md:text-6xl leading-[1.1] tracking-[-0.03em] font-semibold text-foreground">
-          We build software that runs businesses.
-        </h1>
+        {/* RIGHT: static product artifact card */}
+        <div className="w-full">
+          <Card className="border border-border/80 bg-card p-5 sm:p-6 shadow-sm rounded-2xl space-y-5">
+            {/* Header row */}
+            <div className="flex items-start justify-between gap-3">
+              <div>
+                <p className="text-sm font-semibold text-foreground">Apex Packaging · Plant quote</p>
+                <p className="text-xs text-muted-foreground">Beverage roll labels · BOPP 60μm</p>
+              </div>
+              <Badge variant="outline" className="font-mono text-[10px] tracking-wider text-muted-foreground border-border/80 shrink-0">
+                Reference build
+              </Badge>
+            </div>
 
-        <p className="mt-6 max-w-2xl text-lg sm:text-xl leading-relaxed text-muted-foreground font-normal">
-          Quotes, pricing, and operations shouldn't live in WhatsApp and spreadsheets. We design and build bespoke CPQ platforms, stage-locked workflows, and internal operating tools tailored to your business rules. Talk directly to the people who build it.
-        </p>
+            {/* Panel */}
+            <div className="rounded-xl border border-border/60 bg-secondary/30 p-3.5 space-y-1">
+              <p className="font-mono text-[10px] tracking-wide text-emerald-800 dark:text-emerald-400 font-medium">QUOTE READY</p>
+              <p className="text-xs sm:text-sm font-medium text-foreground">50,000 labels · FINAT 4 rewind</p>
+              <p className="text-xs text-muted-foreground">Meters and substrate from the same spec the press uses.</p>
+            </div>
 
-        <div className="mt-8 flex flex-wrap items-center justify-center sm:justify-start gap-3.5">
-          <Button asChild size="lg" className="rounded-xl font-medium shadow-md active:scale-[0.98] transition-all px-6 py-2.5">
-            <a href="/book">
-              <span>Book a 20-minute call</span>
-              <ArrowRight className="ml-2 size-4" />
-            </a>
-          </Button>
-          <Button asChild size="lg" variant="outline" className="rounded-xl border-border/80 hover:border-emerald-500/50 hover:text-emerald-800 dark:hover:text-emerald-300 font-medium shadow-sm active:scale-[0.98] transition-all">
-            <a href="#work">
-              <span>See our work</span>
-            </a>
-          </Button>
+            {/* Workflow section */}
+            <div className="space-y-2.5 pt-1">
+              <div className="flex items-center justify-between font-mono text-[10px] text-muted-foreground">
+                <span>WORKFLOW</span>
+                <span>4 steps</span>
+              </div>
+              <div className="divide-y divide-border/60 rounded-xl border border-border/60 bg-secondary/20 overflow-hidden text-xs">
+                <div className="flex items-center gap-3 px-3 py-2">
+                  <span className="font-mono text-[11px] text-muted-foreground">01</span>
+                  <span className="text-foreground/90">Request in — WhatsApp / spreadsheet</span>
+                </div>
+                <div className="flex items-center gap-3 px-3 py-2">
+                  <span className="font-mono text-[11px] text-muted-foreground">02</span>
+                  <span className="text-foreground/90">Price — Floor rules + yield</span>
+                </div>
+                <div className="flex items-center gap-3 px-3 py-2">
+                  <span className="font-mono text-[11px] text-muted-foreground">03</span>
+                  <span className="text-foreground/90">Confirm — Buyer sign-off</span>
+                </div>
+                <div className="flex items-center gap-3 px-3 py-2">
+                  <span className="font-mono text-[11px] text-muted-foreground">04</span>
+                  <span className="text-foreground/90">Release — Job ticket + stage lock</span>
+                </div>
+              </div>
+            </div>
+          </Card>
+
+          <p className="mt-3 text-center sm:text-left font-mono text-xs text-muted-foreground">
+            You keep the repo · deployed on your cloud
+          </p>
         </div>
-
-        <p className="mt-4 text-xs sm:text-sm text-muted-foreground font-mono">
-          First call is free · Fixed quotes scoped to your problem size · 100% code ownership
-        </p>
       </div>
     </section>
   );
