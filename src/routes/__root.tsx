@@ -71,7 +71,7 @@ export const Route = createRootRoute({
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: APP_NAME },
-      { name: "theme-color", content: "#0a0a0b" },
+      { name: "theme-color", content: "#f8f7f4" },
       { name: "description", content: APP_DESC },
       { name: "keywords", content: "CK Builds, Quote-to-job systems, industrial CPQ platform, packaging converting quoting, FINAT unwind standards, milestone authorization SaaS, Trelio, operational software" },
       { name: "author", content: "CK Builds" },
@@ -96,9 +96,6 @@ export const Route = createRootRoute({
         type: "application/ld+json",
         children: JSON.stringify(JSON_LD),
       },
-      {
-        children: `(function(){try{var stored=localStorage.getItem("theme");if(stored==="light"||(!stored&&window.matchMedia("(prefers-color-scheme: light)").matches)){document.documentElement.classList.add("light");document.documentElement.classList.remove("dark");}else{document.documentElement.classList.add("dark");document.documentElement.classList.remove("light");}}catch(e){}})();`,
-      },
     ],
     links: [
       { rel: "canonical", href: SITE_URL },
@@ -119,14 +116,14 @@ export const Route = createRootRoute({
     ],
   }),
   component: () => (
-    <html lang="en" className="dark antialiased">
+    <html lang="en" className="antialiased">
       <head>
         <HeadContent />
       </head>
       <body className="bg-noise min-h-screen">
         <TooltipProvider delayDuration={200}>
           <Outlet />
-          <Toaster position="bottom-right" theme="dark" />
+          <Toaster position="bottom-right" theme="light" />
         </TooltipProvider>
         <Scripts />
       </body>

@@ -17,7 +17,7 @@ export function OfferLadder() {
     >
       {/* Eyebrow */}
       <div className="flex items-center gap-2">
-        <span className="h-4 w-1 rounded-full bg-emerald-600 dark:bg-emerald-400 shadow-[0_0_8px_#10b981]" />
+        <span className="h-4 w-1 rounded-full bg-foreground" />
         <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">Process</p>
       </div>
 
@@ -38,11 +38,11 @@ export function OfferLadder() {
         <Card className="card-specular relative flex flex-col justify-between rounded-2xl p-6 border border-border/80 bg-card shadow-md">
           <div className="space-y-4">
             <div className="flex items-center justify-between">
-              <span className="font-mono text-xs font-bold text-sage">01</span>
+              <span className="font-mono text-xs font-bold text-data">01</span>
               <span className="text-xs font-mono text-muted-foreground">20 minutes · free</span>
             </div>
             <div className="flex items-center gap-2 text-foreground">
-              <PhoneCall className="size-4 text-emerald-800 dark:text-emerald-400" />
+              <PhoneCall className="size-4 text-foreground" />
               <h3 className="font-sans text-xl font-semibold tracking-tight">Discovery Call</h3>
             </div>
             <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
@@ -60,11 +60,11 @@ export function OfferLadder() {
         <Card className="card-specular relative flex flex-col justify-between rounded-2xl p-6 border border-border/80 bg-card shadow-md">
           <div className="space-y-4">
             <div className="flex items-center justify-between">
-              <span className="font-mono text-xs font-bold text-sage">02</span>
+              <span className="font-mono text-xs font-bold text-data">02</span>
               <span className="text-xs font-mono text-muted-foreground">Problem-sized</span>
             </div>
             <div className="flex items-center gap-2 text-foreground">
-              <FileSpreadsheet className="size-4 text-cyan-800 dark:text-cyan-400" />
+              <FileSpreadsheet className="size-4 text-foreground" />
               <h3 className="font-sans text-xl font-semibold tracking-tight">Scope & Fixed Quote</h3>
             </div>
             <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
@@ -82,11 +82,11 @@ export function OfferLadder() {
         <Card className="card-specular relative flex flex-col justify-between rounded-2xl p-6 border border-border/80 bg-card shadow-md">
           <div className="space-y-4">
             <div className="flex items-center justify-between">
-              <span className="font-mono text-xs font-bold text-sage">03</span>
+              <span className="font-mono text-xs font-bold text-data">03</span>
               <span className="text-xs font-mono text-muted-foreground">100% Code Handover</span>
             </div>
             <div className="flex items-center gap-2 text-foreground">
-              <Rocket className="size-4 text-indigo" />
+              <Rocket className="size-4 text-foreground" />
               <h3 className="font-sans text-xl font-semibold tracking-tight">Build & Handover</h3>
             </div>
             <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">

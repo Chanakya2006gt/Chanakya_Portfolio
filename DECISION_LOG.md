@@ -144,3 +144,37 @@ git checkout main && git merge dev && git push origin main
   - Verified `Apex Packaging · Plant quote` and `50,000 labels · FINAT 4 rewind` present in live HTML payload.
   - Verified H1 `"We build software that runs businesses."` rendering in `IBM Plex Sans`.
 
+
+---
+
+## 2026-10-15: Phase 2 — Light only, and a four-role palette
+
+Plan: `studio-plans/PHASE-2-light-only-and-palette.md` (Chanakya's brief is recorded verbatim at the top).
+
+### Decisions & rationale
+- **Deleted dark mode.** `:root` was the dark theme and `.light` overrode it; `<html>` shipped with `className="dark"` and a script switched it from `localStorage` / `prefers-color-scheme`. Visitors whose system was set to dark saw an unchecked version of the site. Light is now the only theme: light values live in `:root`, the `.light` block, `@custom-variant dark`, the theme script, `ThemeToggle` and all 22 `dark:` classes are gone, `Toaster theme="light"`, `theme-color` and the manifest colours are `#f8f7f4`.
+- **Four colour roles** (contrast on `#f8f7f4`): ink = walnut `#5A3E2B` (9.08), action = sage `#1f653b` (6.57; `--primary`, so default buttons are sage), data = amber `#96570C` (5.35, new `--data` / `text-data`), surfaces = sage `#87A96B` at 8–12% (new `--surface`, plus `--muted`/`--secondary`/`--accent`/`--border`). Raw amber `#D5851F` (2.72) rejected for text.
+- **Usage rule:** sage only on clickable things; amber only on data (step numbers, "QUOTE READY", work-card badges), never on buttons/links. Supporting mono metadata stays muted.
+- **Removed hues:** emerald, cyan, indigo tokens/classes and the `#10b981` glow from the touched files; deleted unused `.btn-indigo-glow`, `.nav-dot-active`, and the always-invisible `.bg-grid-pattern` div + CSS.
+- **Bug fixed while auditing:** admin headings (`admin/login.tsx`, `admin/index.tsx`) used `text-white`, invisible on paper → `text-foreground`.
+- **Kept:** `--muted-foreground #4a524c`, card `--shadow-border` neutral ring (sage at 12% alone is ~1.1:1 and would leave cards edgeless). Both listed as open questions in the plan.
+- **Out of scope:** chatbot (`mascot/*`) still uses sage on non-interactive bits; left for its rewrite.
+
+### Shell commands executed
+```bash
+git rm src/components/theme-toggle.tsx
+npm ci
+npm run typecheck   # exit 0
+npm run lint        # 0 errors, 5 warnings — identical count to before the change (checked via git stash)
+npm run build       # exit 0
+npx vite preview --port 8081
+node scratchpad/smoke.mjs   # Playwright (Chromium), colorScheme dark + light, 390x844 + 1440x900
+node scratchpad/shot.mjs    # scrolled full-page screenshots, colorScheme dark
+grep -rnE "dark:|emerald|cyan|indigo|#10b981|ThemeToggle|theme-toggle|localStorage.getItem\(\"theme|\.light\b|className=\"dark" src public/site.webmanifest   # no hits
+```
+
+### Routes verified (16/16 PASS)
+`/`, `/book`, `/method` (→ `/#how-we-work`), `/admin/login` at 390px and 1440px, each with OS colour scheme emulated as **dark** and as **light**. Each check: HTTP < 400, body background `rgb(248, 247, 244)`, `<html class="antialiased">` (no `dark`), no theme toggle, `theme-color` `#f8f7f4`, no page errors, rendered contrast ink 9.08 / link 6.57 / data 5.35.
+
+### Not done in this pass
+- No full `web-quality-audit` / Lighthouse run; accessibility check was limited to rendered-colour contrast. Run those before calling the visual phase complete.

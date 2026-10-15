@@ -10,7 +10,6 @@ import {
 } from "@/components/ui/sheet";
 import { navLinks } from "@/data/projects";
 import { useActiveSection } from "@/hooks/use-active-section";
-import { ThemeToggle } from "@/components/theme-toggle";
 
 import { STUDIO_NAME } from "@/data/studio";
 
@@ -53,9 +52,8 @@ export function SiteNav() {
           })}
         </nav>
 
-        {/* Right CTA + Theme Toggle */}
+        {/* Right CTA */}
         <div className="hidden md:flex items-center gap-3">
-          <ThemeToggle />
           <Button asChild size="sm" className="rounded-xl font-semibold shadow-xs text-xs px-3.5 py-1.5 h-9">
             <a href="/book">
               <span>Book a call</span>
@@ -71,7 +69,6 @@ export function SiteNav() {
               <span>Book a call</span>
             </a>
           </Button>
-          <ThemeToggle />
           <Sheet open={open} onOpenChange={setOpen}>
             <SheetTrigger asChild>
               <Button

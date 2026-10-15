@@ -16,9 +16,6 @@ import { STUDIO_NAME, WHATSAPP_URL, CONTACT_EMAIL, GITHUB_URL } from "@/data/stu
 function Hero() {
   return (
     <section className="relative mx-auto max-w-6xl px-5 py-16 lg:py-20">
-      {/* Architectural Dot-Matrix Background Grid */}
-      <div className="absolute inset-0 bg-grid-pattern pointer-events-none -z-10 opacity-0 dark:opacity-60" />
-
       <div className="relative z-10 grid items-center gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(300px,400px)] lg:gap-14">
         {/* LEFT: existing copy block */}
         <div className="max-w-xl text-left">
@@ -41,7 +38,7 @@ function Hero() {
                 <ArrowRight className="ml-2 size-4" />
               </a>
             </Button>
-            <Button asChild size="lg" variant="outline" className="rounded-xl border-border/80 hover:border-emerald-500/50 hover:text-emerald-800 dark:hover:text-emerald-300 font-medium shadow-sm active:scale-[0.98] transition-all">
+            <Button asChild size="lg" variant="outline" className="rounded-xl border-border/80 hover:border-sage/50 hover:text-sage font-medium shadow-sm active:scale-[0.98] transition-all">
               <a href="#work">
                 <span>See our work</span>
               </a>
@@ -69,7 +66,7 @@ function Hero() {
 
             {/* Panel */}
             <div className="rounded-xl border border-border/60 bg-secondary/30 p-3.5 space-y-1">
-              <p className="font-mono text-[10px] tracking-wide text-emerald-800 dark:text-emerald-400 font-medium">QUOTE READY</p>
+              <p className="font-mono text-[10px] tracking-wide text-data font-medium">QUOTE READY</p>
               <p className="text-xs sm:text-sm font-medium text-foreground">50,000 labels · FINAT 4 rewind</p>
               <p className="text-xs text-muted-foreground">Meters and substrate from the same spec the press uses.</p>
             </div>
@@ -122,7 +119,7 @@ function SelectedWork() {
       }`}
     >
       <div className="flex items-center gap-2">
-        <span className="h-4 w-1 rounded-full bg-emerald-600 dark:bg-emerald-400 shadow-[0_0_8px_#10b981]" />
+        <span className="h-4 w-1 rounded-full bg-foreground" />
         <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">Selected Work</p>
       </div>
       <h2 className="mt-3 font-sans text-3xl font-semibold tracking-tight sm:text-4xl">
@@ -149,14 +146,14 @@ function SelectedWork() {
             {/* Content Details */}
             <div className="space-y-4">
               <div className="flex flex-wrap items-center justify-between gap-2">
-                <Badge variant="outline" className="font-mono text-[11px] uppercase tracking-wider bg-emerald-500/10 text-emerald-800 dark:text-emerald-300 border-emerald-500/30">
+                <Badge variant="outline" className="font-mono text-[11px] uppercase tracking-wider bg-surface text-data border-border">
                   Studio product · live
                 </Badge>
                 <a
                   href="https://trelio.in"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 text-xs font-mono font-medium text-emerald-800 dark:text-emerald-400 hover:underline"
+                  className="inline-flex items-center gap-1.5 text-xs font-mono font-medium text-sage hover:underline"
                 >
                   <span>Visit trelio.in</span>
                   <ExternalLink className="size-3" />
@@ -206,14 +203,14 @@ function SelectedWork() {
             {/* Content Details */}
             <div className="space-y-4">
               <div className="flex flex-wrap items-center justify-between gap-2">
-                <Badge variant="outline" className="font-mono text-[11px] uppercase tracking-wider bg-cyan-500/10 text-cyan-800 dark:text-cyan-300 border-cyan-500/30">
+                <Badge variant="outline" className="font-mono text-[11px] uppercase tracking-wider bg-surface text-data border-border">
                   Reference build · industrial manufacturing
                 </Badge>
                 <a
                   href="https://industrial-packaging-platform.vercel.app"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 text-xs font-mono font-medium text-cyan-800 dark:text-cyan-400 hover:underline"
+                  className="inline-flex items-center gap-1.5 text-xs font-mono font-medium text-sage hover:underline"
                 >
                   <span>Live demo</span>
                   <ExternalLink className="size-3" />
@@ -263,7 +260,7 @@ function Capabilities() {
       }`}
     >
       <div className="flex items-center gap-2">
-        <span className="h-4 w-1 rounded-full bg-emerald-600 dark:bg-emerald-400 shadow-[0_0_8px_#10b981]" />
+        <span className="h-4 w-1 rounded-full bg-foreground" />
         <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">Capabilities</p>
       </div>
       <h2 className="mt-3 font-sans text-3xl font-semibold tracking-tight sm:text-4xl">
@@ -277,7 +274,7 @@ function Capabilities() {
         {/* Capability 1 */}
         <Card className="card-specular relative flex flex-col justify-between rounded-2xl p-6 border border-border/80 bg-card shadow-sm">
           <div className="space-y-4">
-            <div className="flex size-10 items-center justify-center rounded-xl bg-emerald-500/15 text-emerald-800 dark:text-emerald-400 border border-emerald-500/30">
+            <div className="flex size-10 items-center justify-center rounded-xl bg-surface text-foreground border border-border">
               <Calculator className="size-5" />
             </div>
             <h3 className="font-sans text-xl font-semibold text-foreground tracking-tight">
@@ -292,7 +289,7 @@ function Capabilities() {
         {/* Capability 2 */}
         <Card className="card-specular relative flex flex-col justify-between rounded-2xl p-6 border border-border/80 bg-card shadow-sm">
           <div className="space-y-4">
-            <div className="flex size-10 items-center justify-center rounded-xl bg-cyan-500/15 text-cyan-800 dark:text-cyan-400 border border-cyan-500/30">
+            <div className="flex size-10 items-center justify-center rounded-xl bg-surface text-foreground border border-border">
               <Lock className="size-5" />
             </div>
             <h3 className="font-sans text-xl font-semibold text-foreground tracking-tight">
@@ -307,7 +304,7 @@ function Capabilities() {
         {/* Capability 3 */}
         <Card className="card-specular relative flex flex-col justify-between rounded-2xl p-6 border border-border/80 bg-card shadow-sm">
           <div className="space-y-4">
-            <div className="flex size-10 items-center justify-center rounded-xl bg-indigo/15 text-indigo border border-indigo/30">
+            <div className="flex size-10 items-center justify-center rounded-xl bg-surface text-foreground border border-border">
               <Layers className="size-5" />
             </div>
             <h3 className="font-sans text-xl font-semibold text-foreground tracking-tight">
@@ -334,7 +331,7 @@ function Standards() {
       }`}
     >
       <div className="flex items-center gap-2">
-        <span className="h-4 w-1 rounded-full bg-emerald-600 dark:bg-emerald-400 shadow-[0_0_8px_#10b981]" />
+        <span className="h-4 w-1 rounded-full bg-foreground" />
         <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">Standards</p>
       </div>
       <h2 className="mt-3 font-sans text-3xl font-semibold tracking-tight sm:text-4xl">
@@ -347,7 +344,7 @@ function Standards() {
       <div className="mt-10 grid gap-6 sm:grid-cols-3">
         <Card className="card-specular p-6 rounded-2xl border-border/70 bg-card shadow-sm">
           <div className="flex items-center gap-2.5 mb-3">
-            <div className="flex size-8 items-center justify-center rounded-lg bg-emerald-500/15 text-emerald-800 dark:text-emerald-400 border border-emerald-500/30">
+            <div className="flex size-8 items-center justify-center rounded-lg bg-surface text-foreground border border-border">
               <ShieldCheck className="size-4" />
             </div>
             <h3 className="font-sans text-base font-semibold text-foreground tracking-tight">Direct to Builders</h3>
@@ -359,7 +356,7 @@ function Standards() {
 
         <Card className="card-specular p-6 rounded-2xl border-border/70 bg-card shadow-sm">
           <div className="flex items-center gap-2.5 mb-3">
-            <div className="flex size-8 items-center justify-center rounded-lg bg-cyan-500/15 text-cyan-800 dark:text-cyan-400 border border-cyan-500/30">
+            <div className="flex size-8 items-center justify-center rounded-lg bg-surface text-foreground border border-border">
               <Code2 className="size-4" />
             </div>
             <h3 className="font-sans text-base font-semibold text-foreground tracking-tight">100% Code & Cloud IP</h3>
@@ -371,7 +368,7 @@ function Standards() {
 
         <Card className="card-specular p-6 rounded-2xl border-border/70 bg-card shadow-sm">
           <div className="flex items-center gap-2.5 mb-3">
-            <div className="flex size-8 items-center justify-center rounded-lg bg-indigo/15 text-indigo border border-indigo/30">
+            <div className="flex size-8 items-center justify-center rounded-lg bg-surface text-foreground border border-border">
               <CheckCircle2 className="size-4" />
             </div>
             <h3 className="font-sans text-base font-semibold text-foreground tracking-tight">Problem-Sized Scope</h3>
@@ -397,7 +394,7 @@ function Contact() {
       }`}
     >
       <div className="flex items-center gap-2">
-        <span className="h-4 w-1 rounded-full bg-emerald-600 dark:bg-emerald-400 shadow-[0_0_8px_#10b981]" />
+        <span className="h-4 w-1 rounded-full bg-foreground" />
         <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">Consultation</p>
       </div>
       <h2 className="mt-3 font-sans text-3xl font-semibold tracking-tight sm:text-4xl">

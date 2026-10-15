@@ -5,7 +5,6 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import { ThemeToggle } from "@/components/theme-toggle";
 import {
   STUDIO_NAME,
   CONTACT_EMAIL,
@@ -61,7 +60,7 @@ function BookPage() {
   };
 
   return (
-    <div className="min-h-screen bg-background text-foreground selection:bg-emerald-500/20 flex flex-col justify-between">
+    <div className="min-h-screen bg-background text-foreground selection:bg-sage/20 flex flex-col justify-between">
       {/* Top minimal header */}
       <header className="sticky top-0 z-50 border-b border-border/70 bg-background/80 backdrop-blur-xl">
         <div className="mx-auto flex max-w-5xl items-center justify-between px-5 py-4">
@@ -72,10 +71,6 @@ function BookPage() {
             <ArrowLeft className="size-4" />
             <span>Back to {STUDIO_NAME}</span>
           </Link>
-
-          <div className="flex items-center gap-3">
-            <ThemeToggle />
-          </div>
         </div>
       </header>
 
@@ -83,7 +78,7 @@ function BookPage() {
       <main id="main-content" className="mx-auto max-w-2xl px-5 py-12 sm:py-20 w-full">
         <div className="space-y-3">
           <div className="flex items-center gap-2">
-            <span className="h-4 w-1 rounded-full bg-emerald-600 dark:bg-emerald-400 shadow-[0_0_8px_#10b981]" />
+            <span className="h-4 w-1 rounded-full bg-foreground" />
             <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">Consultation</p>
           </div>
           <h1 className="font-sans text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight">
@@ -111,7 +106,7 @@ function BookPage() {
         <div className="mt-8 rounded-2xl border border-border/80 bg-card p-6 sm:p-8 shadow-sm">
           {status === "success" ? (
             <div className="py-6 text-center space-y-4">
-              <div className="inline-flex size-12 items-center justify-center rounded-full bg-emerald-500/15 text-emerald-600 dark:text-emerald-400 mb-2">
+              <div className="inline-flex size-12 items-center justify-center rounded-full bg-surface text-data mb-2">
                 <CheckCircle2 className="size-6" />
               </div>
               <h2 className="font-sans text-2xl font-semibold text-foreground tracking-tight">Inquiry Received</h2>
@@ -121,7 +116,7 @@ function BookPage() {
               <div className="pt-4 flex flex-wrap justify-center gap-3">
                 <Button asChild variant="outline" className="rounded-xl">
                   <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
-                    <MessageSquare className="mr-2 size-4 text-emerald-600" />
+                    <MessageSquare className="mr-2 size-4" />
                     <span>Need immediate response? WhatsApp</span>
                   </a>
                 </Button>
@@ -206,7 +201,7 @@ function BookPage() {
                     href={WHATSAPP_URL}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1.5 font-medium text-emerald-800 dark:text-emerald-400 hover:underline"
+                    className="inline-flex items-center gap-1.5 font-medium text-sage hover:underline"
                   >
                     <MessageSquare className="size-3.5" />
                     <span>WhatsApp directly</span>

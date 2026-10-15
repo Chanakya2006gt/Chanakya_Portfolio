@@ -189,7 +189,7 @@ function AdminDashboardPage() {
         <div className="mx-auto flex max-w-6xl items-center justify-between">
           <div className="flex items-center gap-3">
             <span className="flex size-3 rounded-full bg-sage animate-ping" />
-            <h1 className="font-sans text-2xl font-semibold tracking-tight text-white">
+            <h1 className="font-sans text-2xl font-semibold tracking-tight text-foreground">
               Chanakya Admin Dashboard
             </h1>
             <Badge variant="sage" className="hidden sm:inline-flex text-[10px]">
@@ -240,7 +240,7 @@ function AdminDashboardPage() {
           <TabsContent value="projects" className="space-y-6">
             <div className="flex items-center justify-between">
               <div>
-                <h3 className="text-lg font-semibold text-white">Businesses & Products</h3>
+                <h3 className="text-lg font-semibold text-foreground">Businesses & Products</h3>
                 <p className="text-xs text-muted-foreground">Manage serious SaaS products like Trelio.</p>
               </div>
               <Button onClick={handleAddBusiness} variant="outline" size="sm" className="gap-1.5 text-sage border-sage/40">
@@ -336,7 +336,7 @@ function AdminDashboardPage() {
 
             <div className="pt-6 border-t border-border flex items-center justify-between">
               <div>
-                <h3 className="text-lg font-semibold text-white">Projects</h3>
+                <h3 className="text-lg font-semibold text-foreground">Projects</h3>
                 <p className="text-xs text-muted-foreground">Add or update projects and tools.</p>
               </div>
               <Button onClick={handleAddSideProject} variant="outline" size="sm" className="gap-1.5 text-sage border-sage/40">
@@ -405,7 +405,7 @@ function AdminDashboardPage() {
           {/* TAB 2: Status & Availability */}
           <TabsContent value="status" className="space-y-4">
             <Card className="p-5 border-border bg-card space-y-4">
-              <h3 className="text-base font-semibold text-white">Availability Settings</h3>
+              <h3 className="text-base font-semibold text-foreground">Availability Settings</h3>
 
               <div>
                 <Label className="text-xs">Blinking Availability Badge (Hero Section)</Label>

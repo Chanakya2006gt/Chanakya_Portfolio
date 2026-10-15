@@ -1,8 +1,6 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
-@custom-variant dark (&:is(.dark *));
-
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -24,9 +22,8 @@
   --color-ring: var(--ring);
   --color-sage: var(--sage);
   --color-sage-foreground: var(--sage-foreground);
-  --color-indigo: var(--indigo);
-  --color-indigo-muted: var(--indigo-muted);
-  --color-indigo-foreground: var(--indigo-foreground);
+  --color-data: var(--data);
+  --color-surface: var(--surface);
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
@@ -38,58 +35,32 @@
 }
 
 :root {
+  /* Light only. Four roles, see studio-plans/PHASE-2-light-only-and-palette.md:
+     ink = walnut, action = sage #1f653b, data = deepened amber,
+     surface = sage #87A96B at 8-12% (never text). */
   --radius: 0.75rem;
-  --background: #08090b;
-  --foreground: #f2f4f1;
-  --card: #11141a;
-  --card-foreground: #f2f4f1;
-  --popover: #151921;
-  --popover-foreground: #f2f4f1;
-  --primary: #f2f4f1;
-  --primary-foreground: #08090b;
-  --secondary: #151921;
-  --secondary-foreground: #e4e7e3;
-  --muted: #151921;
-  --muted-foreground: #9ca69e;
-  --accent: #1c222c;
-  --accent-foreground: #f2f4f1;
-  --destructive: #ef4444;
-  --border: rgba(255, 255, 255, 0.08);
-  --input: rgba(255, 255, 255, 0.12);
-  --ring: #a3c2ab;
-  --sage: #a3c2ab;
-  --sage-foreground: #08090b;
-  --indigo: #818cf8;
-  --indigo-muted: rgba(129, 140, 248, 0.14);
-  --indigo-foreground: #ffffff;
-  --shadow-border: 0 0 0 1px rgba(255, 255, 255, 0.07), inset 0 1px 0 rgba(255, 255, 255, 0.10);
-  --shadow-border-hover: 0 0 0 1px rgba(163, 194, 171, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.18), 0 16px 48px rgba(0, 0, 0, 0.6);
-}
-
-.light {
   --background: #f8f7f4;
-  --foreground: #121413;
+  --foreground: #5a3e2b;
   --card: #ffffff;
-  --card-foreground: #121413;
+  --card-foreground: #5a3e2b;
   --popover: #ffffff;
-  --popover-foreground: #121413;
-  --primary: #121413;
+  --popover-foreground: #5a3e2b;
+  --primary: #1f653b;
   --primary-foreground: #ffffff;
-  --secondary: #f0ede6;
-  --secondary-foreground: #1c2620;
-  --muted: #f0ede6;
+  --secondary: rgba(135, 169, 107, 0.10);
+  --secondary-foreground: #5a3e2b;
+  --muted: rgba(135, 169, 107, 0.10);
   --muted-foreground: #4a524c;
-  --accent: #e5e0d7;
-  --accent-foreground: #121413;
+  --accent: rgba(135, 169, 107, 0.10);
+  --accent-foreground: #5a3e2b;
   --destructive: #dc2626;
-  --border: rgba(20, 23, 21, 0.11);
+  --border: rgba(135, 169, 107, 0.12);
   --input: rgba(20, 23, 21, 0.16);
   --ring: #1f653b;
   --sage: #1f653b;
   --sage-foreground: #ffffff;
-  --indigo: #3730a3;
-  --indigo-muted: rgba(55, 48, 163, 0.10);
-  --indigo-foreground: #ffffff;
+  --data: #96570c;
+  --surface: rgba(135, 169, 107, 0.08);
   --shadow-border: 0 1px 3px rgba(0, 0, 0, 0.05), 0 0 0 1px rgba(20, 23, 21, 0.10), inset 0 1px 0 rgba(255, 255, 255, 0.9);
   --shadow-border-hover: 0 12px 32px rgba(0, 0, 0, 0.10), 0 0 0 1px rgba(31, 101, 59, 0.4);
 }
@@ -107,20 +78,7 @@
 
   body {
     @apply bg-background text-foreground font-sans;
-  }
-
-  html.dark body {
-    background-image: 
-      radial-gradient(85% 55% at 50% -12%, rgba(163, 194, 171, 0.14), transparent 70%),
-      radial-gradient(60% 40% at 85% 45%, rgba(129, 140, 248, 0.05), transparent 60%);
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-  }
-
-  html.light body, :root:not(.dark) body {
-    background-image: 
-      radial-gradient(85% 50% at 50% -10%, rgba(43, 90, 61, 0.06), transparent 70%),
-      radial-gradient(60% 40% at 85% 45%, rgba(67, 56, 202, 0.03), transparent 60%);
+    background-image: radial-gradient(85% 50% at 50% -10%, rgba(43, 90, 61, 0.06), transparent 70%);
     background-repeat: no-repeat;
     background-attachment: fixed;
   }
@@ -268,10 +226,6 @@
 }
 
 
-.btn-indigo-glow:hover {
-  box-shadow: 0 0 24px rgba(129, 140, 248, 0.35), 0 0 45px rgba(129, 140, 248, 0.12);
-}
-
 .card-hover-elevate {
   transition: transform 220ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 220ms cubic-bezier(0.16, 1, 0.3, 1), border-color 220ms ease;
 }
@@ -281,68 +235,28 @@
   box-shadow: var(--shadow-border-hover);
 }
 
-.nav-dot-active {
-  box-shadow: 0 0 10px rgba(143, 168, 150, 0.7);
-}
-
-/* Linear / Apple style Directional Specular Card */
 .card-specular {
-  background-color: var(--card);
+  background-color: #ffffff;
   border: 1px solid var(--border);
   box-shadow: 
-    inset 0 1px 0 0 rgba(255, 255, 255, 0.10),
-    0 1px 2px 0 rgba(0, 0, 0, 0.4),
-    0 8px 28px -6px rgba(0, 0, 0, 0.5);
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.95),
+    0 1px 3px 0 rgba(0, 0, 0, 0.04),
+    0 8px 24px -4px rgba(0, 0, 0, 0.06);
   transition: transform 220ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 220ms cubic-bezier(0.16, 1, 0.3, 1), border-color 220ms ease;
 }
 
 .card-specular:hover {
   transform: translateY(-3px);
-  border-color: rgba(163, 194, 171, 0.35);
-  box-shadow: 
-    inset 0 1px 0 0 rgba(255, 255, 255, 0.18),
-    0 0 20px -4px rgba(163, 194, 171, 0.15),
-    0 16px 48px -8px rgba(0, 0, 0, 0.7);
-}
-
-.light .card-specular {
-  background-color: #ffffff;
-  border: 1px solid rgba(20, 23, 21, 0.08);
-  box-shadow: 
-    inset 0 1px 0 0 rgba(255, 255, 255, 0.95),
-    0 1px 3px 0 rgba(0, 0, 0, 0.04),
-    0 8px 24px -4px rgba(0, 0, 0, 0.06);
-}
-
-.light .card-specular:hover {
-  transform: translateY(-3px);
-  border-color: rgba(43, 90, 61, 0.35);
+  border-color: rgba(31, 101, 59, 0.35);
   box-shadow: 
     inset 0 1px 0 0 #ffffff,
-    0 0 20px -4px rgba(43, 90, 61, 0.12),
+    0 0 20px -4px rgba(31, 101, 59, 0.12),
     0 16px 40px -8px rgba(0, 0, 0, 0.10);
-}
-
-
-.light .nav-dot-active {
-  box-shadow: 0 0 8px rgba(43, 90, 61, 0.6);
 }
 
 /* Subtle cinematic noise overlay */
 .bg-noise {
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.025'/%3E%3C/svg%3E");
-}
-
-/* Technical Blueprint / Dot Matrix Grid Pattern */
-.bg-grid-pattern {
-  background-size: 28px 28px;
-  background-image: radial-gradient(rgba(255, 255, 255, 0.15) 1.2px, transparent 1.2px);
-  mask-image: radial-gradient(ellipse 90% 70% at 50% 25%, #000 60%, transparent 100%);
-  -webkit-mask-image: radial-gradient(ellipse 90% 70% at 50% 25%, #000 60%, transparent 100%);
-}
-
-.light .bg-grid-pattern {
-  background-image: radial-gradient(rgba(20, 23, 21, 0.14) 1.2px, transparent 1.2px);
 }
 
 /* Native FAQ Details Smooth Height Animation */

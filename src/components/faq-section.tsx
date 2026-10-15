@@ -14,7 +14,7 @@ export function FaqSection() {
       }`}
     >
       <div className="flex items-center gap-2">
-        <span className="h-4 w-1 rounded-full bg-emerald-600 dark:bg-emerald-400 shadow-[0_0_8px_#10b981]" />
+        <span className="h-4 w-1 rounded-full bg-foreground" />
         <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">FAQ</p>
       </div>
       <h2 className="mt-3 font-sans text-3xl font-semibold tracking-tight sm:text-4xl">
