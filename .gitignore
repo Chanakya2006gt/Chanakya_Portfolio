@@ -28,3 +28,6 @@ Claude outputs/
 profile-copy/
 brand-assets/
 
+
+# Playwright smoke screenshots
+smoke-output/

@@ -178,3 +178,27 @@ grep -rnE "dark:|emerald|cyan|indigo|#10b981|ThemeToggle|theme-toggle|localStora
 
 ### Not done in this pass
 - No full `web-quality-audit` / Lighthouse run; accessibility check was limited to rendered-colour contrast. Run those before calling the visual phase complete.
+
+---
+
+## 2026-10-15: Phase 3 plan for Antigravity, plus guard scripts
+
+### What was added
+- `studio-plans/PHASE-3-remaining-work.md`: every remaining task as exact old→new edits, with agent rules (no invented text, one task per run, allowed-files list, stop-and-ask triggers), a decisions table Chanakya fills in, and a fixed verification block.
+- `scripts/check-invariants.mjs` (`npm run check:invariants`): fails on `dark:` classes, off-palette hues, prices, student/resume text, "15 days", placeholder/stock content, invented social proof, any external host not on an allowlist, or changed contact facts in `src/data/studio.ts`.
+- `scripts/smoke.mjs` (`npm run smoke`): starts `vite preview`, loads `/`, `/book`, `/method`, `/admin/login` at 390/1440px with OS dark and light, scrolls, checks status, paper background, no `dark` class, exactly one h1, contrast ≥ 4.5, in-page anchors resolve, no sections left invisible, no console/page errors, no CSP violations (the CSP is read from `.vercel/output/config.json`, because `vite preview` doesn't send Vercel's headers). Refuses to run if port 8081 is already in use (a stale server serving an old build gave a false result while this was being built). Screenshots go to `smoke-output/` (git-ignored).
+
+### Findings recorded in the plan
+- **`/book` leads are lost**: `api/contact.ts` only `console.info`s the lead (without the workflow text). There's no email or storage, and Vercel Hobby keeps runtime logs for about an hour. The plan's Task 1 has tested replacement code (Resend via `fetch`, honest 503/502 when delivery fails).
+- **No security headers or CSP** on any response. Task 2 gives tested Nitro `routeRules` code. With it, smoke showed zero CSP violations.
+- **`/admin/login` has no `<h1>`.** This is the only baseline smoke failure (4 of 16 loads). Task 0 fixes it.
+- `og.jpg` is still the old dark "CHANAKYA / BUILDER" card. Task 7 renders a new one from HTML.
+
+### Commands executed
+```bash
+node scripts/check-invariants.mjs           # OK (53 files); also verified it fails on a planted indigo class, ₹ price and unknown host
+npm run smoke                               # baseline: SMOKE FAILED 4/16, all "0 <h1>" on /admin/login
+# security header experiment (reverted): nitro routeRules in vite.config.ts → npm run build → headers present in .vercel/output/config.json; curl -I on vite preview shows none
+# contact.ts candidate: npx tsc --noEmit (0), npx eslint src/routes/api/contact.ts (0); original file restored
+# dry run in a scratch copy: Tasks 0, 2, 3, 5 applied verbatim → typecheck 0, eslint 0 errors/5 warnings, check:invariants OK, build 0, smoke 16/16 PASSED
+```
