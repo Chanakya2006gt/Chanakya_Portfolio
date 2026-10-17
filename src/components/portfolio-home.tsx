@@ -196,6 +196,11 @@ function SelectedWork() {
 
               <div className="pt-2 flex flex-wrap items-center justify-between gap-3 text-xs font-mono text-muted-foreground border-t border-border/60">
                 <span>Stack: React · TypeScript · PostgreSQL RLS · CPQ Math Engine</span>
+                <Button asChild size="sm" variant="outline" className="rounded-xl border-border/80 text-xs">
+                  <a href="https://github.com/Chanakya2006gt/Industrial-packaging-platform" target="_blank" rel="noopener noreferrer">
+                    <span>View the code ↗</span>
+                  </a>
+                </Button>
               </div>
             </div>
           </div>
