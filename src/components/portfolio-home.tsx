@@ -59,7 +59,7 @@ function Hero() {
                 <p className="text-sm font-semibold text-foreground">Apex Packaging · Plant quote</p>
                 <p className="text-xs text-muted-foreground">Beverage roll labels · BOPP 60μm</p>
               </div>
-              <Badge variant="outline" className="font-mono text-[10px] tracking-wider text-muted-foreground border-border/80 shrink-0">
+              <Badge variant="outline" className="font-mono text-[10px] tracking-wider text-data border-border/80 shrink-0">
                 Reference build
               </Badge>
             </div>
@@ -73,7 +73,7 @@ function Hero() {
 
             {/* Workflow section */}
             <div className="space-y-2.5 pt-1">
-              <div className="flex items-center justify-between font-mono text-[10px] text-muted-foreground">
+              <div className="flex items-center justify-between font-mono text-[10px] text-data">
                 <span>WORKFLOW</span>
                 <span>4 steps</span>
               </div>
@@ -120,7 +120,7 @@ function SelectedWork() {
     >
       <div className="flex items-center gap-2">
         <span className="h-4 w-1 rounded-full bg-foreground" />
-        <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">Selected Work</p>
+        <p className="text-xs font-semibold uppercase tracking-wider text-data">Selected Work</p>
       </div>
       <h2 className="mt-3 font-sans text-3xl font-semibold tracking-tight sm:text-4xl">
         Systems Built & Operating
@@ -261,7 +261,7 @@ function Capabilities() {
     >
       <div className="flex items-center gap-2">
         <span className="h-4 w-1 rounded-full bg-foreground" />
-        <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">Capabilities</p>
+        <p className="text-xs font-semibold uppercase tracking-wider text-data">Capabilities</p>
       </div>
       <h2 className="mt-3 font-sans text-3xl font-semibold tracking-tight sm:text-4xl">
         What We Build
@@ -332,7 +332,7 @@ function Standards() {
     >
       <div className="flex items-center gap-2">
         <span className="h-4 w-1 rounded-full bg-foreground" />
-        <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">Standards</p>
+        <p className="text-xs font-semibold uppercase tracking-wider text-data">Standards</p>
       </div>
       <h2 className="mt-3 font-sans text-3xl font-semibold tracking-tight sm:text-4xl">
         Direct Partnership & Ownership
@@ -395,7 +395,7 @@ function Contact() {
     >
       <div className="flex items-center gap-2">
         <span className="h-4 w-1 rounded-full bg-foreground" />
-        <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">Consultation</p>
+        <p className="text-xs font-semibold uppercase tracking-wider text-data">Consultation</p>
       </div>
       <h2 className="mt-3 font-sans text-3xl font-semibold tracking-tight sm:text-4xl">
         Let's look at how your business runs today.

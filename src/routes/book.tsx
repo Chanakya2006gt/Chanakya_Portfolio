@@ -79,7 +79,7 @@ function BookPage() {
         <div className="space-y-3">
           <div className="flex items-center gap-2">
             <span className="h-4 w-1 rounded-full bg-foreground" />
-            <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">Consultation</p>
+            <p className="text-xs font-semibold uppercase tracking-wider text-data">Consultation</p>
           </div>
           <h1 className="font-sans text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight">
             Book a 20-minute call

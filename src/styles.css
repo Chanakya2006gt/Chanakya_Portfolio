@@ -50,12 +50,12 @@
   --secondary: rgba(135, 169, 107, 0.10);
   --secondary-foreground: #5a3e2b;
   --muted: rgba(135, 169, 107, 0.10);
-  --muted-foreground: #4a524c;
+  --muted-foreground: #6b5a4e;
   --accent: rgba(135, 169, 107, 0.10);
   --accent-foreground: #5a3e2b;
   --destructive: #dc2626;
-  --border: rgba(135, 169, 107, 0.12);
-  --input: rgba(20, 23, 21, 0.16);
+  --border: rgba(90, 62, 43, 0.14);
+  --input: rgba(90, 62, 43, 0.22);
   --ring: #1f653b;
   --sage: #1f653b;
   --sage-foreground: #ffffff;

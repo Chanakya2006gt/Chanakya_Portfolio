@@ -18,7 +18,7 @@ export function OfferLadder() {
       {/* Eyebrow */}
       <div className="flex items-center gap-2">
         <span className="h-4 w-1 rounded-full bg-foreground" />
-        <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">Process</p>
+        <p className="text-xs font-semibold uppercase tracking-wider text-data">Process</p>
       </div>
 
       <div className="mt-3 flex flex-col md:flex-row md:items-end md:justify-between gap-4">
@@ -39,7 +39,7 @@ export function OfferLadder() {
           <div className="space-y-4">
             <div className="flex items-center justify-between">
               <span className="font-mono text-xs font-bold text-data">01</span>
-              <span className="text-xs font-mono text-muted-foreground">20 minutes · free</span>
+              <span className="text-xs font-mono text-data">20 minutes · free</span>
             </div>
             <div className="flex items-center gap-2 text-foreground">
               <PhoneCall className="size-4 text-foreground" />
@@ -61,7 +61,7 @@ export function OfferLadder() {
           <div className="space-y-4">
             <div className="flex items-center justify-between">
               <span className="font-mono text-xs font-bold text-data">02</span>
-              <span className="text-xs font-mono text-muted-foreground">Problem-sized</span>
+              <span className="text-xs font-mono text-data">Problem-sized</span>
             </div>
             <div className="flex items-center gap-2 text-foreground">
               <FileSpreadsheet className="size-4 text-foreground" />
@@ -83,7 +83,7 @@ export function OfferLadder() {
           <div className="space-y-4">
             <div className="flex items-center justify-between">
               <span className="font-mono text-xs font-bold text-data">03</span>
-              <span className="text-xs font-mono text-muted-foreground">100% Code Handover</span>
+              <span className="text-xs font-mono text-data">100% Code Handover</span>
             </div>
             <div className="flex items-center gap-2 text-foreground">
               <Rocket className="size-4 text-foreground" />
