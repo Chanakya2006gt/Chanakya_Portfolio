@@ -341,6 +341,48 @@ function Standards() {
   );
 }
 
+function About() {
+  return (
+    <section id="about" className="mx-auto max-w-5xl px-5 py-16 sm:py-24">
+      <div className="flex items-center gap-2">
+        <span className="h-4 w-1 rounded-full bg-sage" />
+        <p className="text-xs font-semibold uppercase tracking-wider text-data">About</p>
+      </div>
+
+      <div className="mt-8 grid gap-10 md:grid-cols-[minmax(0,320px)_1fr] md:gap-14 md:items-start">
+        <img
+          src="/images/chanakya-about.webp"
+          alt="Nagulagam Chanakya"
+          width={1200}
+          height={1200}
+          className="w-full rounded-2xl border border-border object-cover shadow-sm"
+        />
+
+        <div className="max-w-[60ch] space-y-5">
+          <h2 className="font-sans text-3xl font-bold tracking-tight sm:text-4xl">
+            I'm Chanakya. I work on my own.
+          </h2>
+          <p className="text-base text-muted-foreground leading-relaxed">
+            I build operational software from Warangal — quoting engines, approval workflows, internal tools, and the websites that sit around them. You talk to me, and I write the code.
+          </p>
+          <p className="text-base text-muted-foreground leading-relaxed">
+            Trelio is my own product — I'm the founder, I designed the data model and the payment flow, and I build it. In continuous development since March 2026.
+          </p>
+          <p className="text-base text-foreground leading-relaxed">
+            I ride. It's the only part of my week with no spec.
+          </p>
+          <p className="font-mono text-xs text-muted-foreground pt-2">
+            THIS SITE: TANSTACK START · IBM PLEX · DEPLOYED ON VERCEL ·{" "}
+            <a href={GITHUB_URL} target="_blank" rel="noopener noreferrer" className="underline underline-offset-4 hover:text-foreground">
+              SOURCE ON GITHUB
+            </a>
+          </p>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function Contact() {
   const { ref, isVisible } = useScrollAnimation();
 
@@ -421,6 +463,8 @@ export function PortfolioHome({ initialData }: { initialData?: DynamicData | nul
         <OfferLadder />
         <Separator />
         <Standards />
+        <Separator />
+        <About />
         <Separator />
         <FaqSection />
         <Separator />
