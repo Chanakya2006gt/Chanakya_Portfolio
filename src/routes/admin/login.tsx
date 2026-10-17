@@ -5,7 +5,7 @@ import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardDescription, CardHeader } from "@/components/ui/card";
 
 export const Route = createFileRoute("/admin/login")({
   component: AdminLoginPage,
@@ -59,9 +59,9 @@ function AdminLoginPage() {
           <div className="mx-auto mb-3 flex size-12 items-center justify-center rounded-2xl border border-sage/40 bg-sage/10 text-sage">
             <ShieldCheck className="size-6" />
           </div>
-          <CardTitle className="font-sans text-3xl font-semibold tracking-tight text-foreground">
+          <h1 className="font-sans text-3xl font-semibold leading-snug tracking-tight text-foreground">
             Admin Portal
-          </CardTitle>
+          </h1>
           <CardDescription className="text-xs text-muted-foreground mt-1">
             Authorized access only. Enter your credentials set in <code className="text-sage font-mono">.env</code>.
           </CardDescription>
