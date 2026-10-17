@@ -11,96 +11,65 @@ import { SiteNav } from "@/components/site-nav";
 import { Companion } from "@/components/mascot/companion";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 import { DynamicData } from "@/data/store";
-import { STUDIO_NAME, FOUNDER_NAME, WHATSAPP_URL, CONTACT_EMAIL, GITHUB_URL } from "@/data/studio";
+import { STUDIO_NAME, FOUNDER_NAME, LOCATION, WHATSAPP_URL, CONTACT_EMAIL, GITHUB_URL } from "@/data/studio";
 
 function Hero() {
   return (
-    <section className="relative mx-auto max-w-6xl px-5 py-16 lg:py-20">
-      <div className="relative z-10 grid items-center gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(300px,400px)] lg:gap-14">
-        {/* LEFT: existing copy block */}
-        <div className="max-w-xl text-left">
-          <div className="inline-flex items-center gap-2 rounded-full border border-border/80 bg-secondary/60 px-3 py-1 text-xs font-mono text-muted-foreground mb-6 shadow-xs">
-            <span>{STUDIO_NAME} · Operational software</span>
-          </div>
+    <section className="relative isolate overflow-hidden bg-hero-ink text-hero-ink-foreground">
+      {/* depth behind the figure — not decoration, it is what separates a dark shirt from a dark field */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 -z-10"
+        style={{
+          background:
+            "radial-gradient(60% 70% at 78% 42%, rgba(245,242,238,0.14), transparent 70%)",
+        }}
+      />
 
-          <h1 className="font-sans text-4xl sm:text-5xl md:text-6xl leading-[1.1] tracking-[-0.03em] font-semibold text-foreground">
-            We build software that runs businesses.
-          </h1>
-
-          <p className="mt-6 max-w-2xl text-lg sm:text-xl leading-relaxed text-muted-foreground font-normal">
-            Quotes, pricing, and operations shouldn't live in WhatsApp and spreadsheets. We build CPQ engines, stage-locked workflows, and internal tools around your rules.
+      <div className="mx-auto grid max-w-6xl grid-cols-1 items-end gap-10 px-5 pt-16 lg:grid-cols-[1.15fr_minmax(0,420px)] lg:gap-12 lg:pt-24">
+        <div className="pb-16 lg:pb-28">
+          <p className="font-mono text-xs uppercase tracking-[0.14em] text-data-on-ink">
+            {FOUNDER_NAME} · {LOCATION}
           </p>
 
-          <div className="mt-8 flex flex-wrap items-center gap-3.5">
-            <Button asChild size="lg" className="rounded-xl font-medium shadow-md active:scale-[0.98] transition-all px-6 py-2.5">
-              <a href="/book">
-                <span>Book a 20-minute call</span>
-                <ArrowRight className="ml-2 size-4" />
-              </a>
-            </Button>
-            <Button asChild size="lg" variant="outline" className="rounded-xl border-border/80 hover:border-sage/50 hover:text-sage font-medium shadow-sm active:scale-[0.98] transition-all">
-              <a href="#work">
-                <span>See our work</span>
-              </a>
-            </Button>
+          <h1 className="mt-6 font-sans text-[2.75rem] font-bold leading-[1.02] tracking-[-0.03em] sm:text-6xl lg:text-7xl">
+            I build the software{" "}
+            <span className="text-sage-on-ink">a business runs on.</span>
+          </h1>
+
+          <p className="mt-6 max-w-xl text-lg leading-relaxed text-hero-ink-muted sm:text-xl">
+            Quotes, pricing and jobs shouldn't live in WhatsApp and spreadsheets. I build quoting engines, stage-locked workflows and internal tools around your own rules — and the websites and small systems that sit around them.
+          </p>
+
+          <div className="mt-9 flex flex-wrap items-center gap-6">
+            <a
+              href="/book"
+              className="inline-flex items-center gap-2 rounded-xl bg-sage-on-ink px-6 py-3 text-sm font-semibold text-hero-ink shadow-md transition-opacity hover:opacity-90 active:scale-[0.98]"
+            >
+              Book a 20-minute call
+              <ArrowRight className="size-4" />
+            </a>
+            <a
+              href="#work"
+              className="text-sm font-medium underline underline-offset-[6px] decoration-hero-ink-muted/60 hover:decoration-hero-ink-foreground"
+            >
+              See the work →
+            </a>
           </div>
 
-          <p className="mt-4 text-xs sm:text-sm text-muted-foreground font-mono">
-            First call is free · Fixed quotes scoped to your problem size · 100% code ownership
+          <p className="mt-8 font-mono text-xs text-hero-ink-muted">
+            First call is free · Fixed quote before you commit · You own the code
           </p>
         </div>
 
-        {/* RIGHT: static product artifact card */}
-        <div className="w-full">
-          <Card className="border border-border/80 bg-card p-5 sm:p-6 shadow-sm rounded-2xl space-y-5">
-            {/* Header row */}
-            <div className="flex items-start justify-between gap-3">
-              <div>
-                <p className="text-sm font-semibold text-foreground">Apex Packaging · Plant quote</p>
-                <p className="text-xs text-muted-foreground">Beverage roll labels · BOPP 60μm</p>
-              </div>
-              <Badge variant="outline" className="font-mono text-[10px] tracking-wider text-data border-border/80 shrink-0">
-                Reference build
-              </Badge>
-            </div>
-
-            {/* Panel */}
-            <div className="rounded-xl border border-border/60 bg-secondary/30 p-3.5 space-y-1">
-              <p className="font-mono text-[10px] tracking-wide text-data font-medium">QUOTE READY</p>
-              <p className="text-xs sm:text-sm font-medium text-foreground">50,000 labels · FINAT 4 rewind</p>
-              <p className="text-xs text-muted-foreground">Meters and substrate from the same spec the press uses.</p>
-            </div>
-
-            {/* Workflow section */}
-            <div className="space-y-2.5 pt-1">
-              <div className="flex items-center justify-between font-mono text-[10px] text-data">
-                <span>WORKFLOW</span>
-                <span>4 steps</span>
-              </div>
-              <div className="divide-y divide-border/60 rounded-xl border border-border/60 bg-secondary/20 overflow-hidden text-xs">
-                <div className="flex items-center gap-3 px-3 py-2">
-                  <span className="font-mono text-[11px] text-muted-foreground">01</span>
-                  <span className="text-foreground/90">Request in — WhatsApp / spreadsheet</span>
-                </div>
-                <div className="flex items-center gap-3 px-3 py-2">
-                  <span className="font-mono text-[11px] text-muted-foreground">02</span>
-                  <span className="text-foreground/90">Price — Floor rules + yield</span>
-                </div>
-                <div className="flex items-center gap-3 px-3 py-2">
-                  <span className="font-mono text-[11px] text-muted-foreground">03</span>
-                  <span className="text-foreground/90">Confirm — Buyer sign-off</span>
-                </div>
-                <div className="flex items-center gap-3 px-3 py-2">
-                  <span className="font-mono text-[11px] text-muted-foreground">04</span>
-                  <span className="text-foreground/90">Release — Job ticket + stage lock</span>
-                </div>
-              </div>
-            </div>
-          </Card>
-
-          <p className="mt-3 text-center sm:text-left font-mono text-xs text-muted-foreground">
-            You keep the repo · deployed on your cloud
-          </p>
+        <div className="relative flex justify-center lg:justify-end">
+          <img
+            src="/images/chanakya-hero.png"
+            alt="Nagulagam Chanakya"
+            width={528}
+            height={1600}
+            className="pointer-events-none max-h-[380px] w-auto select-none object-contain object-bottom sm:max-h-[460px] lg:max-h-[620px]"
+          />
         </div>
       </div>
     </section>
@@ -114,7 +83,7 @@ function SelectedWork() {
     <section
       id="work"
       ref={ref}
-      className={`mx-auto max-w-5xl px-5 py-24 transition-all duration-700 ${
+      className={`mx-auto max-w-5xl px-5 pt-20 pb-24 transition-all duration-700 ${
         isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
       }`}
     >

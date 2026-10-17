@@ -24,6 +24,11 @@
   --color-sage-foreground: var(--sage-foreground);
   --color-data: var(--data);
   --color-surface: var(--surface);
+  --color-hero-ink: var(--hero-ink);
+  --color-hero-ink-foreground: var(--hero-ink-foreground);
+  --color-hero-ink-muted: var(--hero-ink-muted);
+  --color-sage-on-ink: var(--sage-on-ink);
+  --color-data-on-ink: var(--data-on-ink);
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
@@ -61,6 +66,11 @@
   --sage-foreground: #ffffff;
   --data: #96570c;
   --surface: rgba(135, 169, 107, 0.08);
+  --hero-ink: #17120f;
+  --hero-ink-foreground: #f5f2ee;
+  --hero-ink-muted: #c9c0b6;
+  --sage-on-ink: #a3c2ab;
+  --data-on-ink: #e8a34a;
   --shadow-border: 0 1px 3px rgba(0, 0, 0, 0.05), 0 0 0 1px rgba(20, 23, 21, 0.10), inset 0 1px 0 rgba(255, 255, 255, 0.9);
   --shadow-border-hover: 0 12px 32px rgba(0, 0, 0, 0.10), 0 0 0 1px rgba(31, 101, 59, 0.4);
 }
