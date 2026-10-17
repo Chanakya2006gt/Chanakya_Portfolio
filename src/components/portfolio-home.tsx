@@ -26,22 +26,22 @@ function Hero() {
         }}
       />
 
-      <div className="mx-auto grid max-w-6xl grid-cols-1 items-end gap-10 px-5 pt-16 lg:grid-cols-[1.15fr_minmax(0,420px)] lg:gap-12 lg:pt-24">
-        <div className="pb-16 lg:pb-28">
+      <div className="mx-auto grid max-w-6xl grid-cols-1 items-end gap-4 px-5 pt-12 sm:gap-8 lg:grid-cols-[1.1fr_minmax(0,320px)] lg:gap-10 lg:pt-20">
+        <div className="pb-10 sm:pb-14 lg:pb-24">
           <p className="font-mono text-xs uppercase tracking-[0.14em] text-data-on-ink">
             {FOUNDER_NAME} · {LOCATION}
           </p>
 
-          <h1 className="mt-6 font-sans text-[2.75rem] font-bold leading-[1.02] tracking-[-0.03em] sm:text-6xl lg:text-7xl">
+          <h1 className="mt-5 font-sans text-[2.5rem] font-bold leading-[1.04] tracking-[-0.03em] text-balance sm:mt-6 sm:text-6xl sm:leading-[1.02] lg:text-7xl">
             I build the software{" "}
             <span className="text-sage-on-ink">a business runs on.</span>
           </h1>
 
-          <p className="mt-6 max-w-xl text-lg leading-relaxed text-hero-ink-muted sm:text-xl">
+          <p className="mt-5 max-w-xl text-base leading-relaxed text-hero-ink-muted sm:mt-6 sm:text-xl">
             Quotes, pricing and jobs shouldn't live in WhatsApp and spreadsheets. I build quoting engines, stage-locked workflows and internal tools around your own rules — and the websites and small systems that sit around them.
           </p>
 
-          <div className="mt-9 flex flex-wrap items-center gap-6">
+          <div className="mt-7 flex flex-wrap items-center gap-6 sm:mt-9">
             <a
               href="/book"
               className="inline-flex items-center gap-2 rounded-xl bg-sage-on-ink px-6 py-3 text-sm font-semibold text-hero-ink shadow-md transition-opacity hover:opacity-90 active:scale-[0.98]"
@@ -57,18 +57,20 @@ function Hero() {
             </a>
           </div>
 
-          <p className="mt-8 font-mono text-xs text-hero-ink-muted">
+          <p className="mt-6 font-mono text-xs text-hero-ink-muted sm:mt-8">
             First call is free · Fixed quote before you commit · You own the code
           </p>
         </div>
 
         <div className="relative flex justify-center lg:justify-end">
           <img
-            src="/images/chanakya-hero.png"
+            src="/images/chanakya-hero.webp"
             alt="Nagulagam Chanakya"
             width={528}
             height={1600}
-            className="pointer-events-none max-h-[380px] w-auto select-none object-contain object-bottom sm:max-h-[460px] lg:max-h-[620px]"
+            fetchPriority="high"
+            decoding="async"
+            className="pointer-events-none max-h-[300px] w-auto select-none object-contain object-bottom sm:max-h-[360px] lg:max-h-[760px]"
           />
         </div>
       </div>
