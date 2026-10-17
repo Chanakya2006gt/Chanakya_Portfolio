@@ -15,29 +15,29 @@ import { STUDIO_NAME, FOUNDER_NAME, LOCATION, WHATSAPP_URL, CONTACT_EMAIL, GITHU
 
 function Hero() {
   return (
-    <section className="relative isolate overflow-hidden bg-hero-ink text-hero-ink-foreground">
+    <section className="relative isolate flex min-h-[600px] items-center overflow-hidden bg-hero-ink text-hero-ink-foreground lg:min-h-[700px]">
       {/* depth behind the figure — not decoration, it is what separates a dark shirt from a dark field */}
       <div
         aria-hidden="true"
         className="pointer-events-none absolute inset-0 -z-10"
         style={{
           background:
-            "radial-gradient(60% 70% at 78% 42%, rgba(245,242,238,0.14), transparent 70%)",
+            "radial-gradient(52% 64% at 72% 52%, rgba(245,242,238,0.24), transparent 72%)",
         }}
       />
 
-      <div className="mx-auto grid max-w-6xl grid-cols-1 items-end gap-4 px-5 pt-12 sm:gap-8 lg:grid-cols-[1.1fr_minmax(0,320px)] lg:gap-10 lg:pt-20">
-        <div className="pb-10 sm:pb-14 lg:pb-24">
+      <div className="mx-auto grid w-full max-w-6xl grid-cols-1 items-end gap-4 px-5 py-12 sm:gap-8 lg:block lg:py-20">
+        <div className="max-w-[46rem]">
           <p className="font-mono text-xs uppercase tracking-[0.14em] text-data-on-ink">
             {FOUNDER_NAME} · {LOCATION}
           </p>
 
           <h1 className="mt-5 font-sans text-[2.5rem] font-bold leading-[1.04] tracking-[-0.03em] text-balance sm:mt-6 sm:text-6xl sm:leading-[1.02] lg:text-7xl">
             I build the software{" "}
-            <span className="text-sage-on-ink">a business runs on.</span>
+            <span className="block text-sage-on-ink">a business runs on.</span>
           </h1>
 
-          <p className="mt-5 max-w-xl text-base leading-relaxed text-hero-ink-muted sm:mt-6 sm:text-xl">
+          <p className="mt-5 max-w-xl text-base leading-relaxed text-hero-ink-foreground/88 sm:mt-6 sm:text-xl">
             Quotes, pricing and jobs shouldn't live in WhatsApp and spreadsheets. I build quoting engines, stage-locked workflows and internal tools around your own rules — and the websites and small systems that sit around them.
           </p>
 
@@ -57,12 +57,16 @@ function Hero() {
             </a>
           </div>
 
-          <p className="mt-6 font-mono text-xs text-hero-ink-muted sm:mt-8">
-            First call is free · Fixed quote before you commit · You own the code
-          </p>
+          <div className="mt-8 inline-flex max-w-full flex-col overflow-hidden rounded-xl border border-sage-on-ink/30 bg-sage-on-ink/[0.08] font-mono text-xs text-hero-ink-foreground/90 sm:mt-10 sm:flex-row">
+            <span className="px-4 py-3">First call is free</span>
+            <span className="border-t border-sage-on-ink/25 px-4 py-3 sm:border-l sm:border-t-0">Fixed quote before you commit</span>
+            <span className="border-t border-sage-on-ink/25 px-4 py-3 sm:border-l sm:border-t-0">You own the code</span>
+          </div>
         </div>
 
-        <div className="relative flex justify-center lg:justify-end">
+        {/* below lg the figure sits in the flow; from lg it is anchored to the band, not to the text column,
+            so the right edge of the band is deliberate instead of leftover. One <img>, never two fetches. */}
+        <div className="relative flex justify-center lg:absolute lg:inset-0 lg:mx-auto lg:block lg:max-w-[100rem]">
           <img
             src="/images/chanakya-hero.webp"
             alt="Nagulagam Chanakya"
@@ -70,7 +74,7 @@ function Hero() {
             height={1600}
             fetchPriority="high"
             decoding="async"
-            className="pointer-events-none max-h-[300px] w-auto select-none object-contain object-bottom sm:max-h-[360px] lg:max-h-[760px]"
+            className="pointer-events-none max-h-[300px] w-auto select-none object-contain object-bottom sm:max-h-[360px] lg:absolute lg:bottom-0 lg:right-6 lg:h-[96%] lg:max-h-[680px] xl:right-12"
           />
         </div>
       </div>
