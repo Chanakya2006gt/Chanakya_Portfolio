@@ -1,6 +1,6 @@
-# CK Builds
+# Chanakya — independent software engineer
 
-> CK Builds is a boutique software studio that designs and builds custom quoting engines (CPQ), stage-locked operational workflows, and internal systems for growing businesses.
+> Chanakya (Nagulagam Chanakya) is an independent software engineer in Warangal, India. He builds quoting engines, operational workflows, internal tools and websites for growing businesses.
 
 ## Capabilities
 - Custom Quoting & CPQ Engines: Deterministic pricing logic modeling floor geometry, material yields, and volume tiers into instant quotes.
@@ -9,6 +9,7 @@
 
 ## Who it is for
 Operational businesses where revenue or delivery is gated on a quote, approval, or staged workflow: manufacturing, custom fabrication, trade services, distribution, and creative studios.
+Also takes smaller website work: landing pages, business sites, appointment and booking systems, and fixes to existing sites.
 
 ## How a project runs
 1. Discovery call: 20 minutes, free. An honest evaluation of whether custom software makes business sense.

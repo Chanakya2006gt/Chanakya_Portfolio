@@ -2,28 +2,26 @@ import { createRootRoute, HeadContent, Outlet, Scripts } from "@tanstack/react-r
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { Toaster } from "sonner";
 import { faqs } from "@/data/faqs";
-import { SITE_URL, STUDIO_NAME, CONTACT_EMAIL } from "@/data/studio";
+import { SITE_URL, FOUNDER_NAME, CONTACT_EMAIL, GITHUB_URL } from "@/data/studio";
 import appCss from "../styles.css?url";
 
-const APP_NAME = "CK Builds — We build software that runs businesses.";
-const APP_DESC = "CK Builds designs and engineers custom operational software, CPQ platforms, and workflow systems for growing businesses. Talk directly to the people who build it.";
+const APP_NAME = "Chanakya — I build the software a business runs on";
+const APP_DESC = "I'm Chanakya, an independent software engineer in Warangal. I build quoting engines, operational workflows, internal tools and websites for growing businesses. First call is free.";
 
 const JSON_LD = {
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": "ProfessionalService",
-      "@id": `${SITE_URL}/#studio`,
-      "name": STUDIO_NAME,
+      "@type": "Person",
+      "@id": `${SITE_URL}/#person`,
+      "name": FOUNDER_NAME,
       "url": SITE_URL,
+      "jobTitle": "Independent software engineer",
       "description": APP_DESC,
-      "areaServed": "Worldwide",
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "contactType": "sales",
-        "telephone": "+91-7674040571",
-        "email": CONTACT_EMAIL,
-      },
+      "address": { "@type": "PostalAddress", "addressLocality": "Warangal", "addressCountry": "IN" },
+      "email": CONTACT_EMAIL,
+      "telephone": "+91-7674040571",
+      "sameAs": [GITHUB_URL],
     },
     {
       "@type": "SoftwareApplication",
@@ -34,7 +32,7 @@ const JSON_LD = {
       "operatingSystem": "Web",
       "description": "Client portal and milestone payment authorization SaaS ensuring verified stage locks and direct settlement.",
       "author": {
-        "@id": `${SITE_URL}/#studio`
+        "@id": `${SITE_URL}/#person`
       }
     },
     {
@@ -47,7 +45,7 @@ const JSON_LD = {
       "operatingSystem": "Web",
       "description": "B2B CPQ and sales estimating platform for industrial packaging converters with FINAT 1–8 rewind standards engine.",
       "author": {
-        "@id": `${SITE_URL}/#studio`
+        "@id": `${SITE_URL}/#person`
       }
     },
     {
@@ -73,8 +71,8 @@ export const Route = createRootRoute({
       { title: APP_NAME },
       { name: "theme-color", content: "#f8f7f4" },
       { name: "description", content: APP_DESC },
-      { name: "keywords", content: "CK Builds, Quote-to-job systems, industrial CPQ platform, packaging converting quoting, FINAT unwind standards, milestone authorization SaaS, Trelio, operational software" },
-      { name: "author", content: "CK Builds" },
+      { name: "keywords", content: "Chanakya, independent software engineer, quote-to-job systems, industrial CPQ platform, packaging converting quoting, FINAT unwind standards, milestone authorization SaaS, Trelio, operational software, Warangal" },
+      { name: "author", content: FOUNDER_NAME },
       { name: "robots", content: "index, follow" },
       
       // Open Graph (LinkedIn, Discord, WhatsApp, Facebook)
@@ -83,7 +81,7 @@ export const Route = createRootRoute({
       { property: "og:image", content: `${SITE_URL}/og.jpg` },
       { property: "og:url", content: SITE_URL },
       { property: "og:type", content: "website" },
-      { property: "og:site_name", content: STUDIO_NAME },
+      { property: "og:site_name", content: FOUNDER_NAME },
 
       // Twitter / X Cards
       { name: "twitter:card", content: "summary_large_image" },

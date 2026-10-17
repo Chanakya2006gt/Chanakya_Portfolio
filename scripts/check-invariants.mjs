@@ -14,7 +14,7 @@ const SKIP = [/routeTree\.gen\.ts$/, /\.(png|jpe?g|webp|ico|woff2?)$/];
 
 // ---- Fixed facts (only Chanakya changes these) ----------------------------
 const STUDIO_FACTS = {
-  STUDIO_NAME: '"CK Builds"',
+  STUDIO_NAME: '"Chanakya"',
   CONTACT_EMAIL: '"nagulagamchanakya2211@gmail.com"',
   WHATSAPP_DISPLAY: '"+91 76740 40571"',
   WHATSAPP_NUMBER: '"917674040571"',

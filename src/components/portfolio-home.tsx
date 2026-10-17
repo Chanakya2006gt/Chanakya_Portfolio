@@ -11,7 +11,7 @@ import { SiteNav } from "@/components/site-nav";
 import { Companion } from "@/components/mascot/companion";
 import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 import { DynamicData } from "@/data/store";
-import { STUDIO_NAME, WHATSAPP_URL, CONTACT_EMAIL, GITHUB_URL } from "@/data/studio";
+import { STUDIO_NAME, FOUNDER_NAME, WHATSAPP_URL, CONTACT_EMAIL, GITHUB_URL } from "@/data/studio";
 
 function Hero() {
   return (
@@ -487,7 +487,7 @@ export function PortfolioHome({ initialData }: { initialData?: DynamicData | nul
           </div>
           <Separator className="my-6" />
           <div className="flex items-center justify-between text-[11px] text-muted-foreground">
-            <p>© {new Date().getFullYear()} {STUDIO_NAME}. All rights reserved.</p>
+            <p>© {new Date().getFullYear()} {FOUNDER_NAME}.</p>
             <a href="#top" className="hover:text-foreground transition-colors inline-flex items-center gap-1">
               Back to top <ArrowUp className="size-3" />
             </a>

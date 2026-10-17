@@ -15,12 +15,12 @@ WHAT ${STUDIO_NAME} BUILDS
 Custom software for businesses where work starts with a quote or an approval: quoting engines that model exact rates and floor specs, milestone stage locks that prevent unpaid work, and internal tools that replace spreadsheets and WhatsApp threads. Fitting businesses include manufacturing, fabrication, trade services, distribution, and creative studios.
 
 HOW A PROJECT RUNS
-1. Discovery call: 20 minutes, free. We review how quotes or jobs move today and give an honest yes or no on whether custom software makes business sense.
-2. Scope & Fixed Quote: Based on the client's problem size and workflow complexity, we provide a transparent, fixed-price quote and timeline before any build begins.
-3. Build & Handover: We engineer the system around real data, stress-test it with the team, and deploy to the client's cloud. The client owns 100% of the repository and database.
+1. Discovery call: 20 minutes, free. Chanakya reviews how quotes or jobs move today and gives an honest yes or no on whether custom software makes business sense.
+2. Scope & Fixed Quote: Based on the client's workflow, he gives a fixed price and timeline before any build begins.
+3. Build & Handover: He builds the system around real data, tests it on real jobs with the team, and deploys to the client's own accounts. The client owns the repository and the database.
 
 WORK
-- Trelio (trelio.in): a live studio product built and operated in-house. A client portal and milestone payment authorization platform.
+- Trelio (trelio.in): Chanakya's own product — he founded it and he builds it. A client portal and milestone payment authorization platform.
 - Apex Packaging & Converting: a reference build demonstrating an industrial CPQ estimating platform for packaging converters.
 
 HOW TO START

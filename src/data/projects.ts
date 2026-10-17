@@ -41,7 +41,7 @@ export const sideProjects: Project[] = [
 
 export const navLinks = [
   { href: "#work", label: "Work" },
-  { href: "#what-we-build", label: "What We Build" },
-  { href: "#how-we-work", label: "How We Work" },
+  { href: "#how-we-work", label: "Process" },
+  { href: "#about", label: "About" },
   { href: "#faq", label: "FAQ" },
 ] as const;

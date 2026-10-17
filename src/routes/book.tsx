@@ -7,6 +7,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import {
   STUDIO_NAME,
+  FOUNDER_NAME,
   CONTACT_EMAIL,
   WHATSAPP_URL,
   WHATSAPP_DISPLAY,
@@ -20,7 +21,7 @@ export const Route = createFileRoute("/book")({
       { title: `Book a 20-minute call — ${STUDIO_NAME}` },
       {
         name: "description",
-        content: `Schedule a 20-minute consultation with ${STUDIO_NAME}. We review your quoting, approval, or job workflow and determine whether custom software makes sense.`,
+        content: "Book a free 20-minute call with Chanakya. I look at how your quotes, approvals or jobs move today and tell you whether custom software is worth it.",
       },
     ],
   }),
@@ -254,7 +255,7 @@ function BookPage() {
       {/* Minimal Footer */}
       <footer className="border-t border-border/60 py-8 text-center text-xs text-muted-foreground">
         <div className="mx-auto max-w-5xl px-5 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p>© {new Date().getFullYear()} {STUDIO_NAME}. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} {FOUNDER_NAME}.</p>
           <div className="flex items-center gap-4 font-mono text-[11px]">
             <Link to="/" hash="work" className="hover:text-foreground transition-colors">Work</Link>
             <Link to="/" hash="what-we-build" className="hover:text-foreground transition-colors">Capabilities</Link>
