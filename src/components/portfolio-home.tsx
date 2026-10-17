@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ArrowUp, ArrowRight, ExternalLink, ShieldCheck, Code2, CheckCircle2, Layers, Calculator, Lock } from "lucide-react";
+import { ArrowUp, ArrowRight, ExternalLink, ShieldCheck, Code2, CheckCircle2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -232,51 +232,48 @@ function Capabilities() {
         I build operational systems where revenue, accuracy or delivery depends on rules that are specific to your business — and the websites and smaller tools around them.
       </p>
 
-      <div className="mt-12 grid gap-6 md:grid-cols-3">
-        {/* Capability 1 */}
-        <Card className="card-specular relative flex flex-col justify-between rounded-2xl p-6 border border-border/80 bg-card shadow-sm">
-          <div className="space-y-4">
-            <div className="flex size-10 items-center justify-center rounded-xl bg-surface text-foreground border border-border">
-              <Calculator className="size-5" />
-            </div>
-            <h3 className="font-sans text-xl font-semibold text-foreground tracking-tight">
-              Custom Quoting & CPQ Engines
-            </h3>
-            <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
-              Deterministic pricing software that models your actual material yields, setup times, volume tiers, and floor geometry into instant, error-free customer quotes.
-            </p>
-          </div>
-        </Card>
+      <div className="mt-12">
+        <div className="grid gap-4 border-t border-border py-8 md:grid-cols-[auto_1fr_1.4fr] md:items-baseline md:gap-8">
+          <span className="font-mono text-xs text-data">01</span>
+          <h3 className="font-sans text-xl font-semibold tracking-tight text-foreground">Custom Quoting & CPQ Engines</h3>
+          <p className="text-sm text-muted-foreground leading-relaxed">
+            Deterministic pricing software that models your actual material yields, setup times, volume tiers, and floor geometry into instant, error-free customer quotes.
+          </p>
+        </div>
 
-        {/* Capability 2 */}
-        <Card className="card-specular relative flex flex-col justify-between rounded-2xl p-6 border border-border/80 bg-card shadow-sm">
-          <div className="space-y-4">
-            <div className="flex size-10 items-center justify-center rounded-xl bg-surface text-foreground border border-border">
-              <Lock className="size-5" />
-            </div>
-            <h3 className="font-sans text-xl font-semibold text-foreground tracking-tight">
-              Operational Workflows & Stage Locks
-            </h3>
-            <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
-              Digital gates that protect your team from scope creep and unpaid work. Work, design revisions, or shipping only unlock once milestone sign-off and payments clear.
-            </p>
-          </div>
-        </Card>
+        <div className="grid gap-4 border-t border-border py-8 md:grid-cols-[auto_1fr_1.4fr] md:items-baseline md:gap-8">
+          <span className="font-mono text-xs text-data">02</span>
+          <h3 className="font-sans text-xl font-semibold tracking-tight text-foreground">Operational Workflows & Stage Locks</h3>
+          <p className="text-sm text-muted-foreground leading-relaxed">
+            Digital gates that protect your team from scope creep and unpaid work. Work, design revisions, or shipping only unlock once milestone sign-off and payments clear.
+          </p>
+        </div>
 
-        {/* Capability 3 */}
-        <Card className="card-specular relative flex flex-col justify-between rounded-2xl p-6 border border-border/80 bg-card shadow-sm">
-          <div className="space-y-4">
-            <div className="flex size-10 items-center justify-center rounded-xl bg-surface text-foreground border border-border">
-              <Layers className="size-5" />
-            </div>
-            <h3 className="font-sans text-xl font-semibold text-foreground tracking-tight">
-              Internal Dashboards & Client Portals
-            </h3>
-            <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
-              Centralized, role-based tools that replace messy WhatsApp chains and fragmented email threads with clean tracking for clerks, managers, and clients.
+        <div className="grid gap-4 border-t border-border py-8 md:grid-cols-[auto_1fr_1.4fr] md:items-baseline md:gap-8">
+          <span className="font-mono text-xs text-data">03</span>
+          <h3 className="font-sans text-xl font-semibold tracking-tight text-foreground">Internal Dashboards & Client Portals</h3>
+          <p className="text-sm text-muted-foreground leading-relaxed">
+            Centralized, role-based tools that replace messy WhatsApp chains and fragmented email threads with clean tracking for clerks, managers, and clients.
+          </p>
+        </div>
+
+        <div className="grid gap-4 border-y border-border py-8 md:grid-cols-[auto_1fr_1.4fr] md:items-baseline md:gap-8">
+          <span className="font-mono text-xs text-data">04</span>
+          <h3 className="font-sans text-xl font-semibold tracking-tight text-foreground">Websites &amp; small systems</h3>
+          <div className="space-y-3">
+            <p className="text-sm text-muted-foreground leading-relaxed">
+              A landing page, a site for your business, an appointment or booking system, a form that feeds your team, or a fix to something you already have. Scoped in one conversation, built in days.
             </p>
+            <a
+              href={WHATSAPP_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 font-mono text-xs text-sage underline underline-offset-4 hover:opacity-80"
+            >
+              WhatsApp me what you need →
+            </a>
           </div>
-        </Card>
+        </div>
       </div>
     </section>
   );
