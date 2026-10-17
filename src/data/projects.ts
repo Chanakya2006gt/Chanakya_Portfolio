@@ -19,7 +19,7 @@ export const businesses: Project[] = [
     liveUrl: "https://trelio.in",
     stack: ["Multi-tenant", "PostgreSQL RLS", "Payments", "Audit ledger", "React", "Node.js"],
     featured: true,
-    badge: "Studio product · live",
+    badge: "My product · live",
     kind: "business",
   },
 ];

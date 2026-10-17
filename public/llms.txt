@@ -17,7 +17,7 @@ Also takes smaller website work: landing pages, business sites, appointment and 
 3. Build & Handover: Direct engineering around real data, staff stress testing, and live deployment. The client receives 100% repository and database ownership.
 
 ## Work
-- Trelio (https://trelio.in): A live studio product built and operated in-house. Client portal and milestone payment authorization SaaS.
+- Trelio (https://trelio.in): Chanakya's own product — he founded it and he builds it. A client portal and milestone payment authorization platform.
 - Apex Packaging & Converting: A reference build demonstrating an industrial CPQ estimating platform for packaging converters. Source: https://github.com/Chanakya2006gt/Industrial-packaging-platform
 
 ## Contact

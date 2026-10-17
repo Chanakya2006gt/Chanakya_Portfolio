@@ -217,7 +217,7 @@ function BookPage() {
         <div className="mt-8 flex flex-wrap items-center justify-between gap-4 text-xs text-muted-foreground px-2">
           <span>Prefer direct email?</span>
           <a
-            href={`mailto:${CONTACT_EMAIL}?subject=CK%20Builds%20Workflow%20Inquiry`}
+            href={`mailto:${CONTACT_EMAIL}?subject=Project%20enquiry`}
             className="text-foreground underline underline-offset-4 hover:text-sage transition-colors"
           >
             {CONTACT_EMAIL}
@@ -258,7 +258,7 @@ function BookPage() {
           <p>© {new Date().getFullYear()} {FOUNDER_NAME}.</p>
           <div className="flex items-center gap-4 font-mono text-[11px]">
             <Link to="/" hash="work" className="hover:text-foreground transition-colors">Work</Link>
-            <Link to="/" hash="what-we-build" className="hover:text-foreground transition-colors">Capabilities</Link>
+            <Link to="/" hash="what-we-build" className="hover:text-foreground transition-colors">What I build</Link>
             <Link to="/" hash="how-we-work" className="hover:text-foreground transition-colors">Process</Link>
             <Link to="/" hash="faq" className="hover:text-foreground transition-colors">FAQ</Link>
           </div>

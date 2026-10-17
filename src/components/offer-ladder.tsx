@@ -24,10 +24,10 @@ export function OfferLadder() {
       <div className="mt-3 flex flex-col md:flex-row md:items-end md:justify-between gap-4">
         <div>
           <h2 className="font-sans text-3xl font-semibold tracking-tight sm:text-4xl">
-            How we work
+            How a project runs
           </h2>
           <p className="mt-2 max-w-2xl text-muted-foreground text-sm sm:text-base leading-relaxed">
-            From first conversation to live deployment in three clear steps.
+            From the first conversation to a system your team uses, in three steps.
           </p>
         </div>
       </div>
@@ -46,12 +46,12 @@ export function OfferLadder() {
               <h3 className="font-sans text-xl font-semibold tracking-tight">Discovery Call</h3>
             </div>
             <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
-              We look at how your quotes or jobs move today. If an off-the-shelf software tool solves your problem better or cheaper, we tell you directly.
+              We look at how your quotes or jobs move today. If an off-the-shelf tool solves it better or cheaper, I'll tell you so.
             </p>
           </div>
           <div className="pt-4 mt-4 border-t border-border/60">
             <p className="text-xs font-medium text-foreground/90">
-              You leave with: An honest assessment of whether custom software makes business sense.
+              You leave with: a straight yes or no on whether custom software is worth it.
             </p>
           </div>
         </Card>
@@ -68,12 +68,12 @@ export function OfferLadder() {
               <h3 className="font-sans text-xl font-semibold tracking-tight">Scope & Fixed Quote</h3>
             </div>
             <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
-              Based on your exact workflow complexity and problem size, we provide a transparent, fixed-price quote and timeline before any build begins. No hidden hourly fees.
+              I scope the work against your actual workflow and give you a fixed price and timeline before anything is built. No hourly surprises.
             </p>
           </div>
           <div className="pt-4 mt-4 border-t border-border/60">
             <p className="text-xs font-medium text-foreground/90">
-              You leave with: A clear technical specification, defined deliverables, and guaranteed fixed pricing.
+              You leave with: a written spec, defined deliverables and a fixed price.
             </p>
           </div>
         </Card>
@@ -90,12 +90,12 @@ export function OfferLadder() {
               <h3 className="font-sans text-xl font-semibold tracking-tight">Build & Handover</h3>
             </div>
             <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
-              We engineer the system around your real data, test it on real jobs with your team, and deploy it to your cloud accounts.
+              I build the system around your real data, test it on real jobs with your team, and deploy it to your accounts.
             </p>
           </div>
           <div className="pt-4 mt-4 border-t border-border/60">
             <p className="text-xs font-medium text-foreground/90">
-              You leave with: The live software on your custom domain, and 100% repository and database ownership.
+              You leave with: the system live on your domain, and full ownership of the code and database.
             </p>
           </div>
         </Card>

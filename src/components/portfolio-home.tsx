@@ -97,7 +97,7 @@ function SelectedWork() {
         Systems Built & Operating
       </h2>
       <p className="mt-3 max-w-2xl text-muted-foreground text-sm sm:text-base leading-relaxed font-normal">
-        Production systems engineered around real business constraints: one live multi-tenant SaaS product and one industrial manufacturing CPQ reference build.
+        Two systems built to production standard: my own live product, and a reference build for an industrial label converter.
       </p>
 
       <div className="mt-12 space-y-12">
@@ -118,7 +118,7 @@ function SelectedWork() {
             <div className="space-y-4">
               <div className="flex flex-wrap items-center justify-between gap-2">
                 <Badge variant="outline" className="font-mono text-[11px] uppercase tracking-wider bg-surface text-data border-border">
-                  Studio product · live
+                  My product · live
                 </Badge>
                 <a
                   href="https://trelio.in"
@@ -136,13 +136,13 @@ function SelectedWork() {
               </h3>
 
               <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-                A multi-tenant client portal and payment authorization platform for creative studios and service firms.
+                My own product: a multi-tenant client portal and payment authorisation platform for studios and service firms. I founded it and I build it.
               </p>
 
               <div className="rounded-xl border border-border/60 bg-secondary/40 p-4 text-xs sm:text-sm text-foreground/90 space-y-1.5">
-                <strong className="text-foreground block font-medium">What Was Engineered:</strong>
+                <strong className="text-foreground block font-medium">What I built:</strong>
                 <p className="text-muted-foreground leading-relaxed">
-                  Built the authorization-before-execution engine, milestone escrow stage locks, immutable audit ledger, and multi-tenant billing so work never runs ahead of payment.
+                  I built the authorisation-before-execution engine, milestone stage locks, the audit ledger and multi-tenant billing, so work never runs ahead of payment.
                 </p>
               </div>
 
@@ -177,15 +177,6 @@ function SelectedWork() {
                 <Badge variant="outline" className="font-mono text-[11px] uppercase tracking-wider bg-surface text-data border-border">
                   Reference build · industrial manufacturing
                 </Badge>
-                <a
-                  href="https://industrial-packaging-platform.vercel.app"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 text-xs font-mono font-medium text-sage hover:underline"
-                >
-                  <span>Live demo</span>
-                  <ExternalLink className="size-3" />
-                </a>
               </div>
 
               <h3 className="font-sans text-2xl sm:text-3xl font-semibold text-foreground tracking-tight">
@@ -193,23 +184,18 @@ function SelectedWork() {
               </h3>
 
               <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-                Configure, Price, Quote (CPQ) software engineered to the exact manufacturing floor specs of an industrial label converter.
+                Quoting software modelled on the exact floor specs of an industrial label converter. A reference build, not a client project.
               </p>
 
               <div className="rounded-xl border border-border/60 bg-secondary/40 p-4 text-xs sm:text-sm text-foreground/90 space-y-1.5">
-                <strong className="text-foreground block font-medium">What Was Engineered:</strong>
+                <strong className="text-foreground block font-medium">What I built:</strong>
                 <p className="text-muted-foreground leading-relaxed">
-                  Replaced multi-sheet spreadsheet chains with floor-accurate FINAT 1–8 roll unwind calculators, substrate costing, and automated PDF job spec generation.
+                  I replaced multi-sheet spreadsheet chains with floor-accurate FINAT 1–8 unwind calculators, substrate costing and automated PDF job specs.
                 </p>
               </div>
 
               <div className="pt-2 flex flex-wrap items-center justify-between gap-3 text-xs font-mono text-muted-foreground border-t border-border/60">
                 <span>Stack: React · TypeScript · PostgreSQL RLS · CPQ Math Engine</span>
-                <Button asChild size="sm" variant="outline" className="rounded-xl border-border/80 text-xs">
-                  <a href="https://industrial-packaging-platform.vercel.app" target="_blank" rel="noopener noreferrer">
-                    <span>View Reference Build ↗</span>
-                  </a>
-                </Button>
               </div>
             </div>
           </div>
@@ -235,10 +221,10 @@ function Capabilities() {
         <p className="text-xs font-semibold uppercase tracking-wider text-data">Capabilities</p>
       </div>
       <h2 className="mt-3 font-sans text-3xl font-semibold tracking-tight sm:text-4xl">
-        What We Build
+        What I build
       </h2>
       <p className="mt-3 max-w-2xl text-muted-foreground text-sm sm:text-base leading-relaxed">
-        We specialize in operational systems where revenue, accuracy, or delivery depends on complex business rules.
+        I build operational systems where revenue, accuracy or delivery depends on rules that are specific to your business — and the websites and smaller tools around them.
       </p>
 
       <div className="mt-12 grid gap-6 md:grid-cols-3">
@@ -306,10 +292,10 @@ function Standards() {
         <p className="text-xs font-semibold uppercase tracking-wider text-data">Standards</p>
       </div>
       <h2 className="mt-3 font-sans text-3xl font-semibold tracking-tight sm:text-4xl">
-        Direct Partnership & Ownership
+        How I work with you
       </h2>
       <p className="mt-3 max-w-2xl text-muted-foreground text-sm sm:text-base leading-relaxed">
-        Clear terms, fixed quotes, and direct communication.
+        Clear terms, a fixed quote before you commit, and you deal with the person writing the code.
       </p>
 
       <div className="mt-10 grid gap-6 sm:grid-cols-3">
@@ -318,10 +304,10 @@ function Standards() {
             <div className="flex size-8 items-center justify-center rounded-lg bg-surface text-foreground border border-border">
               <ShieldCheck className="size-4" />
             </div>
-            <h3 className="font-sans text-base font-semibold text-foreground tracking-tight">Direct to Builders</h3>
+            <h3 className="font-sans text-base font-semibold text-foreground tracking-tight">You talk to me</h3>
           </div>
           <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
-            You talk directly to the people who design, write, and deploy the system. No account managers or salespeople in the middle.
+            No account manager, no sales layer, no hand-off to someone junior. The person you call is the person building it.
           </p>
         </Card>
 
@@ -333,7 +319,7 @@ function Standards() {
             <h3 className="font-sans text-base font-semibold text-foreground tracking-tight">100% Code & Cloud IP</h3>
           </div>
           <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
-            You receive complete repository, database schema, and cloud deployment configs. Everything runs on your custom domain with zero vendor lock-in.
+            You receive the complete repository, database schema and deployment configs. Everything runs on your domain, with no lock-in to me.
           </p>
         </Card>
 
@@ -345,7 +331,7 @@ function Standards() {
             <h3 className="font-sans text-base font-semibold text-foreground tracking-tight">Problem-Sized Scope</h3>
           </div>
           <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
-            We don't sell bloated 50-page ERPs. We solve the specific operational bottleneck that costs your business time or revenue.
+            I don't sell bloated 50-page ERPs. I solve the one bottleneck that's costing you time or revenue.
           </p>
         </Card>
       </div>
@@ -372,7 +358,7 @@ function Contact() {
         Let's look at how your business runs today.
       </h2>
       <p className="mt-4 max-w-lg text-base text-muted-foreground">
-        Twenty minutes, free. If custom software isn't worth it for you, we'll tell you directly.
+        Twenty minutes, free. If custom software isn't worth it for you, I'll say so.
       </p>
 
       <div className="mt-8 flex flex-wrap items-center gap-4">
@@ -400,9 +386,9 @@ function Contact() {
           What happens next
         </h3>
         <ol className="mt-3 space-y-2 text-xs sm:text-sm text-muted-foreground list-decimal list-inside">
-          <li>You submit an inquiry on <a href="/book" className="underline hover:text-foreground">/book</a> or message on WhatsApp.</li>
-          <li>We confirm a time for a 20-minute call.</li>
-          <li>We review your quoting or workflow bottleneck and give you an honest recommendation.</li>
+          <li>You send an enquiry from <a href="/book" className="underline hover:text-foreground">/book</a> or message on WhatsApp.</li>
+          <li>I confirm a time for a 20-minute call.</li>
+          <li>We talk through your workflow and I give you an honest recommendation.</li>
         </ol>
       </div>
     </section>
@@ -444,7 +430,7 @@ export function PortfolioHome({ initialData }: { initialData?: DynamicData | nul
           <div className="flex flex-col items-center justify-between gap-4 text-xs text-muted-foreground sm:flex-row">
             <div>
               <p className="font-medium text-foreground text-sm">{STUDIO_NAME}</p>
-              <p className="text-muted-foreground mt-0.5">Bespoke Software for Operations · {CONTACT_EMAIL}</p>
+              <p className="text-muted-foreground mt-0.5">{LOCATION} · {CONTACT_EMAIL}</p>
             </div>
             <div className="flex flex-wrap items-center gap-4 text-xs font-mono">
               <a href="#work" className="hover:text-foreground transition-colors">Work</a>
