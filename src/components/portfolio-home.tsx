@@ -389,6 +389,21 @@ function About() {
 
 function Contact() {
   const { ref, isVisible } = useScrollAnimation();
+  const [copied, setCopied] = useState(false);
+
+  const handleCopyEmail = async () => {
+    if (typeof navigator !== "undefined" && navigator.clipboard?.writeText) {
+      try {
+        await navigator.clipboard.writeText(CONTACT_EMAIL);
+        setCopied(true);
+        setTimeout(() => setCopied(false), 2000);
+        return;
+      } catch {
+        // Fall back to mailto if clipboard write fails
+      }
+    }
+    window.location.href = `mailto:${CONTACT_EMAIL}?subject=Project%20enquiry`;
+  };
 
   return (
     <section
@@ -421,12 +436,13 @@ function Contact() {
             <span>Message on WhatsApp</span>
           </a>
         </Button>
-        <a
-          href={`mailto:${CONTACT_EMAIL}?subject=CK%20Builds%20Inquiry`}
-          className="text-sm font-medium text-foreground underline underline-offset-4 hover:text-sage transition-colors"
+        <button
+          type="button"
+          onClick={handleCopyEmail}
+          className="cursor-pointer text-sm font-medium text-foreground underline underline-offset-4 hover:text-sage transition-colors"
         >
-          {CONTACT_EMAIL}
-        </a>
+          {copied ? "Copied" : CONTACT_EMAIL}
+        </button>
       </div>
 
       <div className="mt-12 pt-8 border-t border-border/70 max-w-md">
@@ -484,7 +500,8 @@ export function PortfolioHome({ initialData }: { initialData?: DynamicData | nul
             </div>
             <div className="flex flex-wrap items-center gap-4 text-xs font-mono">
               <a href="#work" className="hover:text-foreground transition-colors">Work</a>
-              <a href="#what-we-build" className="hover:text-foreground transition-colors">Capabilities</a>
+              <a href="#about" className="hover:text-foreground transition-colors">About</a>
+              <a href="#what-we-build" className="hover:text-foreground transition-colors">What I build</a>
               <a href="#how-we-work" className="hover:text-foreground transition-colors">Process</a>
               <a href="#faq" className="hover:text-foreground transition-colors">FAQ</a>
               <a href="/book" className="hover:text-foreground transition-colors">Book a call</a>
