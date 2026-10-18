@@ -16,23 +16,35 @@ import { STUDIO_NAME, FOUNDER_NAME, LOCATION, WHATSAPP_URL, CONTACT_EMAIL, GITHU
 function Hero() {
   return (
     <section className="relative isolate flex min-h-[600px] items-center overflow-hidden bg-hero-ink text-hero-ink-foreground lg:min-h-[700px]">
-      {/* depth behind the figure — not decoration, it is what separates a dark shirt from a dark field */}
+      {/* light falls where the screen sits */}
       <div
         aria-hidden="true"
         className="pointer-events-none absolute inset-0 -z-10"
         style={{
           background:
-            "radial-gradient(52% 64% at 72% 52%, rgba(245,242,238,0.24), transparent 72%)",
+            "radial-gradient(52% 64% at 72% 46%, rgba(245,242,238,0.20), transparent 72%)",
         }}
       />
 
-      <div className="mx-auto grid w-full max-w-6xl grid-cols-1 items-end gap-4 px-5 py-12 sm:gap-8 lg:block lg:py-20">
-        <div className="max-w-[46rem]">
+      {/* grain: the gradient above resolves to only ~53 levels of 8-bit grey, which bands in
+          10px steps on a dark field. This dithers it and gives the band a filmic surface. */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 -z-10 opacity-[0.05]"
+        style={{
+          backgroundImage:
+            "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E\")",
+          backgroundRepeat: "repeat",
+        }}
+      />
+
+      <div className="mx-auto grid w-full max-w-6xl grid-cols-1 items-center gap-10 px-5 py-12 sm:gap-12 lg:grid-cols-[minmax(0,1fr)_minmax(0,464px)] lg:gap-12 lg:py-20">
+        <div>
           <p className="font-mono text-xs uppercase tracking-[0.14em] text-data-on-ink">
             {FOUNDER_NAME} · {LOCATION}
           </p>
 
-          <h1 className="mt-5 font-sans text-[2.5rem] font-bold leading-[1.04] tracking-[-0.03em] text-balance sm:mt-6 sm:text-6xl sm:leading-[1.02] lg:text-7xl">
+          <h1 className="mt-5 font-sans text-[2.5rem] font-bold leading-[1.04] tracking-[-0.03em] text-balance sm:mt-6 sm:text-5xl sm:leading-[1.03] lg:text-6xl">
             I build the software{" "}
             <span className="block text-sage-on-ink">a business runs on.</span>
           </h1>
@@ -64,19 +76,21 @@ function Hero() {
           </div>
         </div>
 
-        {/* below lg the figure sits in the flow; from lg it is anchored to the band, not to the text column,
-            so the right edge of the band is deliberate instead of leftover. One <img>, never two fetches. */}
-        <div className="relative flex justify-center lg:absolute lg:inset-0 lg:mx-auto lg:block lg:max-w-[100rem]">
+        {/* the work, not the face: the sharpest asset on the site, and it is also the proof */}
+        <figure className="relative m-0">
           <img
-            src="/images/chanakya-hero.webp"
-            alt="Nagulagam Chanakya"
-            width={528}
-            height={1600}
+            src="/images/trelio-preview.png"
+            alt="Trelio — the milestone authorization and client portal I built and run"
+            width={1024}
+            height={536}
             fetchPriority="high"
             decoding="async"
-            className="pointer-events-none max-h-[300px] w-auto select-none object-contain object-bottom sm:max-h-[360px] lg:absolute lg:bottom-0 lg:right-6 lg:h-[96%] lg:max-h-[680px] xl:right-12"
+            className="w-full rounded-xl border border-hero-ink-foreground/12 shadow-[0_30px_80px_-20px_rgba(0,0,0,0.85)]"
           />
-        </div>
+          <figcaption className="mt-4 font-mono text-[11px] uppercase tracking-[0.12em] text-hero-ink-muted">
+            Trelio — my own product, live
+          </figcaption>
+        </figure>
       </div>
     </section>
   );
