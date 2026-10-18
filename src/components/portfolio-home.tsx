@@ -52,8 +52,8 @@ function Hero() {
       </div>
 
       {/* the statement is the screen. no column, no card, nothing beside it. */}
-      <div className="relative z-10 flex flex-1 items-center py-10">
-        <h1 className="font-sans text-[clamp(2.4rem,9.1vw,8.2rem)] font-light uppercase leading-[0.98] tracking-[-0.012em]">
+      <div className="relative z-10 flex flex-1 items-center py-6 sm:py-10">
+        <h1 className="font-sans text-[clamp(2.8rem,8.5vw,9rem)] font-light uppercase leading-[0.98] tracking-[-0.012em]">
           I build the software
           <span className="block text-hero-field-accent">a business runs on.</span>
         </h1>
@@ -112,7 +112,7 @@ function SelectedWork() {
         Systems Built & Operating
       </h2>
       <p className="mt-3 max-w-2xl text-muted-foreground text-sm sm:text-base leading-relaxed font-normal">
-        Three things I've built and still run — my own live product, my own client-finding tool, and a reference build for an industrial label converter. The smaller work doesn't get a case study, but it's the same pair of hands.
+        Two of the harder things I've built — my own live product, and a reference build for an industrial label converter. The smaller work doesn't get a case study, but it's the same pair of hands.
       </p>
 
       <div className="mt-12 space-y-12">
