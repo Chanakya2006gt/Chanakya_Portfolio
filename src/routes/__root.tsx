@@ -6,7 +6,7 @@ import { SITE_URL, FOUNDER_NAME, CONTACT_EMAIL, GITHUB_URL } from "@/data/studio
 import appCss from "../styles.css?url";
 
 const APP_NAME = "Chanakya — I build the software a business runs on";
-const APP_DESC = "I'm Chanakya, an independent software engineer in Warangal. I build quoting engines, operational workflows, internal tools and websites for growing businesses. First call is free.";
+const APP_DESC = "I'm Chanakya, an independent software engineer in Warangal. I build websites, online stores, booking systems, internal tools and custom business software. First call is free.";
 
 const JSON_LD = {
   "@context": "https://schema.org",

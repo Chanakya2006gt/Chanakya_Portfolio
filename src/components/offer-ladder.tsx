@@ -46,7 +46,7 @@ export function OfferLadder() {
               <h3 className="font-sans text-xl font-semibold tracking-tight">Discovery Call</h3>
             </div>
             <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
-              We look at how your quotes or jobs move today. If an off-the-shelf tool solves it better or cheaper, I'll tell you so.
+              I look at what you have and what you need. If an off-the-shelf tool or a template solves it better or cheaper, I'll tell you so.
             </p>
           </div>
           <div className="pt-4 mt-4 border-t border-border/60">

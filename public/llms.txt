@@ -1,15 +1,15 @@
 # Chanakya — independent software engineer
 
-> Chanakya (Nagulagam Chanakya) is an independent software engineer in Warangal, India. He builds quoting engines, operational workflows, internal tools and websites for growing businesses.
+> Chanakya (Nagulagam Chanakya) is an independent software engineer in Warangal, India. He builds websites, online stores, booking systems, data and automation work, and custom business software including quoting engines and operational workflows.
 
 ## Capabilities
-- Custom Quoting & CPQ Engines: Deterministic pricing logic modeling floor geometry, material yields, and volume tiers into instant quotes.
-- Operational Workflows & Stage Locks: Milestone authorization gates preventing unpaid work and scope creep.
-- Internal Dashboards & Client Portals: Centralized operational tools replacing spreadsheets and WhatsApp threads.
+- Websites & online stores: A landing page, a site for your business, or a store that takes orders. Fast on a phone, built to be found in search, and the code is yours at the end.
+- Booking systems, forms & fixes: An appointment or booking system, an enquiry form that reaches you instead of a spreadsheet, or a repair to something you already have and can't change yourself.
+- Data, research & automation: Tools that go and find what you need — business and contact data, checks on sites that already exist, scheduled reports — and put it somewhere you can act on. Plus joining the tools you already pay for so nobody is copying between them by hand.
+- Custom business systems: Quoting and pricing engines, approval workflows that stay locked until a stage is signed off, internal dashboards and client portals. Software shaped to rules that are specific to how you work.
 
 ## Who it is for
-Operational businesses where revenue or delivery is gated on a quote, approval, or staged workflow: manufacturing, custom fabrication, trade services, distribution, and creative studios.
-Also takes smaller website work: landing pages, business sites, appointment and booking systems, and fixes to existing sites.
+Any business that needs software built, from a single landing page to a system the whole company runs on. No industry restriction. Budgets from small one-off jobs through to long builds.
 
 ## How a project runs
 1. Discovery call: 20 minutes, free. An honest evaluation of whether custom software makes business sense.

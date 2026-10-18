@@ -3,7 +3,7 @@
     {
       "id": "trelio",
       "title": "Trelio — Milestone Authorization & Client Portal",
-      "description": "Client portal and milestone payment authorization SaaS for creative studios and agencies. Built with authorization-before-execution stage locks, immutable audit ledgers, and multi-tenant billing.",
+      "description": "Client portal and milestone payment authorization SaaS. Built with authorization-before-execution stage locks, immutable audit ledgers, and multi-tenant billing.",
       "liveUrl": "https://trelio.in",
       "stack": [
         "Multi-tenant",
@@ -14,7 +14,7 @@
         "Node.js"
       ],
       "featured": true,
-      "badge": "Studio product · live",
+      "badge": "My product · live",
       "kind": "business"
     }
   ],

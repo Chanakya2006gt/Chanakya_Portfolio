@@ -22,11 +22,11 @@ export const faqs: FAQItem[] = [
   {
     question: "What types of businesses do you build for?",
     answer:
-      "Any business where revenue, production, or delivery is gated on a quote, approval, or staged workflow — including industrial manufacturing, custom fabrication, distribution, trade services, and creative studios.",
+      "Any of them. The work ranges from a one-page site for a local business to a quoting system for a factory floor. If you can describe the problem in a sentence, the first call will tell you whether I'm the right person to build it.",
   },
   {
-    question: "What is required from our team to begin?",
+    question: "What do you need from me to start?",
     answer:
-      "A decision-maker who understands your current operations, access to your existing rate sheets or spreadsheets, and 20 minutes for an initial workflow review.",
+      "Twenty minutes, and whatever you already have — a sketch, a spreadsheet, a site you don't like, or just the problem said out loud. For a bigger system I'll also want time with whoever knows how the work actually flows today.",
   },
 ];

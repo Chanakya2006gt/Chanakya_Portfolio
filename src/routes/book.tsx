@@ -94,7 +94,7 @@ function BookPage() {
         {BOOKING_URL && (
           <div className="mt-8 p-6 rounded-2xl border border-sage/40 bg-card shadow-sm">
             <h2 className="text-base font-semibold text-foreground">Pick a calendar slot</h2>
-            <p className="mt-1 text-xs text-muted-foreground">Directly select a time on our schedule.</p>
+            <p className="mt-1 text-xs text-muted-foreground">Pick a time that suits you.</p>
             <Button asChild size="lg" className="mt-4 rounded-xl font-medium shadow-md">
               <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer">
                 <span>Open Calendar →</span>
@@ -160,13 +160,13 @@ function BookPage() {
 
               <div className="space-y-1.5">
                 <Label htmlFor="workflow" className="text-xs font-medium text-foreground">
-                  What quoting or job workflow slows you down? *
+                  What do you need built? *
                 </Label>
                 <Textarea
                   id="workflow"
                   required
                   rows={4}
-                  placeholder="e.g. Quotes take 2 days in Excel, rates get mis-entered between sales and production floor..."
+                  placeholder="e.g. A booking page for my salon · An online store for about 40 products · Quotes take 2 days in Excel"
                   value={formData.workflowDescription}
                   onChange={(e) => setFormData({ ...formData, workflowDescription: e.target.value })}
                   className="rounded-xl bg-secondary/50 border-border/70 text-sm"
@@ -233,7 +233,7 @@ function BookPage() {
               Before we talk, it helps to prepare:
             </h2>
             <ul className="mt-3 space-y-2 text-xs sm:text-sm text-muted-foreground list-disc list-inside">
-              <li>How quotes or jobs move today (Excel spreadsheets, WhatsApp threads, or bespoke software).</li>
+              <li>What you have today — a site, a spreadsheet, a WhatsApp thread, or nothing yet.</li>
               <li>Roughly how many team members create quotes, approve orders, or handle job dispatches.</li>
               <li>The single biggest bottleneck causing delays, miscalculations, or unpaid revisions.</li>
             </ul>

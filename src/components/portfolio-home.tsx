@@ -81,7 +81,7 @@ function Lede() {
   return (
     <section className="mx-auto max-w-4xl px-5 pb-4 pt-20 sm:pt-28">
       <p className="text-xl leading-relaxed text-foreground sm:text-2xl sm:leading-relaxed">
-        Quotes, pricing and jobs shouldn't live in WhatsApp and spreadsheets. I build quoting engines, stage-locked workflows and internal tools around your own rules — and the websites and small systems that sit around them.
+        Websites, online stores, booking systems, internal dashboards, quoting engines — whatever the thing is your business actually needs built. You talk to me, and I write the code.
       </p>
       <a
         href="#work"
@@ -112,7 +112,7 @@ function SelectedWork() {
         Systems Built & Operating
       </h2>
       <p className="mt-3 max-w-2xl text-muted-foreground text-sm sm:text-base leading-relaxed font-normal">
-        Two systems built to production standard: my own live product, and a reference build for an industrial label converter.
+        Three things I've built and still run — my own live product, my own client-finding tool, and a reference build for an industrial label converter. The smaller work doesn't get a case study, but it's the same pair of hands.
       </p>
 
       <div className="mt-12 space-y-12">
@@ -244,40 +244,40 @@ function Capabilities() {
         What I build
       </h2>
       <p className="mt-3 max-w-2xl text-muted-foreground text-sm sm:text-base leading-relaxed">
-        I build operational systems where revenue, accuracy or delivery depends on rules that are specific to your business — and the websites and smaller tools around them.
+        From a one-page site to a system that runs your pricing. Small jobs and long builds both welcome — the first call tells you which one you actually need.
       </p>
 
       <div className="mt-12">
         <div className="grid gap-4 border-t border-border py-8 md:grid-cols-[auto_1fr_1.4fr] md:items-baseline md:gap-8">
           <span className="font-mono text-xs text-data">01</span>
-          <h3 className="font-sans text-xl font-semibold tracking-tight text-foreground">Custom Quoting & CPQ Engines</h3>
+          <h3 className="font-sans text-xl font-semibold tracking-tight text-foreground">Websites &amp; online stores</h3>
           <p className="text-sm text-muted-foreground leading-relaxed">
-            Deterministic pricing software that models your actual material yields, setup times, volume tiers, and floor geometry into instant, error-free customer quotes.
+            A landing page, a site for your business, or a store that takes orders. Fast on a phone, built to be found in search, and the code is yours at the end.
           </p>
         </div>
 
         <div className="grid gap-4 border-t border-border py-8 md:grid-cols-[auto_1fr_1.4fr] md:items-baseline md:gap-8">
           <span className="font-mono text-xs text-data">02</span>
-          <h3 className="font-sans text-xl font-semibold tracking-tight text-foreground">Operational Workflows & Stage Locks</h3>
+          <h3 className="font-sans text-xl font-semibold tracking-tight text-foreground">Booking systems, forms &amp; fixes</h3>
           <p className="text-sm text-muted-foreground leading-relaxed">
-            Digital gates that protect your team from scope creep and unpaid work. Work, design revisions, or shipping only unlock once milestone sign-off and payments clear.
+            An appointment or booking system, an enquiry form that reaches you instead of a spreadsheet, or a repair to something you already have and can't change yourself.
           </p>
         </div>
 
         <div className="grid gap-4 border-t border-border py-8 md:grid-cols-[auto_1fr_1.4fr] md:items-baseline md:gap-8">
           <span className="font-mono text-xs text-data">03</span>
-          <h3 className="font-sans text-xl font-semibold tracking-tight text-foreground">Internal Dashboards & Client Portals</h3>
+          <h3 className="font-sans text-xl font-semibold tracking-tight text-foreground">Data, research &amp; automation</h3>
           <p className="text-sm text-muted-foreground leading-relaxed">
-            Centralized, role-based tools that replace messy WhatsApp chains and fragmented email threads with clean tracking for clerks, managers, and clients.
+            Tools that go and find what you need — business and contact data, checks on sites that already exist, scheduled reports — and put it somewhere you can act on. Plus joining the tools you already pay for so nobody is copying between them by hand.
           </p>
         </div>
 
         <div className="grid gap-4 border-y border-border py-8 md:grid-cols-[auto_1fr_1.4fr] md:items-baseline md:gap-8">
           <span className="font-mono text-xs text-data">04</span>
-          <h3 className="font-sans text-xl font-semibold tracking-tight text-foreground">Websites &amp; small systems</h3>
+          <h3 className="font-sans text-xl font-semibold tracking-tight text-foreground">Custom business systems</h3>
           <div className="space-y-3">
             <p className="text-sm text-muted-foreground leading-relaxed">
-              A landing page, a site for your business, an appointment or booking system, a form that feeds your team, or a fix to something you already have. Scoped in one conversation, built in days.
+              Quoting and pricing engines, approval workflows that stay locked until a stage is signed off, internal dashboards and client portals. Software shaped to rules that are specific to how you work.
             </p>
             <a
               href={WHATSAPP_URL}

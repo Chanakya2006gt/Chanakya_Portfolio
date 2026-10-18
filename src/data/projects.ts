@@ -15,7 +15,7 @@ export const businesses: Project[] = [
     id: "trelio",
     title: "Trelio — Milestone Authorization & Client Portal",
     description:
-      "Client portal and milestone payment authorization SaaS for creative studios and agencies. Built with authorization-before-execution stage locks, immutable audit ledgers, and multi-tenant billing.",
+      "Client portal and milestone payment authorization SaaS. Built with authorization-before-execution stage locks, immutable audit ledgers, and multi-tenant billing.",
     liveUrl: "https://trelio.in",
     stack: ["Multi-tenant", "PostgreSQL RLS", "Payments", "Audit ledger", "React", "Node.js"],
     featured: true,
