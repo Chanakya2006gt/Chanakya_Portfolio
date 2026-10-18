@@ -24,6 +24,10 @@
   --color-sage-foreground: var(--sage-foreground);
   --color-data: var(--data);
   --color-surface: var(--surface);
+  --color-hero-field: var(--hero-field);
+  --color-hero-field-foreground: var(--hero-field-foreground);
+  --color-hero-field-muted: var(--hero-field-muted);
+  --color-hero-field-accent: var(--hero-field-accent);
   --color-hero-ink: var(--hero-ink);
   --color-hero-ink-foreground: var(--hero-ink-foreground);
   --color-hero-ink-muted: var(--hero-ink-muted);
@@ -66,6 +70,11 @@
   --sage-foreground: #ffffff;
   --data: #96570c;
   --surface: rgba(135, 169, 107, 0.08);
+  /* the hero field — deep sage, the brand colour committed to the whole fold */
+  --hero-field: #1b5733;
+  --hero-field-foreground: #f3efe7;
+  --hero-field-muted: rgba(243, 239, 231, 0.78);
+  --hero-field-accent: #f0b35c;
   --hero-ink: #17120f;
   --hero-ink-foreground: #f5f2ee;
   --hero-ink-muted: #c9c0b6;

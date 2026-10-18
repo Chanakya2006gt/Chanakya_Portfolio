@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { ArrowUp, ArrowRight, ExternalLink, ShieldCheck, Code2, CheckCircle2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
@@ -14,84 +14,81 @@ import { DynamicData } from "@/data/store";
 import { STUDIO_NAME, FOUNDER_NAME, LOCATION, WHATSAPP_URL, CONTACT_EMAIL, GITHUB_URL } from "@/data/studio";
 
 function Hero() {
-  return (
-    <section className="relative isolate flex min-h-[600px] items-center overflow-hidden bg-hero-ink text-hero-ink-foreground lg:min-h-[700px]">
-      {/* light falls where the screen sits */}
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-0 -z-10"
-        style={{
-          background:
-            "radial-gradient(52% 64% at 72% 46%, rgba(245,242,238,0.20), transparent 72%)",
-        }}
-      />
+  // the one live true detail: his actual local time. null on the server so the
+  // markup matches on hydration, then it ticks.
+  const [clock, setClock] = useState<string | null>(null);
+  useEffect(() => {
+    const tick = () =>
+      setClock(
+        new Intl.DateTimeFormat("en-GB", {
+          timeZone: "Asia/Kolkata",
+          hour: "2-digit",
+          minute: "2-digit",
+          hour12: false,
+        }).format(new Date()),
+      );
+    tick();
+    const id = setInterval(tick, 20_000);
+    return () => clearInterval(id);
+  }, []);
 
-      {/* grain: the gradient above resolves to only ~53 levels of 8-bit grey, which bands in
-          10px steps on a dark field. This dithers it and gives the band a filmic surface. */}
+  return (
+    <section className="relative isolate flex min-h-[calc(100svh-65px)] flex-col justify-between overflow-hidden bg-hero-field px-5 pb-8 pt-7 text-hero-field-foreground sm:px-8 lg:px-14">
+      {/* grain: a flat colour field this large bands on a gradient and reads plastic without it */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 -z-10 opacity-[0.05]"
+        className="pointer-events-none absolute inset-0 opacity-[0.05]"
         style={{
           backgroundImage:
             "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E\")",
-          backgroundRepeat: "repeat",
         }}
       />
 
-      <div className="mx-auto grid w-full max-w-6xl grid-cols-1 items-center gap-10 px-5 py-12 sm:gap-12 lg:grid-cols-[minmax(0,1fr)_minmax(0,464px)] lg:gap-12 lg:py-20">
-        <div>
-          <p className="font-mono text-xs uppercase tracking-[0.14em] text-data-on-ink">
-            {FOUNDER_NAME} · {LOCATION}
-          </p>
-
-          <h1 className="mt-5 font-sans text-[2.5rem] font-bold leading-[1.04] tracking-[-0.03em] text-balance sm:mt-6 sm:text-5xl sm:leading-[1.03] lg:text-6xl">
-            I build the software{" "}
-            <span className="block text-sage-on-ink">a business runs on.</span>
-          </h1>
-
-          <p className="mt-5 max-w-xl text-base leading-relaxed text-hero-ink-foreground/88 sm:mt-6 sm:text-xl">
-            Quotes, pricing and jobs shouldn't live in WhatsApp and spreadsheets. I build quoting engines, stage-locked workflows and internal tools around your own rules — and the websites and small systems that sit around them.
-          </p>
-
-          <div className="mt-7 flex flex-wrap items-center gap-6 sm:mt-9">
-            <a
-              href="/book"
-              className="inline-flex items-center gap-2 rounded-xl bg-sage-on-ink px-6 py-3 text-sm font-semibold text-hero-ink shadow-md transition-opacity hover:opacity-90 active:scale-[0.98]"
-            >
-              Book a 20-minute call
-              <ArrowRight className="size-4" />
-            </a>
-            <a
-              href="#work"
-              className="text-sm font-medium underline underline-offset-[6px] decoration-hero-ink-muted/60 hover:decoration-hero-ink-foreground"
-            >
-              See the work →
-            </a>
-          </div>
-
-          <div className="mt-8 inline-flex max-w-full flex-col overflow-hidden rounded-xl border border-sage-on-ink/30 bg-sage-on-ink/[0.08] font-mono text-xs text-hero-ink-foreground/90 sm:mt-10 sm:flex-row">
-            <span className="px-4 py-3">First call is free</span>
-            <span className="border-t border-sage-on-ink/25 px-4 py-3 sm:border-l sm:border-t-0">Fixed quote before you commit</span>
-            <span className="border-t border-sage-on-ink/25 px-4 py-3 sm:border-l sm:border-t-0">You own the code</span>
-          </div>
-        </div>
-
-        {/* the work, not the face: the sharpest asset on the site, and it is also the proof */}
-        <figure className="relative m-0">
-          <img
-            src="/images/trelio-preview.png"
-            alt="Trelio — the milestone authorization and client portal I built and run"
-            width={1024}
-            height={536}
-            fetchPriority="high"
-            decoding="async"
-            className="w-full rounded-xl border border-hero-ink-foreground/12 shadow-[0_30px_80px_-20px_rgba(0,0,0,0.85)]"
-          />
-          <figcaption className="mt-4 font-mono text-[11px] uppercase tracking-[0.12em] text-hero-ink-muted">
-            Trelio — my own product, live
-          </figcaption>
-        </figure>
+      <div className="relative z-10 flex flex-wrap items-baseline justify-between gap-x-6 gap-y-2 font-mono text-[10px] uppercase tracking-[0.13em] text-hero-field-accent sm:text-xs">
+        <span>
+          {FOUNDER_NAME} · {LOCATION}
+        </span>
+        <span>{clock ? `Warangal ${clock} IST` : LOCATION}</span>
       </div>
+
+      {/* the statement is the screen. no column, no card, nothing beside it. */}
+      <div className="relative z-10 flex flex-1 items-center py-10">
+        <h1 className="font-sans text-[clamp(2.4rem,9.1vw,8.2rem)] font-light uppercase leading-[0.98] tracking-[-0.012em]">
+          I build the software
+          <span className="block text-hero-field-accent">a business runs on.</span>
+        </h1>
+      </div>
+
+      <div className="relative z-10 flex flex-wrap items-end justify-between gap-5 border-t border-hero-field-foreground/20 pt-5">
+        <div className="flex flex-col font-mono text-[11px] leading-6 tracking-[0.05em] text-hero-field-muted sm:flex-row sm:flex-wrap sm:text-xs">
+          <span className="sm:mr-5 sm:border-r sm:border-hero-field-foreground/25 sm:pr-5">First call is free</span>
+          <span className="sm:mr-5 sm:border-r sm:border-hero-field-foreground/25 sm:pr-5">Fixed quote before you commit</span>
+          <span>You own the code</span>
+        </div>
+        <a
+          href="/book"
+          className="inline-flex items-center gap-2 rounded-full bg-hero-field-foreground px-6 py-3 text-sm font-semibold text-hero-field transition-opacity hover:opacity-90 active:scale-[0.98]"
+        >
+          Book a 20-minute call
+          <ArrowRight className="size-4" />
+        </a>
+      </div>
+    </section>
+  );
+}
+// the lead paragraph the hero no longer carries. it opens the page proper.
+function Lede() {
+  return (
+    <section className="mx-auto max-w-4xl px-5 pb-4 pt-20 sm:pt-28">
+      <p className="text-xl leading-relaxed text-foreground sm:text-2xl sm:leading-relaxed">
+        Quotes, pricing and jobs shouldn't live in WhatsApp and spreadsheets. I build quoting engines, stage-locked workflows and internal tools around your own rules — and the websites and small systems that sit around them.
+      </p>
+      <a
+        href="#work"
+        className="mt-6 inline-block text-sm font-medium underline underline-offset-[6px] decoration-muted-foreground/50 hover:decoration-foreground"
+      >
+        See the work →
+      </a>
     </section>
   );
 }
@@ -489,7 +486,7 @@ export function PortfolioHome({ initialData }: { initialData?: DynamicData | nul
 
       <main id="main-content">
         <Hero />
-        <Separator />
+        <Lede />
         <SelectedWork />
         <Separator />
         <Capabilities />
