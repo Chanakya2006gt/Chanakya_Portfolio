@@ -202,3 +202,29 @@ npm run smoke                               # baseline: SMOKE FAILED 4/16, all "
 # contact.ts candidate: npx tsc --noEmit (0), npx eslint src/routes/api/contact.ts (0); original file restored
 # dry run in a scratch copy: Tasks 0, 2, 3, 5 applied verbatim → typecheck 0, eslint 0 errors/5 warnings, check:invariants OK, build 0, smoke 16/16 PASSED
 ```
+
+---
+
+## 2026-10-18: Task 6b — Broaden copy to include all business types and services
+
+### Decision & Rationale
+- Replaced narrow positioning that restricted audience to quoting/CPQ and operational manufacturers/fabricators/trade services with an open 4-service menu spanning websites/stores, booking/forms/fixes, data/research/automation, and custom business systems.
+- Updated 9 files: `portfolio-home.tsx` (Lede subhead, Capabilities intro & 4 rows, Selected Work intro), `faqs.ts` (business types answer & start requirements question/answer), `offer-ladder.tsx` (step 01 copy), `book.tsx` (label, placeholder, slot helper text, what to bring list), `__root.tsx` (APP_DESC), `llms.txt` (summary, capabilities, who it is for), `api/chat.ts` (system prompt intro, capabilities, project discovery step), `projects.ts` & `portfolio-data.json` (removed creative studios restriction from Trelio description, updated Trelio badge to "My product · live").
+- Preserved Apex CPQ badge as "Reference build · industrial manufacturing" as it accurately describes that specific build.
+- Eliminated all occurrences of "quotes or jobs" and narrow vertical exclusions.
+
+### Commands Executed
+```bash
+grep -rn "custom fabrication\|trade services\|creative studios" src/ public/  # 0 hits
+grep -rn "industrial manufacturing" src/ public/                               # 3 hits: Apex badges in portfolio-home.tsx, projects.ts, portfolio-data.json
+grep -rn "quotes or jobs" src/                                                 # 0 hits
+grep -iEn "\b(we|our|us)\b" src/components/offer-ladder.tsx                    # 1 hit: id="how-we-work" anchor only
+npm run typecheck && npm run lint && npm run check:invariants && npm run build # ALL PASS
+npm run smoke                                                                  # 16/16 PASS
+git add public/llms.txt src/components/offer-ladder.tsx src/components/portfolio-home.tsx src/data/faqs.ts src/data/portfolio-data.json src/data/projects.ts src/routes/__root.tsx src/routes/api/chat.ts src/routes/book.tsx
+git commit -m "feat(task-6b): broaden copy to include all business types and services" # Commit c61e65a
+```
+
+### Routes Verified (16/16 PASS)
+- `/`, `/book`, `/method`, `/admin/login` at 390px and 1440px in both dark and light emulation modes.
+
