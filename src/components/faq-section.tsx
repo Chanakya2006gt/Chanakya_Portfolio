@@ -1,18 +1,9 @@
 import { ChevronDown } from "lucide-react";
-import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 import { faqs } from "@/data/faqs";
 
 export function FaqSection() {
-  const { ref, isVisible } = useScrollAnimation();
-
   return (
-    <section
-      id="faq"
-      ref={ref}
-      className={`mx-auto max-w-5xl px-5 py-24 transition-all duration-700 ${
-        isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-      }`}
-    >
+    <section id="faq" className="mx-auto max-w-5xl px-5 py-24">
       <div className="flex items-center gap-2">
         <span className="h-4 w-1 rounded-full bg-foreground" />
         <p className="text-xs font-semibold uppercase tracking-wider text-data">FAQ</p>

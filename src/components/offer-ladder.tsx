@@ -2,19 +2,10 @@ import React from "react";
 import { ArrowRight, PhoneCall, FileSpreadsheet, Rocket } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 
 export function OfferLadder() {
-  const { ref, isVisible } = useScrollAnimation();
-
   return (
-    <section
-      id="how-we-work"
-      ref={ref}
-      className={`mx-auto max-w-5xl px-5 py-24 transition-all duration-700 ${
-        isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-      }`}
-    >
+    <section id="how-we-work" className="mx-auto max-w-5xl px-5 py-24">
       {/* Eyebrow */}
       <div className="flex items-center gap-2">
         <span className="h-4 w-1 rounded-full bg-foreground" />

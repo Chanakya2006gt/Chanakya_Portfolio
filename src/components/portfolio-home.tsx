@@ -9,7 +9,6 @@ import { OfferLadder } from "@/components/offer-ladder";
 import { FaqSection } from "@/components/faq-section";
 import { SiteNav } from "@/components/site-nav";
 import { Companion } from "@/components/mascot/companion";
-import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 import { DynamicData } from "@/data/store";
 import { STUDIO_NAME, FOUNDER_NAME, LOCATION, WHATSAPP_URL, CONTACT_EMAIL, GITHUB_URL } from "@/data/studio";
 
@@ -94,16 +93,8 @@ function Lede() {
 }
 
 function SelectedWork() {
-  const { ref, isVisible } = useScrollAnimation();
-
   return (
-    <section
-      id="work"
-      ref={ref}
-      className={`mx-auto max-w-5xl px-5 pt-20 pb-24 transition-all duration-700 ${
-        isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-      }`}
-    >
+    <section id="work" className="mx-auto max-w-5xl px-5 pt-20 pb-24">
       <div className="flex items-center gap-2">
         <span className="h-4 w-1 rounded-full bg-foreground" />
         <p className="text-xs font-semibold uppercase tracking-wider text-data">Selected Work</p>
@@ -269,16 +260,8 @@ function SelectedWork() {
 }
 
 function Capabilities() {
-  const { ref, isVisible } = useScrollAnimation();
-
   return (
-    <section
-      id="what-we-build"
-      ref={ref}
-      className={`mx-auto max-w-5xl px-5 py-24 transition-all duration-700 ${
-        isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-      }`}
-    >
+    <section id="what-we-build" className="mx-auto max-w-5xl px-5 py-24">
       <div className="flex items-center gap-2">
         <span className="h-4 w-1 rounded-full bg-foreground" />
         <p className="text-xs font-semibold uppercase tracking-wider text-data">Capabilities</p>
@@ -338,15 +321,8 @@ function Capabilities() {
 }
 
 function Standards() {
-  const { ref, isVisible } = useScrollAnimation();
-
   return (
-    <section
-      ref={ref}
-      className={`mx-auto max-w-5xl px-5 py-24 transition-all duration-700 ${
-        isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-      }`}
-    >
+    <section className="mx-auto max-w-5xl px-5 py-24">
       <div className="flex items-center gap-2">
         <span className="h-4 w-1 rounded-full bg-foreground" />
         <p className="text-xs font-semibold uppercase tracking-wider text-data">Standards</p>
@@ -442,7 +418,6 @@ function About() {
 }
 
 function Contact() {
-  const { ref, isVisible } = useScrollAnimation();
   const [copied, setCopied] = useState(false);
 
   const handleCopyEmail = async () => {
@@ -462,10 +437,7 @@ function Contact() {
   return (
     <section
       id="contact"
-      ref={ref}
-      className={`relative mx-auto max-w-5xl px-5 py-24 transition-all duration-700 overflow-hidden ${
-        isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-      }`}
+      className="relative mx-auto max-w-5xl px-5 py-24 overflow-hidden"
     >
       <div className="flex items-center gap-2">
         <span className="h-4 w-1 rounded-full bg-foreground" />
