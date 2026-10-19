@@ -49,6 +49,16 @@ const ENV_SPECS: EnvSpec[] = [
     description: "OpenAI model name (default: gpt-5.6-terra)",
     required: false,
   },
+  {
+    key: "RESEND_API_KEY",
+    description: "Resend API key for enquiry emails",
+    required: false,
+  },
+  {
+    key: "LEAD_NOTIFY_EMAIL",
+    description: "Where /book enquiries are delivered",
+    required: false,
+  },
 ];
 
 const PLACEHOLDER_VALUES = new Set([

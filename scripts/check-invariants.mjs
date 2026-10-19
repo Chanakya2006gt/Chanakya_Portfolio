@@ -26,6 +26,7 @@ const ALLOWED_HOSTS = new Set([
   "www.sitemaps.org",
   "www.w3.org",
   "api.openai.com",
+  "api.resend.com", // /book form email delivery (Phase 3 Task 1)
   "chanakya-portfolio-orcin.vercel.app",
   "example.com", // admin form default only
   "fonts.googleapis.com",

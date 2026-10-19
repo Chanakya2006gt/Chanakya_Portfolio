@@ -32,6 +32,7 @@ function BookPage() {
     name: "",
     emailOrPhone: "",
     workflowDescription: "",
+    company: "",
   });
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
   const [errorMessage, setErrorMessage] = useState("");
@@ -86,7 +87,7 @@ function BookPage() {
             Book a 20-minute call
           </h1>
           <p className="text-base sm:text-lg text-muted-foreground">
-            First call is free. You talk directly to the people who design, write, and deploy the system.
+            First call is free. You talk to the person who builds it.
           </p>
         </div>
 
@@ -110,15 +111,15 @@ function BookPage() {
               <div className="inline-flex size-12 items-center justify-center rounded-full bg-surface text-data mb-2">
                 <CheckCircle2 className="size-6" />
               </div>
-              <h2 className="font-sans text-2xl font-semibold text-foreground tracking-tight">Inquiry Received</h2>
+              <h2 className="font-sans text-2xl font-semibold text-foreground tracking-tight">Got it</h2>
               <p className="text-sm text-muted-foreground max-w-md mx-auto leading-relaxed">
-                Thank you. We have received your details and will review your workflow. You will hear back within 24 hours to schedule the 20-minute call.
+                Thanks — this is in my inbox now. I'll reply within 24 hours to set up the call. If it's urgent, WhatsApp is faster.
               </p>
               <div className="pt-4 flex flex-wrap justify-center gap-3">
                 <Button asChild variant="outline" className="rounded-xl">
                   <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
                     <MessageSquare className="mr-2 size-4" />
-                    <span>Need immediate response? WhatsApp</span>
+                    <span>WhatsApp me instead</span>
                   </a>
                 </Button>
                 <Button asChild variant="ghost" className="rounded-xl">
@@ -128,6 +129,18 @@ function BookPage() {
             </div>
           ) : (
             <form onSubmit={handleSubmit} className="space-y-5">
+              {/* Honeypot field for spam prevention - hidden from humans */}
+              <input
+                type="text"
+                name="company"
+                tabIndex={-1}
+                autoComplete="off"
+                aria-hidden="true"
+                value={formData.company}
+                onChange={(e) => setFormData({ ...formData, company: e.target.value })}
+                style={{ position: "absolute", left: "-9999px", width: 1, height: 1, opacity: 0 }}
+              />
+
               <div className="space-y-1.5">
                 <Label htmlFor="name" className="text-xs font-medium text-foreground">
                   Your Name *
@@ -160,13 +173,13 @@ function BookPage() {
 
               <div className="space-y-1.5">
                 <Label htmlFor="workflow" className="text-xs font-medium text-foreground">
-                  What do you need built? *
+                  What do you need built, or what's slowing you down? *
                 </Label>
                 <Textarea
                   id="workflow"
                   required
                   rows={4}
-                  placeholder="e.g. A booking page for my salon · An online store for about 40 products · Quotes take 2 days in Excel"
+                  placeholder="e.g. a booking page for my clinic, or: quotes take two days in Excel and rates get mis-entered on the way to the floor"
                   value={formData.workflowDescription}
                   onChange={(e) => setFormData({ ...formData, workflowDescription: e.target.value })}
                   className="rounded-xl bg-secondary/50 border-border/70 text-sm"
@@ -190,7 +203,7 @@ function BookPage() {
                     <span>Submitting...</span>
                   ) : (
                     <>
-                      <span>Submit Inquiry</span>
+                      <span>Send enquiry</span>
                       <Send className="ml-2 size-4" />
                     </>
                   )}
@@ -244,9 +257,9 @@ function BookPage() {
               What happens on the call:
             </h2>
             <ol className="mt-3 space-y-2 text-xs sm:text-sm text-muted-foreground list-decimal list-inside">
-              <li>We spend 20 minutes walking through your exact workflow bottleneck.</li>
-              <li>If an off-the-shelf software tool solves your problem better or cheaper, we tell you directly.</li>
-              <li>If custom software is the right fit, we provide a transparent, fixed-price quote and scope based on your problem size.</li>
+              <li>We spend 20 minutes on what you actually need.</li>
+              <li>If an off-the-shelf tool solves it better or cheaper, I'll tell you so.</li>
+              <li>If it's a fit, I send a fixed price and scope.</li>
             </ol>
           </div>
         </div>
