@@ -432,7 +432,7 @@ function About() {
           <p className="font-mono text-xs text-muted-foreground pt-2">
             THIS SITE: TANSTACK START · IBM PLEX · DEPLOYED ON VERCEL ·{" "}
             <a href={GITHUB_URL} target="_blank" rel="noopener noreferrer" className="underline underline-offset-4 hover:text-foreground">
-              SOURCE ON GITHUB
+              MORE ON GITHUB
             </a>
           </p>
         </div>
@@ -493,9 +493,10 @@ function Contact() {
         <button
           type="button"
           onClick={handleCopyEmail}
+          aria-label={`Copy email address ${CONTACT_EMAIL}`}
           className="cursor-pointer text-sm font-medium text-foreground underline underline-offset-4 hover:text-sage transition-colors"
         >
-          {copied ? "Copied" : CONTACT_EMAIL}
+          <span aria-live="polite">{copied ? "Copied" : CONTACT_EMAIL}</span>
         </button>
       </div>
 
