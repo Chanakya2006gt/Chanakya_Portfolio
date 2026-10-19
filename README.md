@@ -1,4 +1,4 @@
-# CK Builds — Bespoke Software for Operations & Quoting
+# Chanakya — Bespoke Software for Operations & Quoting
 
 A high-performance, security-conscious web application and studio site built with **TanStack Start (SSR)**, **React 19**, **TypeScript**, **Tailwind CSS v4**, and **shadcn/ui**.
 
@@ -16,10 +16,11 @@ Positioned around operational systems: replacing error-prone spreadsheets, Whats
 ### 🏭 2. Verified Systems & Visual Proof
 - **Trelio SaaS (`https://trelio.in`)**: Studio product · live. Authorization-before-execution client portal and milestone payment authorization platform.
 - **Apex Packaging CPQ**: Reference build · industrial manufacturing. Converting and estimating platform engineered to European FINAT 1–8 rewind standards.
+- **Lead Engine**: Client discovery and automated website auditing tool. Local-first audit runner querying Google Places and scoring site health in headless browsers.
 
 ### ❓ 3. Buyer-Facing FAQ & Structured Data
 - 5 transparent questions covering pricing (problem-sized on call), code ownership, why generic off-the-shelf tools fail on custom workflows, and onboarding prerequisites.
-- Synchronized `ProfessionalService` and `FAQPage` JSON-LD schema for rich search results.
+- Synchronized `ProfessionalService`, `SoftwareApplication`, and `FAQPage` JSON-LD schema for rich search results.
 
 ### 💬 4. AI Solutions Assistant (`/api/chat`)
 - Floating corner launcher with direct answers on fit, workflow capabilities, and booking.
@@ -36,7 +37,7 @@ Positioned around operational systems: replacing error-prone spreadsheets, Whats
 
 - **Framework**: TanStack Start (React 19 SSR) + TanStack Router (File-based routing)
 - **UI & Styling**: React 19, Tailwind CSS v4, shadcn/ui, Radix UI Primitives, Lucide Icons
-- **State & Motion**: CSS Transitions, IntersectionObserver scroll animation, Sonner Toasts
+- **State & Motion**: CSS Transitions, Motion Tokens, Sonner Toasts
 - **Build & Server**: Vite 8, Nitro (Vercel serverless preset), Node.js, TypeScript
 
 ---
@@ -70,11 +71,13 @@ Visit [http://localhost:8080](http://localhost:8080).
 ```bash
 npm run typecheck
 npm run lint
+npm run check:invariants
 npm run build
+npm run smoke
 ```
 
 ---
 
 ## 🔒 Security & Data Isolation
 
-See [SECURITY.md](SECURITY.md) for full audit reports, session signing implementation, and boot guard invariants.
+See [SECURITY.md](SECURITY.md) for full security architecture, session signing implementation, and boot guard invariants.

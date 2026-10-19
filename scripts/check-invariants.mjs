@@ -50,6 +50,8 @@ const BANNED = [
   // Lines that state a prohibition ("Never invent ... testimonials") are exempt.
   // When a real, permitted testimonial arrives (PrintFast), Chanakya adds an exemption here.
   { re: /trusted by|\d+\+?\s*(happy\s+)?clients|testimonial/i, unless: /\bNever\b/, why: "no invented social proof (see PHASE-3 plan, Rule 1)" },
+  { re: /CK Builds|ChanBuilds/, why: "the site is Chanakya's personal site (MASTER-PLAN Task 2)" },
+  { re: /\bWe (build|work|engineer|provide|solve|specialize|review|confirm|tell|don't)\b/, why: "first person only (MASTER-PLAN, section 3: Voice)" },
 ];
 
 function walk(dir, out = []) {

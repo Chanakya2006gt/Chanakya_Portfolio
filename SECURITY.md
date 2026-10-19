@@ -1,15 +1,16 @@
-# Security Policy & Architecture — CK Builds
+# Security Policy & Architecture — Chanakya
 
-This document outlines the security model, threat mitigations, credential management, and software security practices implemented in the CK Builds application.
+This document outlines the security model, threat mitigations, credential management, and software security practices implemented in the Chanakya application.
 
 ---
 
 ## 🔒 1. Security Philosophy & Threat Model
 
 The application follows a **Defense-in-Depth** and **Zero-Trust** security posture:
-- **No Client Secrets**: API keys (`OPENAI_API_KEY`, `BLOB_READ_WRITE_TOKEN`) and server secrets (`ADMIN_SESSION_SECRET`) are strictly isolated to server environment variables and never leaked into client bundles.
-- **Fail-Closed Session Architecture**: Admin routes (`/admin`) and mutation endpoints (`/api/admin/data`, `/api/admin/resume`) require cryptographically valid HMAC-SHA256 session cookies. In production, missing or default session secrets fail closed.
-- **Input Sanitization & Rate Limiting**: All user inputs (contact dialog, chat queries, admin JSON edits) are validated with strict schemas and protected by rate limiters.
+- **No Client Secrets**: API keys (`OPENAI_API_KEY`, `RESEND_API_KEY`, `BLOB_READ_WRITE_TOKEN`) and server secrets (`ADMIN_SESSION_SECRET`) are strictly isolated to server environment variables and never leaked into client bundles.
+- **Fail-Closed Session Architecture**: Admin routes (`/admin`) and mutation endpoints (`/api/admin/data`) require cryptographically valid HMAC-SHA256 session cookies. In production, missing or default session secrets fail closed.
+- **Input Sanitization & Rate Limiting**: All user inputs (contact intake, chat queries, admin JSON edits) are validated with strict schemas and protected by rate limiters.
+- **Spam Defense**: Honeypot inputs on `/book` accept and discard automated bot payloads without invoking third-party APIs.
 
 ---
 
@@ -24,14 +25,16 @@ All sensitive credentials are defined in `.env` and strictly excluded from sourc
 | `ADMIN_PASSWORD` | Admin login password | Server-side only | Verified on `/api/admin/login` |
 | `ADMIN_SESSION_SECRET` | HMAC-SHA256 signature key | Server-side only | **Fails closed in production** if unset |
 | `OPENAI_API_KEY` | OpenAI API access token | Server-side only | Never exposed to client JavaScript |
-| `OPENAI_MODEL` | Chat completion model (`gpt-5.6-terra`) | Server-side only | Vision-capable model for chat & OCR |
-| `OPENAI_RESUME_MODEL` | OCR model for résumé extraction | Server-side only | Optional override (defaults to `OPENAI_MODEL`) |
-| `BLOB_READ_WRITE_TOKEN` | Vercel Blob read/write token | Server-side only | Required for dynamic storage & résumé PDF |
+| `OPENAI_MODEL` | Chat completion model (`gpt-5.6-terra`) | Server-side only | Standard completion model for chat |
+| `RESEND_API_KEY` | Resend API key | Server-side only | Used by `/api/contact` to deliver enquiries |
+| `LEAD_NOTIFY_EMAIL` | Enquiry notification destination | Server-side only | Recipient email address |
+| `LEAD_FROM_EMAIL` | Verified sending address | Server-side only | Default: `onboarding@resend.dev` |
+| `BLOB_READ_WRITE_TOKEN` | Vercel Blob read/write token | Server-side only | Optional; for dynamic storage |
 | `SITE_URL` | Canonical site origin | Server / Metadata | Non-secret |
 | `PUBLIC_EMAIL` | Contact email address | Public / Shared | Non-secret (`nagulagamchanakya2211@gmail.com`) |
-| `PUBLIC_LINKEDIN_URL` | LinkedIn profile URL | Public / Shared | Non-secret |
-| `PUBLIC_GITHUB_URL` | GitHub profile URL | Public / Shared | Non-secret |
-| `PUBLIC_RESUME_PDF_URL` | Public PDF asset path | Public / Shared | Non-secret |
+| `PUBLIC_WHATSAPP_NUMBER` | Contact WhatsApp number | Public / Shared | Non-secret (`917674040571`) |
+| `PUBLIC_WHATSAPP_DISPLAY` | Formatted WhatsApp display | Public / Shared | Non-secret (`+91 76740 40571`) |
+| `PUBLIC_GITHUB_URL` | GitHub profile URL | Public / Shared | Non-secret (`https://github.com/Chanakya2006gt`) |
 
 ---
 
@@ -52,7 +55,7 @@ All sensitive credentials are defined in `.env` and strictly excluded from sourc
 3. **HttpOnly Cookie Protection**:
    - `HttpOnly`: Prevents client-side JavaScript (`document.cookie`) from accessing the session token, neutralizing Cross-Site Scripting (XSS) session theft.
    - `SameSite=Lax`: Mitigates Cross-Site Request Forgery (CSRF) attacks.
-   - `HMAC Signature Verification`: Every protected request (`/api/admin/check`, `POST /api/admin/data`, `POST /api/admin/resume`) verifies the cryptographic signature with constant-time equality checks and enforces a 24-hour expiration.
+   - `HMAC Signature Verification`: Every protected request (`/api/admin/check`, `POST /api/admin/data`) verifies the cryptographic signature with constant-time equality checks and enforces a 24-hour expiration.
 
 ---
 
@@ -67,25 +70,7 @@ All sensitive credentials are defined in `.env` and strictly excluded from sourc
 
 ---
 
-## 📄 5. Résumé PII Sanitization & OCR Pipeline
-
-The `/api/admin/resume` ingestion pipeline applies multi-layer privacy controls:
-1. **Model Prompt Redaction**: The vision extraction prompt explicitly instructs `gpt-5.6-terra` to omit phone numbers and GPA/CGPA scores.
-2. **Deterministic Regex Redaction (`redactSensitive`)**: Post-processing regex sanitization actively strips any accidental phone numbers, academic scores, and sensitive personal identifiers before data is committed to storage.
-
----
-
-## 🔐 6. Featured Product Security (Trelio SaaS Highlights)
-
-As referenced on the portfolio and live systems section, Trelio SaaS enforces:
-1. **Authorization-Before-Execution (ABE)**: Strict milestone state machine preventing work progression before client authorization and deposit.
-2. **PostgreSQL Concurrency Locking**: Uses `pg_advisory_xact_lock` to serialize concurrent state transitions and eliminate race conditions.
-3. **Immutable Audit Trails**: Verified event logging with cryptographic timestamps.
-4. **Tenant Data Isolation**: 43+ PostgreSQL Row-Level Security (RLS) policies enforcing multi-tenant isolation.
-
----
-
-## 📬 7. Vulnerability Disclosure
+## 📬 5. Vulnerability Disclosure
 
 If you discover a potential security vulnerability, please report it directly to:
 - **Email**: `nagulagamchanakya2211@gmail.com`
