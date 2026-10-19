@@ -49,6 +49,18 @@ const JSON_LD = {
       }
     },
     {
+      "@type": "SoftwareApplication",
+      "@id": `${SITE_URL}/#lead-engine`,
+      "name": "Lead Engine",
+      "codeRepository": "https://github.com/Chanakya2006gt/Lead_Gen_Agency",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Web",
+      "description": "Chanakya's own tool for finding clients and auditing their websites. Finds businesses through the Google Places API, loads each site in a headless browser, and reports what is broken.",
+      "author": {
+        "@id": `${SITE_URL}/#person`
+      }
+    },
+    {
       "@type": "FAQPage",
       "@id": `${SITE_URL}/#faq`,
       "mainEntity": faqs.map((faq) => ({

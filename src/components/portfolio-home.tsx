@@ -112,7 +112,7 @@ function SelectedWork() {
         Systems Built & Operating
       </h2>
       <p className="mt-3 max-w-2xl text-muted-foreground text-sm sm:text-base leading-relaxed font-normal">
-        Two of the harder things I've built — my own live product, and a reference build for an industrial label converter. The smaller work doesn't get a case study, but it's the same pair of hands.
+        Two systems built to production standard, and the tool I use to find my own work. The smaller jobs don't get a case study, but it's the same pair of hands.
       </p>
 
       <div className="mt-12 space-y-12">
@@ -220,6 +220,49 @@ function SelectedWork() {
             </div>
           </div>
         </Card>
+
+        {/* a third thing, told in the shape its content fits — no card, no screenshot */}
+        <div className="border-t border-border pt-10">
+          <div className="flex flex-wrap items-baseline justify-between gap-3">
+            <h3 className="font-sans text-2xl font-semibold tracking-tight text-foreground sm:text-3xl">
+              Lead Engine — the tool I use to find clients
+            </h3>
+            <span className="font-mono text-[11px] uppercase tracking-wider text-data">My own tool · not deployed</span>
+          </div>
+
+          <p className="mt-3 max-w-2xl text-sm leading-relaxed text-muted-foreground sm:text-base">
+            I built the thing I use to find my own work. It runs in three steps:
+          </p>
+
+          <div className="mt-8">
+            <div className="grid gap-3 border-t border-border py-6 md:grid-cols-[auto_1fr] md:gap-8">
+              <span className="font-mono text-xs text-data">01</span>
+              <p className="text-sm leading-relaxed text-muted-foreground">
+                It finds local businesses through the official Google Places API. Live map scraping is switched off by default and has to be deliberately enabled.
+              </p>
+            </div>
+            <div className="grid gap-3 border-t border-border py-6 md:grid-cols-[auto_1fr] md:gap-8">
+              <span className="font-mono text-xs text-data">02</span>
+              <p className="text-sm leading-relaxed text-muted-foreground">
+                It loads each one's website in a headless browser at phone size and desktop size, and records what is broken.
+              </p>
+            </div>
+            <div className="grid gap-3 border-y border-border py-6 md:grid-cols-[auto_1fr] md:gap-8">
+              <span className="font-mono text-xs text-data">03</span>
+              <p className="text-sm leading-relaxed text-muted-foreground">
+                It scores what it found, so I know what a business actually needs before I ever make contact.
+              </p>
+            </div>
+          </div>
+
+          <div className="pt-5">
+            <Button asChild size="sm" variant="outline" className="rounded-xl border-border/80 text-xs">
+              <a href="https://github.com/Chanakya2006gt/Lead_Gen_Agency" target="_blank" rel="noopener noreferrer">
+                <span>View the code ↗</span>
+              </a>
+            </Button>
+          </div>
+        </div>
       </div>
     </section>
   );

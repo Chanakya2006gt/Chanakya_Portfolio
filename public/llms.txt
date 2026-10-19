@@ -19,6 +19,7 @@ Any business that needs software built, from a single landing page to a system t
 ## Work
 - Trelio (https://trelio.in): Chanakya's own product — he founded it and he builds it. A client portal and milestone payment authorization platform.
 - Apex Packaging & Converting: A reference build demonstrating an industrial CPQ estimating platform for packaging converters. Source: https://github.com/Chanakya2006gt/Industrial-packaging-platform
+- Lead Engine: Chanakya's own tool for finding clients and auditing their websites. Local-first, not deployed. Source: https://github.com/Chanakya2006gt/Lead_Gen_Agency
 
 ## Contact
 - Book a call: https://chanakya-portfolio-orcin.vercel.app/book
