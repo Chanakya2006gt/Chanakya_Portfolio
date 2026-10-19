@@ -1,6 +1,7 @@
 import { createRootRoute, HeadContent, Outlet, Scripts } from "@tanstack/react-router";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { Toaster } from "sonner";
+import { Analytics } from "@vercel/analytics/react";
 import { faqs } from "@/data/faqs";
 import { SITE_URL, FOUNDER_NAME, CONTACT_EMAIL, GITHUB_URL } from "@/data/studio";
 import appCss from "../styles.css?url";
@@ -134,6 +135,7 @@ export const Route = createRootRoute({
         <TooltipProvider delayDuration={200}>
           <Outlet />
           <Toaster position="bottom-right" theme="light" />
+          <Analytics />
         </TooltipProvider>
         <Scripts />
       </body>

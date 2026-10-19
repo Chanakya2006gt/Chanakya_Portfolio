@@ -18,6 +18,19 @@ export default defineConfig(({ command, isPreview }) => ({
   },
   resolve: { tsconfigPaths: true },
   plugins: [
+    {
+      name: "vercel-insights-preview-mock",
+      configurePreviewServer(server) {
+        server.middlewares.use((req, res, next) => {
+          if (req.url?.startsWith("/_vercel/insights/")) {
+            res.setHeader("Content-Type", "application/javascript");
+            res.end("/* vercel analytics preview */");
+            return;
+          }
+          next();
+        });
+      },
+    },
     tailwindcss(),
     tanstackStart(),
     ...(command === "build" || isPreview
@@ -28,7 +41,7 @@ export default defineConfig(({ command, isPreview }) => ({
               "/**": {
                 headers: {
                   "Content-Security-Policy":
-                    "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'; object-src 'none'",
+                    "default-src 'self'; script-src 'self' 'unsafe-inline' https://va.vercel-scripts.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'; object-src 'none'",
                   "X-Content-Type-Options": "nosniff",
                   "Referrer-Policy": "strict-origin-when-cross-origin",
                   "X-Frame-Options": "DENY",
